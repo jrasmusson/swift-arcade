@@ -1,2 +1,3 @@
-# swift-arcade
-Collection of demos from the Swift Arcade YouTube channel
+# Swift Arcade Demos
+
+Collection of demos from the Swift Arcade YouTube channel.
