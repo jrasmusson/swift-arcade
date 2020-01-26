@@ -12,7 +12,7 @@ class UIViewControllerDemo: UIViewController {
     
     let presentButton: UIButton = {
         let button = makeButton(withText: "Present")
-        button.addTarget(self, action: #selector(buttonPressed), for: .primaryActionTriggered)
+        button.addTarget(self, action: #selector(presentPressed), for: .primaryActionTriggered)
         return button
     }()
     
@@ -32,7 +32,11 @@ class UIViewControllerDemo: UIViewController {
     }
     
     // MARK: - Actions
-    @objc func buttonPressed() {
-        // create & present a new viewController
+    
+    @objc func presentPressed() {
+        // presents a viewController modally
+        let viewController = PresentViewController1()
+        present(viewController, animated: true, completion: nil)
     }
+    
 }

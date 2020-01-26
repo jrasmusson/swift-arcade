@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		71BE0A9023DDE4B40094CCE7 /* Factories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BE0A8F23DDE4B40094CCE7 /* Factories.swift */; };
 		71BE0A9223DDE8910094CCE7 /* PresentViewController1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BE0A9123DDE8910094CCE7 /* PresentViewController1.swift */; };
+		71BE0A9623DDF2860094CCE7 /* PresentViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BE0A9523DDF2860094CCE7 /* PresentViewController2.swift */; };
 		71DF453823DDDBE100D94763 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71DF453723DDDBE100D94763 /* AppDelegate.swift */; };
 		71DF453C23DDDBE100D94763 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71DF453B23DDDBE100D94763 /* ViewController.swift */; };
 		71DF454123DDDBE200D94763 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 71DF454023DDDBE200D94763 /* Assets.xcassets */; };
@@ -20,6 +21,7 @@
 /* Begin PBXFileReference section */
 		71BE0A8F23DDE4B40094CCE7 /* Factories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Factories.swift; sourceTree = "<group>"; };
 		71BE0A9123DDE8910094CCE7 /* PresentViewController1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentViewController1.swift; sourceTree = "<group>"; };
+		71BE0A9523DDF2860094CCE7 /* PresentViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentViewController2.swift; sourceTree = "<group>"; };
 		71DF453423DDDBE100D94763 /* SwiftArcadeDemos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftArcadeDemos.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		71DF453723DDDBE100D94763 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		71DF453B23DDDBE100D94763 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -85,6 +87,7 @@
 			children = (
 				71DF454F23DDDE4900D94763 /* UIViewControllerDemo.swift */,
 				71BE0A9123DDE8910094CCE7 /* PresentViewController1.swift */,
+				71BE0A9523DDF2860094CCE7 /* PresentViewController2.swift */,
 			);
 			name = Navigation;
 			sourceTree = "<group>";
@@ -163,6 +166,7 @@
 				71DF453C23DDDBE100D94763 /* ViewController.swift in Sources */,
 				71DF453823DDDBE100D94763 /* AppDelegate.swift in Sources */,
 				71BE0A9023DDE4B40094CCE7 /* Factories.swift in Sources */,
+				71BE0A9623DDF2860094CCE7 /* PresentViewController2.swift in Sources */,
 				71BE0A9223DDE8910094CCE7 /* PresentViewController1.swift in Sources */,
 				71DF455023DDDE4900D94763 /* UIViewControllerDemo.swift in Sources */,
 			);
