@@ -11,13 +11,13 @@ import UIKit
 class ContainerViewController1: UIViewController {
 
     let pushButton: UIButton = {
-        let button = makeButton(withText: "Push another")
+        let button = makeButton(withText: "Push")
         button.addTarget(self, action: #selector(pushPressed), for: .primaryActionTriggered)
         return button
     }()
 
     let popButton: UIButton = {
-        let button = makeButton(withText: "Pop")
+        let button = makeButton(withText: "Dismiss")
         button.addTarget(self, action: #selector(popPressed), for: .primaryActionTriggered)
         return button
     }()
@@ -54,4 +54,3 @@ class ContainerViewController1: UIViewController {
         dismiss(animated: true, completion: nil) // dismiss entire navigation stack
     }
 }
-

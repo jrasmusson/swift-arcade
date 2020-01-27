@@ -10,9 +10,9 @@ import UIKit
 
 class ContainerNavigation: UIViewController {
 
-    let pushButton: UIButton = {
-        let button = makeButton(withText: "Push")
-        button.addTarget(self, action: #selector(pushPressed), for: .primaryActionTriggered)
+    let presentButton: UIButton = {
+        let button = makeButton(withText: "Present")
+        button.addTarget(self, action: #selector(presentPressed), for: .primaryActionTriggered)
         return button
     }()
 
@@ -25,16 +25,16 @@ class ContainerNavigation: UIViewController {
         view.backgroundColor = .white
         navigationItem.title = "Container"
 
-        view.addSubview(pushButton)
+        view.addSubview(presentButton)
 
-        pushButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        pushButton.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
+        presentButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        presentButton.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
     }
 
     // MARK: - Actions
 
-    @objc func pushPressed() {
-        // present a viewController with in a container
+    @objc func presentPressed() {
+        // present a container navigation controller
         let navController = UINavigationController()
         navController.pushViewController(ContainerViewController1(), animated: true)
 
