@@ -13,15 +13,33 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 
-        window = UIWindow(frame: UIScreen.main.bounds)
-        window?.backgroundColor = .white
-        window?.makeKeyAndVisible()
-        window?.rootViewController = ViewController()
+            window = UIWindow(frame: UIScreen.main.bounds)
+            window?.makeKeyAndVisible()
 
-        return true
+            let navigationDemos = [
+                Lab(name: "Modal", viewController: ModalNavigation()),
+                Lab(name: "Container", viewController: ContainerNavigation()),
+    //            Lab(name: "UITabViewController [viewControllers]", viewController: CHCRImage()),
+            ]
+
+            //
+            // Top level
+            //
+
+            let navigationViewController = LabViewController(labs: navigationDemos, navBarTitle: "Navigation")
+
+            let rootLabs = [
+                Lab(name: "Navigation", viewController: navigationViewController),
+            ]
+
+            let rootViewController = LabViewController(labs: rootLabs, navBarTitle: "Swift Arcade Demos")
+            let navigatorController = UINavigationController(rootViewController: rootViewController)
+
+            window?.rootViewController = navigatorController
+
+            return true
     }
 
 }
-
