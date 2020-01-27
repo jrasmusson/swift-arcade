@@ -18,6 +18,12 @@
 		7128998F23DF55E700708F3B /* ModalNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7128998E23DF55E700708F3B /* ModalNavigation.swift */; };
 		7128999123DF560E00708F3B /* LabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7128999023DF560E00708F3B /* LabViewController.swift */; };
 		7128999323DF561A00708F3B /* Factories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7128999223DF561A00708F3B /* Factories.swift */; };
+		71FFF6B823DF5E0400EB5CFB /* ContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71FFF6B723DF5E0400EB5CFB /* ContainerViewController.swift */; };
+		71FFF6BA23DF5E3A00EB5CFB /* ReadyToActivateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71FFF6B923DF5E3A00EB5CFB /* ReadyToActivateViewController.swift */; };
+		71FFF6BC23DF5E4800EB5CFB /* ActivatingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71FFF6BB23DF5E4800EB5CFB /* ActivatingViewController.swift */; };
+		71FFF6BE23DF5E5500EB5CFB /* SuccessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71FFF6BD23DF5E5500EB5CFB /* SuccessViewController.swift */; };
+		71FFF6C023DF5E5D00EB5CFB /* FailureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71FFF6BF23DF5E5D00EB5CFB /* FailureViewController.swift */; };
+		71FFF6C223DF5E6C00EB5CFB /* ActivationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71FFF6C123DF5E6C00EB5CFB /* ActivationManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +40,12 @@
 		7128998E23DF55E700708F3B /* ModalNavigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalNavigation.swift; sourceTree = "<group>"; };
 		7128999023DF560E00708F3B /* LabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabViewController.swift; sourceTree = "<group>"; };
 		7128999223DF561A00708F3B /* Factories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Factories.swift; sourceTree = "<group>"; };
+		71FFF6B723DF5E0400EB5CFB /* ContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerViewController.swift; sourceTree = "<group>"; };
+		71FFF6B923DF5E3A00EB5CFB /* ReadyToActivateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadyToActivateViewController.swift; sourceTree = "<group>"; };
+		71FFF6BB23DF5E4800EB5CFB /* ActivatingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivatingViewController.swift; sourceTree = "<group>"; };
+		71FFF6BD23DF5E5500EB5CFB /* SuccessViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessViewController.swift; sourceTree = "<group>"; };
+		71FFF6BF23DF5E5D00EB5CFB /* FailureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FailureViewController.swift; sourceTree = "<group>"; };
+		71FFF6C123DF5E6C00EB5CFB /* ActivationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivationManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +130,12 @@
 		7128999423DF580E00708F3B /* Custom */ = {
 			isa = PBXGroup;
 			children = (
+				71FFF6B723DF5E0400EB5CFB /* ContainerViewController.swift */,
+				71FFF6B923DF5E3A00EB5CFB /* ReadyToActivateViewController.swift */,
+				71FFF6BB23DF5E4800EB5CFB /* ActivatingViewController.swift */,
+				71FFF6BD23DF5E5500EB5CFB /* SuccessViewController.swift */,
+				71FFF6BF23DF5E5D00EB5CFB /* FailureViewController.swift */,
+				71FFF6C123DF5E6C00EB5CFB /* ActivationManager.swift */,
 			);
 			name = Custom;
 			sourceTree = "<group>";
@@ -193,14 +211,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				7128998723DF55B800708F3B /* ContainerViewController1.swift in Sources */,
+				71FFF6BA23DF5E3A00EB5CFB /* ReadyToActivateViewController.swift in Sources */,
 				7128998B23DF55D300708F3B /* ModalViewController2.swift in Sources */,
 				7128998523DF55AE00708F3B /* ContainerViewController2.swift in Sources */,
 				7128996523DF540A00708F3B /* AppDelegate.swift in Sources */,
 				7128999123DF560E00708F3B /* LabViewController.swift in Sources */,
 				7128998F23DF55E700708F3B /* ModalNavigation.swift in Sources */,
+				71FFF6B823DF5E0400EB5CFB /* ContainerViewController.swift in Sources */,
+				71FFF6BC23DF5E4800EB5CFB /* ActivatingViewController.swift in Sources */,
 				7128998D23DF55DD00708F3B /* ModalViewController1.swift in Sources */,
 				7128999323DF561A00708F3B /* Factories.swift in Sources */,
+				71FFF6C223DF5E6C00EB5CFB /* ActivationManager.swift in Sources */,
+				71FFF6C023DF5E5D00EB5CFB /* FailureViewController.swift in Sources */,
 				7128998923DF55C300708F3B /* ContainerNavigation.swift in Sources */,
+				71FFF6BE23DF5E5500EB5CFB /* SuccessViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
