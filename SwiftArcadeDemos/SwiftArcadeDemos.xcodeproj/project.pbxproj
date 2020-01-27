@@ -15,7 +15,7 @@
 		71DF454123DDDBE200D94763 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 71DF454023DDDBE200D94763 /* Assets.xcassets */; };
 		71DF454423DDDBE200D94763 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71DF454223DDDBE200D94763 /* LaunchScreen.storyboard */; };
 		71DF454D23DDDCD000D94763 /* LabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71DF454C23DDDCD000D94763 /* LabViewController.swift */; };
-		71DF455023DDDE4900D94763 /* UIViewControllerDemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71DF454F23DDDE4900D94763 /* UIViewControllerDemo.swift */; };
+		71DF455023DDDE4900D94763 /* ModalNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71DF454F23DDDE4900D94763 /* ModalNavigation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,7 +29,7 @@
 		71DF454323DDDBE200D94763 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		71DF454523DDDBE200D94763 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		71DF454C23DDDCD000D94763 /* LabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabViewController.swift; sourceTree = "<group>"; };
-		71DF454F23DDDE4900D94763 /* UIViewControllerDemo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerDemo.swift; sourceTree = "<group>"; };
+		71DF454F23DDDE4900D94763 /* ModalNavigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalNavigation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,7 +85,7 @@
 		71DF454E23DDDDA300D94763 /* Navigation */ = {
 			isa = PBXGroup;
 			children = (
-				71DF454F23DDDE4900D94763 /* UIViewControllerDemo.swift */,
+				71DF454F23DDDE4900D94763 /* ModalNavigation.swift */,
 				71BE0A9123DDE8910094CCE7 /* PresentViewController1.swift */,
 				71BE0A9523DDF2860094CCE7 /* PresentViewController2.swift */,
 			);
@@ -168,7 +168,7 @@
 				71BE0A9023DDE4B40094CCE7 /* Factories.swift in Sources */,
 				71BE0A9623DDF2860094CCE7 /* PresentViewController2.swift in Sources */,
 				71BE0A9223DDE8910094CCE7 /* PresentViewController1.swift in Sources */,
-				71DF455023DDDE4900D94763 /* UIViewControllerDemo.swift in Sources */,
+				71DF455023DDDE4900D94763 /* ModalNavigation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

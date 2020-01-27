@@ -8,7 +8,7 @@
 
 import UIKit
 
-class UIViewControllerDemo: UIViewController {
+class ModalNavigation: UIViewController {
     
     let presentButton: UIButton = {
         let button = makeButton(withText: "Present")
@@ -23,7 +23,7 @@ class UIViewControllerDemo: UIViewController {
     
     func setupViews() {
         view.backgroundColor = .white
-        navigationItem.title = "UIViewController"
+        navigationItem.title = "Modal"
         
         view.addSubview(presentButton)
         

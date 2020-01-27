@@ -11,7 +11,7 @@ import UIKit
 class PresentViewController1: UIViewController {
     
     let presentButton: UIButton = {
-        let button = makeButton(withText: "Present")
+        let button = makeButton(withText: "Present another")
         button.addTarget(self, action: #selector(presentPressed), for: .primaryActionTriggered)
         return button
     }()
@@ -46,11 +46,12 @@ class PresentViewController1: UIViewController {
     @objc func presentPressed() {
         // presents a viewController modally
         let viewController = PresentViewController2()
+//        viewController.modalPresentationStyle = .fullScreen // to present in full screen
+//        UIApplication.shared.keyWindow?.rootViewController = viewController // Not recommended (for demo purposes only)
         present(viewController, animated: true, completion: nil)
     }
     
     @objc func dismissPressed() {
-        // dimiss the viewController presented modally
         dismiss(animated: true, completion: nil)
     }
 }

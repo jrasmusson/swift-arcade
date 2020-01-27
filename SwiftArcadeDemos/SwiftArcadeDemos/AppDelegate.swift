@@ -19,8 +19,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.makeKeyAndVisible()
         
         let navigationDemos = [
-            Lab(name: "UIViewController present", viewController: UIViewControllerDemo()),
-//            Lab(name: "UINavigationController pop/push", viewController: CHCRForm()),
+            Lab(name: "Modal", viewController: ModalNavigation()),
+//            Lab(name: "Container", viewController: ContainerNavigation()),
 //            Lab(name: "UITabViewController [viewControllers]", viewController: CHCRImage()),
         ]
 
