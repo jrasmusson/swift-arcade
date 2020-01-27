@@ -34,12 +34,16 @@ class ContainerNavigation: UIViewController {
     // MARK: - Actions
 
     @objc func presentPressed() {
-        // present a container navigation controller
+        // Present container navigation controller
         let navController = UINavigationController()
         navController.pushViewController(ContainerViewController1(), animated: true)
 
-        present(navController, animated: true, completion: nil) // present modally
-        
+        // Modally (default)
+//        present(navController, animated: true, completion: nil)
+
+        // Full screen take over
+//        navController.modalPresentationStyle = .fullScreen
+//        present(navController, animated: true, completion: nil)
     }
 
 }

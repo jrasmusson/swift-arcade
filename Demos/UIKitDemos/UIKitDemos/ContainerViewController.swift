@@ -78,13 +78,21 @@ class ContainerViewController: UIViewController {
     }
 
     func presentNextState(viewController: UIViewController) {
-        // The view controller we want to present (embedded in nav controller)
+        // The view controller we want to present embedded in our navigationViewController
         navigationViewController.setViewControllers([nextViewController], animated: true)
 
-        // The x3 things we need to do when presented a child view controller within a parent
+        //
+        // x3 things we need to do when adding child view Controller
+        //
+
+        // Move the child view controller's view to the parent's view
         view.addSubview(navigationViewController.view)
+
+        // Add the view controller as a child
         addChild(navigationViewController)
-        navigationController?.didMove(toParent: self)
+
+        // Notify the child that it was moved to a parent
+        navigationViewController.didMove(toParent: self)
     }
 }
 
@@ -97,7 +105,7 @@ extension ContainerViewController: ContainerViewControllerResponder {
         case .activating:
             showNextNavigationState(.success)
         case .success:
-            dismiss(animated: true, completion: nil)
+            popViewController()
         case .failure:
             showNextNavigationState(.readyToActivate)
             break
@@ -105,7 +113,18 @@ extension ContainerViewController: ContainerViewControllerResponder {
     }
 
     func didPressSecondaryCTAButton(_ sender: Any?) {
-        dismiss(animated: true, completion: nil)
+        popViewController()
+    }
+
+    private func popViewController() {
+        if let navigationController = navigationController {
+            navigationController.popViewController(animated: true)
+        }
+
+        // Discussion
+        //   If we havd presented viewControlled modally (via present) we could use
+        //     dismiss(animated: true, completion: nil)
+        //   But because we are embedded within a navigationController, we need to pop.
     }
 }
 
