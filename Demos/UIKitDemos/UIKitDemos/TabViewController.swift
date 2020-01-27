@@ -31,12 +31,12 @@ class TabBarViewController: UITabBarController {
 
 class TabBarViewController1: UIViewController {
     override func viewDidLoad() {
-        view.backgroundColor = .red
+        view.backgroundColor = .systemGreen
     }
 }
 
 class TabBarViewController2: UIViewController {
     override func viewDidLoad() {
-        view.backgroundColor = .blue
+        view.backgroundColor = .systemBlue
     }
 }

@@ -21,7 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             let containerLabs = [
                 Lab(name: "NavigationController", viewController: NavigationViewController1()),
                 Lab(name: "TabViewController", viewController: TabBarViewController()),
-//                Lab(name: "PageViewController", viewController: ContainerViewController()),
+                Lab(name: "PageViewController", viewController: PageViewController()),
             ]
 
             let containerViewController = LabViewController(labs: containerLabs, navBarTitle: "Container")
@@ -31,7 +31,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 Lab(name: "Container", viewController: containerViewController),
                 Lab(name: "Custom", viewController: ContainerViewController()),
             ]
-
 
             //
             // Top level
@@ -43,7 +42,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 Lab(name: "Navigation", viewController: navigationViewController),
             ]
 
-            let rootViewController = LabViewController(labs: rootLabs, navBarTitle: "Swift Arcade Demos")
+            let rootViewController = LabViewController(labs: rootLabs, navBarTitle: "UIKit Demos")
             let navigatorController = UINavigationController(rootViewController: rootViewController)
 
             window?.rootViewController = navigatorController
