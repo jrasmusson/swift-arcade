@@ -17,7 +17,7 @@ class NavigationViewController1: UIViewController {
     }()
 
     let popButton: UIButton = {
-        let button = makeButton(withText: "Dismiss")
+        let button = makeButton(withText: "Pop")
         button.addTarget(self, action: #selector(popPressed), for: .primaryActionTriggered)
         return button
     }()
@@ -51,6 +51,8 @@ class NavigationViewController1: UIViewController {
     }
 
     @objc func popPressed() {
-        dismiss(animated: true, completion: nil) // dismiss entire navigation stack
+        if let navigationController = navigationController {
+            navigationController.popViewController(animated: true)
+        }
     }
 }

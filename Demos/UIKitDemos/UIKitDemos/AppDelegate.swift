@@ -19,7 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             window?.makeKeyAndVisible()
 
             let containerLabs = [
-                Lab(name: "NavigationController", viewController: NavigationController()),
+                Lab(name: "NavigationController", viewController: NavigationViewController1()),
                 Lab(name: "TabViewController", viewController: TabBarViewController()),
 //                Lab(name: "PageViewController", viewController: ContainerViewController()),
             ]
