@@ -11,6 +11,12 @@
 		7128996923DF540A00708F3B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7128996823DF540A00708F3B /* ViewController.swift */; };
 		7128996E23DF540A00708F3B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7128996D23DF540A00708F3B /* Assets.xcassets */; };
 		7128997123DF540A00708F3B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7128996F23DF540A00708F3B /* LaunchScreen.storyboard */; };
+		7128998523DF55AE00708F3B /* ContainerViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7128998423DF55AE00708F3B /* ContainerViewController2.swift */; };
+		7128998723DF55B800708F3B /* ContainerViewController1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7128998623DF55B800708F3B /* ContainerViewController1.swift */; };
+		7128998923DF55C300708F3B /* ContainerNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7128998823DF55C300708F3B /* ContainerNavigation.swift */; };
+		7128998B23DF55D300708F3B /* ModalViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7128998A23DF55D300708F3B /* ModalViewController2.swift */; };
+		7128998D23DF55DD00708F3B /* ModalViewController1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7128998C23DF55DD00708F3B /* ModalViewController1.swift */; };
+		7128998F23DF55E700708F3B /* ModalNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7128998E23DF55E700708F3B /* ModalNavigation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +26,12 @@
 		7128996D23DF540A00708F3B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7128997023DF540A00708F3B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7128997223DF540A00708F3B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7128998423DF55AE00708F3B /* ContainerViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerViewController2.swift; sourceTree = "<group>"; };
+		7128998623DF55B800708F3B /* ContainerViewController1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerViewController1.swift; sourceTree = "<group>"; };
+		7128998823DF55C300708F3B /* ContainerNavigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerNavigation.swift; sourceTree = "<group>"; };
+		7128998A23DF55D300708F3B /* ModalViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalViewController2.swift; sourceTree = "<group>"; };
+		7128998C23DF55DD00708F3B /* ModalViewController1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalViewController1.swift; sourceTree = "<group>"; };
+		7128998E23DF55E700708F3B /* ModalNavigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalNavigation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,8 +85,30 @@
 		7128997923DF54C600708F3B /* Navigation */ = {
 			isa = PBXGroup;
 			children = (
+				7128998323DF559C00708F3B /* Modal */,
+				7128998223DF559200708F3B /* Container */,
 			);
 			name = Navigation;
+			sourceTree = "<group>";
+		};
+		7128998223DF559200708F3B /* Container */ = {
+			isa = PBXGroup;
+			children = (
+				7128998423DF55AE00708F3B /* ContainerViewController2.swift */,
+				7128998623DF55B800708F3B /* ContainerViewController1.swift */,
+				7128998823DF55C300708F3B /* ContainerNavigation.swift */,
+			);
+			name = Container;
+			sourceTree = "<group>";
+		};
+		7128998323DF559C00708F3B /* Modal */ = {
+			isa = PBXGroup;
+			children = (
+				7128998E23DF55E700708F3B /* ModalNavigation.swift */,
+				7128998C23DF55DD00708F3B /* ModalViewController1.swift */,
+				7128998A23DF55D300708F3B /* ModalViewController2.swift */,
+			);
+			name = Modal;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -147,8 +181,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7128998723DF55B800708F3B /* ContainerViewController1.swift in Sources */,
+				7128998B23DF55D300708F3B /* ModalViewController2.swift in Sources */,
 				7128996923DF540A00708F3B /* ViewController.swift in Sources */,
+				7128998523DF55AE00708F3B /* ContainerViewController2.swift in Sources */,
 				7128996523DF540A00708F3B /* AppDelegate.swift in Sources */,
+				7128998F23DF55E700708F3B /* ModalNavigation.swift in Sources */,
+				7128998D23DF55DD00708F3B /* ModalViewController1.swift in Sources */,
+				7128998923DF55C300708F3B /* ContainerNavigation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
