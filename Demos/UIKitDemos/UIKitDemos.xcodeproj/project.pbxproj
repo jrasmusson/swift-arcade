@@ -52,13 +52,29 @@
 		7128996323DF540900708F3B /* UIKitDemos */ = {
 			isa = PBXGroup;
 			children = (
+				7128997923DF54C600708F3B /* Navigation */,
 				7128996423DF540900708F3B /* AppDelegate.swift */,
 				7128996823DF540A00708F3B /* ViewController.swift */,
+				7128997823DF54A000708F3B /* Files */,
+			);
+			path = UIKitDemos;
+			sourceTree = "<group>";
+		};
+		7128997823DF54A000708F3B /* Files */ = {
+			isa = PBXGroup;
+			children = (
 				7128996D23DF540A00708F3B /* Assets.xcassets */,
 				7128996F23DF540A00708F3B /* LaunchScreen.storyboard */,
 				7128997223DF540A00708F3B /* Info.plist */,
 			);
-			path = UIKitDemos;
+			name = Files;
+			sourceTree = "<group>";
+		};
+		7128997923DF54C600708F3B /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Navigation;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
