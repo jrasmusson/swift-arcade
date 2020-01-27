@@ -38,7 +38,8 @@ class ContainerNavigation: UIViewController {
         let navController = UINavigationController()
         navController.pushViewController(ContainerViewController1(), animated: true)
 
-        present(navController, animated: true, completion: nil)
+        present(navController, animated: true, completion: nil) // present modally
+        
     }
 
 }

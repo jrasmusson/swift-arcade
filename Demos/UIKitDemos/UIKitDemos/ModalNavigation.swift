@@ -34,9 +34,12 @@ class ModalNavigation: UIViewController {
     // MARK: - Actions
 
     @objc func presentPressed() {
-        // presents a viewController modally
         let viewController = ModalViewController1()
-        present(viewController, animated: true, completion: nil)
+        present(viewController, animated: true, completion: nil) // modally
+
+        // If you don' want to display modally, you have the following options...
+        // viewController.modalPresentationStyle = .fullScreen // fully screen take over
+        // UIApplication.shared.keyWindow?.rootViewController = viewController // Override root view controller (not recommended)
     }
 
 }

@@ -21,7 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             let navigationDemos = [
                 Lab(name: "Modal", viewController: ModalNavigation()),
                 Lab(name: "Container", viewController: ContainerNavigation()),
-    //            Lab(name: "UITabViewController [viewControllers]", viewController: CHCRImage()),
+                Lab(name: "Custom", viewController: ContainerViewController()),
             ]
 
             //
