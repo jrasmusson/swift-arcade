@@ -43,6 +43,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		71BE0A9723DF1B760094CCE7 /* Modal */ = {
+			isa = PBXGroup;
+			children = (
+				71DF454F23DDDE4900D94763 /* ModalNavigation.swift */,
+				71BE0A9123DDE8910094CCE7 /* PresentViewController1.swift */,
+				71BE0A9523DDF2860094CCE7 /* PresentViewController2.swift */,
+			);
+			name = Modal;
+			sourceTree = "<group>";
+		};
 		71DF452B23DDDBE100D94763 = {
 			isa = PBXGroup;
 			children = (
@@ -85,9 +95,7 @@
 		71DF454E23DDDDA300D94763 /* Navigation */ = {
 			isa = PBXGroup;
 			children = (
-				71DF454F23DDDE4900D94763 /* ModalNavigation.swift */,
-				71BE0A9123DDE8910094CCE7 /* PresentViewController1.swift */,
-				71BE0A9523DDF2860094CCE7 /* PresentViewController2.swift */,
+				71BE0A9723DF1B760094CCE7 /* Modal */,
 			);
 			name = Navigation;
 			sourceTree = "<group>";
