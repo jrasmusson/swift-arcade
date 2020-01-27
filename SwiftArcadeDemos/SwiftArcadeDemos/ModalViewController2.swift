@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PresentViewController2: UIViewController {
+class ModalViewController2: UIViewController {
     
     let dismissButton: UIButton = {
         let button = makeButton(withText: "Dismiss")

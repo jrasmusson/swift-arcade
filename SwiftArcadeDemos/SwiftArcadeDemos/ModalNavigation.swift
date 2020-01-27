@@ -35,7 +35,7 @@ class ModalNavigation: UIViewController {
     
     @objc func presentPressed() {
         // presents a viewController modally
-        let viewController = PresentViewController1()
+        let viewController = ModalViewController1()
         present(viewController, animated: true, completion: nil)
     }
     

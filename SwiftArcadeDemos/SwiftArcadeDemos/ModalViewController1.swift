@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PresentViewController1: UIViewController {
+class ModalViewController1: UIViewController {
     
     let presentButton: UIButton = {
         let button = makeButton(withText: "Present another")
@@ -44,10 +44,10 @@ class PresentViewController1: UIViewController {
     // MARK: - Actions
 
     @objc func presentPressed() {
-        // presents a viewController modally
-        let viewController = PresentViewController2()
+        let viewController = ModalViewController2()
 //        viewController.modalPresentationStyle = .fullScreen // to present in full screen
-//        UIApplication.shared.keyWindow?.rootViewController = viewController // Not recommended (for demo purposes only)
+        
+        // present modally
         present(viewController, animated: true, completion: nil)
     }
     
