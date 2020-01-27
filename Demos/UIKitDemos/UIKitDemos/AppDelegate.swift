@@ -18,17 +18,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             window = UIWindow(frame: UIScreen.main.bounds)
             window?.makeKeyAndVisible()
 
-            let navigationDemos = [
+            let containerLabs = [
+                Lab(name: "NavigationController", viewController: NavigationController()),
+                Lab(name: "TabViewController", viewController: TabBarViewController()),
+//                Lab(name: "PageViewController", viewController: ContainerViewController()),
+            ]
+
+            let containerViewController = LabViewController(labs: containerLabs, navBarTitle: "Container")
+
+            let navigationLabs = [
                 Lab(name: "Modal", viewController: ModalNavigation()),
-                Lab(name: "Container", viewController: ContainerNavigation()),
+                Lab(name: "Container", viewController: containerViewController),
                 Lab(name: "Custom", viewController: ContainerViewController()),
             ]
+
 
             //
             // Top level
             //
 
-            let navigationViewController = LabViewController(labs: navigationDemos, navBarTitle: "Navigation")
+            let navigationViewController = LabViewController(labs: navigationLabs, navBarTitle: "Navigation")
 
             let rootLabs = [
                 Lab(name: "Navigation", viewController: navigationViewController),

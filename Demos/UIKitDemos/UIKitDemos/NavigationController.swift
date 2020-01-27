@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ContainerNavigation: UIViewController {
+class NavigationController: UIViewController {
 
     let presentButton: UIButton = {
         let button = makeButton(withText: "Present")
@@ -23,7 +23,7 @@ class ContainerNavigation: UIViewController {
 
     func setupViews() {
         view.backgroundColor = .white
-        navigationItem.title = "Container"
+        navigationItem.title = "NavigationController Container"
 
         view.addSubview(presentButton)
 
@@ -36,10 +36,10 @@ class ContainerNavigation: UIViewController {
     @objc func presentPressed() {
         // Present container navigation controller
         let navController = UINavigationController()
-        navController.pushViewController(ContainerViewController1(), animated: true)
+        navController.pushViewController(NavigationViewController1(), animated: true)
 
         // Modally (default)
-//        present(navController, animated: true, completion: nil)
+        present(navController, animated: true, completion: nil)
 
         // Full screen take over
 //        navController.modalPresentationStyle = .fullScreen

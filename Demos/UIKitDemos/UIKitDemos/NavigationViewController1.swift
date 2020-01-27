@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ContainerViewController1: UIViewController {
+class NavigationViewController1: UIViewController {
 
     let pushButton: UIButton = {
         let button = makeButton(withText: "Push")
@@ -29,7 +29,7 @@ class ContainerViewController1: UIViewController {
 
     func setupViews() {
         view.backgroundColor = .systemGreen
-        navigationItem.title = "ContainerViewConroller1"
+        navigationItem.title = "NavigationViewController1"
 
         view.addSubview(pushButton)
         view.addSubview(popButton)
@@ -45,7 +45,7 @@ class ContainerViewController1: UIViewController {
 
     @objc func pushPressed() {
         if let navigationController = navigationController {
-            let viewController = ContainerViewController2()
+            let viewController = NavigationViewController2()
             navigationController.pushViewController(viewController, animated: true)
         }
     }

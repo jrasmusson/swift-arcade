@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ContainerViewController2: UIViewController {
+class NavigationViewController2: UIViewController {
 
     let popButton: UIButton = {
         let button = makeButton(withText: "Pop")
@@ -23,7 +23,7 @@ class ContainerViewController2: UIViewController {
 
     func setupViews() {
         view.backgroundColor = .systemBlue
-        navigationItem.title = "ContainerViewController2"
+        navigationItem.title = "NavigationViewController2"
 
         view.addSubview(popButton)
 

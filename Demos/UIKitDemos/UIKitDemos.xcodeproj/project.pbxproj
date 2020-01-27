@@ -10,14 +10,15 @@
 		7128996523DF540A00708F3B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7128996423DF540900708F3B /* AppDelegate.swift */; };
 		7128996E23DF540A00708F3B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7128996D23DF540A00708F3B /* Assets.xcassets */; };
 		7128997123DF540A00708F3B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7128996F23DF540A00708F3B /* LaunchScreen.storyboard */; };
-		7128998523DF55AE00708F3B /* ContainerViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7128998423DF55AE00708F3B /* ContainerViewController2.swift */; };
-		7128998723DF55B800708F3B /* ContainerViewController1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7128998623DF55B800708F3B /* ContainerViewController1.swift */; };
-		7128998923DF55C300708F3B /* ContainerNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7128998823DF55C300708F3B /* ContainerNavigation.swift */; };
+		7128998523DF55AE00708F3B /* NavigationViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7128998423DF55AE00708F3B /* NavigationViewController2.swift */; };
+		7128998723DF55B800708F3B /* NavigationViewController1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7128998623DF55B800708F3B /* NavigationViewController1.swift */; };
+		7128998923DF55C300708F3B /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7128998823DF55C300708F3B /* NavigationController.swift */; };
 		7128998B23DF55D300708F3B /* ModalViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7128998A23DF55D300708F3B /* ModalViewController2.swift */; };
 		7128998D23DF55DD00708F3B /* ModalViewController1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7128998C23DF55DD00708F3B /* ModalViewController1.swift */; };
 		7128998F23DF55E700708F3B /* ModalNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7128998E23DF55E700708F3B /* ModalNavigation.swift */; };
 		7128999123DF560E00708F3B /* LabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7128999023DF560E00708F3B /* LabViewController.swift */; };
 		7128999323DF561A00708F3B /* Factories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7128999223DF561A00708F3B /* Factories.swift */; };
+		715B94D623DF83F6000751EB /* TabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 715B94D523DF83F6000751EB /* TabViewController.swift */; };
 		71FFF6B823DF5E0400EB5CFB /* ContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71FFF6B723DF5E0400EB5CFB /* ContainerViewController.swift */; };
 		71FFF6BA23DF5E3A00EB5CFB /* ReadyToActivateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71FFF6B923DF5E3A00EB5CFB /* ReadyToActivateViewController.swift */; };
 		71FFF6BC23DF5E4800EB5CFB /* ActivatingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71FFF6BB23DF5E4800EB5CFB /* ActivatingViewController.swift */; };
@@ -32,14 +33,15 @@
 		7128996D23DF540A00708F3B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7128997023DF540A00708F3B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7128997223DF540A00708F3B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		7128998423DF55AE00708F3B /* ContainerViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerViewController2.swift; sourceTree = "<group>"; };
-		7128998623DF55B800708F3B /* ContainerViewController1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerViewController1.swift; sourceTree = "<group>"; };
-		7128998823DF55C300708F3B /* ContainerNavigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerNavigation.swift; sourceTree = "<group>"; };
+		7128998423DF55AE00708F3B /* NavigationViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationViewController2.swift; sourceTree = "<group>"; };
+		7128998623DF55B800708F3B /* NavigationViewController1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationViewController1.swift; sourceTree = "<group>"; };
+		7128998823DF55C300708F3B /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
 		7128998A23DF55D300708F3B /* ModalViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalViewController2.swift; sourceTree = "<group>"; };
 		7128998C23DF55DD00708F3B /* ModalViewController1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalViewController1.swift; sourceTree = "<group>"; };
 		7128998E23DF55E700708F3B /* ModalNavigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalNavigation.swift; sourceTree = "<group>"; };
 		7128999023DF560E00708F3B /* LabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabViewController.swift; sourceTree = "<group>"; };
 		7128999223DF561A00708F3B /* Factories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Factories.swift; sourceTree = "<group>"; };
+		715B94D523DF83F6000751EB /* TabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabViewController.swift; sourceTree = "<group>"; };
 		71FFF6B723DF5E0400EB5CFB /* ContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerViewController.swift; sourceTree = "<group>"; };
 		71FFF6B923DF5E3A00EB5CFB /* ReadyToActivateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadyToActivateViewController.swift; sourceTree = "<group>"; };
 		71FFF6BB23DF5E4800EB5CFB /* ActivatingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivatingViewController.swift; sourceTree = "<group>"; };
@@ -101,20 +103,19 @@
 			isa = PBXGroup;
 			children = (
 				7128998323DF559C00708F3B /* Modal */,
-				7128998223DF559200708F3B /* Container */,
+				7128998223DF559200708F3B /* Containers */,
 				7128999423DF580E00708F3B /* Custom */,
 			);
 			name = Navigation;
 			sourceTree = "<group>";
 		};
-		7128998223DF559200708F3B /* Container */ = {
+		7128998223DF559200708F3B /* Containers */ = {
 			isa = PBXGroup;
 			children = (
-				7128998823DF55C300708F3B /* ContainerNavigation.swift */,
-				7128998623DF55B800708F3B /* ContainerViewController1.swift */,
-				7128998423DF55AE00708F3B /* ContainerViewController2.swift */,
+				715B94D323DF8032000751EB /* NavigationController */,
+				715B94D423DF82E7000751EB /* TabViewController */,
 			);
-			name = Container;
+			name = Containers;
 			sourceTree = "<group>";
 		};
 		7128998323DF559C00708F3B /* Modal */ = {
@@ -138,6 +139,24 @@
 				71FFF6C123DF5E6C00EB5CFB /* ActivationManager.swift */,
 			);
 			name = Custom;
+			sourceTree = "<group>";
+		};
+		715B94D323DF8032000751EB /* NavigationController */ = {
+			isa = PBXGroup;
+			children = (
+				7128998823DF55C300708F3B /* NavigationController.swift */,
+				7128998623DF55B800708F3B /* NavigationViewController1.swift */,
+				7128998423DF55AE00708F3B /* NavigationViewController2.swift */,
+			);
+			name = NavigationController;
+			sourceTree = "<group>";
+		};
+		715B94D423DF82E7000751EB /* TabViewController */ = {
+			isa = PBXGroup;
+			children = (
+				715B94D523DF83F6000751EB /* TabViewController.swift */,
+			);
+			name = TabViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -210,20 +229,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7128998723DF55B800708F3B /* ContainerViewController1.swift in Sources */,
+				7128998723DF55B800708F3B /* NavigationViewController1.swift in Sources */,
 				71FFF6BA23DF5E3A00EB5CFB /* ReadyToActivateViewController.swift in Sources */,
 				7128998B23DF55D300708F3B /* ModalViewController2.swift in Sources */,
-				7128998523DF55AE00708F3B /* ContainerViewController2.swift in Sources */,
+				7128998523DF55AE00708F3B /* NavigationViewController2.swift in Sources */,
 				7128996523DF540A00708F3B /* AppDelegate.swift in Sources */,
 				7128999123DF560E00708F3B /* LabViewController.swift in Sources */,
 				7128998F23DF55E700708F3B /* ModalNavigation.swift in Sources */,
 				71FFF6B823DF5E0400EB5CFB /* ContainerViewController.swift in Sources */,
+				715B94D623DF83F6000751EB /* TabViewController.swift in Sources */,
 				71FFF6BC23DF5E4800EB5CFB /* ActivatingViewController.swift in Sources */,
 				7128998D23DF55DD00708F3B /* ModalViewController1.swift in Sources */,
 				7128999323DF561A00708F3B /* Factories.swift in Sources */,
 				71FFF6C223DF5E6C00EB5CFB /* ActivationManager.swift in Sources */,
 				71FFF6C023DF5E5D00EB5CFB /* FailureViewController.swift in Sources */,
-				7128998923DF55C300708F3B /* ContainerNavigation.swift in Sources */,
+				7128998923DF55C300708F3B /* NavigationController.swift in Sources */,
 				71FFF6BE23DF5E5500EB5CFB /* SuccessViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

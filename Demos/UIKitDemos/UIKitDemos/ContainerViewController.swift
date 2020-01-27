@@ -117,6 +117,7 @@ extension ContainerViewController: ContainerViewControllerResponder {
     }
 
     private func popViewController() {
+        
         if let navigationController = navigationController {
             navigationController.popViewController(animated: true)
         }
