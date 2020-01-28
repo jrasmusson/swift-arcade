@@ -13,7 +13,7 @@ class FailureViewController: UIViewController {
     typealias responder = ContainerViewControllerResponder
 
     override func viewDidLoad() {
-        view.backgroundColor = .red
+        view.backgroundColor = .systemRed
 
         let titleLabel = makeLabel(withTitle: "Failure")
         let activateButton = makeButton(withText: "Try again")

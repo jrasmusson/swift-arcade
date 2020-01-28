@@ -13,7 +13,7 @@ class SuccessViewController: UIViewController {
     typealias responder = ContainerViewControllerResponder
 
     override func viewDidLoad() {
-        view.backgroundColor = .green
+        view.backgroundColor = .systemGreen
 
         let titleLabel = makeLabel(withTitle: "Success")
         let activateButton = makeButton(withText: "Activate")

@@ -56,17 +56,19 @@ class ContainerViewController: UIViewController {
         case .readyToActivate:
             nextViewController = ReadyToActivateViewController()
         case .activating:
+            nextViewController = ActivatingViewController()
 
-            ActivationManager.activateAndPoll { result in
-                switch result {
-                case .success:
-                    self.navigationState = .success
-                    self.nextViewController = SuccessViewController()
-                case .failure(_):
-                    self.navigationState = .failure
-                    self.nextViewController = FailureViewController()
-                }
-            }
+            // If we were doing this for real we would do something like this...
+//            ActivationManager.activateAndPoll { result in
+//                switch result {
+//                case .success:
+//                    self.navigationState = .success
+//                    self.nextViewController = SuccessViewController()
+//                case .failure(_):
+//                    self.navigationState = .failure
+//                    self.nextViewController = FailureViewController()
+//                }
+//            }
 
         case .success:
             nextViewController = SuccessViewController()
@@ -85,13 +87,13 @@ class ContainerViewController: UIViewController {
         // x3 things we need to do when adding child view Controller
         //
 
-        // Move the child view controller's view to the parent's view
+        // 1. Move the child view controller's view to the parent's view.
         view.addSubview(navigationViewController.view)
 
-        // Add the view controller as a child
+        // 2. Add the view controller as a child.
         addChild(navigationViewController)
 
-        // Notify the child that it was moved to a parent
+        // 3. Notify the child that it was moved to a parent.
         navigationViewController.didMove(toParent: self)
     }
 }
@@ -105,7 +107,7 @@ extension ContainerViewController: ContainerViewControllerResponder {
         case .activating:
             showNextNavigationState(.success)
         case .success:
-            popViewController()
+            showNextNavigationState(.readyToActivate)
         case .failure:
             showNextNavigationState(.readyToActivate)
             break
@@ -122,7 +124,7 @@ extension ContainerViewController: ContainerViewControllerResponder {
             navigationController.popViewController(animated: true)
         }
 
-        // Discussion
+        // Note:
         //   If we havd presented viewControlled modally (via present) we could use
         //     dismiss(animated: true, completion: nil)
         //   But because we are embedded within a navigationController, we need to pop.

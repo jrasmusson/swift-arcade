@@ -13,7 +13,7 @@ class ReadyToActivateViewController: UIViewController {
     typealias responder = ContainerViewControllerResponder
 
     override func viewDidLoad() {
-        view.backgroundColor = .yellow
+        view.backgroundColor = .systemBlue
 
         let titleLabel = makeLabel(withTitle: "Ready to Activate")
         let activateButton = makeButton(withText: "Activate")
