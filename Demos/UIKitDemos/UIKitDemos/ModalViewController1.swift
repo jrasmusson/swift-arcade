@@ -45,9 +45,6 @@ class ModalViewController1: UIViewController {
 
     @objc func presentPressed() {
         let viewController = ModalViewController2()
-//        viewController.modalPresentationStyle = .fullScreen // to present in full screen
-
-        // present modally
         present(viewController, animated: true, completion: nil)
     }
 
