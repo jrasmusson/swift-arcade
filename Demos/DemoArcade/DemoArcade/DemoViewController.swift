@@ -56,7 +56,7 @@ class DemoViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        navigationController?.pushViewController(labs[indexPath.row].viewController, animated: false)
+        navigationController?.pushViewController(labs[indexPath.row].viewController, animated: true)
     }
 }
 
