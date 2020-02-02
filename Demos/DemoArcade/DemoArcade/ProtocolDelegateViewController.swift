@@ -25,6 +25,16 @@ class ProcotolDelegateViewController: UIViewController {
         return imageView
     }()
     
+    let cityLabel: UILabel = {
+        let label = makeLabel(withTitle: "City")
+        return label
+    }()
+
+    let temperaturLabel: UILabel = {
+        let label = makeLabel(withTitle: "0C") //  U R HERE
+        return label
+    }()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         setupViews()
@@ -36,12 +46,16 @@ class ProcotolDelegateViewController: UIViewController {
         
         view.addSubview(weatherButton)
         view.addSubview(imageView)
+        view.addSubview(cityLabel)
 
         weatherButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         weatherButton.topAnchor.constraint(equalToSystemSpacingBelow: view.safeAreaLayoutGuide.topAnchor, multiplier: 3).isActive = true
         
         imageView.topAnchor.constraint(equalToSystemSpacingBelow: weatherButton.bottomAnchor, multiplier: 3).isActive = true
         imageView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        
+        cityLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        cityLabel.topAnchor.constraint(equalToSystemSpacingBelow: imageView.bottomAnchor, multiplier: 3).isActive = true
     }
     
     @objc func weatherPressed() {
