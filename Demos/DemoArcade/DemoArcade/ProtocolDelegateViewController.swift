@@ -16,6 +16,14 @@ class ProcotolDelegateViewController: UIViewController {
         return button
     }()
 
+    let imageView: UIImageView = {
+        let configuration = UIImage.SymbolConfiguration(scale: .large)
+        let image = UIImage(systemName: "zzz", withConfiguration: configuration)
+        let imageView = UIImageView(image: image)
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        
+        return imageView
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,10 +35,13 @@ class ProcotolDelegateViewController: UIViewController {
         navigationItem.title = "Protocol Delegate"
         
         view.addSubview(weatherButton)
+        view.addSubview(imageView)
 
         weatherButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         weatherButton.topAnchor.constraint(equalToSystemSpacingBelow: view.safeAreaLayoutGuide.topAnchor, multiplier: 3).isActive = true
-//        weatherButton.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
+        
+        imageView.topAnchor.constraint(equalToSystemSpacingBelow: weatherButton.bottomAnchor, multiplier: 3).isActive = true
+        imageView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
     }
     
     @objc func weatherPressed() {
