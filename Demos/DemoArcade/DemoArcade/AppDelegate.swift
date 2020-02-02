@@ -26,6 +26,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
             let containerViewController = DemoViewController(labs: containerLabs, navBarTitle: "Container")
 
+            let communicationLabs = [
+                Lab(name: "Protocol Delegate", viewController: ProcotolDelegateViewController()),
+            ]
+
             let navigationLabs = [
                 Lab(name: "Modal", viewController: ModalNavigation()),
                 Lab(name: "Container", viewController: containerViewController),
@@ -36,9 +40,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             // Top level
             //
 
+            let communicationViewController = DemoViewController(labs: communicationLabs, navBarTitle: "Communication")
             let navigationViewController = DemoViewController(labs: navigationLabs, navBarTitle: "Navigation")
-
+            
             let rootLabs = [
+                Lab(name: "Communication", viewController: communicationViewController),
                 Lab(name: "Navigation", viewController: navigationViewController),
             ]
 
