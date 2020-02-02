@@ -1,8 +1,8 @@
 //
 //  DemoViewController.swift
-//  SwiftArcadeDemos
+//  DemoArcade
 //
-//  Created by Jonathan Rasmusson Work Pro on 2020-01-26.
+//  Created by Jonathan Rasmusson Work Pro on 2020-02-02.
 //  Copyright © 2020 Rasmusson Software Consulting. All rights reserved.
 //
 
@@ -13,7 +13,7 @@ struct Lab {
     let viewController: UIViewController
 }
 
-class LabViewController: UITableViewController {
+class DemoViewController: UITableViewController {
 
     var labs: [Lab]
     var navBarTitle: String
@@ -59,3 +59,4 @@ class LabViewController: UITableViewController {
         navigationController?.pushViewController(labs[indexPath.row].viewController, animated: false)
     }
 }
+

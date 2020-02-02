@@ -35,7 +35,7 @@ class ModalNavigation: UIViewController {
 
     @objc func presentPressed() {
         let viewController = ModalViewController1()
-         viewController.modalPresentationStyle = .fullScreen
+//         viewController.modalPresentationStyle = .fullScreen
         
         // Present modally (default)
         present(viewController, animated: true, completion: nil)

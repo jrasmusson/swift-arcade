@@ -1,9 +1,9 @@
 //
 //  AppDelegate.swift
-//  UIKitDemos
+//  DemoArcade
 //
-//  Created by Jonathan Rasmusson (Contractor) on 2020-01-27.
-//  Copyright © 2020 Jonathan Rasmusson. All rights reserved.
+//  Created by Jonathan Rasmusson Work Pro on 2020-02-02.
+//  Copyright © 2020 Rasmusson Software Consulting. All rights reserved.
 //
 
 import UIKit
@@ -24,7 +24,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 Lab(name: "PageViewController", viewController: PageViewController(transitionStyle: .scroll, navigationOrientation: .horizontal, options: nil)),
             ]
 
-            let containerViewController = LabViewController(labs: containerLabs, navBarTitle: "Container")
+            let containerViewController = DemoViewController(labs: containerLabs, navBarTitle: "Container")
 
             let navigationLabs = [
                 Lab(name: "Modal", viewController: ModalNavigation()),
@@ -36,13 +36,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             // Top level
             //
 
-            let navigationViewController = LabViewController(labs: navigationLabs, navBarTitle: "Navigation")
+            let navigationViewController = DemoViewController(labs: navigationLabs, navBarTitle: "Navigation")
 
             let rootLabs = [
                 Lab(name: "Navigation", viewController: navigationViewController),
             ]
 
-            let rootViewController = LabViewController(labs: rootLabs, navBarTitle: "UIKit Demos")
+            let rootViewController = DemoViewController(labs: rootLabs, navBarTitle: "UIKit Demos")
             let navigatorController = UINavigationController(rootViewController: rootViewController)
 
             window?.rootViewController = navigatorController
@@ -51,3 +51,4 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
 }
+
