@@ -29,7 +29,8 @@ class ProcotolDelegateViewController: UIViewController {
         view.addSubview(weatherButton)
 
         weatherButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        weatherButton.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
+        weatherButton.topAnchor.constraint(equalToSystemSpacingBelow: view.safeAreaLayoutGuide.topAnchor, multiplier: 3).isActive = true
+//        weatherButton.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
     }
     
     @objc func weatherPressed() {
