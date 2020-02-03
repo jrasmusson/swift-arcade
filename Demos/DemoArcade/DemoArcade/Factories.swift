@@ -31,3 +31,10 @@ func makeLabel(withTitle title: String) -> UILabel {
     return label
 }
 
+func makeRowStackView() -> UIStackView {
+    let stack = UIStackView()
+    stack.translatesAutoresizingMaskIntoConstraints = false
+    stack.spacing = 8.0
+
+    return stack
+}
