@@ -26,6 +26,7 @@
 		719A1E9B23E723C1000FC21C /* ActivatingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719A1E9523E723C1000FC21C /* ActivatingViewController.swift */; };
 		719A1E9D23E723E1000FC21C /* Factories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719A1E9C23E723E1000FC21C /* Factories.swift */; };
 		719A1EA123E72721000FC21C /* ProtocolDelegateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719A1EA023E72721000FC21C /* ProtocolDelegateViewController.swift */; };
+		71C6324C23E89B9500BC5302 /* ProtocolWeatherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C6324B23E89B9500BC5302 /* ProtocolWeatherService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +51,7 @@
 		719A1E9523E723C1000FC21C /* ActivatingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivatingViewController.swift; sourceTree = "<group>"; };
 		719A1E9C23E723E1000FC21C /* Factories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Factories.swift; sourceTree = "<group>"; };
 		719A1EA023E72721000FC21C /* ProtocolDelegateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProtocolDelegateViewController.swift; sourceTree = "<group>"; };
+		71C6324B23E89B9500BC5302 /* ProtocolWeatherService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProtocolWeatherService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -182,6 +184,7 @@
 			isa = PBXGroup;
 			children = (
 				719A1EA023E72721000FC21C /* ProtocolDelegateViewController.swift */,
+				71C6324B23E89B9500BC5302 /* ProtocolWeatherService.swift */,
 			);
 			name = ProtocolDelegate;
 			sourceTree = "<group>";
@@ -266,6 +269,7 @@
 				719A1E8223E72218000FC21C /* ModalViewController2.swift in Sources */,
 				719A1E8323E72218000FC21C /* ModalViewController1.swift in Sources */,
 				719A1E9A23E723C1000FC21C /* SuccessViewController.swift in Sources */,
+				71C6324C23E89B9500BC5302 /* ProtocolWeatherService.swift in Sources */,
 				719A1E8F23E72361000FC21C /* PageViewController.swift in Sources */,
 				719A1E9D23E723E1000FC21C /* Factories.swift in Sources */,
 				719A1E7423E71F17000FC21C /* DemoViewController.swift in Sources */,

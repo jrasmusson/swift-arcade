@@ -16,7 +16,7 @@ class ProcotolDelegateViewController: UIViewController {
         return button
     }()
 
-    let imageView: UIImageView = {
+    var imageView: UIImageView = {
         let configuration = UIImage.SymbolConfiguration(scale: .large)
         let image = UIImage(systemName: "zzz", withConfiguration: configuration)
         let imageView = UIImageView(image: image)
@@ -36,9 +36,13 @@ class ProcotolDelegateViewController: UIViewController {
         return label
     }()
 
+    let weatherService = ProtocolWeatherService()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         setupViews()
+
+        weatherService.delegate = self
     }
     
     func setupViews() {
@@ -67,7 +71,18 @@ class ProcotolDelegateViewController: UIViewController {
     }
     
     @objc func weatherPressed() {
-        // fetch weather
+        weatherService.fetchWeather()
     }
 
+}
+
+extension ProcotolDelegateViewController: ProtocolWeatherServiceDelegate {
+    func didFetchWeather(_ weather: Weather) {
+        cityLabel.text = weather.city
+        temperatureLabel.text = weather.temperature
+
+        let configuration = UIImage.SymbolConfiguration(scale: .large)
+        let image = UIImage(systemName: weather.imageName, withConfiguration: configuration)
+        imageView.image = image
+    }
 }
