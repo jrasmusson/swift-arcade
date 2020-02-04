@@ -22,11 +22,16 @@ protocol ProtocolWeatherServiceDelegate: AnyObject {
 
 class ProtocolWeatherService {
 
+
+
+
+
+
+
     weak var delegate: ProtocolWeatherServiceDelegate?
 
     func fetchWeather() {
         let weather = Weather(city: "San Francisco", temperature: "21 °C", imageName: "sunset.fill")
         delegate?.didFetchWeather(weather) // 4
     }
-
 }
