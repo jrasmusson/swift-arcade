@@ -21,7 +21,7 @@ class ProcotolDelegateViewController: UIViewController {
         let image = UIImage(systemName: "zzz", withConfiguration: configuration)
         let imageView = UIImageView(image: image)
         imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.setContentHuggingPriority(UILayoutPriority(rawValue: 999), for: .horizontal) // hug
+        imageView.setContentHuggingPriority(UILayoutPriority(rawValue: 999), for: .horizontal)
         
         return imageView
     }()
@@ -36,13 +36,13 @@ class ProcotolDelegateViewController: UIViewController {
         return label
     }()
 
-    let weatherService = ProtocolWeatherService()
+    let weatherService = ProtocolWeatherService() // The service
 
     override func viewDidLoad() {
         super.viewDidLoad()
         setupViews()
 
-        weatherService.delegate = self
+        weatherService.delegate = self // Register ourselves as the delegate for the callback
     }
     
     func setupViews() {
@@ -71,12 +71,14 @@ class ProcotolDelegateViewController: UIViewController {
     }
     
     @objc func weatherPressed() {
-        weatherService.fetchWeather()
+        weatherService.fetchWeather() // Trigger the call
     }
 
 }
 
 extension ProcotolDelegateViewController: ProtocolWeatherServiceDelegate {
+
+    // The callback
     func didFetchWeather(_ weather: Weather) {
         cityLabel.text = weather.city
         temperatureLabel.text = weather.temperature
