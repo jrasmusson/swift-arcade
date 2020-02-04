@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol ProtocolWeatherServiceDelegate: AnyObject {
+protocol WeatherServiceDelegate: AnyObject {
     func didFetchWeather(_ weather: Weather)
 }
 
@@ -20,7 +20,7 @@ protocol ProtocolWeatherServiceDelegate: AnyObject {
 
 
 
-class ProtocolWeatherService {
+class WeatherService {
 
 
 
@@ -28,7 +28,7 @@ class ProtocolWeatherService {
 
 
 
-    weak var delegate: ProtocolWeatherServiceDelegate?
+    weak var delegate: WeatherServiceDelegate?
 
     func fetchWeather() {
         let weather = Weather(city: "San Francisco", temperature: "21 °C", imageName: "sunset.fill")

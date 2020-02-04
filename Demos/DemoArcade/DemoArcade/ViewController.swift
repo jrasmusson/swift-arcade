@@ -8,7 +8,7 @@
 
 import UIKit
 
-extension ProcotolDelegateViewController: ProtocolWeatherServiceDelegate {
+extension ViewController: WeatherServiceDelegate {
     func didFetchWeather(_ weather: Weather) { // 5
         cityLabel.text = weather.city
         temperatureLabel.text = weather.temperature
@@ -19,9 +19,9 @@ extension ProcotolDelegateViewController: ProtocolWeatherServiceDelegate {
     }
 }
 
-class ProcotolDelegateViewController: UIViewController {
+class ViewController: UIViewController {
 
-    let weatherService = ProtocolWeatherService() // 1
+    let weatherService = WeatherService() // 1
 
     override func viewDidLoad() {
         super.viewDidLoad()

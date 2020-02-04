@@ -26,8 +26,8 @@
 		719A1E9A23E723C1000FC21C /* SuccessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719A1E9423E723C1000FC21C /* SuccessViewController.swift */; };
 		719A1E9B23E723C1000FC21C /* ActivatingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719A1E9523E723C1000FC21C /* ActivatingViewController.swift */; };
 		719A1E9D23E723E1000FC21C /* Factories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719A1E9C23E723E1000FC21C /* Factories.swift */; };
-		719A1EA123E72721000FC21C /* ProtocolDelegateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719A1EA023E72721000FC21C /* ProtocolDelegateViewController.swift */; };
-		71C6324C23E89B9500BC5302 /* ProtocolWeatherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C6324B23E89B9500BC5302 /* ProtocolWeatherService.swift */; };
+		719A1EA123E72721000FC21C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719A1EA023E72721000FC21C /* ViewController.swift */; };
+		71C6324C23E89B9500BC5302 /* WeatherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C6324B23E89B9500BC5302 /* WeatherService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,8 +52,8 @@
 		719A1E9423E723C1000FC21C /* SuccessViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SuccessViewController.swift; sourceTree = "<group>"; };
 		719A1E9523E723C1000FC21C /* ActivatingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivatingViewController.swift; sourceTree = "<group>"; };
 		719A1E9C23E723E1000FC21C /* Factories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Factories.swift; sourceTree = "<group>"; };
-		719A1EA023E72721000FC21C /* ProtocolDelegateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProtocolDelegateViewController.swift; sourceTree = "<group>"; };
-		71C6324B23E89B9500BC5302 /* ProtocolWeatherService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProtocolWeatherService.swift; sourceTree = "<group>"; };
+		719A1EA023E72721000FC21C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		71C6324B23E89B9500BC5302 /* WeatherService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -185,8 +185,8 @@
 		719A1E9F23E72508000FC21C /* ProtocolDelegate */ = {
 			isa = PBXGroup;
 			children = (
-				719A1EA023E72721000FC21C /* ProtocolDelegateViewController.swift */,
-				71C6324B23E89B9500BC5302 /* ProtocolWeatherService.swift */,
+				719A1EA023E72721000FC21C /* ViewController.swift */,
+				71C6324B23E89B9500BC5302 /* WeatherService.swift */,
 				7119DB1F23E9A833000E5796 /* Weather.swift */,
 			);
 			name = ProtocolDelegate;
@@ -262,7 +262,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				719A1EA123E72721000FC21C /* ProtocolDelegateViewController.swift in Sources */,
+				719A1EA123E72721000FC21C /* ViewController.swift in Sources */,
 				719A1E8D23E7234B000FC21C /* TabViewController.swift in Sources */,
 				719A1E8423E72218000FC21C /* ModalNavigation.swift in Sources */,
 				719A1E9923E723C1000FC21C /* ContainerViewController.swift in Sources */,
@@ -272,7 +272,7 @@
 				719A1E8223E72218000FC21C /* ModalViewController2.swift in Sources */,
 				719A1E8323E72218000FC21C /* ModalViewController1.swift in Sources */,
 				719A1E9A23E723C1000FC21C /* SuccessViewController.swift in Sources */,
-				71C6324C23E89B9500BC5302 /* ProtocolWeatherService.swift in Sources */,
+				71C6324C23E89B9500BC5302 /* WeatherService.swift in Sources */,
 				719A1E8F23E72361000FC21C /* PageViewController.swift in Sources */,
 				719A1E9D23E723E1000FC21C /* Factories.swift in Sources */,
 				719A1E7423E71F17000FC21C /* DemoViewController.swift in Sources */,

@@ -27,7 +27,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             let containerViewController = DemoViewController(labs: containerLabs, navBarTitle: "Container")
 
             let communicationLabs = [
-                Lab(name: "Protocol Delegate", viewController: ProcotolDelegateViewController()),
+                Lab(name: "Protocol Delegate", viewController: ViewController()),
             ]
 
             let navigationLabs = [
