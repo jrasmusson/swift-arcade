@@ -8,15 +8,17 @@
 
 import Foundation
 
-struct Weather {
-    let city: String
-    let temperature: String
-    let imageName: String
-}
-
 protocol ProtocolWeatherServiceDelegate: AnyObject {
     func didFetchWeather(_ weather: Weather)
 }
+
+
+
+
+
+
+
+
 
 class ProtocolWeatherService {
 
@@ -24,7 +26,7 @@ class ProtocolWeatherService {
 
     func fetchWeather() {
         let weather = Weather(city: "San Francisco", temperature: "21 °C", imageName: "sunset.fill")
-        delegate?.didFetchWeather(weather)
+        delegate?.didFetchWeather(weather) // 4
     }
 
 }

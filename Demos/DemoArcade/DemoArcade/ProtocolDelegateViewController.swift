@@ -8,8 +8,49 @@
 
 import UIKit
 
+extension ProcotolDelegateViewController: ProtocolWeatherServiceDelegate {
+    func didFetchWeather(_ weather: Weather) { // 5
+        cityLabel.text = weather.city
+        temperatureLabel.text = weather.temperature
+
+        let configuration = UIImage.SymbolConfiguration(scale: .large)
+        let image = UIImage(systemName: weather.imageName, withConfiguration: configuration)
+        imageView.image = image
+    }
+}
+
 class ProcotolDelegateViewController: UIViewController {
+
+    let weatherService = ProtocolWeatherService() // 1
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        setupViews()
+
+        weatherService.delegate = self // 2
+    }
+
+    @objc func weatherPressed() {
+        weatherService.fetchWeather() // 3
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     
+    // MARK: - Controls
+
     let weatherButton: UIButton = {
         let button = makeButton(withText: "Fetch Weather")
         button.addTarget(self, action: #selector(weatherPressed), for: .primaryActionTriggered)
@@ -22,10 +63,10 @@ class ProcotolDelegateViewController: UIViewController {
         let imageView = UIImageView(image: image)
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.setContentHuggingPriority(UILayoutPriority(rawValue: 999), for: .horizontal)
-        
+
         return imageView
     }()
-    
+
     let cityLabel: UILabel = {
         let label = makeLabel(withTitle: "City")
         return label
@@ -36,19 +77,10 @@ class ProcotolDelegateViewController: UIViewController {
         return label
     }()
 
-    let weatherService = ProtocolWeatherService() // The service
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        setupViews()
-
-        weatherService.delegate = self // Register ourselves as the delegate for the callback
-    }
-    
     func setupViews() {
         view.backgroundColor = .white
         navigationItem.title = "Protocol Delegate"
-        
+
         view.addSubview(weatherButton)
 
         weatherButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
@@ -68,23 +100,5 @@ class ProcotolDelegateViewController: UIViewController {
         view.trailingAnchor.constraint(equalToSystemSpacingAfter: stackView.trailingAnchor, multiplier: 3).isActive = true
 
         cityLabel.widthAnchor.constraint(equalTo: temperatureLabel.widthAnchor).isActive = true
-    }
-    
-    @objc func weatherPressed() {
-        weatherService.fetchWeather() // Trigger the call
-    }
-
-}
-
-extension ProcotolDelegateViewController: ProtocolWeatherServiceDelegate {
-
-    // The callback
-    func didFetchWeather(_ weather: Weather) {
-        cityLabel.text = weather.city
-        temperatureLabel.text = weather.temperature
-
-        let configuration = UIImage.SymbolConfiguration(scale: .large)
-        let image = UIImage(systemName: weather.imageName, withConfiguration: configuration)
-        imageView.image = image
     }
 }

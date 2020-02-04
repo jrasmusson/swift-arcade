@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7119DB2023E9A833000E5796 /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7119DB1F23E9A833000E5796 /* Weather.swift */; };
 		719A1E5F23E71E9C000FC21C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719A1E5E23E71E9C000FC21C /* AppDelegate.swift */; };
 		719A1E6823E71E9D000FC21C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 719A1E6723E71E9D000FC21C /* Assets.xcassets */; };
 		719A1E6B23E71E9D000FC21C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 719A1E6923E71E9D000FC21C /* LaunchScreen.storyboard */; };
@@ -30,6 +31,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7119DB1F23E9A833000E5796 /* Weather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
 		719A1E5B23E71E9C000FC21C /* DemoArcade.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DemoArcade.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		719A1E5E23E71E9C000FC21C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		719A1E6723E71E9D000FC21C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -185,6 +187,7 @@
 			children = (
 				719A1EA023E72721000FC21C /* ProtocolDelegateViewController.swift */,
 				71C6324B23E89B9500BC5302 /* ProtocolWeatherService.swift */,
+				7119DB1F23E9A833000E5796 /* Weather.swift */,
 			);
 			name = ProtocolDelegate;
 			sourceTree = "<group>";
@@ -274,6 +277,7 @@
 				719A1E9D23E723E1000FC21C /* Factories.swift in Sources */,
 				719A1E7423E71F17000FC21C /* DemoViewController.swift in Sources */,
 				719A1E8923E7232A000FC21C /* NavigationViewController2.swift in Sources */,
+				7119DB2023E9A833000E5796 /* Weather.swift in Sources */,
 				719A1E9623E723C1000FC21C /* FailureViewController.swift in Sources */,
 				719A1E9723E723C1000FC21C /* ActivationManager.swift in Sources */,
 				719A1E9B23E723C1000FC21C /* ActivatingViewController.swift in Sources */,
