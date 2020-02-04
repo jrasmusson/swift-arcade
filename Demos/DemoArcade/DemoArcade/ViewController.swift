@@ -19,6 +19,13 @@ extension ViewController: WeatherServiceDelegate {
     }
 }
 
+extension ViewController: WeatherServiceDataSource {
+    var city: String? {
+        let _city: String? = "San Francisco"
+        return _city
+    }
+}
+
 class ViewController: UIViewController {
 
     let weatherService = WeatherService() // 1
@@ -28,6 +35,7 @@ class ViewController: UIViewController {
         setupViews()
 
         weatherService.delegate = self // 2
+        weatherService.dataSource = self
     }
 
     @objc func weatherPressed() {
