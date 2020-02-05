@@ -34,7 +34,6 @@ class WeatherService {
 
 
 
-
     weak var delegate: WeatherServiceDelegate?
     weak var dataSource: WeatherServiceDataSource?
 

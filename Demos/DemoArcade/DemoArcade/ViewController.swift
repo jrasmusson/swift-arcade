@@ -27,7 +27,6 @@ extension ViewController: WeatherServiceDataSource {
 }
 
 class ViewController: UIViewController {
-
     let weatherService = WeatherService() // 1
 
     override func viewDidLoad() {
