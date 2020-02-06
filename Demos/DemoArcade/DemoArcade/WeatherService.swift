@@ -33,7 +33,7 @@ class WeatherService {
 
 
 
-
+     
     weak var delegate: WeatherServiceDelegate?
     weak var dataSource: WeatherServiceDataSource?
 
@@ -46,3 +46,4 @@ class WeatherService {
         delegate?.didFetchWeather(weather) // 4
     }
 }
+ 
