@@ -34,6 +34,7 @@ class ViewController: UIViewController {
         setupViews()
 
         weatherService.delegate = self // 2
+        weatherService.dataSource = self
     }
 
     @objc func weatherPressed() {
