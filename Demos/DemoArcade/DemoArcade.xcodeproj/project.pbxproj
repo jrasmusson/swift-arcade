@@ -27,6 +27,11 @@
 		719A1E9B23E723C1000FC21C /* ActivatingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719A1E9523E723C1000FC21C /* ActivatingViewController.swift */; };
 		719A1E9D23E723E1000FC21C /* Factories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719A1E9C23E723E1000FC21C /* Factories.swift */; };
 		719A1EA123E72721000FC21C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719A1EA023E72721000FC21C /* ViewController.swift */; };
+		71B9AEBF23F1936C00C2D539 /* TargetActionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71B9AEBE23F1936C00C2D539 /* TargetActionViewController.swift */; };
+		71B9AEC223F1A36500C2D539 /* ResponderChainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71B9AEC123F1A36500C2D539 /* ResponderChainViewController.swift */; };
+		71B9AEC423F1A3D900C2D539 /* ResponderChainViewController1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71B9AEC323F1A3D900C2D539 /* ResponderChainViewController1.swift */; };
+		71B9AEC623F1A41200C2D539 /* ResponderChainViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71B9AEC523F1A41200C2D539 /* ResponderChainViewController2.swift */; };
+		71B9AEC823F1A41E00C2D539 /* ResponderChainViewController3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71B9AEC723F1A41E00C2D539 /* ResponderChainViewController3.swift */; };
 		71C6324C23E89B9500BC5302 /* WeatherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C6324B23E89B9500BC5302 /* WeatherService.swift */; };
 /* End PBXBuildFile section */
 
@@ -53,6 +58,11 @@
 		719A1E9523E723C1000FC21C /* ActivatingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivatingViewController.swift; sourceTree = "<group>"; };
 		719A1E9C23E723E1000FC21C /* Factories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Factories.swift; sourceTree = "<group>"; };
 		719A1EA023E72721000FC21C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		71B9AEBE23F1936C00C2D539 /* TargetActionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TargetActionViewController.swift; sourceTree = "<group>"; };
+		71B9AEC123F1A36500C2D539 /* ResponderChainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponderChainViewController.swift; sourceTree = "<group>"; };
+		71B9AEC323F1A3D900C2D539 /* ResponderChainViewController1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponderChainViewController1.swift; sourceTree = "<group>"; };
+		71B9AEC523F1A41200C2D539 /* ResponderChainViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponderChainViewController2.swift; sourceTree = "<group>"; };
+		71B9AEC723F1A41E00C2D539 /* ResponderChainViewController3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponderChainViewController3.swift; sourceTree = "<group>"; };
 		71C6324B23E89B9500BC5302 /* WeatherService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -178,6 +188,8 @@
 			isa = PBXGroup;
 			children = (
 				719A1E9F23E72508000FC21C /* ProtocolDelegate */,
+				71B9AEBD23F1934A00C2D539 /* TargetAction */,
+				71B9AEC023F1A2A000C2D539 /* ResponderChain */,
 			);
 			name = Communication;
 			sourceTree = "<group>";
@@ -190,6 +202,25 @@
 				7119DB1F23E9A833000E5796 /* Weather.swift */,
 			);
 			name = ProtocolDelegate;
+			sourceTree = "<group>";
+		};
+		71B9AEBD23F1934A00C2D539 /* TargetAction */ = {
+			isa = PBXGroup;
+			children = (
+				71B9AEBE23F1936C00C2D539 /* TargetActionViewController.swift */,
+			);
+			name = TargetAction;
+			sourceTree = "<group>";
+		};
+		71B9AEC023F1A2A000C2D539 /* ResponderChain */ = {
+			isa = PBXGroup;
+			children = (
+				71B9AEC123F1A36500C2D539 /* ResponderChainViewController.swift */,
+				71B9AEC323F1A3D900C2D539 /* ResponderChainViewController1.swift */,
+				71B9AEC523F1A41200C2D539 /* ResponderChainViewController2.swift */,
+				71B9AEC723F1A41E00C2D539 /* ResponderChainViewController3.swift */,
+			);
+			name = ResponderChain;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -262,10 +293,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				71B9AEC223F1A36500C2D539 /* ResponderChainViewController.swift in Sources */,
 				719A1EA123E72721000FC21C /* ViewController.swift in Sources */,
 				719A1E8D23E7234B000FC21C /* TabViewController.swift in Sources */,
 				719A1E8423E72218000FC21C /* ModalNavigation.swift in Sources */,
 				719A1E9923E723C1000FC21C /* ContainerViewController.swift in Sources */,
+				71B9AEC823F1A41E00C2D539 /* ResponderChainViewController3.swift in Sources */,
+				71B9AEC623F1A41200C2D539 /* ResponderChainViewController2.swift in Sources */,
 				719A1E9823E723C1000FC21C /* ReadyToActivateViewController.swift in Sources */,
 				719A1E5F23E71E9C000FC21C /* AppDelegate.swift in Sources */,
 				719A1E8B23E72335000FC21C /* NavigationViewController1.swift in Sources */,
@@ -278,9 +312,11 @@
 				719A1E7423E71F17000FC21C /* DemoViewController.swift in Sources */,
 				719A1E8923E7232A000FC21C /* NavigationViewController2.swift in Sources */,
 				7119DB2023E9A833000E5796 /* Weather.swift in Sources */,
+				71B9AEBF23F1936C00C2D539 /* TargetActionViewController.swift in Sources */,
 				719A1E9623E723C1000FC21C /* FailureViewController.swift in Sources */,
 				719A1E9723E723C1000FC21C /* ActivationManager.swift in Sources */,
 				719A1E9B23E723C1000FC21C /* ActivatingViewController.swift in Sources */,
+				71B9AEC423F1A3D900C2D539 /* ResponderChainViewController1.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
