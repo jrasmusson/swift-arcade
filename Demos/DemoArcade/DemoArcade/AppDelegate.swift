@@ -27,9 +27,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             let containerViewController = DemoViewController(labs: containerLabs, navBarTitle: "Container")
 
             let communicationLabs = [
-//                Lab(name: "Protocol Delegate", viewController: ViewController()),
-//                Lab(name: "Target-Action", viewController: TargetActionViewController()),
-                Lab(name: "Responder Chain", viewController: ResponderChainViewController()),
+                Lab(name: "Protocol Delegate", viewController: ViewController()),
+                Lab(name: "Target-Action", viewController: TargetActionViewController()),
             ]
 
             let navigationLabs = [
@@ -47,7 +46,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             
             let rootLabs = [
                 Lab(name: "Communication", viewController: communicationViewController),
-//                Lab(name: "Navigation", viewController: navigationViewController),
+                Lab(name: "Navigation", viewController: navigationViewController),
             ]
 
             let rootViewController = DemoViewController(labs: rootLabs, navBarTitle: "UIKit Demos")

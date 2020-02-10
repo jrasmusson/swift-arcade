@@ -35,8 +35,5 @@ class SuccessViewController: UIViewController {
 
         cancelButton.topAnchor.constraint(equalTo: activateButton.bottomAnchor, constant: 8).isActive = true
         cancelButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-
-        print("\n\n\n")
-        print(view.responderChain())
     }
 }
