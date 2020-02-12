@@ -8,7 +8,7 @@
 
 import UIKit
 
-extension ViewController: WeatherServiceDelegate {
+extension ProtocolDelegateViewController: WeatherServiceDelegate {
     func didFetchWeather(_ weather: Weather) { // 5
         cityLabel.text = weather.city
         temperatureLabel.text = weather.temperature
@@ -19,14 +19,14 @@ extension ViewController: WeatherServiceDelegate {
     }
 }
 
-extension ViewController: WeatherServiceDataSource {
+extension ProtocolDelegateViewController: WeatherServiceDataSource {
     var city: String? {
         let _city: String? = "San Francisco"
         return _city
     }
 }
 
-class ViewController: UIViewController {
+class ProtocolDelegateViewController: UIViewController {
     let weatherService = WeatherService() // 1
 
     override func viewDidLoad() {
