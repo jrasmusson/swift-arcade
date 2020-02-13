@@ -82,7 +82,7 @@ class ClosureViewController: UIViewController {
 
     @objc func weatherPressed() {
 
-        // Closure with no return
+        // Simple closure
         weatherService.fetchWeather(for: "San Francisco") { (weather) in
             updateView(with: weather)
         }
@@ -114,6 +114,13 @@ struct ClosureWeatherService {
         weather = ClosureWeather(city: city, temperature: 21, imageName: "sunset.fill")
         completion(weather)
     }
+
+//    mutating func fetchWeather(for city: String, completion: @escaping (ClosureWeather) -> Void) {
+//        let weather = ClosureWeather(city: city, temperature: 21, imageName: "sunset.fill")
+//        DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
+//            completion(weather) // oh oh - closure now lives longer than method > need escaping
+//        })
+//    }
 
     mutating func fetchWeather(for city: String, completion: (ClosureWeather) -> Bool) {
         if cacheable {
