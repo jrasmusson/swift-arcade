@@ -1,15 +1,48 @@
-//
-//  ProtocolWeatherViewController.swift
-//  DemoArcade
-//
-//  Created by Jonathan Rasmusson Work Pro on 2020-02-02.
-//  Copyright © 2020 Rasmusson Software Consulting. All rights reserved.
-//
+# Protocol Delegate DataSource Pattern
 
+![TableView](https://github.com/jrasmusson/swift-arcade/blob/master/images/protocol-delegate/demo.gif)
+
+You start off by defining a protocol (WeatherServiceDelegate) and datasource (WeatherServiceDataSource) for your ViewController to implement.
+
+```swift
+protocol WeatherServiceDelegate: AnyObject {
+    func didFetchWeather(_ weather: Weather)
+}
+
+protocol WeatherServiceDataSource: AnyObject {
+    var city: String? { get }
+}
+
+class WeatherService {
+
+    weak var delegate: WeatherServiceDelegate?
+    weak var dataSource: WeatherServiceDataSource?
+
+    func fetchWeather() {
+        guard let dataSource = dataSource, let city = dataSource.city else {
+            assertionFailure("DataSource not set")
+            return
+        }
+        let weather = Weather(city: city, temperature: "21 °C", imageName: "sunset.fill")
+        delegate?.didFetchWeather(weather)
+    }
+}
+```
+
+The viewController then registers itself as the delegate and datasource. 
+
+```swift
+        weatherService.delegate = self
+        weatherService.dataSource = self
+```
+
+It must then implement the corresponding protocols. Now when feather weather button is pressed, the _WeatherService_ can call back to the viewController via it's _delegate_ and _dataSource_. 
+
+```swift
 import UIKit
 
 extension ProtocolDelegateViewController: WeatherServiceDelegate {
-    func didFetchWeather(_ weather: Weather) { // 5
+    func didFetchWeather(_ weather: Weather) {
         cityLabel.text = weather.city
         temperatureLabel.text = weather.temperature
 
@@ -94,3 +127,9 @@ class ProtocolDelegateViewController: UIViewController {
         cityLabel.widthAnchor.constraint(equalTo: temperatureLabel.widthAnchor).isActive = true
     }
 }
+```
+
+
+
+
+
