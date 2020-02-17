@@ -78,30 +78,32 @@ class ClosureViewController: UIViewController {
         imageView.image = image
     }
 
-    var weatherService = ClosureWeatherService()
+
 
     @objc func weatherPressed() {
 
+        var weatherService = ClosureWeatherService()
+        
         // Simple closure
         weatherService.fetchWeather(for: "San Francisco") { (weather) in
             updateView(with: weather)
         }
 
         // Closure with return
-//        weatherService.fetchWeather(for: "New York") { (weather) -> Bool in
-//            updateView(with: weather)
-//            return weather.temperature < -20
-//        }
+        weatherService.fetchWeather(for: "New York") { (weather) -> Bool in
+            updateView(with: weather)
+            return weather.temperature < -20
+        }
 
         // Swift Result type
-//        weatherService.fetchWeatherWithResult(for: "Seattle") { (result) in
-//            switch result {
-//            case .success(let weather):
-//                updateView(with: weather)
-//            case .failure(_):
-//                print("Error 💥! ")
-//            }
-//        }
+        weatherService.fetchWeatherWithResult(for: "Seattle") { (result) in
+            switch result {
+            case .success(let weather):
+                updateView(with: weather)
+            case .failure(_):
+                print("Error 💥! ")
+            }
+        }
     }
 
 }
