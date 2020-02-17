@@ -6,3 +6,4 @@ Collection of demos from the [Swift Arcade YouTube channel.](https://www.youtube
 
 - [Navigation Patterns](https://github.com/jrasmusson/swift-arcade/blob/master/Navigation-Patterns.md)
 - [Protocol Delegate Pattern](https://github.com/jrasmusson/swift-arcade/blob/master/Protocol-Delegate.md)
+- [Closures in App Development](https://github.com/jrasmusson/swift-arcade/blob/master/Closures-In-App-Development.md)
