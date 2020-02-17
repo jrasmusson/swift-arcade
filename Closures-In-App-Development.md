@@ -1,9 +1,5 @@
 # Closures in Application Development
 
-![TableView](https://github.com/jrasmusson/swift-arcade/blob/master/images/protocol-delegate/demo.gif)
-
-Closures are simple, elegant communication patterns that can be used when development applications in iOS and Swift.
-
 ## Simple Closure
 
 
