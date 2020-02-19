@@ -28,7 +28,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
             let communicationLabs = [
                 Lab(name: "Protocol Delegate", viewController: ProtocolDelegateViewController()),
-                Lab(name: "ResponderChain", viewController: ContainerViewController()),
+                Lab(name: "ResponderChain", viewController: ResponderChainViewController()),
                 Lab(name: "Closure", viewController: ClosureViewController()),
             ]
 
@@ -60,3 +60,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 }
 
+//
+// Responder Chain Demo
+//
+extension AppDelegate: ResponderAction {
+    @objc func fetchWeather(sender: Any?) {
+        print("\nFetching weather!\n")
+    }
+}

@@ -45,7 +45,7 @@ class ProtocolDelegateViewController: UIViewController {
 
     let weatherButton: UIButton = {
         let button = makeButton(withText: "Fetch Weather")
-        button.addTarget(self, action: #selector(weatherPressed), for: .primaryActionTriggered)
+        button.addTarget(self, action: #selector(weatherPressed), for: .touchDown)
         return button
     }()
 
