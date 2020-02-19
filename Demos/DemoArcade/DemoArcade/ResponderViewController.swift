@@ -34,8 +34,8 @@ class ResponderChainViewController: UIViewController {
     @objc func responderPressed() {
 
         UIApplication.shared.sendAction(
-            #selector(ResponderAction.fetchWeather),
-            to: nil, from: self, for: nil)
+            #selector(ResponderAction.fetchWeather), to: nil, // target = nil
+            from: self, for: nil)
 
     }
 }
