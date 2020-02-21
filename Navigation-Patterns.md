@@ -43,7 +43,7 @@ UINavigationController and UITabBarController are so core to UIViewController th
 ```
 
 
-## Customer
+## Custom
 
 ![TableView](https://github.com/jrasmusson/swift-arcade/blob/master/images/navigation/custom.gif)
 
