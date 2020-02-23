@@ -71,12 +71,7 @@ class KVOViewController: UIViewController {
     }
 
     @objc func weatherPressed() {
-        
-        weatherService.fetchWeather(for: "San Francisco") { (weather) in
-            // updateView(with: weather) instead of updating... we observe
-//            self.weather = weather
-            // this can go away... the callback 
-        }
+        weatherService.fetchWeather(for: "San Francisco")
     }
     
     /// KVO
@@ -93,23 +88,19 @@ class KVOViewController: UIViewController {
             [unowned self] object, change in
             let weatherValue = change.newValue
             self.updateView(with: weatherValue!)
-            print("weather: \(String(describing: weatherValue))")
         }
-
     }
-
 }
 
 @objc
 class KVOWeatherService: NSObject {
 
     // 1 Make weather observable
-    //   - `dynamic` bridges objc and Swift. Use o enable Key-Value observing.
+    //   - `dynamic` bridges objc and Swift. Use to enable Key-Value observing.
     @objc dynamic var weather = KVOWeather(city: "Unknown", temperature: "X °C", imageName: "moon")
 
-    func fetchWeather(for city: String, completion: (KVOWeather) -> Void) {
+    func fetchWeather(for city: String) {
         weather = KVOWeather(city: city, temperature: "21 °C", imageName: "sunset.fill")
-        completion(weather)
     }
 
 }

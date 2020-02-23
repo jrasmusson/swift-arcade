@@ -28,8 +28,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
             let communicationLabs = [
                 Lab(name: "Protocol Delegate", viewController: ProtocolDelegateViewController()),
-                Lab(name: "ResponderChain", viewController: ResponderChainViewController()),
                 Lab(name: "Closure", viewController: ClosureViewController()),
+                Lab(name: "ResponderChain", viewController: ResponderChainViewController()),
+                Lab(name: "Key-Value Observing", viewController: KVOViewController()),
             ]
 
             let navigationLabs = [
