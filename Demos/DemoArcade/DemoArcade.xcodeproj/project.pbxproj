@@ -10,6 +10,7 @@
 		7119DB2023E9A833000E5796 /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7119DB1F23E9A833000E5796 /* Weather.swift */; };
 		713725CD2402AB200067ADD8 /* KVOViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 713725CC2402AB200067ADD8 /* KVOViewController.swift */; };
 		713725CF2402B5780067ADD8 /* ResponderExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 713725CE2402B5780067ADD8 /* ResponderExtensions.swift */; };
+		713725D22402BADD0067ADD8 /* PropertyObserverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 713725D12402BADD0067ADD8 /* PropertyObserverViewController.swift */; };
 		718C45F723F42F33007B5F91 /* ClosureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 718C45F623F42F33007B5F91 /* ClosureViewController.swift */; };
 		719A1E5F23E71E9C000FC21C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719A1E5E23E71E9C000FC21C /* AppDelegate.swift */; };
 		719A1E6823E71E9D000FC21C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 719A1E6723E71E9D000FC21C /* Assets.xcassets */; };
@@ -39,6 +40,7 @@
 		7119DB1F23E9A833000E5796 /* Weather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
 		713725CC2402AB200067ADD8 /* KVOViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KVOViewController.swift; sourceTree = "<group>"; };
 		713725CE2402B5780067ADD8 /* ResponderExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponderExtensions.swift; sourceTree = "<group>"; };
+		713725D12402BADD0067ADD8 /* PropertyObserverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyObserverViewController.swift; sourceTree = "<group>"; };
 		718C45F623F42F33007B5F91 /* ClosureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClosureViewController.swift; sourceTree = "<group>"; };
 		719A1E5B23E71E9C000FC21C /* DemoArcade.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DemoArcade.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		719A1E5E23E71E9C000FC21C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -83,6 +85,14 @@
 				713725CC2402AB200067ADD8 /* KVOViewController.swift */,
 			);
 			name = KVO;
+			sourceTree = "<group>";
+		};
+		713725D02402BAAF0067ADD8 /* PropertyObservers */ = {
+			isa = PBXGroup;
+			children = (
+				713725D12402BADD0067ADD8 /* PropertyObserverViewController.swift */,
+			);
+			name = PropertyObservers;
 			sourceTree = "<group>";
 		};
 		718C45F523F42ECD007B5F91 /* Closures */ = {
@@ -208,6 +218,7 @@
 				71D586E123FD70F900722324 /* Responder Chain */,
 				71B9AEBD23F1934A00C2D539 /* Target Action */,
 				713725CB2402AAFD0067ADD8 /* KVO */,
+				713725D02402BAAF0067ADD8 /* PropertyObservers */,
 			);
 			name = Communication;
 			sourceTree = "<group>";
@@ -333,6 +344,7 @@
 				719A1E9623E723C1000FC21C /* FailureViewController.swift in Sources */,
 				719A1E9723E723C1000FC21C /* ActivationManager.swift in Sources */,
 				719A1E9B23E723C1000FC21C /* ActivatingViewController.swift in Sources */,
+				713725D22402BADD0067ADD8 /* PropertyObserverViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -31,6 +31,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 Lab(name: "Closure", viewController: ClosureViewController()),
                 Lab(name: "ResponderChain", viewController: ResponderChainViewController()),
                 Lab(name: "Key-Value Observing", viewController: KVOViewController()),
+                Lab(name: "Property Observers", viewController: PropertyObserverViewController()),
             ]
 
             let navigationLabs = [
