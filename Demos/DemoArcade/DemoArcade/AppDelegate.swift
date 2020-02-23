@@ -59,39 +59,3 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
 }
-
-//
-// Responder Chain Demo
-//
-
-extension ResponderChainViewController: ResponderAction {
-    @objc func fetchWeather(sender: Any?) {
-        print("Fetching weather!")
-
-        let alertController = UIAlertController(title: "Today's weather", message: "Cloudy with a chance of meatballs.", preferredStyle: UIAlertController.Style.alert)
-        alertController.addAction(UIAlertAction(title: "OK", style: .default, handler: { (_) in
-
-        }))
-
-        present(alertController, animated: true, completion: nil)
-    }
-}
-
-extension UIWindow: ResponderAction {
-    @objc func fetchWeather(sender: Any?) {
-        print("Fetching weather!")
-    }
-}
-
-extension UIApplication: ResponderAction {
-    @objc func fetchWeather(sender: Any?) {
-        print("Fetching weather!")
-    }
-}
-
-extension AppDelegate: ResponderAction {
-    @objc func fetchWeather(sender: Any?) {
-        print("Fetching weather!")
-    }
-}
-
