@@ -127,4 +127,11 @@ class KVOWeather: NSObject {
  - Make KVOWeatherService class, @objc, NSObject
  - Get rid of closure (no longer required as we are observing)
  - Make weather observable (@objc dynamic var)
+ 
+ Note the following:
+ - no closure or call back needed
+ - the Swifter way to do this is with Swift property observers (willSet/didSet)
+ 
  */
+
+
