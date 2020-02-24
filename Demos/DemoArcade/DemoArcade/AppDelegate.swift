@@ -18,34 +18,35 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             window = UIWindow(frame: UIScreen.main.bounds)
             window?.makeKeyAndVisible()
 
-            let containerLabs = [
+            let containerPatterns = [
                 Lab(name: "NavigationController", viewController: NavigationViewController1()),
                 Lab(name: "TabViewController", viewController: TabBarViewController()),
                 Lab(name: "PageViewController", viewController: PageViewController(transitionStyle: .scroll, navigationOrientation: .horizontal, options: nil)),
             ]
 
-            let containerViewController = DemoViewController(labs: containerLabs, navBarTitle: "Container")
+            let containerViewController = DemoViewController(labs: containerPatterns, navBarTitle: "Container")
 
-            let communicationLabs = [
+            let navigationPatterns = [
+                Lab(name: "Modal", viewController: ModalNavigation()),
+                Lab(name: "Container", viewController: containerViewController),
+                Lab(name: "Custom", viewController: ContainerViewController()),
+            ]
+
+            let communicationPatterns = [
                 Lab(name: "Protocol Delegate", viewController: ProtocolDelegateViewController()),
                 Lab(name: "Closure", viewController: ClosureViewController()),
                 Lab(name: "ResponderChain", viewController: ResponderChainViewController()),
                 Lab(name: "Key-Value Observing", viewController: KVOViewController()),
                 Lab(name: "Property Observers", viewController: PropertyObserverViewController()),
-            ]
-
-            let navigationLabs = [
-                Lab(name: "Modal", viewController: ModalNavigation()),
-                Lab(name: "Container", viewController: containerViewController),
-                Lab(name: "Custom", viewController: ContainerViewController()),
+                Lab(name: "Notification Center", viewController: NotificationViewController()),
             ]
 
             //
             // Top level
             //
 
-            let communicationViewController = DemoViewController(labs: communicationLabs, navBarTitle: "Communication")
-            let navigationViewController = DemoViewController(labs: navigationLabs, navBarTitle: "Navigation")
+            let communicationViewController = DemoViewController(labs: communicationPatterns, navBarTitle: "Communication")
+            let navigationViewController = DemoViewController(labs: navigationPatterns, navBarTitle: "Navigation")
             
             let rootLabs = [
                 Lab(name: "Communication", viewController: communicationViewController),
