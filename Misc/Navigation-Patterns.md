@@ -74,3 +74,7 @@ func presentNextState(viewController: UIViewController) {
 - [Apple Container Views](https://developer.apple.com/library/archive/featuredarticles/ViewControllerPGforiPhoneOS/ImplementingaContainerViewController.html)
 - [Custom Container Example](https://www.swiftbysundell.com/articles/custom-container-view-controllers-in-swift/)
 - [Using Child View Controllers](https://www.swiftbysundell.com/articles/using-child-view-controllers-as-plugins-in-swift/)
+
+### Video
+
+- [Navigation Patterns](https://www.youtube.com/watch?v=qJjZsLpGOnQ)
