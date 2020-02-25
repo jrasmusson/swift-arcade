@@ -98,4 +98,8 @@ struct ClosureWeather {
 }
 ```
 
+### Video
+
+- [How to use closures when building Swift Applications](https://www.youtube.com/watch?v=fwyp9yck8QY)
+
 
