@@ -81,5 +81,5 @@ class ResponderChainViewController: UIViewController {
 
 ### Video
 
-- https://www.youtube.com/watch?v=le7tzeqN908
+- [What is Responder Chain and How Does it Work?](https://www.youtube.com/watch?v=le7tzeqN908)
 
