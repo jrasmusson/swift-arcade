@@ -1,6 +1,6 @@
 # Responder Chain
 
-![TableView](https://github.com/jrasmusson/swift-arcade/blob/master/images/responder-chain/demo.gif)
+![TableView](https://github.com/jrasmusson/swift-arcade/blob/master/CommunicationPatterns/images/protocol-demo.gif)
 
 Fire it 
 
