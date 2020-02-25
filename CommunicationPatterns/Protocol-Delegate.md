@@ -129,7 +129,9 @@ class ProtocolDelegateViewController: UIViewController {
 }
 ```
 
+### Video
 
+- [Protocol Delegate Pattern Explained](https://www.youtube.com/watch?v=JV1BKdz9hUA)
 
 
 
