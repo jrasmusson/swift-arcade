@@ -37,7 +37,7 @@ extension UIWindow: ResponderAction {
 }
 ```
 
-Full source.
+### Source
 
 ```swift
 import UIKit
@@ -79,5 +79,7 @@ class ResponderChainViewController: UIViewController {
 }
 ```
 
+### Video
 
+- https://www.youtube.com/watch?v=le7tzeqN908
 
