@@ -24,6 +24,7 @@ class TextFieldViewController: UIViewController {
         super.viewDidLoad()
         setupDelegates()
         setupViews()
+        setupPublishers()
     }
 
     func setupDelegates() {
@@ -39,6 +40,41 @@ class TextFieldViewController: UIViewController {
         textField.leadingAnchor.constraint(equalToSystemSpacingAfter: view.leadingAnchor, multiplier: 3).isActive = true
         view.trailingAnchor.constraint(equalToSystemSpacingAfter: textField.trailingAnchor, multiplier: 3).isActive = true
         textField.heightAnchor.constraint(equalToConstant: 32).isActive = true
+    }
+
+    func setupPublishers() {
+        let pub = NotificationCenter.default.publisher(for: UITextField.textDidChangeNotification, object: textField)
+
+        // subscribe
+//        let sub = NotificationCenter.default.publisher(for: UITextField.textDidChangeNotification, object: textField)
+//        .sink(receiveCompletion: { print ($0) },
+//              receiveValue: { print ($0) })
+
+        // convert to the output type we want
+//        let sub = NotificationCenter.default.publisher(for: UITextField.textDidChangeNotification, object: textField)
+//            .map( { ($0.object as! UITextField).text! } )
+//            .sink(receiveCompletion: { print ($0) },
+//                  receiveValue: { print ($0) })
+
+        // then assign that value to a model
+//        let sub = NotificationCenter.default.publisher(for: UITextField.textDidChangeNotification, object: textField)
+//            .map( { ($0.object as! UITextField).text! } )
+//            .assign(to: \MyViewModel.filterString, on: myViewModel)
+
+//        struct MyViewModel {
+//            let filterString: String
+//        }
+//
+//        let myViewModel = MyViewModel(filterString: "")
+//
+//        let sub = NotificationCenter.default
+//        .publisher(for: UITextField.textDidChangeNotification, object: textField)
+//        .map( { ($0.object as! UITextField).text! } )
+//        .filter( { $0.unicodeScalars.allSatisfy({CharacterSet.alphanumerics.contains($0)}) } )
+//        .debounce(for: .milliseconds(500), scheduler: RunLoop.main)
+//        .receive(on: RunLoop.main)
+//        .assign(to:\MyViewModel.filterString, on: myViewModel)
+
     }
 
     // MARK: - Textfield
