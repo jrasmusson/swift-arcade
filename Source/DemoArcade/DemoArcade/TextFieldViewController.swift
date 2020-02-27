@@ -22,13 +22,8 @@ class TextFieldViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupDelegates()
         setupViews()
         setupPublishers()
-    }
-
-    func setupDelegates() {
-        textField.delegate = self
     }
 
     func setupViews() {
@@ -42,8 +37,25 @@ class TextFieldViewController: UIViewController {
         textField.heightAnchor.constraint(equalToConstant: 32).isActive = true
     }
 
+    var subscriber: Any?
+
     func setupPublishers() {
-        let pub = NotificationCenter.default.publisher(for: UITextField.textDidChangeNotification, object: textField)
+        let publisher = NotificationCenter.default.publisher(for: UITextField.textDidChangeNotification, object: textField)
+
+        subscriber = publisher.sink { (notification) in
+            print(123)
+        }
+
+
+//        extension UITextField {
+//            var textPublisher: AnyPublisher<String, Never> {
+//                NotificationCenter.default
+//                    .publisher(for: UITextField.textDidChangeNotification, object: self)
+//                    .compactMap { $0.object as? UITextField } // receiving notifications with objects which are instances of UITextFields
+//                    .map { $0.text ?? "" } // mapping UITextField to extract text
+//                    .eraseToAnyPublisher()
+//            }
+//        }
 
         // subscribe
 //        let sub = NotificationCenter.default.publisher(for: UITextField.textDidChangeNotification, object: textField)
@@ -79,19 +91,19 @@ class TextFieldViewController: UIViewController {
 
     // MARK: - Textfield
 
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        view.endEditing(true) // gives up keyboard on touch
-    }
+//    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+//        view.endEditing(true) // gives up keyboard on touch
+//    }
 }
 
 
-extension TextFieldViewController: UITextFieldDelegate {
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        textField.resignFirstResponder()
-        return true;
-    }
-
-    func textFieldDidEndEditing(_ textField: UITextField) {
-        print("Check textfield")
-    }
-}
+//extension TextFieldViewController: UITextFieldDelegate {
+//    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+//        textField.resignFirstResponder()
+//        return true;
+//    }
+//
+//    func textFieldDidEndEditing(_ textField: UITextField) {
+//        print("Check textfield")
+//    }
+//}
