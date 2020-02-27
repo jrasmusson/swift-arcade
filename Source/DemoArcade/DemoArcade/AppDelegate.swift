@@ -18,6 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             window = UIWindow(frame: UIScreen.main.bounds)
             window?.makeKeyAndVisible()
 
+            // Navigation Patterns
             let containerPatterns = [
                 Lab(name: "NavigationController", viewController: NavigationViewController1()),
                 Lab(name: "TabViewController", viewController: TabBarViewController()),
@@ -32,6 +33,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 Lab(name: "Custom", viewController: ContainerViewController()),
             ]
 
+            // Communication Patterns
+            let combinePatterns = [
+                Lab(name: "TextField", viewController: TextFieldViewController()),
+            ]
+
+            let combineViewController = DemoViewController(labs: combinePatterns, navBarTitle: "Combine")
+
             let communicationPatterns = [
                 Lab(name: "Protocol Delegate", viewController: ProtocolDelegateViewController()),
                 Lab(name: "Closure", viewController: ClosureViewController()),
@@ -39,7 +47,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 Lab(name: "Key-Value Observing", viewController: KVOViewController()),
                 Lab(name: "Property Observers", viewController: PropertyObserverViewController()),
                 Lab(name: "Notification Center", viewController: NotificationViewController()),
+                Lab(name: "Combine Patterns", viewController: combineViewController),
             ]
+
 
             //
             // Top level
@@ -49,8 +59,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             let navigationViewController = DemoViewController(labs: navigationPatterns, navBarTitle: "Navigation")
             
             let rootLabs = [
-                Lab(name: "Communication", viewController: communicationViewController),
                 Lab(name: "Navigation", viewController: navigationViewController),
+                Lab(name: "Communication", viewController: communicationViewController),
             ]
 
             let rootViewController = DemoViewController(labs: rootLabs, navBarTitle: "UIKit Demos")

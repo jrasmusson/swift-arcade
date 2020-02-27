@@ -31,6 +31,7 @@
 		719A1E9B23E723C1000FC21C /* ActivatingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719A1E9523E723C1000FC21C /* ActivatingViewController.swift */; };
 		719A1E9D23E723E1000FC21C /* Factories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719A1E9C23E723E1000FC21C /* Factories.swift */; };
 		719A1EA123E72721000FC21C /* ProtocolDelegateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719A1EA023E72721000FC21C /* ProtocolDelegateViewController.swift */; };
+		71B44C032407F3F900E987AC /* TextFieldViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71B44C022407F3F900E987AC /* TextFieldViewController.swift */; };
 		71B9AEBF23F1936C00C2D539 /* TargetActionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71B9AEBE23F1936C00C2D539 /* TargetActionViewController.swift */; };
 		71C6324C23E89B9500BC5302 /* WeatherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C6324B23E89B9500BC5302 /* WeatherService.swift */; };
 		71D586E323FD711F00722324 /* ResponderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D586E223FD711F00722324 /* ResponderViewController.swift */; };
@@ -64,6 +65,7 @@
 		719A1E9523E723C1000FC21C /* ActivatingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivatingViewController.swift; sourceTree = "<group>"; };
 		719A1E9C23E723E1000FC21C /* Factories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Factories.swift; sourceTree = "<group>"; };
 		719A1EA023E72721000FC21C /* ProtocolDelegateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProtocolDelegateViewController.swift; sourceTree = "<group>"; };
+		71B44C022407F3F900E987AC /* TextFieldViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldViewController.swift; sourceTree = "<group>"; };
 		71B9AEBE23F1936C00C2D539 /* TargetActionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TargetActionViewController.swift; sourceTree = "<group>"; };
 		71C6324B23E89B9500BC5302 /* WeatherService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherService.swift; sourceTree = "<group>"; };
 		71D586E223FD711F00722324 /* ResponderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponderViewController.swift; sourceTree = "<group>"; };
@@ -222,6 +224,7 @@
 				713725CB2402AAFD0067ADD8 /* KVO */,
 				713725D02402BAAF0067ADD8 /* PropertyObservers */,
 				71F8A5D624040B3B00E03F0A /* Notification Center */,
+				71B44C012407F3CB00E987AC /* Combine */,
 			);
 			name = Communication;
 			sourceTree = "<group>";
@@ -234,6 +237,14 @@
 				7119DB1F23E9A833000E5796 /* Weather.swift */,
 			);
 			name = "Protocol Delegate";
+			sourceTree = "<group>";
+		};
+		71B44C012407F3CB00E987AC /* Combine */ = {
+			isa = PBXGroup;
+			children = (
+				71B44C022407F3F900E987AC /* TextFieldViewController.swift */,
+			);
+			name = Combine;
 			sourceTree = "<group>";
 		};
 		71B9AEBD23F1934A00C2D539 /* Target Action */ = {
@@ -357,6 +368,7 @@
 				719A1E9723E723C1000FC21C /* ActivationManager.swift in Sources */,
 				719A1E9B23E723C1000FC21C /* ActivatingViewController.swift in Sources */,
 				713725D22402BADD0067ADD8 /* PropertyObserverViewController.swift in Sources */,
+				71B44C032407F3F900E987AC /* TextFieldViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
