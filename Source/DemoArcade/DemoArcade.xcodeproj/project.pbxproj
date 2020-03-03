@@ -12,6 +12,9 @@
 		713725CF2402B5780067ADD8 /* ResponderExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 713725CE2402B5780067ADD8 /* ResponderExtensions.swift */; };
 		713725D22402BADD0067ADD8 /* PropertyObserverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 713725D12402BADD0067ADD8 /* PropertyObserverViewController.swift */; };
 		718C45F723F42F33007B5F91 /* ClosureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 718C45F623F42F33007B5F91 /* ClosureViewController.swift */; };
+		7191B38A240EA7DF004FB0B2 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7191B389240EA7DF004FB0B2 /* CoreDataManager.swift */; };
+		7191B38C240EA7EE004FB0B2 /* CoreDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7191B38B240EA7EE004FB0B2 /* CoreDataViewController.swift */; };
+		7191B38F240EAA4D004FB0B2 /* MyData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7191B38D240EAA4D004FB0B2 /* MyData.xcdatamodeld */; };
 		719A1E5F23E71E9C000FC21C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719A1E5E23E71E9C000FC21C /* AppDelegate.swift */; };
 		719A1E6823E71E9D000FC21C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 719A1E6723E71E9D000FC21C /* Assets.xcassets */; };
 		719A1E6B23E71E9D000FC21C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 719A1E6923E71E9D000FC21C /* LaunchScreen.storyboard */; };
@@ -31,7 +34,6 @@
 		719A1E9B23E723C1000FC21C /* ActivatingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719A1E9523E723C1000FC21C /* ActivatingViewController.swift */; };
 		719A1E9D23E723E1000FC21C /* Factories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719A1E9C23E723E1000FC21C /* Factories.swift */; };
 		719A1EA123E72721000FC21C /* ProtocolDelegateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719A1EA023E72721000FC21C /* ProtocolDelegateViewController.swift */; };
-		71B44C032407F3F900E987AC /* TextFieldViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71B44C022407F3F900E987AC /* TextFieldViewController.swift */; };
 		71B9AEBF23F1936C00C2D539 /* TargetActionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71B9AEBE23F1936C00C2D539 /* TargetActionViewController.swift */; };
 		71C6324C23E89B9500BC5302 /* WeatherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C6324B23E89B9500BC5302 /* WeatherService.swift */; };
 		71D586E323FD711F00722324 /* ResponderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D586E223FD711F00722324 /* ResponderViewController.swift */; };
@@ -44,6 +46,9 @@
 		713725CE2402B5780067ADD8 /* ResponderExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponderExtensions.swift; sourceTree = "<group>"; };
 		713725D12402BADD0067ADD8 /* PropertyObserverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyObserverViewController.swift; sourceTree = "<group>"; };
 		718C45F623F42F33007B5F91 /* ClosureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClosureViewController.swift; sourceTree = "<group>"; };
+		7191B389240EA7DF004FB0B2 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		7191B38B240EA7EE004FB0B2 /* CoreDataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataViewController.swift; sourceTree = "<group>"; };
+		7191B38E240EAA4D004FB0B2 /* MyData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MyData.xcdatamodel; sourceTree = "<group>"; };
 		719A1E5B23E71E9C000FC21C /* DemoArcade.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DemoArcade.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		719A1E5E23E71E9C000FC21C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		719A1E6723E71E9D000FC21C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -65,7 +70,6 @@
 		719A1E9523E723C1000FC21C /* ActivatingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivatingViewController.swift; sourceTree = "<group>"; };
 		719A1E9C23E723E1000FC21C /* Factories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Factories.swift; sourceTree = "<group>"; };
 		719A1EA023E72721000FC21C /* ProtocolDelegateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProtocolDelegateViewController.swift; sourceTree = "<group>"; };
-		71B44C022407F3F900E987AC /* TextFieldViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldViewController.swift; sourceTree = "<group>"; };
 		71B9AEBE23F1936C00C2D539 /* TargetActionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TargetActionViewController.swift; sourceTree = "<group>"; };
 		71C6324B23E89B9500BC5302 /* WeatherService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherService.swift; sourceTree = "<group>"; };
 		71D586E223FD711F00722324 /* ResponderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponderViewController.swift; sourceTree = "<group>"; };
@@ -107,6 +111,16 @@
 			name = Closures;
 			sourceTree = "<group>";
 		};
+		7191B388240EA78B004FB0B2 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				7191B389240EA7DF004FB0B2 /* CoreDataManager.swift */,
+				7191B38B240EA7EE004FB0B2 /* CoreDataViewController.swift */,
+				7191B38D240EAA4D004FB0B2 /* MyData.xcdatamodeld */,
+			);
+			name = CoreData;
+			sourceTree = "<group>";
+		};
 		719A1E5223E71E9C000FC21C = {
 			isa = PBXGroup;
 			children = (
@@ -128,6 +142,7 @@
 			children = (
 				719A1E9E23E724FC000FC21C /* Communication */,
 				719A1E7523E71F22000FC21C /* Navigation */,
+				7191B388240EA78B004FB0B2 /* CoreData */,
 				719A1E7223E71EB2000FC21C /* Files */,
 				719A1E5E23E71E9C000FC21C /* AppDelegate.swift */,
 				719A1E7323E71F17000FC21C /* DemoViewController.swift */,
@@ -224,7 +239,6 @@
 				713725CB2402AAFD0067ADD8 /* KVO */,
 				713725D02402BAAF0067ADD8 /* PropertyObservers */,
 				71F8A5D624040B3B00E03F0A /* Notification Center */,
-				71B44C012407F3CB00E987AC /* Combine */,
 			);
 			name = Communication;
 			sourceTree = "<group>";
@@ -237,14 +251,6 @@
 				7119DB1F23E9A833000E5796 /* Weather.swift */,
 			);
 			name = "Protocol Delegate";
-			sourceTree = "<group>";
-		};
-		71B44C012407F3CB00E987AC /* Combine */ = {
-			isa = PBXGroup;
-			children = (
-				71B44C022407F3F900E987AC /* TextFieldViewController.swift */,
-			);
-			name = Combine;
 			sourceTree = "<group>";
 		};
 		71B9AEBD23F1934A00C2D539 /* Target Action */ = {
@@ -348,6 +354,7 @@
 				719A1E8D23E7234B000FC21C /* TabViewController.swift in Sources */,
 				719A1E8423E72218000FC21C /* ModalNavigation.swift in Sources */,
 				719A1E9923E723C1000FC21C /* ContainerViewController.swift in Sources */,
+				7191B38A240EA7DF004FB0B2 /* CoreDataManager.swift in Sources */,
 				71D586E323FD711F00722324 /* ResponderViewController.swift in Sources */,
 				719A1E9823E723C1000FC21C /* ReadyToActivateViewController.swift in Sources */,
 				719A1E5F23E71E9C000FC21C /* AppDelegate.swift in Sources */,
@@ -358,6 +365,7 @@
 				71C6324C23E89B9500BC5302 /* WeatherService.swift in Sources */,
 				719A1E8F23E72361000FC21C /* PageViewController.swift in Sources */,
 				713725CF2402B5780067ADD8 /* ResponderExtensions.swift in Sources */,
+				7191B38C240EA7EE004FB0B2 /* CoreDataViewController.swift in Sources */,
 				719A1E9D23E723E1000FC21C /* Factories.swift in Sources */,
 				719A1E7423E71F17000FC21C /* DemoViewController.swift in Sources */,
 				719A1E8923E7232A000FC21C /* NavigationViewController2.swift in Sources */,
@@ -365,10 +373,10 @@
 				71B9AEBF23F1936C00C2D539 /* TargetActionViewController.swift in Sources */,
 				719A1E9623E723C1000FC21C /* FailureViewController.swift in Sources */,
 				71F8A5D824040B6200E03F0A /* NotificationViewController.swift in Sources */,
+				7191B38F240EAA4D004FB0B2 /* MyData.xcdatamodeld in Sources */,
 				719A1E9723E723C1000FC21C /* ActivationManager.swift in Sources */,
 				719A1E9B23E723C1000FC21C /* ActivatingViewController.swift in Sources */,
 				713725D22402BADD0067ADD8 /* PropertyObserverViewController.swift in Sources */,
-				71B44C032407F3F900E987AC /* TextFieldViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -558,6 +566,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		7191B38D240EAA4D004FB0B2 /* MyData.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				7191B38E240EAA4D004FB0B2 /* MyData.xcdatamodel */,
+			);
+			currentVersion = 7191B38E240EAA4D004FB0B2 /* MyData.xcdatamodel */;
+			path = MyData.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 719A1E5323E71E9C000FC21C /* Project object */;
 }

@@ -34,12 +34,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             ]
 
             // Communication Patterns
-            let combinePatterns = [
-                Lab(name: "TextField", viewController: TextFieldViewController()),
-            ]
-
-            let combineViewController = DemoViewController(labs: combinePatterns, navBarTitle: "Combine")
-
             let communicationPatterns = [
                 Lab(name: "Protocol Delegate", viewController: ProtocolDelegateViewController()),
                 Lab(name: "Closure", viewController: ClosureViewController()),
@@ -47,9 +41,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 Lab(name: "Key-Value Observing", viewController: KVOViewController()),
                 Lab(name: "Property Observers", viewController: PropertyObserverViewController()),
                 Lab(name: "Notification Center", viewController: NotificationViewController()),
-                Lab(name: "Combine Patterns", viewController: combineViewController),
             ]
 
+
+            // CoreData
+            let coreDataPatterns = [
+                Lab(name: "Intro", viewController: CoreDataViewController()),
+            ]
 
             //
             // Top level
@@ -57,10 +55,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
             let communicationViewController = DemoViewController(labs: communicationPatterns, navBarTitle: "Communication")
             let navigationViewController = DemoViewController(labs: navigationPatterns, navBarTitle: "Navigation")
+            let coreDataViewController = DemoViewController(labs: coreDataPatterns, navBarTitle: "CoreData")
             
             let rootLabs = [
                 Lab(name: "Navigation", viewController: navigationViewController),
                 Lab(name: "Communication", viewController: communicationViewController),
+                Lab(name: "CoreData", viewController: coreDataViewController),
             ]
 
             let rootViewController = DemoViewController(labs: rootLabs, navBarTitle: "UIKit Demos")
