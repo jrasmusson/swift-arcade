@@ -11,55 +11,45 @@ import UIKit
 class CoreDataViewController: UIViewController {
 
     let plusButton: UIButton = {
-        let configuration = UIImage.SymbolConfiguration(scale: .large)
-        let image = UIImage(systemName: "plus", withConfiguration: configuration)
-
-        let button = UIButton()
-        button.translatesAutoresizingMaskIntoConstraints = false
-        button.addTarget(self, action: #selector(addEmployeePressed), for: .primaryActionTriggered)
-        button.setImage(image, for: .normal)
-        button.imageView?.contentMode = .scaleAspectFit
-        button.setContentHuggingPriority(UILayoutPriority(rawValue: 999), for: .horizontal)
-
-        return button
+        return makeSymbolButton(systemName: "plus", target: self, selector: #selector(addEmployeePressed))
     }()
 
     let minusButton: UIButton = {
-        let configuration = UIImage.SymbolConfiguration(scale: .large)
-        let image = UIImage(systemName: "minus", withConfiguration: configuration)
+        return makeSymbolButton(systemName: "minus", target: self, selector: #selector(deleteEmployeePressed))
+    }()
 
-        let button = UIButton()
-        button.translatesAutoresizingMaskIntoConstraints = false
-        button.addTarget(self, action: #selector(deleteEmployeePressed), for: .primaryActionTriggered)
-        button.setImage(image, for: .normal)
-        button.imageView?.contentMode = .scaleAspectFit
-        button.setContentHuggingPriority(UILayoutPriority(rawValue: 999), for: .horizontal)
-
-        return button
+    let countLabel: UILabel = {
+        let label = makeLabel(withTitle: "XXX")
+        return label
     }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         setupViews()
-//        DemoCoreData()
+        populateViews()
     }
 
     func setupViews() {
         view.backgroundColor = .white
         navigationItem.title = "Intro"
 
-        let stackView = makeRowStackView()
-        stackView.addArrangedSubview(plusButton)
-        stackView.addArrangedSubview(minusButton)
-        
-        view.addSubview(stackView)
+        let buttonStackView = makeRowStackView()
+        buttonStackView.addArrangedSubview(plusButton)
+        buttonStackView.addArrangedSubview(minusButton)
 
-        stackView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        stackView.topAnchor.constraint(equalToSystemSpacingBelow: view.safeAreaLayoutGuide.topAnchor, multiplier: 3).isActive = true
-        stackView.leadingAnchor.constraint(equalToSystemSpacingAfter: view.leadingAnchor, multiplier: 3).isActive = true
-        view.trailingAnchor.constraint(equalToSystemSpacingAfter: stackView.trailingAnchor, multiplier: 3).isActive = true
+        view.addSubview(buttonStackView)
+
+        buttonStackView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        buttonStackView.topAnchor.constraint(equalToSystemSpacingBelow: view.safeAreaLayoutGuide.topAnchor, multiplier: 3).isActive = true
+        buttonStackView.leadingAnchor.constraint(equalToSystemSpacingAfter: view.leadingAnchor, multiplier: 3).isActive = true
+        view.trailingAnchor.constraint(equalToSystemSpacingAfter: buttonStackView.trailingAnchor, multiplier: 3).isActive = true
+
 
         plusButton.widthAnchor.constraint(equalTo: minusButton.widthAnchor).isActive = true
+    }
+
+    func populateViews() {
+        countLabel.text = "1"
     }
 
     // MARK: Actions
