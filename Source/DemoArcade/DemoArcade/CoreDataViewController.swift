@@ -10,7 +10,7 @@ import UIKit
 
 class CoreDataViewController: UIViewController {
 
-    let addEmployeeButton: UIButton = {
+    let plusButton: UIButton = {
         let configuration = UIImage.SymbolConfiguration(scale: .large)
         let image = UIImage(systemName: "plus", withConfiguration: configuration)
 
@@ -19,19 +19,21 @@ class CoreDataViewController: UIViewController {
         button.addTarget(self, action: #selector(addEmployeePressed), for: .primaryActionTriggered)
         button.setImage(image, for: .normal)
         button.imageView?.contentMode = .scaleAspectFit
-        button.imageEdgeInsets = UIEdgeInsets(top: 0, left: -8, bottom: 0, right: 0)
 
         return button
     }()
 
-    var imageView: UIImageView = {
+    let minusButton: UIButton = {
         let configuration = UIImage.SymbolConfiguration(scale: .large)
-        let image = UIImage(systemName: "zzz", withConfiguration: configuration)
-        let imageView = UIImageView(image: image)
-        imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.setContentHuggingPriority(UILayoutPriority(rawValue: 999), for: .horizontal)
+        let image = UIImage(systemName: "minus", withConfiguration: configuration)
 
-        return imageView
+        let button = UIButton()
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.addTarget(self, action: #selector(deleteEmployeePressed), for: .primaryActionTriggered)
+        button.setImage(image, for: .normal)
+        button.imageView?.contentMode = .scaleAspectFit
+
+        return button
     }()
 
     override func viewDidLoad() {
@@ -42,18 +44,13 @@ class CoreDataViewController: UIViewController {
 
     func setupViews() {
         view.backgroundColor = .white
-        navigationItem.title = "Protocol Delegate"
-
-        view.addSubview(addEmployeeButton)
-
-        addEmployeeButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        addEmployeeButton.topAnchor.constraint(equalToSystemSpacingBelow: view.safeAreaLayoutGuide.topAnchor, multiplier: 3).isActive = true
+        navigationItem.title = "Intro"
 
         let stackView = makeRowStackView()
-
+        stackView.addArrangedSubview(plusButton)
+        stackView.addArrangedSubview(minusButton)
+        
         view.addSubview(stackView)
-
-        stackView.addArrangedSubview(addEmployeeButton)
 
         stackView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         stackView.topAnchor.constraint(equalToSystemSpacingBelow: view.safeAreaLayoutGuide.topAnchor, multiplier: 3).isActive = true
@@ -66,6 +63,11 @@ class CoreDataViewController: UIViewController {
     @objc
     func addEmployeePressed() {
         print("Add")
+    }
+
+    @objc
+    func deleteEmployeePressed() {
+        print("Delete")
     }
 
     func DemoCoreData() {
