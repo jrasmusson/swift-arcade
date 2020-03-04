@@ -78,7 +78,7 @@ class ProtocolDelegateViewController: UIViewController {
         weatherButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         weatherButton.topAnchor.constraint(equalToSystemSpacingBelow: view.safeAreaLayoutGuide.topAnchor, multiplier: 3).isActive = true
 
-        let stackView = makeRowStackView()
+        let stackView = makeHorizontalStackView()
 
         view.addSubview(stackView)
 

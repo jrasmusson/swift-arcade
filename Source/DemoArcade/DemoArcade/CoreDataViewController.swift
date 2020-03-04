@@ -33,16 +33,20 @@ class CoreDataViewController: UIViewController {
         view.backgroundColor = .white
         navigationItem.title = "Intro"
 
-        let buttonStackView = makeRowStackView()
+        let rootStackView = makeVerticalStackView()
+
+        let buttonStackView = makeHorizontalStackView()
         buttonStackView.addArrangedSubview(plusButton)
         buttonStackView.addArrangedSubview(minusButton)
 
-        view.addSubview(buttonStackView)
+        rootStackView.addArrangedSubview(buttonStackView)
 
-        buttonStackView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        buttonStackView.topAnchor.constraint(equalToSystemSpacingBelow: view.safeAreaLayoutGuide.topAnchor, multiplier: 3).isActive = true
-        buttonStackView.leadingAnchor.constraint(equalToSystemSpacingAfter: view.leadingAnchor, multiplier: 3).isActive = true
-        view.trailingAnchor.constraint(equalToSystemSpacingAfter: buttonStackView.trailingAnchor, multiplier: 3).isActive = true
+        view.addSubview(rootStackView)
+
+        rootStackView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        rootStackView.topAnchor.constraint(equalToSystemSpacingBelow: view.safeAreaLayoutGuide.topAnchor, multiplier: 3).isActive = true
+        rootStackView.leadingAnchor.constraint(equalToSystemSpacingAfter: view.leadingAnchor, multiplier: 3).isActive = true
+        view.trailingAnchor.constraint(equalToSystemSpacingAfter: rootStackView.trailingAnchor, multiplier: 3).isActive = true
 
 
         plusButton.widthAnchor.constraint(equalTo: minusButton.widthAnchor).isActive = true

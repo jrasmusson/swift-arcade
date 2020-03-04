@@ -31,9 +31,18 @@ func makeLabel(withTitle title: String) -> UILabel {
     return label
 }
 
-func makeRowStackView() -> UIStackView {
+func makeHorizontalStackView() -> UIStackView {
     let stack = UIStackView()
     stack.translatesAutoresizingMaskIntoConstraints = false
+    stack.spacing = 8.0
+
+    return stack
+}
+
+func makeVerticalStackView() -> UIStackView {
+    let stack = UIStackView()
+    stack.translatesAutoresizingMaskIntoConstraints = false
+    stack.axis = .vertical
     stack.spacing = 8.0
 
     return stack
