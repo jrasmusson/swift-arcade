@@ -18,6 +18,12 @@ class CoreDataViewController: UIViewController {
         return makeSymbolButton(systemName: "minus", target: self, selector: #selector(deleteEmployeePressed))
     }()
 
+    let employeeLabel: UILabel = {
+        let label = makeLabel(withTitle: "Employees")
+        label.setContentHuggingPriority(UILayoutPriority.defaultHigh, for: .horizontal)
+        return label
+    }()
+
     let countLabel: UILabel = {
         let label = makeLabel(withTitle: "XXX")
         return label
@@ -37,9 +43,11 @@ class CoreDataViewController: UIViewController {
 
         let buttonStackView = makeHorizontalStackView()
         buttonStackView.addArrangedSubview(plusButton)
+        buttonStackView.addArrangedSubview(employeeLabel)
         buttonStackView.addArrangedSubview(minusButton)
 
         rootStackView.addArrangedSubview(buttonStackView)
+        rootStackView.addArrangedSubview(countLabel)
 
         view.addSubview(rootStackView)
 

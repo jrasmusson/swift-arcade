@@ -57,7 +57,6 @@ func makeSymbolButton(systemName: String, target: Any, selector: Selector) -> UI
     button.addTarget(target, action: selector, for: .primaryActionTriggered)
     button.setImage(image, for: .normal)
     button.imageView?.contentMode = .scaleAspectFit
-    button.setContentHuggingPriority(UILayoutPriority(rawValue: 999), for: .horizontal)
 
     return button
 }
