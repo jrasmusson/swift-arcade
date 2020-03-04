@@ -10,27 +10,62 @@ import UIKit
 
 class CoreDataViewController: UIViewController {
 
-    let cityLabel: UILabel = {
-        let label = makeLabel(withTitle: "This demo shows CoreData CRUD without any UI. Run the app repeatedly, check print statement output, and see how CoreData saves state between sessions.")
-        label.numberOfLines = 0
-        return label
+    let addEmployeeButton: UIButton = {
+        let configuration = UIImage.SymbolConfiguration(scale: .large)
+        let image = UIImage(systemName: "plus", withConfiguration: configuration)
+
+        let button = UIButton()
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.addTarget(self, action: #selector(addEmployeePressed), for: .primaryActionTriggered)
+        button.setImage(image, for: .normal)
+        button.imageView?.contentMode = .scaleAspectFit
+        button.imageEdgeInsets = UIEdgeInsets(top: 0, left: -8, bottom: 0, right: 0)
+
+        return button
+    }()
+
+    var imageView: UIImageView = {
+        let configuration = UIImage.SymbolConfiguration(scale: .large)
+        let image = UIImage(systemName: "zzz", withConfiguration: configuration)
+        let imageView = UIImageView(image: image)
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.setContentHuggingPriority(UILayoutPriority(rawValue: 999), for: .horizontal)
+
+        return imageView
     }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         setupViews()
-        DemoCoreData()
+//        DemoCoreData()
     }
 
     func setupViews() {
         view.backgroundColor = .white
-        navigationItem.title = "Closures"
+        navigationItem.title = "Protocol Delegate"
 
-        view.addSubview(cityLabel)
-        cityLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        cityLabel.topAnchor.constraint(equalToSystemSpacingBelow: view.safeAreaLayoutGuide.topAnchor, multiplier: 3).isActive = true
-        cityLabel.leadingAnchor.constraint(equalToSystemSpacingAfter: view.leadingAnchor, multiplier: 3).isActive = true
-        view.trailingAnchor.constraint(equalToSystemSpacingAfter: cityLabel.trailingAnchor, multiplier: 3).isActive = true
+        view.addSubview(addEmployeeButton)
+
+        addEmployeeButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        addEmployeeButton.topAnchor.constraint(equalToSystemSpacingBelow: view.safeAreaLayoutGuide.topAnchor, multiplier: 3).isActive = true
+
+        let stackView = makeRowStackView()
+
+        view.addSubview(stackView)
+
+        stackView.addArrangedSubview(addEmployeeButton)
+
+        stackView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        stackView.topAnchor.constraint(equalToSystemSpacingBelow: view.safeAreaLayoutGuide.topAnchor, multiplier: 3).isActive = true
+        stackView.leadingAnchor.constraint(equalToSystemSpacingAfter: view.leadingAnchor, multiplier: 3).isActive = true
+        view.trailingAnchor.constraint(equalToSystemSpacingAfter: stackView.trailingAnchor, multiplier: 3).isActive = true
+    }
+
+    // MARK: Actions
+
+    @objc
+    func addEmployeePressed() {
+        print("Add")
     }
 
     func DemoCoreData() {
