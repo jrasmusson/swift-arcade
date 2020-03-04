@@ -19,6 +19,7 @@ class CoreDataViewController: UIViewController {
         button.addTarget(self, action: #selector(addEmployeePressed), for: .primaryActionTriggered)
         button.setImage(image, for: .normal)
         button.imageView?.contentMode = .scaleAspectFit
+        button.setContentHuggingPriority(UILayoutPriority(rawValue: 999), for: .horizontal)
 
         return button
     }()
@@ -32,6 +33,7 @@ class CoreDataViewController: UIViewController {
         button.addTarget(self, action: #selector(deleteEmployeePressed), for: .primaryActionTriggered)
         button.setImage(image, for: .normal)
         button.imageView?.contentMode = .scaleAspectFit
+        button.setContentHuggingPriority(UILayoutPriority(rawValue: 999), for: .horizontal)
 
         return button
     }()
@@ -56,6 +58,8 @@ class CoreDataViewController: UIViewController {
         stackView.topAnchor.constraint(equalToSystemSpacingBelow: view.safeAreaLayoutGuide.topAnchor, multiplier: 3).isActive = true
         stackView.leadingAnchor.constraint(equalToSystemSpacingAfter: view.leadingAnchor, multiplier: 3).isActive = true
         view.trailingAnchor.constraint(equalToSystemSpacingAfter: stackView.trailingAnchor, multiplier: 3).isActive = true
+
+        plusButton.widthAnchor.constraint(equalTo: minusButton.widthAnchor).isActive = true
     }
 
     // MARK: Actions
