@@ -23,12 +23,12 @@ struct CoreDataManager {
 
         return container
     }()
-
-    // U R HERE - create EmployeeManager
     
+    @discardableResult
     func createEmployee(name: String) -> Employee? {
         let context = persistentContainer.viewContext
-        let employee = NSEntityDescription.insertNewObject(forEntityName: "Employee", into: context) as! Employee
+        
+        let employee = NSEntityDescription.insertNewObject(forEntityName: "Employee", into: context) as! Employee // NSManagedObject
 
         employee.name = name
 

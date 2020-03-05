@@ -61,21 +61,30 @@ class CoreDataViewController: UIViewController {
     }
 
     func populateViews() {
-        countLabel.text = "1"
+        updateCount()
     }
 
     // MARK: Actions
 
     @objc
     func addEmployeePressed() {
-        print("Add")
+        CoreDataManager.shared.createEmployee(name: "Jon")
+        updateCount()
     }
 
     @objc
     func deleteEmployeePressed() {
-        print("Delete")
+        guard let employees = CoreDataManager.shared.fetchEmployees() else { return }
+        guard let employee = employees.last else { return }
+        CoreDataManager.shared.deleteEmployee(employee: employee)
+        updateCount()
     }
 
+    func updateCount() {
+        guard let employees = CoreDataManager.shared.fetchEmployees() else { return }
+        countLabel.text = String(employees.count)
+    }
+    
     func DemoCoreData() {
         // Create
         guard let newEmployee = CoreDataManager.shared.createEmployee(name: "Jon") else { return }
