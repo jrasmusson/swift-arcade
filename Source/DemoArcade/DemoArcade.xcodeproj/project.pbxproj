@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		7119DB2023E9A833000E5796 /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7119DB1F23E9A833000E5796 /* Weather.swift */; };
+		712CA2FB241133DE00A85735 /* IntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 712CA2FA241133DE00A85735 /* IntroViewController.swift */; };
 		713725CD2402AB200067ADD8 /* KVOViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 713725CC2402AB200067ADD8 /* KVOViewController.swift */; };
 		713725CF2402B5780067ADD8 /* ResponderExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 713725CE2402B5780067ADD8 /* ResponderExtensions.swift */; };
 		713725D22402BADD0067ADD8 /* PropertyObserverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 713725D12402BADD0067ADD8 /* PropertyObserverViewController.swift */; };
@@ -42,6 +43,7 @@
 
 /* Begin PBXFileReference section */
 		7119DB1F23E9A833000E5796 /* Weather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
+		712CA2FA241133DE00A85735 /* IntroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroViewController.swift; sourceTree = "<group>"; };
 		713725CC2402AB200067ADD8 /* KVOViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KVOViewController.swift; sourceTree = "<group>"; };
 		713725CE2402B5780067ADD8 /* ResponderExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponderExtensions.swift; sourceTree = "<group>"; };
 		713725D12402BADD0067ADD8 /* PropertyObserverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyObserverViewController.swift; sourceTree = "<group>"; };
@@ -87,6 +89,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		712CA2F92411337A00A85735 /* Intro */ = {
+			isa = PBXGroup;
+			children = (
+				712CA2FA241133DE00A85735 /* IntroViewController.swift */,
+				7191B38B240EA7EE004FB0B2 /* CoreDataViewController.swift */,
+				7191B389240EA7DF004FB0B2 /* CoreDataManager.swift */,
+				7191B38D240EAA4D004FB0B2 /* MyData.xcdatamodeld */,
+			);
+			name = Intro;
+			sourceTree = "<group>";
+		};
 		713725CB2402AAFD0067ADD8 /* KVO */ = {
 			isa = PBXGroup;
 			children = (
@@ -114,9 +127,7 @@
 		7191B388240EA78B004FB0B2 /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
-				7191B389240EA7DF004FB0B2 /* CoreDataManager.swift */,
-				7191B38B240EA7EE004FB0B2 /* CoreDataViewController.swift */,
-				7191B38D240EAA4D004FB0B2 /* MyData.xcdatamodeld */,
+				712CA2F92411337A00A85735 /* Intro */,
 			);
 			name = CoreData;
 			sourceTree = "<group>";
@@ -348,6 +359,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				712CA2FB241133DE00A85735 /* IntroViewController.swift in Sources */,
 				713725CD2402AB200067ADD8 /* KVOViewController.swift in Sources */,
 				718C45F723F42F33007B5F91 /* ClosureViewController.swift in Sources */,
 				719A1EA123E72721000FC21C /* ProtocolDelegateViewController.swift in Sources */,

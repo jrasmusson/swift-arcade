@@ -77,8 +77,6 @@ struct CoreDataManager {
     func updateEmployee(employee: Employee) {
         let context = persistentContainer.viewContext
 
-        employee.name = "Peter"
-
         do {
             try context.save()
         } catch let createError {
