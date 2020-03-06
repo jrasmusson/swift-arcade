@@ -9,6 +9,9 @@ Collection of demos from the [Swift Arcade YouTube channel.](https://www.youtube
 - [Responder Chain](https://github.com/jrasmusson/swift-arcade/blob/master/CommunicationPatterns/Responder-Chain.md)
 - [Key-Value Observing](https://github.com/jrasmusson/swift-arcade/blob/master/CommunicationPatterns/KVO.md)
 
+## CoreData
+
+- [Getting Started](https://github.com/jrasmusson/swift-arcade/blob/master/CoreData/1-GettingStarted.md)
 
 ## Misc
 
