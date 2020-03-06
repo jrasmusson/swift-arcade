@@ -46,8 +46,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
             // CoreData
             let coreDataPatterns = [
-                Lab(name: "Intro", viewController: IntroViewController()),
-//                Lab(name: "Intro", viewController: CoreDataViewController()),
+//                Lab(name: "Intro", viewController: IntroViewController()),
+                Lab(name: "Intro", viewController: CoreDataViewController()),
             ]
 
             //
