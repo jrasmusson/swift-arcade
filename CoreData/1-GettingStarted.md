@@ -125,7 +125,6 @@ func DemoCoreData() {
 )
 - [Apple Docs New](https://developer.apple.com/documentation/coredata)
 
-- 
 ### Video
 
 - [Getting started with CoreData](https://www.youtube.com/watch?v=PyUyWtpKhFM)
