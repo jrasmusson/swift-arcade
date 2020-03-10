@@ -72,6 +72,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             let rootViewController = DemoViewController(labs: rootLabs, navBarTitle: "UIKit Demos")
             let navigatorController = UINavigationController(rootViewController: rootViewController)
 
+            window?.backgroundColor = .white
             window?.rootViewController = navigatorController
 
             return true
