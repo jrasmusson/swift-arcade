@@ -45,7 +45,6 @@ class ClosureViewController: UIViewController {
     }
 
     func setupViews() {
-        view.backgroundColor = .white
         navigationItem.title = "Closures"
 
         view.addSubview(weatherButton)

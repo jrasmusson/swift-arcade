@@ -37,7 +37,6 @@ class NotificationViewController: UIViewController {
     }()
 
     func setupViews() {
-        view.backgroundColor = .white
         navigationItem.title = "Notification Center"
 
         view.addSubview(weatherButton)

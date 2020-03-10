@@ -70,7 +70,6 @@ class ProtocolDelegateViewController: UIViewController {
     }()
 
     func setupViews() {
-        view.backgroundColor = .white
         navigationItem.title = "Protocol Delegate"
 
         view.addSubview(weatherButton)

@@ -22,7 +22,6 @@ class IntroViewController: UIViewController {
     }
 
     func setupViews() {
-        view.backgroundColor = .white
         navigationItem.title = "Intro"
 
         view.addSubview(label)

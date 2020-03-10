@@ -16,7 +16,6 @@ class ResponderChainViewController: UIViewController {
     }
 
     func setupViews() {
-        view.backgroundColor = .white
         navigationItem.title = "Responder Chain"
 
         view.addSubview(responderButton)

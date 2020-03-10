@@ -41,7 +41,7 @@ class InsertTableViewController: UIViewController {
         return tableView
     }()
 
-    let cellId = "cellId"
+    let cellId = "insertCellId"
 
     override func viewDidLoad() {
         super.viewDidLoad()

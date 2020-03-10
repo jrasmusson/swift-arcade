@@ -22,7 +22,6 @@ class ModalNavigation: UIViewController {
     }
 
     func setupViews() {
-        view.backgroundColor = .white
         navigationItem.title = "Modal"
 
         view.addSubview(presentButton)

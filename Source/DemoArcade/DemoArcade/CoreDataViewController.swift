@@ -36,7 +36,6 @@ class CoreDataViewController: UIViewController {
     }
 
     func setupViews() {
-        view.backgroundColor = .white
         navigationItem.title = "Intro"
 
         let rootStackView = makeVerticalStackView()

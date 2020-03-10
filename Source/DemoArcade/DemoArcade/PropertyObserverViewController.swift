@@ -42,7 +42,6 @@ class PropertyObserverViewController: UIViewController {
     }()
     
     func setupViews() {
-        view.backgroundColor = .white
         navigationItem.title = "KVO"
         
         view.addSubview(weatherButton)

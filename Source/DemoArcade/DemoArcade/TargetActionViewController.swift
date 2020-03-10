@@ -37,7 +37,6 @@ class TargetActionViewController: UIViewController {
     }
 
     func setupViews() {
-        view.backgroundColor = .white
         navigationItem.title = "Target Action"
 
         view.addSubview(weatherButton)

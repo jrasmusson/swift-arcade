@@ -16,7 +16,6 @@ class TabBarViewController: UITabBarController {
     }
 
     func setupViews() {
-        view.backgroundColor = .white
         navigationItem.title = "TabBar Container"
 
         let firstViewController = TabBarViewController1()
