@@ -18,6 +18,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             window = UIWindow(frame: UIScreen.main.bounds)
             window?.makeKeyAndVisible()
 
+            // UITableView Patterns
+            let tableViewPatterns = [
+                Lab(name: "Insert/Delete Swipes", viewController: InsertTableViewController()),
+            ]
+
             // Navigation Patterns
             let containerPatterns = [
                 Lab(name: "NavigationController", viewController: NavigationViewController1()),
@@ -43,22 +48,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 Lab(name: "Notification Center", viewController: NotificationViewController()),
             ]
 
-
             // CoreData
             let coreDataPatterns = [
-//                Lab(name: "Intro", viewController: IntroViewController()),
-                Lab(name: "Intro", viewController: CoreDataViewController()),
+                Lab(name: "Intro", viewController: CoreDataViewController()), // IntroViewController()
             ]
 
             //
             // Top level
             //
 
-            let communicationViewController = DemoViewController(labs: communicationPatterns, navBarTitle: "Communication")
+            let tableViewController = DemoViewController(labs: tableViewPatterns, navBarTitle: "UITableView")
             let navigationViewController = DemoViewController(labs: navigationPatterns, navBarTitle: "Navigation")
+            let communicationViewController = DemoViewController(labs: communicationPatterns, navBarTitle: "Communication")
             let coreDataViewController = DemoViewController(labs: coreDataPatterns, navBarTitle: "CoreData")
-            
+
             let rootLabs = [
+                Lab(name: "UITableView", viewController: tableViewController),
                 Lab(name: "Navigation", viewController: navigationViewController),
                 Lab(name: "Communication", viewController: communicationViewController),
                 Lab(name: "CoreData", viewController: coreDataViewController),
