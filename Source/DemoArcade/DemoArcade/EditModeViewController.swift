@@ -8,7 +8,7 @@
 
 import UIKit
 
-class InsertDeletingRowsEditMode: UIViewController {
+class EditModeViewController: UIViewController {
 
     var games = ["Space Invaders",
                 "Dragon Slayer",
@@ -65,7 +65,7 @@ class InsertDeletingRowsEditMode: UIViewController {
 
 // MARK:  - SaveGameViewController Delegate
 
-extension InsertDeletingRowsEditMode: SaveGameViewControllerDelegate {
+extension EditModeViewController: SaveGameViewControllerDelegate {
     func insert(game: String) {
         addGame(game)
     }
@@ -73,13 +73,13 @@ extension InsertDeletingRowsEditMode: SaveGameViewControllerDelegate {
 
 // MARK:  - UITableView Delegate
 
-extension InsertDeletingRowsEditMode: UITableViewDelegate {
+extension EditModeViewController: UITableViewDelegate {
 
 }
 
 // MARK:  - UITableView DataSource
 
-extension InsertDeletingRowsEditMode: UITableViewDataSource {
+extension EditModeViewController: UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath)
