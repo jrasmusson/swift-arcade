@@ -26,6 +26,14 @@ class InsertDeletingRowsEditMode: UIViewController {
         return textField
     }()
 
+    lazy var editButton: UIButton = {
+        let button = makeButton(withText: "Edit")
+        button.setContentHuggingPriority(UILayoutPriority.defaultHigh, for: .horizontal)
+        button.addTarget(self, action: #selector(editButtonPressed), for: .primaryActionTriggered)
+
+        return button
+    }()
+
     lazy var addButton: UIButton = {
         let button = makeButton(withText: "Add")
         button.setContentHuggingPriority(UILayoutPriority.defaultHigh, for: .horizontal)
@@ -63,13 +71,18 @@ class InsertDeletingRowsEditMode: UIViewController {
         addStackView.addArrangedSubview(addButton)
 
         view.addSubview(addStackView)
+        view.addSubview(editButton)
         view.addSubview(tableView)
 
         addStackView.topAnchor.constraint(equalToSystemSpacingBelow: view.safeAreaLayoutGuide.topAnchor, multiplier: 3).isActive = true
         addStackView.leadingAnchor.constraint(equalToSystemSpacingAfter: view.leadingAnchor, multiplier: 3).isActive = true
         view.trailingAnchor.constraint(equalToSystemSpacingAfter: addStackView.trailingAnchor, multiplier: 3).isActive = true
 
-        tableView.topAnchor.constraint(equalToSystemSpacingBelow: addStackView.bottomAnchor, multiplier: 1).isActive = true
+        editButton.topAnchor.constraint(equalToSystemSpacingBelow: addStackView.bottomAnchor, multiplier: 3).isActive = true
+        editButton.widthAnchor.constraint(equalTo: addButton.widthAnchor, multiplier: 1).isActive = true
+        editButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+
+        tableView.topAnchor.constraint(equalToSystemSpacingBelow: editButton.bottomAnchor, multiplier: 1).isActive = true
         tableView.leadingAnchor.constraint(equalToSystemSpacingAfter: view.leadingAnchor, multiplier: 1).isActive = true
         view.trailingAnchor.constraint(equalToSystemSpacingAfter: tableView.trailingAnchor, multiplier: 1).isActive = true
         view.safeAreaLayoutGuide.bottomAnchor.constraint(equalToSystemSpacingBelow: tableView.bottomAnchor, multiplier: 1).isActive = true
@@ -77,10 +90,14 @@ class InsertDeletingRowsEditMode: UIViewController {
 
     // MARK: - Actions
 
-    // 3. Custom target action
+    @objc
+    func editButtonPressed() {
+        tableView.isEditing = true
+    }
+
     @objc
     func addButtonPressed() {
-        tableView.isEditing = true
+        insertTextBottomRow()
     }
 
     private func insertTextBottomRow() {
