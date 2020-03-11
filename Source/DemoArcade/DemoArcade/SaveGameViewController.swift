@@ -8,8 +8,15 @@
 
 import UIKit
 
+protocol SaveGameViewControllerDelegate: AnyObject {
+    func insert(game: String)
+}
+
+
 class SaveGameViewController: UIViewController {
 
+    weak var delegate: SaveGameViewControllerDelegate?
+    
     let textField: UITextField = {
         let textField = UITextField()
         textField.translatesAutoresizingMaskIntoConstraints = false
@@ -70,9 +77,14 @@ class SaveGameViewController: UIViewController {
 
     @objc
     func saveButtonPressed() {
+        guard let game = textField.text else { return }
+        delegate?.insert(game: game)
+
+        dismiss(animated: true, completion: nil)
     }
 
     @objc
     func cancelButtonPressed() {
+        dismiss(animated: true, completion: nil)
     }
 }

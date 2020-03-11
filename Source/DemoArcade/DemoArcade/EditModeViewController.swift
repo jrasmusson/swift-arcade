@@ -16,37 +16,40 @@ class InsertDeletingRowsEditMode: UIViewController {
                 "Moon Patrol",
                 "Galaga"]
 
-    var tableView: UITableView = {
-        let tableView = UITableView()
-        tableView.translatesAutoresizingMaskIntoConstraints = false
-
-        return tableView
-    }()
-
+    var tableView = UITableView()
     let cellId = "insertCellId"
+
+    let saveGameViewController = SaveGameViewController()
+
+    lazy var addGameButtonItem: UIBarButtonItem = {
+        let barButtonItem = UIBarButtonItem(title: "Add", style: .plain, target: self, action: #selector(addGameTapped))
+        barButtonItem.tintColor = UIColor.systemBlue
+        return barButtonItem
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         setupViews()
-        layout()
     }
 
     func setupViews() {
         navigationItem.title = "Classic Arcade"
+        navigationItem.rightBarButtonItem = addGameButtonItem
 
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellId)
-    }
 
-    func layout() {
+        saveGameViewController.delegate = self
+
         view = tableView
     }
 
     // MARK: - Actions
 
     @objc
-    func addButtonPressed() {
+    func addGameTapped() {
+        present(saveGameViewController, animated: true, completion: nil)
     }
 
     private func addGame(_ game: String) {
@@ -57,6 +60,14 @@ class InsertDeletingRowsEditMode: UIViewController {
         tableView.beginUpdates()
         tableView.insertRows(at: [indexPath], with: .fade)
         tableView.endUpdates()
+    }
+}
+
+// MARK:  - SaveGameViewController Delegate
+
+extension InsertDeletingRowsEditMode: SaveGameViewControllerDelegate {
+    func insert(game: String) {
+        addGame(game)
     }
 }
 
@@ -80,37 +91,18 @@ extension InsertDeletingRowsEditMode: UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-
         if editingStyle == .delete {
             games.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
         }
-
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return games.count
     }
 
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-
-    }
 }
 
-// Protocol
-// -insertGame inListAtIndex: Int
-
-protocol InsertDeletingRowsEditModeDelegate: AnyObject {
-    func insert(game: String, inListAtIndex: Int)
-}
-
-extension InsertDeletingRowsEditMode: InsertDeletingRowsEditModeDelegate {
-    func insert(game: String, inListAtIndex: Int) {
-        addGame(game)
-    }
-}
 
 
 // U R HERE - Insert
