@@ -137,7 +137,8 @@ extension SwipingCellsTableViewController: UITableViewDataSource {
         }
 
         let share = UITableViewRowAction(style: .normal, title: "Disable") { (action, indexPath) in
-            // share item at indexPath
+            let cell = tableView.cellForRow(at: indexPath)
+            cell?.selectionStyle = .none
         }
 
         share.backgroundColor = UIColor.blue
