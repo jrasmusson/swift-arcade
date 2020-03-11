@@ -16,40 +16,6 @@ class InsertDeletingRowsEditMode: UIViewController {
                 "Moon Patrol",
                 "Galaga"]
 
-    let textField: UITextField = {
-        let textField = UITextField()
-        textField.translatesAutoresizingMaskIntoConstraints = false
-        textField.font = UIFont.preferredFont(forTextStyle: .body)
-        textField.textAlignment = .center
-        textField.backgroundColor = .systemFill
-
-        return textField
-    }()
-
-    lazy var editButton: UIButton = {
-        let button = makeButton(withText: "Edit")
-        button.setContentHuggingPriority(UILayoutPriority.defaultHigh, for: .horizontal)
-        button.addTarget(self, action: #selector(editButtonPressed), for: .primaryActionTriggered)
-
-        return button
-    }()
-
-    lazy var cancelEditButton: UIButton = {
-        let button = makeButton(withText: "Cancel")
-        button.setContentHuggingPriority(UILayoutPriority.defaultHigh, for: .horizontal)
-        button.addTarget(self, action: #selector(cancelEditButtonPressed), for: .primaryActionTriggered)
-
-        return button
-    }()
-
-    lazy var addButton: UIButton = {
-        let button = makeButton(withText: "Add")
-        button.setContentHuggingPriority(UILayoutPriority.defaultHigh, for: .horizontal)
-        button.addTarget(self, action: #selector(addButtonPressed), for: .primaryActionTriggered)
-
-        return button
-    }()
-
     var tableView: UITableView = {
         let tableView = UITableView()
         tableView.translatesAutoresizingMaskIntoConstraints = false
@@ -71,56 +37,16 @@ class InsertDeletingRowsEditMode: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellId)
-        
     }
 
     func layout() {
-        let rootStackView = makeVerticalStackView()
-
-        let buttonStackView = makeHorizontalStackView()
-        buttonStackView.addArrangedSubview(textField)
-        buttonStackView.addArrangedSubview(addButton)
-
-        let editCancelStackView = makeHorizontalStackView()
-        editCancelStackView.addArrangedSubview(editButton)
-        editCancelStackView.addArrangedSubview(cancelEditButton)
-        editButton.widthAnchor.constraint(equalTo: cancelEditButton.widthAnchor, multiplier: 1).isActive = true
-        cancelEditButton.isHidden = true
-
-        rootStackView.addArrangedSubview(buttonStackView)
-        rootStackView.addArrangedSubview(editCancelStackView)
-        rootStackView.addArrangedSubview(tableView)
-
-        view.addSubview(rootStackView)
-
-        rootStackView.topAnchor.constraint(equalToSystemSpacingBelow: view.safeAreaLayoutGuide.topAnchor, multiplier: 1).isActive = true
-        rootStackView.leadingAnchor.constraint(equalToSystemSpacingAfter: view.leadingAnchor, multiplier: 1).isActive = true
-        view.trailingAnchor.constraint(equalToSystemSpacingAfter: rootStackView.trailingAnchor, multiplier: 1).isActive = true
-        view.bottomAnchor.constraint(equalToSystemSpacingBelow: rootStackView.bottomAnchor, multiplier: 1).isActive = true
+        view = tableView
     }
 
     // MARK: - Actions
 
     @objc
-    func editButtonPressed() {
-        tableView.isEditing = true
-        editButton.isEnabled = false
-        editButton.backgroundColor = .systemFill
-        cancelEditButton.isHidden = false
-    }
-
-    @objc
-    func cancelEditButtonPressed() {
-        tableView.isEditing = false
-        editButton.isEnabled = true
-        editButton.backgroundColor = .systemBlue
-        cancelEditButton.isHidden = true
-    }
-
-    @objc
     func addButtonPressed() {
-        guard let game = textField.text else { return }
-        addGame(game)
     }
 
     private func addGame(_ game: String) {
@@ -148,7 +74,7 @@ extension InsertDeletingRowsEditMode: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath)
 
         cell.textLabel?.text = games[indexPath.row]
-        cell.accessoryType = UITableViewCell.AccessoryType.disclosureIndicator
+        cell.accessoryType = UITableViewCell.AccessoryType.none
 
         return cell
     }
