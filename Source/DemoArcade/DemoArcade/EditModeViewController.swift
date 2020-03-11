@@ -71,14 +71,15 @@ class InsertDeletingRowsEditMode: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellId)
+        
     }
 
     func layout() {
         let rootStackView = makeVerticalStackView()
 
-        let addStackView = makeHorizontalStackView()
-        addStackView.addArrangedSubview(textField)
-        addStackView.addArrangedSubview(addButton)
+        let buttonStackView = makeHorizontalStackView()
+        buttonStackView.addArrangedSubview(textField)
+        buttonStackView.addArrangedSubview(addButton)
 
         let editCancelStackView = makeHorizontalStackView()
         editCancelStackView.addArrangedSubview(editButton)
@@ -86,7 +87,7 @@ class InsertDeletingRowsEditMode: UIViewController {
         editButton.widthAnchor.constraint(equalTo: cancelEditButton.widthAnchor, multiplier: 1).isActive = true
         cancelEditButton.isHidden = true
 
-        rootStackView.addArrangedSubview(addStackView)
+        rootStackView.addArrangedSubview(buttonStackView)
         rootStackView.addArrangedSubview(editCancelStackView)
         rootStackView.addArrangedSubview(tableView)
 
@@ -118,12 +119,12 @@ class InsertDeletingRowsEditMode: UIViewController {
 
     @objc
     func addButtonPressed() {
-        insertTextBottomRow()
+        guard let game = textField.text else { return }
+        addGame(game)
     }
 
-    private func insertTextBottomRow() {
-        guard let text = textField.text else { return }
-        games.append(text)
+    private func addGame(_ game: String) {
+        games.append(game)
 
         let indexPath = IndexPath(row: games.count - 1, section: 0)
 
@@ -171,6 +172,20 @@ extension InsertDeletingRowsEditMode: UITableViewDataSource {
 
     }
 }
+
+// Protocol
+// -insertGame inListAtIndex: Int
+
+protocol InsertDeletingRowsEditModeDelegate: AnyObject {
+    func insert(game: String, inListAtIndex: Int)
+}
+
+extension InsertDeletingRowsEditMode: InsertDeletingRowsEditModeDelegate {
+    func insert(game: String, inListAtIndex: Int) {
+        addGame(game)
+    }
+}
+
 
 // U R HERE - Insert
 // Create a new ViewController for adding a new game
