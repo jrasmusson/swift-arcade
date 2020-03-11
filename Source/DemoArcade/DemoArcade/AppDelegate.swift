@@ -20,7 +20,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
             // UITableView Patterns
             let tableViewPatterns = [
-                Lab(name: "Insert/Delete Swipes", viewController: InsertTableViewController()),
+                Lab(name: "Simple View Controller", viewController: SimpleTableViewController()),
+                Lab(name: "Simple View", viewController: SimpleTableView()),
             ]
 
             // Navigation Patterns
@@ -57,13 +58,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             // Top level
             //
 
-            let tableViewController = DemoViewController(labs: tableViewPatterns, navBarTitle: "UITableView")
+            let tableViewController = DemoViewController(labs: tableViewPatterns, navBarTitle: "UITableViewControllers")
             let navigationViewController = DemoViewController(labs: navigationPatterns, navBarTitle: "Navigation")
             let communicationViewController = DemoViewController(labs: communicationPatterns, navBarTitle: "Communication")
             let coreDataViewController = DemoViewController(labs: coreDataPatterns, navBarTitle: "CoreData")
 
             let rootLabs = [
-                Lab(name: "UITableView", viewController: tableViewController),
+                Lab(name: "UITableViewController", viewController: tableViewController),
                 Lab(name: "Navigation", viewController: navigationViewController),
                 Lab(name: "Communication", viewController: communicationViewController),
                 Lab(name: "CoreData", viewController: coreDataViewController),
