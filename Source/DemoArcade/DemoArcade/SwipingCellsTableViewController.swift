@@ -121,32 +121,28 @@ extension SwipingCellsTableViewController: UITableViewDataSource {
 
     // 1. Edit styling.
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+
         if editingStyle == .delete {
             games.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
         }
+
     }
-    
-    // 2. Edit actions for row.
-    // UR HERE - convert to non-deprecated. Rename share > disable. Add enable button. That is good.
-    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
-        let delete = UITableViewRowAction(style: .destructive, title: "Delete") { (action, indexPath) in
-            self.games.remove(at: indexPath.row)
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        }
 
-        let share = UITableViewRowAction(style: .normal, title: "Disable") { (action, indexPath) in
-            let cell = tableView.cellForRow(at: indexPath)
-            cell?.selectionStyle = .none
-        }
+//    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+//
+//        let action = UIContextualAction(style: .destructive, title: "Delete", handler: { (action, view, completionHandler) in
+//            self.games.remove(at: indexPath.row)
+//            tableView.deleteRows(at: [indexPath], with: .fade)
+//        })
+//
+//        let configuration = UISwipeActionsConfiguration(actions: [action])
+//
+//        return configuration
+//    }
 
-        share.backgroundColor = .systemBlue
-
-        return [delete, share]
-    }
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return games.count
     }

@@ -1,14 +1,14 @@
 //
-//  SimpleTableView.swift
+//  TableViewController.swift
 //  DemoArcade
 //
-//  Created by Jonathan Rasmusson Work Pro on 2020-03-10.
+//  Created by Jonathan Rasmusson (Contractor) on 2020-03-10.
 //  Copyright © 2020 Rasmusson Software Consulting. All rights reserved.
 //
 
 import UIKit
 
-class SimpleTableView: UIViewController {
+class aSimpleUITableViewController: UITableViewController {
     
     let labs = ["Basic Anchors",
                 "Safe Area Guide",
@@ -18,31 +18,17 @@ class SimpleTableView: UIViewController {
     
     let cellId = "cellId"
     
-    var tableView = UITableView()
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupViews()
     }
     
     func setupViews() {
-        navigationItem.title = "UITableView"
-        
-        tableView.delegate = self
-        tableView.dataSource = self
-        
+        navigationItem.title = "UITableViewController"
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellId)
-        
-        view = tableView
     }
-}
-
-extension SimpleTableView: UITableViewDelegate {
     
-}
-
-extension SimpleTableView: UITableViewDataSource {
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath)
         
         cell.textLabel?.text = labs[indexPath.row]
@@ -51,11 +37,11 @@ extension SimpleTableView: UITableViewDataSource {
         return cell
     }
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return labs.count
     }
-
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
     }
 }

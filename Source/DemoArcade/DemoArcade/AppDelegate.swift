@@ -20,8 +20,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
             // UITableView Patterns
             let tableViewPatterns = [
-                Lab(name: "Simple View Controller", viewController: SimpleTableViewController()),
-                Lab(name: "Simple View", viewController: SimpleTableView()),
+                Lab(name: "Simple View Controller", viewController: aSimpleUITableViewController()),
+                Lab(name: "Simple View", viewController: aSimpleUITableView()),
                 Lab(name: "Swiping Cells", viewController: SwipingCellsTableViewController()),
             ]
 

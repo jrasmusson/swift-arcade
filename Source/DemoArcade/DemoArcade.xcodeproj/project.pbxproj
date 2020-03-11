@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		7108111B2417DE4E00A59673 /* SimpleTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7108111A2417DE4E00A59673 /* SimpleTableViewController.swift */; };
+		7108111B2417DE4E00A59673 /* aSimpleUITableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7108111A2417DE4E00A59673 /* aSimpleUITableViewController.swift */; };
 		7119DB2023E9A833000E5796 /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7119DB1F23E9A833000E5796 /* Weather.swift */; };
 		712CA2FB241133DE00A85735 /* IntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 712CA2FA241133DE00A85735 /* IntroViewController.swift */; };
 		713725CD2402AB200067ADD8 /* KVOViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 713725CC2402AB200067ADD8 /* KVOViewController.swift */; };
@@ -37,7 +37,7 @@
 		719A1E9D23E723E1000FC21C /* Factories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719A1E9C23E723E1000FC21C /* Factories.swift */; };
 		719A1EA123E72721000FC21C /* ProtocolDelegateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719A1EA023E72721000FC21C /* ProtocolDelegateViewController.swift */; };
 		71B9AEBF23F1936C00C2D539 /* TargetActionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71B9AEBE23F1936C00C2D539 /* TargetActionViewController.swift */; };
-		71C2380224186D870046E9B3 /* SimpleTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C2380124186D870046E9B3 /* SimpleTableView.swift */; };
+		71C2380224186D870046E9B3 /* aSimpleUITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C2380124186D870046E9B3 /* aSimpleUITableView.swift */; };
 		71C2380524186F630046E9B3 /* SwipingCellsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C2380424186F630046E9B3 /* SwipingCellsTableViewController.swift */; };
 		71C6324C23E89B9500BC5302 /* WeatherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C6324B23E89B9500BC5302 /* WeatherService.swift */; };
 		71D586E323FD711F00722324 /* ResponderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D586E223FD711F00722324 /* ResponderViewController.swift */; };
@@ -45,7 +45,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		7108111A2417DE4E00A59673 /* SimpleTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleTableViewController.swift; sourceTree = "<group>"; };
+		7108111A2417DE4E00A59673 /* aSimpleUITableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = aSimpleUITableViewController.swift; sourceTree = "<group>"; };
 		7119DB1F23E9A833000E5796 /* Weather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
 		712CA2FA241133DE00A85735 /* IntroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroViewController.swift; sourceTree = "<group>"; };
 		713725CC2402AB200067ADD8 /* KVOViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KVOViewController.swift; sourceTree = "<group>"; };
@@ -77,7 +77,7 @@
 		719A1E9C23E723E1000FC21C /* Factories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Factories.swift; sourceTree = "<group>"; };
 		719A1EA023E72721000FC21C /* ProtocolDelegateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProtocolDelegateViewController.swift; sourceTree = "<group>"; };
 		71B9AEBE23F1936C00C2D539 /* TargetActionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TargetActionViewController.swift; sourceTree = "<group>"; };
-		71C2380124186D870046E9B3 /* SimpleTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleTableView.swift; sourceTree = "<group>"; };
+		71C2380124186D870046E9B3 /* aSimpleUITableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = aSimpleUITableView.swift; sourceTree = "<group>"; };
 		71C2380424186F630046E9B3 /* SwipingCellsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipingCellsTableViewController.swift; sourceTree = "<group>"; };
 		71C6324B23E89B9500BC5302 /* WeatherService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherService.swift; sourceTree = "<group>"; };
 		71D586E223FD711F00722324 /* ResponderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponderViewController.swift; sourceTree = "<group>"; };
@@ -98,9 +98,9 @@
 		710811192417DE3500A59673 /* TableViews */ = {
 			isa = PBXGroup;
 			children = (
-				71C237FF24186D4F0046E9B3 /* Simple View Controller */,
-				71C2380024186D6A0046E9B3 /* Simple View */,
-				71C2380324186F150046E9B3 /* Swipe Cellls */,
+				7108111A2417DE4E00A59673 /* aSimpleUITableViewController.swift */,
+				71C2380124186D870046E9B3 /* aSimpleUITableView.swift */,
+				71C2380424186F630046E9B3 /* SwipingCellsTableViewController.swift */,
 			);
 			name = TableViews;
 			sourceTree = "<group>";
@@ -289,30 +289,6 @@
 			name = "Target Action";
 			sourceTree = "<group>";
 		};
-		71C237FF24186D4F0046E9B3 /* Simple View Controller */ = {
-			isa = PBXGroup;
-			children = (
-				7108111A2417DE4E00A59673 /* SimpleTableViewController.swift */,
-			);
-			name = "Simple View Controller";
-			sourceTree = "<group>";
-		};
-		71C2380024186D6A0046E9B3 /* Simple View */ = {
-			isa = PBXGroup;
-			children = (
-				71C2380124186D870046E9B3 /* SimpleTableView.swift */,
-			);
-			name = "Simple View";
-			sourceTree = "<group>";
-		};
-		71C2380324186F150046E9B3 /* Swipe Cellls */ = {
-			isa = PBXGroup;
-			children = (
-				71C2380424186F630046E9B3 /* SwipingCellsTableViewController.swift */,
-			);
-			name = "Swipe Cellls";
-			sourceTree = "<group>";
-		};
 		71D586E123FD70F900722324 /* Responder Chain */ = {
 			isa = PBXGroup;
 			children = (
@@ -416,7 +392,7 @@
 				719A1E8223E72218000FC21C /* ModalViewController2.swift in Sources */,
 				719A1E8323E72218000FC21C /* ModalViewController1.swift in Sources */,
 				719A1E9A23E723C1000FC21C /* SuccessViewController.swift in Sources */,
-				7108111B2417DE4E00A59673 /* SimpleTableViewController.swift in Sources */,
+				7108111B2417DE4E00A59673 /* aSimpleUITableViewController.swift in Sources */,
 				71C6324C23E89B9500BC5302 /* WeatherService.swift in Sources */,
 				719A1E8F23E72361000FC21C /* PageViewController.swift in Sources */,
 				713725CF2402B5780067ADD8 /* ResponderExtensions.swift in Sources */,
@@ -430,7 +406,7 @@
 				71F8A5D824040B6200E03F0A /* NotificationViewController.swift in Sources */,
 				7191B38F240EAA4D004FB0B2 /* MyData.xcdatamodeld in Sources */,
 				719A1E9723E723C1000FC21C /* ActivationManager.swift in Sources */,
-				71C2380224186D870046E9B3 /* SimpleTableView.swift in Sources */,
+				71C2380224186D870046E9B3 /* aSimpleUITableView.swift in Sources */,
 				719A1E9B23E723C1000FC21C /* ActivatingViewController.swift in Sources */,
 				713725D22402BADD0067ADD8 /* PropertyObserverViewController.swift in Sources */,
 			);
