@@ -38,6 +38,7 @@
 		719A1EA123E72721000FC21C /* ProtocolDelegateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719A1EA023E72721000FC21C /* ProtocolDelegateViewController.swift */; };
 		71B9AEBF23F1936C00C2D539 /* TargetActionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71B9AEBE23F1936C00C2D539 /* TargetActionViewController.swift */; };
 		71C2380224186D870046E9B3 /* SimpleTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C2380124186D870046E9B3 /* SimpleTableView.swift */; };
+		71C2380524186F630046E9B3 /* SwipingCellsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C2380424186F630046E9B3 /* SwipingCellsTableViewController.swift */; };
 		71C6324C23E89B9500BC5302 /* WeatherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C6324B23E89B9500BC5302 /* WeatherService.swift */; };
 		71D586E323FD711F00722324 /* ResponderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D586E223FD711F00722324 /* ResponderViewController.swift */; };
 		71F8A5D824040B6200E03F0A /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F8A5D724040B6200E03F0A /* NotificationViewController.swift */; };
@@ -77,6 +78,7 @@
 		719A1EA023E72721000FC21C /* ProtocolDelegateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProtocolDelegateViewController.swift; sourceTree = "<group>"; };
 		71B9AEBE23F1936C00C2D539 /* TargetActionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TargetActionViewController.swift; sourceTree = "<group>"; };
 		71C2380124186D870046E9B3 /* SimpleTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleTableView.swift; sourceTree = "<group>"; };
+		71C2380424186F630046E9B3 /* SwipingCellsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipingCellsTableViewController.swift; sourceTree = "<group>"; };
 		71C6324B23E89B9500BC5302 /* WeatherService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherService.swift; sourceTree = "<group>"; };
 		71D586E223FD711F00722324 /* ResponderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponderViewController.swift; sourceTree = "<group>"; };
 		71F8A5D724040B6200E03F0A /* NotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
@@ -98,6 +100,7 @@
 			children = (
 				71C237FF24186D4F0046E9B3 /* Simple View Controller */,
 				71C2380024186D6A0046E9B3 /* Simple View */,
+				71C2380324186F150046E9B3 /* Swipe Cellls */,
 			);
 			name = TableViews;
 			sourceTree = "<group>";
@@ -302,6 +305,14 @@
 			name = "Simple View";
 			sourceTree = "<group>";
 		};
+		71C2380324186F150046E9B3 /* Swipe Cellls */ = {
+			isa = PBXGroup;
+			children = (
+				71C2380424186F630046E9B3 /* SwipingCellsTableViewController.swift */,
+			);
+			name = "Swipe Cellls";
+			sourceTree = "<group>";
+		};
 		71D586E123FD70F900722324 /* Responder Chain */ = {
 			isa = PBXGroup;
 			children = (
@@ -398,6 +409,7 @@
 				719A1E9923E723C1000FC21C /* ContainerViewController.swift in Sources */,
 				7191B38A240EA7DF004FB0B2 /* CoreDataManager.swift in Sources */,
 				71D586E323FD711F00722324 /* ResponderViewController.swift in Sources */,
+				71C2380524186F630046E9B3 /* SwipingCellsTableViewController.swift in Sources */,
 				719A1E9823E723C1000FC21C /* ReadyToActivateViewController.swift in Sources */,
 				719A1E5F23E71E9C000FC21C /* AppDelegate.swift in Sources */,
 				719A1E8B23E72335000FC21C /* NavigationViewController1.swift in Sources */,

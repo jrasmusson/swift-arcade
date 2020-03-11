@@ -22,6 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             let tableViewPatterns = [
                 Lab(name: "Simple View Controller", viewController: SimpleTableViewController()),
                 Lab(name: "Simple View", viewController: SimpleTableView()),
+                Lab(name: "Swiping Cells", viewController: SwipingCellsTableViewController()),
             ]
 
             // Navigation Patterns
