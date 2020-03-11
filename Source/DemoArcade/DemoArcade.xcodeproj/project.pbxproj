@@ -113,7 +113,7 @@
 			isa = PBXGroup;
 			children = (
 				7125AD7824194FC300248EE9 /* EditMode */,
-				71C2380424186F630046E9B3 /* CustomSwiping.swift */,
+				718EBB5E2419872200A2264A /* CustomSwiping */,
 			);
 			name = "Simple Editable List";
 			sourceTree = "<group>";
@@ -160,6 +160,14 @@
 				718C45F623F42F33007B5F91 /* ClosureViewController.swift */,
 			);
 			name = Closures;
+			sourceTree = "<group>";
+		};
+		718EBB5E2419872200A2264A /* CustomSwiping */ = {
+			isa = PBXGroup;
+			children = (
+				71C2380424186F630046E9B3 /* CustomSwiping.swift */,
+			);
+			name = CustomSwiping;
 			sourceTree = "<group>";
 		};
 		7191B388240EA78B004FB0B2 /* CoreData */ = {

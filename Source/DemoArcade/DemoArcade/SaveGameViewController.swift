@@ -51,6 +51,7 @@ class SaveGameViewController: UIViewController {
 
     func setupViews() {
         navigationItem.title = "Add Game"
+        view.backgroundColor = .systemGray
     }
 
     func layout() {
