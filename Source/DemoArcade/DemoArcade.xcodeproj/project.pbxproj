@@ -13,6 +13,7 @@
 		713725CD2402AB200067ADD8 /* KVOViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 713725CC2402AB200067ADD8 /* KVOViewController.swift */; };
 		713725CF2402B5780067ADD8 /* ResponderExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 713725CE2402B5780067ADD8 /* ResponderExtensions.swift */; };
 		713725D22402BADD0067ADD8 /* PropertyObserverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 713725D12402BADD0067ADD8 /* PropertyObserverViewController.swift */; };
+		7178D4B5241922790085D6B1 /* InsertDeletingRowsEditMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7178D4B4241922790085D6B1 /* InsertDeletingRowsEditMode.swift */; };
 		718C45F723F42F33007B5F91 /* ClosureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 718C45F623F42F33007B5F91 /* ClosureViewController.swift */; };
 		7191B38A240EA7DF004FB0B2 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7191B389240EA7DF004FB0B2 /* CoreDataManager.swift */; };
 		7191B38C240EA7EE004FB0B2 /* CoreDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7191B38B240EA7EE004FB0B2 /* CoreDataViewController.swift */; };
@@ -51,6 +52,7 @@
 		713725CC2402AB200067ADD8 /* KVOViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KVOViewController.swift; sourceTree = "<group>"; };
 		713725CE2402B5780067ADD8 /* ResponderExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponderExtensions.swift; sourceTree = "<group>"; };
 		713725D12402BADD0067ADD8 /* PropertyObserverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyObserverViewController.swift; sourceTree = "<group>"; };
+		7178D4B4241922790085D6B1 /* InsertDeletingRowsEditMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsertDeletingRowsEditMode.swift; sourceTree = "<group>"; };
 		718C45F623F42F33007B5F91 /* ClosureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClosureViewController.swift; sourceTree = "<group>"; };
 		7191B389240EA7DF004FB0B2 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		7191B38B240EA7EE004FB0B2 /* CoreDataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataViewController.swift; sourceTree = "<group>"; };
@@ -101,6 +103,7 @@
 				7108111A2417DE4E00A59673 /* aSimpleUITableViewController.swift */,
 				71C2380124186D870046E9B3 /* aSimpleUITableView.swift */,
 				71C2380424186F630046E9B3 /* SwipingCellsTableViewController.swift */,
+				7178D4B4241922790085D6B1 /* InsertDeletingRowsEditMode.swift */,
 			);
 			name = TableViews;
 			sourceTree = "<group>";
@@ -384,6 +387,7 @@
 				719A1E8423E72218000FC21C /* ModalNavigation.swift in Sources */,
 				719A1E9923E723C1000FC21C /* ContainerViewController.swift in Sources */,
 				7191B38A240EA7DF004FB0B2 /* CoreDataManager.swift in Sources */,
+				7178D4B5241922790085D6B1 /* InsertDeletingRowsEditMode.swift in Sources */,
 				71D586E323FD711F00722324 /* ResponderViewController.swift in Sources */,
 				71C2380524186F630046E9B3 /* SwipingCellsTableViewController.swift in Sources */,
 				719A1E9823E723C1000FC21C /* ReadyToActivateViewController.swift in Sources */,
