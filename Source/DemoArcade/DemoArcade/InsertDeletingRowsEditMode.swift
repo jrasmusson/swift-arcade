@@ -172,3 +172,13 @@ extension InsertDeletingRowsEditMode: UITableViewDataSource {
     }
 }
 
+// U R HERE - Insert
+// Create a new ViewController for adding a new game
+// present it modally when Add pressed
+// Dismiss and return with new role added
+// Show two ways of doing this
+// 1. As you currently do
+// 2. With a modal popover
+
+// Create a directory and show both separately
+
