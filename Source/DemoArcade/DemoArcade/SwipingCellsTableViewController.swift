@@ -130,6 +130,7 @@ extension SwipingCellsTableViewController: UITableViewDataSource {
     }
     
     // 2. Edit actions for row.
+    // UR HERE - convert to non-deprecated. Rename share > disable. Add enable button. That is good.
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
         let delete = UITableViewRowAction(style: .destructive, title: "Delete") { (action, indexPath) in
             self.games.remove(at: indexPath.row)
@@ -141,7 +142,7 @@ extension SwipingCellsTableViewController: UITableViewDataSource {
             cell?.selectionStyle = .none
         }
 
-        share.backgroundColor = UIColor.blue
+        share.backgroundColor = .systemBlue
 
         return [delete, share]
     }
