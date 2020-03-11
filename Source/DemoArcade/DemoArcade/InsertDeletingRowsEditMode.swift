@@ -34,6 +34,14 @@ class InsertDeletingRowsEditMode: UIViewController {
         return button
     }()
 
+    lazy var cancelEditButton: UIButton = {
+        let button = makeButton(withText: "Cancel")
+        button.setContentHuggingPriority(UILayoutPriority.defaultHigh, for: .horizontal)
+        button.addTarget(self, action: #selector(cancelEditButtonPressed), for: .primaryActionTriggered)
+
+        return button
+    }()
+
     lazy var addButton: UIButton = {
         let button = makeButton(withText: "Add")
         button.setContentHuggingPriority(UILayoutPriority.defaultHigh, for: .horizontal)
@@ -72,13 +80,15 @@ class InsertDeletingRowsEditMode: UIViewController {
         addStackView.addArrangedSubview(textField)
         addStackView.addArrangedSubview(addButton)
 
-        rootStackView.addArrangedSubview(addStackView)
-        rootStackView.addArrangedSubview(editButton)
-        rootStackView.addArrangedSubview(tableView)
+        let editCancelStackView = makeHorizontalStackView()
+        editCancelStackView.addArrangedSubview(editButton)
+        editCancelStackView.addArrangedSubview(cancelEditButton)
+        editButton.widthAnchor.constraint(equalTo: cancelEditButton.widthAnchor, multiplier: 1).isActive = true
+        cancelEditButton.isHidden = true
 
-//        view.addSubview(addStackView)
-//        view.addSubview(editButton)
-//        view.addSubview(tableView)
+        rootStackView.addArrangedSubview(addStackView)
+        rootStackView.addArrangedSubview(editCancelStackView)
+        rootStackView.addArrangedSubview(tableView)
 
         view.addSubview(rootStackView)
 
@@ -86,19 +96,6 @@ class InsertDeletingRowsEditMode: UIViewController {
         rootStackView.leadingAnchor.constraint(equalToSystemSpacingAfter: view.leadingAnchor, multiplier: 1).isActive = true
         view.trailingAnchor.constraint(equalToSystemSpacingAfter: rootStackView.trailingAnchor, multiplier: 1).isActive = true
         view.bottomAnchor.constraint(equalToSystemSpacingBelow: rootStackView.bottomAnchor, multiplier: 1).isActive = true
-
-//        addStackView.topAnchor.constraint(equalToSystemSpacingBelow: view.safeAreaLayoutGuide.topAnchor, multiplier: 3).isActive = true
-//        addStackView.leadingAnchor.constraint(equalToSystemSpacingAfter: view.leadingAnchor, multiplier: 3).isActive = true
-//        view.trailingAnchor.constraint(equalToSystemSpacingAfter: addStackView.trailingAnchor, multiplier: 3).isActive = true
-//
-//        editButton.topAnchor.constraint(equalToSystemSpacingBelow: addStackView.bottomAnchor, multiplier: 3).isActive = true
-//        editButton.widthAnchor.constraint(equalTo: addButton.widthAnchor, multiplier: 1).isActive = true
-//        editButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-//
-//        tableView.topAnchor.constraint(equalToSystemSpacingBelow: editButton.bottomAnchor, multiplier: 1).isActive = true
-//        tableView.leadingAnchor.constraint(equalToSystemSpacingAfter: view.leadingAnchor, multiplier: 1).isActive = true
-//        view.trailingAnchor.constraint(equalToSystemSpacingAfter: tableView.trailingAnchor, multiplier: 1).isActive = true
-//        view.safeAreaLayoutGuide.bottomAnchor.constraint(equalToSystemSpacingBelow: tableView.bottomAnchor, multiplier: 1).isActive = true
     }
 
     // MARK: - Actions
@@ -106,6 +103,17 @@ class InsertDeletingRowsEditMode: UIViewController {
     @objc
     func editButtonPressed() {
         tableView.isEditing = true
+        editButton.isEnabled = false
+        editButton.backgroundColor = .systemFill
+        cancelEditButton.isHidden = false
+    }
+
+    @objc
+    func cancelEditButtonPressed() {
+        tableView.isEditing = false
+        editButton.isEnabled = true
+        editButton.backgroundColor = .systemBlue
+        cancelEditButton.isHidden = true
     }
 
     @objc
