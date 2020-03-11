@@ -77,6 +77,7 @@ class SwipingCellsTableViewController: UIViewController {
 
     // MARK: - Actions
 
+    // 3. Custom target action
     @objc
     func addButtonPressed() {
         guard let text = textField.text else { return }
@@ -108,7 +109,17 @@ extension SwipingCellsTableViewController: UITableViewDataSource {
 
         return cell
     }
+    
+    /*
+     You basically have three options when it comes to inserting/deleting cells.
+     
+     1. Edit styling.
+     2. Edit actions for row (overrides #1).
+     3. Custom target action.
+     
+     */
 
+    // 1. Edit styling.
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             games.remove(at: indexPath.row)
@@ -116,6 +127,22 @@ extension SwipingCellsTableViewController: UITableViewDataSource {
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
         }
+    }
+    
+    // 2. Edit actions for row.
+    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        let delete = UITableViewRowAction(style: .destructive, title: "Delete") { (action, indexPath) in
+            self.games.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .fade)
+        }
+
+        let share = UITableViewRowAction(style: .normal, title: "Disable") { (action, indexPath) in
+            // share item at indexPath
+        }
+
+        share.backgroundColor = UIColor.blue
+
+        return [delete, share]
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
