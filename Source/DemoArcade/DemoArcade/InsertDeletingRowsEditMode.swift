@@ -66,26 +66,39 @@ class InsertDeletingRowsEditMode: UIViewController {
     }
 
     func layout() {
+        let rootStackView = makeVerticalStackView()
+
         let addStackView = makeHorizontalStackView()
         addStackView.addArrangedSubview(textField)
         addStackView.addArrangedSubview(addButton)
 
-        view.addSubview(addStackView)
-        view.addSubview(editButton)
-        view.addSubview(tableView)
+        rootStackView.addArrangedSubview(addStackView)
+        rootStackView.addArrangedSubview(editButton)
+        rootStackView.addArrangedSubview(tableView)
 
-        addStackView.topAnchor.constraint(equalToSystemSpacingBelow: view.safeAreaLayoutGuide.topAnchor, multiplier: 3).isActive = true
-        addStackView.leadingAnchor.constraint(equalToSystemSpacingAfter: view.leadingAnchor, multiplier: 3).isActive = true
-        view.trailingAnchor.constraint(equalToSystemSpacingAfter: addStackView.trailingAnchor, multiplier: 3).isActive = true
+//        view.addSubview(addStackView)
+//        view.addSubview(editButton)
+//        view.addSubview(tableView)
 
-        editButton.topAnchor.constraint(equalToSystemSpacingBelow: addStackView.bottomAnchor, multiplier: 3).isActive = true
-        editButton.widthAnchor.constraint(equalTo: addButton.widthAnchor, multiplier: 1).isActive = true
-        editButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        view.addSubview(rootStackView)
 
-        tableView.topAnchor.constraint(equalToSystemSpacingBelow: editButton.bottomAnchor, multiplier: 1).isActive = true
-        tableView.leadingAnchor.constraint(equalToSystemSpacingAfter: view.leadingAnchor, multiplier: 1).isActive = true
-        view.trailingAnchor.constraint(equalToSystemSpacingAfter: tableView.trailingAnchor, multiplier: 1).isActive = true
-        view.safeAreaLayoutGuide.bottomAnchor.constraint(equalToSystemSpacingBelow: tableView.bottomAnchor, multiplier: 1).isActive = true
+        rootStackView.topAnchor.constraint(equalToSystemSpacingBelow: view.safeAreaLayoutGuide.topAnchor, multiplier: 1).isActive = true
+        rootStackView.leadingAnchor.constraint(equalToSystemSpacingAfter: view.leadingAnchor, multiplier: 1).isActive = true
+        view.trailingAnchor.constraint(equalToSystemSpacingAfter: rootStackView.trailingAnchor, multiplier: 1).isActive = true
+        view.bottomAnchor.constraint(equalToSystemSpacingBelow: rootStackView.bottomAnchor, multiplier: 1).isActive = true
+
+//        addStackView.topAnchor.constraint(equalToSystemSpacingBelow: view.safeAreaLayoutGuide.topAnchor, multiplier: 3).isActive = true
+//        addStackView.leadingAnchor.constraint(equalToSystemSpacingAfter: view.leadingAnchor, multiplier: 3).isActive = true
+//        view.trailingAnchor.constraint(equalToSystemSpacingAfter: addStackView.trailingAnchor, multiplier: 3).isActive = true
+//
+//        editButton.topAnchor.constraint(equalToSystemSpacingBelow: addStackView.bottomAnchor, multiplier: 3).isActive = true
+//        editButton.widthAnchor.constraint(equalTo: addButton.widthAnchor, multiplier: 1).isActive = true
+//        editButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+//
+//        tableView.topAnchor.constraint(equalToSystemSpacingBelow: editButton.bottomAnchor, multiplier: 1).isActive = true
+//        tableView.leadingAnchor.constraint(equalToSystemSpacingAfter: view.leadingAnchor, multiplier: 1).isActive = true
+//        view.trailingAnchor.constraint(equalToSystemSpacingAfter: tableView.trailingAnchor, multiplier: 1).isActive = true
+//        view.safeAreaLayoutGuide.bottomAnchor.constraint(equalToSystemSpacingBelow: tableView.bottomAnchor, multiplier: 1).isActive = true
     }
 
     // MARK: - Actions
