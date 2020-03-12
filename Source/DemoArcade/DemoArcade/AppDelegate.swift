@@ -22,7 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             let tableViewPatterns = [
                 Lab(name: "Simple View Controller", viewController: aSimpleUITableViewController()),
                 Lab(name: "Simple View", viewController: aSimpleUITableView()),
-                Lab(name: "Edit Mode", viewController: EditModeViewController()),
+                Lab(name: "Edit Mode", viewController: EditModeDeleteViewController()),
                 Lab(name: "Swiping Cells", viewController: SwipingCellsTableViewController()),
             ]
 

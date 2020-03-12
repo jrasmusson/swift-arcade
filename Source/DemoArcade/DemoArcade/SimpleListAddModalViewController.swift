@@ -1,14 +1,14 @@
 //
-//  InsertDeletingRowsEditMode.swift
+//  SimpleListAddModalViewController.swift
 //  DemoArcade
 //
-//  Created by Jonathan Rasmusson (Contractor) on 2020-03-11.
+//  Created by Jonathan Rasmusson (Contractor) on 2020-03-12.
 //  Copyright © 2020 Rasmusson Software Consulting. All rights reserved.
 //
 
 import UIKit
 
-class EditModeViewController: UIViewController {
+class SimpleListAddModalViewController: UIViewController {
 
     var games = ["Space Invaders",
                 "Dragon Slayer",
@@ -65,7 +65,7 @@ class EditModeViewController: UIViewController {
 
 // MARK:  - SaveGameViewController Delegate
 
-extension EditModeViewController: SaveGameViewControllerDelegate {
+extension SimpleListAddModalViewController: SaveGameViewControllerDelegate {
     func insert(game: String) {
         addGame(game)
     }
@@ -73,13 +73,13 @@ extension EditModeViewController: SaveGameViewControllerDelegate {
 
 // MARK:  - UITableView Delegate
 
-extension EditModeViewController: UITableViewDelegate {
+extension SimpleListAddModalViewController: UITableViewDelegate {
 
 }
 
 // MARK:  - UITableView DataSource
 
-extension EditModeViewController: UITableViewDataSource {
+extension SimpleListAddModalViewController: UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath)
@@ -90,10 +90,16 @@ extension EditModeViewController: UITableViewDataSource {
         return cell
     }
 
+    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
+        return .insert
+    }
+
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             games.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
+        } else if editingStyle == .insert {
+            print("insert")
         }
     }
 
@@ -102,16 +108,4 @@ extension EditModeViewController: UITableViewDataSource {
     }
 
 }
-
-
-
-// U R HERE - Insert
-// Create a new ViewController for adding a new game
-// present it modally when Add pressed
-// Dismiss and return with new role added
-// Show two ways of doing this
-// 1. As you currently do
-// 2. With a modal popover
-
-// Create a directory and show both separately
 

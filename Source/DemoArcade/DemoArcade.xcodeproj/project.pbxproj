@@ -14,11 +14,12 @@
 		713725CD2402AB200067ADD8 /* KVOViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 713725CC2402AB200067ADD8 /* KVOViewController.swift */; };
 		713725CF2402B5780067ADD8 /* ResponderExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 713725CE2402B5780067ADD8 /* ResponderExtensions.swift */; };
 		713725D22402BADD0067ADD8 /* PropertyObserverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 713725D12402BADD0067ADD8 /* PropertyObserverViewController.swift */; };
-		7178D4B5241922790085D6B1 /* EditModeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7178D4B4241922790085D6B1 /* EditModeViewController.swift */; };
+		7178D4B5241922790085D6B1 /* EditModeDeleteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7178D4B4241922790085D6B1 /* EditModeDeleteViewController.swift */; };
 		718C45F723F42F33007B5F91 /* ClosureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 718C45F623F42F33007B5F91 /* ClosureViewController.swift */; };
 		7191B38A240EA7DF004FB0B2 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7191B389240EA7DF004FB0B2 /* CoreDataManager.swift */; };
 		7191B38C240EA7EE004FB0B2 /* CoreDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7191B38B240EA7EE004FB0B2 /* CoreDataViewController.swift */; };
 		7191B38F240EAA4D004FB0B2 /* MyData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7191B38D240EAA4D004FB0B2 /* MyData.xcdatamodeld */; };
+		71998EEB241A68CC00F12C8E /* SimpleListAddModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71998EEA241A68CC00F12C8E /* SimpleListAddModalViewController.swift */; };
 		719A1E5F23E71E9C000FC21C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719A1E5E23E71E9C000FC21C /* AppDelegate.swift */; };
 		719A1E6823E71E9D000FC21C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 719A1E6723E71E9D000FC21C /* Assets.xcassets */; };
 		719A1E6B23E71E9D000FC21C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 719A1E6923E71E9D000FC21C /* LaunchScreen.storyboard */; };
@@ -54,11 +55,12 @@
 		713725CC2402AB200067ADD8 /* KVOViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KVOViewController.swift; sourceTree = "<group>"; };
 		713725CE2402B5780067ADD8 /* ResponderExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponderExtensions.swift; sourceTree = "<group>"; };
 		713725D12402BADD0067ADD8 /* PropertyObserverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyObserverViewController.swift; sourceTree = "<group>"; };
-		7178D4B4241922790085D6B1 /* EditModeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditModeViewController.swift; sourceTree = "<group>"; };
+		7178D4B4241922790085D6B1 /* EditModeDeleteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditModeDeleteViewController.swift; sourceTree = "<group>"; };
 		718C45F623F42F33007B5F91 /* ClosureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClosureViewController.swift; sourceTree = "<group>"; };
 		7191B389240EA7DF004FB0B2 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		7191B38B240EA7EE004FB0B2 /* CoreDataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataViewController.swift; sourceTree = "<group>"; };
 		7191B38E240EAA4D004FB0B2 /* MyData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MyData.xcdatamodel; sourceTree = "<group>"; };
+		71998EEA241A68CC00F12C8E /* SimpleListAddModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleListAddModalViewController.swift; sourceTree = "<group>"; };
 		719A1E5B23E71E9C000FC21C /* DemoArcade.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DemoArcade.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		719A1E5E23E71E9C000FC21C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		719A1E6723E71E9D000FC21C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -114,6 +116,7 @@
 			children = (
 				7125AD7824194FC300248EE9 /* EditMode */,
 				718EBB5E2419872200A2264A /* CustomSwiping */,
+				71998EE9241A62BF00F12C8E /* Target Action */,
 			);
 			name = "Simple Editable List";
 			sourceTree = "<group>";
@@ -121,8 +124,7 @@
 		7125AD7824194FC300248EE9 /* EditMode */ = {
 			isa = PBXGroup;
 			children = (
-				7178D4B4241922790085D6B1 /* EditModeViewController.swift */,
-				7125AD7924194FF300248EE9 /* SaveGameViewController.swift */,
+				7178D4B4241922790085D6B1 /* EditModeDeleteViewController.swift */,
 			);
 			name = EditMode;
 			sourceTree = "<group>";
@@ -176,6 +178,15 @@
 				712CA2F92411337A00A85735 /* Intro */,
 			);
 			name = CoreData;
+			sourceTree = "<group>";
+		};
+		71998EE9241A62BF00F12C8E /* Target Action */ = {
+			isa = PBXGroup;
+			children = (
+				71998EEA241A68CC00F12C8E /* SimpleListAddModalViewController.swift */,
+				7125AD7924194FF300248EE9 /* SaveGameViewController.swift */,
+			);
+			name = "Target Action";
 			sourceTree = "<group>";
 		};
 		719A1E5223E71E9C000FC21C = {
@@ -414,7 +425,7 @@
 				719A1E8423E72218000FC21C /* ModalNavigation.swift in Sources */,
 				719A1E9923E723C1000FC21C /* ContainerViewController.swift in Sources */,
 				7191B38A240EA7DF004FB0B2 /* CoreDataManager.swift in Sources */,
-				7178D4B5241922790085D6B1 /* EditModeViewController.swift in Sources */,
+				7178D4B5241922790085D6B1 /* EditModeDeleteViewController.swift in Sources */,
 				71D586E323FD711F00722324 /* ResponderViewController.swift in Sources */,
 				71C2380524186F630046E9B3 /* CustomSwiping.swift in Sources */,
 				719A1E9823E723C1000FC21C /* ReadyToActivateViewController.swift in Sources */,
@@ -430,6 +441,7 @@
 				7191B38C240EA7EE004FB0B2 /* CoreDataViewController.swift in Sources */,
 				719A1E9D23E723E1000FC21C /* Factories.swift in Sources */,
 				719A1E7423E71F17000FC21C /* DemoViewController.swift in Sources */,
+				71998EEB241A68CC00F12C8E /* SimpleListAddModalViewController.swift in Sources */,
 				719A1E8923E7232A000FC21C /* NavigationViewController2.swift in Sources */,
 				7119DB2023E9A833000E5796 /* Weather.swift in Sources */,
 				71B9AEBF23F1936C00C2D539 /* TargetActionViewController.swift in Sources */,
