@@ -21,7 +21,7 @@ class SaveGameViewController: UIViewController {
         textField.translatesAutoresizingMaskIntoConstraints = false
         textField.font = UIFont.preferredFont(forTextStyle: .body)
         textField.textAlignment = .center
-        textField.backgroundColor = .systemFill
+        textField.backgroundColor = .systemGray
 
         return textField
     }()

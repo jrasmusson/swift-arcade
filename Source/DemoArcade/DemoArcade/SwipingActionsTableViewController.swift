@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SwipingCellsTableViewController: UIViewController {
+class SwipingActionsTableViewController: UIViewController {
 
     var games = ["Space Invaders",
                 "Dragon Slayer",
@@ -93,13 +93,13 @@ class SwipingCellsTableViewController: UIViewController {
 
 // MARK:  - UITableView Delegate
 
-extension SwipingCellsTableViewController: UITableViewDelegate {
+extension SwipingActionsTableViewController: UITableViewDelegate {
 
 }
 
 // MARK:  - UITableView DataSource
 
-extension SwipingCellsTableViewController: UITableViewDataSource {
+extension SwipingActionsTableViewController: UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath)
@@ -109,14 +109,6 @@ extension SwipingCellsTableViewController: UITableViewDataSource {
 
         return cell
     }
-
-
-
-
-
-
-
-
 
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
 
@@ -143,19 +135,6 @@ extension SwipingCellsTableViewController: UITableViewDataSource {
 
         return configuration
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return games.count

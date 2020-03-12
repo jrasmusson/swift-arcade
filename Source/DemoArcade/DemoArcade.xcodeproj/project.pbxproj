@@ -41,7 +41,7 @@
 		719A1EA123E72721000FC21C /* ProtocolDelegateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719A1EA023E72721000FC21C /* ProtocolDelegateViewController.swift */; };
 		71B9AEBF23F1936C00C2D539 /* TargetActionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71B9AEBE23F1936C00C2D539 /* TargetActionViewController.swift */; };
 		71C2380224186D870046E9B3 /* aSimpleUITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C2380124186D870046E9B3 /* aSimpleUITableView.swift */; };
-		71C2380524186F630046E9B3 /* CustomSwiping.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C2380424186F630046E9B3 /* CustomSwiping.swift */; };
+		71C2380524186F630046E9B3 /* SwipingActionsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C2380424186F630046E9B3 /* SwipingActionsTableViewController.swift */; };
 		71C6324C23E89B9500BC5302 /* WeatherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C6324B23E89B9500BC5302 /* WeatherService.swift */; };
 		71D586E323FD711F00722324 /* ResponderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D586E223FD711F00722324 /* ResponderViewController.swift */; };
 		71F8A5D824040B6200E03F0A /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F8A5D724040B6200E03F0A /* NotificationViewController.swift */; };
@@ -84,7 +84,7 @@
 		719A1EA023E72721000FC21C /* ProtocolDelegateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProtocolDelegateViewController.swift; sourceTree = "<group>"; };
 		71B9AEBE23F1936C00C2D539 /* TargetActionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TargetActionViewController.swift; sourceTree = "<group>"; };
 		71C2380124186D870046E9B3 /* aSimpleUITableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = aSimpleUITableView.swift; sourceTree = "<group>"; };
-		71C2380424186F630046E9B3 /* CustomSwiping.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSwiping.swift; sourceTree = "<group>"; };
+		71C2380424186F630046E9B3 /* SwipingActionsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipingActionsTableViewController.swift; sourceTree = "<group>"; };
 		71C6324B23E89B9500BC5302 /* WeatherService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherService.swift; sourceTree = "<group>"; };
 		71D586E223FD711F00722324 /* ResponderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponderViewController.swift; sourceTree = "<group>"; };
 		71F8A5D724040B6200E03F0A /* NotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
@@ -115,7 +115,7 @@
 			isa = PBXGroup;
 			children = (
 				7125AD7824194FC300248EE9 /* EditMode */,
-				718EBB5E2419872200A2264A /* CustomSwiping */,
+				718EBB5E2419872200A2264A /* Swipable Actions */,
 				71998EE9241A62BF00F12C8E /* Target Action */,
 			);
 			name = "Simple List";
@@ -164,12 +164,12 @@
 			name = Closures;
 			sourceTree = "<group>";
 		};
-		718EBB5E2419872200A2264A /* CustomSwiping */ = {
+		718EBB5E2419872200A2264A /* Swipable Actions */ = {
 			isa = PBXGroup;
 			children = (
-				71C2380424186F630046E9B3 /* CustomSwiping.swift */,
+				71C2380424186F630046E9B3 /* SwipingActionsTableViewController.swift */,
 			);
-			name = CustomSwiping;
+			name = "Swipable Actions";
 			sourceTree = "<group>";
 		};
 		7191B388240EA78B004FB0B2 /* CoreData */ = {
@@ -427,7 +427,7 @@
 				7191B38A240EA7DF004FB0B2 /* CoreDataManager.swift in Sources */,
 				7178D4B5241922790085D6B1 /* SimpleListEditModeViewController.swift in Sources */,
 				71D586E323FD711F00722324 /* ResponderViewController.swift in Sources */,
-				71C2380524186F630046E9B3 /* CustomSwiping.swift in Sources */,
+				71C2380524186F630046E9B3 /* SwipingActionsTableViewController.swift in Sources */,
 				719A1E9823E723C1000FC21C /* ReadyToActivateViewController.swift in Sources */,
 				719A1E5F23E71E9C000FC21C /* AppDelegate.swift in Sources */,
 				719A1E8B23E72335000FC21C /* NavigationViewController1.swift in Sources */,

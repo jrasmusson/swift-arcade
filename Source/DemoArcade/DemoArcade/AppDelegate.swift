@@ -20,11 +20,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
             // UITableView Patterns
             let tableViewPatterns = [
-//                Lab(name: "Simple View Controller", viewController: aSimpleUITableViewController()),
-//                Lab(name: "Simple View", viewController: aSimpleUITableView()),
                 Lab(name: "Edit Mode", viewController: SimpleListEditModeViewController()),
-                Lab(name: "Swiping Cells", viewController: SwipingCellsTableViewController()),
-                Lab(name: "Modal Add", viewController: SimpleListAddModalViewController()),
+                Lab(name: "Swipable Actions", viewController: SwipingActionsTableViewController()),
+                Lab(name: "Modal", viewController: SimpleListAddModalViewController()),
             ]
 
             // Navigation Patterns
