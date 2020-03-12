@@ -24,6 +24,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //                Lab(name: "Simple View", viewController: aSimpleUITableView()),
                 Lab(name: "Edit Mode", viewController: SimpleListEditModeViewController()),
                 Lab(name: "Swiping Cells", viewController: SwipingCellsTableViewController()),
+                Lab(name: "Modal Add", viewController: SimpleListAddModalViewController()),
             ]
 
             // Navigation Patterns

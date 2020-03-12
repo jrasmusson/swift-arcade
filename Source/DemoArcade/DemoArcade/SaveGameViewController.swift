@@ -9,9 +9,8 @@
 import UIKit
 
 protocol SaveGameViewControllerDelegate: AnyObject {
-    func insert(game: String)
+    func add(game: String)
 }
-
 
 class SaveGameViewController: UIViewController {
 
@@ -51,7 +50,7 @@ class SaveGameViewController: UIViewController {
 
     func setupViews() {
         navigationItem.title = "Add Game"
-        view.backgroundColor = .systemGray
+        view.backgroundColor = .systemGreen
     }
 
     func layout() {
@@ -79,7 +78,7 @@ class SaveGameViewController: UIViewController {
     @objc
     func saveButtonPressed() {
         guard let game = textField.text else { return }
-        delegate?.insert(game: game)
+        delegate?.add(game: game)
 
         dismiss(animated: true, completion: nil)
     }

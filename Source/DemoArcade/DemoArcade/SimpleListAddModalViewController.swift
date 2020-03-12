@@ -66,7 +66,7 @@ class SimpleListAddModalViewController: UIViewController {
 // MARK:  - SaveGameViewController Delegate
 
 extension SimpleListAddModalViewController: SaveGameViewControllerDelegate {
-    func insert(game: String) {
+    func add(game: String) {
         addGame(game)
     }
 }
