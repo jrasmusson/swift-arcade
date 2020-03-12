@@ -105,10 +105,18 @@ extension SwipingCellsTableViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath)
 
         cell.textLabel?.text = games[indexPath.row]
-        cell.accessoryType = UITableViewCell.AccessoryType.disclosureIndicator
+        cell.accessoryType = UITableViewCell.AccessoryType.none
 
         return cell
     }
+
+
+
+
+
+
+
+
 
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
 
@@ -116,11 +124,38 @@ extension SwipingCellsTableViewController: UITableViewDataSource {
             self.games.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
         })
+        action.image = makeSymbolImage(systemName: "trash")
 
         let configuration = UISwipeActionsConfiguration(actions: [action])
 
         return configuration
     }
+
+    func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+
+        let action = UIContextualAction(style: .normal, title: "Document", handler: { (action, view, completionHandler) in
+            self.games.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .fade)
+        })
+        action.image = makeSymbolImage(systemName: "paperclip")
+
+        let configuration = UISwipeActionsConfiguration(actions: [action])
+
+        return configuration
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return games.count

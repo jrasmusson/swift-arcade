@@ -19,6 +19,26 @@ func makeButton(withText text: String) -> UIButton {
     return button
 }
 
+func makeSymbolButton(systemName: String, target: Any, selector: Selector) -> UIButton {
+    let configuration = UIImage.SymbolConfiguration(scale: .large)
+    let image = UIImage(systemName: systemName, withConfiguration: configuration)
+
+    let button = UIButton()
+    button.translatesAutoresizingMaskIntoConstraints = false
+    button.addTarget(target, action: selector, for: .primaryActionTriggered)
+    button.setImage(image, for: .normal)
+    button.imageView?.contentMode = .scaleAspectFit
+
+    return button
+}
+
+func makeSymbolImage(systemName: String) -> UIImage? {
+    let configuration = UIImage.SymbolConfiguration(scale: .large)
+    let image = UIImage(systemName: systemName, withConfiguration: configuration)
+
+    return image
+}
+
 func makeLabel(withTitle title: String) -> UILabel {
     let label = UILabel()
     label.translatesAutoresizingMaskIntoConstraints = false
@@ -46,18 +66,5 @@ func makeVerticalStackView() -> UIStackView {
     stack.spacing = 8.0
 
     return stack
-}
-
-func makeSymbolButton(systemName: String, target: Any, selector: Selector) -> UIButton {
-    let configuration = UIImage.SymbolConfiguration(scale: .large)
-    let image = UIImage(systemName: systemName, withConfiguration: configuration)
-
-    let button = UIButton()
-    button.translatesAutoresizingMaskIntoConstraints = false
-    button.addTarget(target, action: selector, for: .primaryActionTriggered)
-    button.setImage(image, for: .normal)
-    button.imageView?.contentMode = .scaleAspectFit
-
-    return button
 }
 
