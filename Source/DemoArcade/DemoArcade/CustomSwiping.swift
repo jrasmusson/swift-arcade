@@ -109,39 +109,18 @@ extension SwipingCellsTableViewController: UITableViewDataSource {
 
         return cell
     }
-    
-    /*
-     You basically have three options when it comes to inserting/deleting cells.
-     
-     1. Edit styling.
-     2. Edit actions for row (overrides #1).
-     3. Custom target action.
-     
-     */
 
-    // 1. Edit styling.
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
 
-        if editingStyle == .delete {
-            games.remove(at: indexPath.row)
+        let action = UIContextualAction(style: .destructive, title: "Delete", handler: { (action, view, completionHandler) in
+            self.games.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
-        }
+        })
 
+        let configuration = UISwipeActionsConfiguration(actions: [action])
+
+        return configuration
     }
-
-//    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-//
-//        let action = UIContextualAction(style: .destructive, title: "Delete", handler: { (action, view, completionHandler) in
-//            self.games.remove(at: indexPath.row)
-//            tableView.deleteRows(at: [indexPath], with: .fade)
-//        })
-//
-//        let configuration = UISwipeActionsConfiguration(actions: [action])
-//
-//        return configuration
-//    }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return games.count

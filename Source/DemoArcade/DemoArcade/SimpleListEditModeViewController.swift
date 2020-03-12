@@ -17,7 +17,7 @@ import UIKit
        calls `setEditing` on your VC for you.
  */
 
-class EditModeDeleteViewController: UIViewController {
+class SimpleListEditModeViewController: UIViewController {
 
     var games = ["Space Invaders",
                 "Dragon Slayer",
@@ -44,7 +44,6 @@ class EditModeDeleteViewController: UIViewController {
         // navigationItem.rightBarButtonItem = myButtonItem
         navigationItem.rightBarButtonItem = editButtonItem // magic!
 
-
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellId)
@@ -67,13 +66,13 @@ class EditModeDeleteViewController: UIViewController {
 
 // MARK:  - UITableView Delegate
 
-extension EditModeDeleteViewController: UITableViewDelegate {
+extension SimpleListEditModeViewController: UITableViewDelegate {
 
 }
 
 // MARK:  - UITableView DataSource
 
-extension EditModeDeleteViewController: UITableViewDataSource {
+extension SimpleListEditModeViewController: UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath)
@@ -84,7 +83,7 @@ extension EditModeDeleteViewController: UITableViewDataSource {
         return cell
     }
 
-    // Default is `.delete`. To `.insert` return editing style here.
+    // To trigger single action insert mode.
 //    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
 //        return .insert
 //    }
