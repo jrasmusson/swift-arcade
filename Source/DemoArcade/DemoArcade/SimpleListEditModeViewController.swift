@@ -33,6 +33,13 @@ class SimpleListEditModeViewController: UIViewController {
         barButtonItem.tintColor = UIColor.systemBlue
         return barButtonItem
     }()
+    
+    // MARK: - Actions
+
+    @objc
+    func myButtonTapped() {
+        tableView.isEditing = true
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,7 +48,7 @@ class SimpleListEditModeViewController: UIViewController {
 
     func setupViews() {
         navigationItem.title = "Classic Arcade"
-        // navigationItem.rightBarButtonItem = myButtonItem
+//         navigationItem.rightBarButtonItem = myButtonItem
         navigationItem.rightBarButtonItem = editButtonItem // magic!
 
         tableView.delegate = self
@@ -56,12 +63,6 @@ class SimpleListEditModeViewController: UIViewController {
         tableView.setEditing(editing, animated: animated)
     }
 
-    // MARK: - Actions
-
-    @objc
-    func myButtonTapped() {
-        tableView.isEditing = true
-    }
 }
 
 // MARK:  - UITableView Delegate
@@ -84,9 +85,9 @@ extension SimpleListEditModeViewController: UITableViewDataSource {
     }
 
     // To trigger single action insert mode.
-//    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
-//        return .insert
-//    }
+    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
+        return .insert
+    }
 
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {

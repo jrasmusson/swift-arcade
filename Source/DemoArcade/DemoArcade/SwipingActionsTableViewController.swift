@@ -77,7 +77,6 @@ class SwipingActionsTableViewController: UIViewController {
 
     // MARK: - Actions
 
-    // 3. Custom target action
     @objc
     func addButtonPressed() {
         guard let text = textField.text else { return }
@@ -126,8 +125,7 @@ extension SwipingActionsTableViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
 
         let action = UIContextualAction(style: .normal, title: "Document", handler: { (action, view, completionHandler) in
-            self.games.remove(at: indexPath.row)
-            tableView.deleteRows(at: [indexPath], with: .fade)
+            // Do something with documents...
         })
         action.image = makeSymbolImage(systemName: "paperclip")
 

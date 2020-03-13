@@ -116,7 +116,7 @@
 			children = (
 				7125AD7824194FC300248EE9 /* EditMode */,
 				718EBB5E2419872200A2264A /* Swipable Actions */,
-				71998EE9241A62BF00F12C8E /* Target Action */,
+				71998EE9241A62BF00F12C8E /* Modal */,
 			);
 			name = "Simple List";
 			sourceTree = "<group>";
@@ -180,13 +180,13 @@
 			name = CoreData;
 			sourceTree = "<group>";
 		};
-		71998EE9241A62BF00F12C8E /* Target Action */ = {
+		71998EE9241A62BF00F12C8E /* Modal */ = {
 			isa = PBXGroup;
 			children = (
 				71998EEA241A68CC00F12C8E /* SimpleListAddModalViewController.swift */,
 				7125AD7924194FF300248EE9 /* SaveGameViewController.swift */,
 			);
-			name = "Target Action";
+			name = Modal;
 			sourceTree = "<group>";
 		};
 		719A1E5223E71E9C000FC21C = {
