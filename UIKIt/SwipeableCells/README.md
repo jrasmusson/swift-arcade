@@ -38,6 +38,8 @@ We can then react to the style of the cell row returned (`.delete` by default).
 
 ### Insert
 
+![TableView](https://github.com/jrasmusson/swift-arcade/blob/master/UIKIt/SwipeableCells/images/edit-mode-insert.gif)
+
 If we want to insert we need to override the default `.delete` editting style and return an `.insert` one.
 
 ```swift
@@ -61,11 +63,12 @@ private func addGame(_ game: String) {
 }
 ```
 
-![TableView](https://github.com/jrasmusson/swift-arcade/blob/master/UIKIt/SwipeableCells/images/edit-mode-insert.gif)
 
 ## Swipeable
 
 To make cells swipeable, return a collection of swipe actions for either the trailing or leading side.
+
+![TableView](https://github.com/jrasmusson/swift-arcade/blob/master/UIKIt/SwipeableCells/images/swipeable.gif)
 
 ```swift
 func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
@@ -94,7 +97,6 @@ func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowA
 }
 ```
 
-![TableView](https://github.com/jrasmusson/swift-arcade/blob/master/UIKIt/SwipeableCells/images/swipeable.gif)
 
 ### Swipeable Add
 
