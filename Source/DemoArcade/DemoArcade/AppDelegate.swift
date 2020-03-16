@@ -18,65 +18,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             window = UIWindow(frame: UIScreen.main.bounds)
             window?.makeKeyAndVisible()
 
-            // Swipeable Cells
-            let swipeableCellLabs = [
-                Lab(name: "Edit Mode", viewController: SimpleListEditModeViewController()),
-                Lab(name: "Swipable Actions", viewController: SwipingActionsTableViewController()),
-                Lab(name: "Modal", viewController: SimpleListAddModalViewController()),
-            ]
-
-            let swipeableCellViewController = DemoViewController(labs: swipeableCellLabs, navBarTitle: "Swipeable Cells")
-
-            // UIKIt Patterns
-            let uikitLabs = [
-                Lab(name: "Swipeable Cells", viewController: swipeableCellViewController),
-            ]
-            
-            let uikitViewController = DemoViewController(labs: uikitLabs, navBarTitle: "UIKIt")
-
-            // Navigation Patterns
-            let containerPatterns = [
-                Lab(name: "NavigationController", viewController: NavigationViewController1()),
-                Lab(name: "TabViewController", viewController: TabBarViewController()),
-                Lab(name: "PageViewController", viewController: PageViewController(transitionStyle: .scroll, navigationOrientation: .horizontal, options: nil)),
-            ]
-
-            let containerViewController = DemoViewController(labs: containerPatterns, navBarTitle: "Container")
-
-            let navigationPatterns = [
-                Lab(name: "Modal", viewController: ModalNavigation()),
-                Lab(name: "Container", viewController: containerViewController),
-                Lab(name: "Custom", viewController: ContainerViewController()),
-            ]
-
-            // Communication Patterns
-            let communicationPatterns = [
-                Lab(name: "Protocol Delegate", viewController: ProtocolDelegateViewController()),
-                Lab(name: "Closure", viewController: ClosureViewController()),
-                Lab(name: "ResponderChain", viewController: ResponderChainViewController()),
-                Lab(name: "Key-Value Observing", viewController: KVOViewController()),
-                Lab(name: "Property Observers", viewController: PropertyObserverViewController()),
-                Lab(name: "Notification Center", viewController: NotificationViewController()),
-            ]
-
-            // CoreData
-            let coreDataPatterns = [
-                Lab(name: "Intro", viewController: CoreDataViewController()), // IntroViewController()
-            ]
-
-            //
-            // Top level
-            //
-
-            let navigationViewController = DemoViewController(labs: navigationPatterns, navBarTitle: "Navigation")
-            let communicationViewController = DemoViewController(labs: communicationPatterns, navBarTitle: "Communication")
-            let coreDataViewController = DemoViewController(labs: coreDataPatterns, navBarTitle: "CoreData")
-
             let rootLabs = [
-                Lab(name: "UIKit", viewController: uikitViewController),
-                Lab(name: "Navigation", viewController: navigationViewController),
-                Lab(name: "Communication", viewController: communicationViewController),
-                Lab(name: "CoreData", viewController: coreDataViewController),
+                Lab(name: "UIKit", viewController: makeUIKitArcade()),
+                Lab(name: "Navigation", viewController: makeNavigationArcade()),
+                Lab(name: "Communication", viewController: makeCommunicationArcade()),
+                Lab(name: "CoreData", viewController: makeCoreDataArcade()),
             ]
 
             let rootViewController = DemoViewController(labs: rootLabs, navBarTitle: "Cocoa Demos")
@@ -91,7 +37,59 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 }
 
 extension AppDelegate {
-    makeUIKitViewController() -> ViewController {
+    
+    func makeUIKitArcade() -> UIViewController {
+        let swipeablePatterns = [
+            Lab(name: "Edit Mode", viewController: SimpleListEditModeViewController()),
+            Lab(name: "Swipable Actions", viewController: SwipingActionsTableViewController()),
+            Lab(name: "Modal", viewController: SimpleListAddModalViewController()),
+        ]
+
+        let swipeableCellViewController = DemoViewController(labs: swipeablePatterns, navBarTitle: "Swipeable Cells")
+
+
+        let uikitLabs = [
+            Lab(name: "Swipeable Cells", viewController: swipeableCellViewController),
+        ]
         
+        return DemoViewController(labs: uikitLabs, navBarTitle: "UIKIt")
+    }
+    
+    func makeNavigationArcade() -> UIViewController {
+        let containerPatterns = [
+            Lab(name: "NavigationController", viewController: NavigationViewController1()),
+            Lab(name: "TabViewController", viewController: TabBarViewController()),
+            Lab(name: "PageViewController", viewController: PageViewController(transitionStyle: .scroll, navigationOrientation: .horizontal, options: nil)),
+        ]
+
+        let containerViewController = DemoViewController(labs: containerPatterns, navBarTitle: "Container")
+
+        let navigationPatterns = [
+            Lab(name: "Modal", viewController: ModalNavigation()),
+            Lab(name: "Container", viewController: containerViewController),
+            Lab(name: "Custom", viewController: ContainerViewController()),
+        ]
+        
+        return DemoViewController(labs: navigationPatterns, navBarTitle: "Navigation")
+    }
+    
+    func makeCommunicationArcade() -> UIViewController {
+        let communicationPatterns = [
+            Lab(name: "Protocol Delegate", viewController: ProtocolDelegateViewController()),
+            Lab(name: "Closure", viewController: ClosureViewController()),
+            Lab(name: "ResponderChain", viewController: ResponderChainViewController()),
+            Lab(name: "Key-Value Observing", viewController: KVOViewController()),
+            Lab(name: "Property Observers", viewController: PropertyObserverViewController()),
+            Lab(name: "Notification Center", viewController: NotificationViewController()),
+        ]
+        return DemoViewController(labs: communicationPatterns, navBarTitle: "Communication")
+    }
+    
+    func makeCoreDataArcade() -> UIViewController {
+        let coreDataPatterns = [
+            Lab(name: "Intro", viewController: CoreDataViewController()), // IntroViewController()
+        ]
+
+        return DemoViewController(labs: coreDataPatterns, navBarTitle: "CoreData")
     }
 }
