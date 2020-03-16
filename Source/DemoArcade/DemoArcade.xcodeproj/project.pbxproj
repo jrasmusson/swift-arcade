@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		7108111B2417DE4E00A59673 /* aSimpleUITableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7108111A2417DE4E00A59673 /* aSimpleUITableViewController.swift */; };
+		71147A962420258F00C850C5 /* DemoFetchedResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71147A952420258F00C850C5 /* DemoFetchedResultsViewController.swift */; };
+		71147A98242025B800C850C5 /* GameManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71147A97242025B800C850C5 /* GameManager.swift */; };
+		71147A9B242025E000C850C5 /* GameModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 71147A99242025E000C850C5 /* GameModel.xcdatamodeld */; };
 		7119DB2023E9A833000E5796 /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7119DB1F23E9A833000E5796 /* Weather.swift */; };
 		7125AD7A24194FF300248EE9 /* SaveGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7125AD7924194FF300248EE9 /* SaveGameViewController.swift */; };
 		712CA2FB241133DE00A85735 /* IntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 712CA2FA241133DE00A85735 /* IntroViewController.swift */; };
@@ -49,6 +52,9 @@
 
 /* Begin PBXFileReference section */
 		7108111A2417DE4E00A59673 /* aSimpleUITableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = aSimpleUITableViewController.swift; sourceTree = "<group>"; };
+		71147A952420258F00C850C5 /* DemoFetchedResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoFetchedResultsViewController.swift; sourceTree = "<group>"; };
+		71147A97242025B800C850C5 /* GameManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameManager.swift; sourceTree = "<group>"; };
+		71147A9A242025E000C850C5 /* GameModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = GameModel.xcdatamodel; sourceTree = "<group>"; };
 		7119DB1F23E9A833000E5796 /* Weather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
 		7125AD7924194FF300248EE9 /* SaveGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveGameViewController.swift; sourceTree = "<group>"; };
 		712CA2FA241133DE00A85735 /* IntroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroViewController.swift; sourceTree = "<group>"; };
@@ -109,6 +115,16 @@
 				7125AD7724194A4100248EE9 /* Simple List */,
 			);
 			name = UIKit;
+			sourceTree = "<group>";
+		};
+		71147A942420254E00C850C5 /* NSFetchedResultsController */ = {
+			isa = PBXGroup;
+			children = (
+				71147A952420258F00C850C5 /* DemoFetchedResultsViewController.swift */,
+				71147A97242025B800C850C5 /* GameManager.swift */,
+				71147A99242025E000C850C5 /* GameModel.xcdatamodeld */,
+			);
+			name = NSFetchedResultsController;
 			sourceTree = "<group>";
 		};
 		7125AD7724194A4100248EE9 /* Simple List */ = {
@@ -176,6 +192,7 @@
 			isa = PBXGroup;
 			children = (
 				712CA2F92411337A00A85735 /* Intro */,
+				71147A942420254E00C850C5 /* NSFetchedResultsController */,
 			);
 			name = CoreData;
 			sourceTree = "<group>";
@@ -430,6 +447,7 @@
 				71C2380524186F630046E9B3 /* SwipingActionsTableViewController.swift in Sources */,
 				719A1E9823E723C1000FC21C /* ReadyToActivateViewController.swift in Sources */,
 				719A1E5F23E71E9C000FC21C /* AppDelegate.swift in Sources */,
+				71147A962420258F00C850C5 /* DemoFetchedResultsViewController.swift in Sources */,
 				719A1E8B23E72335000FC21C /* NavigationViewController1.swift in Sources */,
 				719A1E8223E72218000FC21C /* ModalViewController2.swift in Sources */,
 				719A1E8323E72218000FC21C /* ModalViewController1.swift in Sources */,
@@ -438,6 +456,7 @@
 				71C6324C23E89B9500BC5302 /* WeatherService.swift in Sources */,
 				719A1E8F23E72361000FC21C /* PageViewController.swift in Sources */,
 				713725CF2402B5780067ADD8 /* ResponderExtensions.swift in Sources */,
+				71147A9B242025E000C850C5 /* GameModel.xcdatamodeld in Sources */,
 				7191B38C240EA7EE004FB0B2 /* CoreDataViewController.swift in Sources */,
 				719A1E9D23E723E1000FC21C /* Factories.swift in Sources */,
 				719A1E7423E71F17000FC21C /* DemoViewController.swift in Sources */,
@@ -449,6 +468,7 @@
 				71F8A5D824040B6200E03F0A /* NotificationViewController.swift in Sources */,
 				7191B38F240EAA4D004FB0B2 /* MyData.xcdatamodeld in Sources */,
 				719A1E9723E723C1000FC21C /* ActivationManager.swift in Sources */,
+				71147A98242025B800C850C5 /* GameManager.swift in Sources */,
 				71C2380224186D870046E9B3 /* aSimpleUITableView.swift in Sources */,
 				719A1E9B23E723C1000FC21C /* ActivatingViewController.swift in Sources */,
 				713725D22402BADD0067ADD8 /* PropertyObserverViewController.swift in Sources */,
@@ -644,6 +664,16 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
+		71147A99242025E000C850C5 /* GameModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				71147A9A242025E000C850C5 /* GameModel.xcdatamodel */,
+			);
+			currentVersion = 71147A9A242025E000C850C5 /* GameModel.xcdatamodel */;
+			path = GameModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
 		7191B38D240EAA4D004FB0B2 /* MyData.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (

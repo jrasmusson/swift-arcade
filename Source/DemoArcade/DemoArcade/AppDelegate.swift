@@ -88,6 +88,7 @@ extension AppDelegate {
     func makeCoreDataArcade() -> UIViewController {
         let coreDataPatterns = [
             Lab(name: "Intro", viewController: CoreDataViewController()),
+            Lab(name: "Fetched Results Demo", viewController: DemoFetchedResultsViewController()),
         ]
 
         return DemoViewController(labs: coreDataPatterns, navBarTitle: "CoreData")
