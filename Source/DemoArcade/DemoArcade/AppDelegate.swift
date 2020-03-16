@@ -18,12 +18,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             window = UIWindow(frame: UIScreen.main.bounds)
             window?.makeKeyAndVisible()
 
-            // UITableView Patterns
-            let tableViewPatterns = [
+            // Swipeable Cells
+            let swipeableCellLabs = [
                 Lab(name: "Edit Mode", viewController: SimpleListEditModeViewController()),
                 Lab(name: "Swipable Actions", viewController: SwipingActionsTableViewController()),
                 Lab(name: "Modal", viewController: SimpleListAddModalViewController()),
             ]
+
+            let swipeableCellViewController = DemoViewController(labs: swipeableCellLabs, navBarTitle: "Swipeable Cells")
+
+            // UIKIt Patterns
+            let uikitLabs = [
+                Lab(name: "Swipeable Cells", viewController: swipeableCellViewController),
+            ]
+            
+            let uikitViewController = DemoViewController(labs: uikitLabs, navBarTitle: "UIKIt")
 
             // Navigation Patterns
             let containerPatterns = [
@@ -59,19 +68,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             // Top level
             //
 
-            let tableViewController = DemoViewController(labs: tableViewPatterns, navBarTitle: "UITableViewControllers")
             let navigationViewController = DemoViewController(labs: navigationPatterns, navBarTitle: "Navigation")
             let communicationViewController = DemoViewController(labs: communicationPatterns, navBarTitle: "Communication")
             let coreDataViewController = DemoViewController(labs: coreDataPatterns, navBarTitle: "CoreData")
 
             let rootLabs = [
-                Lab(name: "UITableViewController", viewController: tableViewController),
+                Lab(name: "UIKit", viewController: uikitViewController),
                 Lab(name: "Navigation", viewController: navigationViewController),
                 Lab(name: "Communication", viewController: communicationViewController),
                 Lab(name: "CoreData", viewController: coreDataViewController),
             ]
 
-            let rootViewController = DemoViewController(labs: rootLabs, navBarTitle: "UIKit Demos")
+            let rootViewController = DemoViewController(labs: rootLabs, navBarTitle: "Cocoa Demos")
             let navigatorController = UINavigationController(rootViewController: rootViewController)
 
             window?.backgroundColor = .white
@@ -80,4 +88,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             return true
     }
 
+}
+
+extension AppDelegate {
+    makeUIKitViewController() -> ViewController {
+        
+    }
 }

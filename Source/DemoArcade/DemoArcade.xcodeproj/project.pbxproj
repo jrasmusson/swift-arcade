@@ -101,14 +101,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		710811192417DE3500A59673 /* TableViews */ = {
+		710811192417DE3500A59673 /* UIKit */ = {
 			isa = PBXGroup;
 			children = (
 				7108111A2417DE4E00A59673 /* aSimpleUITableViewController.swift */,
 				71C2380124186D870046E9B3 /* aSimpleUITableView.swift */,
 				7125AD7724194A4100248EE9 /* Simple List */,
 			);
-			name = TableViews;
+			name = UIKit;
 			sourceTree = "<group>";
 		};
 		7125AD7724194A4100248EE9 /* Simple List */ = {
@@ -208,7 +208,7 @@
 		719A1E5D23E71E9C000FC21C /* DemoArcade */ = {
 			isa = PBXGroup;
 			children = (
-				710811192417DE3500A59673 /* TableViews */,
+				710811192417DE3500A59673 /* UIKit */,
 				719A1E9E23E724FC000FC21C /* Communication */,
 				719A1E7523E71F22000FC21C /* Navigation */,
 				7191B388240EA78B004FB0B2 /* CoreData */,

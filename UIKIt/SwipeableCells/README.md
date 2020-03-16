@@ -66,9 +66,9 @@ private func addGame(_ game: String) {
 
 ## Swipeable
 
-To make cells swipeable, return a collection of swipe actions for either the trailing or leading side.
-
 ![TableView](https://github.com/jrasmusson/swift-arcade/blob/master/UIKIt/SwipeableCells/images/swipeable.gif)
+
+To make cells swipeable, return a collection of swipe actions for either the trailing or leading side.
 
 ```swift
 func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
