@@ -2,6 +2,10 @@
 
 Collection of demos from the [Swift Arcade YouTube channel.](https://www.youtube.com/channel/UCxnCA5FBYRCFgIZWD0CKCVg?view_as=subscriber)
 
+## UIKit
+
+- [Swipeable Cells](https://github.com/jrasmusson/swift-arcade/blob/master/UIKIt/SwipeableCells/README.md)
+
 ## Communication Patterns
 
 - [Protocol Delegate Pattern](https://github.com/jrasmusson/swift-arcade/blob/master/CommunicationPatterns/Protocol-Delegate.md)
