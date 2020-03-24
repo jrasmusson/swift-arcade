@@ -2,10 +2,6 @@
 
 A simple manager for saving an _Employee_.
 
-<img src="https://github.com/jrasmusson/swift-arcade/blob/master/CoreData/images/NSFetchedResultsController.png" alt="drawing" width="400"/>
-
-
-
 ```swift
 import CoreData
 
