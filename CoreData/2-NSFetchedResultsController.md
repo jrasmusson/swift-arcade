@@ -2,7 +2,7 @@
 
 Simple example of how to use in a _UIViewController_ with a CoreData _Entity_ called _Game_.
 
-<img src="https://github.com/jrasmusson/ios-starter-kit/blob/master/howtos/images/turn-off-debug-console.png" alt="drawing" width="400"/>
+<img src="https://github.com/jrasmusson/swift-arcade/blob/master/CoreData/images/NSFetchedResultsController.png" alt="drawing" width="400"/>
 
 Create variable.
 
@@ -326,7 +326,7 @@ extension DemoFetchedResultsViewController: NSFetchedResultsControllerDelegate {
 
 ### Links that help
 
-- [Apple Docs NSFetchResultsController]https://developer.apple.com/documentation/coredata/nsfetchedresultscontroller)
+- [Apple Docs NSFetchResultsController](https://developer.apple.com/documentation/coredata/nsfetchedresultscontroller)
 - [CoreData Programming with NSFetchResultsController](https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/CoreData/nsfetchedresultscontroller.html)
 - [Hacking in Swift](https://www.hackingwithswift.com/read/38/10/optimizing-core-data-performance-using-nsfetchedresultscontroller)
 
