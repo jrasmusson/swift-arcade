@@ -326,7 +326,7 @@ extension DemoFetchedResultsViewController: NSFetchedResultsControllerDelegate {
 
 ### Links that help
 
-- [Apple Docs NSFetchResultsController]https://developer.apple.com/documentation/coredata/nsfetchedresultscontroller)
+- [Apple Docs NSFetchResultsController](https://developer.apple.com/documentation/coredata/nsfetchedresultscontroller)
 - [CoreData Programming with NSFetchResultsController](https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/CoreData/nsfetchedresultscontroller.html)
 - [Hacking in Swift](https://www.hackingwithswift.com/read/38/10/optimizing-core-data-performance-using-nsfetchedresultscontroller)
 
