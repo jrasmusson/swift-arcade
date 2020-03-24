@@ -11,13 +11,6 @@ import CoreData
 
 class DemoFetchedResultsViewController: UIViewController {
 
-    // Replacing array with CoreData
-//    var games = ["Space Invaders",
-//                "Dragon Slayer",
-//                "Disks of Tron",
-//                "Moon Patrol",
-//                "Galaga"]
-
     // 1
     var fetchedResultsController: NSFetchedResultsController<Game>!
     
@@ -59,6 +52,7 @@ class DemoFetchedResultsViewController: UIViewController {
 
     func setupTableView() {
         tableView.dataSource = self
+        tableView.delegate = self
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellId)
     }
 
@@ -110,15 +104,8 @@ class DemoFetchedResultsViewController: UIViewController {
 
         // 4 CoreData viewContext > NSFetchRequest > Delegate (us)
         GameManager.shared.createGame(name: name)
-
-//        games.append(text)
-//
-//        let indexPath = IndexPath(row: games.count - 1, section: 0)
-//
-//        tableView.beginUpdates()
-//        tableView.insertRows(at: [indexPath], with: .fade)
-//        tableView.endUpdates()
     }
+
 }
 
 // MARK:  - UITableView DataSource
@@ -197,3 +184,8 @@ extension DemoFetchedResultsViewController: NSFetchedResultsControllerDelegate {
     }
 }
 
+// MARK:  - UITableView Delegate
+
+extension DemoFetchedResultsViewController: UITableViewDelegate {
+
+}
