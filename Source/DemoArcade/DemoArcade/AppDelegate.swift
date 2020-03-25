@@ -39,17 +39,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 extension AppDelegate {
     
     func makeUIKitArcade() -> UIViewController {
-        let swipeablePatterns = [
+        let uitableViewPatterns = [
             Lab(name: "Edit Mode", viewController: SimpleListEditModeViewController()),
             Lab(name: "Swipable Actions", viewController: SwipingActionsTableViewController()),
             Lab(name: "Modal", viewController: SimpleListAddModalViewController()),
         ]
 
-        let swipeableCellViewController = DemoViewController(labs: swipeablePatterns, navBarTitle: "Swipeable Cells")
+        let uitableViewController = DemoViewController(labs: uitableViewPatterns, navBarTitle: "UITableView")
 
+        let uitableViewCellPatterns = [
+            Lab(name: "Custom Cell", viewController: CustomCellViewController()),
+        ]
 
+        let uitableViewCellController = DemoViewController(labs: uitableViewCellPatterns, navBarTitle: "UITableViewCell")
+        
         let uikitLabs = [
-            Lab(name: "Swipeable Cells", viewController: swipeableCellViewController),
+            Lab(name: "UITableView", viewController: uitableViewController),
+            Lab(name: "UITableViewCell", viewController: uitableViewCellController),
         ]
         
         return DemoViewController(labs: uikitLabs, navBarTitle: "UIKIt")

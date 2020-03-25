@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		7108111B2417DE4E00A59673 /* aSimpleUITableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7108111A2417DE4E00A59673 /* aSimpleUITableViewController.swift */; };
+		7112AD71242AEE730072C65D /* CustomCellViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7112AD70242AEE730072C65D /* CustomCellViewController.swift */; };
+		7112AD73242AEED50072C65D /* ChannelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7112AD72242AEED50072C65D /* ChannelCell.swift */; };
 		71147A962420258F00C850C5 /* DemoFetchedResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71147A952420258F00C850C5 /* DemoFetchedResultsViewController.swift */; };
 		71147A98242025B800C850C5 /* GameManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71147A97242025B800C850C5 /* GameManager.swift */; };
 		71147A9B242025E000C850C5 /* GameModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 71147A99242025E000C850C5 /* GameModel.xcdatamodeld */; };
@@ -52,6 +54,8 @@
 
 /* Begin PBXFileReference section */
 		7108111A2417DE4E00A59673 /* aSimpleUITableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = aSimpleUITableViewController.swift; sourceTree = "<group>"; };
+		7112AD70242AEE730072C65D /* CustomCellViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCellViewController.swift; sourceTree = "<group>"; };
+		7112AD72242AEED50072C65D /* ChannelCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelCell.swift; sourceTree = "<group>"; };
 		71147A952420258F00C850C5 /* DemoFetchedResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoFetchedResultsViewController.swift; sourceTree = "<group>"; };
 		71147A97242025B800C850C5 /* GameManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameManager.swift; sourceTree = "<group>"; };
 		71147A9A242025E000C850C5 /* GameModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = GameModel.xcdatamodel; sourceTree = "<group>"; };
@@ -110,11 +114,29 @@
 		710811192417DE3500A59673 /* UIKit */ = {
 			isa = PBXGroup;
 			children = (
+				7112AD6E242AEE2D0072C65D /* UITableView */,
+				7112AD6F242AEE430072C65D /* UITableViewCell */,
+			);
+			name = UIKit;
+			sourceTree = "<group>";
+		};
+		7112AD6E242AEE2D0072C65D /* UITableView */ = {
+			isa = PBXGroup;
+			children = (
 				7108111A2417DE4E00A59673 /* aSimpleUITableViewController.swift */,
 				71C2380124186D870046E9B3 /* aSimpleUITableView.swift */,
 				7125AD7724194A4100248EE9 /* Simple List */,
 			);
-			name = UIKit;
+			name = UITableView;
+			sourceTree = "<group>";
+		};
+		7112AD6F242AEE430072C65D /* UITableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				7112AD70242AEE730072C65D /* CustomCellViewController.swift */,
+				7112AD72242AEED50072C65D /* ChannelCell.swift */,
+			);
+			name = UITableViewCell;
 			sourceTree = "<group>";
 		};
 		71147A942420254E00C850C5 /* NSFetchedResultsController */ = {
@@ -437,6 +459,8 @@
 				712CA2FB241133DE00A85735 /* IntroViewController.swift in Sources */,
 				713725CD2402AB200067ADD8 /* KVOViewController.swift in Sources */,
 				718C45F723F42F33007B5F91 /* ClosureViewController.swift in Sources */,
+				7112AD71242AEE730072C65D /* CustomCellViewController.swift in Sources */,
+				7112AD73242AEED50072C65D /* ChannelCell.swift in Sources */,
 				719A1EA123E72721000FC21C /* ProtocolDelegateViewController.swift in Sources */,
 				719A1E8D23E7234B000FC21C /* TabViewController.swift in Sources */,
 				719A1E8423E72218000FC21C /* ModalNavigation.swift in Sources */,
