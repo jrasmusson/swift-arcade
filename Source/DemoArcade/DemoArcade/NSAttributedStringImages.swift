@@ -17,14 +17,22 @@ class NSAttributedStringImages: UIViewController {
     }()
     
     func makeText() -> NSAttributedString {
-        let rootString = NSMutableAttributedString(string: "Kevin Flynn", attributes: [NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 14)])
-        rootString.append(NSAttributedString(string: "\nFebruary 10 • San Francisco ", attributes: [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 12), NSAttributedString.Key.foregroundColor: UIColor.gray]))
-
         let paragraphStyle = NSMutableParagraphStyle()
         paragraphStyle.lineSpacing = 4
+
+        var headerTextAttributes = [NSAttributedString.Key: AnyObject]()
+        headerTextAttributes[.font] = UIFont.preferredFont(forTextStyle: .body).withTraits(traits: [.traitBold])
+
+        var subHeaderTextAttributes = [NSAttributedString.Key: AnyObject]()
+        subHeaderTextAttributes[.font] = UIFont.preferredFont(forTextStyle: .body)
+        subHeaderTextAttributes[.foregroundColor] = UIColor.systemGray
+
+        let rootString = NSMutableAttributedString(string: "Kevin Flynn", attributes: headerTextAttributes)
+        rootString.append(NSAttributedString(string: "\nFebruary 10 • San Francisco ", attributes: subHeaderTextAttributes))
+
         rootString.addAttribute(NSAttributedString.Key.paragraphStyle, value: paragraphStyle, range: NSMakeRange(0, rootString.string.count))
 
-        // check mark
+        // image
         let attachment = NSTextAttachment()
         attachment.image = UIImage(named: "globe_icon")
         attachment.bounds = CGRect(x: 0, y: -2, width: 16, height: 16)
