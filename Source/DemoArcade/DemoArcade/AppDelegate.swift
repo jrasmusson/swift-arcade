@@ -58,6 +58,7 @@ extension AppDelegate {
         
         // NSAttributedString
         let nsAttributedStringPatterns = [
+            Lab(name: "Paragraphs", viewController: NSAttributedStringParagraphs()),
             Lab(name: "BaselineOffset", viewController: NSAttributedStringBaselineOffset()),
         ]
 

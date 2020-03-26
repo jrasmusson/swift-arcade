@@ -51,6 +51,7 @@
 		71D586E323FD711F00722324 /* ResponderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D586E223FD711F00722324 /* ResponderViewController.swift */; };
 		71DD7124242CD03800C19E7D /* NSAttributedStringViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71DD7123242CD03800C19E7D /* NSAttributedStringViewController.swift */; };
 		71DD7126242CE1F600C19E7D /* NSAttributedStringBaselineOffset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71DD7125242CE1F600C19E7D /* NSAttributedStringBaselineOffset.swift */; };
+		71DD7128242CE35D00C19E7D /* NSAttributedStringParagraphs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71DD7127242CE35D00C19E7D /* NSAttributedStringParagraphs.swift */; };
 		71F8A5D824040B6200E03F0A /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F8A5D724040B6200E03F0A /* NotificationViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -101,6 +102,7 @@
 		71D586E223FD711F00722324 /* ResponderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponderViewController.swift; sourceTree = "<group>"; };
 		71DD7123242CD03800C19E7D /* NSAttributedStringViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSAttributedStringViewController.swift; sourceTree = "<group>"; };
 		71DD7125242CE1F600C19E7D /* NSAttributedStringBaselineOffset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSAttributedStringBaselineOffset.swift; sourceTree = "<group>"; };
+		71DD7127242CE35D00C19E7D /* NSAttributedStringParagraphs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSAttributedStringParagraphs.swift; sourceTree = "<group>"; };
 		71F8A5D724040B6200E03F0A /* NotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -388,6 +390,7 @@
 			children = (
 				71DD7123242CD03800C19E7D /* NSAttributedStringViewController.swift */,
 				71DD7125242CE1F600C19E7D /* NSAttributedStringBaselineOffset.swift */,
+				71DD7127242CE35D00C19E7D /* NSAttributedStringParagraphs.swift */,
 			);
 			name = NSAttributedString;
 			sourceTree = "<group>";
@@ -491,6 +494,7 @@
 				719A1E8323E72218000FC21C /* ModalViewController1.swift in Sources */,
 				719A1E9A23E723C1000FC21C /* SuccessViewController.swift in Sources */,
 				7108111B2417DE4E00A59673 /* aSimpleUITableViewController.swift in Sources */,
+				71DD7128242CE35D00C19E7D /* NSAttributedStringParagraphs.swift in Sources */,
 				71C6324C23E89B9500BC5302 /* WeatherService.swift in Sources */,
 				719A1E8F23E72361000FC21C /* PageViewController.swift in Sources */,
 				713725CF2402B5780067ADD8 /* ResponderExtensions.swift in Sources */,
