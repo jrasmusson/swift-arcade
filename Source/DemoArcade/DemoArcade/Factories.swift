@@ -39,6 +39,28 @@ func makeSymbolImage(systemName: String) -> UIImage? {
     return image
 }
 
+func makeSpotifyButton(withText title: String) -> UIButton {
+    let button = UIButton()
+    let buttonHeight: CGFloat = 40
+    button.translatesAutoresizingMaskIntoConstraints = false
+    button.titleLabel?.minimumScaleFactor = 0.5
+    button.titleLabel?.adjustsFontSizeToFitWidth = true
+    button.backgroundColor = .spotifyGreen
+    button.setTitleColor(.white, for: .normal)
+    button.layer.cornerRadius = buttonHeight / 2
+    button.contentEdgeInsets = UIEdgeInsets(top: 10, left: buttonHeight, bottom: 10, right: buttonHeight)
+
+    let attributedText = NSMutableAttributedString(string: title, attributes: [
+        NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 16),
+        NSAttributedString.Key.foregroundColor: UIColor.white,
+        NSAttributedString.Key.kern: 1
+        ])
+
+    button.setAttributedTitle(attributedText, for: .normal)
+
+    return button
+}
+
 func makeLabel() -> UILabel {
     return makeLabel(withTitle: "")
 }

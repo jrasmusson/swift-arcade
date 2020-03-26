@@ -53,6 +53,9 @@
 		71DD7126242CE1F600C19E7D /* NSAttributedStringBaselineOffset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71DD7125242CE1F600C19E7D /* NSAttributedStringBaselineOffset.swift */; };
 		71DD7128242CE35D00C19E7D /* NSAttributedStringParagraphs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71DD7127242CE35D00C19E7D /* NSAttributedStringParagraphs.swift */; };
 		71DD712A242CE4F500C19E7D /* NSAttributedStringImages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71DD7129242CE4F500C19E7D /* NSAttributedStringImages.swift */; };
+		71DD712C242CEBDE00C19E7D /* NSAttributedStringButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71DD712B242CEBDE00C19E7D /* NSAttributedStringButtons.swift */; };
+		71DD712E242CEC3300C19E7D /* UIFont+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71DD712D242CEC3300C19E7D /* UIFont+Ext.swift */; };
+		71DD7130242CEE0100C19E7D /* UIColor+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71DD712F242CEE0100C19E7D /* UIColor+Ext.swift */; };
 		71F8A5D824040B6200E03F0A /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F8A5D724040B6200E03F0A /* NotificationViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -105,6 +108,9 @@
 		71DD7125242CE1F600C19E7D /* NSAttributedStringBaselineOffset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSAttributedStringBaselineOffset.swift; sourceTree = "<group>"; };
 		71DD7127242CE35D00C19E7D /* NSAttributedStringParagraphs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSAttributedStringParagraphs.swift; sourceTree = "<group>"; };
 		71DD7129242CE4F500C19E7D /* NSAttributedStringImages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSAttributedStringImages.swift; sourceTree = "<group>"; };
+		71DD712B242CEBDE00C19E7D /* NSAttributedStringButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSAttributedStringButtons.swift; sourceTree = "<group>"; };
+		71DD712D242CEC3300C19E7D /* UIFont+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Ext.swift"; sourceTree = "<group>"; };
+		71DD712F242CEE0100C19E7D /* UIColor+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Ext.swift"; sourceTree = "<group>"; };
 		71F8A5D724040B6200E03F0A /* NotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -264,6 +270,8 @@
 				719A1E5E23E71E9C000FC21C /* AppDelegate.swift */,
 				719A1E7323E71F17000FC21C /* DemoViewController.swift */,
 				719A1E9C23E723E1000FC21C /* Factories.swift */,
+				71DD712D242CEC3300C19E7D /* UIFont+Ext.swift */,
+				71DD712F242CEE0100C19E7D /* UIColor+Ext.swift */,
 			);
 			path = DemoArcade;
 			sourceTree = "<group>";
@@ -393,6 +401,7 @@
 				71DD7127242CE35D00C19E7D /* NSAttributedStringParagraphs.swift */,
 				71DD7123242CD03800C19E7D /* NSAttributedStringBolding.swift */,
 				71DD7129242CE4F500C19E7D /* NSAttributedStringImages.swift */,
+				71DD712B242CEBDE00C19E7D /* NSAttributedStringButtons.swift */,
 				71DD7125242CE1F600C19E7D /* NSAttributedStringBaselineOffset.swift */,
 			);
 			name = NSAttributedString;
@@ -497,10 +506,13 @@
 				719A1E8223E72218000FC21C /* ModalViewController2.swift in Sources */,
 				719A1E8323E72218000FC21C /* ModalViewController1.swift in Sources */,
 				719A1E9A23E723C1000FC21C /* SuccessViewController.swift in Sources */,
+				71DD7130242CEE0100C19E7D /* UIColor+Ext.swift in Sources */,
 				7108111B2417DE4E00A59673 /* aSimpleUITableViewController.swift in Sources */,
 				71DD7128242CE35D00C19E7D /* NSAttributedStringParagraphs.swift in Sources */,
 				71C6324C23E89B9500BC5302 /* WeatherService.swift in Sources */,
+				71DD712E242CEC3300C19E7D /* UIFont+Ext.swift in Sources */,
 				719A1E8F23E72361000FC21C /* PageViewController.swift in Sources */,
+				71DD712C242CEBDE00C19E7D /* NSAttributedStringButtons.swift in Sources */,
 				713725CF2402B5780067ADD8 /* ResponderExtensions.swift in Sources */,
 				71147A9B242025E000C850C5 /* GameModel.xcdatamodeld in Sources */,
 				71DD7126242CE1F600C19E7D /* NSAttributedStringBaselineOffset.swift in Sources */,

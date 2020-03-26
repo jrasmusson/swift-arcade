@@ -61,6 +61,7 @@ extension AppDelegate {
             Lab(name: "Paragraphs", viewController: NSAttributedStringParagraphs()),
             Lab(name: "Bolding", viewController: NSAttributedStringBolding()),
             Lab(name: "Images", viewController: NSAttributedStringImages()),
+            Lab(name: "Buttons", viewController: NSAttributedStringButtons()),
             Lab(name: "BaselineOffset", viewController: NSAttributedStringBaselineOffset()),
         ]
 
