@@ -17,17 +17,20 @@ class NSAttributedStringImages: UIViewController {
     }()
     
     func makeText() -> NSAttributedString {
-        var plainTextAttributes = [NSAttributedString.Key: AnyObject]()
-        plainTextAttributes[.font] = UIFont.preferredFont(forTextStyle: .body)
+        let rootString = NSMutableAttributedString(string: "Kevin Flynn", attributes: [NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 14)])
+        rootString.append(NSAttributedString(string: "\nFebruary 10 • San Francisco ", attributes: [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 12), NSAttributedString.Key.foregroundColor: UIColor.gray]))
 
-        var boldTextAttributes = [NSAttributedString.Key: AnyObject]()
-        boldTextAttributes[.font] = UIFont.preferredFont(forTextStyle: .body).withTraits(traits: [.traitBold]) // extension
+        let paragraphStyle = NSMutableParagraphStyle()
+        paragraphStyle.lineSpacing = 4
+        rootString.addAttribute(NSAttributedString.Key.paragraphStyle, value: paragraphStyle, range: NSMakeRange(0, rootString.string.count))
 
-        let text = NSMutableAttributedString(string: "Please", attributes: plainTextAttributes)
-        text.append(NSAttributedString(string: " stay on this screen ", attributes: boldTextAttributes))
-        text.append(NSAttributedString(string: "while we activate your service. This process may take a few minutes.", attributes: plainTextAttributes))
-
-        return text
+        // check mark
+        let attachment = NSTextAttachment()
+        attachment.image = UIImage(named: "globe_icon")
+        attachment.bounds = CGRect(x: 0, y: -2, width: 16, height: 16)
+        rootString.append(NSAttributedString(attachment: attachment))
+        
+        return rootString
     }
     
     override func viewDidLoad() {
