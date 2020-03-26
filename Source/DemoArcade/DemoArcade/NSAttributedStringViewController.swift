@@ -58,14 +58,14 @@ class NSAttributedStringViewController: UIViewController {
         paragraphStyle.paragraphSpacing = 24 // end of paragraph
 
         let attributes = [
-            NSAttributedString.Key.foregroundColor: UIColor.gray,
+            NSAttributedString.Key.foregroundColor: UIColor.systemGray,
             NSAttributedString.Key.font: UIFont.preferredFont(forTextStyle: .body),
             NSAttributedString.Key.paragraphStyle: paragraphStyle
         ]
 
         let rootString = NSMutableAttributedString(string: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.\n", attributes: attributes)
 
-        let secondParagraph = NSAttributedString(string: "Vulputate enim nulla aliquet porttitor lacus. Ipsum suspendisse ultrices gravida dictum fusce ut placerat. In fermentum et sollicitudin ac orci phasellus egestas tellus. Eu facilisis sed odio morbi quis commodo odio. Neque aliquam vestibulum morbi blandit cursus risus.", attributes: attributes)
+        let secondParagraph = NSAttributedString(string: "Vulputate enim nulla aliquet porttitor lacus. Ipsum suspendisse ultrices gravida dictum fusce ut placerat. In fermentum et sollicitudin ac orci phasellus egestas tellus. Eu facilisis sed odio morbi quis commodo odio.", attributes: attributes)
         
         rootString.append(secondParagraph)
         
@@ -80,11 +80,11 @@ class NSAttributedStringViewController: UIViewController {
     
     func makeBoldText() -> NSAttributedString {
         var plainTextAttributes = [NSAttributedString.Key: AnyObject]()
-        plainTextAttributes[.font] = UIFont.preferredFont(forTextStyle: .subheadline)
+        plainTextAttributes[.font] = UIFont.preferredFont(forTextStyle: .body)
 
         var boldTextAttributes = [NSAttributedString.Key: AnyObject]()
-        boldTextAttributes[.foregroundColor] = UIColor.black
-        boldTextAttributes[.font] = UIFont.boldSystemFont(ofSize: 14)
+//        boldTextAttributes[.foregroundColor] = UIColor.systemGray2
+        boldTextAttributes[.font] = UIFont.preferredFont(forTextStyle: .body).withTraits(traits: [.traitBold]) // extension
 
         let text = NSMutableAttributedString(string: "Please", attributes: plainTextAttributes)
         text.append(NSAttributedString(string: " stay on this screen ", attributes: boldTextAttributes))
@@ -102,6 +102,7 @@ class NSAttributedStringViewController: UIViewController {
         navigationItem.title = "NSAttributedString"
         
         let stackView = makeVerticalStackView()
+        stackView.spacing = 24
         stackView.addArrangedSubview(offerLabel)
         stackView.addArrangedSubview(paragraphLabel)
         stackView.addArrangedSubview(boldLabel)
@@ -115,4 +116,17 @@ class NSAttributedStringViewController: UIViewController {
     
 }
 
+extension UIFont {
+    func withTraits(traits: UIFontDescriptor.SymbolicTraits) -> UIFont {
+        let descriptor = fontDescriptor.withSymbolicTraits(traits)
+        return UIFont(descriptor: descriptor!, size: 0) //size 0 means keep the size as it is
+    }
 
+    func bold() -> UIFont {
+        return withTraits(traits: .traitBold)
+    }
+
+    func italic() -> UIFont {
+        return withTraits(traits: .traitItalic)
+    }
+}
