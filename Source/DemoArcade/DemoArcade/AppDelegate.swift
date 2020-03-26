@@ -56,6 +56,7 @@ extension AppDelegate {
         let uikitLabs = [
             Lab(name: "UITableView", viewController: uitableViewController),
             Lab(name: "UITableViewCell", viewController: uitableViewCellController),
+            Lab(name: "NSAttributedString", viewController: NSAttributedStringViewController())
         ]
         
         return DemoViewController(labs: uikitLabs, navBarTitle: "UIKIt")

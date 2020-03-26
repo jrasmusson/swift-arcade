@@ -39,6 +39,10 @@ func makeSymbolImage(systemName: String) -> UIImage? {
     return image
 }
 
+func makeLabel() -> UILabel {
+    return makeLabel(withTitle: "")
+}
+
 func makeLabel(withTitle title: String) -> UILabel {
     let label = UILabel()
     label.translatesAutoresizingMaskIntoConstraints = false

@@ -49,6 +49,7 @@
 		71C2380524186F630046E9B3 /* SwipingActionsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C2380424186F630046E9B3 /* SwipingActionsTableViewController.swift */; };
 		71C6324C23E89B9500BC5302 /* WeatherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C6324B23E89B9500BC5302 /* WeatherService.swift */; };
 		71D586E323FD711F00722324 /* ResponderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D586E223FD711F00722324 /* ResponderViewController.swift */; };
+		71DD7124242CD03800C19E7D /* NSAttributedStringViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71DD7123242CD03800C19E7D /* NSAttributedStringViewController.swift */; };
 		71F8A5D824040B6200E03F0A /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F8A5D724040B6200E03F0A /* NotificationViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -97,6 +98,7 @@
 		71C2380424186F630046E9B3 /* SwipingActionsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipingActionsTableViewController.swift; sourceTree = "<group>"; };
 		71C6324B23E89B9500BC5302 /* WeatherService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherService.swift; sourceTree = "<group>"; };
 		71D586E223FD711F00722324 /* ResponderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponderViewController.swift; sourceTree = "<group>"; };
+		71DD7123242CD03800C19E7D /* NSAttributedStringViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSAttributedStringViewController.swift; sourceTree = "<group>"; };
 		71F8A5D724040B6200E03F0A /* NotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -114,6 +116,7 @@
 		710811192417DE3500A59673 /* UIKit */ = {
 			isa = PBXGroup;
 			children = (
+				71DD7122242CD02700C19E7D /* NSAttributedString */,
 				7112AD6E242AEE2D0072C65D /* UITableView */,
 				7112AD6F242AEE430072C65D /* UITableViewCell */,
 			);
@@ -378,6 +381,14 @@
 			name = "Responder Chain";
 			sourceTree = "<group>";
 		};
+		71DD7122242CD02700C19E7D /* NSAttributedString */ = {
+			isa = PBXGroup;
+			children = (
+				71DD7123242CD03800C19E7D /* NSAttributedStringViewController.swift */,
+			);
+			name = NSAttributedString;
+			sourceTree = "<group>";
+		};
 		71F8A5D624040B3B00E03F0A /* Notification Center */ = {
 			isa = PBXGroup;
 			children = (
@@ -486,6 +497,7 @@
 				719A1E7423E71F17000FC21C /* DemoViewController.swift in Sources */,
 				71998EEB241A68CC00F12C8E /* SimpleListAddModalViewController.swift in Sources */,
 				719A1E8923E7232A000FC21C /* NavigationViewController2.swift in Sources */,
+				71DD7124242CD03800C19E7D /* NSAttributedStringViewController.swift in Sources */,
 				7119DB2023E9A833000E5796 /* Weather.swift in Sources */,
 				71B9AEBF23F1936C00C2D539 /* TargetActionViewController.swift in Sources */,
 				719A1E9623E723C1000FC21C /* FailureViewController.swift in Sources */,
