@@ -10,14 +10,14 @@ import UIKit
 
 class NSAttributedStringParagraphs: UIViewController {
 
-    lazy var paragraphLabel: UILabel = {
+    lazy var label: UILabel = {
         let label = makeLabel()
-        label.attributedText = makeParagraphText()
+        label.attributedText = makeText()
         
         return label
     }()
 
-    func makeParagraphText() -> NSAttributedString {
+    func makeText() -> NSAttributedString {
         let paragraphStyle = NSMutableParagraphStyle()
         paragraphStyle.firstLineHeadIndent = 24
         paragraphStyle.headIndent = 8
@@ -51,7 +51,7 @@ class NSAttributedStringParagraphs: UIViewController {
         navigationItem.title = "Paragraphs"
         
         let stackView = makeVerticalStackView()
-        stackView.addArrangedSubview(paragraphLabel)
+        stackView.addArrangedSubview(label)
         
         view.addSubview(stackView)
         

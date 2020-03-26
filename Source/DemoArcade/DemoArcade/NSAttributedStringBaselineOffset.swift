@@ -33,7 +33,7 @@ fileprivate extension String {
 
 class NSAttributedStringBaselineOffset: UIViewController {
 
-    let offerLabel: UILabel = {
+    let label: UILabel = {
         let label = makeLabel()
         label.attributedText = "20".formatted()
         
@@ -49,7 +49,7 @@ class NSAttributedStringBaselineOffset: UIViewController {
         navigationItem.title = "BaselineOffset"
         
         let stackView = makeVerticalStackView()
-        stackView.addArrangedSubview(offerLabel)
+        stackView.addArrangedSubview(label)
         
         view.addSubview(stackView)
         

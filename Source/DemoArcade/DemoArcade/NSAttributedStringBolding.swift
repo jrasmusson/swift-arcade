@@ -10,13 +10,13 @@ import UIKit
 
 class NSAttributedStringBolding: UIViewController {
 
-    lazy var boldLabel: UILabel = {
+    lazy var label: UILabel = {
         let label = makeLabel()
-        label.attributedText = makeBoldText()
+        label.attributedText = makeText()
         return label
     }()
     
-    func makeBoldText() -> NSAttributedString {
+    func makeText() -> NSAttributedString {
         var plainTextAttributes = [NSAttributedString.Key: AnyObject]()
         plainTextAttributes[.font] = UIFont.preferredFont(forTextStyle: .body)
 
@@ -39,7 +39,7 @@ class NSAttributedStringBolding: UIViewController {
         navigationItem.title = "Bolding"
         
         let stackView = makeVerticalStackView()
-        stackView.addArrangedSubview(boldLabel)
+        stackView.addArrangedSubview(label)
         
         view.addSubview(stackView)
         

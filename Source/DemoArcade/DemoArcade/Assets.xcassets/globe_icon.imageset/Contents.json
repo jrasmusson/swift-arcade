@@ -2,11 +2,11 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "crave.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
+      "filename" : "globe_icon@2x.png",
       "scale" : "2x"
     },
     {
