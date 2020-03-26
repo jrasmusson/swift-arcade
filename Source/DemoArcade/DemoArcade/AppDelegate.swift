@@ -59,6 +59,7 @@ extension AppDelegate {
         // NSAttributedString
         let nsAttributedStringPatterns = [
             Lab(name: "Paragraphs", viewController: NSAttributedStringParagraphs()),
+            Lab(name: "Bolding", viewController: NSAttributedStringBolding()),
             Lab(name: "BaselineOffset", viewController: NSAttributedStringBaselineOffset()),
         ]
 
