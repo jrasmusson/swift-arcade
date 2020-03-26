@@ -52,6 +52,7 @@
 		71DD7124242CD03800C19E7D /* NSAttributedStringBolding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71DD7123242CD03800C19E7D /* NSAttributedStringBolding.swift */; };
 		71DD7126242CE1F600C19E7D /* NSAttributedStringBaselineOffset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71DD7125242CE1F600C19E7D /* NSAttributedStringBaselineOffset.swift */; };
 		71DD7128242CE35D00C19E7D /* NSAttributedStringParagraphs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71DD7127242CE35D00C19E7D /* NSAttributedStringParagraphs.swift */; };
+		71DD712A242CE4F500C19E7D /* NSAttributedStringImages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71DD7129242CE4F500C19E7D /* NSAttributedStringImages.swift */; };
 		71F8A5D824040B6200E03F0A /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F8A5D724040B6200E03F0A /* NotificationViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -103,6 +104,7 @@
 		71DD7123242CD03800C19E7D /* NSAttributedStringBolding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSAttributedStringBolding.swift; sourceTree = "<group>"; };
 		71DD7125242CE1F600C19E7D /* NSAttributedStringBaselineOffset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSAttributedStringBaselineOffset.swift; sourceTree = "<group>"; };
 		71DD7127242CE35D00C19E7D /* NSAttributedStringParagraphs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSAttributedStringParagraphs.swift; sourceTree = "<group>"; };
+		71DD7129242CE4F500C19E7D /* NSAttributedStringImages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSAttributedStringImages.swift; sourceTree = "<group>"; };
 		71F8A5D724040B6200E03F0A /* NotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -390,6 +392,7 @@
 			children = (
 				71DD7127242CE35D00C19E7D /* NSAttributedStringParagraphs.swift */,
 				71DD7123242CD03800C19E7D /* NSAttributedStringBolding.swift */,
+				71DD7129242CE4F500C19E7D /* NSAttributedStringImages.swift */,
 				71DD7125242CE1F600C19E7D /* NSAttributedStringBaselineOffset.swift */,
 			);
 			name = NSAttributedString;
@@ -482,6 +485,7 @@
 				719A1E8D23E7234B000FC21C /* TabViewController.swift in Sources */,
 				719A1E8423E72218000FC21C /* ModalNavigation.swift in Sources */,
 				719A1E9923E723C1000FC21C /* ContainerViewController.swift in Sources */,
+				71DD712A242CE4F500C19E7D /* NSAttributedStringImages.swift in Sources */,
 				7191B38A240EA7DF004FB0B2 /* CoreDataManager.swift in Sources */,
 				7178D4B5241922790085D6B1 /* SimpleListEditModeViewController.swift in Sources */,
 				71D586E323FD711F00722324 /* ResponderViewController.swift in Sources */,
