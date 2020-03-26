@@ -39,6 +39,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 extension AppDelegate {
     
     func makeUIKitArcade() -> UIViewController {
+        
+        // UITableView
         let uitableViewPatterns = [
             Lab(name: "Edit Mode", viewController: SimpleListEditModeViewController()),
             Lab(name: "Swipable Actions", viewController: SwipingActionsTableViewController()),
@@ -47,16 +49,24 @@ extension AppDelegate {
 
         let uitableViewController = DemoViewController(labs: uitableViewPatterns, navBarTitle: "UITableView")
 
+        // UITableViewCell
         let uitableViewCellPatterns = [
             Lab(name: "Custom Cell", viewController: CustomCellViewController()),
         ]
 
         let uitableViewCellController = DemoViewController(labs: uitableViewCellPatterns, navBarTitle: "UITableViewCell")
         
+        // NSAttributedString
+        let nsAttributedStringPatterns = [
+            Lab(name: "BaselineOffset", viewController: NSAttributedStringBaselineOffset()),
+        ]
+
+        let  nsAttributedStringController = DemoViewController(labs: nsAttributedStringPatterns, navBarTitle: "NSAttributedString")
+
         let uikitLabs = [
             Lab(name: "UITableView", viewController: uitableViewController),
             Lab(name: "UITableViewCell", viewController: uitableViewCellController),
-            Lab(name: "NSAttributedString", viewController: NSAttributedStringViewController())
+            Lab(name: "NSAttributedString", viewController: nsAttributedStringController)
         ]
         
         return DemoViewController(labs: uikitLabs, navBarTitle: "UIKIt")
