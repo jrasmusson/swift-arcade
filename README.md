@@ -5,6 +5,7 @@ Collection of demos from the [Swift Arcade YouTube channel.](https://www.youtube
 ## UIKit
 
 - [Swipeable Cells](https://github.com/jrasmusson/swift-arcade/blob/master/UIKIt/SwipeableCells/README.md)
+- [NSAttributedStrings](https://github.com/jrasmusson/swift-arcade/blob/master/UIKIt/NSAttributedStrings/README.md)
 
 ## Communication Patterns
 
