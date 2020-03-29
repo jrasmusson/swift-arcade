@@ -97,7 +97,7 @@ func makeText() -> NSAttributedString {
 
 ## Kerning
 
-![TableView](https://github.com/jrasmusson/swift-arcade/blob/master/UIKIt/SwipeableCells/images/kerning.png)
+![TableView](https://github.com/jrasmusson/swift-arcade/blob/master/UIKIt/NSAttributedStrings/images/kerning.png)
 
 ```swift
 let attributedText = NSMutableAttributedString(string: title, attributes: [
@@ -110,7 +110,7 @@ let attributedText = NSMutableAttributedString(string: title, attributes: [
 
 ### BaselineOffset
 
-![TableView](https://github.com/jrasmusson/swift-arcade/blob/master/UIKIt/SwipeableCells/images/baseline.png)
+![TableView](https://github.com/jrasmusson/swift-arcade/blob/master/UIKIt/NSAttributedStrings/images/baseline.png)
 
 ```swift
 fileprivate extension String {
