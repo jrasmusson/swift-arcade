@@ -53,7 +53,7 @@ func makeSpotifyButton(withText title: String) -> UIButton {
     let attributedText = NSMutableAttributedString(string: title, attributes: [
         NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 16),
         NSAttributedString.Key.foregroundColor: UIColor.white,
-        NSAttributedString.Key.kern: 1
+        NSAttributedString.Key.kern: 2
         ])
 
     button.setAttributedTitle(attributedText, for: .normal)

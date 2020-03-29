@@ -35,8 +35,13 @@ class NSAttributedStringImages: UIViewController {
         // image
         let attachment = NSTextAttachment()
         attachment.image = UIImage(named: "globe_icon")
-        attachment.bounds = CGRect(x: 0, y: -2, width: 16, height: 16)
         rootString.append(NSAttributedString(attachment: attachment))
+        
+        // string height
+        let desiredWidth: CGFloat = 300
+        let rect = rootString.boundingRect(with: CGSize(width: desiredWidth, height: CGFloat.greatestFiniteMagnitude), options: [.usesLineFragmentOrigin, .usesFontLeading], context: nil)
+        
+        attachment.bounds = CGRect(x: 0, y: -2, width: rect.height/2, height: rect.height/2)
         
         return rootString
     }
@@ -47,7 +52,7 @@ class NSAttributedStringImages: UIViewController {
     }
     
     func setupViews() {
-        navigationItem.title = "Bolding"
+        navigationItem.title = "Image"
         
         let stackView = makeVerticalStackView()
         stackView.addArrangedSubview(label)
