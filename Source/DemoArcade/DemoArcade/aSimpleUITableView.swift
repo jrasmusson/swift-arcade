@@ -38,7 +38,9 @@ class aSimpleUITableView: UIViewController {
 }
 
 extension aSimpleUITableView: UITableViewDelegate {
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+
+    }
 }
 
 extension aSimpleUITableView: UITableViewDataSource {
@@ -53,9 +55,5 @@ extension aSimpleUITableView: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return labs.count
-    }
-
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
     }
 }
