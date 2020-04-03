@@ -56,6 +56,10 @@
 		71DD712C242CEBDE00C19E7D /* NSAttributedStringButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71DD712B242CEBDE00C19E7D /* NSAttributedStringButtons.swift */; };
 		71DD712E242CEC3300C19E7D /* UIFont+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71DD712D242CEC3300C19E7D /* UIFont+Ext.swift */; };
 		71DD7130242CEE0100C19E7D /* UIColor+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71DD712F242CEE0100C19E7D /* UIColor+Ext.swift */; };
+		71F34AE32437A23D0026BAAC /* LoadAndRetryDemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F34AE22437A23D0026BAAC /* LoadAndRetryDemo.swift */; };
+		71F34AE52437A2760026BAAC /* FullscreenLockController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F34AE42437A2760026BAAC /* FullscreenLockController.swift */; };
+		71F34AE72437A2920026BAAC /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F34AE62437A2920026BAAC /* LoadingViewController.swift */; };
+		71F34AE92437A2B30026BAAC /* RetryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F34AE82437A2B30026BAAC /* RetryViewController.swift */; };
 		71F8A5D824040B6200E03F0A /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F8A5D724040B6200E03F0A /* NotificationViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -111,6 +115,10 @@
 		71DD712B242CEBDE00C19E7D /* NSAttributedStringButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSAttributedStringButtons.swift; sourceTree = "<group>"; };
 		71DD712D242CEC3300C19E7D /* UIFont+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Ext.swift"; sourceTree = "<group>"; };
 		71DD712F242CEE0100C19E7D /* UIColor+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Ext.swift"; sourceTree = "<group>"; };
+		71F34AE22437A23D0026BAAC /* LoadAndRetryDemo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadAndRetryDemo.swift; sourceTree = "<group>"; };
+		71F34AE42437A2760026BAAC /* FullscreenLockController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullscreenLockController.swift; sourceTree = "<group>"; };
+		71F34AE62437A2920026BAAC /* LoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
+		71F34AE82437A2B30026BAAC /* RetryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RetryViewController.swift; sourceTree = "<group>"; };
 		71F8A5D724040B6200E03F0A /* NotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -262,16 +270,14 @@
 		719A1E5D23E71E9C000FC21C /* DemoArcade */ = {
 			isa = PBXGroup;
 			children = (
+				71F34AE02437A1F70026BAAC /* Affordances */,
 				710811192417DE3500A59673 /* UIKit */,
 				719A1E9E23E724FC000FC21C /* Communication */,
 				719A1E7523E71F22000FC21C /* Navigation */,
 				7191B388240EA78B004FB0B2 /* CoreData */,
+				71F34AEA2437A2E40026BAAC /* Extensions */,
 				719A1E7223E71EB2000FC21C /* Files */,
 				719A1E5E23E71E9C000FC21C /* AppDelegate.swift */,
-				719A1E7323E71F17000FC21C /* DemoViewController.swift */,
-				719A1E9C23E723E1000FC21C /* Factories.swift */,
-				71DD712D242CEC3300C19E7D /* UIFont+Ext.swift */,
-				71DD712F242CEE0100C19E7D /* UIColor+Ext.swift */,
 			);
 			path = DemoArcade;
 			sourceTree = "<group>";
@@ -407,6 +413,36 @@
 			name = NSAttributedString;
 			sourceTree = "<group>";
 		};
+		71F34AE02437A1F70026BAAC /* Affordances */ = {
+			isa = PBXGroup;
+			children = (
+				71F34AE12437A2190026BAAC /* Load Retry Screens */,
+			);
+			name = Affordances;
+			sourceTree = "<group>";
+		};
+		71F34AE12437A2190026BAAC /* Load Retry Screens */ = {
+			isa = PBXGroup;
+			children = (
+				71F34AE22437A23D0026BAAC /* LoadAndRetryDemo.swift */,
+				71F34AE42437A2760026BAAC /* FullscreenLockController.swift */,
+				71F34AE62437A2920026BAAC /* LoadingViewController.swift */,
+				71F34AE82437A2B30026BAAC /* RetryViewController.swift */,
+			);
+			name = "Load Retry Screens";
+			sourceTree = "<group>";
+		};
+		71F34AEA2437A2E40026BAAC /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				719A1E7323E71F17000FC21C /* DemoViewController.swift */,
+				719A1E9C23E723E1000FC21C /* Factories.swift */,
+				71DD712D242CEC3300C19E7D /* UIFont+Ext.swift */,
+				71DD712F242CEE0100C19E7D /* UIColor+Ext.swift */,
+			);
+			name = Extensions;
+			sourceTree = "<group>";
+		};
 		71F8A5D624040B3B00E03F0A /* Notification Center */ = {
 			isa = PBXGroup;
 			children = (
@@ -487,6 +523,7 @@
 			files = (
 				712CA2FB241133DE00A85735 /* IntroViewController.swift in Sources */,
 				713725CD2402AB200067ADD8 /* KVOViewController.swift in Sources */,
+				71F34AE72437A2920026BAAC /* LoadingViewController.swift in Sources */,
 				718C45F723F42F33007B5F91 /* ClosureViewController.swift in Sources */,
 				7112AD71242AEE730072C65D /* CustomCellViewController.swift in Sources */,
 				7112AD73242AEED50072C65D /* ChannelCell.swift in Sources */,
@@ -509,6 +546,8 @@
 				71DD7130242CEE0100C19E7D /* UIColor+Ext.swift in Sources */,
 				7108111B2417DE4E00A59673 /* aSimpleUITableViewController.swift in Sources */,
 				71DD7128242CE35D00C19E7D /* NSAttributedStringParagraphs.swift in Sources */,
+				71F34AE92437A2B30026BAAC /* RetryViewController.swift in Sources */,
+				71F34AE32437A23D0026BAAC /* LoadAndRetryDemo.swift in Sources */,
 				71C6324C23E89B9500BC5302 /* WeatherService.swift in Sources */,
 				71DD712E242CEC3300C19E7D /* UIFont+Ext.swift in Sources */,
 				719A1E8F23E72361000FC21C /* PageViewController.swift in Sources */,
@@ -517,6 +556,7 @@
 				71147A9B242025E000C850C5 /* GameModel.xcdatamodeld in Sources */,
 				71DD7126242CE1F600C19E7D /* NSAttributedStringBaselineOffset.swift in Sources */,
 				7191B38C240EA7EE004FB0B2 /* CoreDataViewController.swift in Sources */,
+				71F34AE52437A2760026BAAC /* FullscreenLockController.swift in Sources */,
 				719A1E9D23E723E1000FC21C /* Factories.swift in Sources */,
 				719A1E7423E71F17000FC21C /* DemoViewController.swift in Sources */,
 				71998EEB241A68CC00F12C8E /* SimpleListAddModalViewController.swift in Sources */,

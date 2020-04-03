@@ -19,10 +19,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             window?.makeKeyAndVisible()
 
             let rootLabs = [
-                Lab(name: "UIKit", viewController: makeUIKitArcade()),
-                Lab(name: "Navigation", viewController: makeNavigationArcade()),
-                Lab(name: "Communication", viewController: makeCommunicationArcade()),
-                Lab(name: "CoreData", viewController: makeCoreDataArcade()),
+                Lab(name: "UIKit", viewController: makeUIKit()),
+                Lab(name: "Navigation", viewController: makeNavigation()),
+                Lab(name: "Communication", viewController: makeCommunication()),
+                Lab(name: "CoreData", viewController: makeCoreData()),
+                Lab(name: "Affordances", viewController: makeAffordances()),
             ]
 
             let rootViewController = DemoViewController(labs: rootLabs, navBarTitle: "Cocoa Demos")
@@ -38,7 +39,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 extension AppDelegate {
     
-    func makeUIKitArcade() -> UIViewController {
+    func makeUIKit() -> UIViewController {
         
         // UITableView
         let uitableViewPatterns = [
@@ -76,7 +77,7 @@ extension AppDelegate {
         return DemoViewController(labs: uikitLabs, navBarTitle: "UIKIt")
     }
     
-    func makeNavigationArcade() -> UIViewController {
+    func makeNavigation() -> UIViewController {
         let containerPatterns = [
             Lab(name: "NavigationController", viewController: NavigationViewController1()),
             Lab(name: "TabViewController", viewController: TabBarViewController()),
@@ -94,7 +95,7 @@ extension AppDelegate {
         return DemoViewController(labs: navigationPatterns, navBarTitle: "Navigation")
     }
     
-    func makeCommunicationArcade() -> UIViewController {
+    func makeCommunication() -> UIViewController {
         let communicationPatterns = [
             Lab(name: "Protocol Delegate", viewController: ProtocolDelegateViewController()),
             Lab(name: "Closure", viewController: ClosureViewController()),
@@ -106,7 +107,7 @@ extension AppDelegate {
         return DemoViewController(labs: communicationPatterns, navBarTitle: "Communication")
     }
     
-    func makeCoreDataArcade() -> UIViewController {
+    func makeCoreData() -> UIViewController {
         let coreDataPatterns = [
             Lab(name: "Intro", viewController: CoreDataViewController()),
             Lab(name: "Fetched Results Demo", viewController: DemoFetchedResultsViewController()),
@@ -114,4 +115,13 @@ extension AppDelegate {
 
         return DemoViewController(labs: coreDataPatterns, navBarTitle: "CoreData")
     }
+    
+    func makeAffordances() -> UIViewController {
+        let coreDataPatterns = [
+            Lab(name: "Load & Retry Screens", viewController: LoadAndRetryDemo()),
+        ]
+
+        return DemoViewController(labs: coreDataPatterns, navBarTitle: "CoreData")
+    }
+
 }
