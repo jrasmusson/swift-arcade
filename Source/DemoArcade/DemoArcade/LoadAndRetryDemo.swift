@@ -34,7 +34,7 @@ class LoadAndRetryDemo: FullscreenLockController {
     }
 
     func setupViews() {
-        navigationItem.title = "Retry Loading Screen"
+        navigationItem.title = "Load and Retry Demo"
         navigationItem.rightBarButtonItem = fetchButtonItem
 
         tableView.delegate = self

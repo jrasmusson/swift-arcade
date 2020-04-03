@@ -121,7 +121,7 @@ extension AppDelegate {
             Lab(name: "Load & Retry Screens", viewController: LoadAndRetryDemo()),
         ]
 
-        return DemoViewController(labs: coreDataPatterns, navBarTitle: "CoreData")
+        return DemoViewController(labs: coreDataPatterns, navBarTitle: "Affordances")
     }
 
 }
