@@ -270,7 +270,7 @@
 		719A1E5D23E71E9C000FC21C /* DemoArcade */ = {
 			isa = PBXGroup;
 			children = (
-				71F34AE02437A1F70026BAAC /* Affordances */,
+				71F34AE02437A1F70026BAAC /* Design */,
 				710811192417DE3500A59673 /* UIKit */,
 				719A1E9E23E724FC000FC21C /* Communication */,
 				719A1E7523E71F22000FC21C /* Navigation */,
@@ -413,12 +413,12 @@
 			name = NSAttributedString;
 			sourceTree = "<group>";
 		};
-		71F34AE02437A1F70026BAAC /* Affordances */ = {
+		71F34AE02437A1F70026BAAC /* Design */ = {
 			isa = PBXGroup;
 			children = (
 				71F34AE12437A2190026BAAC /* Load Retry Screens */,
 			);
-			name = Affordances;
+			name = Design;
 			sourceTree = "<group>";
 		};
 		71F34AE12437A2190026BAAC /* Load Retry Screens */ = {

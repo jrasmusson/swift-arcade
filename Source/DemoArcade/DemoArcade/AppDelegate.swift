@@ -23,7 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 Lab(name: "Navigation", viewController: makeNavigation()),
                 Lab(name: "Communication", viewController: makeCommunication()),
                 Lab(name: "CoreData", viewController: makeCoreData()),
-                Lab(name: "Affordances", viewController: makeAffordances()),
+                Lab(name: "Design", viewController: makeDesign()),
             ]
 
             let rootViewController = DemoViewController(labs: rootLabs, navBarTitle: "Cocoa Demos")
@@ -116,12 +116,12 @@ extension AppDelegate {
         return DemoViewController(labs: coreDataPatterns, navBarTitle: "CoreData")
     }
     
-    func makeAffordances() -> UIViewController {
+    func makeDesign() -> UIViewController {
         let coreDataPatterns = [
             Lab(name: "Load & Retry Screens", viewController: LoadAndRetryDemo()),
         ]
 
-        return DemoViewController(labs: coreDataPatterns, navBarTitle: "Affordances")
+        return DemoViewController(labs: coreDataPatterns, navBarTitle: "Design")
     }
 
 }
