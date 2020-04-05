@@ -2,7 +2,7 @@
 
 Sometimes when you are builing applications. It's nice having a load and retry screen. Some remote calls take time. Others fail. Having a consisent way of swapping between loading, retrying, and your final screen is really nice.
 
-![problem]()
+![problem](images/problem.png)
 
 One way to solve it is to create a parent view controller, holding both the load and retry screens, and then swap between them depending on where you are in your slow/flakey running network call.
 
