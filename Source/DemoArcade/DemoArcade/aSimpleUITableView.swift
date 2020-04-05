@@ -10,12 +10,12 @@ import UIKit
 
 class aSimpleUITableView: UIViewController {
     
-    let labs = ["Basic Anchors",
-                "Safe Area Guide",
-                "Layout Margin",
-                "Spacer Views",
-                "Readable Content Guide"]
-    
+    var games = ["Space Invaders",
+                "Dragon Slayer",
+                "Disks of Tron",
+                "Moon Patrol",
+                "Galaga"]
+
     let cellId = "cellId"
     
     var tableView = UITableView()
@@ -47,13 +47,13 @@ extension aSimpleUITableView: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath)
         
-        cell.textLabel?.text = labs[indexPath.row]
+        cell.textLabel?.text = games[indexPath.row]
         cell.accessoryType = UITableViewCell.AccessoryType.disclosureIndicator
         
         return cell
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return labs.count
+        return games.count
     }
 }
