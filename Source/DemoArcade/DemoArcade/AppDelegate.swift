@@ -71,6 +71,8 @@ extension AppDelegate {
         // Diffable Data Source
         let diffableDataSources = [
             Lab(name: "WIFI Settings UITableView", viewController: WIFISettingsViewController()),
+            Lab(name: "Mountain TableView", viewController: MountainTableViewController()),
+            Lab(name: "Mountain CollectionView", viewController: MountainCollectionViewController()),
         ]
 
         let diffableViewController = DemoViewController(labs: diffableDataSources, navBarTitle: "Diffable Data Sources")
