@@ -66,12 +66,20 @@ extension AppDelegate {
             Lab(name: "BaselineOffset", viewController: NSAttributedStringBaselineOffset()),
         ]
 
-        let  nsAttributedStringController = DemoViewController(labs: nsAttributedStringPatterns, navBarTitle: "NSAttributedString")
+        let nsAttributedStringController = DemoViewController(labs: nsAttributedStringPatterns, navBarTitle: "NSAttributedString")
+
+        // Diffable Data Source
+        let diffableDataSources = [
+            Lab(name: "WIFI Settings UITableView", viewController: WIFISettingsViewController()),
+        ]
+
+        let diffableViewController = DemoViewController(labs: diffableDataSources, navBarTitle: "Diffable Data Sources")
 
         let uikitLabs = [
             Lab(name: "UITableView", viewController: uitableViewController),
             Lab(name: "UITableViewCell", viewController: uitableViewCellController),
-            Lab(name: "NSAttributedString", viewController: nsAttributedStringController)
+            Lab(name: "NSAttributedString", viewController: nsAttributedStringController),
+            Lab(name: "Diffable Data Sources", viewController: diffableViewController),
         ]
         
         return DemoViewController(labs: uikitLabs, navBarTitle: "UIKIt")
@@ -122,6 +130,14 @@ extension AppDelegate {
         ]
 
         return DemoViewController(labs: coreDataPatterns, navBarTitle: "Design")
+    }
+
+    func makeDiffableDataSource() -> UIViewController {
+        let diffableDataSources = [
+            Lab(name: "WIFI Settings UITableView", viewController: WIFISettingsViewController()),
+        ]
+
+        return DemoViewController(labs: diffableDataSources, navBarTitle: "Diffable Data Source")
     }
 
 }
