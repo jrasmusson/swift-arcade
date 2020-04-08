@@ -125,6 +125,8 @@ which passes itself in as an input and returns nothing. What this effectively do
 
 ## Full source
 
+See repos for full source. Here is the _ViewController_.
+
 ```swift
 //
 //  MountainTableViewController.swift
