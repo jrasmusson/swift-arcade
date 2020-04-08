@@ -65,7 +65,7 @@ class WIFIController {
             updateHandler(self) // notify
         }
         
-        let deadline = DispatchTime.now() + DispatchTimeInterval.milliseconds(2000)
+        let deadline = DispatchTime.now() + DispatchTimeInterval.milliseconds(1000)
         DispatchQueue.main.asyncAfter(deadline: deadline) {
             self.performRandomUpdate()
         }

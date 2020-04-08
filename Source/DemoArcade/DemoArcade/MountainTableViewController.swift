@@ -53,7 +53,6 @@ class MountainTableViewController: UIViewController {
     }
     
     func configureDataSource() {
-                
         dataSource = UITableViewDiffableDataSource<Section, MountainsController.Mountain>(tableView: tableView) {
             (tableView: UITableView, indexPath: IndexPath, item: MountainsController.Mountain) -> UITableViewCell?  in
             
@@ -61,7 +60,6 @@ class MountainTableViewController: UIViewController {
             cell.textLabel?.text = item.name
             return cell
         }
-        
     }
         
     func performQuery(with filter: String?) {
