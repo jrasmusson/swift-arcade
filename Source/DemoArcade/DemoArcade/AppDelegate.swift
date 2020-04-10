@@ -80,7 +80,7 @@ extension AppDelegate {
         // Moveable Cells
         let moveableCells = [
             Lab(name: "Edit Mode", viewController: EditMode()),
-            Lab(name: "Long Press", viewController: EditMode()),
+            Lab(name: "Long Press", viewController: LongPress()),
         ]
 
         let moveableCellsViewController = DemoViewController(labs: moveableCells, navBarTitle: "Moveable Cells")
