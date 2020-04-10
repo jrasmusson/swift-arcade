@@ -76,12 +76,21 @@ extension AppDelegate {
         ]
 
         let diffableViewController = DemoViewController(labs: diffableDataSources, navBarTitle: "Diffable Data Sources")
+        
+        // Moveable Cells
+        let moveableCells = [
+            Lab(name: "Edit Mode", viewController: EditMode()),
+            Lab(name: "Long Press", viewController: EditMode()),
+        ]
+
+        let moveableCellsViewController = DemoViewController(labs: moveableCells, navBarTitle: "Moveable Cells")
 
         let uikitLabs = [
             Lab(name: "UITableView", viewController: uitableViewController),
             Lab(name: "UITableViewCell", viewController: uitableViewCellController),
             Lab(name: "NSAttributedString", viewController: nsAttributedStringController),
             Lab(name: "Diffable Data Sources", viewController: diffableViewController),
+            Lab(name: "Moveable Cells", viewController: moveableCellsViewController),
         ]
         
         return DemoViewController(labs: uikitLabs, navBarTitle: "UIKIt")

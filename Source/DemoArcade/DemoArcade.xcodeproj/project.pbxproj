@@ -19,6 +19,8 @@
 		713725CD2402AB200067ADD8 /* KVOViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 713725CC2402AB200067ADD8 /* KVOViewController.swift */; };
 		713725CF2402B5780067ADD8 /* ResponderExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 713725CE2402B5780067ADD8 /* ResponderExtensions.swift */; };
 		713725D22402BADD0067ADD8 /* PropertyObserverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 713725D12402BADD0067ADD8 /* PropertyObserverViewController.swift */; };
+		71547B2D2440C05B00B6D9E0 /* EditMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71547B2C2440C05B00B6D9E0 /* EditMode.swift */; };
+		71547B2F2440C06300B6D9E0 /* LongPress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71547B2E2440C06300B6D9E0 /* LongPress.swift */; };
 		7178D4B5241922790085D6B1 /* SimpleListEditModeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7178D4B4241922790085D6B1 /* SimpleListEditModeViewController.swift */; };
 		718C45F723F42F33007B5F91 /* ClosureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 718C45F623F42F33007B5F91 /* ClosureViewController.swift */; };
 		7191A2A0243C973D0017714B /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7191A29F243C973D0017714B /* Network.swift */; };
@@ -83,6 +85,8 @@
 		713725CC2402AB200067ADD8 /* KVOViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KVOViewController.swift; sourceTree = "<group>"; };
 		713725CE2402B5780067ADD8 /* ResponderExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponderExtensions.swift; sourceTree = "<group>"; };
 		713725D12402BADD0067ADD8 /* PropertyObserverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyObserverViewController.swift; sourceTree = "<group>"; };
+		71547B2C2440C05B00B6D9E0 /* EditMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditMode.swift; sourceTree = "<group>"; };
+		71547B2E2440C06300B6D9E0 /* LongPress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LongPress.swift; sourceTree = "<group>"; };
 		7178D4B4241922790085D6B1 /* SimpleListEditModeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleListEditModeViewController.swift; sourceTree = "<group>"; };
 		718C45F623F42F33007B5F91 /* ClosureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClosureViewController.swift; sourceTree = "<group>"; };
 		7191A29F243C973D0017714B /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
@@ -161,6 +165,7 @@
 		7112AD6E242AEE2D0072C65D /* UITableView */ = {
 			isa = PBXGroup;
 			children = (
+				71547B2A2440C01B00B6D9E0 /* Moveable Cells */,
 				7108111A2417DE4E00A59673 /* aSimpleUITableViewController.swift */,
 				71C2380124186D870046E9B3 /* aSimpleUITableView.swift */,
 				7125AD7724194A4100248EE9 /* Simple List */,
@@ -230,6 +235,15 @@
 				713725D12402BADD0067ADD8 /* PropertyObserverViewController.swift */,
 			);
 			name = PropertyObservers;
+			sourceTree = "<group>";
+		};
+		71547B2A2440C01B00B6D9E0 /* Moveable Cells */ = {
+			isa = PBXGroup;
+			children = (
+				71547B2C2440C05B00B6D9E0 /* EditMode.swift */,
+				71547B2E2440C06300B6D9E0 /* LongPress.swift */,
+			);
+			name = "Moveable Cells";
 			sourceTree = "<group>";
 		};
 		718C45F523F42ECD007B5F91 /* Closures */ = {
@@ -578,6 +592,7 @@
 				719A1E8423E72218000FC21C /* ModalNavigation.swift in Sources */,
 				7191A2B2243CA4350017714B /* MountainCollectionViewController.swift in Sources */,
 				719A1E9923E723C1000FC21C /* ContainerViewController.swift in Sources */,
+				71547B2D2440C05B00B6D9E0 /* EditMode.swift in Sources */,
 				7191A2AE243CA2CB0017714B /* MountainsController.swift in Sources */,
 				71DD712A242CE4F500C19E7D /* NSAttributedStringImages.swift in Sources */,
 				7191B38A240EA7DF004FB0B2 /* CoreDataManager.swift in Sources */,
@@ -625,6 +640,7 @@
 				719A1E9B23E723C1000FC21C /* ActivatingViewController.swift in Sources */,
 				713725D22402BADD0067ADD8 /* PropertyObserverViewController.swift in Sources */,
 				7125AD7A24194FF300248EE9 /* SaveGameViewController.swift in Sources */,
+				71547B2F2440C06300B6D9E0 /* LongPress.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
