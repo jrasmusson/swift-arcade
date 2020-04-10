@@ -216,10 +216,7 @@ extension LongPress: UITableViewDelegate {
 extension LongPress: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath)
-        
         cell.textLabel?.text = games[indexPath.row]
-        cell.accessoryType = UITableViewCell.AccessoryType.disclosureIndicator
-        
         return cell
     }
     

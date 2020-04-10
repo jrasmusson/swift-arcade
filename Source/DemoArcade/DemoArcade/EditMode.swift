@@ -192,7 +192,7 @@ extension EditMode {
     }
     
     func configureNavigationItem() {
-        navigationItem.title = "UITableView: Editing"
+        navigationItem.title = "Edit Mode"
         let editingItem = UIBarButtonItem(title: tableView.isEditing ? "Done" : "Edit", style: .plain, target: self, action: #selector(toggleEditing))
         navigationItem.rightBarButtonItems = [editingItem]
     }
