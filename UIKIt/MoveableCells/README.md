@@ -97,6 +97,21 @@ override func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: Ind
 }
 ```
 
+
+## Long Press
+
+![demo](images/long-press.gif)
+
+Long Press uses a `UILongPressGestureRecognizer` to detect when the user has pressed a row in the table.
+
+```swift
+let longpress = UILongPressGestureRecognizer(target: self, action: #selector(longPressGestureRecognized(_:)))
+tableView.addGestureRecognizer(longpress)
+```
+
+And then does a whole bunch of magic to take a picture (build a `UIView`) of the cell that was tapped, animates it up above the _UITableView_, moves it around with the gesture, and then animates/fades it back into the table.
+
+
 ## Source Edit Mode
 
 ```swift
@@ -538,19 +553,6 @@ extension LongPress: UITableViewDataSource {
     }
 }
 ```
-
-## Long Press
-
-![demo](images/long-press.gif)
-
-Long Press uses a `UILongPressGestureRecognizer` to detect when the user has pressed a row in the table.
-
-```swift
-let longpress = UILongPressGestureRecognizer(target: self, action: #selector(longPressGestureRecognized(_:)))
-tableView.addGestureRecognizer(longpress)
-```
-
-And then does a whole bunch of magic to take a picture (build a `UIView`) of the cell that was tapped, animates it up above the _UITableView_, moves it around with the gesture, and then animates/fades it back into the table.
 
 ### Video
 
