@@ -71,7 +71,7 @@ class EditMode: UIViewController {
             // take snapshot before
             var snapshot = self.snapshot()
 
-            // if moving with a section
+            // if moving within a section
             if let destinationIdentifier = destinationIdentifier {
                 
                 guard let sourceIndex = snapshot.indexOfItem(sourceIdentifier) else { return }
