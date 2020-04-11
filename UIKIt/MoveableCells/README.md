@@ -310,7 +310,7 @@ extension EditMode {
 
 ## Long Press
 
-![demo](images/long-press.gif)
+![demo](images/long-press2.gif)
 
 Long Press uses a `UILongPressGestureRecognizer` to detect when the user has pressed a row in the table.
 
