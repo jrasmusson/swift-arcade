@@ -19,7 +19,7 @@ Collection of demos from the [Swift Arcade YouTube channel.](https://www.youtube
 
 - [Getting Started](https://github.com/jrasmusson/swift-arcade/blob/master/CoreData/1-GettingStarted.md)
 
-## Desig
+## Design
 - [Load & Retry Screens](https://github.com/jrasmusson/swift-arcade/blob/master/Design/LoadAndRetry/1-Load-And-Retry.md)
 
 ## Misc
