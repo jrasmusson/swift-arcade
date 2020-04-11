@@ -7,6 +7,7 @@ Collection of demos from the [Swift Arcade YouTube channel.](https://www.youtube
 - [Swipeable Cells](https://github.com/jrasmusson/swift-arcade/blob/master/UIKIt/SwipeableCells/README.md)
 - [NSAttributedStrings](https://github.com/jrasmusson/swift-arcade/blob/master/UIKIt/NSAttributedStrings/README.md)
 - [Diffable Data Source](https://github.com/jrasmusson/swift-arcade/blob/master/UIKIt/DiffableDataSource/README.md)
+- [Moveable Cells](https://github.com/jrasmusson/swift-arcade/blob/master/UIKIt/MoveableCells/README.md)
 
 ## Communication Patterns
 
