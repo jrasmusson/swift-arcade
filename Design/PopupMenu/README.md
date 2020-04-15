@@ -1,6 +1,6 @@
 # Popup Menu
 
-An advanced demo of how gesture recognizers and animations can be tied together to create a popup menu.
+An advanced demo of how `UIPanGestureRecognizer` and `UIViewPropertyAnimator` can be tied together to create a popup menu.
 
 ![demo](images/demo.gif)
 
