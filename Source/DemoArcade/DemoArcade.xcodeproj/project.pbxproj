@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		710133BE2447449D0063A7E2 /* MovingBlock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 710133BD2447449D0063A7E2 /* MovingBlock.swift */; };
-		710133C0244745250063A7E2 /* PopupMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 710133BF244745250063A7E2 /* PopupMenu.swift */; };
 		7108111B2417DE4E00A59673 /* aSimpleUITableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7108111A2417DE4E00A59673 /* aSimpleUITableViewController.swift */; };
 		7112AD71242AEE730072C65D /* CustomCellViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7112AD70242AEE730072C65D /* CustomCellViewController.swift */; };
 		7112AD73242AEED50072C65D /* ChannelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7112AD72242AEED50072C65D /* ChannelCell.swift */; };
@@ -67,6 +66,7 @@
 		71DD712C242CEBDE00C19E7D /* NSAttributedStringButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71DD712B242CEBDE00C19E7D /* NSAttributedStringButtons.swift */; };
 		71DD712E242CEC3300C19E7D /* UIFont+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71DD712D242CEC3300C19E7D /* UIFont+Ext.swift */; };
 		71DD7130242CEE0100C19E7D /* UIColor+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71DD712F242CEE0100C19E7D /* UIColor+Ext.swift */; };
+		71E6286F24479C7F009499E4 /* PopupMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71E6286E24479C7F009499E4 /* PopupMenu.swift */; };
 		71F34AE32437A23D0026BAAC /* LoadAndRetryDemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F34AE22437A23D0026BAAC /* LoadAndRetryDemo.swift */; };
 		71F34AE52437A2760026BAAC /* FullscreenLockController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F34AE42437A2760026BAAC /* FullscreenLockController.swift */; };
 		71F34AE72437A2920026BAAC /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F34AE62437A2920026BAAC /* LoadingViewController.swift */; };
@@ -76,7 +76,6 @@
 
 /* Begin PBXFileReference section */
 		710133BD2447449D0063A7E2 /* MovingBlock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovingBlock.swift; sourceTree = "<group>"; };
-		710133BF244745250063A7E2 /* PopupMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupMenu.swift; sourceTree = "<group>"; };
 		7108111A2417DE4E00A59673 /* aSimpleUITableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = aSimpleUITableViewController.swift; sourceTree = "<group>"; };
 		7112AD70242AEE730072C65D /* CustomCellViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCellViewController.swift; sourceTree = "<group>"; };
 		7112AD72242AEED50072C65D /* ChannelCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelCell.swift; sourceTree = "<group>"; };
@@ -137,6 +136,7 @@
 		71DD712B242CEBDE00C19E7D /* NSAttributedStringButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSAttributedStringButtons.swift; sourceTree = "<group>"; };
 		71DD712D242CEC3300C19E7D /* UIFont+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Ext.swift"; sourceTree = "<group>"; };
 		71DD712F242CEE0100C19E7D /* UIColor+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Ext.swift"; sourceTree = "<group>"; };
+		71E6286E24479C7F009499E4 /* PopupMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupMenu.swift; sourceTree = "<group>"; };
 		71F34AE22437A23D0026BAAC /* LoadAndRetryDemo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadAndRetryDemo.swift; sourceTree = "<group>"; };
 		71F34AE42437A2760026BAAC /* FullscreenLockController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullscreenLockController.swift; sourceTree = "<group>"; };
 		71F34AE62437A2920026BAAC /* LoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
@@ -155,19 +155,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		710133BB244744520063A7E2 /* Animations */ = {
+		710133BB244744520063A7E2 /* UIPanGestureRecognizer */ = {
 			isa = PBXGroup;
 			children = (
 				710133BD2447449D0063A7E2 /* MovingBlock.swift */,
-				710133BF244745250063A7E2 /* PopupMenu.swift */,
 			);
-			name = Animations;
+			name = UIPanGestureRecognizer;
 			sourceTree = "<group>";
 		};
 		710811192417DE3500A59673 /* UIKit */ = {
 			isa = PBXGroup;
 			children = (
-				710133BB244744520063A7E2 /* Animations */,
+				710133BB244744520063A7E2 /* UIPanGestureRecognizer */,
 				7191A29D243C96F40017714B /* Diffable Data Source */,
 				71DD7122242CD02700C19E7D /* NSAttributedString */,
 				7112AD6E242AEE2D0072C65D /* UITableView */,
@@ -490,6 +489,7 @@
 			isa = PBXGroup;
 			children = (
 				71F34AE12437A2190026BAAC /* Load Retry Screens */,
+				71E6286E24479C7F009499E4 /* PopupMenu.swift */,
 			);
 			name = Design;
 			sourceTree = "<group>";
@@ -594,7 +594,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				710133C0244745250063A7E2 /* PopupMenu.swift in Sources */,
 				712CA2FB241133DE00A85735 /* IntroViewController.swift in Sources */,
 				7191A2A0243C973D0017714B /* Network.swift in Sources */,
 				713725CD2402AB200067ADD8 /* KVOViewController.swift in Sources */,
@@ -602,6 +601,7 @@
 				718C45F723F42F33007B5F91 /* ClosureViewController.swift in Sources */,
 				7112AD71242AEE730072C65D /* CustomCellViewController.swift in Sources */,
 				7112AD73242AEED50072C65D /* ChannelCell.swift in Sources */,
+				71E6286F24479C7F009499E4 /* PopupMenu.swift in Sources */,
 				719A1EA123E72721000FC21C /* ProtocolDelegateViewController.swift in Sources */,
 				719A1E8D23E7234B000FC21C /* TabViewController.swift in Sources */,
 				710133BE2447449D0063A7E2 /* MovingBlock.swift in Sources */,
