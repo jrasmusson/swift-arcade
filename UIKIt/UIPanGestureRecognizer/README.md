@@ -1,6 +1,4 @@
-# Moveable Block
-
-This isn't really an animation. It's more a demo of how `UIPanGestureRecognizer` works.
+# UIPanGestureRecognizer
 
 You basically define the gesture.
 
@@ -19,7 +17,7 @@ myView.addGestureRecognizer(panRecognizer)
 ```
 
 And then in the action, track the _velocity_ (points/second) and _translation_.
-Translation is the total distance from the inital tap (not the delta). This is 
+_translation_ is the total distance from the inital tap (not the delta). This is 
 also a continuous gesture (not a discrete one).
 
 Main thing to note is you want to get the view being panned from the recognizer (not the viewController it was defined in).
