@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		710133BE2447449D0063A7E2 /* MovingBlock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 710133BD2447449D0063A7E2 /* MovingBlock.swift */; };
+		710133C0244745250063A7E2 /* PopupMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 710133BF244745250063A7E2 /* PopupMenu.swift */; };
 		7108111B2417DE4E00A59673 /* aSimpleUITableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7108111A2417DE4E00A59673 /* aSimpleUITableViewController.swift */; };
 		7112AD71242AEE730072C65D /* CustomCellViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7112AD70242AEE730072C65D /* CustomCellViewController.swift */; };
 		7112AD73242AEED50072C65D /* ChannelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7112AD72242AEED50072C65D /* ChannelCell.swift */; };
@@ -73,6 +75,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		710133BD2447449D0063A7E2 /* MovingBlock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovingBlock.swift; sourceTree = "<group>"; };
+		710133BF244745250063A7E2 /* PopupMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupMenu.swift; sourceTree = "<group>"; };
 		7108111A2417DE4E00A59673 /* aSimpleUITableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = aSimpleUITableViewController.swift; sourceTree = "<group>"; };
 		7112AD70242AEE730072C65D /* CustomCellViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCellViewController.swift; sourceTree = "<group>"; };
 		7112AD72242AEED50072C65D /* ChannelCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelCell.swift; sourceTree = "<group>"; };
@@ -151,9 +155,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		710133BB244744520063A7E2 /* Animations */ = {
+			isa = PBXGroup;
+			children = (
+				710133BD2447449D0063A7E2 /* MovingBlock.swift */,
+				710133BF244745250063A7E2 /* PopupMenu.swift */,
+			);
+			name = Animations;
+			sourceTree = "<group>";
+		};
 		710811192417DE3500A59673 /* UIKit */ = {
 			isa = PBXGroup;
 			children = (
+				710133BB244744520063A7E2 /* Animations */,
 				7191A29D243C96F40017714B /* Diffable Data Source */,
 				71DD7122242CD02700C19E7D /* NSAttributedString */,
 				7112AD6E242AEE2D0072C65D /* UITableView */,
@@ -580,6 +594,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				710133C0244745250063A7E2 /* PopupMenu.swift in Sources */,
 				712CA2FB241133DE00A85735 /* IntroViewController.swift in Sources */,
 				7191A2A0243C973D0017714B /* Network.swift in Sources */,
 				713725CD2402AB200067ADD8 /* KVOViewController.swift in Sources */,
@@ -589,6 +604,7 @@
 				7112AD73242AEED50072C65D /* ChannelCell.swift in Sources */,
 				719A1EA123E72721000FC21C /* ProtocolDelegateViewController.swift in Sources */,
 				719A1E8D23E7234B000FC21C /* TabViewController.swift in Sources */,
+				710133BE2447449D0063A7E2 /* MovingBlock.swift in Sources */,
 				719A1E8423E72218000FC21C /* ModalNavigation.swift in Sources */,
 				7191A2B2243CA4350017714B /* MountainCollectionViewController.swift in Sources */,
 				719A1E9923E723C1000FC21C /* ContainerViewController.swift in Sources */,

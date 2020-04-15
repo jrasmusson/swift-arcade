@@ -84,6 +84,14 @@ extension AppDelegate {
         ]
 
         let moveableCellsViewController = DemoViewController(labs: moveableCells, navBarTitle: "Moveable Cells")
+        
+        // Animations
+        let animations = [
+            Lab(name: "Moving Box", viewController: MovingBlock()),
+            Lab(name: "Popup Menu", viewController: PopupMenu()),
+        ]
+
+        let animationsViewController = DemoViewController(labs: animations, navBarTitle: "Animations")
 
         let uikitLabs = [
             Lab(name: "UITableView", viewController: uitableViewController),
@@ -91,6 +99,7 @@ extension AppDelegate {
             Lab(name: "NSAttributedString", viewController: nsAttributedStringController),
             Lab(name: "Diffable Data Sources", viewController: diffableViewController),
             Lab(name: "Moveable Cells", viewController: moveableCellsViewController),
+            Lab(name: "Animations", viewController: animationsViewController),
         ]
         
         return DemoViewController(labs: uikitLabs, navBarTitle: "UIKIt")
