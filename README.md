@@ -2,6 +2,10 @@
 
 Collection of demos from the [Swift Arcade YouTube channel.](https://www.youtube.com/channel/UCxnCA5FBYRCFgIZWD0CKCVg?view_as=subscriber)
 
+## Swift
+
+- [Functions as Variables](/Swift/Funcs-as-Variables/README.md)
+
 ## UIKit
 
 - [Swipeable Cells](https://github.com/jrasmusson/swift-arcade/blob/master/UIKIt/SwipeableCells/README.md)
