@@ -85,13 +85,12 @@ extension AppDelegate {
 
         let moveableCellsViewController = DemoViewController(labs: moveableCells, navBarTitle: "Moveable Cells")
         
-        // Animations
-        let animations = [
+        // UIPanGestureRecognizer
+        let panGestures = [
             Lab(name: "Moving Box", viewController: MovingBlock()),
-            Lab(name: "Popup Menu", viewController: PopupMenu()),
         ]
 
-        let animationsViewController = DemoViewController(labs: animations, navBarTitle: "Animations")
+        let panGestureViewController = DemoViewController(labs: panGestures, navBarTitle: "UIPanGestureRecognizer")
 
         let uikitLabs = [
             Lab(name: "UITableView", viewController: uitableViewController),
@@ -99,7 +98,7 @@ extension AppDelegate {
             Lab(name: "NSAttributedString", viewController: nsAttributedStringController),
             Lab(name: "Diffable Data Sources", viewController: diffableViewController),
             Lab(name: "Moveable Cells", viewController: moveableCellsViewController),
-            Lab(name: "Animations", viewController: animationsViewController),
+            Lab(name: "UIPanGestureRecognizer", viewController: panGestureViewController),
         ]
         
         return DemoViewController(labs: uikitLabs, navBarTitle: "UIKIt")
@@ -147,6 +146,7 @@ extension AppDelegate {
     func makeDesign() -> UIViewController {
         let coreDataPatterns = [
             Lab(name: "Load & Retry Screens", viewController: LoadAndRetryDemo()),
+            Lab(name: "Popup Menu", viewController: PopupMenu()),
         ]
 
         return DemoViewController(labs: coreDataPatterns, navBarTitle: "Design")
