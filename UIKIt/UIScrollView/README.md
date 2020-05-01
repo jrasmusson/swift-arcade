@@ -14,8 +14,6 @@ Key to understanding `UIScrollView` is to wrap your head around these three thin
 
 ![coordinate](images/content-size.png)
 
-![coordinate](images/calculation.png)
-
 ## Demo Changing the Bounds
 
 Changing the bounds is how you make a `UIView` scroll. For example we can shift (or scroll) an entire view up, simply by changing its `bounds`.
@@ -59,7 +57,7 @@ class ViewController: UIViewController {
 }
 ```
 
-### Demo CustomScrollView
+### Demo DIY ScrollView
 
 We can take this concept one step further, and build our own custom `UIScrollView` by adding a `UIPanGestureRecognizer`, measuring its offset, and then applying that offset in the y-direction to the `view.bounds`.
 
@@ -205,9 +203,9 @@ class ViewController: UIViewController {
 
 ### Links that help
 
-- - [Understanding ScrollViews](https://oleb.net/blog/2014/04/understanding-uiscrollview/)
+- [Understanding ScrollViews](https://oleb.net/blog/2014/04/understanding-uiscrollview/)
 
 
 ### Video
 
-- [Understanding ScrollViews](https://www.youtube.com/watch?v=TYM65qxEQNs)
+- [Swift Arcade - Understanding UIScrollView](https://www.youtube.com/watch?v=TYM65qxEQNs)
