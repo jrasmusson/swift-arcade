@@ -77,6 +77,15 @@ extension AppDelegate {
 
         let diffableViewController = DemoViewController(labs: diffableDataSources, navBarTitle: "Diffable Data Sources")
         
+        // UIScrollView
+        let scrollViews = [
+            Lab(name: "How it works", viewController: HowUIScrollViewWorks()),
+            Lab(name: "DIY ScrollView", viewController: DIYScrollView()),
+            Lab(name: "The Real Thing", viewController: ExampleUIScrollView()),
+        ]
+
+        let scrollViewController = DemoViewController(labs: scrollViews, navBarTitle: "UIScrollView")
+
         // Moveable Cells
         let moveableCells = [
             Lab(name: "Edit Mode", viewController: EditMode()),
@@ -93,12 +102,14 @@ extension AppDelegate {
         let panGestureViewController = DemoViewController(labs: panGestures, navBarTitle: "UIPanGestureRecognizer")
 
         let uikitLabs = [
+            Lab(name: "UIScrollView", viewController: scrollViewController),
             Lab(name: "UITableView", viewController: uitableViewController),
             Lab(name: "UITableViewCell", viewController: uitableViewCellController),
             Lab(name: "NSAttributedString", viewController: nsAttributedStringController),
             Lab(name: "Diffable Data Sources", viewController: diffableViewController),
             Lab(name: "Moveable Cells", viewController: moveableCellsViewController),
             Lab(name: "UIPanGestureRecognizer", viewController: panGestureViewController),
+
         ]
         
         return DemoViewController(labs: uikitLabs, navBarTitle: "UIKIt")
@@ -151,13 +162,4 @@ extension AppDelegate {
 
         return DemoViewController(labs: coreDataPatterns, navBarTitle: "Design")
     }
-
-    func makeDiffableDataSource() -> UIViewController {
-        let diffableDataSources = [
-            Lab(name: "WIFI Settings UITableView", viewController: WIFISettingsViewController()),
-        ]
-
-        return DemoViewController(labs: diffableDataSources, navBarTitle: "Diffable Data Source")
-    }
-
 }

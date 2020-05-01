@@ -15,6 +15,9 @@
 		71147A98242025B800C850C5 /* GameManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71147A97242025B800C850C5 /* GameManager.swift */; };
 		71147A9B242025E000C850C5 /* GameModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 71147A99242025E000C850C5 /* GameModel.xcdatamodeld */; };
 		7119DB2023E9A833000E5796 /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7119DB1F23E9A833000E5796 /* Weather.swift */; };
+		712234E7245C769D004CFB63 /* HowUIScrollViewWorks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 712234E6245C769D004CFB63 /* HowUIScrollViewWorks.swift */; };
+		712234E9245C76CE004CFB63 /* DIYScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 712234E8245C76CE004CFB63 /* DIYScrollView.swift */; };
+		712234EB245C76E7004CFB63 /* ExampleUIScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 712234EA245C76E7004CFB63 /* ExampleUIScrollView.swift */; };
 		7125AD7A24194FF300248EE9 /* SaveGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7125AD7924194FF300248EE9 /* SaveGameViewController.swift */; };
 		712CA2FB241133DE00A85735 /* IntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 712CA2FA241133DE00A85735 /* IntroViewController.swift */; };
 		713725CD2402AB200067ADD8 /* KVOViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 713725CC2402AB200067ADD8 /* KVOViewController.swift */; };
@@ -83,6 +86,9 @@
 		71147A97242025B800C850C5 /* GameManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameManager.swift; sourceTree = "<group>"; };
 		71147A9A242025E000C850C5 /* GameModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = GameModel.xcdatamodel; sourceTree = "<group>"; };
 		7119DB1F23E9A833000E5796 /* Weather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
+		712234E6245C769D004CFB63 /* HowUIScrollViewWorks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HowUIScrollViewWorks.swift; sourceTree = "<group>"; };
+		712234E8245C76CE004CFB63 /* DIYScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DIYScrollView.swift; sourceTree = "<group>"; };
+		712234EA245C76E7004CFB63 /* ExampleUIScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleUIScrollView.swift; sourceTree = "<group>"; };
 		7125AD7924194FF300248EE9 /* SaveGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveGameViewController.swift; sourceTree = "<group>"; };
 		712CA2FA241133DE00A85735 /* IntroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroViewController.swift; sourceTree = "<group>"; };
 		713725CC2402AB200067ADD8 /* KVOViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KVOViewController.swift; sourceTree = "<group>"; };
@@ -166,6 +172,7 @@
 		710811192417DE3500A59673 /* UIKit */ = {
 			isa = PBXGroup;
 			children = (
+				712234E4245C7661004CFB63 /* UIScrollView */,
 				710133BB244744520063A7E2 /* UIPanGestureRecognizer */,
 				7191A29D243C96F40017714B /* Diffable Data Source */,
 				71DD7122242CD02700C19E7D /* NSAttributedString */,
@@ -203,6 +210,24 @@
 				71147A99242025E000C850C5 /* GameModel.xcdatamodeld */,
 			);
 			name = NSFetchedResultsController;
+			sourceTree = "<group>";
+		};
+		712234E4245C7661004CFB63 /* UIScrollView */ = {
+			isa = PBXGroup;
+			children = (
+				712234E5245C766C004CFB63 /* Understanding */,
+			);
+			name = UIScrollView;
+			sourceTree = "<group>";
+		};
+		712234E5245C766C004CFB63 /* Understanding */ = {
+			isa = PBXGroup;
+			children = (
+				712234E6245C769D004CFB63 /* HowUIScrollViewWorks.swift */,
+				712234E8245C76CE004CFB63 /* DIYScrollView.swift */,
+				712234EA245C76E7004CFB63 /* ExampleUIScrollView.swift */,
+			);
+			name = Understanding;
 			sourceTree = "<group>";
 		};
 		7125AD7724194A4100248EE9 /* Simple List */ = {
@@ -623,6 +648,9 @@
 				7191A2A4243C991F0017714B /* WIFIController.swift in Sources */,
 				719A1E8223E72218000FC21C /* ModalViewController2.swift in Sources */,
 				719A1E8323E72218000FC21C /* ModalViewController1.swift in Sources */,
+				712234E9245C76CE004CFB63 /* DIYScrollView.swift in Sources */,
+				712234EB245C76E7004CFB63 /* ExampleUIScrollView.swift in Sources */,
+				712234E7245C769D004CFB63 /* HowUIScrollViewWorks.swift in Sources */,
 				719A1E9A23E723C1000FC21C /* SuccessViewController.swift in Sources */,
 				71DD7130242CEE0100C19E7D /* UIColor+Ext.swift in Sources */,
 				7108111B2417DE4E00A59673 /* aSimpleUITableViewController.swift in Sources */,
