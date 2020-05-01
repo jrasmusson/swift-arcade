@@ -2,8 +2,7 @@
 
 Key to understanding `UIScrollView` is to wrap your head around these three things - `frame`, `bounds`, `contentSize`.
 
-[coordinate](/images/coordinate.png)
-
+![coordinate](/images/coordinate.png)
 
 ### Links that help
 
