@@ -20,7 +20,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
             let rootLabs = [
                 Lab(name: "UIKit", viewController: makeUIKitDemos()),
-                Lab(name: "Navigation", viewController: makeNavigationDemos()),
                 Lab(name: "Communication", viewController: makeCommunicationDemos()),
                 Lab(name: "Foundation", viewController: makeFoundation()),
                 Lab(name: "CoreData", viewController: makeCoreDataDemos()),
@@ -63,6 +62,7 @@ extension AppDelegate {
         let uikitLabs = [
             Lab(name: "UITableView", viewController: makeTableViewDemos()),
             Lab(name: "UIScrollView", viewController: makeScrollViewDemos()),
+            Lab(name: "UINavigationController", viewController: makeNavigationDemos()),
             Lab(name: "Diffable Data Sources", viewController: diffableViewController),
             Lab(name: "UIPanGestureRecognizer", viewController: panGestureViewController),
         ]

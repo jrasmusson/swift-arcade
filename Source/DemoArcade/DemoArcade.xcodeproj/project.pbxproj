@@ -180,10 +180,11 @@
 		710811192417DE3500A59673 /* UIKit */ = {
 			isa = PBXGroup;
 			children = (
+				7112AD6E242AEE2D0072C65D /* UITableView */,
 				712234E4245C7661004CFB63 /* UIScrollView */,
+				7130B33B245F198B003FDB6A /* UINavigationController */,
 				710133BB244744520063A7E2 /* UIPanGestureRecognizer */,
 				7191A29D243C96F40017714B /* Diffable Data Source */,
-				7112AD6E242AEE2D0072C65D /* UITableView */,
 			);
 			name = UIKit;
 			sourceTree = "<group>";
@@ -272,6 +273,14 @@
 				71DD7122242CD02700C19E7D /* NSAttributedString */,
 			);
 			name = Foundation;
+			sourceTree = "<group>";
+		};
+		7130B33B245F198B003FDB6A /* UINavigationController */ = {
+			isa = PBXGroup;
+			children = (
+				719A1E7523E71F22000FC21C /* Navigation Patterns */,
+			);
+			name = UINavigationController;
 			sourceTree = "<group>";
 		};
 		713725CB2402AAFD0067ADD8 /* KVO */ = {
@@ -403,7 +412,6 @@
 			isa = PBXGroup;
 			children = (
 				710811192417DE3500A59673 /* UIKit */,
-				719A1E7523E71F22000FC21C /* Navigation */,
 				719A1E9E23E724FC000FC21C /* Communication */,
 				7130B33A245F1723003FDB6A /* Foundation */,
 				7191B388240EA78B004FB0B2 /* CoreData */,
@@ -425,14 +433,14 @@
 			name = Files;
 			sourceTree = "<group>";
 		};
-		719A1E7523E71F22000FC21C /* Navigation */ = {
+		719A1E7523E71F22000FC21C /* Navigation Patterns */ = {
 			isa = PBXGroup;
 			children = (
 				719A1E7623E72174000FC21C /* Modal */,
 				719A1E7723E7217C000FC21C /* Containers */,
 				719A1E7823E72195000FC21C /* Custom */,
 			);
-			name = Navigation;
+			name = "Navigation Patterns";
 			sourceTree = "<group>";
 		};
 		719A1E7623E72174000FC21C /* Modal */ = {
