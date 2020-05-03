@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		710133BE2447449D0063A7E2 /* MovingBlock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 710133BD2447449D0063A7E2 /* MovingBlock.swift */; };
-		7108111B2417DE4E00A59673 /* aSimpleUITableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7108111A2417DE4E00A59673 /* aSimpleUITableViewController.swift */; };
+		7108111B2417DE4E00A59673 /* ExtendingUITableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7108111A2417DE4E00A59673 /* ExtendingUITableViewController.swift */; };
 		7112AD71242AEE730072C65D /* CustomCellViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7112AD70242AEE730072C65D /* CustomCellViewController.swift */; };
 		7112AD73242AEED50072C65D /* ChannelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7112AD72242AEED50072C65D /* ChannelCell.swift */; };
 		71147A962420258F00C850C5 /* DemoFetchedResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71147A952420258F00C850C5 /* DemoFetchedResultsViewController.swift */; };
@@ -62,7 +62,7 @@
 		719A1E9D23E723E1000FC21C /* Factories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719A1E9C23E723E1000FC21C /* Factories.swift */; };
 		719A1EA123E72721000FC21C /* ProtocolDelegateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719A1EA023E72721000FC21C /* ProtocolDelegateViewController.swift */; };
 		71B9AEBF23F1936C00C2D539 /* TargetActionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71B9AEBE23F1936C00C2D539 /* TargetActionViewController.swift */; };
-		71C2380224186D870046E9B3 /* aSimpleUITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C2380124186D870046E9B3 /* aSimpleUITableView.swift */; };
+		71C2380224186D870046E9B3 /* AddingUITableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C2380124186D870046E9B3 /* AddingUITableViewController.swift */; };
 		71C2380524186F630046E9B3 /* SwipingActionsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C2380424186F630046E9B3 /* SwipingActionsTableViewController.swift */; };
 		71C6324C23E89B9500BC5302 /* WeatherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C6324B23E89B9500BC5302 /* WeatherService.swift */; };
 		71D586E323FD711F00722324 /* ResponderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D586E223FD711F00722324 /* ResponderViewController.swift */; };
@@ -83,7 +83,7 @@
 
 /* Begin PBXFileReference section */
 		710133BD2447449D0063A7E2 /* MovingBlock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovingBlock.swift; sourceTree = "<group>"; };
-		7108111A2417DE4E00A59673 /* aSimpleUITableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = aSimpleUITableViewController.swift; sourceTree = "<group>"; };
+		7108111A2417DE4E00A59673 /* ExtendingUITableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtendingUITableViewController.swift; sourceTree = "<group>"; };
 		7112AD70242AEE730072C65D /* CustomCellViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCellViewController.swift; sourceTree = "<group>"; };
 		7112AD72242AEED50072C65D /* ChannelCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelCell.swift; sourceTree = "<group>"; };
 		71147A952420258F00C850C5 /* DemoFetchedResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoFetchedResultsViewController.swift; sourceTree = "<group>"; };
@@ -139,7 +139,7 @@
 		719A1E9C23E723E1000FC21C /* Factories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Factories.swift; sourceTree = "<group>"; };
 		719A1EA023E72721000FC21C /* ProtocolDelegateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProtocolDelegateViewController.swift; sourceTree = "<group>"; };
 		71B9AEBE23F1936C00C2D539 /* TargetActionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TargetActionViewController.swift; sourceTree = "<group>"; };
-		71C2380124186D870046E9B3 /* aSimpleUITableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = aSimpleUITableView.swift; sourceTree = "<group>"; };
+		71C2380124186D870046E9B3 /* AddingUITableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddingUITableViewController.swift; sourceTree = "<group>"; };
 		71C2380424186F630046E9B3 /* SwipingActionsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipingActionsTableViewController.swift; sourceTree = "<group>"; };
 		71C6324B23E89B9500BC5302 /* WeatherService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherService.swift; sourceTree = "<group>"; };
 		71D586E223FD711F00722324 /* ResponderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponderViewController.swift; sourceTree = "<group>"; };
@@ -185,7 +185,6 @@
 				7191A29D243C96F40017714B /* Diffable Data Source */,
 				71DD7122242CD02700C19E7D /* NSAttributedString */,
 				7112AD6E242AEE2D0072C65D /* UITableView */,
-				7112AD6F242AEE430072C65D /* UITableViewCell */,
 			);
 			name = UIKit;
 			sourceTree = "<group>";
@@ -193,10 +192,10 @@
 		7112AD6E242AEE2D0072C65D /* UITableView */ = {
 			isa = PBXGroup;
 			children = (
+				717759B9245F106200C1899A /* Simple TableViews */,
+				7125AD7724194A4100248EE9 /* Edit Modes */,
 				71547B2A2440C01B00B6D9E0 /* Moveable Cells */,
-				7108111A2417DE4E00A59673 /* aSimpleUITableViewController.swift */,
-				71C2380124186D870046E9B3 /* aSimpleUITableView.swift */,
-				7125AD7724194A4100248EE9 /* Simple List */,
+				7112AD6F242AEE430072C65D /* UITableViewCell */,
 			);
 			name = UITableView;
 			sourceTree = "<group>";
@@ -239,22 +238,22 @@
 			name = Understanding;
 			sourceTree = "<group>";
 		};
-		7125AD7724194A4100248EE9 /* Simple List */ = {
+		7125AD7724194A4100248EE9 /* Edit Modes */ = {
 			isa = PBXGroup;
 			children = (
-				7125AD7824194FC300248EE9 /* EditMode */,
+				7125AD7824194FC300248EE9 /* Basic */,
 				718EBB5E2419872200A2264A /* Swipable Actions */,
-				71998EE9241A62BF00F12C8E /* Modal */,
+				71998EE9241A62BF00F12C8E /* Modal Insert */,
 			);
-			name = "Simple List";
+			name = "Edit Modes";
 			sourceTree = "<group>";
 		};
-		7125AD7824194FC300248EE9 /* EditMode */ = {
+		7125AD7824194FC300248EE9 /* Basic */ = {
 			isa = PBXGroup;
 			children = (
 				7178D4B4241922790085D6B1 /* SimpleListEditModeViewController.swift */,
 			);
-			name = EditMode;
+			name = Basic;
 			sourceTree = "<group>";
 		};
 		712CA2F92411337A00A85735 /* Intro */ = {
@@ -302,6 +301,15 @@
 				717759B7245F0B0600C1899A /* TabView.swift */,
 			);
 			name = ScrollableTabBar;
+			sourceTree = "<group>";
+		};
+		717759B9245F106200C1899A /* Simple TableViews */ = {
+			isa = PBXGroup;
+			children = (
+				7108111A2417DE4E00A59673 /* ExtendingUITableViewController.swift */,
+				71C2380124186D870046E9B3 /* AddingUITableViewController.swift */,
+			);
+			name = "Simple TableViews";
 			sourceTree = "<group>";
 		};
 		718C45F523F42ECD007B5F91 /* Closures */ = {
@@ -359,13 +367,13 @@
 			name = CoreData;
 			sourceTree = "<group>";
 		};
-		71998EE9241A62BF00F12C8E /* Modal */ = {
+		71998EE9241A62BF00F12C8E /* Modal Insert */ = {
 			isa = PBXGroup;
 			children = (
 				71998EEA241A68CC00F12C8E /* SimpleListAddModalViewController.swift */,
 				7125AD7924194FF300248EE9 /* SaveGameViewController.swift */,
 			);
-			name = Modal;
+			name = "Modal Insert";
 			sourceTree = "<group>";
 		};
 		719A1E5223E71E9C000FC21C = {
@@ -674,7 +682,7 @@
 				712234E7245C769D004CFB63 /* HowUIScrollViewWorks.swift in Sources */,
 				719A1E9A23E723C1000FC21C /* SuccessViewController.swift in Sources */,
 				71DD7130242CEE0100C19E7D /* UIColor+Ext.swift in Sources */,
-				7108111B2417DE4E00A59673 /* aSimpleUITableViewController.swift in Sources */,
+				7108111B2417DE4E00A59673 /* ExtendingUITableViewController.swift in Sources */,
 				71DD7128242CE35D00C19E7D /* NSAttributedStringParagraphs.swift in Sources */,
 				71F34AE92437A2B30026BAAC /* RetryViewController.swift in Sources */,
 				71F34AE32437A23D0026BAAC /* LoadAndRetryDemo.swift in Sources */,
@@ -703,7 +711,7 @@
 				719A1E9723E723C1000FC21C /* ActivationManager.swift in Sources */,
 				7191A2B0243CA35B0017714B /* MountainTableViewController.swift in Sources */,
 				71147A98242025B800C850C5 /* GameManager.swift in Sources */,
-				71C2380224186D870046E9B3 /* aSimpleUITableView.swift in Sources */,
+				71C2380224186D870046E9B3 /* AddingUITableViewController.swift in Sources */,
 				719A1E9B23E723C1000FC21C /* ActivatingViewController.swift in Sources */,
 				713725D22402BADD0067ADD8 /* PropertyObserverViewController.swift in Sources */,
 				7125AD7A24194FF300248EE9 /* SaveGameViewController.swift in Sources */,

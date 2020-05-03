@@ -1,22 +1,24 @@
 //
-//  TableViewController.swift
+//  SimpleTableView.swift
 //  DemoArcade
 //
-//  Created by Jonathan Rasmusson (Contractor) on 2020-03-10.
+//  Created by Jonathan Rasmusson Work Pro on 2020-03-10.
 //  Copyright © 2020 Rasmusson Software Consulting. All rights reserved.
 //
 
 import UIKit
 
-class aSimpleUITableViewController: UITableViewController {
+class UsingUITableViewController: UIViewController {
     
     var games = ["Space Invaders",
                 "Dragon Slayer",
                 "Disks of Tron",
                 "Moon Patrol",
                 "Galaga"]
-    
+
     let cellId = "cellId"
+    
+    var tableView = UITableView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,11 +26,25 @@ class aSimpleUITableViewController: UITableViewController {
     }
     
     func setupViews() {
-        navigationItem.title = "UITableViewController"
+        navigationItem.title = "UITableView"
+        
+        tableView.delegate = self
+        tableView.dataSource = self
+        
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellId)
+        
+        view = tableView
     }
-    
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+}
+
+extension AddingUITableViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+
+    }
+}
+
+extension AddingUITableViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath)
         
         cell.textLabel?.text = games[indexPath.row]
@@ -37,11 +53,7 @@ class aSimpleUITableViewController: UITableViewController {
         return cell
     }
     
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return games.count
-    }
-    
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
     }
 }

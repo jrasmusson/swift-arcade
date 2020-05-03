@@ -44,6 +44,23 @@ extension AppDelegate {
     func makeUIKitDemos() -> UIViewController {
         
         // UITableView
+        
+        // Simple TableView
+        let simpleTableViewDemos = [
+            Lab(name: "Extending UITableViewController", viewController: ExtendingUITableViewController()),
+            Lab(name: "Using UITableViewController", viewController: UsingUITableViewController()),
+        ]
+
+        let simpleTableViewDemoViewController = DemoViewController(labs: simpleTableViewDemos, navBarTitle: "Simple TableViews")
+
+        // All TableView Demos
+        let allTableViewDemos = [
+            Lab(name: "Simple TableViews", viewController: simpleTableViewDemoViewController),
+        ]
+
+        let allTableViewDemoViewController = DemoViewController(labs: allTableViewDemos, navBarTitle: "UITableView")
+
+        // Edit Modes
         let uitableViewPatterns = [
             Lab(name: "Edit Mode", viewController: SimpleListEditModeViewController()),
             Lab(name: "Swipable Actions", viewController: SwipingActionsTableViewController()),
@@ -96,7 +113,7 @@ extension AppDelegate {
 
         let uikitLabs = [
             Lab(name: "UIScrollView", viewController: makeScrollViewDemos()),
-            Lab(name: "UITableView", viewController: uitableViewController),
+            Lab(name: "UITableView", viewController: allTableViewDemoViewController),
             Lab(name: "UITableViewCell", viewController: uitableViewCellController),
             Lab(name: "NSAttributedString", viewController: nsAttributedStringController),
             Lab(name: "Diffable Data Sources", viewController: diffableViewController),
