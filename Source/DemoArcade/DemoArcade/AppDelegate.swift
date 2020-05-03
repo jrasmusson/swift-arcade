@@ -70,22 +70,24 @@ extension AppDelegate {
 
         let moveableCellsViewController = DemoViewController(labs: moveableCells, navBarTitle: "Moveable Cells")
 
-        // All TableView Demos
-        let allTableViewDemos = [
-            Lab(name: "Simple TableViews", viewController: simpleTableViewDemoViewController),
-            Lab(name: "Edit Modes", viewController: editModeViewController),
-            Lab(name: "Moveable Cells", viewController: moveableCellsViewController),
-        ]
-
-        let allTableViewDemoViewController = DemoViewController(labs: allTableViewDemos, navBarTitle: "UITableView")
-
-
         // UITableViewCell
         let uitableViewCellPatterns = [
             Lab(name: "Custom Cell", viewController: CustomCellViewController()),
         ]
 
         let uitableViewCellController = DemoViewController(labs: uitableViewCellPatterns, navBarTitle: "UITableViewCell")
+
+        // All TableView Demos
+        let allTableViewDemos = [
+            Lab(name: "Simple TableViews", viewController: simpleTableViewDemoViewController),
+            Lab(name: "Edit Modes", viewController: editModeViewController),
+            Lab(name: "Moveable Cells", viewController: moveableCellsViewController),
+            Lab(name: "UITableViewCells", viewController: uitableViewCellController),
+        ]
+
+        let allTableViewDemoViewController = DemoViewController(labs: allTableViewDemos, navBarTitle: "UITableView")
+
+
         
         // NSAttributedString
         let nsAttributedStringPatterns = [
