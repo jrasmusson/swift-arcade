@@ -22,6 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 Lab(name: "UIKit", viewController: makeUIKitDemos()),
                 Lab(name: "Navigation", viewController: makeNavigationDemos()),
                 Lab(name: "Communication", viewController: makeCommunicationDemos()),
+                Lab(name: "Foundation", viewController: makeFoundation()),
                 Lab(name: "CoreData", viewController: makeCoreDataDemos()),
                 Lab(name: "Design", viewController: makeDesignDemos()),
             ]
@@ -43,18 +44,6 @@ extension AppDelegate {
     
     func makeUIKitDemos() -> UIViewController {
         
-        
-        // NSAttributedString
-        let nsAttributedStringPatterns = [
-            Lab(name: "Paragraphs", viewController: NSAttributedStringParagraphs()),
-            Lab(name: "Bolding", viewController: NSAttributedStringBolding()),
-            Lab(name: "Images", viewController: NSAttributedStringImages()),
-            Lab(name: "Buttons", viewController: NSAttributedStringButtons()),
-            Lab(name: "BaselineOffset", viewController: NSAttributedStringBaselineOffset()),
-        ]
-
-        let nsAttributedStringController = DemoViewController(labs: nsAttributedStringPatterns, navBarTitle: "NSAttributedString")
-
         // Diffable Data Source
         let diffableDataSources = [
             Lab(name: "WIFI Settings UITableView", viewController: WIFISettingsViewController()),
@@ -74,7 +63,6 @@ extension AppDelegate {
         let uikitLabs = [
             Lab(name: "UITableView", viewController: makeTableViewDemos()),
             Lab(name: "UIScrollView", viewController: makeScrollViewDemos()),
-            Lab(name: "NSAttributedString", viewController: nsAttributedStringController),
             Lab(name: "Diffable Data Sources", viewController: diffableViewController),
             Lab(name: "UIPanGestureRecognizer", viewController: panGestureViewController),
         ]
@@ -144,7 +132,7 @@ extension AppDelegate {
 
         let otherScrollDemoViewController = DemoViewController(labs: otherScrollViewDemoss, navBarTitle: "Other ScrollView Demos")
 
-        // Combined
+        // All ScrollView
         let allScrollViewDemos = [
             Lab(name: "Understanding the ScrollView", viewController: understandingScrollViewController),
             Lab(name: "Other ScrollView Demos", viewController: otherScrollDemoViewController),
@@ -152,7 +140,35 @@ extension AppDelegate {
         
         return DemoViewController(labs: allScrollViewDemos, navBarTitle: "UIScrollView")
     }
+    
 }
+
+// Mark: Foundation
+
+extension AppDelegate {
+
+    func makeFoundation() -> UIViewController {
+        
+        // NSAttributedString
+        let nsAttributedStringPatterns = [
+            Lab(name: "Paragraphs", viewController: NSAttributedStringParagraphs()),
+            Lab(name: "Bolding", viewController: NSAttributedStringBolding()),
+            Lab(name: "Images", viewController: NSAttributedStringImages()),
+            Lab(name: "Buttons", viewController: NSAttributedStringButtons()),
+            Lab(name: "BaselineOffset", viewController: NSAttributedStringBaselineOffset()),
+        ]
+
+        let nsAttributedStringController = DemoViewController(labs: nsAttributedStringPatterns, navBarTitle: "NSAttributedString")
+
+        // All Foundation
+        let allFoundation = [
+            Lab(name: "NSAttributedString", viewController: nsAttributedStringController),
+        ]
+        
+        return DemoViewController(labs: allFoundation, navBarTitle: "Foundation")
+    }
+}
+
 
 // Mark: - Others
 

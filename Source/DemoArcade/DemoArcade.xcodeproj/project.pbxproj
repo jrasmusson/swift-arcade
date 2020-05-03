@@ -183,7 +183,6 @@
 				712234E4245C7661004CFB63 /* UIScrollView */,
 				710133BB244744520063A7E2 /* UIPanGestureRecognizer */,
 				7191A29D243C96F40017714B /* Diffable Data Source */,
-				71DD7122242CD02700C19E7D /* NSAttributedString */,
 				7112AD6E242AEE2D0072C65D /* UITableView */,
 			);
 			name = UIKit;
@@ -265,6 +264,14 @@
 				7191B38D240EAA4D004FB0B2 /* MyData.xcdatamodeld */,
 			);
 			name = Intro;
+			sourceTree = "<group>";
+		};
+		7130B33A245F1723003FDB6A /* Foundation */ = {
+			isa = PBXGroup;
+			children = (
+				71DD7122242CD02700C19E7D /* NSAttributedString */,
+			);
+			name = Foundation;
 			sourceTree = "<group>";
 		};
 		713725CB2402AAFD0067ADD8 /* KVO */ = {
@@ -395,11 +402,12 @@
 		719A1E5D23E71E9C000FC21C /* DemoArcade */ = {
 			isa = PBXGroup;
 			children = (
-				71F34AE02437A1F70026BAAC /* Design */,
 				710811192417DE3500A59673 /* UIKit */,
-				719A1E9E23E724FC000FC21C /* Communication */,
 				719A1E7523E71F22000FC21C /* Navigation */,
+				719A1E9E23E724FC000FC21C /* Communication */,
+				7130B33A245F1723003FDB6A /* Foundation */,
 				7191B388240EA78B004FB0B2 /* CoreData */,
+				71F34AE02437A1F70026BAAC /* Design */,
 				71F34AEA2437A2E40026BAAC /* Extensions */,
 				719A1E7223E71EB2000FC21C /* Files */,
 				719A1E5E23E71E9C000FC21C /* AppDelegate.swift */,
