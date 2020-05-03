@@ -43,8 +43,46 @@ extension AppDelegate {
     
     func makeUIKitDemos() -> UIViewController {
         
-        // UITableView
         
+        // NSAttributedString
+        let nsAttributedStringPatterns = [
+            Lab(name: "Paragraphs", viewController: NSAttributedStringParagraphs()),
+            Lab(name: "Bolding", viewController: NSAttributedStringBolding()),
+            Lab(name: "Images", viewController: NSAttributedStringImages()),
+            Lab(name: "Buttons", viewController: NSAttributedStringButtons()),
+            Lab(name: "BaselineOffset", viewController: NSAttributedStringBaselineOffset()),
+        ]
+
+        let nsAttributedStringController = DemoViewController(labs: nsAttributedStringPatterns, navBarTitle: "NSAttributedString")
+
+        // Diffable Data Source
+        let diffableDataSources = [
+            Lab(name: "WIFI Settings UITableView", viewController: WIFISettingsViewController()),
+            Lab(name: "Mountain TableView", viewController: MountainTableViewController()),
+            Lab(name: "Mountain CollectionView", viewController: MountainCollectionViewController()),
+        ]
+
+        let diffableViewController = DemoViewController(labs: diffableDataSources, navBarTitle: "Diffable Data Sources")
+                
+        // UIPanGestureRecognizer
+        let panGestures = [
+            Lab(name: "Moving Box", viewController: MovingBlock()),
+        ]
+
+        let panGestureViewController = DemoViewController(labs: panGestures, navBarTitle: "UIPanGestureRecognizer")
+
+        let uikitLabs = [
+            Lab(name: "UITableView", viewController: makeTableViewDemos()),
+            Lab(name: "UIScrollView", viewController: makeScrollViewDemos()),
+            Lab(name: "NSAttributedString", viewController: nsAttributedStringController),
+            Lab(name: "Diffable Data Sources", viewController: diffableViewController),
+            Lab(name: "UIPanGestureRecognizer", viewController: panGestureViewController),
+        ]
+        
+        return DemoViewController(labs: uikitLabs, navBarTitle: "UIKIt")
+    }
+    
+    func makeTableViewDemos() -> UIViewController {
         // Simple TableView
         let simpleTableViewDemos = [
             Lab(name: "Extending UITableViewController", viewController: ExtendingUITableViewController()),
@@ -85,49 +123,7 @@ extension AppDelegate {
             Lab(name: "UITableViewCells", viewController: uitableViewCellController),
         ]
 
-        let allTableViewDemoViewController = DemoViewController(labs: allTableViewDemos, navBarTitle: "UITableView")
-
-
-        
-        // NSAttributedString
-        let nsAttributedStringPatterns = [
-            Lab(name: "Paragraphs", viewController: NSAttributedStringParagraphs()),
-            Lab(name: "Bolding", viewController: NSAttributedStringBolding()),
-            Lab(name: "Images", viewController: NSAttributedStringImages()),
-            Lab(name: "Buttons", viewController: NSAttributedStringButtons()),
-            Lab(name: "BaselineOffset", viewController: NSAttributedStringBaselineOffset()),
-        ]
-
-        let nsAttributedStringController = DemoViewController(labs: nsAttributedStringPatterns, navBarTitle: "NSAttributedString")
-
-        // Diffable Data Source
-        let diffableDataSources = [
-            Lab(name: "WIFI Settings UITableView", viewController: WIFISettingsViewController()),
-            Lab(name: "Mountain TableView", viewController: MountainTableViewController()),
-            Lab(name: "Mountain CollectionView", viewController: MountainCollectionViewController()),
-        ]
-
-        let diffableViewController = DemoViewController(labs: diffableDataSources, navBarTitle: "Diffable Data Sources")
-                
-        // UIPanGestureRecognizer
-        let panGestures = [
-            Lab(name: "Moving Box", viewController: MovingBlock()),
-        ]
-
-        let panGestureViewController = DemoViewController(labs: panGestures, navBarTitle: "UIPanGestureRecognizer")
-
-        let uikitLabs = [
-            Lab(name: "UIScrollView", viewController: makeScrollViewDemos()),
-            Lab(name: "UITableView", viewController: allTableViewDemoViewController),
-            Lab(name: "UITableViewCell", viewController: uitableViewCellController),
-            Lab(name: "NSAttributedString", viewController: nsAttributedStringController),
-            Lab(name: "Diffable Data Sources", viewController: diffableViewController),
-            Lab(name: "Moveable Cells", viewController: moveableCellsViewController),
-            Lab(name: "UIPanGestureRecognizer", viewController: panGestureViewController),
-
-        ]
-        
-        return DemoViewController(labs: uikitLabs, navBarTitle: "UIKIt")
+        return DemoViewController(labs: allTableViewDemos, navBarTitle: "UITableView")
     }
     
     func makeScrollViewDemos() -> UIViewController {
