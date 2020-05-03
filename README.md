@@ -13,6 +13,7 @@ Collection of demos from the [Swift Arcade YouTube channel.](https://www.youtube
 - [Moveable Cells](https://github.com/jrasmusson/swift-arcade/blob/master/UIKIt/MoveableCells/README.md)
 - [UIPanGestureRecognizer](https://github.com/jrasmusson/swift-arcade/tree/master/UIKIt/UIPanGestureRecognizer)
 - [Understanding UIScrollView](https://github.com/jrasmusson/swift-arcade/blob/master/UIKIt/UIScrollView/README.md)
+- [Navigation Patterns](https://github.com/jrasmusson/swift-arcade/blob/master/Misc/Navigation-Patterns.md)
 
 ## Foundation
 
@@ -32,7 +33,3 @@ Collection of demos from the [Swift Arcade YouTube channel.](https://www.youtube
 ## Design
 - [Load & Retry Screens](https://github.com/jrasmusson/swift-arcade/blob/master/Design/LoadAndRetry/1-Load-And-Retry.md)
 - [Popup Menu](https://github.com/jrasmusson/swift-arcade/tree/master/Design/PopupMenu)
-
-## Misc
-
-- [Navigation Patterns](https://github.com/jrasmusson/swift-arcade/blob/master/Misc/Navigation-Patterns.md)
