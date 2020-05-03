@@ -25,6 +25,10 @@
 		713725D22402BADD0067ADD8 /* PropertyObserverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 713725D12402BADD0067ADD8 /* PropertyObserverViewController.swift */; };
 		71547B2D2440C05B00B6D9E0 /* EditMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71547B2C2440C05B00B6D9E0 /* EditMode.swift */; };
 		71547B2F2440C06300B6D9E0 /* LongPress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71547B2E2440C06300B6D9E0 /* LongPress.swift */; };
+		717759B2245F0A8100C1899A /* ScrollableTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 717759B1245F0A8100C1899A /* ScrollableTabBar.swift */; };
+		717759B4245F0AA000C1899A /* ScrollableTabBarData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 717759B3245F0AA000C1899A /* ScrollableTabBarData.swift */; };
+		717759B6245F0ACD00C1899A /* ScrollableTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 717759B5245F0ACD00C1899A /* ScrollableTabView.swift */; };
+		717759B8245F0B0600C1899A /* TabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 717759B7245F0B0600C1899A /* TabView.swift */; };
 		7178D4B5241922790085D6B1 /* SimpleListEditModeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7178D4B4241922790085D6B1 /* SimpleListEditModeViewController.swift */; };
 		718C45F723F42F33007B5F91 /* ClosureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 718C45F623F42F33007B5F91 /* ClosureViewController.swift */; };
 		7191A2A0243C973D0017714B /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7191A29F243C973D0017714B /* Network.swift */; };
@@ -96,6 +100,10 @@
 		713725D12402BADD0067ADD8 /* PropertyObserverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyObserverViewController.swift; sourceTree = "<group>"; };
 		71547B2C2440C05B00B6D9E0 /* EditMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditMode.swift; sourceTree = "<group>"; };
 		71547B2E2440C06300B6D9E0 /* LongPress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LongPress.swift; sourceTree = "<group>"; };
+		717759B1245F0A8100C1899A /* ScrollableTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollableTabBar.swift; sourceTree = "<group>"; };
+		717759B3245F0AA000C1899A /* ScrollableTabBarData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollableTabBarData.swift; sourceTree = "<group>"; };
+		717759B5245F0ACD00C1899A /* ScrollableTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollableTabView.swift; sourceTree = "<group>"; };
+		717759B7245F0B0600C1899A /* TabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabView.swift; sourceTree = "<group>"; };
 		7178D4B4241922790085D6B1 /* SimpleListEditModeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleListEditModeViewController.swift; sourceTree = "<group>"; };
 		718C45F623F42F33007B5F91 /* ClosureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClosureViewController.swift; sourceTree = "<group>"; };
 		7191A29F243C973D0017714B /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
@@ -216,6 +224,7 @@
 			isa = PBXGroup;
 			children = (
 				712234E5245C766C004CFB63 /* Understanding */,
+				717759B0245F0A5B00C1899A /* ScrollableTabBar */,
 			);
 			name = UIScrollView;
 			sourceTree = "<group>";
@@ -282,6 +291,17 @@
 				71547B2E2440C06300B6D9E0 /* LongPress.swift */,
 			);
 			name = "Moveable Cells";
+			sourceTree = "<group>";
+		};
+		717759B0245F0A5B00C1899A /* ScrollableTabBar */ = {
+			isa = PBXGroup;
+			children = (
+				717759B3245F0AA000C1899A /* ScrollableTabBarData.swift */,
+				717759B1245F0A8100C1899A /* ScrollableTabBar.swift */,
+				717759B5245F0ACD00C1899A /* ScrollableTabView.swift */,
+				717759B7245F0B0600C1899A /* TabView.swift */,
+			);
+			name = ScrollableTabBar;
 			sourceTree = "<group>";
 		};
 		718C45F523F42ECD007B5F91 /* Closures */ = {
@@ -631,6 +651,7 @@
 				719A1E8D23E7234B000FC21C /* TabViewController.swift in Sources */,
 				710133BE2447449D0063A7E2 /* MovingBlock.swift in Sources */,
 				719A1E8423E72218000FC21C /* ModalNavigation.swift in Sources */,
+				717759B2245F0A8100C1899A /* ScrollableTabBar.swift in Sources */,
 				7191A2B2243CA4350017714B /* MountainCollectionViewController.swift in Sources */,
 				719A1E9923E723C1000FC21C /* ContainerViewController.swift in Sources */,
 				71547B2D2440C05B00B6D9E0 /* EditMode.swift in Sources */,
@@ -657,6 +678,7 @@
 				71DD7128242CE35D00C19E7D /* NSAttributedStringParagraphs.swift in Sources */,
 				71F34AE92437A2B30026BAAC /* RetryViewController.swift in Sources */,
 				71F34AE32437A23D0026BAAC /* LoadAndRetryDemo.swift in Sources */,
+				717759B6245F0ACD00C1899A /* ScrollableTabView.swift in Sources */,
 				71C6324C23E89B9500BC5302 /* WeatherService.swift in Sources */,
 				71DD712E242CEC3300C19E7D /* UIFont+Ext.swift in Sources */,
 				719A1E8F23E72361000FC21C /* PageViewController.swift in Sources */,
@@ -677,6 +699,7 @@
 				719A1E9623E723C1000FC21C /* FailureViewController.swift in Sources */,
 				71F8A5D824040B6200E03F0A /* NotificationViewController.swift in Sources */,
 				7191B38F240EAA4D004FB0B2 /* MyData.xcdatamodeld in Sources */,
+				717759B8245F0B0600C1899A /* TabView.swift in Sources */,
 				719A1E9723E723C1000FC21C /* ActivationManager.swift in Sources */,
 				7191A2B0243CA35B0017714B /* MountainTableViewController.swift in Sources */,
 				71147A98242025B800C850C5 /* GameManager.swift in Sources */,
@@ -684,6 +707,7 @@
 				719A1E9B23E723C1000FC21C /* ActivatingViewController.swift in Sources */,
 				713725D22402BADD0067ADD8 /* PropertyObserverViewController.swift in Sources */,
 				7125AD7A24194FF300248EE9 /* SaveGameViewController.swift in Sources */,
+				717759B4245F0AA000C1899A /* ScrollableTabBarData.swift in Sources */,
 				71547B2F2440C06300B6D9E0 /* LongPress.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -78,13 +78,31 @@ extension AppDelegate {
         let diffableViewController = DemoViewController(labs: diffableDataSources, navBarTitle: "Diffable Data Sources")
         
         // UIScrollView
-        let scrollViews = [
+
+        // Understanding
+        let understandingScrollViews = [
             Lab(name: "How it works", viewController: HowUIScrollViewWorks()),
             Lab(name: "DIY ScrollView", viewController: DIYScrollView()),
             Lab(name: "The Real Thing", viewController: ExampleUIScrollView()),
         ]
 
-        let scrollViewController = DemoViewController(labs: scrollViews, navBarTitle: "UIScrollView")
+        let understandingScrollViewController = DemoViewController(labs: understandingScrollViews, navBarTitle: "Understanding the ScrollView")
+
+        // Scrollable TabView
+        let otherScrollViewDemoss = [
+            Lab(name: "ScrollableTabView", viewController: ScrollableTabBarViewController()),
+        ]
+
+        let otherScrollDemoViewController = DemoViewController(labs: otherScrollViewDemoss, navBarTitle: "Other ScrollView Demos")
+
+        // Combined ScrollView
+        let allScrollViewDemos = [
+            Lab(name: "Understanding the ScrollView", viewController: understandingScrollViewController),
+            Lab(name: "Other ScrollView Demos", viewController: otherScrollDemoViewController),
+        ]
+        
+        let allScrollViewViewController = DemoViewController(labs: allScrollViewDemos, navBarTitle: "UIScrollView")
+
 
         // Moveable Cells
         let moveableCells = [
@@ -102,7 +120,7 @@ extension AppDelegate {
         let panGestureViewController = DemoViewController(labs: panGestures, navBarTitle: "UIPanGestureRecognizer")
 
         let uikitLabs = [
-            Lab(name: "UIScrollView", viewController: scrollViewController),
+            Lab(name: "UIScrollView", viewController: allScrollViewViewController),
             Lab(name: "UITableView", viewController: uitableViewController),
             Lab(name: "UITableViewCell", viewController: uitableViewCellController),
             Lab(name: "NSAttributedString", viewController: nsAttributedStringController),
