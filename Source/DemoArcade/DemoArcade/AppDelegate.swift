@@ -56,16 +56,25 @@ extension AppDelegate {
         // Edit Modes
         let editModeDemos = [
             Lab(name: "Basic", viewController: BasicEditModeViewController()),
-            Lab(name: "Swipable Actions", viewController: SwipingActionsTableViewController()),
+            Lab(name: "Swipable", viewController: SwipingActionsTableViewController()),
             Lab(name: "Modal", viewController: SimpleListAddModalViewController()),
         ]
 
         let editModeViewController = DemoViewController(labs: editModeDemos, navBarTitle: "Edit Modes")
 
+        // Moveable Cells
+        let moveableCells = [
+            Lab(name: "Edit Mode", viewController: EditMode()),
+            Lab(name: "Long Press", viewController: LongPress()),
+        ]
+
+        let moveableCellsViewController = DemoViewController(labs: moveableCells, navBarTitle: "Moveable Cells")
+
         // All TableView Demos
         let allTableViewDemos = [
             Lab(name: "Simple TableViews", viewController: simpleTableViewDemoViewController),
             Lab(name: "Edit Modes", viewController: editModeViewController),
+            Lab(name: "Moveable Cells", viewController: moveableCellsViewController),
         ]
 
         let allTableViewDemoViewController = DemoViewController(labs: allTableViewDemos, navBarTitle: "UITableView")
@@ -97,15 +106,7 @@ extension AppDelegate {
         ]
 
         let diffableViewController = DemoViewController(labs: diffableDataSources, navBarTitle: "Diffable Data Sources")
-        
-        // Moveable Cells
-        let moveableCells = [
-            Lab(name: "Edit Mode", viewController: EditMode()),
-            Lab(name: "Long Press", viewController: LongPress()),
-        ]
-
-        let moveableCellsViewController = DemoViewController(labs: moveableCells, navBarTitle: "Moveable Cells")
-        
+                
         // UIPanGestureRecognizer
         let panGestures = [
             Lab(name: "Moving Box", viewController: MovingBlock()),
