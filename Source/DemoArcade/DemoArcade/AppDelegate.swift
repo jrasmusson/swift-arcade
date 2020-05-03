@@ -19,11 +19,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             window?.makeKeyAndVisible()
 
             let rootLabs = [
-                Lab(name: "UIKit", viewController: makeUIKit()),
-                Lab(name: "Navigation", viewController: makeNavigation()),
-                Lab(name: "Communication", viewController: makeCommunication()),
-                Lab(name: "CoreData", viewController: makeCoreData()),
-                Lab(name: "Design", viewController: makeDesign()),
+                Lab(name: "UIKit", viewController: makeUIKitDemos()),
+                Lab(name: "Navigation", viewController: makeNavigationDemos()),
+                Lab(name: "Communication", viewController: makeCommunicationDemos()),
+                Lab(name: "CoreData", viewController: makeCoreDataDemos()),
+                Lab(name: "Design", viewController: makeDesignDemos()),
             ]
 
             let rootViewController = DemoViewController(labs: rootLabs, navBarTitle: "Cocoa Demos")
@@ -37,9 +37,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 }
 
+// Mark: - UIKit
+
 extension AppDelegate {
     
-    func makeUIKit() -> UIViewController {
+    func makeUIKitDemos() -> UIViewController {
         
         // UITableView
         let uitableViewPatterns = [
@@ -77,33 +79,6 @@ extension AppDelegate {
 
         let diffableViewController = DemoViewController(labs: diffableDataSources, navBarTitle: "Diffable Data Sources")
         
-        // UIScrollView
-
-        // Understanding
-        let understandingScrollViews = [
-            Lab(name: "How it works", viewController: HowUIScrollViewWorks()),
-            Lab(name: "DIY ScrollView", viewController: DIYScrollView()),
-            Lab(name: "The Real Thing", viewController: ExampleUIScrollView()),
-        ]
-
-        let understandingScrollViewController = DemoViewController(labs: understandingScrollViews, navBarTitle: "Understanding the ScrollView")
-
-        // Scrollable TabView
-        let otherScrollViewDemoss = [
-            Lab(name: "ScrollableTabView", viewController: ScrollableTabBarViewController()),
-        ]
-
-        let otherScrollDemoViewController = DemoViewController(labs: otherScrollViewDemoss, navBarTitle: "Other ScrollView Demos")
-
-        // Combined ScrollView
-        let allScrollViewDemos = [
-            Lab(name: "Understanding the ScrollView", viewController: understandingScrollViewController),
-            Lab(name: "Other ScrollView Demos", viewController: otherScrollDemoViewController),
-        ]
-        
-        let allScrollViewViewController = DemoViewController(labs: allScrollViewDemos, navBarTitle: "UIScrollView")
-
-
         // Moveable Cells
         let moveableCells = [
             Lab(name: "Edit Mode", viewController: EditMode()),
@@ -120,7 +95,7 @@ extension AppDelegate {
         let panGestureViewController = DemoViewController(labs: panGestures, navBarTitle: "UIPanGestureRecognizer")
 
         let uikitLabs = [
-            Lab(name: "UIScrollView", viewController: allScrollViewViewController),
+            Lab(name: "UIScrollView", viewController: makeScrollViewDemos()),
             Lab(name: "UITableView", viewController: uitableViewController),
             Lab(name: "UITableViewCell", viewController: uitableViewCellController),
             Lab(name: "NSAttributedString", viewController: nsAttributedStringController),
@@ -133,7 +108,39 @@ extension AppDelegate {
         return DemoViewController(labs: uikitLabs, navBarTitle: "UIKIt")
     }
     
-    func makeNavigation() -> UIViewController {
+    func makeScrollViewDemos() -> UIViewController {
+        
+        // Understanding
+        let understandingScrollViews = [
+            Lab(name: "How it works", viewController: HowUIScrollViewWorks()),
+            Lab(name: "DIY ScrollView", viewController: DIYScrollView()),
+            Lab(name: "The Real Thing", viewController: ExampleUIScrollView()),
+        ]
+
+        let understandingScrollViewController = DemoViewController(labs: understandingScrollViews, navBarTitle: "Understanding the ScrollView")
+
+        // Scrollable TabView
+        let otherScrollViewDemoss = [
+            Lab(name: "ScrollableTabView", viewController: ScrollableTabBarViewController()),
+        ]
+
+        let otherScrollDemoViewController = DemoViewController(labs: otherScrollViewDemoss, navBarTitle: "Other ScrollView Demos")
+
+        // Combined
+        let allScrollViewDemos = [
+            Lab(name: "Understanding the ScrollView", viewController: understandingScrollViewController),
+            Lab(name: "Other ScrollView Demos", viewController: otherScrollDemoViewController),
+        ]
+        
+        return DemoViewController(labs: allScrollViewDemos, navBarTitle: "UIScrollView")
+    }
+}
+
+// Mark: - Others
+
+extension AppDelegate {
+    
+    func makeNavigationDemos() -> UIViewController {
         let containerPatterns = [
             Lab(name: "NavigationController", viewController: NavigationViewController1()),
             Lab(name: "TabViewController", viewController: TabBarViewController()),
@@ -151,7 +158,7 @@ extension AppDelegate {
         return DemoViewController(labs: navigationPatterns, navBarTitle: "Navigation")
     }
     
-    func makeCommunication() -> UIViewController {
+    func makeCommunicationDemos() -> UIViewController {
         let communicationPatterns = [
             Lab(name: "Protocol Delegate", viewController: ProtocolDelegateViewController()),
             Lab(name: "Closure", viewController: ClosureViewController()),
@@ -163,7 +170,7 @@ extension AppDelegate {
         return DemoViewController(labs: communicationPatterns, navBarTitle: "Communication")
     }
     
-    func makeCoreData() -> UIViewController {
+    func makeCoreDataDemos() -> UIViewController {
         let coreDataPatterns = [
             Lab(name: "Intro", viewController: CoreDataViewController()),
             Lab(name: "Fetched Results Demo", viewController: DemoFetchedResultsViewController()),
@@ -172,7 +179,7 @@ extension AppDelegate {
         return DemoViewController(labs: coreDataPatterns, navBarTitle: "CoreData")
     }
     
-    func makeDesign() -> UIViewController {
+    func makeDesignDemos() -> UIViewController {
         let coreDataPatterns = [
             Lab(name: "Load & Retry Screens", viewController: LoadAndRetryDemo()),
             Lab(name: "Popup Menu", viewController: PopupMenu()),
@@ -180,4 +187,5 @@ extension AppDelegate {
 
         return DemoViewController(labs: coreDataPatterns, navBarTitle: "Design")
     }
+    
 }
