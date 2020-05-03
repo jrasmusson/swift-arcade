@@ -37,13 +37,13 @@ class UsingUITableViewController: UIViewController {
     }
 }
 
-extension AddingUITableViewController: UITableViewDelegate {
+extension UsingUITableViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 
     }
 }
 
-extension AddingUITableViewController: UITableViewDataSource {
+extension UsingUITableViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath)
         
