@@ -53,21 +53,23 @@ extension AppDelegate {
 
         let simpleTableViewDemoViewController = DemoViewController(labs: simpleTableViewDemos, navBarTitle: "Simple TableViews")
 
-        // All TableView Demos
-        let allTableViewDemos = [
-            Lab(name: "Simple TableViews", viewController: simpleTableViewDemoViewController),
-        ]
-
-        let allTableViewDemoViewController = DemoViewController(labs: allTableViewDemos, navBarTitle: "UITableView")
-
         // Edit Modes
-        let uitableViewPatterns = [
-            Lab(name: "Edit Mode", viewController: SimpleListEditModeViewController()),
+        let editModeDemos = [
+            Lab(name: "Basic", viewController: BasicEditModeViewController()),
             Lab(name: "Swipable Actions", viewController: SwipingActionsTableViewController()),
             Lab(name: "Modal", viewController: SimpleListAddModalViewController()),
         ]
 
-        let uitableViewController = DemoViewController(labs: uitableViewPatterns, navBarTitle: "UITableView")
+        let editModeViewController = DemoViewController(labs: editModeDemos, navBarTitle: "Edit Modes")
+
+        // All TableView Demos
+        let allTableViewDemos = [
+            Lab(name: "Simple TableViews", viewController: simpleTableViewDemoViewController),
+            Lab(name: "Edit Modes", viewController: editModeViewController),
+        ]
+
+        let allTableViewDemoViewController = DemoViewController(labs: allTableViewDemos, navBarTitle: "UITableView")
+
 
         // UITableViewCell
         let uitableViewCellPatterns = [

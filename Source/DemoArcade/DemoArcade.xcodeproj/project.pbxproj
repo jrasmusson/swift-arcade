@@ -29,7 +29,7 @@
 		717759B4245F0AA000C1899A /* ScrollableTabBarData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 717759B3245F0AA000C1899A /* ScrollableTabBarData.swift */; };
 		717759B6245F0ACD00C1899A /* ScrollableTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 717759B5245F0ACD00C1899A /* ScrollableTabView.swift */; };
 		717759B8245F0B0600C1899A /* TabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 717759B7245F0B0600C1899A /* TabView.swift */; };
-		7178D4B5241922790085D6B1 /* SimpleListEditModeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7178D4B4241922790085D6B1 /* SimpleListEditModeViewController.swift */; };
+		7178D4B5241922790085D6B1 /* BasicEditModeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7178D4B4241922790085D6B1 /* BasicEditModeViewController.swift */; };
 		718C45F723F42F33007B5F91 /* ClosureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 718C45F623F42F33007B5F91 /* ClosureViewController.swift */; };
 		7191A2A0243C973D0017714B /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7191A29F243C973D0017714B /* Network.swift */; };
 		7191A2A2243C97880017714B /* WIFISettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7191A2A1243C97880017714B /* WIFISettingsViewController.swift */; };
@@ -104,7 +104,7 @@
 		717759B3245F0AA000C1899A /* ScrollableTabBarData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollableTabBarData.swift; sourceTree = "<group>"; };
 		717759B5245F0ACD00C1899A /* ScrollableTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollableTabView.swift; sourceTree = "<group>"; };
 		717759B7245F0B0600C1899A /* TabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabView.swift; sourceTree = "<group>"; };
-		7178D4B4241922790085D6B1 /* SimpleListEditModeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleListEditModeViewController.swift; sourceTree = "<group>"; };
+		7178D4B4241922790085D6B1 /* BasicEditModeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicEditModeViewController.swift; sourceTree = "<group>"; };
 		718C45F623F42F33007B5F91 /* ClosureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClosureViewController.swift; sourceTree = "<group>"; };
 		7191A29F243C973D0017714B /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 		7191A2A1243C97880017714B /* WIFISettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WIFISettingsViewController.swift; sourceTree = "<group>"; };
@@ -251,7 +251,7 @@
 		7125AD7824194FC300248EE9 /* Basic */ = {
 			isa = PBXGroup;
 			children = (
-				7178D4B4241922790085D6B1 /* SimpleListEditModeViewController.swift */,
+				7178D4B4241922790085D6B1 /* BasicEditModeViewController.swift */,
 			);
 			name = Basic;
 			sourceTree = "<group>";
@@ -667,7 +667,7 @@
 				71DD712A242CE4F500C19E7D /* NSAttributedStringImages.swift in Sources */,
 				7191B38A240EA7DF004FB0B2 /* CoreDataManager.swift in Sources */,
 				7191A2A2243C97880017714B /* WIFISettingsViewController.swift in Sources */,
-				7178D4B5241922790085D6B1 /* SimpleListEditModeViewController.swift in Sources */,
+				7178D4B5241922790085D6B1 /* BasicEditModeViewController.swift in Sources */,
 				71D586E323FD711F00722324 /* ResponderViewController.swift in Sources */,
 				71C2380524186F630046E9B3 /* SwipingActionsTableViewController.swift in Sources */,
 				719A1E9823E723C1000FC21C /* ReadyToActivateViewController.swift in Sources */,

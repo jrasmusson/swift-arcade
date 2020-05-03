@@ -17,7 +17,7 @@ import UIKit
        calls `setEditing` on your VC for you.
  */
 
-class SimpleListEditModeViewController: UIViewController {
+class BasicEditModeViewController: UIViewController {
 
     var games = ["Space Invaders",
                 "Dragon Slayer",
@@ -67,13 +67,13 @@ class SimpleListEditModeViewController: UIViewController {
 
 // MARK:  - UITableView Delegate
 
-extension SimpleListEditModeViewController: UITableViewDelegate {
+extension BasicEditModeViewController: UITableViewDelegate {
 
 }
 
 // MARK:  - UITableView DataSource
 
-extension SimpleListEditModeViewController: UITableViewDataSource {
+extension BasicEditModeViewController: UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath)
