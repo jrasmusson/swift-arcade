@@ -25,7 +25,7 @@
 		713725D22402BADD0067ADD8 /* PropertyObserverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 713725D12402BADD0067ADD8 /* PropertyObserverViewController.swift */; };
 		71547B2D2440C05B00B6D9E0 /* EditMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71547B2C2440C05B00B6D9E0 /* EditMode.swift */; };
 		71547B2F2440C06300B6D9E0 /* LongPress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71547B2E2440C06300B6D9E0 /* LongPress.swift */; };
-		717759B2245F0A8100C1899A /* ScrollableTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 717759B1245F0A8100C1899A /* ScrollableTabBar.swift */; };
+		717759B2245F0A8100C1899A /* ScrollableTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 717759B1245F0A8100C1899A /* ScrollableTabBarViewController.swift */; };
 		717759B4245F0AA000C1899A /* ScrollableTabBarData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 717759B3245F0AA000C1899A /* ScrollableTabBarData.swift */; };
 		717759B6245F0ACD00C1899A /* ScrollableTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 717759B5245F0ACD00C1899A /* ScrollableTabView.swift */; };
 		717759B8245F0B0600C1899A /* TabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 717759B7245F0B0600C1899A /* TabView.swift */; };
@@ -100,7 +100,7 @@
 		713725D12402BADD0067ADD8 /* PropertyObserverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyObserverViewController.swift; sourceTree = "<group>"; };
 		71547B2C2440C05B00B6D9E0 /* EditMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditMode.swift; sourceTree = "<group>"; };
 		71547B2E2440C06300B6D9E0 /* LongPress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LongPress.swift; sourceTree = "<group>"; };
-		717759B1245F0A8100C1899A /* ScrollableTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollableTabBar.swift; sourceTree = "<group>"; };
+		717759B1245F0A8100C1899A /* ScrollableTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollableTabBarViewController.swift; sourceTree = "<group>"; };
 		717759B3245F0AA000C1899A /* ScrollableTabBarData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollableTabBarData.swift; sourceTree = "<group>"; };
 		717759B5245F0ACD00C1899A /* ScrollableTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollableTabView.swift; sourceTree = "<group>"; };
 		717759B7245F0B0600C1899A /* TabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabView.swift; sourceTree = "<group>"; };
@@ -312,7 +312,7 @@
 			isa = PBXGroup;
 			children = (
 				717759B3245F0AA000C1899A /* ScrollableTabBarData.swift */,
-				717759B1245F0A8100C1899A /* ScrollableTabBar.swift */,
+				717759B1245F0A8100C1899A /* ScrollableTabBarViewController.swift */,
 				717759B5245F0ACD00C1899A /* ScrollableTabView.swift */,
 				717759B7245F0B0600C1899A /* TabView.swift */,
 			);
@@ -675,7 +675,7 @@
 				719A1E8D23E7234B000FC21C /* TabViewController.swift in Sources */,
 				710133BE2447449D0063A7E2 /* MovingBlock.swift in Sources */,
 				719A1E8423E72218000FC21C /* ModalNavigation.swift in Sources */,
-				717759B2245F0A8100C1899A /* ScrollableTabBar.swift in Sources */,
+				717759B2245F0A8100C1899A /* ScrollableTabBarViewController.swift in Sources */,
 				7191A2B2243CA4350017714B /* MountainCollectionViewController.swift in Sources */,
 				719A1E9923E723C1000FC21C /* ContainerViewController.swift in Sources */,
 				71547B2D2440C05B00B6D9E0 /* EditMode.swift in Sources */,
