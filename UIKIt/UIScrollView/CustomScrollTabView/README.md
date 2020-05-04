@@ -1,214 +1,72 @@
-# Diffable Data Source
+# How to create a ScrollableTabView custom control
 
-## UITableView
+This custom control allows users to swipe left and right on a tab bar, while also centering the scroll view around the tab or category they tape.
 
-![mountain demo](images/mountain-demo.gif)
+![mountain demo](images/demo.gif)
 
-Here's what you need to know about `UITableViewDiffableDataSource`:
+## High-level architecture
 
-- The item you stick in needs to be _Hashable_.
+![architecture](images/architecture.png)
+
+## How scrolling and selecting tab bar works
+
+When the user selects a tab, there are three cases we need to consider when trying to figure out how far to scroll in order to center the tab.
+
+- Left
+- Middle
+- Right
+
+![how](images/how-works.png)
+
+The first thing we do is calculate the `potentialOffset` which represents how far we would scroll, if we wanted to exactly center the tab. 
+
+Because we don't want to center the extreme left and right most tabs we clamp them with bounds.
 
 ```swift
-    struct Mountain: Hashable {
-        
-        let name: String
-        let height: Int
-        let identifier = UUID()
-        
-        func hash(into hasher: inout Hasher) {
-            hasher.combine(identifier)
-        }
-        
-        static func == (lhs: Mountain, rhs: Mountain) -> Bool {
-            return lhs.identifier == rhs.identifier
-        }
-    }
+let leftmostBounds: CGFloat = 0
+let rightmostBounds = scrollView.contentSize.width - (scrollView.bounds.width)
 ```
 
-
-- You return the _UITableViewCell_ as part of the initializer.
-- No more _indexPath_ (through you can still translate between indexPaths and current cell you have if you need to).
-- It is thread safe 
- - Just be consistent - always work on the main thread or a background thread but not both.
-- You still need a cell _reuseIdentifier_ else you will get an error about a tableCell not being able to lay itself out.
-
-## How it works
-
-### Configure the Data Source
-
-First you configure the `UITableViewDiffableDataSource`. 
+And this is what prevents us from scrolling off the edges. Then depending on how big our scroll is, we fall into one of three cases.
 
 ```swift
-func configureDataSource() {
-    dataSource = UITableViewDiffableDataSource<Section, MountainsController.Mountain>(tableView: tableView) {
-        (tableView: UITableView, indexPath: IndexPath, item: MountainsController.Mountain) -> UITableViewCell?  in
-        
-        let cell = tableView.dequeueReusableCell(withIdentifier: self.reuseIdentifier, for: indexPath)
-        cell.textLabel?.text = item.name
-        return cell
-    }
+if potentialOffset < leftmostBounds {           // Left
+    actualOffset = leftmostBounds
+actualOffset = \(actualOffset)")
+} else if potentialOffset > rightmostBounds {   // Right
+    actualOffset = rightmostBounds
+actualOffset = \(actualOffset)")
+} else {                                        // Middle
+    actualOffset = potentialOffset
 }
 ```
 
-A data source takes a _SectionIdentifierType_, an _ItemIdentifierType_, a _tableView_, and a closure returning the _UITableViewCell_ you would like the data source to use for each cell.
+scrollView.setContentOffset(CGPoint(x: actualOffset, y: 0.0), animated: true)
 
-Here is the constructor:
+### Case 1: Leftmost Bounds
 
-```swift
-@available(iOS 13.0, tvOS 13.0, *)
-open class UITableViewDiffableDataSource<SectionIdentifierType, ItemIdentifierType> : NSObject, UITableViewDataSource where SectionIdentifierType : Hashable, ItemIdentifierType : Hashable {
+![left](images/left.png)
 
-    public typealias CellProvider = (UITableView, IndexPath, ItemIdentifierType) -> UITableViewCell?
+### Case 2: Middle
 
-    public init(tableView: UITableView, cellProvider: @escaping UITableViewDiffableDataSource<SectionIdentifierType, ItemIdentifierType>.CellProvider)
+![left](images/middle.png)
 
-```
+### Case 3: Right
 
-This is different from the `UITableView` that returns a cell as part of it's delegate. Here it's returned in the constructor.
+![left](images/right.png)
 
-### Then you update
+### Relative to the origin
 
-When you get a new updated collection of items to display, it's just four lines of code to update the _tableView_.
+It helps to understand how it all works if you remember that the origin of the `UIScrollView` is what everything is based off (extreme left hand side).
 
-```swift
-func performQuery(with filter: String?) {
-    let mountains = mountainsController.filteredMountains(with: filter).sorted { $0.name < $1.name }
+Study this, and observe how 
 
-    var snapshot = NSDiffableDataSourceSnapshot<Section, MountainsController.Mountain>()
-    snapshot.appendSections([.main])
-    snapshot.appendItems(mountains, toSection: .main)
-    dataSource.apply(snapshot, animatingDifferences: true)
-}
-```
+- the `midX` variable grows as you move left to right.
+- the `potentialOffset` flips form negative to positive.
+- how the groupings of left, right, and middle work when you take all this into account.
 
-### Common pattern in the WWDC videos
-
-One patten the WWDC folks like to use when creating demso (in the Wifi example) is passing closures in as part of the initializer. Here is an example where the _updateHandler_ is passed in, and then later executed withe `WIFIController` pass itself back to the `ViewController` that created it.
-
-```swift
-class WIFIController {
-    typealias UpdateHandler = (WIFIController) -> Void
-    private let updateHandler: UpdateHandler
-    
-    init(updateHandler: @escaping UpdateHandler) {
-        self.updateHandler = updateHandler
-    }
-}
-
-class WiFiSettingsViewController: UIViewController {
-    
-    var wifiController: WIFIController! = nil
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        configureDataSource()
-    }
-    
-    func configureDataSource() {
-        wifiController = WIFIController { [weak self] (controller: WIFIController) in
-            guard let self = self else { return }
-            self.updateUI()
-        }
-    }
-    
-    func updateUI() {
-        print("Update")
-    }
-}
-```
-
-While strange looking at first, it is quite elegant. Basically you create _Controllers_ for handling your diffable data. Only when you create them, you pass in an _UpdateHandler_ which is an alias to a closure defined like this.
-
-`typealias UpdateHandler = (WIFIController) -> Void`
-
-which passes itself in as an input and returns nothing. What this effectively does is when the controller does an update, it executes this code passing itself in. This is how the WWDC callback when the WIFI settings change, thus allowing the _ WiFiSettingsViewController_ to update it's UI.
-
-## Full source
-
-See repos for full source. Here is the _ViewController_.
-
-```swift
-//
-//  MountainTableViewController.swift
-//  DemoArcade
-//
-//  Created by Jonathan Rasmusson Work Pro on 2020-04-07.
-//  Copyright © 2020 Rasmusson Software Consulting. All rights reserved.
-//
-
-import UIKit
-
-class MountainTableViewController: UIViewController {
-
-    enum Section {
-        case main
-    }
-    
-    let searchBar = UISearchBar()
-    let tableView = UITableView()
-    
-    var dataSource: UITableViewDiffableDataSource<Section, MountainsController.Mountain>!
-    var nameFilter: String?
-    
-    let reuseIdentifier = "reuse-identifier"
-    
-    let mountainsController = MountainsController()
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        navigationItem.title = "Mountains Search"
-        
-        layout()
-        configureDataSource()
-        performQuery(with: nil)
-    }
-    
-    func layout() {
-        for viewable in [searchBar, tableView] {
-            view.addSubview(viewable)
-            viewable.translatesAutoresizingMaskIntoConstraints = false
-        }
-        
-        searchBar.delegate = self
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: reuseIdentifier)
-        
-        searchBar.topAnchor.constraint(equalToSystemSpacingBelow: view.safeAreaLayoutGuide.topAnchor, multiplier: 3).isActive = true
-        searchBar.leadingAnchor.constraint(equalToSystemSpacingAfter: view.leadingAnchor, multiplier: 1).isActive = true
-        view.trailingAnchor.constraint(equalToSystemSpacingAfter: searchBar.trailingAnchor, multiplier: 1).isActive = true
-        
-        tableView.topAnchor.constraint(equalToSystemSpacingBelow: searchBar.bottomAnchor, multiplier: 0).isActive = true
-        tableView.leadingAnchor.constraint(equalToSystemSpacingAfter: view.leadingAnchor, multiplier: 0).isActive = true
-        view.trailingAnchor.constraint(equalToSystemSpacingAfter: tableView.trailingAnchor, multiplier: 0).isActive = true
-        view.bottomAnchor.constraint(equalToSystemSpacingBelow: tableView.bottomAnchor, multiplier: 0).isActive = true
-    }
-    
-    func configureDataSource() {
-        dataSource = UITableViewDiffableDataSource<Section, MountainsController.Mountain>(tableView: tableView) {
-            (tableView: UITableView, indexPath: IndexPath, item: MountainsController.Mountain) -> UITableViewCell?  in
-            
-            let cell = tableView.dequeueReusableCell(withIdentifier: self.reuseIdentifier, for: indexPath)
-            cell.textLabel?.text = item.name
-            return cell
-        }
-    }
-        
-    func performQuery(with filter: String?) {
-        let mountains = mountainsController.filteredMountains(with: filter).sorted { $0.name < $1.name }
-
-        var snapshot = NSDiffableDataSourceSnapshot<Section, MountainsController.Mountain>()
-        snapshot.appendSections([.main])
-        snapshot.appendItems(mountains, toSection: .main)
-        dataSource.apply(snapshot, animatingDifferences: true)
-    }
-}
-
-extension MountainTableViewController: UISearchBarDelegate {
-    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        performQuery(with: searchText)
-    }
-}
-```
+![left](images/origin.png)
 
 ### Links that help
 
-- [Apple WWDC 2019](https://developer.apple.com/videos/play/wwdc2019/220/)
+- [Swift Arcade Video](https://www.youtube.com/watch?v=ysT9-NjjyjA)
