@@ -15,6 +15,10 @@ Collection of demos from the [Swift Arcade YouTube channel.](https://www.youtube
 - [Understanding UIScrollView](https://github.com/jrasmusson/swift-arcade/blob/master/UIKIt/UIScrollView/README.md)
 - [Navigation Patterns](https://github.com/jrasmusson/swift-arcade/blob/master/Misc/Navigation-Patterns.md)
 
+### UIScrollView
+
+- - [Understanding UIScrollView](https://github.com/jrasmusson/swift-arcade/blob/master/UIKIt/UnderstandingUIScrollView/README.md)
+
 ## Foundation
 
 - [NSAttributedStrings](https://github.com/jrasmusson/swift-arcade/blob/master/UIKIt/NSAttributedStrings/README.md)
