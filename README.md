@@ -17,7 +17,7 @@ Collection of demos from the [Swift Arcade YouTube channel.](https://www.youtube
 
 ### UIScrollView
 
-  - [Understanding UIScrollView](https://github.com/jrasmusson/swift-arcade/blob/master/UIKIt/UnderstandingUIScrollView/README.md)
+- [Understanding UIScrollView](https://github.com/jrasmusson/swift-arcade/blob/master/UIKIt/UnderstandingUIScrollView/README.md)
 
 ## Foundation
 
