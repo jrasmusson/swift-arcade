@@ -1,6 +1,6 @@
 # Protocol Delegate DataSource Pattern
 
-![TableView](/images/protocol-demo.gif)
+![TableView](images/protocol-demo.gif)
 
 You start off by defining a protocol (WeatherServiceDelegate) and datasource (WeatherServiceDataSource) for your ViewController to implement.
 
