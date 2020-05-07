@@ -11,8 +11,8 @@ Collection of demos from the [Swift Arcade YouTube channel.](https://www.youtube
 
 ## CoreData
 
-- [Getting Started](https://github.com/jrasmusson/swift-arcade/blob/master/CoreData/1-GettingStarted.md)
- - [NSFetchedResultsController]()
+- [Getting Started](CoreData/1-GettingStarted.md)
+- [NSFetchedResultsController](CoreData/2-NSFetchedResultsController.md)
 
 ## Design
 - [Load & Retry Screens](https://github.com/jrasmusson/swift-arcade/blob/master/Design/LoadAndRetry/1-Load-And-Retry.md)
