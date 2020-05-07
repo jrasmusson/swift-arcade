@@ -42,10 +42,11 @@ Collection of demos from the [Swift Arcade YouTube channel.](https://www.youtube
 
 ### UITableView
 
-- [Simple UITableView]()
-- [Swipeable Cells](https://github.com/jrasmusson/swift-arcade/blob/master/UIKIt/SwipeableCells/README.md)
-- [Moveable Cells](https://github.com/jrasmusson/swift-arcade/blob/master/UIKIt/MoveableCells/README.md)
 - [Diffable Data Source](https://github.com/jrasmusson/swift-arcade/blob/master/UIKIt/DiffableDataSource/README.md)
+- [Moveable Cells](https://github.com/jrasmusson/swift-arcade/blob/master/UIKIt/MoveableCells/README.md)
+- [Swipeable Cells](https://github.com/jrasmusson/swift-arcade/blob/master/UIKIt/SwipeableCells/README.md)
+- [Simple UITableView]()
+
 
 
 
