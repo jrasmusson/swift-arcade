@@ -33,7 +33,7 @@ Collection of demos from the [Swift Arcade YouTube channel.](https://www.youtube
 
 ### UINavigationController
 
-- [Navigation Patterns](UIKit/UINavigationController/NavigationPatterns/Navigation-Patterns.md)
+- [Navigation Patterns](UIKIt/UINavigationController/NavigationPatterns/Navigation-Patterns.md)
 
 ### UIScrollView
 
