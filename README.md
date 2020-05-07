@@ -31,6 +31,15 @@ Collection of demos from the [Swift Arcade YouTube channel.](https://www.youtube
 
 - [UIPanGestureRecognizer](https://github.com/jrasmusson/swift-arcade/tree/master/UIKIt/UIPanGestureRecognizer)
 
+### UINavigationController
+
+- [Navigation Patterns](https://github.com/jrasmusson/swift-arcade/blob/master/Misc/Navigation-Patterns.md)
+
+### UIScrollView
+
+- [Understanding UIScrollView](https://github.com/jrasmusson/swift-arcade/blob/master/UIKIt/UIScrollView/UnderstandingUIScrollView/README.md)
+- [How to create a customer ScrollableTabView](https://github.com/jrasmusson/swift-arcade/blob/master/UIKIt/UIScrollView/CustomScrollTabView/README.md)
+
 ### UITableView
 
 - [Simple UITableView]()
@@ -38,13 +47,5 @@ Collection of demos from the [Swift Arcade YouTube channel.](https://www.youtube
 - [Moveable Cells](https://github.com/jrasmusson/swift-arcade/blob/master/UIKIt/MoveableCells/README.md)
 - [Diffable Data Source](https://github.com/jrasmusson/swift-arcade/blob/master/UIKIt/DiffableDataSource/README.md)
 
-### UIScrollView
-
-- [Understanding UIScrollView](https://github.com/jrasmusson/swift-arcade/blob/master/UIKIt/UIScrollView/UnderstandingUIScrollView/README.md)
-- [How to create a customer ScrollableTabView](https://github.com/jrasmusson/swift-arcade/blob/master/UIKIt/UIScrollView/CustomScrollTabView/README.md)
-
-### UINavigationController
-
-- [Navigation Patterns](https://github.com/jrasmusson/swift-arcade/blob/master/Misc/Navigation-Patterns.md)
 
 
