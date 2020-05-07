@@ -1,6 +1,6 @@
 # Protocol Delegate DataSource Pattern
 
-![TableView](https://github.com/jrasmusson/swift-arcade/blob/master/CommunicationPatterns/images/protocol-demo.gif)
+![TableView](/images/protocol-demo.gif)
 
 You start off by defining a protocol (WeatherServiceDelegate) and datasource (WeatherServiceDataSource) for your ViewController to implement.
 
