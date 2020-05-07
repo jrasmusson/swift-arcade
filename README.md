@@ -4,7 +4,7 @@ Collection of demos from the [Swift Arcade YouTube channel.](https://www.youtube
 
 ## Communication
 
-- [Protocol Delegate Pattern](https://github.com/jrasmusson/swift-arcade/blob/master/CommunicationPatterns/Protocol-Delegate.md)
+- [Protocol Delegate Pattern](/Communication/Protocol-Delegate.md)
 - [Closures](https://github.com/jrasmusson/swift-arcade/blob/master/CommunicationPatterns/Closures.md)
 - [Responder Chain](https://github.com/jrasmusson/swift-arcade/blob/master/CommunicationPatterns/Responder-Chain.md)
 - [Key-Value Observing](https://github.com/jrasmusson/swift-arcade/blob/master/CommunicationPatterns/KVO.md)
