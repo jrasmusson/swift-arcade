@@ -1,6 +1,6 @@
 # Key-Value Observing
 
-![TableView](https://github.com/jrasmusson/swift-arcade/blob/master/CommunicationPatterns/images/kvo-demo.gif)
+![TableView](images/kvo-demo.gif)
 
 Make your property observable.
 
