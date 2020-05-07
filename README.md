@@ -20,7 +20,7 @@ Collection of demos from the [Swift Arcade YouTube channel.](https://www.youtube
 
 ## Foundation
 
-- [NSAttributedStrings](https://github.com/jrasmusson/swift-arcade/blob/master/UIKIt/NSAttributedStrings/README.md)
+- [NSAttributedStrings](Foundation/NSAttributedStrings/README.md)
 
 
 ## Swift
