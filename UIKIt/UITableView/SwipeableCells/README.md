@@ -4,7 +4,7 @@
 
 ### Delete
 
-![TableView](https://github.com/jrasmusson/swift-arcade/blob/master/UIKIt/SwipeableCells/images/edit-mode-delete.gif)
+![TableView](images/edit-mode-delete.gif)
 
 By adding the built in _editButton_ to the _rightBarButtonItem_ we get some built in _Edit_ _Done_ button transformations which automatically call _setEditing_ for us which in turn enables us to put the `UITableView` into edit mode.
 
@@ -38,7 +38,7 @@ We can then react to the style of the cell row returned (`.delete` by default).
 
 ### Insert
 
-![TableView](https://github.com/jrasmusson/swift-arcade/blob/master/UIKIt/SwipeableCells/images/edit-mode-insert.gif)
+![TableView](images/edit-mode-insert.gif)
 
 If we want to insert we need to override the default `.delete` editting style and return an `.insert` one.
 
@@ -66,7 +66,7 @@ private func addGame(_ game: String) {
 
 ## Swipeable
 
-![TableView](https://github.com/jrasmusson/swift-arcade/blob/master/UIKIt/SwipeableCells/images/swipeable.gif)
+![TableView](images/swipeable.gif)
 
 To make cells swipeable, return a collection of swipe actions for either the trailing or leading side.
 
@@ -100,7 +100,7 @@ func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowA
 
 ### Swipeable Add
 
-![TableView](https://github.com/jrasmusson/swift-arcade/blob/master/UIKIt/SwipeableCells/images/swipeable-add.gif)
+![TableView](images/swipeable-add.gif)
 
 You can either do an add on the view itself.
 
@@ -120,7 +120,7 @@ func addButtonPressed() {
 
 ### Modal Add
 
-![TableView](https://github.com/jrasmusson/swift-arcade/blob/master/UIKIt/SwipeableCells/images/modal-add.gif)
+![TableView](images/modal-add.gif)
 
 Or you can create a dedicated modal and present it from there. Communication back can be _protocol delegate_.
 
