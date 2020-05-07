@@ -2,7 +2,7 @@
 
 Simple example of how to use in a _UIViewController_ with a CoreData _Entity_ called _Game_.
 
-<img src="https://github.com/jrasmusson/swift-arcade/blob/master/CoreData/images/NSFetchedResultsController.png" alt="drawing" width="400"/>
+<img src="images/NSFetchedResultsController.png" alt="drawing" width="400"/>
 
 Create variable.
 
