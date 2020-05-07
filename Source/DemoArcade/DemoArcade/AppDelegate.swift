@@ -42,16 +42,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 extension AppDelegate {
     
     func makeUIKitDemos() -> UIViewController {
-        
-        // Diffable Data Source
-        let diffableDataSources = [
-            Lab(name: "WIFI Settings UITableView", viewController: WIFISettingsViewController()),
-            Lab(name: "Mountain TableView", viewController: MountainTableViewController()),
-            Lab(name: "Mountain CollectionView", viewController: MountainCollectionViewController()),
-        ]
 
-        let diffableViewController = DemoViewController(labs: diffableDataSources, navBarTitle: "Diffable Data Sources")
-                
         // UIPanGestureRecognizer
         let panGestures = [
             Lab(name: "Moving Box", viewController: MovingBlock()),
@@ -63,7 +54,6 @@ extension AppDelegate {
             Lab(name: "UITableView", viewController: makeTableViewDemos()),
             Lab(name: "UIScrollView", viewController: makeScrollViewDemos()),
             Lab(name: "UINavigationController", viewController: makeNavigationDemos()),
-            Lab(name: "Diffable Data Sources", viewController: diffableViewController),
             Lab(name: "UIPanGestureRecognizer", viewController: panGestureViewController),
         ]
         
@@ -96,6 +86,15 @@ extension AppDelegate {
 
         let moveableCellsViewController = DemoViewController(labs: moveableCells, navBarTitle: "Moveable Cells")
 
+        // Diffable Data Source
+        let diffableDataSources = [
+            Lab(name: "WIFI Settings UITableView", viewController: WIFISettingsViewController()),
+            Lab(name: "Mountain TableView", viewController: MountainTableViewController()),
+            Lab(name: "Mountain CollectionView", viewController: MountainCollectionViewController()),
+        ]
+
+        let diffableViewController = DemoViewController(labs: diffableDataSources, navBarTitle: "Diffable Data Sources")
+
         // UITableViewCell
         let uitableViewCellPatterns = [
             Lab(name: "Custom Cell", viewController: CustomCellViewController()),
@@ -108,6 +107,7 @@ extension AppDelegate {
             Lab(name: "Simple TableViews", viewController: simpleTableViewDemoViewController),
             Lab(name: "Edit Modes", viewController: editModeViewController),
             Lab(name: "Moveable Cells", viewController: moveableCellsViewController),
+            Lab(name: "Diffable Data Sources", viewController: diffableViewController),
             Lab(name: "UITableViewCells", viewController: uitableViewCellController),
         ]
 
