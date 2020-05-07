@@ -12,7 +12,7 @@ lazy var label: UILabel = {
     return label
 }()
 
-func makeText() -> NSAttributedString {
+func makeText() -> c {
     let paragraphStyle = NSMutableParagraphStyle()
     paragraphStyle.firstLineHeadIndent = 24
     paragraphStyle.headIndent = 8
@@ -143,5 +143,5 @@ fileprivate extension String {
 
 ### Links that help
 
-- [Keys](https://developer.apple.com/documentation/foundation/nsattributedstring/key)
+- [NSAttributedString Keys](https://developer.apple.com/documentation/foundation/nsattributedstring/key)
 
