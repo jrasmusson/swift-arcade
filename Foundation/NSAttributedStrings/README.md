@@ -2,7 +2,7 @@
 
 ## Paragraph
 
-![TableView](https://github.com/jrasmusson/swift-arcade/blob/master/UIKIt/NSAttributedStrings/images/paragraph.png)
+![TableView](images/paragraph.png)
 
 ```swift
 lazy var label: UILabel = {
