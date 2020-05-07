@@ -2,7 +2,7 @@
 
 ## Modal
 
-![TableView](https://github.com/jrasmusson/swift-arcade/blob/master/images/navigation/modal.gif)
+![TableView](images/navigation/modal.gif)
 
 Modal ViewControllers are presented modally to uses on the screen. 
 
@@ -20,7 +20,7 @@ Modal ViewControllers are presented modally to uses on the screen.
 
 ## Container
 
-![TableView](https://github.com/jrasmusson/swift-arcade/blob/master/images/navigation/container.gif)
+![TableView](images/navigation/container.gif)
 
 
 Containers (UINavigationController, UITabBarController, UIPageViewController) are ViewControllers Apple has made to make our lives easier for doing default navigation in UIKit.
@@ -45,7 +45,7 @@ UINavigationController and UITabBarController are so core to UIViewController th
 
 ## Custom
 
-![TableView](https://github.com/jrasmusson/swift-arcade/blob/master/images/navigation/custom.gif)
+![TableView](images/navigation/custom.gif)
 
 For those cases where Apple's container viewControllers don't cut it, we can create our own. Here we need make sure we follow these three steps whenever we present or dismiss a new viewController embedded in another.
 
