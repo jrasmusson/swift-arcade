@@ -44,8 +44,9 @@ Collection of demos from the [Swift Arcade YouTube channel.](https://www.youtube
 
 - [Diffable Data Source](UIKIt/UITableView/DiffableDataSource/README.md)
 - [Moveable Cells](UIKIt/UITableView/MoveableCells/README.md)
+- [Simple UITableView](UIKIt/UITableView/SimpleTableView/README.md)
 - [Swipeable Cells](UIKIt/UITableView/SwipeableCells/README.md)
-- [Simple UITableView]()
+
 
 
 
