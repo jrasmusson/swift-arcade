@@ -53,7 +53,7 @@ Collection of demos from the [Swift Arcade YouTube channel.](https://www.youtube
 
 #### Large ViewController Strategies
 
-- [Model-View-Presenter](https://github.com/jrasmusson/swift-arcade/blob/master/UIKIt/LargeViewController/MVP/README.md)
+- [Model View Presenter (MVP)](https://github.com/jrasmusson/swift-arcade/blob/master/UIKIt/LargeViewController/MVP/README.md)
 
 
 
