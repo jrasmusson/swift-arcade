@@ -180,11 +180,10 @@
 		710811192417DE3500A59673 /* UIKit */ = {
 			isa = PBXGroup;
 			children = (
-				7112AD6E242AEE2D0072C65D /* UITableView */,
-				712234E4245C7661004CFB63 /* UIScrollView */,
 				7130B33B245F198B003FDB6A /* UINavigationController */,
 				710133BB244744520063A7E2 /* UIPanGestureRecognizer */,
-				7191A29D243C96F40017714B /* Diffable Data Source */,
+				712234E4245C7661004CFB63 /* UIScrollView */,
+				7112AD6E242AEE2D0072C65D /* UITableView */,
 			);
 			name = UIKit;
 			sourceTree = "<group>";
@@ -192,9 +191,10 @@
 		7112AD6E242AEE2D0072C65D /* UITableView */ = {
 			isa = PBXGroup;
 			children = (
-				717759B9245F106200C1899A /* Simple TableViews */,
+				7191A29D243C96F40017714B /* Diffable Data Source */,
 				7125AD7724194A4100248EE9 /* Edit Modes */,
 				71547B2A2440C01B00B6D9E0 /* Moveable Cells */,
+				717759B9245F106200C1899A /* Simple TableViews */,
 				7112AD6F242AEE430072C65D /* UITableViewCell */,
 			);
 			name = UITableView;
