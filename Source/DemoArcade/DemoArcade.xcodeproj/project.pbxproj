@@ -30,6 +30,9 @@
 		717759B6245F0ACD00C1899A /* ScrollableTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 717759B5245F0ACD00C1899A /* ScrollableTabView.swift */; };
 		717759B8245F0B0600C1899A /* TabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 717759B7245F0B0600C1899A /* TabView.swift */; };
 		7178D4B5241922790085D6B1 /* BasicEditModeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7178D4B4241922790085D6B1 /* BasicEditModeViewController.swift */; };
+		7181457C24685309004BDCDC /* MVPSimple.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7181457B24685309004BDCDC /* MVPSimple.swift */; };
+		7181457E24685313004BDCDC /* MVPComplex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7181457D24685313004BDCDC /* MVPComplex.swift */; };
+		7181458024685DCD004BDCDC /* AppDelegate+UIKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7181457F24685DCD004BDCDC /* AppDelegate+UIKit.swift */; };
 		718C45F723F42F33007B5F91 /* ClosureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 718C45F623F42F33007B5F91 /* ClosureViewController.swift */; };
 		7191A2A0243C973D0017714B /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7191A29F243C973D0017714B /* Network.swift */; };
 		7191A2A2243C97880017714B /* WIFISettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7191A2A1243C97880017714B /* WIFISettingsViewController.swift */; };
@@ -105,6 +108,9 @@
 		717759B5245F0ACD00C1899A /* ScrollableTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollableTabView.swift; sourceTree = "<group>"; };
 		717759B7245F0B0600C1899A /* TabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabView.swift; sourceTree = "<group>"; };
 		7178D4B4241922790085D6B1 /* BasicEditModeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicEditModeViewController.swift; sourceTree = "<group>"; };
+		7181457B24685309004BDCDC /* MVPSimple.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVPSimple.swift; sourceTree = "<group>"; };
+		7181457D24685313004BDCDC /* MVPComplex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVPComplex.swift; sourceTree = "<group>"; };
+		7181457F24685DCD004BDCDC /* AppDelegate+UIKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppDelegate+UIKit.swift"; sourceTree = "<group>"; };
 		718C45F623F42F33007B5F91 /* ClosureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClosureViewController.swift; sourceTree = "<group>"; };
 		7191A29F243C973D0017714B /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 		7191A2A1243C97880017714B /* WIFISettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WIFISettingsViewController.swift; sourceTree = "<group>"; };
@@ -184,6 +190,7 @@
 				710133BB244744520063A7E2 /* UIPanGestureRecognizer */,
 				712234E4245C7661004CFB63 /* UIScrollView */,
 				7112AD6E242AEE2D0072C65D /* UITableView */,
+				7181457824685246004BDCDC /* UIViewController */,
 			);
 			name = UIKit;
 			sourceTree = "<group>";
@@ -328,6 +335,31 @@
 			name = "Simple TableViews";
 			sourceTree = "<group>";
 		};
+		7181457824685246004BDCDC /* UIViewController */ = {
+			isa = PBXGroup;
+			children = (
+				718145792468525F004BDCDC /* Large ViewController Strategies */,
+			);
+			name = UIViewController;
+			sourceTree = "<group>";
+		};
+		718145792468525F004BDCDC /* Large ViewController Strategies */ = {
+			isa = PBXGroup;
+			children = (
+				7181457A24685271004BDCDC /* MVP */,
+			);
+			name = "Large ViewController Strategies";
+			sourceTree = "<group>";
+		};
+		7181457A24685271004BDCDC /* MVP */ = {
+			isa = PBXGroup;
+			children = (
+				7181457B24685309004BDCDC /* MVPSimple.swift */,
+				7181457D24685313004BDCDC /* MVPComplex.swift */,
+			);
+			name = MVP;
+			sourceTree = "<group>";
+		};
 		718C45F523F42ECD007B5F91 /* Closures */ = {
 			isa = PBXGroup;
 			children = (
@@ -419,6 +451,7 @@
 				71F34AEA2437A2E40026BAAC /* Extensions */,
 				719A1E7223E71EB2000FC21C /* Files */,
 				719A1E5E23E71E9C000FC21C /* AppDelegate.swift */,
+				7181457F24685DCD004BDCDC /* AppDelegate+UIKit.swift */,
 			);
 			path = DemoArcade;
 			sourceTree = "<group>";
@@ -693,6 +726,7 @@
 				7191A2A4243C991F0017714B /* WIFIController.swift in Sources */,
 				719A1E8223E72218000FC21C /* ModalViewController2.swift in Sources */,
 				719A1E8323E72218000FC21C /* ModalViewController1.swift in Sources */,
+				7181457E24685313004BDCDC /* MVPComplex.swift in Sources */,
 				712234E9245C76CE004CFB63 /* DIYScrollView.swift in Sources */,
 				712234EB245C76E7004CFB63 /* ExampleUIScrollView.swift in Sources */,
 				712234E7245C769D004CFB63 /* HowUIScrollViewWorks.swift in Sources */,
@@ -702,6 +736,7 @@
 				71DD7128242CE35D00C19E7D /* NSAttributedStringParagraphs.swift in Sources */,
 				71F34AE92437A2B30026BAAC /* RetryViewController.swift in Sources */,
 				71F34AE32437A23D0026BAAC /* LoadAndRetryDemo.swift in Sources */,
+				7181458024685DCD004BDCDC /* AppDelegate+UIKit.swift in Sources */,
 				717759B6245F0ACD00C1899A /* ScrollableTabView.swift in Sources */,
 				71C6324C23E89B9500BC5302 /* WeatherService.swift in Sources */,
 				71DD712E242CEC3300C19E7D /* UIFont+Ext.swift in Sources */,
@@ -721,6 +756,7 @@
 				7119DB2023E9A833000E5796 /* Weather.swift in Sources */,
 				71B9AEBF23F1936C00C2D539 /* TargetActionViewController.swift in Sources */,
 				719A1E9623E723C1000FC21C /* FailureViewController.swift in Sources */,
+				7181457C24685309004BDCDC /* MVPSimple.swift in Sources */,
 				71F8A5D824040B6200E03F0A /* NotificationViewController.swift in Sources */,
 				7191B38F240EAA4D004FB0B2 /* MyData.xcdatamodeld in Sources */,
 				717759B8245F0B0600C1899A /* TabView.swift in Sources */,
