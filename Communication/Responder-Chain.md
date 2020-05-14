@@ -76,9 +76,7 @@ Because responder chain only supports three method signatures
 
 ```swift
 - (void)action
-
 - (void)action:(id)sender
-
 - (void)action:(id)sender forEvent:(UIEvent *)event
 ```
 
