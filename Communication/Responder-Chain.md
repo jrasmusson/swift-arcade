@@ -70,8 +70,27 @@ private extension Selector {
 }
 ```
 
+## Discussion
+
+You can't just send any _func_ up the responder chain. It must be of a certain form. 
+
+- (void)action
+
+- (void)action:(id)sender
+
+- (void)action:(id)sender forEvent:(UIEvent *)event
+
+Only these method signatures are supported. With the last two parameters being optional. If you look at the documentation via Xcode it will show. This is why you can't send func's like this.
+
+```
+func didSelectRowAt(_ indexPath: IndexPath) // 💥
+```
+
+When you do that you get a «Unrecognized Selector Sent to Instance» Error In Xcode.
+
 
 ### Video
 
 - [What is Responder Chain and How Does it Work?](https://www.youtube.com/watch?v=le7tzeqN908)
+- [Using the Responder Chain](https://useyourloaf.com/blog/using-the-responder-chain/)
 
