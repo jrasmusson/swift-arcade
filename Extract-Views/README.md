@@ -275,7 +275,7 @@ Calling `loadView` takes whatever view you pass it and sets it to fill the entir
 ### Links that help
 
 - [Sundell on Child View Controllers](https://www.swiftbysundell.com/basics/child-view-controllers/)
-- [Apple Docs on UIViewControllers(https://developer.apple.com/library/archive/featuredarticles/ViewControllerPGforiPhoneOS/index.html)
+- [Apple Docs on UIViewControllers](https://developer.apple.com/library/archive/featuredarticles/ViewControllerPGforiPhoneOS/index.html)
 
 ### Video
 
