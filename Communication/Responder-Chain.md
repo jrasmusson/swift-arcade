@@ -74,11 +74,13 @@ private extension Selector {
 
 You can't just send any _func_ up the responder chain. It must be of a certain form. 
 
+```swift
 - (void)action
 
 - (void)action:(id)sender
 
 - (void)action:(id)sender forEvent:(UIEvent *)event
+```
 
 Only these method signatures are supported. With the last two parameters being optional. If you look at the documentation via Xcode it will show. This is why you can't send func's like this.
 
