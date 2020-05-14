@@ -70,9 +70,9 @@ private extension Selector {
 }
 ```
 
-## Discussion
+## Passing Data
 
-You can't just send any _func_ up the responder chain. It must be of a certain form. 
+Because responder chain only supports three method signatures
 
 ```swift
 - (void)action
@@ -82,17 +82,35 @@ You can't just send any _func_ up the responder chain. It must be of a certain f
 - (void)action:(id)sender forEvent:(UIEvent *)event
 ```
 
-Only these method signatures are supported. With the last two parameters being optional. If you look at the documentation via Xcode it will show. This is why you can't send func's like this.
+We can't pass data like we would in a normal method. It has to be in one of the above forms.
 
 ```
-func didSelectRowAt(_ indexPath: IndexPath) // 💥
+func didSelectRowAt(_ indexPath: IndexPath) // 💥 «Unrecognized Selector Sent to Instance» Error In Xcode.
 ```
 
-When you do that you get a «Unrecognized Selector Sent to Instance» Error In Xcode.
+What that means is that to pass data, you have to include it as a property in the `sender` sent via the action.
 
+```swift
+@objc protocol ListAction: AnyObject {
+  func didSelectItem(_ sender: ListViewController)
+}
 
-### Video
+override func tableView(_: UITableView, didSelectRowAt _: IndexPath) {
+  UIApplication.shared.sendAction(
+     #selector(ListAction.didSelectItem(_:)), 
+     to: nil, from: self, for: nil)
+}
 
-- [What is Responder Chain and How Does it Work?](https://www.youtube.com/watch?v=le7tzeqN908)
+extension RootViewController: ListAction {
+  func didSelectItem(_ sender: ListViewController) {
+    if let object = sender.selectedObject { // 🚀 Passed data
+      // present the detail view controller
+    }
+}
+```
+ 
+### Links that help
+
 - [Using the Responder Chain](https://useyourloaf.com/blog/using-the-responder-chain/)
+- [Unrecognized Selectors](https://learnappmaking.com/unrecognized-selector-sent-to-instance-swift-development/)
 
