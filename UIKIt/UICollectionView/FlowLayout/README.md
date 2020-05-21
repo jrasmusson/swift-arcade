@@ -1,8 +1,6 @@
-# UICollectionView
+# UICollectionView Flow Layout
 
-## Flow layout
-
-### Basic Flow layout
+## Basic
 
 ![](images/flowlayout/flowlayout.png)
 
@@ -87,7 +85,7 @@ class MyCell: UICollectionViewCell {
 }
 ```
 
-### Flow layout as list with header and footer
+## List with Header & Footer
 
 ![](images/flowlayout/header-footer.png)
 
