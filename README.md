@@ -33,6 +33,10 @@ Collection of demos from the [Swift Arcade YouTube channel.](https://www.youtube
 
 - [UIPanGestureRecognizer](https://github.com/jrasmusson/swift-arcade/tree/master/UIKIt/UIPanGestureRecognizer)
 
+### UICollectionView
+
+- [Flow Layout](https://github.com/jrasmusson/swift-arcade/blob/master/UIKIt/UICollectionView/FlowLayout/README.md)
+
 ### UINavigationController
 
 - [Navigation Patterns](UIKIt/UINavigationController/NavigationPatterns/Navigation-Patterns.md)
