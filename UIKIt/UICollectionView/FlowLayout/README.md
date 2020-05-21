@@ -304,3 +304,9 @@ class MyCell: UICollectionViewCell {
     }
 }
 ```
+
+### Links that help
+
+- [Apple Flow Layout](https://developer.apple.com/library/archive/documentation/WindowsViews/Conceptual/CollectionViewPGforIOS/UsingtheFlowLayout/UsingtheFlowLayout.html)
+- [How to Header & Footer](https://stackoverflow.com/questions/29655652/how-to-make-both-header-and-footer-in-collection-view-with-swift)
+- [Default Cell Size 50x50](https://developer.apple.com/documentation/uikit/uicollectionviewflowlayout/1617711-itemsize)
