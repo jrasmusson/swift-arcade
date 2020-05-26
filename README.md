@@ -36,6 +36,7 @@ Collection of demos from the [Swift Arcade YouTube channel.](https://www.youtube
 ### UICollectionView
 
 - [Flow Layout](https://github.com/jrasmusson/swift-arcade/blob/master/UIKIt/UICollectionView/FlowLayout/README.md)
+- [Compositional Layout](https://github.com/jrasmusson/swift-arcade/blob/master/UIKIt/UICollectionView/CompositionalLayout/README.md)
 
 ### UINavigationController
 
