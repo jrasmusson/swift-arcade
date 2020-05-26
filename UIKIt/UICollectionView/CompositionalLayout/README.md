@@ -652,6 +652,223 @@ extension ViewController {
 }
 ```
 
+## Header & Footer Boundary Supplementary Item
+
+![](images/header-footer.png)
+
+![](images/header-footer-explained.png)
+
+```swift
+//
+//  ViewController.swift
+//  HeaderFooter
+//
+//  Created by Jonathan Rasmusson Work Pro on 2020-05-26.
+//  Copyright © 2020 Rasmusson Software Consulting. All rights reserved.
+//
+
+import UIKit
+
+class ListCell: UICollectionViewCell {
+    static let reuseIdentifier = "list-cell-reuse-identifier"
+    let label = UILabel()
+    let accessoryImageView = UIImageView()
+    let seperatorView = UIView()
+
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        configure()
+    }
+    required init?(coder: NSCoder) {
+        fatalError("not implemented")
+    }
+}
+
+extension ListCell {
+    func configure() {
+        seperatorView.translatesAutoresizingMaskIntoConstraints = false
+        seperatorView.backgroundColor = .lightGray
+        contentView.addSubview(seperatorView)
+
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.adjustsFontForContentSizeCategory = true
+        label.font = UIFont.preferredFont(forTextStyle: .body)
+        contentView.addSubview(label)
+
+        accessoryImageView.translatesAutoresizingMaskIntoConstraints = false
+        contentView.addSubview(accessoryImageView)
+
+        selectedBackgroundView = UIView()
+        selectedBackgroundView?.backgroundColor = UIColor.lightGray.withAlphaComponent(0.3)
+
+        let rtl = effectiveUserInterfaceLayoutDirection == .rightToLeft
+        let chevronImageName = rtl ? "chevron.left" : "chevron.right"
+        let chevronImage = UIImage(systemName: chevronImageName)
+        accessoryImageView.image = chevronImage
+        accessoryImageView.tintColor = UIColor.lightGray.withAlphaComponent(0.7)
+
+        let inset = CGFloat(10)
+        NSLayoutConstraint.activate([
+            label.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: inset),
+            label.topAnchor.constraint(equalTo: contentView.topAnchor, constant: inset),
+            label.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -inset),
+            label.trailingAnchor.constraint(equalTo: accessoryImageView.leadingAnchor, constant: -inset),
+
+            accessoryImageView.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
+            accessoryImageView.widthAnchor.constraint(equalToConstant: 13),
+            accessoryImageView.heightAnchor.constraint(equalToConstant: 20),
+            accessoryImageView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -inset),
+
+            seperatorView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: inset),
+            seperatorView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
+            seperatorView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -inset),
+            seperatorView.heightAnchor.constraint(equalToConstant: 0.5)
+            ])
+    }
+}
+
+class TitleSupplementaryView: UICollectionReusableView {
+    let label = UILabel()
+    static let reuseIdentifier = "title-supplementary-reuse-identifier"
+
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        configure()
+    }
+    required init?(coder: NSCoder) {
+        fatalError()
+    }
+}
+
+extension TitleSupplementaryView {
+    func configure() {
+        addSubview(label)
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.adjustsFontForContentSizeCategory = true
+        let inset = CGFloat(10)
+        NSLayoutConstraint.activate([
+            label.leadingAnchor.constraint(equalTo: leadingAnchor, constant: inset),
+            label.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -inset),
+            label.topAnchor.constraint(equalTo: topAnchor, constant: inset),
+            label.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -inset)
+        ])
+        label.font = UIFont.preferredFont(forTextStyle: .title3)
+    }
+}
+
+// SectionHeadersFootersViewController
+class ViewController: UIViewController {
+
+    static let sectionHeaderElementKind = "section-header-element-kind"
+    static let sectionFooterElementKind = "section-footer-element-kind"
+
+    var dataSource: UICollectionViewDiffableDataSource<Int, Int>! = nil
+    var collectionView: UICollectionView! = nil
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        configureHierarchy()
+        configureDataSource()
+    }
+}
+
+extension ViewController {
+    func createLayout() -> UICollectionViewLayout {
+        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0),
+                                             heightDimension: .fractionalHeight(1.0))
+        let item = NSCollectionLayoutItem(layoutSize: itemSize)
+
+        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0),
+                                              heightDimension: .absolute(44))
+        let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
+
+        let section = NSCollectionLayoutSection(group: group)
+        section.interGroupSpacing = 5
+        section.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 10, bottom: 0, trailing: 10)
+
+        let headerFooterSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0),
+                                                     heightDimension: .estimated(44))
+        let sectionHeader = NSCollectionLayoutBoundarySupplementaryItem(
+            layoutSize: headerFooterSize,
+            elementKind: ViewController.sectionHeaderElementKind, alignment: .top)
+        let sectionFooter = NSCollectionLayoutBoundarySupplementaryItem(
+            layoutSize: headerFooterSize,
+            elementKind: ViewController.sectionFooterElementKind, alignment: .bottom)
+        section.boundarySupplementaryItems = [sectionHeader, sectionFooter]
+
+        let layout = UICollectionViewCompositionalLayout(section: section)
+        return layout
+    }
+}
+
+extension ViewController {
+    func configureHierarchy() {
+        collectionView = UICollectionView(frame: view.bounds, collectionViewLayout: createLayout())
+        collectionView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        collectionView.backgroundColor = .systemBackground
+        collectionView.register(ListCell.self, forCellWithReuseIdentifier: ListCell.reuseIdentifier)
+        collectionView.register(
+            TitleSupplementaryView.self,
+            forSupplementaryViewOfKind: ViewController.sectionHeaderElementKind,
+            withReuseIdentifier: TitleSupplementaryView.reuseIdentifier)
+        collectionView.register(
+            TitleSupplementaryView.self,
+            forSupplementaryViewOfKind: ViewController.sectionFooterElementKind,
+            withReuseIdentifier: TitleSupplementaryView.reuseIdentifier)
+        view.addSubview(collectionView)
+    }
+    func configureDataSource() {
+        dataSource = UICollectionViewDiffableDataSource<Int, Int>(collectionView: collectionView) {
+            (collectionView: UICollectionView, indexPath: IndexPath, identifier: Int) -> UICollectionViewCell? in
+
+            // Get a cell of the desired kind.
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ListCell.reuseIdentifier,
+                                                    for: indexPath) as? ListCell
+                else { fatalError("Cannot create new cell") }
+
+            // Populate the cell with our item description.
+            cell.label.text = "\(indexPath.section),\(indexPath.item)"
+
+            // Return the cell.
+            return cell
+        }
+        dataSource.supplementaryViewProvider = { (
+            collectionView: UICollectionView,
+            kind: String,
+            indexPath: IndexPath) -> UICollectionReusableView? in
+
+            // Get a supplementary view of the desired kind.
+            guard let supplementaryView = collectionView.dequeueReusableSupplementaryView(
+                ofKind: kind,
+                withReuseIdentifier: TitleSupplementaryView.reuseIdentifier,
+                for: indexPath) as? TitleSupplementaryView else { fatalError("Cannot create new supplementary") }
+
+            // Populate the view with our section's description.
+            let viewKind = kind == ViewController.sectionHeaderElementKind ? "Header" : "Footer"
+            supplementaryView.label.text = "\(viewKind) for section \(indexPath.section)"
+            supplementaryView.backgroundColor = .lightGray
+            supplementaryView.layer.borderColor = UIColor.black.cgColor
+            supplementaryView.layer.borderWidth = 1.0
+
+            // Return the view.
+            return supplementaryView
+        }
+
+        // initial data
+        let itemsPerSection = 5
+        let sections = Array(0..<5)
+        var snapshot = NSDiffableDataSourceSnapshot<Int, Int>()
+        var itemOffset = 0
+        sections.forEach {
+            snapshot.appendSections([$0])
+            snapshot.appendItems(Array(itemOffset..<itemOffset + itemsPerSection))
+            itemOffset += itemsPerSection
+        }
+        dataSource.apply(snapshot, animatingDifferences: false)
+    }
+}
+```
+
 ### Links that help
 
 - [Apple Flow Layout](https://developer.apple.com/library/archive/documentation/WindowsViews/Conceptual/CollectionViewPGforIOS/UsingtheFlowLayout/UsingtheFlowLayout.html)
