@@ -1069,6 +1069,53 @@ extension ViewController: UICollectionViewDelegate {
 }
 ```
 
+## Orthogonal Scrolling
+
+![](images/orthogonal-demo.gif)
+
+```swift
+func createFeaturedSection(using section: Section) -> NSCollectionLayoutSection {
+    let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(1))
+
+    let layoutItem = NSCollectionLayoutItem(layoutSize: itemSize)
+    layoutItem.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 5, bottom: 0, trailing: 5)
+
+    let layoutGroupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.93), heightDimension: .estimated(350))
+    let layoutGroup = NSCollectionLayoutGroup.horizontal(layoutSize: layoutGroupSize, subitems: [layoutItem])
+
+    let layoutSection = NSCollectionLayoutSection(group: layoutGroup)
+    layoutSection.orthogonalScrollingBehavior = .groupPagingCentered
+    return layoutSection
+}
+```
+
+Compositional layout has the ability to scroll in the opposite direction it is layed out. So if you lay something out top-to-bottom horizontally
+
+```swift
+let layoutGroup = NSCollectionLayoutGroup.horizontal(layoutSize: layoutGroupSize, subitems: [layoutItem])
+``` 
+
+It will flip it, and scroll it vertically if you set `orthogonalScrollingBehavior`.
+
+```
+layoutSection.orthogonalScrollingBehavior = .groupPagingCentered
+```
+
+Here are the various ways you can swipe orthogonally.
+
+```swift
+@available(iOS 13.0, *)
+public enum UICollectionLayoutSectionOrthogonalScrollingBehavior : Int {
+    case none
+    case continuous
+    case continuousGroupLeadingBoundary
+    case paging
+    case groupPaging
+    case groupPagingCentered
+}
+```
+
+
 ### Links that help
 
 - [Apple Flow Layout](https://developer.apple.com/library/archive/documentation/WindowsViews/Conceptual/CollectionViewPGforIOS/UsingtheFlowLayout/UsingtheFlowLayout.html)
