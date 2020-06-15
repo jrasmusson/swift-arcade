@@ -2,6 +2,10 @@
 
 Collection of demos from the [Swift Arcade YouTube channel.](https://www.youtube.com/channel/UCxnCA5FBYRCFgIZWD0CKCVg?view_as=subscriber)
 
+## Spotify
+
+- [Spotify Playlist](Spotify/SpotifyPlaylist/README.md)
+
 ## Communication
 
 - [Protocol Delegate Pattern](Communication/Protocol-Delegate.md)
