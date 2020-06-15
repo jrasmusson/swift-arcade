@@ -198,8 +198,48 @@ class ViewController: UIViewController {
 }
 ```
 
+## Trouble Shooting
 
+### Scrollable Area Hidden
 
+Sometimes your scrollable area won't show all the contents of your view.
+
+![](images/wrong-scrollable-height.gif)
+
+This is because your scrollable view area is too large (as shown in the yellow).
+
+![](images/too-much-height.png)
+
+You can fix this by laying out the Collection View in Auto Layout so its view goes under the menubar and to the sides and bottom.
+
+```swift
+        view.addSubview(collectionView)
+        
+        NSLayoutConstraint.activate([
+            collectionView.topAnchor.constraint(equalToSystemSpacingBelow: menuBar.bottomAnchor, multiplier: 0),
+            collectionView.leadingAnchor.constraint(equalToSystemSpacingAfter: view.leadingAnchor, multiplier: 0),
+            view.trailingAnchor.constraint(equalToSystemSpacingAfter: collectionView.trailingAnchor, multiplier: 0),
+            view.safeAreaLayoutGuide.bottomAnchor.constraint(equalToSystemSpacingBelow: collectionView.bottomAnchor, multiplier: 0)
+        ])
+```
+
+Then when asked for the size of the _cell_ representing the scrollable contents, instead of making it the entire height of the view, I made it just the height of the collecion view as determined by auto layout.
+
+```swift
+extension HomeController: UICollectionViewDelegateFlowLayout {
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+
+        let height = collectionView.frame.height // right
+        // let height = view.frame.height           // wrong 💥
+        return CGSize(width: view.frame.width, height: height)
+    }
+}
+```
+
+Much better :)
+
+![](images/right-scrollable-height.gif)
 
 ### Links that help
 

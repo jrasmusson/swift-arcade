@@ -33,6 +33,11 @@ Collection of demos from the [Swift Arcade YouTube channel.](https://www.youtube
 
 - [UIPanGestureRecognizer](https://github.com/jrasmusson/swift-arcade/tree/master/UIKIt/UIPanGestureRecognizer)
 
+### UICollectionView
+
+- [Flow Layout](https://github.com/jrasmusson/swift-arcade/blob/master/UIKIt/UICollectionView/FlowLayout/README.md)
+- [Compositional Layout](https://github.com/jrasmusson/swift-arcade/blob/master/UIKIt/UICollectionView/CompositionalLayout/README.md)
+
 ### UINavigationController
 
 - [Navigation Patterns](UIKIt/UINavigationController/NavigationPatterns/Navigation-Patterns.md)
@@ -40,7 +45,7 @@ Collection of demos from the [Swift Arcade YouTube channel.](https://www.youtube
 ### UIScrollView
 
 - [Understanding UIScrollView](https://github.com/jrasmusson/swift-arcade/blob/master/UIKIt/UIScrollView/UnderstandingUIScrollView/README.md)
-- [How to create a customer ScrollableTabView](https://github.com/jrasmusson/swift-arcade/blob/master/UIKIt/UIScrollView/CustomScrollTabView/README.md)
+- [Custom ScrollableTabView](https://github.com/jrasmusson/swift-arcade/blob/master/UIKIt/UIScrollView/CustomScrollTabView/README.md)
 
 ### UITableView
 

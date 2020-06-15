@@ -25,95 +25,70 @@ Main thing to note is you want to get the view being panned from the recognizer 
 ## Source
 
 ```swift
-import CoreData
+import UIKit
 
-struct CoreDataManager {
-
-    static let shared = CoreDataManager()
-
-    let persistentContainer: NSPersistentContainer = {
-
-        let container = NSPersistentContainer(name: "MyData")
-        container.loadPersistentStores { (storeDescription, error) in
-            if let error = error {
-                fatalError("Loading of store failed \(error)")
-            }
-        }
-
-        return container
+class MovingBlock: UIViewController {
+    
+    var myView = UIView()
+    var animator = UIViewPropertyAnimator()
+    
+    lazy var panRecognizer: UIPanGestureRecognizer = {
+        let recognizer = UIPanGestureRecognizer()
+        recognizer.addTarget(self, action: #selector(handlePan(recognizer:)))
+        return recognizer
     }()
     
-    @discardableResult
-    func createEmployee(name: String) -> Employee? {
-        let context = persistentContainer.viewContext
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        setup()
+        layout()
+        myView.addGestureRecognizer(panRecognizer)
+    }
+    
+    func setup() {
+        view.backgroundColor = .white
+    }
+    
+    func layout() {
+        myView = makeView()
+        view.addSubview(myView)
         
-        let employee = NSEntityDescription.insertNewObject(forEntityName: "Employee", into: context) as! Employee // NSManagedObject
-
-        employee.name = name
-
-        do {
-            try context.save()
-            return employee
-        } catch let createError {
-            print("Failed to create: \(createError)")
-        }
-
-        return nil
+        myView.heightAnchor.constraint(equalToConstant: 100).isActive = true
+        myView.widthAnchor.constraint(equalToConstant: 100).isActive = true
+        myView.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
+        myView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
     }
-
-    func fetchEmployees() -> [Employee]? {
-        let context = persistentContainer.viewContext
-
-        let fetchRequest = NSFetchRequest<Employee>(entityName: "Employee")
-
-        do {
-            let employees = try context.fetch(fetchRequest)
-            return employees
-        } catch let fetchError {
-            print("Failed to fetch companies: \(fetchError)")
-        }
-
-        return nil
+    
+    func makeView() -> UIView {
+        let myView = UIView()
+        myView.translatesAutoresizingMaskIntoConstraints = false
+        myView.backgroundColor = .systemBlue
+        
+        return myView
     }
-
-    func fetchEmployee(withName name: String) -> Employee? {
-        let context = persistentContainer.viewContext
-
-        let fetchRequest = NSFetchRequest<Employee>(entityName: "Employee")
-        fetchRequest.fetchLimit = 1
-        fetchRequest.predicate = NSPredicate(format: "name == %@", name)
-
-        do {
-            let employees = try context.fetch(fetchRequest)
-            return employees.first
-        } catch let fetchError {
-            print("Failed to fetch: \(fetchError)")
-        }
-
-        return nil
-    }
-
-    func updateEmployee(employee: Employee) {
-        let context = persistentContainer.viewContext
-
-        do {
-            try context.save()
-        } catch let createError {
-            print("Failed to update: \(createError)")
+    
+    var initialCenter = CGPoint()  // The initial center point of the view.
+    
+    @objc private func handlePan(recognizer: UIPanGestureRecognizer) {
+        guard let piece = recognizer.view else { return }
+        
+        let translation = recognizer.translation(in: piece.superview)
+        let velocity = recognizer.velocity(in: piece.superview)
+        
+        switch recognizer.state {
+        case .began:
+            print("began translation:\(translation) \(velocity)")
+            self.initialCenter = piece.center
+        case .changed:
+            print("changed translation:\(translation) \(velocity)")
+            let newCenter = CGPoint(x: initialCenter.x + translation.x, y: initialCenter.y + translation.y)
+            piece.center = newCenter
+        case .ended:
+            print("ended translation:\(translation) \(velocity)")
+        default:
+            print("default")
         }
     }
-
-    func deleteEmployee(employee: Employee) {
-        let context = persistentContainer.viewContext
-        context.delete(employee)
-
-        do {
-            try context.save()
-        } catch let saveError {
-            print("Failed to delete: \(saveError)")
-        }
-    }
-
 }
 ```
 
