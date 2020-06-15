@@ -6,6 +6,10 @@
 //  Copyright © 2020 Rasmusson Software Consulting. All rights reserved.
 //
 
+/*
+ Note: For best results run app in Dark Mode.
+       Simulator > Settings > Developer > Dark Appearance
+ */
 import UIKit
 
 @UIApplicationMain
