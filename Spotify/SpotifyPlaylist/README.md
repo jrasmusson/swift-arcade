@@ -29,6 +29,7 @@ This read me shows the architecture and thought that when into building the Spot
 
 ### Links that help
 
-- [Navigation Patterns](https://www.youtube.com/watch?v=qJjZsLpGOnQ)
+- [Episode #1](https://youtu.be/ez4cQWx-q9o)
+- [Episode #2](https://youtu.be/QBkJDwOaFEY)
 
 
