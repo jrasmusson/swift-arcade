@@ -5,6 +5,7 @@ Collection of demos from the [Swift Arcade YouTube channel.](https://www.youtube
 ## Spotify
 
 - [Spotify Playlist](Spotify/SpotifyPlaylist/README.md)
+- [Spotify Album](Spotify/SpotifyAlbum/README.md)
 
 ## Communication
 
