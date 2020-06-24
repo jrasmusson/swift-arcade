@@ -201,3 +201,8 @@ extension ViewController: UITableViewDataSource {
 
 ![](images/demo.gif)
 
+### Links that help
+
+- [Source Code - Xcode](LargeTitles/LargeTitles)
+- [YouTube Walkthrough](https://youtu.be/dLm_g4GarLs)
+
