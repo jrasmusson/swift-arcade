@@ -46,6 +46,7 @@ Collection of demos from the [Swift Arcade YouTube channel.](https://www.youtube
 ### UINavigationController
 
 - [Navigation Patterns](UIKIt/UINavigationController/NavigationPatterns/Navigation-Patterns.md)
+- [Large Titles](UIKIt/UINavigationController/LargeTitles/README.md)
 
 ### UIScrollView
 
