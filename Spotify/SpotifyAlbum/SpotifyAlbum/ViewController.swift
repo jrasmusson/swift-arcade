@@ -40,7 +40,7 @@ class ViewController: UIViewController {
     
     var headerView: HeaderView?
     var floatingHeaderView = HeaderView()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         layout()
@@ -80,13 +80,11 @@ extension ViewController {
         view.addSubview(floatingHeaderView)
 
         floatingHeaderView.track = Track(imageName: "tron")
-        floatingHeaderView.isFloating = true
 
         NSLayoutConstraint.activate([
             floatingHeaderView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
             floatingHeaderView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
         ])
-
 
     }
     
@@ -156,6 +154,6 @@ extension ViewController: UICollectionViewDelegateFlowLayout {
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         headerView?.scrollViewDidScroll(scrollView)
-        floatingHeaderView.scrollViewDidScroll(scrollView)
+        
     }
 }
