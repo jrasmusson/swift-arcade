@@ -1,0 +1,396 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		7115485E24AB6DA000D8BEF3 /* StarRewardsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7115485D24AB6DA000D8BEF3 /* StarRewardsView.swift */; };
+		7115486024AB6DD000D8BEF3 /* StarRewardsRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7115485F24AB6DD000D8BEF3 /* StarRewardsRow.swift */; };
+		716F6FA224AF674100894E0C /* StarAndPoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716F6FA124AF674100894E0C /* StarAndPoints.swift */; };
+		7178DD8D24A4F90100FBBFC3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7178DD8C24A4F90100FBBFC3 /* AppDelegate.swift */; };
+		7178DD9624A4F90200FBBFC3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7178DD9524A4F90200FBBFC3 /* Assets.xcassets */; };
+		7178DD9924A4F90200FBBFC3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7178DD9724A4F90200FBBFC3 /* LaunchScreen.storyboard */; };
+		71ADCB3524AA45B700310F18 /* BalanceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71ADCB3424AA45B700310F18 /* BalanceView.swift */; };
+		71B4FEED24A4F9EA00FF61F7 /* RewardsTile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71B4FEEC24A4F9EA00FF61F7 /* RewardsTile.swift */; };
+		71DBA7BD24AA228C0099C446 /* RewardsGraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71DBA7BC24AA228C0099C446 /* RewardsGraphView.swift */; };
+		71DC4C0F24A54BAF0037E781 /* Factories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71DC4C0E24A54BAF0037E781 /* Factories.swift */; };
+		71ED133224AD263F00946EF6 /* TileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71ED133124AD263F00946EF6 /* TileViewController.swift */; };
+		71ED133424AD266E00946EF6 /* TileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71ED133324AD266E00946EF6 /* TileView.swift */; };
+		71ED134124AE0E5800946EF6 /* RewardsTileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71ED134024AE0E5800946EF6 /* RewardsTileViewController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		7115485D24AB6DA000D8BEF3 /* StarRewardsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarRewardsView.swift; sourceTree = "<group>"; };
+		7115485F24AB6DD000D8BEF3 /* StarRewardsRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarRewardsRow.swift; sourceTree = "<group>"; };
+		716F6FA124AF674100894E0C /* StarAndPoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarAndPoints.swift; sourceTree = "<group>"; };
+		7178DD8924A4F90100FBBFC3 /* Starbalance.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Starbalance.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		7178DD8C24A4F90100FBBFC3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		7178DD9524A4F90200FBBFC3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		7178DD9824A4F90200FBBFC3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		7178DD9A24A4F90200FBBFC3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		71ADCB3424AA45B700310F18 /* BalanceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceView.swift; sourceTree = "<group>"; };
+		71B4FEEC24A4F9EA00FF61F7 /* RewardsTile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RewardsTile.swift; sourceTree = "<group>"; };
+		71DBA7BC24AA228C0099C446 /* RewardsGraphView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RewardsGraphView.swift; sourceTree = "<group>"; };
+		71DC4C0E24A54BAF0037E781 /* Factories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Factories.swift; sourceTree = "<group>"; };
+		71ED133124AD263F00946EF6 /* TileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TileViewController.swift; sourceTree = "<group>"; };
+		71ED133324AD266E00946EF6 /* TileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TileView.swift; sourceTree = "<group>"; };
+		71ED134024AE0E5800946EF6 /* RewardsTileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RewardsTileViewController.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		7178DD8624A4F90100FBBFC3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		716F6FA024AF66FE00894E0C /* StarRewards */ = {
+			isa = PBXGroup;
+			children = (
+				7115485D24AB6DA000D8BEF3 /* StarRewardsView.swift */,
+				7115485F24AB6DD000D8BEF3 /* StarRewardsRow.swift */,
+				716F6FA124AF674100894E0C /* StarAndPoints.swift */,
+			);
+			name = StarRewards;
+			sourceTree = "<group>";
+		};
+		7178DD8024A4F90100FBBFC3 = {
+			isa = PBXGroup;
+			children = (
+				7178DD8B24A4F90100FBBFC3 /* Starbalance */,
+				7178DD8C24A4F90100FBBFC3 /* AppDelegate.swift */,
+				71DC4C0E24A54BAF0037E781 /* Factories.swift */,
+				7178DDA024A4F91400FBBFC3 /* Files */,
+				7178DD8A24A4F90100FBBFC3 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		7178DD8A24A4F90100FBBFC3 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7178DD8924A4F90100FBBFC3 /* Starbalance.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7178DD8B24A4F90100FBBFC3 /* Starbalance */ = {
+			isa = PBXGroup;
+			children = (
+				71ADCB3624AA467400310F18 /* RewardsTile */,
+				71ED133024AD25A100946EF6 /* GeneralTiles */,
+			);
+			path = Starbalance;
+			sourceTree = "<group>";
+		};
+		7178DDA024A4F91400FBBFC3 /* Files */ = {
+			isa = PBXGroup;
+			children = (
+				7178DD9524A4F90200FBBFC3 /* Assets.xcassets */,
+				7178DD9724A4F90200FBBFC3 /* LaunchScreen.storyboard */,
+				7178DD9A24A4F90200FBBFC3 /* Info.plist */,
+			);
+			name = Files;
+			path = Starbalance;
+			sourceTree = "<group>";
+		};
+		71ADCB3624AA467400310F18 /* RewardsTile */ = {
+			isa = PBXGroup;
+			children = (
+				71ED134024AE0E5800946EF6 /* RewardsTileViewController.swift */,
+				71B4FEEC24A4F9EA00FF61F7 /* RewardsTile.swift */,
+				71ADCB3424AA45B700310F18 /* BalanceView.swift */,
+				71DBA7BC24AA228C0099C446 /* RewardsGraphView.swift */,
+				716F6FA024AF66FE00894E0C /* StarRewards */,
+			);
+			name = RewardsTile;
+			sourceTree = "<group>";
+		};
+		71ED133024AD25A100946EF6 /* GeneralTiles */ = {
+			isa = PBXGroup;
+			children = (
+				71ED133124AD263F00946EF6 /* TileViewController.swift */,
+				71ED133324AD266E00946EF6 /* TileView.swift */,
+			);
+			name = GeneralTiles;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		7178DD8824A4F90100FBBFC3 /* Starbalance */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7178DD9D24A4F90200FBBFC3 /* Build configuration list for PBXNativeTarget "Starbalance" */;
+			buildPhases = (
+				7178DD8524A4F90100FBBFC3 /* Sources */,
+				7178DD8624A4F90100FBBFC3 /* Frameworks */,
+				7178DD8724A4F90100FBBFC3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Starbalance;
+			productName = Starbalance;
+			productReference = 7178DD8924A4F90100FBBFC3 /* Starbalance.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		7178DD8124A4F90100FBBFC3 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1130;
+				LastUpgradeCheck = 1130;
+				ORGANIZATIONNAME = "Rasmusson Software Consulting";
+				TargetAttributes = {
+					7178DD8824A4F90100FBBFC3 = {
+						CreatedOnToolsVersion = 11.3.1;
+					};
+				};
+			};
+			buildConfigurationList = 7178DD8424A4F90100FBBFC3 /* Build configuration list for PBXProject "Starbalance" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 7178DD8024A4F90100FBBFC3;
+			productRefGroup = 7178DD8A24A4F90100FBBFC3 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				7178DD8824A4F90100FBBFC3 /* Starbalance */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		7178DD8724A4F90100FBBFC3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7178DD9924A4F90200FBBFC3 /* LaunchScreen.storyboard in Resources */,
+				7178DD9624A4F90200FBBFC3 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		7178DD8524A4F90100FBBFC3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				71ED134124AE0E5800946EF6 /* RewardsTileViewController.swift in Sources */,
+				71ED133424AD266E00946EF6 /* TileView.swift in Sources */,
+				7115486024AB6DD000D8BEF3 /* StarRewardsRow.swift in Sources */,
+				716F6FA224AF674100894E0C /* StarAndPoints.swift in Sources */,
+				7178DD8D24A4F90100FBBFC3 /* AppDelegate.swift in Sources */,
+				71ED133224AD263F00946EF6 /* TileViewController.swift in Sources */,
+				71DBA7BD24AA228C0099C446 /* RewardsGraphView.swift in Sources */,
+				71DC4C0F24A54BAF0037E781 /* Factories.swift in Sources */,
+				71B4FEED24A4F9EA00FF61F7 /* RewardsTile.swift in Sources */,
+				7115485E24AB6DA000D8BEF3 /* StarRewardsView.swift in Sources */,
+				71ADCB3524AA45B700310F18 /* BalanceView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		7178DD9724A4F90200FBBFC3 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7178DD9824A4F90200FBBFC3 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		7178DD9B24A4F90200FBBFC3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		7178DD9C24A4F90200FBBFC3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		7178DD9E24A4F90200FBBFC3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = SH289S78C5;
+				INFOPLIST_FILE = Starbalance/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.rsc.Starbalance;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		7178DD9F24A4F90200FBBFC3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = SH289S78C5;
+				INFOPLIST_FILE = Starbalance/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.rsc.Starbalance;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		7178DD8424A4F90100FBBFC3 /* Build configuration list for PBXProject "Starbalance" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7178DD9B24A4F90200FBBFC3 /* Debug */,
+				7178DD9C24A4F90200FBBFC3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7178DD9D24A4F90200FBBFC3 /* Build configuration list for PBXNativeTarget "Starbalance" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7178DD9E24A4F90200FBBFC3 /* Debug */,
+				7178DD9F24A4F90200FBBFC3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 7178DD8124A4F90100FBBFC3 /* Project object */;
+}
