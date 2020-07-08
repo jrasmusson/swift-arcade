@@ -40,7 +40,6 @@ extension HomeHeaderView {
         addSubview(inboxButton)
         
         NSLayoutConstraint.activate([
-            // greeting
             greeting.topAnchor.constraint(equalToSystemSpacingBelow: topAnchor, multiplier: 1),
             greeting.leadingAnchor.constraint(equalToSystemSpacingAfter: leadingAnchor, multiplier: 2),
             trailingAnchor.constraint(equalToSystemSpacingAfter: greeting.trailingAnchor, multiplier: 2),
