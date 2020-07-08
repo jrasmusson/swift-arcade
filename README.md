@@ -2,7 +2,11 @@
 
 Collection of demos from the [Swift Arcade YouTube channel.](https://www.youtube.com/channel/UCxnCA5FBYRCFgIZWD0CKCVg?view_as=subscriber)
 
-## Spotify
+## Starbucks ☕
+
+- [Starbucks App](Starbucks/README.md)
+
+## Spotify 🎵
 
 - [Spotify Playlist](Spotify/SpotifyPlaylist/README.md)
 - [Spotify Album](Spotify/SpotifyAlbum/README.md)
