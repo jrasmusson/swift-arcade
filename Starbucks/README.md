@@ -7,7 +7,6 @@ This walk through shows you some of the architecture, mechanics, and designs tha
 The Starbucks app is made up for various view controllers, each containing their own navigation bar.
 
 ![](images/high-level-architecture1.png)
-
 ![](images/high-level-architecture2.png)
 
 We can set this up in our `AppDelegate` and present in our main `Window` like this.
@@ -113,7 +112,7 @@ extension HomeHeaderView {
 }
 ```
 
-Then make it collapse and snap by tying the scroll offset.
+Then make it collapse and snap by tying the scroll offset to the height of the header via an auto layout constraint.
 
 **HomeViewController.swift**
 
