@@ -12,16 +12,10 @@ class HomeViewController: StarBucksViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupNavBar()
-    }
-    
-    override func commonInit() {
         setTabBarImage(imageName: "house.fill", title: "Home")
     }
     
     private func setupNavBar() {
         navigationController?.navigationBar.topItem?.title = "Good afternoon, Jonathan ☀️"
     }
-
-
 }
-

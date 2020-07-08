@@ -31,7 +31,7 @@ extension HeaderView {
         
         greeting.translatesAutoresizingMaskIntoConstraints = false
         greeting.font = UIFont.preferredFont(forTextStyle: .largeTitle)
-        greeting.text = "Good afternoon, Jonathan ☀️"
+        greeting.text = "Good afternoon,  Jonathan ☀️"
         greeting.numberOfLines = 0
         greeting.lineBreakMode = .byWordWrapping
 
