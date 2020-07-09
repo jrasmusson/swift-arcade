@@ -14,7 +14,7 @@ import UIKit
 class HomeViewController: StarBucksViewController {
     
     let topSpacerView = UIView()
-    let headerView = HeaderView()
+    let headerView = HomeHeaderView()
     let scrollView = UIScrollView()
     let stackView = UIStackView()
     let scanButton = UIButton()

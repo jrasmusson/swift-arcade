@@ -8,7 +8,7 @@
 
 import UIKit
 
-class HeaderView: UIView {
+class HomeHeaderView: UIView {
     
     let greeting = UILabel()
     let inboxButton = UIButton()
@@ -24,7 +24,7 @@ class HeaderView: UIView {
     }
 }
 
-extension HeaderView {
+extension HomeHeaderView {
     
     func style() {
         backgroundColor = .white
@@ -60,7 +60,7 @@ extension HeaderView {
 }
 
 // MARK: Factories
-extension HeaderView {
+extension HomeHeaderView {
     func makeInboxButton() {
         inboxButton.translatesAutoresizingMaskIntoConstraints = false
         let configuration = UIImage.SymbolConfiguration(scale: .large)

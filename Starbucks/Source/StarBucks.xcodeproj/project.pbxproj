@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		7168907724A40A360018ED2A /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7168907624A40A360018ED2A /* HeaderView.swift */; };
+		7168907724A40A360018ED2A /* HomeHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7168907624A40A360018ED2A /* HomeHeaderView.swift */; };
 		716F6F9F24AF628200894E0C /* StarAndPoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716F6F9E24AF628200894E0C /* StarAndPoints.swift */; };
 		716F6FA524AF6AB600894E0C /* TileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716F6FA424AF6AB600894E0C /* TileViewController.swift */; };
 		716F6FA724AF6AC000894E0C /* TileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716F6FA624AF6AC000894E0C /* TileView.swift */; };
@@ -26,7 +26,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		7168907624A40A360018ED2A /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
+		7168907624A40A360018ED2A /* HomeHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeHeaderView.swift; sourceTree = "<group>"; };
 		716F6F9E24AF628200894E0C /* StarAndPoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarAndPoints.swift; sourceTree = "<group>"; };
 		716F6FA424AF6AB600894E0C /* TileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TileViewController.swift; sourceTree = "<group>"; };
 		716F6FA624AF6AC000894E0C /* TileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TileView.swift; sourceTree = "<group>"; };
@@ -61,6 +61,7 @@
 			isa = PBXGroup;
 			children = (
 				71EFCEB124A29DEB00DD30CA /* HomeViewController.swift */,
+				7168907624A40A360018ED2A /* HomeHeaderView.swift */,
 				71ED133524AE0BF000946EF6 /* RewardsTile */,
 				716F6FA324AF6A8300894E0C /* Other Tiles */,
 			);
@@ -108,7 +109,6 @@
 			children = (
 				71AD468324A1530A00C3899E /* AppDelegate.swift */,
 				71AD469824A1592200C3899E /* Factories.swift */,
-				7168907624A40A360018ED2A /* HeaderView.swift */,
 				7168907524A409FF0018ED2A /* Home */,
 				71AD469724A1531500C3899E /* Files */,
 			);
@@ -207,7 +207,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7168907724A40A360018ED2A /* HeaderView.swift in Sources */,
+				7168907724A40A360018ED2A /* HomeHeaderView.swift in Sources */,
 				71AD469924A1592200C3899E /* Factories.swift in Sources */,
 				71AD468424A1530A00C3899E /* AppDelegate.swift in Sources */,
 				71ED133D24AE0C3200946EF6 /* StarRewardsView.swift in Sources */,

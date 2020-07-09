@@ -15,6 +15,7 @@ class HomeHeaderView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: .zero)
+        style()
         layout()
     }
     
@@ -24,8 +25,7 @@ class HomeHeaderView: UIView {
 }
 
 extension HomeHeaderView {
-    func layout() {
-        
+    func style() {
         greeting.translatesAutoresizingMaskIntoConstraints = false
         greeting.font = UIFont.preferredFont(forTextStyle: .largeTitle)
         greeting.text = "Good afternoon, Jonathan ☀️"
@@ -35,7 +35,9 @@ extension HomeHeaderView {
         inboxButton.translatesAutoresizingMaskIntoConstraints = false
         inboxButton.setTitleColor(.label, for: .normal)
         inboxButton.setTitle("Inbox", for: .normal)
-        
+    }
+    
+    func layout() {
         addSubview(greeting)
         addSubview(inboxButton)
         
@@ -52,5 +54,24 @@ extension HomeHeaderView {
     
     override var intrinsicContentSize: CGSize {
         return CGSize(width: 100, height: 100)
+    }
+}
+
+// MARK: Factories
+extension HomeHeaderView {
+    func makeInboxButton() {
+        inboxButton.translatesAutoresizingMaskIntoConstraints = false
+        let configuration = UIImage.SymbolConfiguration(scale: .large)
+        let image = UIImage(systemName: "envelope", withConfiguration: configuration)
+
+        inboxButton.setImage(image, for: .normal)
+        inboxButton.imageView?.tintColor = .secondaryLabel
+        inboxButton.imageView?.contentMode = .scaleAspectFit
+
+        inboxButton.setTitle("Inbox", for: .normal)
+        inboxButton.setTitleColor(.secondaryLabel, for: .normal)
+        
+        inboxButton.imageEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 16)
+        inboxButton.contentEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
     }
 }
