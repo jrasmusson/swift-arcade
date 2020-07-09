@@ -138,7 +138,30 @@ extension HomeViewController: UITableViewDelegate {
         })
     }
  }
- ```
+```
 
+## Scroll View > Stack View > Tiles
+
+The home screen can be built as a series of Tiles (View Controllers) embedded in a stack view, embedded in a scroll view.
+
+![](images/tile1.png)
+
+The trick with scroll views is making sure you have an unbroken chain of continous constraints.
+
+![](images/tile2.png)
+
+That, and remembering that when you layout a scroll view, there are two sets of constraints. The scroll view to the the view. Then the contents to the scroll view.
+
+![](images/tile3.png)
+
+Adding child view controllers to a parent view controller requires we follow these three steps.
+
+```swift
+for tile in tiles {
+    addChild(tile)
+    stackView.addArrangedSubview(tile.view)
+    tile.didMove(toParent: self)
+}
+```
 
 
