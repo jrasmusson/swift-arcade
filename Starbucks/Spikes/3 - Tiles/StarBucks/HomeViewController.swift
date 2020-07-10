@@ -12,7 +12,7 @@ class HomeViewController: StarBucksViewController {
     
     let headerView = HeaderView()
     let scrollView = UIScrollView()
-    let rootStackView = UIStackView()
+    let stackView = UIStackView()
     
     var headerViewTopConstraint: NSLayoutConstraint?
     
@@ -47,19 +47,19 @@ extension HomeViewController {
         headerView.backgroundColor = .systemPink
 
         scrollView.translatesAutoresizingMaskIntoConstraints = false
-        rootStackView.translatesAutoresizingMaskIntoConstraints = false
+        stackView.translatesAutoresizingMaskIntoConstraints = false
         
-        rootStackView.axis = .vertical
-        rootStackView.spacing = 8
+        stackView.axis = .vertical
+        stackView.spacing = 8
         
         view.addSubview(headerView)
         view.addSubview(scrollView)
         
-        scrollView.addSubview(rootStackView)
+        scrollView.addSubview(stackView)
         
         for tile in tiles {
             addChild(tile)
-            rootStackView.addArrangedSubview(tile.view)
+            stackView.addArrangedSubview(tile.view)
             tile.didMove(toParent: self)
         }
         
@@ -75,11 +75,11 @@ extension HomeViewController {
             scrollView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -8),
             scrollView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
             
-            rootStackView.topAnchor.constraint(equalTo: scrollView.topAnchor),
-            rootStackView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor),
-            rootStackView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor),
-            rootStackView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor),
-            rootStackView.widthAnchor.constraint(equalTo: scrollView.widthAnchor),
+            stackView.topAnchor.constraint(equalTo: scrollView.topAnchor),
+            stackView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor),
+            stackView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor),
+            stackView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor),
+            stackView.widthAnchor.constraint(equalTo: scrollView.widthAnchor),
         ])
     }
 }

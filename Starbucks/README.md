@@ -164,6 +164,8 @@ for tile in tiles {
 }
 ```
 
+![](images/tile4.png)
+
 **HomeViewController.swift**
 
 ```swift
