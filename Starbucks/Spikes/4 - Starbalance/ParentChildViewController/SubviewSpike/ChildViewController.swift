@@ -13,16 +13,12 @@ class ChildViewController: UIViewController {
     let childView = ChildView()
     
     override func viewDidLoad() {
-        super.viewDidLoad()
-        setup()
-        layout()
-    }
-
-    func setup() {
+        // x3 ways to extract view
+        
+        // 1. Auto layout (Recommended).
+        let childView = ChildView()
+        
         childView.translatesAutoresizingMaskIntoConstraints = false
-    }
-
-    func layout() {
         view.addSubview(childView)
         
         NSLayoutConstraint.activate([
@@ -31,5 +27,14 @@ class ChildViewController: UIViewController {
             childView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             childView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         ])
+        
+        // 2. Auto resize masks (Older style).
+        let childView = ChildView(frame: CGRect(x: 0, y: 0, width: 300, height: 400))
+        childView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        view.addSubview(childView)
+        
+        // 3. Full View take over.
+        let childView = ChildView()
+        view = childView
     }
 }

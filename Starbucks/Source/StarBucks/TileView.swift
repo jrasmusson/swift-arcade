@@ -16,7 +16,7 @@ class TileView: UIView {
     let ctaButton = makeGreenButton(withText: "Order")
 
     override init(frame: CGRect) {
-        super.init(frame: .zero)
+        super.init(frame: frame)
         style()
         layout()
     }
