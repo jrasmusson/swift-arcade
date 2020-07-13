@@ -55,7 +55,7 @@ extension TileView {
         layer.cornerRadius = cornerRadius
                 
         imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.contentMode = .scaleAspectFit
+        imageView.contentMode = .scaleAspectFill
         imageView.clipsToBounds = true
         
         titleLabel.translatesAutoresizingMaskIntoConstraints = false

@@ -28,13 +28,13 @@ class ChildViewController: UIViewController {
             childView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         ])
         
-        // 2. Auto resize masks (Older style).
-        let childView = ChildView(frame: CGRect(x: 0, y: 0, width: 300, height: 400))
-        childView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        view.addSubview(childView)
-        
-        // 3. Full View take over.
-        let childView = ChildView()
-        view = childView
+//        // 2. Auto resize masks (Older style).
+//        let childView = ChildView(frame: CGRect(x: 0, y: 0, width: 300, height: 400))
+//        childView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+//        view.addSubview(childView)
+//
+//        // 3. Full View take over.
+//        let childView = ChildView()
+//        view = childView
     }
 }

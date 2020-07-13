@@ -2,7 +2,7 @@
 
 This walk through shows you some of the architecture, mechanics, and designs that went into building the Starbucks application.
 
-## High-Level Architecture
+## Episode #1 High-Level Architecture
 
 The Starbucks app is made up for various view controllers, each containing their own navigation bar.
 
@@ -47,7 +47,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
  }
 ```
 
-## Collapsible Header
+## Episode #2 Collapsible Header
 
 The home screen has a header that collapses and expands as you swipe up and down.
 
@@ -140,7 +140,7 @@ extension HomeViewController: UITableViewDelegate {
  }
 ```
 
-## Scroll View > Stack View > Tiles
+## Episode #3 Scroll View > Stack View > Tiles
 
 The home screen can be built as a series of Tiles (View Controllers) embedded in a stack view, embedded in a scroll view.
 
@@ -304,6 +304,180 @@ class Tile: UIViewController {
             label.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             label.centerYAnchor.constraint(equalTo: view.centerYAnchor),
             view.heightAnchor.constraint(equalToConstant: 300)
+        ])
+    }
+}
+```
+
+## Episode #4 Adding Tile Views
+
+To keep our view controllers less cluttered, we are going to add our Tiles as _ViewControllers_ with extracted child _views_.
+
+![](images/extract1.png)
+
+There are x3 ways we can go about this.
+
+* Auto Layout
+* Auto resise mask
+* Full view take over
+
+### Auto Layout
+
+![](images/extract2.png)
+
+While it takes a few more lines of code, adding a child view with auto layout is the easiest, most flexible way of adding a sub view to a parent view controller.
+
+Auto layout is well understood. It handles the widest variety of layout cases. And it is the method we are going to use when adding tiles to our parent view controllers.
+
+### Auto resize mask
+
+![](images/extract3.png)
+
+An older technique that pre-dates auto layout. This is still viable. Requires fewer lines of code. But isn't used as much as auto layout is now the recommended way. But you will still see this occasionally. And now you will know what it is.
+
+### Fill screen take over
+
+![](images/extract4.png)
+
+If you know your child view is going to take over the entirety of the view, you can just set it on the view controller's _view_ directly. This will stretch out the child, pin it to the edges of the parent, and so long as that is the affect you want, requires the fewest lines of code. Handly for laying out other full screen views like _TableViews_ and _CollectionViews_.
+
+### Tiles
+
+Here is how we will add our new tiles, and their associated subviews.
+
+**TileViewController.swift**
+
+```swift
+import UIKit
+
+class TileViewController: UIViewController {
+    
+    let tileView = TileView()
+    
+    init(title: String, subtitle: String, imageName: String) {
+        super.init(nibName: nil, bundle: nil)
+        
+        tileView.titleLabel.text = title
+        tileView.subtitleLabel.text = subtitle
+        tileView.imageView.image = UIImage(named: imageName)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        style()
+        layout()
+    }
+    
+    func style() {
+        tileView.translatesAutoresizingMaskIntoConstraints = false
+    }
+    
+    func layout() {
+        view.addSubview(tileView)
+        
+        NSLayoutConstraint.activate([
+            tileView.topAnchor.constraint(equalTo: view.topAnchor),
+            tileView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            tileView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            tileView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+        ])
+    }
+}
+```
+
+**TileView**
+
+```swift
+import UIKit
+
+class TileView: UIView {
+    
+    let imageView = UIImageView()
+    let titleLabel = UILabel()
+    let subtitleLabel = UILabel()
+    let ctaButton = makeGreenButton(withText: "Order")
+
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        style()
+        layout()
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    private var shadowLayer: CAShapeLayer!
+    private var cornerRadius: CGFloat = 6
+    private var fillColor: UIColor = .white
+     
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        addShadow()
+    }
+    
+    func addShadow() {
+        shadowLayer = CAShapeLayer()
+        
+        shadowLayer.path = UIBezierPath(roundedRect: bounds, cornerRadius: cornerRadius).cgPath
+        shadowLayer.fillColor = fillColor.cgColor
+        
+        shadowLayer.shadowColor = UIColor.black.cgColor
+        shadowLayer.shadowPath = shadowLayer.path
+        shadowLayer.shadowOffset = CGSize(width: 0.0, height: 1.0)
+        shadowLayer.shadowOpacity = 0.2
+        shadowLayer.shadowRadius = 1
+        
+        layer.insertSublayer(shadowLayer, at: 0)
+    }
+}
+
+extension TileView {
+    func style() {
+        layer.cornerRadius = cornerRadius
+                
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.contentMode = .scaleAspectFit
+        imageView.clipsToBounds = true
+        
+        titleLabel.translatesAutoresizingMaskIntoConstraints = false
+        titleLabel.font = UIFont.preferredFont(forTextStyle: .title3).bold()
+        titleLabel.textColor = .label
+        
+        subtitleLabel.translatesAutoresizingMaskIntoConstraints = false
+        subtitleLabel.font = UIFont.preferredFont(forTextStyle: .footnote)
+        subtitleLabel.numberOfLines = 0
+        subtitleLabel.lineBreakMode = .byWordWrapping
+        
+        ctaButton.translatesAutoresizingMaskIntoConstraints = false
+    }
+    
+    func layout() {
+        addSubview(imageView)
+        addSubview(titleLabel)
+        addSubview(subtitleLabel)
+        addSubview(ctaButton)
+        
+        NSLayoutConstraint.activate([
+            imageView.topAnchor.constraint(equalTo: topAnchor),
+            imageView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            imageView.trailingAnchor.constraint(equalTo: trailingAnchor),
+
+            titleLabel.topAnchor.constraint(equalToSystemSpacingBelow: imageView.bottomAnchor, multiplier: 2),
+            titleLabel.leadingAnchor.constraint(equalToSystemSpacingAfter: leadingAnchor, multiplier: 2),
+            trailingAnchor.constraint(equalToSystemSpacingAfter: titleLabel.trailingAnchor, multiplier: 2),
+
+            subtitleLabel.topAnchor.constraint(equalToSystemSpacingBelow: titleLabel.bottomAnchor, multiplier: 2),
+            subtitleLabel.leadingAnchor.constraint(equalTo: titleLabel.leadingAnchor),
+            subtitleLabel.trailingAnchor.constraint(equalTo: titleLabel.trailingAnchor),
+
+            ctaButton.topAnchor.constraint(equalToSystemSpacingBelow: subtitleLabel.bottomAnchor, multiplier: 2),
+            ctaButton.leadingAnchor.constraint(equalTo: titleLabel.leadingAnchor),
+            bottomAnchor.constraint(equalToSystemSpacingBelow: ctaButton.bottomAnchor, multiplier: 2),
         ])
     }
 }
