@@ -13,7 +13,9 @@
 		716345B324B65DF8003CC13C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 716345B224B65DF8003CC13C /* Assets.xcassets */; };
 		716345B624B65DF8003CC13C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 716345B424B65DF8003CC13C /* LaunchScreen.storyboard */; };
 		716345BF24B665F4003CC13C /* Factories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716345BE24B665F4003CC13C /* Factories.swift */; };
-		71F8287124B8971400063816 /* TileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F8287024B8971400063816 /* TileView.swift */; };
+		71C8505024BCA8FE0055E6F6 /* TileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C8504F24BCA8FE0055E6F6 /* TileViewController.swift */; };
+		71C8505224BCA9620055E6F6 /* TileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C8505124BCA9620055E6F6 /* TileView.swift */; };
+		71F8287124B8971400063816 /* PlaceholderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F8287024B8971400063816 /* PlaceholderViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,7 +27,9 @@
 		716345B524B65DF8003CC13C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		716345B724B65DF8003CC13C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		716345BE24B665F4003CC13C /* Factories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Factories.swift; sourceTree = "<group>"; };
-		71F8287024B8971400063816 /* TileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TileView.swift; sourceTree = "<group>"; };
+		71C8504F24BCA8FE0055E6F6 /* TileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TileViewController.swift; sourceTree = "<group>"; };
+		71C8505124BCA9620055E6F6 /* TileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TileView.swift; sourceTree = "<group>"; };
+		71F8287024B8971400063816 /* PlaceholderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceholderViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -44,7 +48,9 @@
 			children = (
 				716345AD24B65DF6003CC13C /* HomeViewController.swift */,
 				713AD05624B74B210010F9D6 /* HomeHeaderView.swift */,
-				71F8287024B8971400063816 /* TileView.swift */,
+				71F8287024B8971400063816 /* PlaceholderViewController.swift */,
+				71C8504F24BCA8FE0055E6F6 /* TileViewController.swift */,
+				71C8505124BCA9620055E6F6 /* TileView.swift */,
 			);
 			name = Home;
 			sourceTree = "<group>";
@@ -157,9 +163,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				713AD05724B74B210010F9D6 /* HomeHeaderView.swift in Sources */,
+				71C8505224BCA9620055E6F6 /* TileView.swift in Sources */,
 				716345BF24B665F4003CC13C /* Factories.swift in Sources */,
+				71C8505024BCA8FE0055E6F6 /* TileViewController.swift in Sources */,
 				716345AE24B65DF6003CC13C /* HomeViewController.swift in Sources */,
-				71F8287124B8971400063816 /* TileView.swift in Sources */,
+				71F8287124B8971400063816 /* PlaceholderViewController.swift in Sources */,
 				716345AA24B65DF6003CC13C /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
