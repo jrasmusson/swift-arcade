@@ -11,7 +11,7 @@ import UIKit
 class RewardsTileView: UIView {
     
     let balanceView = BalanceView()
-    var rewardsOptionButton = UIButton()
+    var rewardsButton = UIButton()
     let rewardsGraphView = RewardsGraphView()
     let starRewardsView = StarRewardsView()
     var detailsButton = UIButton()
@@ -43,29 +43,28 @@ extension RewardsTileView {
     }
     
     func makeRewardsOptionButton() {
-        rewardsOptionButton = UIButton()
-        rewardsOptionButton.translatesAutoresizingMaskIntoConstraints = false
-        rewardsOptionButton.addTarget(self, action: #selector(rewardOptionsTapped), for: .primaryActionTriggered)
+        rewardsButton.translatesAutoresizingMaskIntoConstraints = false
+        rewardsButton.addTarget(self, action: #selector(rewardOptionsTapped), for: .primaryActionTriggered)
 
         let configuration = UIImage.SymbolConfiguration(scale: .small)
         let image = UIImage(systemName: "chevron.down", withConfiguration: configuration)
 
-        rewardsOptionButton.setImage(image, for: .normal)
-        rewardsOptionButton.imageView?.tintColor = .label
-        rewardsOptionButton.imageView?.contentMode = .scaleAspectFit
+        rewardsButton.setImage(image, for: .normal)
+        rewardsButton.imageView?.tintColor = .label
+        rewardsButton.imageView?.contentMode = .scaleAspectFit
 
-        rewardsOptionButton.setTitle("Rewards options", for: .normal)
-        rewardsOptionButton.setTitleColor(.label, for: .normal)
-        rewardsOptionButton.titleLabel?.font = UIFont.preferredFont(forTextStyle: .footnote)
+        rewardsButton.setTitle("Rewards options", for: .normal)
+        rewardsButton.setTitleColor(.label, for: .normal)
+        rewardsButton.titleLabel?.font = UIFont.preferredFont(forTextStyle: .footnote)
 
-        rewardsOptionButton.semanticContentAttribute = .forceRightToLeft
-        rewardsOptionButton.imageEdgeInsets = UIEdgeInsets(top: 2, left: 20, bottom: 0, right: 0)
-        rewardsOptionButton.contentEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 20)
+        rewardsButton.semanticContentAttribute = .forceRightToLeft
+        rewardsButton.imageEdgeInsets = UIEdgeInsets(top: 2, left: 20, bottom: 0, right: 0)
+        rewardsButton.contentEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 20)
     }
     
     func layout() {
         addSubview(balanceView)
-        addSubview(rewardsOptionButton)
+        addSubview(rewardsButton)
         addSubview(rewardsGraphView)
         addSubview(starRewardsView)
         addSubview(detailsButton)
@@ -76,8 +75,8 @@ extension RewardsTileView {
             balanceView.topAnchor.constraint(equalTo: topAnchor),
             balanceView.leadingAnchor.constraint(equalToSystemSpacingAfter: leadingAnchor, multiplier: 2),
             
-            rewardsOptionButton.centerYAnchor.constraint(equalTo: balanceView.pointsLabel.centerYAnchor),
-            trailingAnchor.constraint(equalToSystemSpacingAfter: rewardsOptionButton.trailingAnchor, multiplier: 3),
+            rewardsButton.centerYAnchor.constraint(equalTo: balanceView.pointsLabel.centerYAnchor),
+            trailingAnchor.constraint(equalToSystemSpacingAfter: rewardsButton.trailingAnchor, multiplier: 3),
             
             rewardsGraphView.topAnchor.constraint(equalToSystemSpacingBelow: balanceView.bottomAnchor, multiplier: 1),
             rewardsGraphView.centerXAnchor.constraint(equalTo: centerXAnchor),
@@ -144,12 +143,12 @@ extension RewardsTileView {
     private func setChevronUp() {
         let configuration = UIImage.SymbolConfiguration(scale: .small)
         let image = UIImage(systemName: "chevron.up", withConfiguration: configuration)
-        rewardsOptionButton.setImage(image, for: .normal)
+        rewardsButton.setImage(image, for: .normal)
     }
 
     private func setChevronDown() {
         let configuration = UIImage.SymbolConfiguration(scale: .small)
         let image = UIImage(systemName: "chevron.down", withConfiguration: configuration)
-        rewardsOptionButton.setImage(image, for: .normal)
+        rewardsButton.setImage(image, for: .normal)
     }
 }

@@ -335,7 +335,7 @@ Auto layout is well understood. It handles the widest variety of layout cases. A
 
 An older technique that pre-dates auto layout. This is still viable. Requires fewer lines of code. But isn't used as much as auto layout is now the recommended way. But you will still see this occasionally. And now you will know what it is.
 
-### Fill screen take over
+### Fill view take over
 
 ![](images/extract4.png)
 
@@ -482,4 +482,8 @@ extension TileView {
     }
 }
 ```
+
+## Episode #5 Reward Tile
+
+![](images/reward1.png)
 
