@@ -45,6 +45,12 @@ class RewardsGraphView: UIView {
     func layout() {
         imageView.translatesAutoresizingMaskIntoConstraints = false
         
+//        drawRectangle()
+//        drawRectangle2()
+//        drawCircle()
+//        drawRotatedSquare()
+//        drawLines()
+//        drawImagesAndText()
         drawRewardsGraph()
         
         addSubview(imageView)
@@ -79,7 +85,7 @@ class RewardsGraphView: UIView {
         let labels: [String] = ["25", "50", "150", "250", "400"]
         
         // Because Core Graphics straddles its frame when it draws, and we want a circle
-        // exactly at this point, we need to offset by this amount in the y. The 50
+        // exactly at this point, we need to offset by this amount in the y. The indicatorOffset
         // is just to push everything down enough to make room for the green indicator.
         let indicatorOffset: CGFloat = 34
         let yOffset = (dotSize + lineWidth) / 2 + indicatorOffset
@@ -269,6 +275,7 @@ class RewardsGraphView: UIView {
         
         let img = renderer.image { ctx in
             
+            // move to center
             ctx.cgContext.translateBy(x: 128, y: 128)
             let rotations = 16
             let amount = Double.pi / Double(rotations)
@@ -276,6 +283,7 @@ class RewardsGraphView: UIView {
             // add 16 rotated rectangles
             for _ in 0 ..< rotations {
                 ctx.cgContext.rotate(by: CGFloat(amount))
+                // move to center of square
                 ctx.cgContext.addRect(CGRect(x: -64, y: -64, width: 128, height: 128))
             }
             
@@ -326,7 +334,7 @@ class RewardsGraphView: UIView {
                 .paragraphStyle: paragraphStyle
             ]
             
-            let string = "The best laid schemes of mince and men"
+            let string = "The best laid schemes of mice and men"
             
             let attributedString = NSAttributedString(string: string, attributes: attrs)
             attributedString.draw(with: CGRect(x: 32, y: 32, width: 200, height: 200), options: .usesLineFragmentOrigin, context: nil)

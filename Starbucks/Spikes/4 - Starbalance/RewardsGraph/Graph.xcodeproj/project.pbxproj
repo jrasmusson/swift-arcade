@@ -13,7 +13,7 @@
 		71DC4C2624A6392F0037E781 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71DC4C2424A6392F0037E781 /* Main.storyboard */; };
 		71DC4C2824A639330037E781 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 71DC4C2724A639330037E781 /* Assets.xcassets */; };
 		71DC4C2B24A639330037E781 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71DC4C2924A639330037E781 /* LaunchScreen.storyboard */; };
-		71DC4C3424A639640037E781 /* GraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71DC4C3324A639640037E781 /* GraphView.swift */; };
+		71DC4C3424A639640037E781 /* RewardsGraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71DC4C3324A639640037E781 /* RewardsGraphView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,7 +25,7 @@
 		71DC4C2724A639330037E781 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		71DC4C2A24A639330037E781 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		71DC4C2C24A639330037E781 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		71DC4C3324A639640037E781 /* GraphView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphView.swift; sourceTree = "<group>"; };
+		71DC4C3324A639640037E781 /* RewardsGraphView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RewardsGraphView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -44,7 +44,7 @@
 			children = (
 				71DC4C1D24A6392F0037E781 /* Graph */,
 				71DC4C2224A6392F0037E781 /* ViewController.swift */,
-				71DC4C3324A639640037E781 /* GraphView.swift */,
+				71DC4C3324A639640037E781 /* RewardsGraphView.swift */,
 				71DC4C1C24A6392F0037E781 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -152,7 +152,7 @@
 				71DC4C2324A6392F0037E781 /* ViewController.swift in Sources */,
 				71DC4C1F24A6392F0037E781 /* AppDelegate.swift in Sources */,
 				71DC4C2124A6392F0037E781 /* SceneDelegate.swift in Sources */,
-				71DC4C3424A639640037E781 /* GraphView.swift in Sources */,
+				71DC4C3424A639640037E781 /* RewardsGraphView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

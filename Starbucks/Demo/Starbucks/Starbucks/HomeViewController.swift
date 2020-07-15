@@ -17,6 +17,7 @@ class HomeViewController: StarBucksViewController {
     var headerViewTopConstraint: NSLayoutConstraint?
     
     let tiles = [
+                RewardTileViewController(),
                 TileViewController(title: "Breakfast made meatless",
                                    subtitle: "Try the Beyond Meat, Cheddar & Egg Breakfast Sandwich. Vegetarian and protein-packed.",
                                    imageName: "meatless"),

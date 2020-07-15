@@ -487,3 +487,12 @@ extension TileView {
 
 ![](images/reward1.png)
 
+## Episode #6 Core Graphics
+
+![](images/cg1.png)
+![](images/cg2.png)
+![](images/cg3.png)
+![](images/cg4.png)
+![](images/cg5.png)
+![](images/cg6.png)
+![](images/cg7.png)
