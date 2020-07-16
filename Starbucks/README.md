@@ -497,3 +497,58 @@ extension TileView {
 ![](images/cg6.png)
 ![](images/cg7.png)
 ![](images/cg8.png)
+
+## Episode #7 Animate within Scroll View
+
+![](images/animatescroll1.png)
+
+![](images/animatescroll2.png)
+
+We can animate the appearance of a view within a scroll view by altering its height, and then wrapping it within an animation. We can also alter its alpha and the updown chrevon of the reward button itself.
+
+```swift
+// MARK: Actions
+extension RewardsTileView {
+    @objc func rewardOptionsTapped() {
+        
+        if heightConstraint?.constant == 0 {
+            self.setChevronUp()
+
+            let heightAnimator = UIViewPropertyAnimator(duration: 0.75, curve: .easeInOut) {
+                self.heightConstraint?.constant = 270
+                self.layoutIfNeeded()
+            }
+            heightAnimator.startAnimation()
+
+            let alphaAnimator = UIViewPropertyAnimator(duration: 0.25, curve: .easeInOut) {
+                self.starRewardsView.isHidden = false
+                self.starRewardsView.alpha = 1
+            }
+            alphaAnimator.startAnimation(afterDelay: 0.5)
+
+        } else {
+            self.setChevronDown()
+
+            let animator = UIViewPropertyAnimator(duration: 0.75, curve: .easeInOut) {
+                self.heightConstraint?.constant = 0
+                self.starRewardsView.isHidden = true
+                self.starRewardsView.alpha = 0
+                self.layoutIfNeeded()
+            }
+            animator.startAnimation()
+        }
+    }
+
+    private func setChevronUp() {
+        let configuration = UIImage.SymbolConfiguration(scale: .small)
+        let image = UIImage(systemName: "chevron.up", withConfiguration: configuration)
+        rewardsButton.setImage(image, for: .normal)
+    }
+
+    private func setChevronDown() {
+        let configuration = UIImage.SymbolConfiguration(scale: .small)
+        let image = UIImage(systemName: "chevron.down", withConfiguration: configuration)
+        rewardsButton.setImage(image, for: .normal)
+    }
+}
+```

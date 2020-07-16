@@ -16,12 +16,12 @@
 		71AD469024A1530B00C3899E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71AD468E24A1530B00C3899E /* LaunchScreen.storyboard */; };
 		71AD469924A1592200C3899E /* Factories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71AD469824A1592200C3899E /* Factories.swift */; };
 		71BDA33424A4F2CF001F2508 /* PlaceholderTile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BDA33324A4F2CF001F2508 /* PlaceholderTile.swift */; };
-		71ED133724AE0C0300946EF6 /* RewardTileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71ED133624AE0C0300946EF6 /* RewardTileView.swift */; };
+		71ED133724AE0C0300946EF6 /* RewardsTileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71ED133624AE0C0300946EF6 /* RewardsTileView.swift */; };
 		71ED133924AE0C1400946EF6 /* BalanceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71ED133824AE0C1400946EF6 /* BalanceView.swift */; };
-		71ED133B24AE0C2200946EF6 /* RewardGraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71ED133A24AE0C2200946EF6 /* RewardGraphView.swift */; };
+		71ED133B24AE0C2200946EF6 /* RewardsGraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71ED133A24AE0C2200946EF6 /* RewardsGraphView.swift */; };
 		71ED133D24AE0C3200946EF6 /* StarRewardsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71ED133C24AE0C3200946EF6 /* StarRewardsView.swift */; };
 		71ED133F24AE0C4000946EF6 /* StarRewardsRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71ED133E24AE0C4000946EF6 /* StarRewardsRow.swift */; };
-		71ED134324AE105300946EF6 /* RewardTileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71ED134224AE105300946EF6 /* RewardTileViewController.swift */; };
+		71ED134324AE105300946EF6 /* RewardsTileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71ED134224AE105300946EF6 /* RewardsTileViewController.swift */; };
 		71EFCEB224A29DEB00DD30CA /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71EFCEB124A29DEB00DD30CA /* HomeViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -37,12 +37,12 @@
 		71AD469124A1530B00C3899E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		71AD469824A1592200C3899E /* Factories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Factories.swift; sourceTree = "<group>"; };
 		71BDA33324A4F2CF001F2508 /* PlaceholderTile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceholderTile.swift; sourceTree = "<group>"; };
-		71ED133624AE0C0300946EF6 /* RewardTileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RewardTileView.swift; sourceTree = "<group>"; };
+		71ED133624AE0C0300946EF6 /* RewardsTileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RewardsTileView.swift; sourceTree = "<group>"; };
 		71ED133824AE0C1400946EF6 /* BalanceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceView.swift; sourceTree = "<group>"; };
-		71ED133A24AE0C2200946EF6 /* RewardGraphView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RewardGraphView.swift; sourceTree = "<group>"; };
+		71ED133A24AE0C2200946EF6 /* RewardsGraphView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RewardsGraphView.swift; sourceTree = "<group>"; };
 		71ED133C24AE0C3200946EF6 /* StarRewardsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarRewardsView.swift; sourceTree = "<group>"; };
 		71ED133E24AE0C4000946EF6 /* StarRewardsRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarRewardsRow.swift; sourceTree = "<group>"; };
-		71ED134224AE105300946EF6 /* RewardTileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RewardTileViewController.swift; sourceTree = "<group>"; };
+		71ED134224AE105300946EF6 /* RewardsTileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RewardsTileViewController.swift; sourceTree = "<group>"; };
 		71EFCEB124A29DEB00DD30CA /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -128,10 +128,10 @@
 		71ED133524AE0BF000946EF6 /* RewardsTile */ = {
 			isa = PBXGroup;
 			children = (
-				71ED134224AE105300946EF6 /* RewardTileViewController.swift */,
-				71ED133624AE0C0300946EF6 /* RewardTileView.swift */,
+				71ED134224AE105300946EF6 /* RewardsTileViewController.swift */,
+				71ED133624AE0C0300946EF6 /* RewardsTileView.swift */,
 				71ED133824AE0C1400946EF6 /* BalanceView.swift */,
-				71ED133A24AE0C2200946EF6 /* RewardGraphView.swift */,
+				71ED133A24AE0C2200946EF6 /* RewardsGraphView.swift */,
 				716F6F9D24AF625200894E0C /* StarRewards */,
 			);
 			name = RewardsTile;
@@ -214,13 +214,13 @@
 				716F6F9F24AF628200894E0C /* StarAndPoints.swift in Sources */,
 				71BDA33424A4F2CF001F2508 /* PlaceholderTile.swift in Sources */,
 				716F6FA524AF6AB600894E0C /* TileViewController.swift in Sources */,
-				71ED133724AE0C0300946EF6 /* RewardTileView.swift in Sources */,
+				71ED133724AE0C0300946EF6 /* RewardsTileView.swift in Sources */,
 				716F6FA724AF6AC000894E0C /* TileView.swift in Sources */,
 				71EFCEB224A29DEB00DD30CA /* HomeViewController.swift in Sources */,
-				71ED133B24AE0C2200946EF6 /* RewardGraphView.swift in Sources */,
+				71ED133B24AE0C2200946EF6 /* RewardsGraphView.swift in Sources */,
 				71ED133924AE0C1400946EF6 /* BalanceView.swift in Sources */,
 				71ED133F24AE0C4000946EF6 /* StarRewardsRow.swift in Sources */,
-				71ED134324AE105300946EF6 /* RewardTileViewController.swift in Sources */,
+				71ED134324AE105300946EF6 /* RewardsTileViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

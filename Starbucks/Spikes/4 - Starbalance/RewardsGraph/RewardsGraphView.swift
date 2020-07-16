@@ -39,7 +39,7 @@ class RewardsGraphView: UIView {
     
         actualFrameWidth = frame.width
         
-        drawRewardsGraph()
+//        drawRewardsGraph()
     }
     
     func layout() {
@@ -50,8 +50,8 @@ class RewardsGraphView: UIView {
 //        drawCircle()
 //        drawRotatedSquare()
 //        drawLines()
-//        drawImagesAndText()
-        drawRewardsGraph()
+        drawImagesAndText()
+//        drawRewardsGraph()
         
         addSubview(imageView)
         
