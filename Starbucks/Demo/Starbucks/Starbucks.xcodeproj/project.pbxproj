@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		713456FB24C08ACF003FB84A /* StarAndPoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 713456FA24C08ACF003FB84A /* StarAndPoints.swift */; };
+		713456FD24C08BBD003FB84A /* StarRewardsRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 713456FC24C08BBD003FB84A /* StarRewardsRow.swift */; };
+		713456FF24C08E9B003FB84A /* StarRewardsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 713456FE24C08E9B003FB84A /* StarRewardsView.swift */; };
 		713AD05724B74B210010F9D6 /* HomeHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 713AD05624B74B210010F9D6 /* HomeHeaderView.swift */; };
 		716345AA24B65DF6003CC13C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716345A924B65DF6003CC13C /* AppDelegate.swift */; };
 		716345AE24B65DF6003CC13C /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716345AD24B65DF6003CC13C /* HomeViewController.swift */; };
@@ -23,6 +26,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		713456FA24C08ACF003FB84A /* StarAndPoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarAndPoints.swift; sourceTree = "<group>"; };
+		713456FC24C08BBD003FB84A /* StarRewardsRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarRewardsRow.swift; sourceTree = "<group>"; };
+		713456FE24C08E9B003FB84A /* StarRewardsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarRewardsView.swift; sourceTree = "<group>"; };
 		713AD05624B74B210010F9D6 /* HomeHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeHeaderView.swift; sourceTree = "<group>"; };
 		716345A624B65DF6003CC13C /* Starbucks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Starbucks.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		716345A924B65DF6003CC13C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -51,9 +57,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		713456F924C08AAE003FB84A /* StarRewards */ = {
+			isa = PBXGroup;
+			children = (
+				713456FA24C08ACF003FB84A /* StarAndPoints.swift */,
+				713456FC24C08BBD003FB84A /* StarRewardsRow.swift */,
+				713456FE24C08E9B003FB84A /* StarRewardsView.swift */,
+			);
+			name = StarRewards;
+			sourceTree = "<group>";
+		};
 		713AD05524B74AE00010F9D6 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				713456F924C08AAE003FB84A /* StarRewards */,
 				7174FE9124BDED5400FDE2BD /* Rewards */,
 				716345AD24B65DF6003CC13C /* HomeViewController.swift */,
 				713AD05624B74B210010F9D6 /* HomeHeaderView.swift */,
@@ -186,11 +203,14 @@
 				713AD05724B74B210010F9D6 /* HomeHeaderView.swift in Sources */,
 				7174FE9724BDEF7F00FDE2BD /* BalanceView.swift in Sources */,
 				7174FE9524BDED8B00FDE2BD /* RewardsTileView.swift in Sources */,
+				713456FB24C08ACF003FB84A /* StarAndPoints.swift in Sources */,
 				71C8505224BCA9620055E6F6 /* TileView.swift in Sources */,
 				716345BF24B665F4003CC13C /* Factories.swift in Sources */,
+				713456FD24C08BBD003FB84A /* StarRewardsRow.swift in Sources */,
 				71C8505024BCA8FE0055E6F6 /* TileViewController.swift in Sources */,
 				716345AE24B65DF6003CC13C /* HomeViewController.swift in Sources */,
 				71F8287124B8971400063816 /* PlaceholderViewController.swift in Sources */,
+				713456FF24C08E9B003FB84A /* StarRewardsView.swift in Sources */,
 				716345AA24B65DF6003CC13C /* AppDelegate.swift in Sources */,
 				7174FE9324BDED7F00FDE2BD /* RewardsTileViewController.swift in Sources */,
 			);

@@ -51,6 +51,11 @@ extension HomeHeaderView {
             inboxButton.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 0.25),
         ])
     }
+    
+    override var intrinsicContentSize: CGSize {
+        return CGSize(width: 100, height: 100)
+    }
+
 }
 
 // MARK: Factories

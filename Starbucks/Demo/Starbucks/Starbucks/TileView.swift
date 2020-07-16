@@ -95,7 +95,7 @@ extension TileView {
         ])
     }
     
-    override var intrinsicContentSize: CGSize {
-        return CGSize(width: 100, height: 300)
-    }
+//    override var intrinsicContentSize: CGSize {
+//        return CGSize(width: 100, height: 300)
+//    }
 }
