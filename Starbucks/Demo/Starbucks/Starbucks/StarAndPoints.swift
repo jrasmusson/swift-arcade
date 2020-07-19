@@ -1,8 +1,8 @@
 //
 //  StarAndPoints.swift
-//  Starbucks
+//  StarBucks
 //
-//  Created by Jonathan Rasmusson Work Pro on 2020-07-16.
+//  Created by Jonathan Rasmusson Work Pro on 2020-07-03.
 //  Copyright © 2020 Rasmusson Software Consulting. All rights reserved.
 //
 
@@ -52,4 +52,3 @@ class StarAndPoints: UIView {
     }
     
 }
-

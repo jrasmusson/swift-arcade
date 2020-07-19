@@ -1,8 +1,8 @@
 //
 //  StarRewardsRow.swift
-//  Starbucks
+//  Starbalance
 //
-//  Created by Jonathan Rasmusson Work Pro on 2020-07-16.
+//  Created by Jonathan Rasmusson Work Pro on 2020-06-30.
 //  Copyright © 2020 Rasmusson Software Consulting. All rights reserved.
 //
 

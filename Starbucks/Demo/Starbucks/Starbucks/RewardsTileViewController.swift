@@ -1,8 +1,8 @@
 //
 //  RewardsTileViewController.swift
-//  Starbucks
+//  Starbalance
 //
-//  Created by Jonathan Rasmusson Work Pro on 2020-07-14.
+//  Created by Jonathan Rasmusson Work Pro on 2020-07-02.
 //  Copyright © 2020 Rasmusson Software Consulting. All rights reserved.
 //
 
@@ -26,5 +26,4 @@ class RewardsTileViewController: UIViewController {
             rewardsTileView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
         ])
     }
-    
 }
