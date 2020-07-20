@@ -8,18 +8,16 @@
 
 import UIKit
 
-struct History : Codable {
-    let transactions: [Transaction]
-}
-
 struct Transaction: Codable {
     let id: Int
-    let description: String
+    let type: String
+    let amount: String
     let date: Date
     
     enum CodingKeys: String, CodingKey {
-        case description
         case id
+        case type
+        case amount
         case date = "processed_at"
     }
 }

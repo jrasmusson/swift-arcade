@@ -13,8 +13,9 @@ let json = """
 "transactions": [
   {
     "id": 699519475,
-    "description": "150 Stars redeemed",
-    "processed_at": "2020-07-10T12:56:27-04:00"
+    "type": "redeemed",
+    "amount": "150",
+    "processed_at": "2020-07-17T12:56:27-04:00"
   }
  ]
 }
@@ -26,12 +27,14 @@ struct History : Codable {
 
 struct Transaction: Codable {
     let id: Int
-    let description: String
+    let type: String
+    let amount: String
     let date: Date
     
     enum CodingKeys: String, CodingKey {
-        case description
         case id
+        case type
+        case amount
         case date = "processed_at"
     }
 }
@@ -42,7 +45,8 @@ decoder.dateDecodingStrategy = .iso8601
 let result = try! decoder.decode(History.self, from: data)
 
 result.transactions[0].id
-result.transactions[0].description
+result.transactions[0].type
+result.transactions[0].amount
 result.transactions[0].date
 
 // https://shopify.dev/docs/admin-api/rest/reference/shopify_payments/transaction?api
