@@ -39,6 +39,8 @@ class HistoryViewCell: UITableViewCell {
 extension HistoryViewCell {
             
     func config() {
+        backgroundColor = .tileBrown
+        
         starView.translatesAutoresizingMaskIntoConstraints = false
         starView.tintColor = .starYellow
         starView.contentMode = .scaleAspectFit

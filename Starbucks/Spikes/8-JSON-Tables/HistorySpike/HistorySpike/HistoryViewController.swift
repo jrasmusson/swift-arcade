@@ -62,6 +62,8 @@ class HistoryViewController: UITableViewController {
     func style() {
         navigationItem.title = "History"
         tableView.register(HistoryViewCell.self, forCellReuseIdentifier: cellId)
+        tableView.separatorStyle = .none
+        tableView.tableFooterView = UIView()
     }
 }
 
@@ -137,5 +139,9 @@ extension HistoryViewController {
     override func numberOfSections(in tableView: UITableView) -> Int {
         guard let sections = viewModel?.sections else { return 0 }
         return sections.count
+    }
+    
+    override func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+        view.tintColor = .tileBrown
     }
 }
