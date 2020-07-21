@@ -27,14 +27,14 @@ struct HistoryService {
                     completion(Result.failure(error))
                 }
             }
+
+            guard let data = data else { return }
             
             guard let httpResponse = response as? HTTPURLResponse,
                 (200...299).contains(httpResponse.statusCode) else {
                     completion(Result.failure(ServiceError.server))
                 return
             }
-            
-            guard let data = data else { return }
             
             let decoder = JSONDecoder()
             decoder.dateDecodingStrategy = .iso8601

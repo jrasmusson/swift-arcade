@@ -68,8 +68,8 @@
 				716B87C124C713E200216A9C /* HistoryViewCell.swift */,
 				716B87C524C7352F00216A9C /* HistoryViewModel.swift */,
 				716B87C324C71FAF00216A9C /* HistoryService.swift */,
-				716B87BF24C7138C00216A9C /* Factories.swift */,
 				716B87C724C7361E00216A9C /* HistoryTransaction.swift */,
+				716B87BF24C7138C00216A9C /* Factories.swift */,
 			);
 			path = HistorySpike;
 			sourceTree = "<group>";
