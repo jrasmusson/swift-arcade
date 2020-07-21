@@ -79,19 +79,19 @@ extension HistoryViewController {
         let section = indexPath.section
         
         // limit of x3
-        var text: String
+        var transaction: Transaction
         switch section {
         case 0:
-            text = vm.sections[0].transactions[indexPath.row].amount
+            transaction = vm.sections[0].transactions[indexPath.row]
         case 1:
-            text = vm.sections[1].transactions[indexPath.row].amount
+            transaction = vm.sections[1].transactions[indexPath.row]
         case 2:
-            text = vm.sections[2].transactions[indexPath.row].amount
+            transaction = vm.sections[2].transactions[indexPath.row]
         default:
-            text = ""
+            return UITableViewCell()
         }
 
-        cell.textLabel?.text = text
+        cell.transaction = transaction
         
         return cell
     }

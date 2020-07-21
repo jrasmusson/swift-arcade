@@ -11,7 +11,7 @@ import UIKit
 class HistoryViewCell: UITableViewCell {
     
     let starView = makeSymbolImageView(systemName: "star")
-    let descriptionLabel = UILabel()
+    let titleLabel = UILabel()
     let dateLabel = UILabel()
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -26,7 +26,12 @@ class HistoryViewCell: UITableViewCell {
     
     var transaction: Transaction? {
         didSet {
+            guard let tx = transaction else { return }
+            titleLabel.text = "\(tx.amount) Stars \(tx.type)"
             
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "MMM d"
+            dateLabel.text = dateFormatter.string(from: Date())
         }
     }
 }
@@ -38,21 +43,29 @@ extension HistoryViewCell {
         starView.tintColor = .starYellow
         starView.contentMode = .scaleAspectFit
         
-        descriptionLabel.translatesAutoresizingMaskIntoConstraints = false
+        titleLabel.translatesAutoresizingMaskIntoConstraints = false
+        titleLabel.font = UIFont.preferredFont(forTextStyle: .headline)
         
         dateLabel.translatesAutoresizingMaskIntoConstraints = false
     }
     
     func layout() {
         addSubview(starView)
-        addSubview(descriptionLabel)
+        addSubview(titleLabel)
         addSubview(dateLabel)
         
         NSLayoutConstraint.activate([
             starView.leadingAnchor.constraint(equalToSystemSpacingAfter: leadingAnchor, multiplier: 2),
-            starView.centerYAnchor.constraint(equalTo: centerYAnchor)
+            starView.heightAnchor.constraint(equalToConstant: 36),
+            starView.widthAnchor.constraint(equalToConstant: 36),
+            starView.centerYAnchor.constraint(equalTo: centerYAnchor),
+            
+            titleLabel.leadingAnchor.constraint(equalToSystemSpacingAfter: starView.trailingAnchor, multiplier: 2),
+            titleLabel.centerYAnchor.constraint(equalTo: centerYAnchor),
+            
+            trailingAnchor.constraint(equalToSystemSpacingAfter: dateLabel.trailingAnchor, multiplier: 4),
+            dateLabel.centerYAnchor.constraint(equalTo: centerYAnchor),
         ])
-        
     }
 }
 

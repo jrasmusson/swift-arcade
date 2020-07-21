@@ -59,6 +59,7 @@
 				71A4339824C6001B0083D712 /* Files */,
 				71A4338424C5FFF50083D712 /* AppDelegate.swift */,
 				71A4338824C5FFF50083D712 /* HistoryViewController.swift */,
+				716B87C124C713E200216A9C /* HistoryViewCell.swift */,
 				716B87BF24C7138C00216A9C /* Factories.swift */,
 			);
 			path = HistorySpike;
@@ -70,7 +71,6 @@
 				71A4338D24C5FFF60083D712 /* Assets.xcassets */,
 				71A4338F24C5FFF60083D712 /* LaunchScreen.storyboard */,
 				71A4339224C5FFF60083D712 /* Info.plist */,
-				716B87C124C713E200216A9C /* HistoryViewCell.swift */,
 			);
 			name = Files;
 			sourceTree = "<group>";
