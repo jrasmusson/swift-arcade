@@ -8,10 +8,7 @@
 
 import Foundation
 
-typealias Transaction = HistoryTransaction
-
 enum ServiceError: Error {
-    case network
     case server
     case parsing
 }
@@ -19,35 +16,41 @@ enum ServiceError: Error {
 struct HistoryService {
     static let shared = HistoryService()
     
-    func fetchTransactions(completion: @escaping ((Result<[HistoryTransaction], Error>) -> Void)) {
+    func fetchTransactions(completion: @escaping ((Result<[Transaction], Error>) -> Void)) {
 
-//        let url = URL(string: "https://uwyg0quc7d.execute-api.us-west-2.amazonaws.com/prod/account")!
-//        let task = URLSession.shared.dataTask(with: url) { data, response, error in
-//            if let error = error {
-//                print("Error: \(error)")
-//                return
-//            }
-//            guard let httpResponse = response as? HTTPURLResponse,
-//                (200...299).contains(httpResponse.statusCode) else {
-//                print("Server Error")
-//                return
-//            }
-//            if let mimeType = httpResponse.mimeType, mimeType == "application/json",
-//                let data = data,
-//                let string = String(data: data, encoding: .utf8) {
-//                DispatchQueue.main.async {
-//                    // update UI
-//                    print(string)
-//                }
-//            }
-//        }
-//        task.resume()
+        let url = URL(string: "https://uwyg0quc7d.execute-api.us-west-2.amazonaws.com/prod/history")!
         
-        // Success
-        completion(Result.success(createTestData()))
-
-       // Error
-//       completion(Result.failure(ServiceError.parsing))
+        let task = URLSession.shared.dataTask(with: url) { data, response, error in
+            
+            if let error = error {
+                DispatchQueue.main.async {
+                    completion(Result.failure(error))
+                }
+            }
+            
+            guard let httpResponse = response as? HTTPURLResponse,
+                (200...299).contains(httpResponse.statusCode) else {
+                    completion(Result.failure(ServiceError.server))
+                return
+            }
+            
+            guard let data = data else { return }
+            
+            let decoder = JSONDecoder()
+            decoder.dateDecodingStrategy = .iso8601
+            
+            do {
+                let result = try decoder.decode(History.self, from: data)
+                DispatchQueue.main.async {
+                    completion(Result.success(result.transactions)) // update UI
+                }
+            } catch {
+                DispatchQueue.main.async {
+                    completion(Result.failure(ServiceError.parsing))
+                }
+            }
+        }
+        task.resume()
     }
     
     func createTestData() -> [Transaction]{

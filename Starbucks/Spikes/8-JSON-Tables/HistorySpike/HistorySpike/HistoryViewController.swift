@@ -10,7 +10,7 @@ import UIKit
 
 struct HistorySection {
     let title: String
-    let transactions: [HistoryTransaction]
+    let transactions: [Transaction]
 }
 
 class HistoryViewController: UITableViewController {
@@ -62,7 +62,7 @@ extension HistoryViewController {
         let section = indexPath.section
         
         // limit of x3
-        var transaction: HistoryTransaction
+        var transaction: Transaction
         switch section {
         case 0:
             transaction = vm.sections[0].transactions[indexPath.row]

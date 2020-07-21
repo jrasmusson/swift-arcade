@@ -8,7 +8,26 @@
 
 import Foundation
 
-struct HistoryTransaction: Codable {
+/*
+ let json = """
+ {
+ "transactions": [
+   {
+     "id": 699519475,
+     "type": "redeemed",
+     "amount": "150",
+     "processed_at": "2020-07-17T12:56:27-04:00"
+   }
+  ]
+ }
+ """
+ */
+
+struct History: Codable {
+    let transactions: [Transaction]
+}
+
+struct Transaction: Codable {
     let id: Int
     let type: String
     let amount: String

@@ -16,12 +16,44 @@ let json = """
     "type": "redeemed",
     "amount": "150",
     "processed_at": "2020-07-17T12:56:27-04:00"
+  },
+  {
+    "id": 699519475,
+    "type": "earned",
+    "amount": "10",
+    "description": "10 Stars earned",
+    "processed_at": "2020-07-17T12:55:27-04:00"
+  },
+  {
+    "id": 699519475,
+    "type": "redeemed",
+    "amount": "150",
+    "processed_at": "2020-06-10T12:56:27-04:00"
+  },
+  {
+    "id": 699519475,
+    "type": "earned",
+    "amount": "10",
+    "processed_at": "2020-05-24T12:56:27-04:00"
+  },
+  {
+    "id": 699519475,
+    "type": "earned",
+    "amount": "10",
+    "description": "10 Stars earned",
+    "processed_at": "2020-05-11T12:56:27-04:00"
+  },
+  {
+    "id": 699519475,
+    "type": "earned",
+    "amount": "10",
+    "processed_at": "2020-05-11T12:56:27-04:00"
   }
  ]
 }
 """
 
-struct History : Codable {
+struct History: Codable {
     let transactions: [Transaction]
 }
 

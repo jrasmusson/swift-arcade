@@ -14,7 +14,7 @@ struct HistoryViewModel {
     var sections = [HistorySection]()
     
     // Raw input to be converted
-    var transactions: [HistoryTransaction]? {
+    var transactions: [Transaction]? {
         didSet {
             guard let txs = transactions else { return }
             
