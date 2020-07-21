@@ -12,11 +12,22 @@
 		716B87C424C71FAF00216A9C /* HistoryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716B87C324C71FAF00216A9C /* HistoryService.swift */; };
 		716B87C624C7352F00216A9C /* HistoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716B87C524C7352F00216A9C /* HistoryViewModel.swift */; };
 		716B87C824C7361E00216A9C /* HistoryTransaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716B87C724C7361E00216A9C /* HistoryTransaction.swift */; };
+		716B87D024C78E0500216A9C /* HistorySpikeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716B87CF24C78E0500216A9C /* HistorySpikeTests.swift */; };
 		71A4338524C5FFF50083D712 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A4338424C5FFF50083D712 /* AppDelegate.swift */; };
 		71A4338924C5FFF50083D712 /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A4338824C5FFF50083D712 /* HistoryViewController.swift */; };
 		71A4338E24C5FFF60083D712 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 71A4338D24C5FFF60083D712 /* Assets.xcassets */; };
 		71A4339124C5FFF60083D712 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71A4338F24C5FFF60083D712 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		716B87D224C78E0500216A9C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 71A4337924C5FFF50083D712 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 71A4338024C5FFF50083D712;
+			remoteInfo = HistorySpike;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		716B87BF24C7138C00216A9C /* Factories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Factories.swift; sourceTree = "<group>"; };
@@ -24,6 +35,9 @@
 		716B87C324C71FAF00216A9C /* HistoryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryService.swift; sourceTree = "<group>"; };
 		716B87C524C7352F00216A9C /* HistoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewModel.swift; sourceTree = "<group>"; };
 		716B87C724C7361E00216A9C /* HistoryTransaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTransaction.swift; sourceTree = "<group>"; };
+		716B87CD24C78E0500216A9C /* HistorySpikeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HistorySpikeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		716B87CF24C78E0500216A9C /* HistorySpikeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistorySpikeTests.swift; sourceTree = "<group>"; };
+		716B87D124C78E0500216A9C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		71A4338124C5FFF50083D712 /* HistorySpike.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HistorySpike.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		71A4338424C5FFF50083D712 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		71A4338824C5FFF50083D712 /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
@@ -33,6 +47,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		716B87CA24C78E0500216A9C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		71A4337E24C5FFF50083D712 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -43,11 +64,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		716B87CE24C78E0500216A9C /* HistorySpikeTests */ = {
+			isa = PBXGroup;
+			children = (
+				716B87CF24C78E0500216A9C /* HistorySpikeTests.swift */,
+				716B87D124C78E0500216A9C /* Info.plist */,
+			);
+			path = HistorySpikeTests;
+			sourceTree = "<group>";
+		};
 		71A4337824C5FFF50083D712 = {
 			isa = PBXGroup;
 			children = (
 				71A4338324C5FFF50083D712 /* HistorySpike */,
 				71A4339824C6001B0083D712 /* Files */,
+				716B87CE24C78E0500216A9C /* HistorySpikeTests */,
 				71A4338224C5FFF50083D712 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -56,6 +87,7 @@
 			isa = PBXGroup;
 			children = (
 				71A4338124C5FFF50083D712 /* HistorySpike.app */,
+				716B87CD24C78E0500216A9C /* HistorySpikeTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -88,6 +120,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		716B87CC24C78E0500216A9C /* HistorySpikeTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 716B87D424C78E0500216A9C /* Build configuration list for PBXNativeTarget "HistorySpikeTests" */;
+			buildPhases = (
+				716B87C924C78E0500216A9C /* Sources */,
+				716B87CA24C78E0500216A9C /* Frameworks */,
+				716B87CB24C78E0500216A9C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				716B87D324C78E0500216A9C /* PBXTargetDependency */,
+			);
+			name = HistorySpikeTests;
+			productName = HistorySpikeTests;
+			productReference = 716B87CD24C78E0500216A9C /* HistorySpikeTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		71A4338024C5FFF50083D712 /* HistorySpike */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 71A4339524C5FFF60083D712 /* Build configuration list for PBXNativeTarget "HistorySpike" */;
@@ -115,6 +165,10 @@
 				LastUpgradeCheck = 1130;
 				ORGANIZATIONNAME = "Rasmusson Software Consulting";
 				TargetAttributes = {
+					716B87CC24C78E0500216A9C = {
+						CreatedOnToolsVersion = 11.3.1;
+						TestTargetID = 71A4338024C5FFF50083D712;
+					};
 					71A4338024C5FFF50083D712 = {
 						CreatedOnToolsVersion = 11.3.1;
 					};
@@ -134,11 +188,19 @@
 			projectRoot = "";
 			targets = (
 				71A4338024C5FFF50083D712 /* HistorySpike */,
+				716B87CC24C78E0500216A9C /* HistorySpikeTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		716B87CB24C78E0500216A9C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		71A4337F24C5FFF50083D712 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -151,6 +213,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		716B87C924C78E0500216A9C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				716B87D024C78E0500216A9C /* HistorySpikeTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		71A4337D24C5FFF50083D712 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -167,6 +237,14 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		716B87D324C78E0500216A9C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 71A4338024C5FFF50083D712 /* HistorySpike */;
+			targetProxy = 716B87D224C78E0500216A9C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
 		71A4338F24C5FFF60083D712 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
@@ -179,6 +257,46 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		716B87D524C78E0500216A9C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = SH289S78C5;
+				INFOPLIST_FILE = HistorySpikeTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.rsc.HistorySpikeTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HistorySpike.app/HistorySpike";
+			};
+			name = Debug;
+		};
+		716B87D624C78E0500216A9C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = SH289S78C5;
+				INFOPLIST_FILE = HistorySpikeTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.rsc.HistorySpikeTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HistorySpike.app/HistorySpike";
+			};
+			name = Release;
+		};
 		71A4339324C5FFF60083D712 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -332,6 +450,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		716B87D424C78E0500216A9C /* Build configuration list for PBXNativeTarget "HistorySpikeTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				716B87D524C78E0500216A9C /* Debug */,
+				716B87D624C78E0500216A9C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		71A4337C24C5FFF50083D712 /* Build configuration list for PBXProject "HistorySpike" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
