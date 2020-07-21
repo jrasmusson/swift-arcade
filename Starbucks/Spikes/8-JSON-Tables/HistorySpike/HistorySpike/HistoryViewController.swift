@@ -8,23 +8,9 @@
 
 import UIKit
 
-struct Transaction: Codable {
-    let id: Int
-    let type: String
-    let amount: String
-    let date: Date
-    
-    enum CodingKeys: String, CodingKey {
-        case id
-        case type
-        case amount
-        case date = "processed_at"
-    }
-}
-
 struct HistorySection {
     let title: String
-    let transactions: [Transaction]
+    let transactions: [HistoryTransaction]
 }
 
 class HistoryViewController: UITableViewController {
@@ -34,36 +20,8 @@ class HistoryViewController: UITableViewController {
         
     override func viewDidLoad() {
         super.viewDidLoad()
-        fetchTransactions()
         style()
-    }
-    
-    func fetchTransactions() {
-//        let tx1 = Transaction(id: 1, type: "redeemed", amount: "1", date: Date())
-//        let tx11 = Transaction(id: 1, type: "redeemed", amount: "11", date: Date())
-//
-//        let tx2 = Transaction(id: 1, type: "redeemed", amount: "2", date: Date())
-//
-//        let tx3 = Transaction(id: 1, type: "redeemed", amount: "3", date: Date())
-//        let tx33 = Transaction(id: 1, type: "redeemed", amount: "33", date: Date())
-//        let tx333 = Transaction(id: 1, type: "redeemed", amount: "333", date: Date())
-
-        HistoryService.shared.fetchTransactions { [weak self ]result in
-            guard let self = self else { return }
-            
-            switch result {
-            case .success(let transactions):
-                self.viewModel?.transactions = transactions
-            case .failure(let error):
-                print("Error: \(error)")
-            }
-        }
-        
-//        let section1 = HistorySection(title: "July", transactions: [tx1, tx11])
-//        let section2 = HistorySection(title: "June", transactions: [tx2])
-//        let section3 = HistorySection(title: "May", transactions: [tx3, tx33, tx333])
-        
-//        viewModel = HistoryViewModel(sections: [section1, section2, section3])
+        fetchTransactions()
     }
     
     func style() {
@@ -71,6 +29,22 @@ class HistoryViewController: UITableViewController {
         tableView.register(HistoryViewCell.self, forCellReuseIdentifier: cellId)
         tableView.separatorStyle = .none
         tableView.tableFooterView = UIView()
+        
+        viewModel = HistoryViewModel()
+    }
+    
+    func fetchTransactions() {
+        HistoryService.shared.fetchTransactions { [weak self ]result in
+            guard let self = self else { return }
+            
+            switch result {
+            case .success(let transactions):
+                self.viewModel?.transactions = transactions
+                self.tableView.reloadData()
+            case .failure(let error):
+                print("Error: \(error)")
+            }
+        }
     }
 }
 
@@ -88,7 +62,7 @@ extension HistoryViewController {
         let section = indexPath.section
         
         // limit of x3
-        var transaction: Transaction
+        var transaction: HistoryTransaction
         switch section {
         case 0:
             transaction = vm.sections[0].transactions[indexPath.row]

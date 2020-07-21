@@ -8,6 +8,8 @@
 
 import Foundation
 
+typealias Transaction = HistoryTransaction
+
 enum ServiceError: Error {
     case network
     case server
@@ -17,7 +19,7 @@ enum ServiceError: Error {
 struct HistoryService {
     static let shared = HistoryService()
     
-    func fetchTransactions(completion: @escaping ((Result<[Transaction], Error>) -> Void)) {
+    func fetchTransactions(completion: @escaping ((Result<[HistoryTransaction], Error>) -> Void)) {
 
 //        let url = URL(string: "https://uwyg0quc7d.execute-api.us-west-2.amazonaws.com/prod/account")!
 //        let task = URLSession.shared.dataTask(with: url) { data, response, error in

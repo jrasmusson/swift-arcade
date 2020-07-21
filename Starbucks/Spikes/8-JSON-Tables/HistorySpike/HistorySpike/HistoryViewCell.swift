@@ -24,7 +24,7 @@ class HistoryViewCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    var transaction: Transaction? {
+    var transaction: HistoryTransaction? {
         didSet {
             guard let tx = transaction else { return }
             titleLabel.text = "\(tx.amount) Stars \(tx.type)"
