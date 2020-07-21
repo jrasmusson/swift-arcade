@@ -61,7 +61,7 @@ class HistoryViewController: UITableViewController {
     
     func style() {
         navigationItem.title = "History"
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellId)
+        tableView.register(HistoryViewCell.self, forCellReuseIdentifier: cellId)
     }
 }
 
@@ -72,7 +72,10 @@ extension HistoryViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let vm = viewModel else { return UITableViewCell() }
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath)
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as? HistoryViewCell else {
+            return UITableViewCell()
+        }
+        
         let section = indexPath.section
         
         // limit of x3
@@ -124,7 +127,11 @@ extension HistoryViewController {
     }
     
     override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 60
+        return 80
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 80
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {

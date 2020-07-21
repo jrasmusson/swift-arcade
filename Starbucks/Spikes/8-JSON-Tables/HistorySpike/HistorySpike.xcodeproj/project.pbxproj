@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		716B87C024C7138C00216A9C /* Factories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716B87BF24C7138C00216A9C /* Factories.swift */; };
+		716B87C224C713E200216A9C /* HistoryViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716B87C124C713E200216A9C /* HistoryViewCell.swift */; };
 		71A4338524C5FFF50083D712 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A4338424C5FFF50083D712 /* AppDelegate.swift */; };
 		71A4338924C5FFF50083D712 /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A4338824C5FFF50083D712 /* HistoryViewController.swift */; };
 		71A4338E24C5FFF60083D712 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 71A4338D24C5FFF60083D712 /* Assets.xcassets */; };
@@ -14,6 +16,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		716B87BF24C7138C00216A9C /* Factories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Factories.swift; sourceTree = "<group>"; };
+		716B87C124C713E200216A9C /* HistoryViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewCell.swift; sourceTree = "<group>"; };
 		71A4338124C5FFF50083D712 /* HistorySpike.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HistorySpike.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		71A4338424C5FFF50083D712 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		71A4338824C5FFF50083D712 /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
@@ -55,6 +59,7 @@
 				71A4339824C6001B0083D712 /* Files */,
 				71A4338424C5FFF50083D712 /* AppDelegate.swift */,
 				71A4338824C5FFF50083D712 /* HistoryViewController.swift */,
+				716B87BF24C7138C00216A9C /* Factories.swift */,
 			);
 			path = HistorySpike;
 			sourceTree = "<group>";
@@ -65,6 +70,7 @@
 				71A4338D24C5FFF60083D712 /* Assets.xcassets */,
 				71A4338F24C5FFF60083D712 /* LaunchScreen.storyboard */,
 				71A4339224C5FFF60083D712 /* Info.plist */,
+				716B87C124C713E200216A9C /* HistoryViewCell.swift */,
 			);
 			name = Files;
 			sourceTree = "<group>";
@@ -139,6 +145,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				716B87C024C7138C00216A9C /* Factories.swift in Sources */,
+				716B87C224C713E200216A9C /* HistoryViewCell.swift in Sources */,
 				71A4338924C5FFF50083D712 /* HistoryViewController.swift in Sources */,
 				71A4338524C5FFF50083D712 /* AppDelegate.swift in Sources */,
 			);
