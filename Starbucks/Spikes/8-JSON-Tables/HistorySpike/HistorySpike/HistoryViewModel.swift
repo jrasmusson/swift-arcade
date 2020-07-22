@@ -6,16 +6,16 @@
 //  Copyright © 2020 Rasmusson Software Consulting. All rights reserved.
 //
 
-import Foundation
-
 /*
- The ViewModel acts as a bridge between the outside world and our view.
- 
- In this case input enters in the form of transactions.
- The didSet observer than translates those transactions into a form
- our `HistoryViewController` can understand.
- 
- */
+The ViewModel acts as a bridge between the outside world and our view.
+
+In this case input enters in the form of transactions.
+The didSet observer than translates those transactions into a form
+our `HistoryViewController` can understand.
+
+*/
+
+import Foundation
 
 struct HistorySection {
     let title: String

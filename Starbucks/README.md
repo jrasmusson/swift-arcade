@@ -389,7 +389,7 @@ class TileViewController: UIViewController {
 }
 ```
 
-**TileView**
+**TileView.swift**
 
 ```swift
 import UIKit
@@ -506,6 +506,8 @@ extension TileView {
 
 We can animate the appearance of a view within a scroll view by altering its height, and then wrapping it within an animation. We can also alter its alpha and the updown chrevon of the reward button itself.
 
+**RewardsTileView.swift**
+
 ```swift
 // MARK: Actions
 extension RewardsTileView {
@@ -552,3 +554,188 @@ extension RewardsTileView {
     }
 }
 ```
+
+## Episode 8 JSON HTTP & View Models
+
+### HTTP
+
+![](images/http1.png)
+![](images/http2.png)
+![](images/http3.png)
+
+The key to working with the raw iOS networking classes to to always remember which thread you are on. Before updating the UI, make sure you are on the main thread.
+
+From the [Apple documentation](https://developer.apple.com/documentation/foundation/url_loading_system/fetching_website_data_into_memory):
+
+	Important
+
+	The completion handler is called on a different Grand Central Dispatch queue than the one that created the task. Therefore, any work that uses data or error to update the UI — like updating webView — should be explicitly placed on the main queue, as shown here.
+	
+**HistoryService.swift**
+
+```swift
+import Foundation
+
+enum ServiceError: Error {
+    case server
+    case parsing
+}
+
+struct HistoryService {
+    static let shared = HistoryService()
+    
+    func fetchTransactions(completion: @escaping ((Result<[Transaction], Error>) -> Void)) {
+
+        let url = URL(string: "https://uwyg0quc7d.execute-api.us-west-2.amazonaws.com/prod/history")!
+        
+        let task = URLSession.shared.dataTask(with: url) { data, response, error in
+            
+            if let error = error {
+                DispatchQueue.main.async {
+                    completion(Result.failure(error))
+                }
+            }
+
+            guard let data = data else { return }
+            
+            guard let httpResponse = response as? HTTPURLResponse,
+                (200...299).contains(httpResponse.statusCode) else {
+                    completion(Result.failure(ServiceError.server))
+                return
+            }
+            
+            let decoder = JSONDecoder()
+            decoder.dateDecodingStrategy = .iso8601
+            
+            do {
+                let result = try decoder.decode(History.self, from: data)
+                DispatchQueue.main.async {
+                    completion(Result.success(result.transactions)) // update UI
+                }
+            } catch {
+                DispatchQueue.main.async {
+                    completion(Result.failure(ServiceError.parsing))
+                }
+            }
+        }
+        task.resume()
+    }
+}
+```
+	
+### JSON
+
+![](images/json1.png)
+![](images/json2.png)
+![](images/json3.png)
+![](images/json4.png)
+
+The great things about Swift JSON is all the mapping and coding is automatically down for you by virture of you defining the _struct_. Simply define the _struct_ and Swift does the rest for you.
+
+```swift
+import Foundation
+
+/*
+ let json = """
+ {
+ "transactions": [
+   {
+     "id": 699519475,
+     "type": "redeemed",
+     "amount": "150",
+     "processed_at": "2020-07-17T12:56:27-04:00"
+   }
+  ]
+ }
+ """
+ */
+
+struct History: Codable {
+    let transactions: [Transaction]
+}
+
+struct Transaction: Codable {
+    let id: Int
+    let type: String
+    let amount: String
+    let date: Date
+    
+    enum CodingKeys: String, CodingKey {
+        case id
+        case type
+        case amount
+        case date = "processed_at"
+    }
+}
+```
+
+### View Model
+
+To make our views easier to populate, it would be nice if we had a data structure that exactly fit our purposes and our needs. That's where the _View Model_ comes in.
+
+A _View Model_ is a data structure that perfectly mataches our UI. It takes data from the outside world, and converts it into a form for our inside world, or UI.
+
+![](images/vm1.png)
+![](images/vm2.png)
+![](images/vm3.png)
+![](images/vm4.png)
+
+**HistoryViewModel.swift**
+
+```swift
+import Foundation
+
+struct HistorySection {
+    let title: String
+    let transactions: [Transaction]
+}
+
+struct HistoryViewModel {
+    
+    // Output for display
+    var sections = [HistorySection]()
+    
+    // Input
+    var transactions: [Transaction]? {
+        didSet {
+            guard let txs = transactions else { return }
+            
+            // filter by month - hard coded
+            let firstMonth = "Jul"
+            let secondMonth = "Jun"
+            let thirdMonth = "May"
+            
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateStyle = .medium
+            
+            let firstMonthTransactions = txs.filter {
+                let dateString = dateFormatter.string(from: $0.date)
+                return dateString.starts(with: firstMonth)
+            }
+
+            let secondMonthTransactions = txs.filter {
+                let dateString = dateFormatter.string(from: $0.date)
+                return dateString.starts(with: secondMonth)
+            }
+
+            let thirdMonthTransactions = txs.filter {
+                let dateString = dateFormatter.string(from: $0.date)
+                return dateString.starts(with: thirdMonth)
+            }
+
+            // create sections
+            let firstMonthSection = HistorySection(title: "July", transactions: firstMonthTransactions)
+            let secondMonthSection = HistorySection(title: "June", transactions: secondMonthTransactions)
+            let thirdMonthSection = HistorySection(title: "May", transactions: thirdMonthTransactions)
+            
+            // collect for display
+            sections = [HistorySection]()
+            sections.append(firstMonthSection)
+            sections.append(secondMonthSection)
+            sections.append(thirdMonthSection)
+        }
+    }
+}
+```
+
+
