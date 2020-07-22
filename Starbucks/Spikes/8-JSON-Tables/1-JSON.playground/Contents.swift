@@ -81,7 +81,36 @@ result.transactions[0].type
 result.transactions[0].amount
 result.transactions[0].date
 
-// https://shopify.dev/docs/admin-api/rest/reference/shopify_payments/transaction?api
+let json2 = """
+[
+  {
+    "id": 699519475,
+    "type": "redeemed",
+    "amount": "150",
+    "processed_at": "2020-07-17T12:56:27-04:00"
+  },
+  {
+    "id": 699519475,
+    "type": "earned",
+    "amount": "10",
+    "description": "10 Stars earned",
+    "processed_at": "2020-07-17T12:55:27-04:00"
+  },
+  {
+    "id": 699519475,
+    "type": "redeemed",
+    "amount": "150",
+    "processed_at": "2020-06-10T12:56:27-04:00"
+  }
+ ]
+"""
 
+let data2 = json2.data(using: .utf8)!
+let decoder2 = JSONDecoder()
+decoder2.dateDecodingStrategy = .iso8601
+let result2 = try! decoder2.decode([Transaction].self, from: data2)
 
-
+result2[0].id
+result2[0].type
+result2[0].amount
+result2[0].date
