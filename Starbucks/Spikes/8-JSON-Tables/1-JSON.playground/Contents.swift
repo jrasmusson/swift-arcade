@@ -39,6 +39,14 @@ json2
 
 // What if Swift properties differ from from JSON? CodingKeys
 
+let jsonUser = """
+{
+    "first_name": "John",
+    "last_name": "Doe",
+    "country": "United Kingdom"
+}
+"""
+
 struct User:Codable
 {
     var firstName:String
@@ -51,14 +59,6 @@ struct User:Codable
         case country
     }
 }
-
-let jsonUser = """
-{
-    "first_name": "John",
-    "last_name": "Doe",
-    "country": "United Kingdom"
-}
-"""
 
 let jsonUserData = jsonUser.data(using: .utf8)!
 let userResult = try! JSONDecoder().decode(User.self, from: jsonUserData)

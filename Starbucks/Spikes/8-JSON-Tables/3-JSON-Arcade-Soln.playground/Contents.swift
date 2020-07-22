@@ -16,7 +16,7 @@ import Foundation
  
  */
 
-let json = """
+let jsonTx = """
 {
 "transactions": [
   {
@@ -60,12 +60,12 @@ struct Transaction: Codable {
     }
 }
 
-let data = json.data(using: .utf8)!
+let data = jsonTx.data(using: .utf8)!
 let decoder = JSONDecoder()
 decoder.dateDecodingStrategy = .iso8601
-let result = try! decoder.decode(History.self, from: data)
+let company = try! decoder.decode(History.self, from: data)
 
-result.transactions[0].id
-result.transactions[0].type
-result.transactions[0].amount
-result.transactions[0].date
+company.transactions[0].id
+company.transactions[0].type
+company.transactions[0].amount
+company.transactions[0].date

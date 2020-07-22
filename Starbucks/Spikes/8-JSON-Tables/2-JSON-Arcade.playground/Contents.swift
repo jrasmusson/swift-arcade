@@ -16,7 +16,7 @@ import Foundation
  
  */
 
-let json = """
+let jsonTx = """
 {
 "transactions": [
   {
