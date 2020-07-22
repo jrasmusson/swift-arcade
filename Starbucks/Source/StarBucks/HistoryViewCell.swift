@@ -31,7 +31,7 @@ class HistoryViewCell: UITableViewCell {
             
             let dateFormatter = DateFormatter()
             dateFormatter.dateFormat = "MMM d"
-            dateLabel.text = dateFormatter.string(from: Date())
+            dateLabel.text = dateFormatter.string(from: tx.date)
         }
     }
 }
