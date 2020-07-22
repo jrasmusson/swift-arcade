@@ -8,12 +8,26 @@
 
 import Foundation
 
+/*
+ The ViewModel acts as a bridge between the outside world and our view.
+ 
+ In this case input enters in the form of transactions.
+ The didSet observer than translates those transactions into a form
+ our `HistoryViewController` can understand.
+ 
+ */
+
+struct HistorySection {
+    let title: String
+    let transactions: [Transaction]
+}
+
 struct HistoryViewModel {
     
-    // Used for display
+    // Output for display
     var sections = [HistorySection]()
     
-    // Input to be converted
+    // Input
     var transactions: [Transaction]? {
         didSet {
             guard let txs = transactions else { return }

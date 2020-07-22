@@ -40,6 +40,7 @@ extension HistoryViewCell {
             
     func config() {
         backgroundColor = .tileBrown
+        selectionStyle = .none
         
         starView.translatesAutoresizingMaskIntoConstraints = false
         starView.tintColor = .starYellow

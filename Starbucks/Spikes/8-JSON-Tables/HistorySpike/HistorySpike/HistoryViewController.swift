@@ -8,11 +8,6 @@
 
 import UIKit
 
-struct HistorySection {
-    let title: String
-    let transactions: [Transaction]
-}
-
 class HistoryViewController: UITableViewController {
     
     let cellId = "cellId"

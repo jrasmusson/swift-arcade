@@ -52,23 +52,4 @@ struct HistoryService {
         }
         task.resume()
     }
-    
-    func createTestData() -> [Transaction]{
-        let tx1 = Transaction(id: 1, type: "redeemed", amount: "1", date: Date())
-        let tx11 = Transaction(id: 1, type: "redeemed", amount: "11", date: Date())
-
-        let tx2 = Transaction(id: 1, type: "redeemed", amount: "2", date: Date())
-
-        let tx3 = Transaction(id: 1, type: "redeemed", amount: "3", date: Date())
-        let tx33 = Transaction(id: 1, type: "redeemed", amount: "33", date: Date())
-        let tx333 = Transaction(id: 1, type: "redeemed", amount: "333", date: Date())
-
-        return [tx1, tx11, tx2, tx3, tx33, tx333]
-//        let section1 = HistorySection(title: "July", transactions: [tx1, tx11])
-//        let section2 = HistorySection(title: "June", transactions: [tx2])
-//        let section3 = HistorySection(title: "May", transactions: [tx3, tx33, tx333])
-//
-//        viewModel = HistoryViewModel(sections: [section1, section2, section3])
-    }
-
 }
