@@ -555,11 +555,60 @@ extension RewardsTileView {
 }
 ```
 
-## Episode 8 JSON HTTP & View Models
+## Episode 8 JSON / HTTP & View Models
+
+### Architecture
+
+![](images/arch2.png)
+
+### JSON
+
+![](images/json2.png)
+![](images/json3.png)
+![](images/json4.png)
+
+The great things about Swift JSON is all the mapping and coding is automatically done by simply defining the _struct_. No additional mapping required.
+
+```swift
+import Foundation
+
+/*
+ let json = """
+ {
+ "transactions": [
+   {
+     "id": 699519475,
+     "type": "redeemed",
+     "amount": "150",
+     "processed_at": "2020-07-17T12:56:27-04:00"
+   }
+  ]
+ }
+ """
+ */
+
+struct History: Codable {
+    let transactions: [Transaction]
+}
+
+struct Transaction: Codable {
+    let id: Int
+    let type: String
+    let amount: String
+    let date: Date
+    
+    enum CodingKeys: String, CodingKey {
+        case id
+        case type
+        case amount
+        case date = "processed_at"
+    }
+}
+```
+
 
 ### HTTP
 
-![](images/http1.png)
 ![](images/http2.png)
 ![](images/http3.png)
 
@@ -623,59 +672,12 @@ struct HistoryService {
 }
 ```
 	
-### JSON
-
-![](images/json1.png)
-![](images/json2.png)
-![](images/json3.png)
-![](images/json4.png)
-
-The great things about Swift JSON is all the mapping and coding is automatically down for you by virture of you defining the _struct_. Simply define the _struct_ and Swift does the rest for you.
-
-```swift
-import Foundation
-
-/*
- let json = """
- {
- "transactions": [
-   {
-     "id": 699519475,
-     "type": "redeemed",
-     "amount": "150",
-     "processed_at": "2020-07-17T12:56:27-04:00"
-   }
-  ]
- }
- """
- */
-
-struct History: Codable {
-    let transactions: [Transaction]
-}
-
-struct Transaction: Codable {
-    let id: Int
-    let type: String
-    let amount: String
-    let date: Date
-    
-    enum CodingKeys: String, CodingKey {
-        case id
-        case type
-        case amount
-        case date = "processed_at"
-    }
-}
-```
-
 ### View Model
 
 To make our views easier to populate, it would be nice if we had a data structure that exactly fit our purposes and our needs. That's where the _View Model_ comes in.
 
 A _View Model_ is a data structure that perfectly mataches our UI. It takes data from the outside world, and converts it into a form for our inside world, or UI.
 
-![](images/vm1.png)
 ![](images/vm2.png)
 ![](images/vm3.png)
 ![](images/vm4.png)
