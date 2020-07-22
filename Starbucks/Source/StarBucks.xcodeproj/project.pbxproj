@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		7168907724A40A360018ED2A /* HomeHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7168907624A40A360018ED2A /* HomeHeaderView.swift */; };
+		716B87D924C8704A00216A9C /* HistoryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716B87D824C8704A00216A9C /* HistoryService.swift */; };
+		716B87DB24C8706E00216A9C /* HistoryTransaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716B87DA24C8706E00216A9C /* HistoryTransaction.swift */; };
+		716B87DD24C8708300216A9C /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716B87DC24C8708300216A9C /* HistoryViewController.swift */; };
+		716B87DF24C8709000216A9C /* HistoryViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716B87DE24C8709000216A9C /* HistoryViewCell.swift */; };
+		716B87E124C8709A00216A9C /* HistoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716B87E024C8709A00216A9C /* HistoryViewModel.swift */; };
 		716F6F9F24AF628200894E0C /* StarAndPoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716F6F9E24AF628200894E0C /* StarAndPoints.swift */; };
 		716F6FA524AF6AB600894E0C /* TileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716F6FA424AF6AB600894E0C /* TileViewController.swift */; };
 		716F6FA724AF6AC000894E0C /* TileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716F6FA624AF6AC000894E0C /* TileView.swift */; };
@@ -27,6 +32,11 @@
 
 /* Begin PBXFileReference section */
 		7168907624A40A360018ED2A /* HomeHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeHeaderView.swift; sourceTree = "<group>"; };
+		716B87D824C8704A00216A9C /* HistoryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryService.swift; sourceTree = "<group>"; };
+		716B87DA24C8706E00216A9C /* HistoryTransaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTransaction.swift; sourceTree = "<group>"; };
+		716B87DC24C8708300216A9C /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
+		716B87DE24C8709000216A9C /* HistoryViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewCell.swift; sourceTree = "<group>"; };
+		716B87E024C8709A00216A9C /* HistoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewModel.swift; sourceTree = "<group>"; };
 		716F6F9E24AF628200894E0C /* StarAndPoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarAndPoints.swift; sourceTree = "<group>"; };
 		716F6FA424AF6AB600894E0C /* TileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TileViewController.swift; sourceTree = "<group>"; };
 		716F6FA624AF6AC000894E0C /* TileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TileView.swift; sourceTree = "<group>"; };
@@ -63,9 +73,22 @@
 				71EFCEB124A29DEB00DD30CA /* HomeViewController.swift */,
 				7168907624A40A360018ED2A /* HomeHeaderView.swift */,
 				71ED133524AE0BF000946EF6 /* RewardsTile */,
+				716B87D724C86DF400216A9C /* HistoryTile */,
 				716F6FA324AF6A8300894E0C /* Other Tiles */,
 			);
 			name = Home;
+			sourceTree = "<group>";
+		};
+		716B87D724C86DF400216A9C /* HistoryTile */ = {
+			isa = PBXGroup;
+			children = (
+				716B87DC24C8708300216A9C /* HistoryViewController.swift */,
+				716B87DE24C8709000216A9C /* HistoryViewCell.swift */,
+				716B87E024C8709A00216A9C /* HistoryViewModel.swift */,
+				716B87DA24C8706E00216A9C /* HistoryTransaction.swift */,
+				716B87D824C8704A00216A9C /* HistoryService.swift */,
+			);
+			name = HistoryTile;
 			sourceTree = "<group>";
 		};
 		716F6F9D24AF625200894E0C /* StarRewards */ = {
@@ -209,17 +232,22 @@
 			files = (
 				7168907724A40A360018ED2A /* HomeHeaderView.swift in Sources */,
 				71AD469924A1592200C3899E /* Factories.swift in Sources */,
+				716B87DB24C8706E00216A9C /* HistoryTransaction.swift in Sources */,
 				71AD468424A1530A00C3899E /* AppDelegate.swift in Sources */,
 				71ED133D24AE0C3200946EF6 /* StarRewardsView.swift in Sources */,
+				716B87E124C8709A00216A9C /* HistoryViewModel.swift in Sources */,
+				716B87DF24C8709000216A9C /* HistoryViewCell.swift in Sources */,
 				716F6F9F24AF628200894E0C /* StarAndPoints.swift in Sources */,
 				71BDA33424A4F2CF001F2508 /* PlaceholderTile.swift in Sources */,
 				716F6FA524AF6AB600894E0C /* TileViewController.swift in Sources */,
+				716B87D924C8704A00216A9C /* HistoryService.swift in Sources */,
 				71ED133724AE0C0300946EF6 /* RewardsTileView.swift in Sources */,
 				716F6FA724AF6AC000894E0C /* TileView.swift in Sources */,
 				71EFCEB224A29DEB00DD30CA /* HomeViewController.swift in Sources */,
 				71ED133B24AE0C2200946EF6 /* RewardsGraphView.swift in Sources */,
 				71ED133924AE0C1400946EF6 /* BalanceView.swift in Sources */,
 				71ED133F24AE0C4000946EF6 /* StarRewardsRow.swift in Sources */,
+				716B87DD24C8708300216A9C /* HistoryViewController.swift in Sources */,
 				71ED134324AE105300946EF6 /* RewardsTileViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
