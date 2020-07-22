@@ -738,4 +738,17 @@ struct HistoryViewModel {
 }
 ```
 
+### Links that help
+- [Apple docs on networking](https://developer.apple.com/documentation/foundation/url_loading_system)
+- [Apple docs fetching network data](https://developer.apple.com/documentation/foundation/url_loading_system/fetching_website_data_into_memory)
+- [Learn App Making](https://learnappmaking.com/urlsession-swift-networking-how-to/)
+- [Sample JSON Data](https://shopify.dev/docs/admin-api/rest/reference/shopify_payments/transaction?api)
+
+
+
+
+
+
+
+
 
