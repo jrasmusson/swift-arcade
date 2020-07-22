@@ -616,9 +616,9 @@ The key to working with the raw iOS networking classes to to always remember whi
 
 From the [Apple documentation](https://developer.apple.com/documentation/foundation/url_loading_system/fetching_website_data_into_memory):
 
-	Important
+**Important**
 
-	The completion handler is called on a different Grand Central Dispatch queue than the one that created the task. Therefore, any work that uses data or error to update the UI — like updating webView — should be explicitly placed on the main queue, as shown here.
+The completion handler is called on a different Grand Central Dispatch queue than the one that created the task. Therefore, any work that uses data or error to update the UI — like updating webView — should be explicitly placed on the main queue, as shown here.
 	
 **HistoryService.swift**
 
