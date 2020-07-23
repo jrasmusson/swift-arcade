@@ -555,7 +555,7 @@ extension RewardsTileView {
 }
 ```
 
-## Episode 8 JSON / HTTP & View Models
+## Episode 8 Parsing JSON
 
 ### Architecture
 
@@ -612,7 +612,7 @@ struct Transaction: Codable {
 ```
 
 
-### HTTP
+## Episode 9 HTTP Request with JSON
 
 ![](images/http2.png)
 ![](images/http3.png)
@@ -677,15 +677,15 @@ struct HistoryService {
 }
 ```
 	
-### View Model
+## Episode 10 View Model with UITableView
 
 To make our views easier to populate, it would be nice if we had a data structure that exactly fit our purposes and our needs. That's where the _View Model_ comes in.
 
 A _View Model_ is a data structure that perfectly mataches our UI. It takes data from the outside world, and converts it into a form for our inside world, or UI.
 
+![](images/vm1.png)
 ![](images/vm2.png)
 ![](images/vm3.png)
-![](images/vm4.png)
 
 **HistoryViewModel.swift**
 
