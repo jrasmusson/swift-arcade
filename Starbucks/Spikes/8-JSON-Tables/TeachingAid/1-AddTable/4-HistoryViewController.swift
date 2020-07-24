@@ -153,7 +153,7 @@ extension HistoryViewController4 {
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
-        guard let sections = viewModel?.sections else { return 0 }
+        guard let sections = viewModel?.sections else { return 0 } //
         return sections.count
     }
     
