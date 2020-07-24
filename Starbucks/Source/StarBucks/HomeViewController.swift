@@ -153,6 +153,7 @@ extension HomeViewController: UIScrollViewDelegate {
 }
 
 // MARK: HomeHeaderViewDelegate
+
 extension HomeViewController: HomeHeaderViewDelegate {
     func didTapHistoryButton(_ sender: HomeHeaderView) {
         let navController = UINavigationController(rootViewController: HistoryViewController())

@@ -103,6 +103,7 @@ extension HomeHeaderView {
 }
 
 // MARK: Actions
+
 extension HomeHeaderView {
     @objc func historyButtonTapped(sender: UIButton) {
         delegate?.didTapHistoryButton(self)

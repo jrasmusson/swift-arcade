@@ -745,6 +745,59 @@ struct HistoryViewModel {
 }
 ```
 
+## Episode #11 Protocol Delegate
+
+![](images/pd1.png)
+![](images/pd2.png)
+
+They way _protocol delegate_ works is first you create a protcol (usually with the word _delegate_ in it).
+
+**HomeHeaderView.swift**
+
+```swift
+protocol HomeHeaderViewDelegate: AnyObject {
+    func didTapHistoryButton(_ sender: HomeHeaderView)
+}
+```
+
+Then you give it a `weak var` to avoid retain cycles.
+
+```
+    weak var delegate: HomeHeaderViewDelegate?
+```
+
+And then somewhere in your view you call it - thereby sending a message to anyone who has registered.
+
+```swift
+extension HomeHeaderView {
+    @objc func historyButtonTapped(sender: UIButton) {
+        delegate?.didTapHistoryButton(self)
+    }
+}
+```
+
+**HomeViewController**
+
+On the receiving side you signal that you implement this protocol via an extension.
+
+```swift
+extension HomeViewController: HomeHeaderViewDelegate {
+    func didTapHistoryButton(_ sender: HomeHeaderView) {
+        let navController = UINavigationController(rootViewController: HistoryViewController())
+        present(navController, animated: true)
+    }
+```
+
+Then you register yourself as the _delegate_ for this protocol.
+
+```swift
+headerView.delegate = self
+```
+
+And because you are registered, you will now be called when the action happens in your implementation as shown above.
+
+
+
 ### Links that help
 - [Apple docs on networking](https://developer.apple.com/documentation/foundation/url_loading_system)
 - [Apple docs fetching network data](https://developer.apple.com/documentation/foundation/url_loading_system/fetching_website_data_into_memory)
