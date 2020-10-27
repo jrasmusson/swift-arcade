@@ -2,6 +2,10 @@
 
 Collection of demos from the [Swift Arcade YouTube channel.](https://www.youtube.com/channel/UCxnCA5FBYRCFgIZWD0CKCVg?view_as=subscriber)
 
+## Weathery 🌦
+
+- [Weathery App](Weathery/README.md)
+
 ## Starbucks ☕
 
 - [Starbucks App](Starbucks/README.md)
@@ -11,7 +15,7 @@ Collection of demos from the [Swift Arcade YouTube channel.](https://www.youtube
 - [Spotify Playlist](Spotify/SpotifyPlaylist/README.md)
 - [Spotify Album](Spotify/SpotifyAlbum/README.md)
 
-## Communication
+## Communication Patterns
 
 - [Protocol Delegate Pattern](Communication/Protocol-Delegate.md)
 - [Closures](Communication/Closures.md)
