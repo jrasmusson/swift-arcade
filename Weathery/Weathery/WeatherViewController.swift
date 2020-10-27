@@ -10,7 +10,7 @@ import UIKit
 import CoreLocation
 
 private struct LocalSpacing {
-    static let buttonSizeSmall = CGFloat(40)
+    static let buttonSizeSmall = CGFloat(44)
     static let buttonSizelarge = CGFloat(120)
 }
 
@@ -136,7 +136,6 @@ extension WeatherViewController {
             view.trailingAnchor.constraint(equalToSystemSpacingAfter: rootStackView.trailingAnchor, multiplier: 1),
             
             searchStackView.leadingAnchor.constraint(equalTo: rootStackView.leadingAnchor),
-            searchStackView.trailingAnchor.constraint(equalTo: rootStackView.trailingAnchor),
             
             locationButton.heightAnchor.constraint(equalToConstant: LocalSpacing.buttonSizeSmall),
             locationButton.widthAnchor.constraint(equalToConstant: LocalSpacing.buttonSizeSmall),
