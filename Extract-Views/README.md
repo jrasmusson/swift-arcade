@@ -276,8 +276,9 @@ Calling `loadView` takes whatever view you pass it and sets it to fill the entir
 
 - [Sundell on Child View Controllers](https://www.swiftbysundell.com/basics/child-view-controllers/)
 - [Apple Docs on UIViewControllers](https://developer.apple.com/library/archive/featuredarticles/ViewControllerPGforiPhoneOS/index.html)
+- [Writing cleaner view code by overriding loadview - Rambo]()https://swiftrocks.com/writing-cleaner-view-code-by-overriding-loadview)
 
 ### Video
 
-- [Getting started with CoreData](https://www.youtube.com/watch?v=PyUyWtpKhFM)
+- [Extract views](https://www.youtube.com/watch?v=PyUyWtpKhFM)
 
