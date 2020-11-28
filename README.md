@@ -20,7 +20,7 @@ Collection of demos from the [Swift Arcade YouTube channel.](https://www.youtube
 - [Protocol Delegate Pattern](Communication/Protocol-Delegate.md)
 - [Closures](Communication/Closures.md)
 - [Responder Chain](Communication/Responder-Chain.md)
-- [Key-Value Observing](Communication/KVO.md)
+- [Key-Value Observing (KVO)](Communication/KVO.md)
 
 ## CoreData
 
