@@ -36,8 +36,8 @@ struct CoreDataManager {
         do {
             try context.save()
             return employee
-        } catch let createError {
-            print("Failed to create: \(createError)")
+        } catch let error {
+            print("Failed to create: \(error)")
         }
 
         return nil
@@ -51,8 +51,8 @@ struct CoreDataManager {
         do {
             let employees = try context.fetch(fetchRequest)
             return employees
-        } catch let fetchError {
-            print("Failed to fetch companies: \(fetchError)")
+        } catch let error {
+            print("Failed to fetch companies: \(error)")
         }
 
         return nil
@@ -68,8 +68,8 @@ struct CoreDataManager {
         do {
             let employees = try context.fetch(fetchRequest)
             return employees.first
-        } catch let fetchError {
-            print("Failed to fetch: \(fetchError)")
+        } catch let error {
+            print("Failed to fetch: \(error)")
         }
 
         return nil
@@ -80,8 +80,8 @@ struct CoreDataManager {
 
         do {
             try context.save()
-        } catch let createError {
-            print("Failed to update: \(createError)")
+        } catch let error {
+            print("Failed to update: \(error)")
         }
     }
 
@@ -91,8 +91,8 @@ struct CoreDataManager {
 
         do {
             try context.save()
-        } catch let saveError {
-            print("Failed to delete: \(saveError)")
+        } catch let error {
+            print("Failed to delete: \(error)")
         }
     }
 
