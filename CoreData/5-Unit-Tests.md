@@ -247,7 +247,7 @@ class CoreDataManager {
 }
 ```
 
-** MediumEmployeeManager.swift**
+**MediumEmployeeManager.swift**
 
 ```swift
 //
