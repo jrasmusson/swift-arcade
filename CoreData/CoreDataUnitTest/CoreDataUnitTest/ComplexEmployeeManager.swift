@@ -26,8 +26,8 @@ class ComplexEmployeeManager {
     
     // MARK: - Init
     
-    init(mainContext: NSManagedObjectContext = CoreDataManager.shared.mainContext,
-         backgroundContext: NSManagedObjectContext = CoreDataManager.shared.backgroundContext) {
+    init(mainContext: NSManagedObjectContext = CoreDataStack.shared.mainContext,
+         backgroundContext: NSManagedObjectContext = CoreDataStack.shared.backgroundContext) {
         self.mainContext = mainContext
         self.backgroundcontext = backgroundContext
     }

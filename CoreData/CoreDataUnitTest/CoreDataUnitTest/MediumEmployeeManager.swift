@@ -22,7 +22,7 @@ struct MediumEmployeeManager {
     
     let mainContext: NSManagedObjectContext
 
-    init(mainContext: NSManagedObjectContext = CoreDataManager.shared.mainContext) {
+    init(mainContext: NSManagedObjectContext = CoreDataStack.shared.mainContext) {
         self.mainContext = mainContext
     }
 

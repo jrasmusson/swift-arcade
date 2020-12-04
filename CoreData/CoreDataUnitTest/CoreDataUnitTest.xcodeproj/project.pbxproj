@@ -14,7 +14,7 @@
 		71D425832561ADAA00453766 /* MyData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 71D425812561ADAA00453766 /* MyData.xcdatamodeld */; };
 		71D425852561ADAB00453766 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 71D425842561ADAB00453766 /* Assets.xcassets */; };
 		71D425882561ADAB00453766 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71D425862561ADAB00453766 /* LaunchScreen.storyboard */; };
-		71D425D32561CF8D00453766 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D425D22561CF8D00453766 /* CoreDataManager.swift */; };
+		71D425D32561CF8D00453766 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D425D22561CF8D00453766 /* CoreDataStack.swift */; };
 		71D425D72561D17F00453766 /* ComplexEmployeeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D425D62561D17F00453766 /* ComplexEmployeeManager.swift */; };
 		71D425DC2561D2A500453766 /* CoreDataTestStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D425DB2561D2A500453766 /* CoreDataTestStack.swift */; };
 		71D425EE2561D3EF00453766 /* ComplexManagerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D425ED2561D3EF00453766 /* ComplexManagerTest.swift */; };
@@ -46,7 +46,7 @@
 		71D425892561ADAB00453766 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		71D425942561ADBD00453766 /* CoreDataUnitTestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CoreDataUnitTestTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		71D425982561ADBD00453766 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		71D425D22561CF8D00453766 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		71D425D22561CF8D00453766 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		71D425D62561D17F00453766 /* ComplexEmployeeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplexEmployeeManager.swift; sourceTree = "<group>"; };
 		71D425DB2561D2A500453766 /* CoreDataTestStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataTestStack.swift; sourceTree = "<group>"; };
 		71D425ED2561D3EF00453766 /* ComplexManagerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplexManagerTest.swift; sourceTree = "<group>"; };
@@ -136,7 +136,7 @@
 			isa = PBXGroup;
 			children = (
 				71D425812561ADAA00453766 /* MyData.xcdatamodeld */,
-				71D425D22561CF8D00453766 /* CoreDataManager.swift */,
+				71D425D22561CF8D00453766 /* CoreDataStack.swift */,
 				71EACF002573C92C00D10E32 /* SimpleEmployeeManager.swift */,
 				71EACF082573CE6500D10E32 /* MediumEmployeeManager.swift */,
 				71D425D62561D17F00453766 /* ComplexEmployeeManager.swift */,
@@ -261,7 +261,7 @@
 				71EACF092573CE6500D10E32 /* MediumEmployeeManager.swift in Sources */,
 				71EACF012573C92C00D10E32 /* SimpleEmployeeManager.swift in Sources */,
 				71D425792561ADAA00453766 /* AppDelegate.swift in Sources */,
-				71D425D32561CF8D00453766 /* CoreDataManager.swift in Sources */,
+				71D425D32561CF8D00453766 /* CoreDataStack.swift in Sources */,
 				71D4257B2561ADAA00453766 /* SceneDelegate.swift in Sources */,
 				71D425D72561D17F00453766 /* ComplexEmployeeManager.swift in Sources */,
 			);

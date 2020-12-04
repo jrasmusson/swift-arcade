@@ -19,9 +19,9 @@ import CoreData
  - `backgroundContext` with has a separate queue for background processing
 
  */
-class CoreDataManager {
+class CoreDataStack {
     
-    static let shared = CoreDataManager()
+    static let shared = CoreDataStack()
     
     let persistentContainer: NSPersistentContainer
     let backgroundContext: NSManagedObjectContext

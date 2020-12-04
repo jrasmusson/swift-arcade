@@ -12,6 +12,8 @@ To enable it, go `Shift + Command + ,` to bring up your schemes, and then add th
 
 ## Simple & Naive
 
+![](images/simple.png)
+
 If you try to write unit tests for your Core Data app naively, you are going to run into trouble. Take this `SimpleEmployeeManager` for instance. It does everything on the main thread.
 
 **SimpleEmployeeManager.swift**
@@ -190,6 +192,8 @@ class SimpleEmployeeManagerTests: XCTestCase {
 ```
 
 ## Medium
+
+![](images/medium.png)
 
 This fix to all this to create a new context that you use only in unit tests. That way your app can have it's main context when running in the app, and the unit tests can have a separate, cheap, in-memory context that never collides with the app. 
 
@@ -409,6 +413,8 @@ class MediumEmployeeManagerTests: XCTestCase {
 ```
 
 ## Complex
+
+![](images/complex.png)
 
 If you have some heavy Core Data processing to do, and you don't want to do it all on the main thread, you can do your writes and updates on a background thread, and reads on the main. This is a more complex scenario (not recommended unless absolutely needed). But if required you can do the same thing, be passing a disposalable in-memory test only background and main context to your manager for tests, and then the real thing to your app.
 
