@@ -10,9 +10,9 @@ import Foundation
 
 class ViewController: UIViewController {
 
-//    let manager = SimpleEmployeeManager()
+    let manager = SimpleEmployeeManager()
 //    let manager = MediumEmployeeManager()
-    let manager = ComplexEmployeeManager()
+//    let manager = ComplexEmployeeManager()
 
     
     override func viewDidLoad() {
@@ -22,12 +22,6 @@ class ViewController: UIViewController {
         manager.createEmployee(firstName: "Jon")
         let jon = manager.fetchEmployee(withName: "Jon")!
         
-        if Thread.isMainThread {
-            jon.firstName = "Jonathan"
-        } else {
-            jon.firstName = "Jonathan"
-        }
-
         manager.updateEmployee(employee: jon)
         manager.deleteEmployee(employee: jon)
     }

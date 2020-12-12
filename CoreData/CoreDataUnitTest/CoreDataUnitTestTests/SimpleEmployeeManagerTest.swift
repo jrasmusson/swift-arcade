@@ -33,28 +33,28 @@ class SimpleEmployeeManagerTests: XCTestCase {
     }
         
     // These demo purposes these fail
-//    func test_update_Employee() {
-//        let employee = employeeManager.createEmployee(firstName: "Jon")!
-//        employee.firstName = "Jonathan"
-//        employeeManager.updateEmployee(employee: employee)
-//        let updated = employeeManager.fetchEmployee(withName: "Jonathan")!
-//
-//        XCTAssertNil(employeeManager.fetchEmployee(withName: "Jon")!)
-//        XCTAssertEqual("Jonathan", updated.firstName)
-//    }
-//
-//    func test_delete_and_read_Employees() {
-//
-//        let employeeA = employeeManager.createEmployee(firstName: "A")!
-//        let employeeB = employeeManager.createEmployee(firstName: "B")!
-//        let employeeC = employeeManager.createEmployee(firstName: "C")!
-//
-//        employeeManager.deleteEmployee(employee: employeeB)
-//
-//        let employees = employeeManager.fetchEmployees()!
-//
-//        XCTAssertEqual(employees.count, 2)
-//        XCTAssertTrue(employees.contains(employeeA))
-//        XCTAssertTrue(employees.contains(employeeC))
-//    }
+    func test_update_Employee() {
+        let employee = employeeManager.createEmployee(firstName: "Jon")!
+        employee.firstName = "Jonathan"
+        employeeManager.updateEmployee(employee: employee)
+        let updated = employeeManager.fetchEmployee(withName: "Jonathan")!
+
+        XCTAssertNil(employeeManager.fetchEmployee(withName: "Jon")!)
+        XCTAssertEqual("Jonathan", updated.firstName)
+    }
+
+    func test_delete_and_read_Employees() {
+
+        let employeeA = employeeManager.createEmployee(firstName: "A")!
+        let employeeB = employeeManager.createEmployee(firstName: "B")!
+        let employeeC = employeeManager.createEmployee(firstName: "C")!
+
+        employeeManager.deleteEmployee(employee: employeeB)
+
+        let employees = employeeManager.fetchEmployees()!
+
+        XCTAssertEqual(employees.count, 2)
+        XCTAssertTrue(employees.contains(employeeA))
+        XCTAssertTrue(employees.contains(employeeC))
+    }
 }
