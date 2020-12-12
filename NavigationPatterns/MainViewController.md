@@ -27,13 +27,45 @@ The advantage of having a main view controller like this is you have:
 
 ## An Example of MainViewController in action
 
+This demo creates a `MainViewController` sitting at the top of the application, which contains all the subviews the app is able to display (`HomeViewController` and `ScanViewController`).  When the scan button is pressed, an event is fired up via the `Responder Chain` which the `MainViewController` is configured to handle. When it gets it, it programmatically selects the `ScanViewController` in the tab bar and updates the via.
+
 ![](images/maindemo.gif)
 
-This demo creates a `MainViewController` sitting at the top of the application, which contains all the subviews the app is able to display (`HomeViewController` and `ScanViewController`).
+So there are two challenges we need to overcome here:
 
-When the scan button is pressed, an event is fired up via the `Responder Chain` which the `MainViewController` is configured to handle.
+1. How are we going to get a message from a sub view controller all the way up to our `MainViewController`.
+2. Once we get than message, what are we going to do with it.
 
-When it gets it, it programmatically selects the `ScanViewController` in the tab bar and updates the via.
+### Sending messages via Responder Chain
+
+There are lots of ways we could send that message up to our parent view controller (protocol-delegate, closures, Notification Center), but the once I have chosen to use here is Responder chain. Why? Because the responder chain is built directly into every UIView. Every view is a UIResponder. So by simply setting a button target action to `nil`
+
+```swift
+button.addTarget(nil, action: .didTapScan, for: .primaryActionTriggered)
+```
+
+I get a convenient way to send a message from way down in the application, all the way up to the top for free. No extra plumbing required. All I need to do is implement that action method in my `MainViewController` and I can intercept any Responder chain event from anywhere in the app (because `MainViewController` will always be a part of the hierarchy).
+
+```swift
+extension MainViewController: StarBucksResponder {
+    func didTapScan(sender: UIButton?) {
+        
+        // remove currently displayed children VCs
+        let existingChildren = children
+
+        for child in existingChildren {
+            child.view.removeFromSuperview()
+            child.removeFromParent()
+        }
+        
+        // add new one we want to present
+        sbTabBarController.selectedIndex = 1 // Scan
+        add(sbTabBarController)
+    }
+}
+```
+
+And once I get it, I am free to present to do whatever I like (in this case show the `ScanViewController` by programmatically selecting it in the tab bar).
 
 ![](images/6.png)
 
