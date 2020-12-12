@@ -35,6 +35,12 @@ When the scan button is pressed, an event is fired up via the `Responder Chain` 
 
 When it gets it, it programmatically selects the `ScanViewController` in the tab bar and updates the via.
 
+![](images/6.png)
+
+![](images/7.png)
+
+![](images/8.png)
+
 **AppDelegate.swift**
 
 ```swift
