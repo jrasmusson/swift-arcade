@@ -15,12 +15,16 @@ Collection of demos from the [Swift Arcade YouTube channel.](https://www.youtube
 - [Spotify Playlist](Spotify/SpotifyPlaylist/README.md)
 - [Spotify Album](Spotify/SpotifyAlbum/README.md)
 
-## Communication Patterns
+## Communication Patterns 🔈
 
 - [Protocol Delegate Pattern](Communication/Protocol-Delegate.md)
 - [Closures](Communication/Closures.md)
 - [Responder Chain](Communication/Responder-Chain.md)
 - [Key-Value Observing (KVO)](Communication/KVO.md)
+
+## Navigation Patterns ⚓️
+
+- [MainViewController](NavigationPatterns/MainViewController.md)
 
 ## CoreData
 
