@@ -51,8 +51,7 @@ extension MainViewController: StarBucksResponder {
         let existingChildren = children
 
         for child in existingChildren {
-            child.view.removeFromSuperview()
-            child.removeFromParent()
+            child.remove()
         }
         
         // add new one we want to present
