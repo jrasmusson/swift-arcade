@@ -2,17 +2,17 @@
 
 Pluralization gives you the ability to pluralize certain phrases based on the number of items that appear in that phrase.
 
-![](demo.gif)
+![](images/demo.gif)
 
 It works by creating a `Localizable.stringsdict` where you configure a `key` to be localized in the app, along with the pluralization rules around how you would like the phrase to appear.
 
 For example, if we wanted to pluralize the number of days an account was overdue, we would create and configure a `Localizable.stringsdict` (it has to be named `Localizable`).
 
-![](create.png)
+![](images/create.png)
 
 Configure it's pluralization keys. You don't need all the keys. But other is required.
 
-![](configure.png)
+![](images/configure.png)
 
 And then call from the app specifying the `key` along with the dynamic parameters that appear in the message.
 
