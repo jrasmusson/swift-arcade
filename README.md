@@ -26,7 +26,7 @@ Collection of demos from the [Swift Arcade YouTube channel.](https://www.youtube
 
 - [MainViewController](NavigationPatterns/MainViewController.md)
 
-## CoreData
+## CoreData 🏢
 
 - [Getting Started](CoreData/1-GettingStarted.md)
 - [NSFetchedResultsController](CoreData/2-NSFetchedResultsController.md)
@@ -34,20 +34,22 @@ Collection of demos from the [Swift Arcade YouTube channel.](https://www.youtube
 - [Background threads](CoreData/4-Background-Threads.md)
 - [Unit Tests](CoreData/5-Unit-Tests.md)
 
-## Design
+## Design 🎨
+
 - [Load & Retry Screens](https://github.com/jrasmusson/swift-arcade/blob/master/Design/LoadAndRetry/1-Load-And-Retry.md)
 - [Popup Menu](https://github.com/jrasmusson/swift-arcade/tree/master/Design/PopupMenu)
 
-## Foundation
+## Foundation 🧱
 
 - [NSAttributedStrings](Foundation/NSAttributedStrings/README.md)
+- [Pluralization](Foundation/Pluralization/README.md)
 
 
-## Swift
+## Swift 🎮
 
 - [Functions as Variables](/Swift/Funcs-as-Variables/README.md)
 
-## UIKit
+## UIKit 🏗
 
 ### Misc
 
