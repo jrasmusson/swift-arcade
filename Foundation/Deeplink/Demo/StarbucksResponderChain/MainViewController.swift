@@ -74,10 +74,8 @@ extension MainViewController {
         switch deepLink {
         case .home:
             presentTabBar(withIndex: 0)
-//            UIApplication.shared.sendAction(.didTapHome, to: nil, from: self, for: nil)
         case .scan:
             presentTabBar(withIndex: 1)
-//            UIApplication.shared.sendAction(.didTapScan, to: nil, from: self, for: nil)
         }
     }
 }
