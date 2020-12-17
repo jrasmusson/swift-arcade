@@ -69,7 +69,7 @@ To handle the URL we need to go into our `AppDelegate.swift` and parse the incom
     }
 ```
 
-Once in the `MainViewController` with the deeplink we can do whatever we want. We could manually select the tab or view controller we want to present. Or we could hook into the existing `Responder Chain` infrastructure and just fire the event up the responder chain, which we ourselves would intercept and handle.
+Once in the `MainViewController` with the deeplink we can do whatever we want. Here we just manually navigate to the view controller in the tab bar we want to present.
 
 **MainViewController.swift**
 
