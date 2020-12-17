@@ -104,6 +104,10 @@ Or an even better way is to execute deeplinks from the command line while your s
 
 ![](images/demo.gif)
 
+## Example
+
+See Demo directory for full source.
+
 ### Links that help
 
 - [Defining URL Schemes Apple](https://developer.apple.com/documentation/xcode/allowing_apps_and_websites_to_link_to_your_content/defining_a_custom_url_scheme_for_your_apps)
