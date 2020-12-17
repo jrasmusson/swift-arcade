@@ -15,6 +15,8 @@ extension ActivationTileViewController: ActivationTileRowButtonViewDelegate {
 }
 ```
 
+## An Example
+
 ![TableView](images/protocol-demo.gif)
 
 
