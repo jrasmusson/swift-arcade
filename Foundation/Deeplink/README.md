@@ -99,8 +99,9 @@ You can try deeplinking into your app by firing up Safari in your simulator and 
 
 Or an even better way is to execute deeplinks from the command line while your simulator is running with this command here:
 
-`xcrun simctl openurl booted starbucks://home`
-`xcrun simctl openurl booted starbucks://scan`
+> `xcrun simctl openurl booted starbucks://home`
+
+> `xcrun simctl openurl booted starbucks://scan`
 
 ![](images/demo.gif)
 
