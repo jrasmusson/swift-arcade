@@ -45,8 +45,15 @@ extension MainViewController {
 // MARK: Responder chain events
 
 extension MainViewController: StarBucksResponder {
+    func didTapHome(sender: UIButton?) {
+        presentTabBar(withIndex: 0)
+    }
+
     func didTapScan(sender: UIButton?) {
-        
+        presentTabBar(withIndex: 1)
+    }
+    
+    func presentTabBar(withIndex index: Int) {
         // remove currently displayed children VCs
         let existingChildren = children
 
@@ -55,7 +62,7 @@ extension MainViewController: StarBucksResponder {
         }
         
         // add new one we want to present
-        sbTabBarController.selectedIndex = 1 // Scan
+        sbTabBarController.selectedIndex = index
         add(sbTabBarController)
     }
 }
@@ -65,15 +72,16 @@ extension MainViewController: StarBucksResponder {
 extension MainViewController {
     
     /*
-     Here I could manually navigate to whatever view I want.
-     Or I could hook into our existing responder chain and fire up the event and navigate that way.
+     Could fire up the responder chain, or navigate manually.
      */
     func handleDeepLink(_ deepLink: DeepLink) {
         switch deepLink {
         case .home:
-            UIApplication.shared.sendAction(.didTapHome, to: nil, from: self, for: nil)
+            presentTabBar(withIndex: 0)
+//            UIApplication.shared.sendAction(.didTapHome, to: nil, from: self, for: nil)
         case .scan:
-            UIApplication.shared.sendAction(.didTapScan, to: nil, from: self, for: nil)
+            presentTabBar(withIndex: 1)
+//            UIApplication.shared.sendAction(.didTapScan, to: nil, from: self, for: nil)
         }
     }
 }

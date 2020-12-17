@@ -26,6 +26,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
         /*
+         <scheme>://<host>
          starbucks://home
          starbucks://scan
          */
@@ -39,12 +40,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 
         print("components: \(components)")
         
+        // Create the deep link
         guard let deeplink = DeepLink(rawValue: host) else {
             print("Deeplink not found: \(host)")
             return false
         }
 
-        // Pass deeplink to MainViewController to handle
+        // Hand off to mainViewController
         mainViewController.handleDeepLink(deeplink)
         
         return true

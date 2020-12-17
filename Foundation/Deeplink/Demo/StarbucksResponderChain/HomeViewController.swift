@@ -68,6 +68,6 @@ extension HomeViewController {
 
 // Syntactic sugar to make our code look nicer.
 public extension Selector {
+    static let didTapHome = #selector(StarBucksResponder.didTapHome(sender:))
     static let didTapScan = #selector(StarBucksResponder.didTapScan(sender:))
-    static let didTapHome = #selector(StarBucksResponder.didTapScan(sender:))
 }
