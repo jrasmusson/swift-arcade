@@ -1,6 +1,22 @@
 # Responder Chain
 
+## How to fire manually
+
+```swift
+@objc protocol ActivationTileActions {
+    func performSetupYourModemAction(sender: Any?)
+}
+
+extension ActivationTileViewController: ActivationTileRowButtonViewDelegate {
+
+    func didPressButton(_ sender: Any?) {
+        UIApplication.shared.sendAction(#selector(ActivationTileActions.performSetupYourModemAction), to: nil, from: self, for: nil)
+    }
+}
+```
+
 ![TableView](images/protocol-demo.gif)
+
 
 ```swift
 import UIKit
