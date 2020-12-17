@@ -70,11 +70,7 @@ extension MainViewController: StarBucksResponder {
 // MARK: Deep Link
 
 extension MainViewController {
-    
-    /*
-     Could fire up the responder chain, or navigate manually.
-     */
-    func handleDeepLink(_ deepLink: DeepLink) {
+        func handleDeepLink(_ deepLink: DeepLink) {
         switch deepLink {
         case .home:
             presentTabBar(withIndex: 0)

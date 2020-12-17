@@ -1,5 +1,7 @@
 # Deep Linking
 
+![](images/overview.png)
+
 Deep Links are how external users deep can navigate into your app with a URL. The steps for enabling deep linking in your app are to:
 
 1. Add a URL scheme.
@@ -17,8 +19,8 @@ Open up your project and go to Target > Info > URL Types and add the following:
 
 We are going to support two deep links into the app:
 
-- starbucks://scan
-- starbucks://home
+- `starbucks://scan`
+- `starbucks://home`
 
 And we will represent the `host` part of the URL in an `enum`.
 
@@ -77,10 +79,6 @@ Once in the `MainViewController` with the deeplink we can do whatever we want. H
 // MARK: Deep Link
 
 extension MainViewController {
-    
-    /*
-     Could fire up the responder chain, or navigate manually.
-     */
     func handleDeepLink(_ deepLink: DeepLink) {
         switch deepLink {
         case .home:

@@ -41,13 +41,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         print("components: \(components)")
         
         // Create the deep link
-        guard let deeplink = DeepLink(rawValue: host) else {
+        guard let deepLink = DeepLink(rawValue: host) else {
             print("Deeplink not found: \(host)")
             return false
         }
 
         // Hand off to mainViewController
-        mainViewController.handleDeepLink(deeplink)
+        mainViewController.handleDeepLink(deepLink)
         
         return true
     }
