@@ -137,6 +137,7 @@ extension ViewController: UIPickerViewDelegate, UIPickerViewDataSource {
 
 ### Links that help
 
+- [Video](https://youtu.be/djvG2RVUeBA)
 - [Apple docs](https://help.apple.com/xcode/mac/current/#/deve2bc11fab)
 - [Another example](https://www.hackingwithswift.com/example-code/uikit/how-to-localize-your-ios-app)
 
