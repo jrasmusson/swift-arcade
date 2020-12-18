@@ -109,8 +109,7 @@ See Demo directory for full source.
 
 ### Links that help
 
-- [Defining URL Schemes Apple]
-(https://developer.apple.com/documentation/xcode/allowing_apps_and_websites_to_link_to_your_content/defining_a_custom_url_scheme_for_your_app)
+- [Defining URL Schemes Apple](https://developer.apple.com/documentation/xcode/allowing_apps_and_websites_to_link_to_your_content/defining_a_custom_url_scheme_for_your_app)
 - [Universal Links](https://developer.apple.com/ios/universal-links/)
 - [Deep Links vs Universal Links](https://medium.com/wolox/ios-deep-linking-url-scheme-vs-universal-links-50abd3802f97)
 
