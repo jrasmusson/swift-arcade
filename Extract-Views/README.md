@@ -291,11 +291,12 @@ class WeatherView: UIView {
 
 extension WeatherView {
         
-	func textFieldDidEndEditing(_ textField: UITextField) {
+    func textFieldDidEndEditing(_ textField: UITextField) {
         guard let handler = searchTextFieldHandler else { return }
         
         handler(textField)
         searchTextField.text = ""
+    }
 }
 
 ```
