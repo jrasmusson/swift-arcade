@@ -272,6 +272,51 @@ Or you can call `loadView` in the view controller.
 
 Calling `loadView` takes whatever view you pass it and sets it to fill the entire view controller. You save x4 layout constraints doing this, its pretty simple, and quite elegant.
 
+## Dealing with interactions
+
+Sometimes views need to communicate back to their VCs when certain UI events occur. You can do this via closures.
+
+![](images/closures.png)
+
+Simply define a handler in your view, register for if from the VC, and then fire the closure when the UI event occurs.
+
+**View**
+
+```swift
+class WeatherView: UIView {
+    
+    // callback
+    var searchTextFieldHandler: ((UITextField) -> Void)?    
+}
+
+extension WeatherView {
+        
+	func textFieldDidEndEditing(_ textField: UITextField) {
+        guard let handler = searchTextFieldHandler else { return }
+        
+        handler(textField)
+        searchTextField.text = ""
+}
+
+```
+
+**ViewController**
+
+```swift
+extension WeatherViewController {
+    
+    func setup() {
+        weatherView.searchTextFieldHandler = fetchWeather(_:)
+    }
+    
+    func fetchWeather(_ textField: UITextField) {
+        if let city = textField.text {
+            weatherService.fetchWeather(cityName: city)
+        }
+    }
+```
+
+
 ### Links that help
 
 - [Sundell on Child View Controllers](https://www.swiftbysundell.com/basics/child-view-controllers/)
