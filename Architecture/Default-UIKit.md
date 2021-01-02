@@ -16,10 +16,6 @@ A *View Model* is a struct specifically created for the view we are creating. It
 
 The *View Controller* acts as the overall coordinator. It is purposefully lean, takes the results of it's network requests, and passes the results off to it's subviews.
 
-### Large ViewController Strategies
-
-- [Model View Presenter (MVP)](https://github.com/jrasmusson/swift-arcade/blob/master/UIKIt/LargeViewController/MVP/README.md)
-
 ### Views
 
 Extracting subviews make reasoning about your app easier. It puts all the UI code and logic in one place, and makes updating and changing views easier.

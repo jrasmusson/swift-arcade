@@ -26,6 +26,10 @@ Collection of demos from the [Swift Arcade YouTube channel.](https://www.youtube
 
 - [MainViewController](NavigationPatterns/MainViewController.md)
 
+## Architecture 🏠
+
+- [Default UIKit](Architecture/Default-UIKit.md)
+
 ## CoreData 🏢
 
 - [Getting Started](CoreData/1-GettingStarted.md)
@@ -44,7 +48,6 @@ Collection of demos from the [Swift Arcade YouTube channel.](https://www.youtube
 - [NSAttributedStrings](Foundation/NSAttributedStrings/README.md)
 - [Pluralization](Foundation/Pluralization/README.md)
 - [Deep Linking](Foundation/Deeplink/README.md)
-
 
 
 ## Swift 🎮
