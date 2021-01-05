@@ -49,6 +49,9 @@ Collection of demos from the [Swift Arcade YouTube channel.](https://www.youtube
 - [Pluralization](Foundation/Pluralization/README.md)
 - [Deep Linking](Foundation/Deeplink/README.md)
 
+## Animations 🍄
+
+- [Login Form Field](Animation/Login/README.md)
 
 ## Swift 🎮
 

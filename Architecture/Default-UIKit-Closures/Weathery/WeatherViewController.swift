@@ -36,8 +36,9 @@ extension WeatherViewController {
         locationManager.requestWhenInUseAuthorization()
         locationManager.requestLocation()
         
-        weatherView.searchTextFieldHandler = fetchWeather(_:)
-        weatherView.locationButtonHandler = requestLocation
+        setupSearchHandler()
+        setupWeatherResultHandler()
+
         weatherService.resultHandler = didFetchWeather(_:)
     }
     
@@ -55,15 +56,23 @@ extension WeatherViewController {
 
 extension WeatherViewController {
 
-    func fetchWeather(_ textField: UITextField) {
-        if let city = textField.text {
-            weatherService.fetchWeather(cityName: city)
+    private func setupSearchHandler() {
+        let handler: (UITextField) -> Void = { [weak self] textField in
+            if let city = textField.text {
+                self?.weatherService.fetchWeather(cityName: city)
+            }
         }
+        
+        weatherView.searchTextFieldHandler = handler
     }
-    
-    func requestLocation() {
-        locationManager.requestLocation()
+    private func setupWeatherResultHandler() {
+        let handler: () -> Void = { [weak self] in
+            self?.locationManager.requestLocation()
+        }
+        
+        weatherView.locationButtonHandler = handler
     }
+
 }
 
 // MARK: - CLLocationManagerDelegate
