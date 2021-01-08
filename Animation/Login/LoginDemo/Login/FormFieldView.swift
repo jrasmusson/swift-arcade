@@ -139,13 +139,6 @@ extension FormFieldView {
             self.cancelButton.isHidden = false
         }
     }
-    
-    func showInvalidEmailMessage() {
-        label.isHidden = true
-        invalidLabel.isHidden = false
-        layer.borderColor = Local.tintColorInValid.cgColor
-        textField.tintColor = Local.tintColorInValid
-    }
 }
 
 // MARK: - TextFieldDelegate
@@ -174,6 +167,13 @@ extension FormFieldView: UITextFieldDelegate {
         }
         
         textField.text = ""
+    }
+    
+    func showInvalidEmailMessage() {
+        label.isHidden = true
+        invalidLabel.isHidden = false
+        layer.borderColor = Local.tintColorInValid.cgColor
+        textField.tintColor = Local.tintColorInValid
     }
 }
 
