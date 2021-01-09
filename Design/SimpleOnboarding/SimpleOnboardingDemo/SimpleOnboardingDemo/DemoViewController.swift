@@ -13,6 +13,10 @@ class DemoViewController: UIPageViewController {
     let pageControl = UIPageControl()
     let initialPage = 0
     
+    let skipButton = UIButton()
+    
+    var currentViewController: UIViewController?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -26,7 +30,6 @@ extension DemoViewController {
     
     func setup() {
         dataSource = self
-        delegate = self
 
         // add the individual viewControllers to the pageViewController
         let page1 = OnboardingViewController(imageName: "logo",
@@ -54,15 +57,25 @@ extension DemoViewController {
         pageControl.numberOfPages = pages.count
         pageControl.isUserInteractionEnabled = false // disable interaction
         pageControl.currentPage = initialPage
+        
+        skipButton.translatesAutoresizingMaskIntoConstraints = false
+        skipButton.setTitleColor(.systemBlue, for: .normal)
+        skipButton.setTitle("Skip", for: .normal)
+        skipButton.addTarget(self, action: #selector(skipTapped(_:)), for: .primaryActionTriggered)
     }
     
     func layout() {
         view.addSubview(pageControl)
+        view.addSubview(skipButton)
         
         NSLayoutConstraint.activate([
             pageControl.widthAnchor.constraint(equalTo: view.widthAnchor),
             pageControl.heightAnchor.constraint(equalToConstant: 20),
+            pageControl.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             view.bottomAnchor.constraint(equalToSystemSpacingBelow: pageControl.bottomAnchor, multiplier: 1),
+            
+            skipButton.topAnchor.constraint(equalToSystemSpacingBelow: view.safeAreaLayoutGuide.topAnchor, multiplier: 2),
+            skipButton.leadingAnchor.constraint(equalToSystemSpacingAfter: view.leadingAnchor, multiplier: 2),
         ])
     }
 }
@@ -70,7 +83,7 @@ extension DemoViewController {
 extension DemoViewController: UIPageViewControllerDataSource {
     
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
-        
+
         guard let currentIndex = pages.firstIndex(of: viewController) else { return nil }
         
         if currentIndex == 0 {
@@ -81,7 +94,7 @@ extension DemoViewController: UIPageViewControllerDataSource {
             return pages[currentIndex - 1]
         }
     }
-    
+        
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
         
         guard let currentIndex = pages.firstIndex(of: viewController) else { return nil }
@@ -96,14 +109,32 @@ extension DemoViewController: UIPageViewControllerDataSource {
     }
 }
 
-extension DemoViewController: UIPageViewControllerDelegate {
-    
-    func pageViewController(_ pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
-        
-        // set the pageControl.currentPage to the index of the current viewController in pages
-        if let viewControllers = pageViewController.viewControllers {
-            if let viewControllerIndex = pages.firstIndex(of: viewControllers[0]) {
-                pageControl.currentPage = viewControllerIndex
+// MARK: - Actions
+
+extension DemoViewController {
+
+    @objc func skipTapped(_ sender: UIButton) {
+        goToNextPage()
+    }
+}
+
+// MARK: - Extensions
+
+extension UIPageViewController {
+    func goToNextPage(animated: Bool = true, completion: ((Bool) -> Void)? = nil) {
+        if let currentViewController = viewControllers?[0] {
+            if let nextPage = dataSource?.pageViewController(self, viewControllerAfter: currentViewController) {
+                setViewControllers([nextPage], direction: .forward, animated: animated, completion: completion)
+            }
+        }
+    }
+}
+
+extension UIPageViewController {
+    func goToPreviousPage(animated: Bool = true, completion: ((Bool) -> Void)? = nil) {
+        if let currentViewController = viewControllers?[0] {
+            if let nextPage = dataSource?.pageViewController(self, viewControllerBefore: currentViewController) {
+                setViewControllers([nextPage], direction: .forward, animated: animated, completion: completion)
             }
         }
     }

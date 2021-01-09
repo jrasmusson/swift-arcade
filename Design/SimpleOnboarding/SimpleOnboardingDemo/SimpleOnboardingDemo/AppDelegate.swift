@@ -18,8 +18,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.makeKeyAndVisible()
         window?.backgroundColor = .systemBackground
 //        window?.rootViewController = ViewController(transitionStyle: .scroll, navigationOrientation: .horizontal, options: nil)
-//        window?.rootViewController = DemoViewController(transitionStyle: .scroll, navigationOrientation: .horizontal, options: nil)
-        window?.rootViewController = LoginViewController()
+        window?.rootViewController = DemoViewController(transitionStyle: .scroll, navigationOrientation: .horizontal, options: nil)
+//        window?.rootViewController = LoginViewController()
 
         return true
     }
