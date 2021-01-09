@@ -30,6 +30,9 @@ extension ViewController {
     
     func setup() {
         dataSource = self
+        delegate = self
+        
+        pageControl.addTarget(self, action: #selector(pageControlTapped(_:)), for: .valueChanged)
 
         // add the individual viewControllers to the pageViewController
         let page1 = ViewController1()
@@ -47,7 +50,6 @@ extension ViewController {
         pageControl.currentPageIndicatorTintColor = .black
         pageControl.pageIndicatorTintColor = .systemGray2
         pageControl.numberOfPages = pages.count
-        pageControl.isUserInteractionEnabled = false // disable interaction
         pageControl.currentPage = initialPage
     }
     
@@ -59,6 +61,18 @@ extension ViewController {
             pageControl.heightAnchor.constraint(equalToConstant: 20),
             view.bottomAnchor.constraint(equalToSystemSpacingBelow: pageControl.bottomAnchor, multiplier: 1),
         ])
+    }
+}
+
+// MARK: - Actions
+
+extension ViewController {
+    
+    // Note: Can only skip ahead on page at a time (not two at a time).
+    @objc func pageControlTapped(_ sender: UIPageControl) {
+        let currentPage = sender.currentPage
+        print(currentPage)
+        setViewControllers([pages[currentPage]], direction: .forward, animated: true, completion: nil)
     }
 }
 
@@ -89,6 +103,21 @@ extension ViewController: UIPageViewControllerDataSource {
         } else {
             // wrap to first page in array
             return pages.first
+        }
+    }
+}
+
+// MARK: - Delegates
+
+extension ViewController: UIPageViewControllerDelegate {
+    
+    func pageViewController(_ pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
+        
+        // set the pageControl.currentPage to the index of the current viewController in pages
+        if let viewControllers = pageViewController.viewControllers {
+            if let viewControllerIndex = pages.firstIndex(of: viewControllers[0]) {
+                pageControl.currentPage = viewControllerIndex
+            }
         }
     }
 }
