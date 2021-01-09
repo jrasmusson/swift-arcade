@@ -35,13 +35,15 @@ extension DemoViewController {
     func setup() {
         dataSource = self
         delegate = self
+        
+        pageControl.addTarget(self, action: #selector(pageControlTapped(_:)), for: .valueChanged)
 
         let page1 = OnboardingViewController(imageName: "logo",
                                              titleText: "Welcome",
                                              subtitleText: "To the Swift Arcade. Your place for learning Swift.")
         let page2 = OnboardingViewController(imageName: "swift",
                                              titleText: "Learn",
-                                             subtitleText: "Start your careerr in iOS development.")
+                                             subtitleText: "Start your career in iOS development.")
         let page3 = OnboardingViewController(imageName: "level-up",
                                              titleText: "Have fun",
                                              subtitleText: "Level Up and have fun building mobile apps.")
@@ -51,6 +53,7 @@ extension DemoViewController {
         pages.append(page2)
         pages.append(page3)
         pages.append(page4)
+        
         setViewControllers([pages[initialPage]], direction: .forward, animated: true, completion: nil)
     }
     
@@ -59,7 +62,6 @@ extension DemoViewController {
         pageControl.currentPageIndicatorTintColor = .black
         pageControl.pageIndicatorTintColor = .systemGray2
         pageControl.numberOfPages = pages.count
-        pageControl.isUserInteractionEnabled = false // disable interaction
         pageControl.currentPage = initialPage
 
         skipButton.translatesAutoresizingMaskIntoConstraints = false
@@ -82,20 +84,22 @@ extension DemoViewController {
             pageControl.widthAnchor.constraint(equalTo: view.widthAnchor),
             pageControl.heightAnchor.constraint(equalToConstant: 20),
             pageControl.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-//            view.bottomAnchor.constraint(equalToSystemSpacingBelow: pageControl.bottomAnchor, multiplier: 2),
 
-            skipButton.topAnchor.constraint(equalToSystemSpacingBelow: view.safeAreaLayoutGuide.topAnchor, multiplier: 2),
+            
             skipButton.leadingAnchor.constraint(equalToSystemSpacingAfter: view.leadingAnchor, multiplier: 2),
 
-            nextButton.topAnchor.constraint(equalToSystemSpacingBelow: view.safeAreaLayoutGuide.topAnchor, multiplier: 2),
+            
             view.trailingAnchor.constraint(equalToSystemSpacingAfter: nextButton.trailingAnchor, multiplier: 2),
         ])
         
         // for animations
         pageControlBottomAnchor = view.bottomAnchor.constraint(equalToSystemSpacingBelow: pageControl.bottomAnchor, multiplier: 2)
+        skipButtonTopAnchor = skipButton.topAnchor.constraint(equalToSystemSpacingBelow: view.safeAreaLayoutGuide.topAnchor, multiplier: 2)
+        nextButtonTopAnchor = nextButton.topAnchor.constraint(equalToSystemSpacingBelow: view.safeAreaLayoutGuide.topAnchor, multiplier: 2)
+        
         pageControlBottomAnchor?.isActive = true
-        
-        
+        skipButtonTopAnchor?.isActive = true
+        nextButtonTopAnchor?.isActive = true
     }
 }
 
@@ -153,35 +157,39 @@ extension DemoViewController: UIPageViewControllerDelegate {
             self.view.layoutIfNeeded()
         }, completion: nil)
     }
+    
+    private func hideControls() {
+        pageControlBottomAnchor?.constant = -80
+        skipButtonTopAnchor?.constant = -80
+        nextButtonTopAnchor?.constant = -80
+    }
+
+    private func showControls() {
+        pageControlBottomAnchor?.constant = 16
+        skipButtonTopAnchor?.constant = 16
+        nextButtonTopAnchor?.constant = 16
+    }
 }
 
 // MARK: - Actions
 
 extension DemoViewController {
 
+    @objc func pageControlTapped(_ sender: UIPageControl) {
+        setViewControllers([pages[sender.currentPage]], direction: .forward, animated: true, completion: nil)
+        animateControlsIfNeeded()
+    }
+
     @objc func skipTapped(_ sender: UIButton) {
         let lastPage = pages.count - 1
         pageControl.currentPage = lastPage
+        
         goToSpecificPage(index: lastPage, ofViewControllers: pages)
-
         animateControlsIfNeeded()
     }
     
-    private func hideControls() {
-        print("hide")
-        pageControlBottomAnchor?.constant = -80
-//        skipButtonTopAnchor?.constant = 0
-//        nextButtonTopAnchor?.constant = 0
-    }
-
-    private func showControls() {
-        print("show")
-        pageControlBottomAnchor?.constant = 16
-//        skipButtonTopAnchor?.constant = 0
-//        nextButtonTopAnchor?.constant = 0
-    }
-
     @objc func nextTapped(_ sender: UIButton) {
+        pageControl.currentPage += 1
         goToNextPage()
         animateControlsIfNeeded()
     }
