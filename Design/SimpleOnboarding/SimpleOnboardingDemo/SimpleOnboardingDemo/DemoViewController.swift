@@ -32,7 +32,6 @@ extension DemoViewController {
     func setup() {
         dataSource = self
 
-        // add the individual viewControllers to the pageViewController
         let page1 = OnboardingViewController(imageName: "logo",
                                              titleText: "Welcome",
                                              subtitleText: "To the Swift Arcade. Your place for learning Swift.")
@@ -97,11 +96,9 @@ extension DemoViewController: UIPageViewControllerDataSource {
         guard let currentIndex = pages.firstIndex(of: viewController) else { return nil }
         
         if currentIndex == 0 {
-            // wrap to last page in array
-            return pages.last
+            return pages.last               // wrap last
         } else {
-            // go to previous page in array
-            return pages[currentIndex - 1]
+            return pages[currentIndex - 1]  // go previous
         }
     }
         
@@ -110,11 +107,9 @@ extension DemoViewController: UIPageViewControllerDataSource {
         guard let currentIndex = pages.firstIndex(of: viewController) else { return nil }
 
         if currentIndex < pages.count - 1 {
-            // go to next page in array
-            return pages[currentIndex + 1]
+            return pages[currentIndex + 1]  // go next
         } else {
-            // wrap to first page in array
-            return pages.first
+            return pages.first              // wrap first
         }
     }
 }
@@ -137,19 +132,17 @@ extension DemoViewController {
 extension UIPageViewController {
 
     func goToNextPage(animated: Bool = true, completion: ((Bool) -> Void)? = nil) {
-        if let currentPage = viewControllers?[0] {
-            if let nextPage = dataSource?.pageViewController(self, viewControllerAfter: currentPage) {
-                setViewControllers([nextPage], direction: .forward, animated: animated, completion: completion)
-            }
-        }
+        guard let currentPage = viewControllers?[0] else { return }
+        guard let nextPage = dataSource?.pageViewController(self, viewControllerAfter: currentPage) else { return }
+        
+        setViewControllers([nextPage], direction: .forward, animated: animated, completion: completion)
     }
     
     func goToPreviousPage(animated: Bool = true, completion: ((Bool) -> Void)? = nil) {
-        if let currentPage = viewControllers?[0] {
-            if let nextPage = dataSource?.pageViewController(self, viewControllerBefore: currentPage) {
-                setViewControllers([nextPage], direction: .forward, animated: animated, completion: completion)
-            }
-        }
+        guard let currentPage = viewControllers?[0] else { return }
+        guard let prevPage = dataSource?.pageViewController(self, viewControllerBefore: currentPage) else { return }
+        
+        setViewControllers([prevPage], direction: .forward, animated: animated, completion: completion)
     }
     
     func goToSpecificPage(index: Int, ofViewControllers pages: [UIViewController]) {

@@ -34,7 +34,7 @@ extension ViewController {
         
         pageControl.addTarget(self, action: #selector(pageControlTapped(_:)), for: .valueChanged)
 
-        // add the individual viewControllers to the pageViewController
+        // create an array of viewController
         let page1 = ViewController1()
         let page2 = ViewController2()
         let page3 = ViewController3()
@@ -42,6 +42,9 @@ extension ViewController {
         pages.append(page1)
         pages.append(page2)
         pages.append(page3)
+        
+        // set initial viewController to be displayed
+        // Note: We are not passing in all the viewControllers here. Only the one to be displayed.
         setViewControllers([pages[initialPage]], direction: .forward, animated: true, completion: nil)
     }
     
@@ -68,11 +71,10 @@ extension ViewController {
 
 extension ViewController {
     
-    // Note: Can only skip ahead on page at a time (not two at a time).
+    // How we change page when pageControl tapped.
+    // Note - Can only skip ahead on page at a time.
     @objc func pageControlTapped(_ sender: UIPageControl) {
-        let currentPage = sender.currentPage
-        print(currentPage)
-        setViewControllers([pages[currentPage]], direction: .forward, animated: true, completion: nil)
+        setViewControllers([pages[sender.currentPage]], direction: .forward, animated: true, completion: nil)
     }
 }
 
@@ -85,11 +87,9 @@ extension ViewController: UIPageViewControllerDataSource {
         guard let currentIndex = pages.firstIndex(of: viewController) else { return nil }
         
         if currentIndex == 0 {
-            // wrap to last page in array
-            return pages.last
+            return pages.last               // wrap to last
         } else {
-            // go to previous page in array
-            return pages[currentIndex - 1]
+            return pages[currentIndex - 1]  // go previous
         }
     }
     
@@ -98,11 +98,9 @@ extension ViewController: UIPageViewControllerDataSource {
         guard let currentIndex = pages.firstIndex(of: viewController) else { return nil }
 
         if currentIndex < pages.count - 1 {
-            // go to next page in array
-            return pages[currentIndex + 1]
+            return pages[currentIndex + 1]  // go next
         } else {
-            // wrap to first page in array
-            return pages.first
+            return pages.first              // wrap to first
         }
     }
 }
@@ -111,14 +109,13 @@ extension ViewController: UIPageViewControllerDataSource {
 
 extension ViewController: UIPageViewControllerDelegate {
     
+    // How we keep our pageControl in sync with viewControllers
     func pageViewController(_ pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
         
-        // set the pageControl.currentPage to the index of the current viewController in pages
-        if let viewControllers = pageViewController.viewControllers {
-            if let viewControllerIndex = pages.firstIndex(of: viewControllers[0]) {
-                pageControl.currentPage = viewControllerIndex
-            }
-        }
+        guard let viewControllers = pageViewController.viewControllers else { return }
+        guard let currentIndex = pages.firstIndex(of: viewControllers[0]) else { return }
+        
+        pageControl.currentPage = currentIndex
     }
 }
 
