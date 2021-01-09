@@ -14,6 +14,7 @@ class DemoViewController: UIPageViewController {
     let initialPage = 0
     
     let skipButton = UIButton()
+    let nextButton = UIButton()
     
     var currentViewController: UIViewController?
     
@@ -57,15 +58,21 @@ extension DemoViewController {
         pageControl.numberOfPages = pages.count
         pageControl.isUserInteractionEnabled = false // disable interaction
         pageControl.currentPage = initialPage
-        
+
         skipButton.translatesAutoresizingMaskIntoConstraints = false
         skipButton.setTitleColor(.systemBlue, for: .normal)
         skipButton.setTitle("Skip", for: .normal)
         skipButton.addTarget(self, action: #selector(skipTapped(_:)), for: .primaryActionTriggered)
+
+        nextButton.translatesAutoresizingMaskIntoConstraints = false
+        nextButton.setTitleColor(.systemBlue, for: .normal)
+        nextButton.setTitle("Next", for: .normal)
+        nextButton.addTarget(self, action: #selector(nextTapped(_:)), for: .primaryActionTriggered)
     }
     
     func layout() {
         view.addSubview(pageControl)
+        view.addSubview(nextButton)
         view.addSubview(skipButton)
         
         NSLayoutConstraint.activate([
@@ -73,9 +80,12 @@ extension DemoViewController {
             pageControl.heightAnchor.constraint(equalToConstant: 20),
             pageControl.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             view.bottomAnchor.constraint(equalToSystemSpacingBelow: pageControl.bottomAnchor, multiplier: 1),
-            
+
             skipButton.topAnchor.constraint(equalToSystemSpacingBelow: view.safeAreaLayoutGuide.topAnchor, multiplier: 2),
             skipButton.leadingAnchor.constraint(equalToSystemSpacingAfter: view.leadingAnchor, multiplier: 2),
+
+            nextButton.topAnchor.constraint(equalToSystemSpacingBelow: view.safeAreaLayoutGuide.topAnchor, multiplier: 2),
+            view.trailingAnchor.constraint(equalToSystemSpacingAfter: nextButton.trailingAnchor, multiplier: 2),
         ])
     }
 }
@@ -114,6 +124,10 @@ extension DemoViewController: UIPageViewControllerDataSource {
 extension DemoViewController {
 
     @objc func skipTapped(_ sender: UIButton) {
+        goToSpecificPage(index: pages.count - 1, ofViewControllers: pages)
+    }
+    
+    @objc func nextTapped(_ sender: UIButton) {
         goToNextPage()
     }
 }
@@ -121,21 +135,24 @@ extension DemoViewController {
 // MARK: - Extensions
 
 extension UIPageViewController {
+
     func goToNextPage(animated: Bool = true, completion: ((Bool) -> Void)? = nil) {
-        if let currentViewController = viewControllers?[0] {
-            if let nextPage = dataSource?.pageViewController(self, viewControllerAfter: currentViewController) {
+        if let currentPage = viewControllers?[0] {
+            if let nextPage = dataSource?.pageViewController(self, viewControllerAfter: currentPage) {
                 setViewControllers([nextPage], direction: .forward, animated: animated, completion: completion)
             }
         }
     }
-}
-
-extension UIPageViewController {
+    
     func goToPreviousPage(animated: Bool = true, completion: ((Bool) -> Void)? = nil) {
-        if let currentViewController = viewControllers?[0] {
-            if let nextPage = dataSource?.pageViewController(self, viewControllerBefore: currentViewController) {
+        if let currentPage = viewControllers?[0] {
+            if let nextPage = dataSource?.pageViewController(self, viewControllerBefore: currentPage) {
                 setViewControllers([nextPage], direction: .forward, animated: animated, completion: completion)
             }
         }
+    }
+    
+    func goToSpecificPage(index: Int, ofViewControllers pages: [UIViewController]) {
+        setViewControllers([pages[index]], direction: .forward, animated: true, completion: nil)
     }
 }
