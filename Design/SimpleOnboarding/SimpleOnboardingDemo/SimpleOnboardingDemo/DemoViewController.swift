@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  DemoViewController.swift
 //  SimpleOnboardingDemo
 //
 //  Created by jrasmusson on 2021-01-08.
@@ -7,11 +7,7 @@
 
 import UIKit
 
-/*
- Simple example of UIPageViewController.
-*/
-
-class ViewController: UIPageViewController {
+class DemoViewController: UIPageViewController {
 
     var pages = [UIViewController]()
     let pageControl = UIPageControl()
@@ -26,19 +22,28 @@ class ViewController: UIPageViewController {
     }
 }
 
-extension ViewController {
+extension DemoViewController {
     
     func setup() {
         dataSource = self
+        delegate = self
 
         // add the individual viewControllers to the pageViewController
-        let page1 = ViewController1()
-        let page2 = ViewController2()
-        let page3 = ViewController3()
-
+        let page1 = OnboardingViewController(imageName: "logo",
+                                             titleText: "Welcome",
+                                             subtitleText: "To the Swift Arcade. Your place for learning Swift.")
+        let page2 = OnboardingViewController(imageName: "swift",
+                                             titleText: "Learn",
+                                             subtitleText: "Start your careerr in iOS development.")
+        let page3 = OnboardingViewController(imageName: "level-up",
+                                             titleText: "Have fun",
+                                             subtitleText: "Level Up and have fun building mobile apps.")
+        let page4 = LoginViewController()
+        
         pages.append(page1)
         pages.append(page2)
         pages.append(page3)
+        pages.append(page4)
         setViewControllers([pages[initialPage]], direction: .forward, animated: true, completion: nil)
     }
     
@@ -62,9 +67,7 @@ extension ViewController {
     }
 }
 
-// MARK: - DataSources
-
-extension ViewController: UIPageViewControllerDataSource {
+extension DemoViewController: UIPageViewControllerDataSource {
     
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
         
@@ -93,25 +96,15 @@ extension ViewController: UIPageViewControllerDataSource {
     }
 }
 
-// MARK: - ViewControllers
-
-class ViewController1: UIViewController {
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        view.backgroundColor = .systemRed
-    }
-}
-
-class ViewController2: UIViewController {
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        view.backgroundColor = .systemGreen
-    }
-}
-
-class ViewController3: UIViewController {
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        view.backgroundColor = .systemBlue
+extension DemoViewController: UIPageViewControllerDelegate {
+    
+    func pageViewController(_ pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
+        
+        // set the pageControl.currentPage to the index of the current viewController in pages
+        if let viewControllers = pageViewController.viewControllers {
+            if let viewControllerIndex = pages.firstIndex(of: viewControllers[0]) {
+                pageControl.currentPage = viewControllerIndex
+            }
+        }
     }
 }
