@@ -10,13 +10,16 @@ import UIKit
 class DemoViewController: UIPageViewController {
 
     var pages = [UIViewController]()
-    let pageControl = UIPageControl()
-    let initialPage = 0
     
     let skipButton = UIButton()
     let nextButton = UIButton()
-    
-    var currentViewController: UIViewController?
+    let pageControl = UIPageControl()
+    let initialPage = 0
+
+    // animations
+    var pageControlBottomAnchor: NSLayoutConstraint?
+    var skipButtonTopAnchor: NSLayoutConstraint?
+    var nextButtonTopAnchor: NSLayoutConstraint?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,6 +34,7 @@ extension DemoViewController {
     
     func setup() {
         dataSource = self
+        delegate = self
 
         let page1 = OnboardingViewController(imageName: "logo",
                                              titleText: "Welcome",
@@ -78,7 +82,7 @@ extension DemoViewController {
             pageControl.widthAnchor.constraint(equalTo: view.widthAnchor),
             pageControl.heightAnchor.constraint(equalToConstant: 20),
             pageControl.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            view.bottomAnchor.constraint(equalToSystemSpacingBelow: pageControl.bottomAnchor, multiplier: 1),
+//            view.bottomAnchor.constraint(equalToSystemSpacingBelow: pageControl.bottomAnchor, multiplier: 2),
 
             skipButton.topAnchor.constraint(equalToSystemSpacingBelow: view.safeAreaLayoutGuide.topAnchor, multiplier: 2),
             skipButton.leadingAnchor.constraint(equalToSystemSpacingAfter: view.leadingAnchor, multiplier: 2),
@@ -86,8 +90,16 @@ extension DemoViewController {
             nextButton.topAnchor.constraint(equalToSystemSpacingBelow: view.safeAreaLayoutGuide.topAnchor, multiplier: 2),
             view.trailingAnchor.constraint(equalToSystemSpacingAfter: nextButton.trailingAnchor, multiplier: 2),
         ])
+        
+        // for animations
+        pageControlBottomAnchor = view.bottomAnchor.constraint(equalToSystemSpacingBelow: pageControl.bottomAnchor, multiplier: 2)
+        pageControlBottomAnchor?.isActive = true
+        
+        
     }
 }
+
+// MARK: - DataSource
 
 extension DemoViewController: UIPageViewControllerDataSource {
     
@@ -114,16 +126,64 @@ extension DemoViewController: UIPageViewControllerDataSource {
     }
 }
 
+// MARK: - Delegates
+
+extension DemoViewController: UIPageViewControllerDelegate {
+    
+    // How we keep our pageControl in sync with viewControllers
+    func pageViewController(_ pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
+        
+        guard let viewControllers = pageViewController.viewControllers else { return }
+        guard let currentIndex = pages.firstIndex(of: viewControllers[0]) else { return }
+        
+        pageControl.currentPage = currentIndex
+        animateControlsIfNeeded()
+    }
+    
+    private func animateControlsIfNeeded() {
+        let lastPage = pageControl.currentPage == pages.count - 1
+        
+        if lastPage {
+            hideControls()
+        } else {
+            showControls()
+        }
+
+        UIViewPropertyAnimator.runningPropertyAnimator(withDuration: 0.5, delay: 0, options: [.curveEaseOut], animations: {
+            self.view.layoutIfNeeded()
+        }, completion: nil)
+    }
+}
+
 // MARK: - Actions
 
 extension DemoViewController {
 
     @objc func skipTapped(_ sender: UIButton) {
-        goToSpecificPage(index: pages.count - 1, ofViewControllers: pages)
+        let lastPage = pages.count - 1
+        pageControl.currentPage = lastPage
+        goToSpecificPage(index: lastPage, ofViewControllers: pages)
+
+        animateControlsIfNeeded()
     }
     
+    private func hideControls() {
+        print("hide")
+        pageControlBottomAnchor?.constant = -80
+//        skipButtonTopAnchor?.constant = 0
+//        nextButtonTopAnchor?.constant = 0
+    }
+
+    private func showControls() {
+        print("show")
+        pageControlBottomAnchor?.constant = 16
+//        skipButtonTopAnchor?.constant = 0
+//        nextButtonTopAnchor?.constant = 0
+    }
+
     @objc func nextTapped(_ sender: UIButton) {
         goToNextPage()
+        animateControlsIfNeeded()
     }
 }
 
