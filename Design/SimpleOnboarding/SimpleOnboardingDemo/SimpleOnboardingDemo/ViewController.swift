@@ -14,7 +14,7 @@ import UIKit
 class ViewController: UIPageViewController {
 
     var pages = [UIViewController]()
-    let pageControl = UIPageControl()
+    let pageControl = UIPageControl() // external - not part of underlying pages
     let initialPage = 0
     
     override func viewDidLoad() {

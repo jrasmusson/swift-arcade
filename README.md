@@ -42,6 +42,7 @@ Collection of demos from the [Swift Arcade YouTube channel.](https://www.youtube
 
 - [Load & Retry Screens](https://github.com/jrasmusson/swift-arcade/blob/master/Design/LoadAndRetry/1-Load-And-Retry.md)
 - [Popup Menu](https://github.com/jrasmusson/swift-arcade/tree/master/Design/PopupMenu)
+- [Onboarding](Design/SimpleOnboarding/README.md)
 
 ## Foundation 🧱
 
