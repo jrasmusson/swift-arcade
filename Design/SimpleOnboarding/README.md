@@ -164,7 +164,7 @@ class ViewController3: UIViewController {
 
 Of course you can do more complex things like this.
 
-![demo](images/complex-demo.gif)
+![demo](images/complex2-demo.gif)
 
 Here we are swiping through a series of view controllers, but we have added some more controls to the page.
 
