@@ -123,12 +123,10 @@ extension FormFieldView {
 
 extension FormFieldView {
     
-    func enterEmailAnimation() {
-
+    func enterEmailAnimation() {        
         UIViewPropertyAnimator.runningPropertyAnimator(withDuration: 0.1,
                                                        delay: 0,
-                                                       options: [],
-                                                       animations: {
+                                                       options: []) {
             // style
             self.backgroundColor = .white
             self.label.textColor = Local.tintColorValid
@@ -140,34 +138,13 @@ extension FormFieldView {
             let transpose = CGAffineTransform(translationX: -8, y: -24)
             let scale = CGAffineTransform(scaleX: 0.7, y: 0.7)
             self.label.transform = transpose.concatenating(scale)
-        }) { position in
+            
+        } completion: { position in
             self.textField.isHidden = false
             self.textField.becomeFirstResponder()
             
             self.cancelButton.isHidden = false
         }
-        
-//        UIViewPropertyAnimator.runningPropertyAnimator(withDuration: 0.1,
-//                                                       delay: 0,
-//                                                       options: []) {
-//            // style
-//            self.backgroundColor = .white
-//            self.label.textColor = Local.tintColorValid
-//            self.layer.borderWidth = 1
-//            self.layer.borderColor = self.label.textColor.cgColor
-//            self.textField.tintColor = Local.tintColorValid
-//            
-//            // move
-//            let transpose = CGAffineTransform(translationX: -8, y: -24)
-//            let scale = CGAffineTransform(scaleX: 0.7, y: 0.7)
-//            self.label.transform = transpose.concatenating(scale)
-//            
-//        } completion: { position in
-//            self.textField.isHidden = false
-//            self.textField.becomeFirstResponder()
-//            
-//            self.cancelButton.isHidden = false
-//        }
     }
 }
 
