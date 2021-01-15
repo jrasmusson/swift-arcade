@@ -18,8 +18,14 @@ private struct Local {
 
 class FormFieldView: UIView {
 
+    enum EditState {
+        case valid
+        case invalid
+    }
+    
     let label = UILabel()
     let invalidLabel = UILabel()
+    var editState = EditState.valid
     
     let textField = UITextField()
     let cancelButton = makeSymbolButton(systemName: "clear.fill", target: self, selector: #selector(cancelTapped(_:)))
@@ -106,7 +112,9 @@ extension FormFieldView {
     
     @objc func tapped(_ recognizer: UITapGestureRecognizer) {
         if(recognizer.state == UIGestureRecognizer.State.ended) {
-            enterEmailAnimation()
+            if editState == .valid {
+                enterEmailAnimation()
+            }
         }
     }
 }
@@ -119,7 +127,8 @@ extension FormFieldView {
 
         UIViewPropertyAnimator.runningPropertyAnimator(withDuration: 0.1,
                                                        delay: 0,
-                                                       options: []) {
+                                                       options: [],
+                                                       animations: {
             // style
             self.backgroundColor = .white
             self.label.textColor = Local.tintColorValid
@@ -131,13 +140,34 @@ extension FormFieldView {
             let transpose = CGAffineTransform(translationX: -8, y: -24)
             let scale = CGAffineTransform(scaleX: 0.7, y: 0.7)
             self.label.transform = transpose.concatenating(scale)
-            
-        } completion: { position in
+        }) { position in
             self.textField.isHidden = false
             self.textField.becomeFirstResponder()
             
             self.cancelButton.isHidden = false
         }
+        
+//        UIViewPropertyAnimator.runningPropertyAnimator(withDuration: 0.1,
+//                                                       delay: 0,
+//                                                       options: []) {
+//            // style
+//            self.backgroundColor = .white
+//            self.label.textColor = Local.tintColorValid
+//            self.layer.borderWidth = 1
+//            self.layer.borderColor = self.label.textColor.cgColor
+//            self.textField.tintColor = Local.tintColorValid
+//            
+//            // move
+//            let transpose = CGAffineTransform(translationX: -8, y: -24)
+//            let scale = CGAffineTransform(scaleX: 0.7, y: 0.7)
+//            self.label.transform = transpose.concatenating(scale)
+//            
+//        } completion: { position in
+//            self.textField.isHidden = false
+//            self.textField.becomeFirstResponder()
+//            
+//            self.cancelButton.isHidden = false
+//        }
     }
 }
 
@@ -145,11 +175,13 @@ extension FormFieldView {
 
 extension FormFieldView: UITextFieldDelegate {
     
+    // Should we process the 'Return' button being pressed? Yes.
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        textField.endEditing(true)
+        textField.endEditing(true) // Also resign first responder (necessary for initiating other callback delegates).
         return true
     }
     
+    // Should editting stop? Yes.
     func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
         if textField.text != "" {
             return true
@@ -164,6 +196,7 @@ extension FormFieldView: UITextFieldDelegate {
             undo()
         } else {
             showInvalidEmailMessage()
+            textField.becomeFirstResponder()
         }
         
         textField.text = ""
@@ -174,6 +207,7 @@ extension FormFieldView: UITextFieldDelegate {
         invalidLabel.isHidden = false
         layer.borderColor = Local.tintColorInValid.cgColor
         textField.tintColor = Local.tintColorInValid
+        editState = .invalid
     }
 }
 
@@ -197,6 +231,8 @@ extension FormFieldView {
 
             // move
             self.label.transform = .identity
+            
+            self.editState = .valid
         }
         size.startAnimation()
     }
