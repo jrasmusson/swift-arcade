@@ -94,6 +94,21 @@ When you want to compose nibs into other nibs, you need to load them manually. G
 
 Create a `InnerView.xib` and hook it up to it's `InnerView.swift`.
 
+```swift
+import UIKit
+
+class InnerView: UIView {
+        
+    override func awakeFromNib() {
+        super.awakeFromNib()
+    }
+    
+    override var intrinsicContentSize: CGSize {
+        return CGSize(width: 200, height: 100)
+    }
+}
+```
+
 ![](images/gg.png)
 
 Then modify `RedView.swift` to load the `InnerView.xib` manually and lay it out using Auto Layout.
