@@ -42,7 +42,7 @@ func makeText() -> c {
 
 ![TableView](images/bold.png)
 
-```swit
+```swift
 func makeText() -> NSAttributedString {
     var plainTextAttributes = [NSAttributedString.Key: AnyObject]()
     plainTextAttributes[.font] = UIFont.preferredFont(forTextStyle: .body)
