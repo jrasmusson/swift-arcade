@@ -49,6 +49,7 @@ Collection of demos from the [Swift Arcade YouTube channel.](https://www.youtube
 - [NSAttributedStrings](Foundation/NSAttributedStrings/README.md)
 - [Pluralization](Foundation/Pluralization/README.md)
 - [Deep Linking](Foundation/Deeplink/README.md)
+- [Working with Nibs](Foundation/Nibs/README.md)
 
 ## Animations 🍄
 

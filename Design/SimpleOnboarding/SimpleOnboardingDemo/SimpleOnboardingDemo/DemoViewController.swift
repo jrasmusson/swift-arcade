@@ -10,17 +10,18 @@ import UIKit
 class DemoViewController: UIPageViewController {
 
     var pages = [UIViewController]()
-    
+
+    // external controls
     let skipButton = UIButton()
     let nextButton = UIButton()
     let pageControl = UIPageControl()
     let initialPage = 0
 
     // animations
-    var pageControlBottomAnchor: NSLayoutConstraint?
     var skipButtonTopAnchor: NSLayoutConstraint?
     var nextButtonTopAnchor: NSLayoutConstraint?
-    
+    var pageControlBottomAnchor: NSLayoutConstraint?
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -85,21 +86,19 @@ extension DemoViewController {
             pageControl.heightAnchor.constraint(equalToConstant: 20),
             pageControl.centerXAnchor.constraint(equalTo: view.centerXAnchor),
 
-            
             skipButton.leadingAnchor.constraint(equalToSystemSpacingAfter: view.leadingAnchor, multiplier: 2),
 
-            
             view.trailingAnchor.constraint(equalToSystemSpacingAfter: nextButton.trailingAnchor, multiplier: 2),
         ])
         
         // for animations
-        pageControlBottomAnchor = view.bottomAnchor.constraint(equalToSystemSpacingBelow: pageControl.bottomAnchor, multiplier: 2)
         skipButtonTopAnchor = skipButton.topAnchor.constraint(equalToSystemSpacingBelow: view.safeAreaLayoutGuide.topAnchor, multiplier: 2)
         nextButtonTopAnchor = nextButton.topAnchor.constraint(equalToSystemSpacingBelow: view.safeAreaLayoutGuide.topAnchor, multiplier: 2)
-        
-        pageControlBottomAnchor?.isActive = true
+        pageControlBottomAnchor = view.bottomAnchor.constraint(equalToSystemSpacingBelow: pageControl.bottomAnchor, multiplier: 2)
+
         skipButtonTopAnchor?.isActive = true
         nextButtonTopAnchor?.isActive = true
+        pageControlBottomAnchor?.isActive = true
     }
 }
 
@@ -181,10 +180,10 @@ extension DemoViewController {
     }
 
     @objc func skipTapped(_ sender: UIButton) {
-        let lastPage = pages.count - 1
-        pageControl.currentPage = lastPage
+        let lastPageIndex = pages.count - 1
+        pageControl.currentPage = lastPageIndex
         
-        goToSpecificPage(index: lastPage, ofViewControllers: pages)
+        goToSpecificPage(index: lastPageIndex, ofViewControllers: pages)
         animateControlsIfNeeded()
     }
     
