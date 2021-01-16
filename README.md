@@ -2,6 +2,11 @@
 
 Collection of demos from the [Swift Arcade YouTube channel.](https://www.youtube.com/channel/UCxnCA5FBYRCFgIZWD0CKCVg?view_as=subscriber)
 
+## Animations 🍄
+
+- [Core Animation Intro](Animation/CoreAnimationIntro/README.md)
+- [Login Form Field](Animation/Login/README.md)
+
 ## Weathery 🌦
 
 - [Weathery App](Weathery/README.md)
@@ -50,10 +55,6 @@ Collection of demos from the [Swift Arcade YouTube channel.](https://www.youtube
 - [Pluralization](Foundation/Pluralization/README.md)
 - [Deep Linking](Foundation/Deeplink/README.md)
 - [Working with Nibs](Foundation/Nibs/README.md)
-
-## Animations 🍄
-
-- [Login Form Field](Animation/Login/README.md)
 
 ## Swift 🎮
 
