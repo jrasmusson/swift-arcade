@@ -56,5 +56,8 @@ extension ViewController {
         barrelAnimation.duration = 1
         
         barrelView.layer.add(barrelAnimation, forKey: "basic")
+        
+        // update model to reflect final position of presentation layer
+        barrelView.layer.position = CGPoint(x: 700, y: 300)
     }
 }
