@@ -17,64 +17,78 @@ CA maintains two parallet layer hierarchies: the *model layer tree* and the *pre
 
 You can switch between these layers easily (`CALayer presentationLayer` and `CALayer modelLayer`). But if you ever inspect a layer during an animation and notice that it's values aren't different, this is why. It's the presentation layer that's being anination, not the model layer.
 
+## The Coordinate System
+
+One of the most confusing things about getting started with CA is it's coordinate system. But once you understand how it's layed out, and which operations are done to which properties it's not that bad.
+
+The basic coordinate system starts with the origin in the upper-right-hand corner for iOS (Mac is lower left). And the key thing to note is the center of the `layer` or it's `position`.
+
+![](images/coordinate-system.png)
+
+When we create a `UIImageView` we can specify the `CGRect` (whose lays the image out relative to the x and y values in the upper righ-hand-corner), but as we will see shortly, when we go to animate it, it is the position or `anchor point` that we will change.
+
 ## A Basic Animation
 
-This is how we can animate the rolling of a barrel from one value to another.
+To animate something in CA we often do so relative to it's anchor point or position.
 
-First we position the barrel on the screen.
+![](images/default-geometries.png)
+
+Note how the `position` is in the middle of the image. This position is half the width and half the height away from the images initial "position" of it's `CGRect` in the upper-right-hand corner.
+
+That's why when animating we often need to take this into account.
+
+For example, say we define an image with a `CGRect` defined at (500, 300).
+
 
 ```swift
 lazy var barrelView: UIImageView = {
-    let view = UIImageView(frame: CGRect(x: 500, y: 300, width: 98, height: 61))
+    let view = UIImageView(frame: CGRect(x: 500, y: 300, width: 100, height: 60))
     view.image = UIImage(named: "barrel")
     
     return view
 }()
 ```
 
-Then we animate it like this.
+To animate and move it 150 pts to the right, we need to do so relative to its position - which is 500 plus half the width of the image itself 100/2. Or 550.
 
 ```swift
 let barrelAnimation = CABasicAnimation()
 barrelAnimation.keyPath = "position.x"
-barrelAnimation.fromValue = 500
+barrelAnimation.fromValue = 550
 barrelAnimation.toValue = 700
 barrelAnimation.duration = 1
     
 barrelView.layer.add(barrelAnimation, forKey: "basic")
 ```
 
-The values 500 and 700 are absolute in that they are relative to the absolute coordinate system used to position the barrel in the first place. That's why I choose to do this layout using `CGFrame` and `CGRect` - I wanted to position this barrel exactly.
-
 ![](images/basic.gif)
 
-Notice of the animation resets itself when complete? That's the *model presentation* thing I was talking about. By default the animation will not modify the presentation layer beyond its duration. It will be removed when it is done and the presentation layer will fall back to the values of the model layer.
+Notice when we do the image flips back to it's original position? That's the *model presentation* thing I was talking about. By default the animation will not modify the presentation layer beyond its duration. It will be removed when it is done and the presentation layer will fall back to the values of the model layer.
 
-The recommended way to deal with this is to update the model to reflect the final stage of the presentation - that way the models are in sync.
+We can fix this by updating the *model layer* to equal the final position of the animation from the *presentation layer*.
 
 ```swift
 func animate() {
     let barrelAnimation = CABasicAnimation()
     barrelAnimation.keyPath = "position.x"
-    barrelAnimation.fromValue = 500
+    barrelAnimation.fromValue = 550
     barrelAnimation.toValue = 700
     barrelAnimation.duration = 1
     
     barrelView.layer.add(barrelAnimation, forKey: "basic")
     
     // update model to reflect final position of presentation layer
-    barrelView.layer.position = CGPoint(x: 700, y: 300)
+    barrelView.layer.position = CGPoint(x: 700, y: 330)
 }
 ```
 
-Now the barrel stays where is should, and all is good.
+![](images/animating-position.png)
 
-![](images/basic-stay.gif)
+Note also how when updating the model we can't just use the initial y-value of the `CGRect`. We have to use the y-position which is 300 + height/2 = 300 pts.
 
+Now the barrel stays where is should, our *model* and *presentation* layers are in sync, and all is good.
 
-
-
-
+![](images/basic-stay2.gif)
 
 
 ### Links that help
