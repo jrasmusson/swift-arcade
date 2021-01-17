@@ -8,17 +8,23 @@
 
 /* Begin PBXBuildFile section */
 		7120389A25B47AB90010803A /* FormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7120389925B47AB90010803A /* FormView.swift */; };
+		7120389F25B4E6940010803A /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7120389E25B4E6940010803A /* TableViewController.swift */; };
+		712038A225B4E8140010803A /* ShakeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 712038A125B4E8140010803A /* ShakeViewController.swift */; };
+		712038A525B4E8D30010803A /* FlyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 712038A425B4E8D30010803A /* FlyViewController.swift */; };
 		716DA51225B35C7800F39C39 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716DA51125B35C7800F39C39 /* AppDelegate.swift */; };
-		716DA51625B35C7800F39C39 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716DA51525B35C7800F39C39 /* ViewController.swift */; };
+		716DA51625B35C7800F39C39 /* SlideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716DA51525B35C7800F39C39 /* SlideViewController.swift */; };
 		716DA51B25B35C7900F39C39 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 716DA51A25B35C7900F39C39 /* Assets.xcassets */; };
 		716DA51E25B35C7900F39C39 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 716DA51C25B35C7900F39C39 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		7120389925B47AB90010803A /* FormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormView.swift; sourceTree = "<group>"; };
+		7120389E25B4E6940010803A /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		712038A125B4E8140010803A /* ShakeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShakeViewController.swift; sourceTree = "<group>"; };
+		712038A425B4E8D30010803A /* FlyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlyViewController.swift; sourceTree = "<group>"; };
 		716DA50E25B35C7800F39C39 /* CoreAnimationIntro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoreAnimationIntro.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		716DA51125B35C7800F39C39 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		716DA51525B35C7800F39C39 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		716DA51525B35C7800F39C39 /* SlideViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideViewController.swift; sourceTree = "<group>"; };
 		716DA51A25B35C7900F39C39 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		716DA51D25B35C7900F39C39 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		716DA51F25B35C7900F39C39 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -55,8 +61,11 @@
 			isa = PBXGroup;
 			children = (
 				716DA52825B35CDC00F39C39 /* Files */,
-				716DA51525B35C7800F39C39 /* ViewController.swift */,
+				7120389E25B4E6940010803A /* TableViewController.swift */,
+				716DA51525B35C7800F39C39 /* SlideViewController.swift */,
 				7120389925B47AB90010803A /* FormView.swift */,
+				712038A125B4E8140010803A /* ShakeViewController.swift */,
+				712038A425B4E8D30010803A /* FlyViewController.swift */,
 			);
 			path = CoreAnimationIntro;
 			sourceTree = "<group>";
@@ -142,8 +151,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				7120389A25B47AB90010803A /* FormView.swift in Sources */,
-				716DA51625B35C7800F39C39 /* ViewController.swift in Sources */,
+				716DA51625B35C7800F39C39 /* SlideViewController.swift in Sources */,
+				712038A525B4E8D30010803A /* FlyViewController.swift in Sources */,
+				7120389F25B4E6940010803A /* TableViewController.swift in Sources */,
 				716DA51225B35C7800F39C39 /* AppDelegate.swift in Sources */,
+				712038A225B4E8140010803A /* ShakeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
