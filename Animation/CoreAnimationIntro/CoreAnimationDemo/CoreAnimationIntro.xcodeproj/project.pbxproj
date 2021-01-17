@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		7120389A25B47AB90010803A /* FormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7120389925B47AB90010803A /* FormView.swift */; };
 		7120389F25B4E6940010803A /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7120389E25B4E6940010803A /* TableViewController.swift */; };
 		712038A225B4E8140010803A /* ShakeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 712038A125B4E8140010803A /* ShakeViewController.swift */; };
 		712038A525B4E8D30010803A /* FlyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 712038A425B4E8D30010803A /* FlyViewController.swift */; };
@@ -18,7 +17,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		7120389925B47AB90010803A /* FormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormView.swift; sourceTree = "<group>"; };
 		7120389E25B4E6940010803A /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		712038A125B4E8140010803A /* ShakeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShakeViewController.swift; sourceTree = "<group>"; };
 		712038A425B4E8D30010803A /* FlyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlyViewController.swift; sourceTree = "<group>"; };
@@ -63,7 +61,6 @@
 				716DA52825B35CDC00F39C39 /* Files */,
 				7120389E25B4E6940010803A /* TableViewController.swift */,
 				716DA51525B35C7800F39C39 /* SlideViewController.swift */,
-				7120389925B47AB90010803A /* FormView.swift */,
 				712038A125B4E8140010803A /* ShakeViewController.swift */,
 				712038A425B4E8D30010803A /* FlyViewController.swift */,
 			);
@@ -150,7 +147,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7120389A25B47AB90010803A /* FormView.swift in Sources */,
 				716DA51625B35C7800F39C39 /* SlideViewController.swift in Sources */,
 				712038A525B4E8D30010803A /* FlyViewController.swift in Sources */,
 				7120389F25B4E6940010803A /* TableViewController.swift in Sources */,

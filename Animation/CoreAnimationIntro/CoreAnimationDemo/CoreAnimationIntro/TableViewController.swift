@@ -9,10 +9,7 @@ import UIKit
 
 class TableViewController: UITableViewController {
     
-    let animations = ["Basic",
-                "Space Invaders",
-                "Donkey Kong"]
-    
+    let animations = ["Basic", "Shake", "Fly"]
     let cellId = "cellId"
     
     override func viewDidLoad() {
@@ -21,7 +18,7 @@ class TableViewController: UITableViewController {
     }
     
     func setupViews() {
-        navigationItem.title = "Games"
+        navigationItem.title = "Core Animation Intro"
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellId)
     }
     
@@ -41,6 +38,8 @@ class TableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.row == 0 {
             navigationController?.pushViewController(SlideViewController(), animated: true)
+        } else if indexPath.row == 1 {
+            navigationController?.pushViewController(ShakeViewController(), animated: true)
         }
     }
 }

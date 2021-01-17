@@ -9,7 +9,7 @@ import UIKit
 
 class ShakeViewController: UIViewController {
     
-    let loginView = UITextField()
+    let textField = UITextField()
     let shakeButton = makeButton(withText: "Shake")
     
     override func viewDidLoad() {
@@ -25,28 +25,26 @@ class ShakeViewController: UIViewController {
 extension ShakeViewController {
     
     func setup() {
-        let lockImageView = UIImageView(image: UIImage(systemName: "lock"))
-        loginView.leftViewMode = .always
-        loginView.leftView = lockImageView
+        textField.setIcon(UIImage(systemName: "lock")!)
 
-        loginView.translatesAutoresizingMaskIntoConstraints = false
-        loginView.backgroundColor = .systemGray5
-        loginView.font = UIFont.preferredFont(forTextStyle: .title1)
-        loginView.layer.cornerRadius = 6
-        loginView.placeholder = "•••••••"
+        textField.translatesAutoresizingMaskIntoConstraints = false
+        textField.backgroundColor = .systemGray5
+        textField.font = UIFont.preferredFont(forTextStyle: .title1)
+        textField.layer.cornerRadius = 6
+        textField.placeholder = "  •••••  "
         
         shakeButton.addTarget(self, action: #selector(shakeTapped(_:)), for: .primaryActionTriggered)
         
-        view.addSubview(loginView)
+        view.addSubview(textField)
         view.addSubview(shakeButton)
     }
     
     func layout() {
         NSLayoutConstraint.activate([
-            loginView.topAnchor.constraint(equalTo: view.topAnchor, constant: 60),
-            loginView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            textField.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 60),
+            textField.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             
-            shakeButton.topAnchor.constraint(equalToSystemSpacingBelow: loginView.bottomAnchor, multiplier: 2),
+            shakeButton.topAnchor.constraint(equalToSystemSpacingBelow: textField.bottomAnchor, multiplier: 2),
             shakeButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
         ])
     }
@@ -68,6 +66,18 @@ extension ShakeViewController {
         animation.duration = 0.4
 
         animation.isAdditive = true
-        loginView.layer.add(animation, forKey: "shake")
+        textField.layer.add(animation, forKey: "shake")
+    }
+}
+
+extension UITextField {
+    
+    func setIcon(_ image: UIImage) {
+        let iconView = UIImageView(frame: CGRect(x: 10, y: 5, width: 20, height: 20))
+        iconView.image = image
+        let iconContainerView: UIView = UIView(frame: CGRect(x: 20, y: 0, width: 30, height: 30))
+        iconContainerView.addSubview(iconView)
+        leftView = iconContainerView
+        leftViewMode = .always
     }
 }
