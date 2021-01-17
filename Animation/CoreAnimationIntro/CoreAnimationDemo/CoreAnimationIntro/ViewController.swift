@@ -9,7 +9,10 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    let redoButton = makeButton(withText: "Redo")
+    let loginView = UITextField()
+    
+    let slideButton = makeButton(withText: "Slide barrel")
+    let shakeButton = makeButton(withText: "Shake")
     
     lazy var donkeyView: UIImageView = {
         let view = UIImageView(frame: CGRect(x: 50, y: 160, width: 388, height: 203))
@@ -35,50 +38,93 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         setup()
         layout()
-        animate()
+        animateBarrel()
     }
 }
 
+// MARK: - Setup
+
 extension ViewController {
+    
     func setup() {
-        redoButton.addTarget(self, action: #selector(redoTapped(_:)), for: .primaryActionTriggered)
+        let lockImageView = UIImageView(image: UIImage(systemName: "lock"))
+        loginView.leftViewMode = .always
+        loginView.leftView = lockImageView
+
+        loginView.translatesAutoresizingMaskIntoConstraints = false
+        loginView.backgroundColor = .systemGray5
+        loginView.font = UIFont.preferredFont(forTextStyle: .title1)
+        loginView.layer.cornerRadius = 6
+        loginView.placeholder = "•••••••"
+        
+        slideButton.addTarget(self, action: #selector(slideTapped(_:)), for: .primaryActionTriggered)
+        shakeButton.addTarget(self, action: #selector(shakeTapped(_:)), for: .primaryActionTriggered)
         
         view.addSubview(donkeyView)
         view.addSubview(marioView)
         view.addSubview(barrelView)
-        view.addSubview(redoButton)
-        
-        // print(UIScreen.main.bounds.size)
+
+        view.addSubview(loginView)
+
+        view.addSubview(slideButton)
+        view.addSubview(shakeButton)
     }
     
     func layout() {
         NSLayoutConstraint.activate([
-            redoButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 500),
-            redoButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            slideButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 400),
+            slideButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            
+            loginView.topAnchor.constraint(equalTo: slideButton.bottomAnchor, constant: 60),
+            loginView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            
+            shakeButton.topAnchor.constraint(equalToSystemSpacingBelow: loginView.bottomAnchor, multiplier: 2),
+            shakeButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
         ])
     }
     
-    func animate() {
-        let barrelAnimation = CABasicAnimation()
-        barrelAnimation.keyPath = "position.x"
-        barrelAnimation.fromValue = 550
-        barrelAnimation.toValue = 700
-        barrelAnimation.duration = 1
+    @objc func slideTapped(_ sender: UIButton) {
+        animateBarrel()
+    }
+    
+    @objc func shakeTapped(_ sender: UIButton) {
+        shakeLogin()
+    }
+
+}
+
+// MARK: - Animations
+
+extension ViewController {
+
+    func animateBarrel() {
+        let animation = CABasicAnimation()
+        animation.keyPath = "position.x"
+        animation.fromValue = 550
+        animation.toValue = 700
+        animation.duration = 1
         
-        barrelView.layer.add(barrelAnimation, forKey: "basic")
+        barrelView.layer.add(animation, forKey: "basic")
         
         // update model to reflect final position of presentation layer
         barrelView.layer.position = CGPoint(x: 700, y: 330)
     }
-    
-    @objc func redoTapped(_ sender: UIButton) {
-        animate()
+
+    func shakeLogin() {
+        let animation = CAKeyframeAnimation()
+        animation.keyPath = "position.x"
+        animation.values = [0, 10, -10, 10, 0]
+        animation.keyTimes = [0, 0.16, 0.5, 0.83, 1]
+        animation.duration = 0.4
+
+        animation.isAdditive = true
+        loginView.layer.add(animation, forKey: "shake")
     }
 }
 
+// MARK: - Factories
 
 func makeButton(withText text: String) -> UIButton {
     let button = UIButton()

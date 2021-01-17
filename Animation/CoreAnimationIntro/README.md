@@ -68,18 +68,16 @@ Notice when we do the image flips back to it's original position? That's the *mo
 We can fix this by updating the *model layer* to equal the final position of the animation from the *presentation layer*.
 
 ```swift
-func animate() {
-    let barrelAnimation = CABasicAnimation()
-    barrelAnimation.keyPath = "position.x"
-    barrelAnimation.fromValue = 550
-    barrelAnimation.toValue = 700
-    barrelAnimation.duration = 1
+let barrelAnimation = CABasicAnimation()
+barrelAnimation.keyPath = "position.x"
+barrelAnimation.fromValue = 550
+barrelAnimation.toValue = 700
+barrelAnimation.duration = 1
     
-    barrelView.layer.add(barrelAnimation, forKey: "basic")
+barrelView.layer.add(barrelAnimation, forKey: "basic")
     
-    // update model to reflect final position of presentation layer
-    barrelView.layer.position = CGPoint(x: 700, y: 330)
-}
+// update model to reflect final position of presentation layer
+barrelView.layer.position = CGPoint(x: 700, y: 330)
 ```
 
 ![](images/animating-position.png)
@@ -90,6 +88,28 @@ Now the barrel stays where is should, our *model* and *presentation* layers are 
 
 ![](images/basic-stay2.gif)
 
+## Keyframe animations
+
+To get full contorl over what happens in an animation and when use `CAKeyframeAnimation`.
+
+Here is an example of how we can make a login form shake by moving the `position.x` of a textfield back and forth at specific times over a 0.4 sec duration.
+
+![](images/shake2.gif)
+
+```swift
+let animation = CAKeyframeAnimation()
+animation.keyPath = "position.x"
+animation.values = [0, 10, -10, 10, 0]
+animation.keyTimes = [0, 0.16, 0.5, 0.83, 1]
+animation.duration = 0.4
+
+animation.isAdditive = true
+loginView.layer.add(animation, forKey: "shake")
+```
+
+`isAdditive` determines if the value specified by the animation is added to the current render tree value to produce the new render tree value.
+
+## Animating along paths
 
 ### Links that help
 
