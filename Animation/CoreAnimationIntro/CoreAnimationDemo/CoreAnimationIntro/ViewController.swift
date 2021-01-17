@@ -36,11 +36,28 @@ class ViewController: UIViewController {
         return view
     }()
 
+    lazy var worldView: UIImageView = {
+        let view = UIImageView(frame: CGRect(x: 380, y: 800, width: 256, height: 256))
+        view.image = UIImage(named: "world")
+        
+        return view
+    }()
+
+    lazy var shipView: UIImageView = {
+        let view = UIImageView(frame: CGRect(x: 380, y: 1100, width: 75, height: 90))
+        view.image = UIImage(named: "ship")
+        
+        return view
+    }()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
         layout()
+        
         animateBarrel()
+        shakeLogin()
+        flyShip()
     }
 }
 
@@ -65,9 +82,10 @@ extension ViewController {
         view.addSubview(donkeyView)
         view.addSubview(marioView)
         view.addSubview(barrelView)
-
         view.addSubview(loginView)
-
+        view.addSubview(worldView)
+        view.addSubview(shipView)
+        
         view.addSubview(slideButton)
         view.addSubview(shakeButton)
     }
@@ -121,6 +139,22 @@ extension ViewController {
 
         animation.isAdditive = true
         loginView.layer.add(animation, forKey: "shake")
+    }
+    
+    func flyShip() {
+//        let boundingRect = CGRect(x: -150, y: -150, width: 300, height: 300)
+        let boundingRect = CGRect(x: 0, y: 0, width: 300, height: 300)
+        
+        let orbit = CAKeyframeAnimation()
+        orbit.keyPath = "position"
+        orbit.path = CGPath(ellipseIn: boundingRect, transform: nil)
+        orbit.duration = 4
+        orbit.isAdditive = true
+        orbit.repeatCount = HUGE
+        orbit.calculationMode = CAAnimationCalculationMode.paced;
+        orbit.rotationMode = CAAnimationRotationMode.rotateAuto;
+
+        shipView.layer.add(orbit, forKey: "orbit")
     }
 }
 
