@@ -1,15 +1,15 @@
 //
 //  ViewController.swift
-//  CoreAnimationIntro
+//  CoreGraphicsIntro
 //
-//  Created by jrasmusson on 2021-01-17.
+//  Created by jrasmusson on 2021-01-18.
 //
 
 import UIKit
 
 class TableViewController: UITableViewController {
     
-    let animations = ["Basic", "Shake", "Fly"]
+    let animations = ["Basic Shapes", "Images", "drawRect"]
     let cellId = "cellId"
     
     override func viewDidLoad() {
@@ -37,11 +37,12 @@ class TableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.row == 0 {
-            navigationController?.pushViewController(SlideViewController(), animated: true)
-        } else if indexPath.row == 1 {
-            navigationController?.pushViewController(ShakeViewController(), animated: true)
+            navigationController?.pushViewController(BasicShapesViewController(), animated: true)
+        }
+        else if indexPath.row == 1 {
+            navigationController?.pushViewController(ImageViewController(), animated: true)
+        } else if indexPath.row == 2 {
+            navigationController?.pushViewController(DrawRectViewController(), animated: true)
         }
     }
 }
-
-

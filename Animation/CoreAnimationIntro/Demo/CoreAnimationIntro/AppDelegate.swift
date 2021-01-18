@@ -18,7 +18,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.backgroundColor = .systemBackground
         
         let navigationController = UINavigationController(rootViewController: TableViewController())
-        window?.rootViewController = navigationController
+//        window?.rootViewController = navigationController
+        window?.rootViewController = FlyViewController()
         
         return true
     }
