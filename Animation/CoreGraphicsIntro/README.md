@@ -91,7 +91,7 @@ context.setLineWidth(10)
 
 Stroke is the border color. One interesting thing about borders and stroking them in CG is that the line width straddles the path.
 
-![](images/straddle.png)
+![](images/straddle2.png)
 
 What that means is that we often need to offset our shapes when we are drawing along the borders of our views. 
 
