@@ -433,7 +433,7 @@ class CoordinateSystemViewController: UIViewController {
 }
 ```
 
-See repos for full project.
+See Demo directory in this folder for full project.
 
 ![](images/demo.gif)
 
