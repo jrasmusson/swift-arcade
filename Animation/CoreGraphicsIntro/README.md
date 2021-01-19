@@ -113,7 +113,7 @@ Here you define a `UIImageView` you would like to hold your CG image, and then y
 ```swift
 class LoadViaImageViewController: UIViewController {
 
-	// 1. Define container.
+    // 1. Define container.
     let imageView = UIImageView() 
 
     func drawRectangle() {
