@@ -4,14 +4,6 @@
 
 Core Graphics is Apple's library for drawing things in iOS and on the Mac. It is a library that contains primitives for programmatically drawing lines, circles, squares, patterns, arcs... anything we can think of.
 
-### Uses the painters model
-
-CG uses the painters model. Which means the way you draw is the same way a painter would - by adding on more paint. 
-
-![](images/painters-model.png)
-
-So the only way to modify a picture in CG is to add more paint - you can't change what is already there.
-
 ## How does it work
 
 Drawing in CG is basically a three step process.
