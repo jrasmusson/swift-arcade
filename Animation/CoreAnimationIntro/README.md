@@ -90,7 +90,7 @@ Now the barrel stays where is should, our *model* and *presentation* layers are 
 
 ## Keyframe animations
 
-To get full contorl over what happens in an animation and when use `CAKeyframeAnimation`.
+To get full control over what happens in an animation and when use `CAKeyframeAnimation`.
 
 Here is an example of how we can make a login form shake by moving the `position.x` of a textfield back and forth at specific times over a 0.4 sec duration.
 
