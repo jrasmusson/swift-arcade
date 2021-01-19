@@ -18,12 +18,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.backgroundColor = .systemBackground
         
         let navigationController = UINavigationController(rootViewController: TableViewController())
+//        let navigationController = UINavigationController(rootViewController: CoordinateSystemViewController())
 //        let navigationController = UINavigationController(rootViewController: DrawRectViewController())
+//        let navigationController = UINavigationController(rootViewController: LoadViaImageViewController())
         window?.rootViewController = navigationController
         
         return true
     }
-
-
 }
 

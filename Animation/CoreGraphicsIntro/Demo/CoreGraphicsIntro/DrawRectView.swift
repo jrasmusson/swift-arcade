@@ -19,14 +19,27 @@ class DrawRectView: UIView {
     }
     
     override func draw(_ rect: CGRect) {
-        let rectangle = CGRect(x: 0, y: 0, width: 100, height: 100)
+        
+        let rectangle1 = CGRect(x: 0, y: 0, width: 200, height: 180).insetBy(dx: 10, dy: 10)
         
         guard let context = UIGraphicsGetCurrentContext() else { return }
-        context.setFillColor(UIColor.red.cgColor)
-        context.setStrokeColor(UIColor.black.cgColor)
-        context.setLineWidth(10) // border centered on edge
-        context.addRect(rectangle)
+        
+        context.setFillColor(UIColor.systemRed.cgColor)
+        context.setStrokeColor(UIColor.systemGreen.cgColor)
+        context.setLineWidth(20)
+        context.addRect(rectangle1)
         context.drawPath(using: .fillStroke)
-        context.fill(rectangle)
+        context.fill(rectangle1)
+        
+        // painters model
+        
+        let rectangle2 = CGRect(x: 256, y: 256, width: 128, height: 128)
+
+        context.setFillColor(UIColor.systemYellow.cgColor)
+        context.setStrokeColor(UIColor.systemBlue.cgColor)
+        context.setLineWidth(10)
+
+        context.addEllipse(in: rectangle2)
+        context.drawPath(using: .fillStroke)
     }
 }

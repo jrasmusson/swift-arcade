@@ -9,8 +9,9 @@ import UIKit
 
 // https://www.hackingwithswift.com/read/27/4/ellipses-and-checkerboards
 
-class BasicShapesViewController: UIViewController {
+class LoadViaImageViewController: UIViewController {
 
+    // 1. Define container.
     let imageView = UIImageView()
     let button = makeButton(withText: "Redraw")
     var currentDrawType = 0
@@ -23,7 +24,7 @@ class BasicShapesViewController: UIViewController {
     }
 }
 
-extension BasicShapesViewController {
+extension LoadViaImageViewController {
     
     func style() {
         imageView.translatesAutoresizingMaskIntoConstraints = false
@@ -75,16 +76,25 @@ func makeButton(withText text: String) -> UIButton {
 
 // MARK: - Shapes
 
-extension BasicShapesViewController {
+extension LoadViaImageViewController {
     
+    // Because `setLineWidth` straddles the path, we need to inset the rectangle by
+    // half the line width if we want the image to be fully visible in the rect area.
+    //
+    // .insetBy(dx: 5, dy: 5)
+    //
+    // For a line width of 10
+    //
+    // ctx.cgContext.setLineWidth(10)
+    //
     func drawRectangle() {
         let render = UIGraphicsImageRenderer(size: CGSize(width: 512, height: 512))
         
         let image = render.image { ctx in
-            let rectangle = CGRect(x: 0, y: 0, width: 512, height: 512)
+            let rectangle = CGRect(x: 0, y: 0, width: 512, height: 512).insetBy(dx: 5, dy: 5)
             ctx.cgContext.setFillColor(UIColor.red.cgColor)
             ctx.cgContext.setStrokeColor(UIColor.black.cgColor)
-            ctx.cgContext.setLineWidth(10) // border centered on edge
+            ctx.cgContext.setLineWidth(10)
             ctx.cgContext.addRect(rectangle)
             ctx.cgContext.drawPath(using: .fillStroke)
         }
@@ -95,9 +105,9 @@ extension BasicShapesViewController {
     func drawCircle() {
         let renderer = UIGraphicsImageRenderer(size: CGSize(width: 512, height: 512))
 
+        // 2. Create graphic.
         let img = renderer.image { ctx in
-            let rectangle = CGRect(x: 0, y: 0, width: 512, height: 512).insetBy(dx: 5, dy: 5) // line width 10
-
+            let rectangle = CGRect(x: 0, y: 0, width: 512, height: 512).insetBy(dx: 5, dy: 5)
             ctx.cgContext.setFillColor(UIColor.red.cgColor)
             ctx.cgContext.setStrokeColor(UIColor.black.cgColor)
             ctx.cgContext.setLineWidth(10)
@@ -106,6 +116,7 @@ extension BasicShapesViewController {
             ctx.cgContext.drawPath(using: .fillStroke)
         }
 
+        // 3. Load into imageView container.
         imageView.image = img
     }
 }

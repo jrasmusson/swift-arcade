@@ -14,12 +14,14 @@ class DrawRectViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = .systemGray5
         
         drawRectView.translatesAutoresizingMaskIntoConstraints = false
         label.translatesAutoresizingMaskIntoConstraints = false
         label.numberOfLines = 0
+        label.font = UIFont.preferredFont(forTextStyle: .title1)
         
-        label.text = "drawRect gives you full control over how a layer will render. This view is 200 x 100. But the drawRect method on the inner view is a 100x100 red square. This shows how drawRect will only draw when you tell it - despite how big the container view is containing it."
+        label.text = "drawRect gives you full control over what a layer will render. The container view must still define the space that the via is going to draw in (in this case Auto Layout with width and height 512x512). But when it comes to drawing, drawRect uses it's own local coordinate system and renders exactly when it wants where it wants it."
         
         view.addSubview(drawRectView)
         view.addSubview(label)
@@ -27,13 +29,13 @@ class DrawRectViewController: UIViewController {
         NSLayoutConstraint.activate([
             drawRectView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             drawRectView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
-            drawRectView.widthAnchor.constraint(equalToConstant: 200),
-            drawRectView.heightAnchor.constraint(equalToConstant: 100),
+            drawRectView.widthAnchor.constraint(equalToConstant: 512),
+            drawRectView.heightAnchor.constraint(equalToConstant: 512),
             
-            label.topAnchor.constraint(equalToSystemSpacingBelow: drawRectView.bottomAnchor, multiplier: 2),
+            label.topAnchor.constraint(equalToSystemSpacingBelow: drawRectView.bottomAnchor, multiplier: 4),
             label.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            label.leadingAnchor.constraint(equalToSystemSpacingAfter: view.leadingAnchor, multiplier: 2),
-            view.trailingAnchor.constraint(equalToSystemSpacingAfter: label.trailingAnchor, multiplier: 2),
+            label.leadingAnchor.constraint(equalToSystemSpacingAfter: view.leadingAnchor, multiplier: 4),
+            view.trailingAnchor.constraint(equalToSystemSpacingAfter: label.trailingAnchor, multiplier: 4),
         ])
     }
 }

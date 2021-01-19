@@ -9,7 +9,7 @@ import UIKit
 
 class TableViewController: UITableViewController {
     
-    let animations = ["Basic Shapes", "Images", "drawRect"]
+    let animations = ["Implement drawRect on UIView", "Load via UIImageView", "The Coordinate System"]
     let cellId = "cellId"
     
     override func viewDidLoad() {
@@ -37,12 +37,12 @@ class TableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.row == 0 {
-            navigationController?.pushViewController(BasicShapesViewController(), animated: true)
+            navigationController?.pushViewController(DrawRectViewController(), animated: true)
         }
         else if indexPath.row == 1 {
-            navigationController?.pushViewController(ImageViewController(), animated: true)
+            navigationController?.pushViewController(LoadViaImageViewController(), animated: true)
         } else if indexPath.row == 2 {
-            navigationController?.pushViewController(DrawRectViewController(), animated: true)
+            navigationController?.pushViewController(CoordinateSystemViewController(), animated: true)
         }
     }
 }
