@@ -111,6 +111,46 @@ loginView.layer.add(animation, forKey: "shake")
 
 ## Animating along paths
 
+You can animate layers along paths.
+
+```swift
+let orbit = CAKeyframeAnimation()
+orbit.keyPath = "position"
+orbit.path = CGPath(ellipseIn: boundingRect, transform: nil)
+orbit.duration = 2
+orbit.isAdditive = true
+orbit.repeatCount = HUGE
+orbit.calculationMode = CAAnimationCalculationMode.paced;
+orbit.rotationMode = CAAnimationRotationMode.rotateAuto;
+```
+
+The key thing to remember here is that the path is always relative to the shape, and it's outside view.
+
+For example if we just plunked a square down in the middle of a screen according to it's position, when we want to animate it it would wobble, because the square's center isn't flush with the circles.
+
+```swift
+let view = UIImageView(frame: CGRect(x: 1024/2, y: 1366/2, width: 40, height: 40))
+```
+
+If you ever see this kind of offset in your animations, that's what going on. 
+
+![](images/offset.gif)
+
+The way to fix this is to shift the square so that it's center is flush with the center of screen. The animation is fine. It is always going to animate the square in a perfect circle. 
+
+The wobble is there because the square isn't in the middle of the screen. It's position is. But not it's center.
+
+![](images/fix-wobble.png)
+
+So by moving the square up and to the left by half it's width and height (40/2 pts) we fix it.
+
+```swift
+let view = UIImageView(frame: CGRect(x: 1024/2 - 40/2, y: 1366/2 - 40/2, width: 40, height: 40))
+```
+
+![](images/fixed-wobble.gif)
+
+
 ### Links that help
 
 - [Core Animation Apple Docs](https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/CoreAnimation_guide/CoreAnimationBasics/CoreAnimationBasics.html#//apple_ref/doc/uid/TP40004514-CH2-SW3)

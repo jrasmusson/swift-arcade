@@ -9,7 +9,7 @@ import UIKit
 
 class TableViewController: UITableViewController {
     
-    let animations = ["Basic", "Shake", "Fly"]
+    let animations = ["Basic", "Shake", "Rotate", "Fly"]
     let cellId = "cellId"
     
     override func viewDidLoad() {
@@ -38,9 +38,14 @@ class TableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.row == 0 {
             navigationController?.pushViewController(SlideViewController(), animated: true)
-        } else if indexPath.row == 1 {
+        }
+        else if indexPath.row == 1 {
             navigationController?.pushViewController(ShakeViewController(), animated: true)
-        } else if indexPath.row == 2 {
+        }
+        else if indexPath.row == 2 {
+            navigationController?.pushViewController(RotateViewController(), animated: true)
+        }
+        else if indexPath.row == 3 {
             navigationController?.pushViewController(FlyViewController(), animated: true)
         }
     }

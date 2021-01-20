@@ -14,6 +14,7 @@
 		716DA51625B35C7800F39C39 /* SlideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716DA51525B35C7800F39C39 /* SlideViewController.swift */; };
 		716DA51B25B35C7900F39C39 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 716DA51A25B35C7900F39C39 /* Assets.xcassets */; };
 		716DA51E25B35C7900F39C39 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 716DA51C25B35C7900F39C39 /* LaunchScreen.storyboard */; };
+		71D82CAB25B7A200009B7D38 /* RotateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D82CAA25B7A200009B7D38 /* RotateViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		716DA51A25B35C7900F39C39 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		716DA51D25B35C7900F39C39 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		716DA51F25B35C7900F39C39 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		71D82CAA25B7A200009B7D38 /* RotateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RotateViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,9 +61,11 @@
 			isa = PBXGroup;
 			children = (
 				716DA52825B35CDC00F39C39 /* Files */,
+				716DA51125B35C7800F39C39 /* AppDelegate.swift */,
 				7120389E25B4E6940010803A /* TableViewController.swift */,
 				716DA51525B35C7800F39C39 /* SlideViewController.swift */,
 				712038A125B4E8140010803A /* ShakeViewController.swift */,
+				71D82CAA25B7A200009B7D38 /* RotateViewController.swift */,
 				712038A425B4E8D30010803A /* FlyViewController.swift */,
 			);
 			path = CoreAnimationIntro;
@@ -70,7 +74,6 @@
 		716DA52825B35CDC00F39C39 /* Files */ = {
 			isa = PBXGroup;
 			children = (
-				716DA51125B35C7800F39C39 /* AppDelegate.swift */,
 				716DA51A25B35C7900F39C39 /* Assets.xcassets */,
 				716DA51C25B35C7900F39C39 /* LaunchScreen.storyboard */,
 				716DA51F25B35C7900F39C39 /* Info.plist */,
@@ -148,6 +151,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				716DA51625B35C7800F39C39 /* SlideViewController.swift in Sources */,
+				71D82CAB25B7A200009B7D38 /* RotateViewController.swift in Sources */,
 				712038A525B4E8D30010803A /* FlyViewController.swift in Sources */,
 				7120389F25B4E6940010803A /* TableViewController.swift in Sources */,
 				716DA51225B35C7800F39C39 /* AppDelegate.swift in Sources */,

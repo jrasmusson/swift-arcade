@@ -17,9 +17,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.makeKeyAndVisible()
         window?.backgroundColor = .systemBackground
         
-        let navigationController = UINavigationController(rootViewController: TableViewController())
+//        let navigationController = UINavigationController(rootViewController: TableViewController())
 //        window?.rootViewController = navigationController
-        window?.rootViewController = FlyViewController()
+//        window?.rootViewController = FlyViewController()
+        window?.rootViewController = RotateViewController()
         
         return true
     }

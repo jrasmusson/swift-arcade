@@ -26,7 +26,7 @@ class FlyViewController: UIViewController {
     }()
 
     lazy var redBox: UIImageView = {
-        let view = UIImageView(frame: CGRect(x: 1024/2, y: 1366/2, width: 20, height: 20))
+        let view = UIImageView(frame: CGRect(x: 1024/2 - 20/2, y: 1366/2 - 20/2, width: 20, height: 20))
         view.backgroundColor = .systemRed
         
         return view
@@ -41,7 +41,7 @@ class FlyViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
-        animate()
+//        animate()
         animateRedBox()
         drawCircle()
     }
@@ -53,8 +53,8 @@ extension FlyViewController {
     
     func setup() {
         view.addSubview(redCircle)
-        view.addSubview(worldView)
-        view.addSubview(shipView)
+//        view.addSubview(worldView)
+//        view.addSubview(shipView)
         view.addSubview(redBox)
     }
 }
