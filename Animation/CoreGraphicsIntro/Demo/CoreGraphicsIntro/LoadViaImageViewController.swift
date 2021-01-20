@@ -7,11 +7,9 @@
 
 import UIKit
 
-// https://www.hackingwithswift.com/read/27/4/ellipses-and-checkerboards
-
 class LoadViaImageViewController: UIViewController {
 
-    // 1. Define container.
+    // 1. Define container view.
     let imageView = UIImageView()
     let button = makeButton(withText: "Redraw")
     var currentDrawType = 0
@@ -78,34 +76,30 @@ func makeButton(withText text: String) -> UIButton {
 
 extension LoadViaImageViewController {
     
-    // Because `setLineWidth` straddles the path, we need to inset the rectangle by
-    // half the line width if we want the image to be fully visible in the rect area.
-    //
-    // .insetBy(dx: 5, dy: 5)
-    //
-    // For a line width of 10
-    //
-    // ctx.cgContext.setLineWidth(10)
-    //
     func drawRectangle() {
+        
+        // 2. Get a renderer.
         let render = UIGraphicsImageRenderer(size: CGSize(width: 512, height: 512))
         
+        // 3. Create your image with the passed in context.
         let image = render.image { ctx in
-            let rectangle = CGRect(x: 0, y: 0, width: 512, height: 512).insetBy(dx: 5, dy: 5)
+            
+            let rectangle = CGRect(x: 0, y: 0, width: 512, height: 512).insetBy(dx: 10, dy: 10)
+            
             ctx.cgContext.setFillColor(UIColor.red.cgColor)
             ctx.cgContext.setStrokeColor(UIColor.black.cgColor)
-            ctx.cgContext.setLineWidth(10)
+            ctx.cgContext.setLineWidth(20)
             ctx.cgContext.addRect(rectangle)
             ctx.cgContext.drawPath(using: .fillStroke)
         }
         
+        // 4. Add the image to your view.
         imageView.image = image
     }
     
     func drawCircle() {
         let renderer = UIGraphicsImageRenderer(size: CGSize(width: 512, height: 512))
 
-        // 2. Create graphic.
         let img = renderer.image { ctx in
             let rectangle = CGRect(x: 0, y: 0, width: 512, height: 512).insetBy(dx: 5, dy: 5)
             ctx.cgContext.setFillColor(UIColor.red.cgColor)
@@ -116,7 +110,6 @@ extension LoadViaImageViewController {
             ctx.cgContext.drawPath(using: .fillStroke)
         }
 
-        // 3. Load into imageView container.
         imageView.image = img
     }
 }

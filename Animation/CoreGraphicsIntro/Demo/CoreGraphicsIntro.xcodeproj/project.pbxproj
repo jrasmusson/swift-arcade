@@ -13,7 +13,6 @@
 		71643C8B25B5D91500679359 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71643C8925B5D91500679359 /* LaunchScreen.storyboard */; };
 		71643C9A25B5DA2F00679359 /* LoadViaImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71643C9925B5DA2F00679359 /* LoadViaImageViewController.swift */; };
 		71643CA125B5E01100679359 /* DrawRectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71643CA025B5E01100679359 /* DrawRectViewController.swift */; };
-		71643CA425B5E06600679359 /* DrawRectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71643CA325B5E06600679359 /* DrawRectView.swift */; };
 		71643CA825B5E65C00679359 /* CoordinateSystemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71643CA725B5E65C00679359 /* CoordinateSystemViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -26,7 +25,6 @@
 		71643C8C25B5D91500679359 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		71643C9925B5DA2F00679359 /* LoadViaImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadViaImageViewController.swift; sourceTree = "<group>"; };
 		71643CA025B5E01100679359 /* DrawRectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawRectViewController.swift; sourceTree = "<group>"; };
-		71643CA325B5E06600679359 /* DrawRectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawRectView.swift; sourceTree = "<group>"; };
 		71643CA725B5E65C00679359 /* CoordinateSystemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinateSystemViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -64,7 +62,6 @@
 				71643C7E25B5D91500679359 /* AppDelegate.swift */,
 				71643C8225B5D91500679359 /* TableViewController.swift */,
 				71643CA025B5E01100679359 /* DrawRectViewController.swift */,
-				71643CA325B5E06600679359 /* DrawRectView.swift */,
 				71643C9925B5DA2F00679359 /* LoadViaImageViewController.swift */,
 				71643CA725B5E65C00679359 /* CoordinateSystemViewController.swift */,
 			);
@@ -152,7 +149,6 @@
 			files = (
 				71643CA125B5E01100679359 /* DrawRectViewController.swift in Sources */,
 				71643CA825B5E65C00679359 /* CoordinateSystemViewController.swift in Sources */,
-				71643CA425B5E06600679359 /* DrawRectView.swift in Sources */,
 				71643C8325B5D91500679359 /* TableViewController.swift in Sources */,
 				71643C9A25B5DA2F00679359 /* LoadViaImageViewController.swift in Sources */,
 				71643C7F25B5D91500679359 /* AppDelegate.swift in Sources */,
