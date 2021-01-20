@@ -9,23 +9,25 @@ Core Animation provides a general purpose system for animating views and other v
 
 It sits below UIKit. Whenever you animate anything with UIKit it's Core Animation (or CA) that is doing the work behind the scenes. And by learning more about how it works, you are going to gain deeper insight into how to use it effectively.
 
-## What's important to understand?
-
-The key thing to understand about CA is that when you add an animation layer to your view, your aren't actually changing the underlying view - just it's animation.
-
-CA maintains two parallet layer hierarchies: the *model layer tree* and the *presentation layer tree*. Layers in the former represent the current state, while layers in the latter represent the in-flight values of animations.
-
-You can switch between these layers easily (`CALayer presentationLayer` and `CALayer modelLayer`). But if you ever inspect a layer during an animation and notice that it's values aren't different, this is why. It's the presentation layer that's being anination, not the model layer.
-
 ## The Coordinate System
-
-One of the most confusing things about getting started with CA is it's coordinate system. But once you understand how it's layed out, and which operations are done to which properties it's not that bad.
 
 The basic coordinate system starts with the origin in the upper-right-hand corner for iOS (Mac is lower left). And the key thing to note is the center of the `layer` or it's `position`.
 
 ![](images/coordinate-system.png)
 
 When we create a `UIImageView` we can specify the `CGRect` (whose lays the image out relative to the x and y values in the upper righ-hand-corner), but as we will see shortly, when we go to animate it, it is the position or `anchor point` that we will change.
+
+## Two parallel layers
+
+CA maintains two parallel layer hierarchies: 
+
+- the *model layer tree* and 
+- the *presentation layer tree*. 
+
+Layers in the former represent the current state, while layers in the latter represent the in-flight values of animations.
+
+This is important to understand because the presentation layer (where the animations take place) don't affect the model layer. If your animation ends and your view is in a different place, you need to update your model layer to reflect that final position as shown below in basic animation.
+
 
 ## A Basic Animation
 

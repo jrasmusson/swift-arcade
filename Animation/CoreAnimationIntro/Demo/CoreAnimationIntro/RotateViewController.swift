@@ -13,7 +13,6 @@ class RotateViewController: UIViewController {
     
     lazy var redBox: UIImageView = {
         let view = UIImageView(frame: CGRect(x: 1024/2 - 40/2, y: 1366/2 - 40/2, width: 40, height: 40))
-//        let view = UIImageView(frame: CGRect(x: 1024/2, y: 1366/2, width: 40, height: 40))
         view.backgroundColor = .systemRed
         view.layer
         return view
