@@ -7,6 +7,10 @@
 
 import UIKit
 
+/*
+ In this example we create a custom view and override it's `drawRect` method.
+ We position the view in the view controller using auto layout.
+ */
 class DrawRectViewController: UIViewController {
     
     // 1. Define a view.
@@ -23,9 +27,11 @@ class DrawRectViewController: UIViewController {
         NSLayoutConstraint.activate([
             drawRectView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             drawRectView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
-            drawRectView.widthAnchor.constraint(equalToConstant: 512),
-            drawRectView.heightAnchor.constraint(equalToConstant: 512),
+            drawRectView.widthAnchor.constraint(equalToConstant: 400),
+            drawRectView.heightAnchor.constraint(equalToConstant: 400),
         ])
+        
+        print(UIScreen.main.bounds.size)
     }
 }
 
@@ -54,13 +60,11 @@ class DrawRectView: UIView {
         context.fill(rectangle1)
         
         // painters model
-        
         let rectangle2 = CGRect(x: 256, y: 256, width: 128, height: 128)
 
         context.setFillColor(UIColor.systemYellow.cgColor)
         context.setStrokeColor(UIColor.systemBlue.cgColor)
         context.setLineWidth(10)
-
         context.addEllipse(in: rectangle2)
         context.drawPath(using: .fillStroke)
     }

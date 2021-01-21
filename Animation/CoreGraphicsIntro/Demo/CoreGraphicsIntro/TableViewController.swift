@@ -9,7 +9,10 @@ import UIKit
 
 class TableViewController: UITableViewController {
     
-    let animations = ["Implement drawRect on UIView", "Load via UIImageView", "The Coordinate System"]
+    let animations = ["Implement drawRect on UIView",
+                      "Load via UIImageView",
+                      "The Coordinate System"]
+    
     let cellId = "cellId"
     
     override func viewDidLoad() {
@@ -18,7 +21,7 @@ class TableViewController: UITableViewController {
     }
     
     func setupViews() {
-        navigationItem.title = "Core Animation Intro"
+        navigationItem.title = "Core Graphics Intro"
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellId)
     }
     

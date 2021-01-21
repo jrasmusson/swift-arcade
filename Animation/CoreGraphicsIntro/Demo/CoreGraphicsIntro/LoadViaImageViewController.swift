@@ -7,6 +7,12 @@
 
 import UIKit
 
+/*
+ In this example we create a create a `UIImageView` and then set it's
+ image using Core Graphics.
+ We position the `UIImageView` in the view controller using Auto Layout.
+ */
+
 class LoadViaImageViewController: UIViewController {
 
     // 1. Define container view.
@@ -79,12 +85,12 @@ extension LoadViaImageViewController {
     func drawRectangle() {
         
         // 2. Get a renderer.
-        let render = UIGraphicsImageRenderer(size: CGSize(width: 512, height: 512))
+        let render = UIGraphicsImageRenderer(size: CGSize(width: 400, height: 400))
         
         // 3. Create your image with the passed in context.
         let image = render.image { ctx in
             
-            let rectangle = CGRect(x: 0, y: 0, width: 512, height: 512).insetBy(dx: 10, dy: 10)
+            let rectangle = CGRect(x: 0, y: 0, width: 400, height: 400).insetBy(dx: 10, dy: 10)
             
             ctx.cgContext.setFillColor(UIColor.red.cgColor)
             ctx.cgContext.setStrokeColor(UIColor.black.cgColor)
@@ -98,10 +104,10 @@ extension LoadViaImageViewController {
     }
     
     func drawCircle() {
-        let renderer = UIGraphicsImageRenderer(size: CGSize(width: 512, height: 512))
+        let renderer = UIGraphicsImageRenderer(size: CGSize(width: 400, height: 400))
 
         let img = renderer.image { ctx in
-            let rectangle = CGRect(x: 0, y: 0, width: 512, height: 512).insetBy(dx: 5, dy: 5)
+            let rectangle = CGRect(x: 0, y: 0, width: 400, height: 400).insetBy(dx: 5, dy: 5)
             ctx.cgContext.setFillColor(UIColor.red.cgColor)
             ctx.cgContext.setStrokeColor(UIColor.black.cgColor)
             ctx.cgContext.setLineWidth(10)
