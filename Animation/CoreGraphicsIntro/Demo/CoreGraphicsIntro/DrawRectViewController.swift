@@ -14,7 +14,7 @@ import UIKit
 class DrawRectViewController: UIViewController {
     
     // 1. Define a view.
-    let drawRectView = DrawRectView()
+    let drawRectView = MyView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,7 +35,7 @@ class DrawRectViewController: UIViewController {
     }
 }
 
-class DrawRectView: UIView {
+class MyView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -47,11 +47,11 @@ class DrawRectView: UIView {
     
     // 2. Override draw.
     override func draw(_ rect: CGRect) {
-        
-        let rectangle1 = CGRect(x: 0, y: 0, width: 200, height: 180).insetBy(dx: 10, dy: 10)
-        
+
         guard let context = UIGraphicsGetCurrentContext() else { return }
-        
+
+        let rectangle1 = CGRect(x: 0, y: 0, width: 200, height: 180).insetBy(dx: 10, dy: 10)
+                
         context.setFillColor(UIColor.systemRed.cgColor)
         context.setStrokeColor(UIColor.systemGreen.cgColor)
         context.setLineWidth(20)
@@ -69,3 +69,5 @@ class DrawRectView: UIView {
         context.drawPath(using: .fillStroke)
     }
 }
+
+
