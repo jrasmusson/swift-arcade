@@ -152,4 +152,4 @@ This is important to understand because a lot of people think the origin will be
 
 - [Apple Docs on Core Graphics](https://developer.apple.com/library/archive/documentation/GraphicsImaging/Conceptual/drawingwithquartz2d/Introduction/Introduction.html#//apple_ref/doc/uid/TP40007533-SW1)
 - [Paul Hudson Tutorial](https://www.hackingwithswift.com/read/27/3/drawing-into-a-core-graphics-context-with-uigraphicsimagerenderer)
-
+- [Swift Arcade Video](https://youtu.be/won0gA05ce0)
