@@ -422,7 +422,7 @@ class ClippedViewController: UIViewController {
 
 ### Download source
 
-Check the subdirectory of this repo for all the source.
+Check the [subdirectory](Demo) of this repo for all the source.
 
 ### Links that help
 
