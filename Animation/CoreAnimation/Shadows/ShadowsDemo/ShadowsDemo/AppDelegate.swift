@@ -1,8 +1,8 @@
 //
 //  AppDelegate.swift
-//  CoreAnimationIntro
+//  ShadowsDemo
 //
-//  Created by jrasmusson on 2021-01-16.
+//  Created by jrasmusson on 2021-01-23.
 //
 
 import UIKit
@@ -19,10 +19,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
 //        let navigationController = UINavigationController(rootViewController: TableViewController())
 //        window?.rootViewController = navigationController
-//        window?.rootViewController = FlyViewController()
-//        window?.rootViewController = RotateViewController()
-        window?.rootViewController = ShadowViewController()
-//        window?.rootViewController = TestViewController()
+//        window?.rootViewController = SimpleShadowViewController()
+//        window?.rootViewController = PerformantShadowViewController()
+//        window?.rootViewController = BottomShadowViewController()
+//        window?.rootViewController = FrontShadowViewController()
+        window?.rootViewController = DramaticViewController()
         return true
     }
 

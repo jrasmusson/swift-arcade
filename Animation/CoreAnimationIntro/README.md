@@ -1,6 +1,9 @@
 # Core Animation Intro
 
-Core animation can be confusing at first, but if we learn it from first principles it will make understanding the rest of Animation in iOS a lot easier so let's start here.
+Core Animation (CA) is a library iOS developers use to animate and manipulate content in their UIViews. You specify the start and end points for how you would like a view to be manipulated, and Core Animation interpolates the frames in between and handles the creation and display of the animation.
+
+The power of Core Animation is it’s speed. Core Animation works off the main run loop and is about to leverage GPU hardware. That means it can do calculations off the main thread, and update views very quickly.
+
 
 ## What is Core Animation
 

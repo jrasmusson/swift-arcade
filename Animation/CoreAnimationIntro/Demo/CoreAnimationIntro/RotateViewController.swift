@@ -7,8 +7,6 @@
 
 import UIKit
 
-// Hardcoded for iPad Pro (12.9 Inch) 1024 x 1366
-
 class RotateViewController: UIViewController {
     
     lazy var redBox: UIImageView = {
