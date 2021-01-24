@@ -76,8 +76,8 @@
 				71BD3BC125BCA0A400A924EA /* PerformantViewController.swift */,
 				71BD3BC425BCA73000A924EA /* BottomViewController.swift */,
 				71BD3BCA25BDA34E00A924EA /* FrontViewController.swift */,
-				71BD3BCD25BDACED00A924EA /* DramaticViewController.swift */,
 				71BD3BD525BDB33C00A924EA /* CurvedViewController.swift */,
+				71BD3BCD25BDACED00A924EA /* DramaticViewController.swift */,
 				71BD3BD825BDC6CE00A924EA /* ClippedViewController.swift */,
 			);
 			path = ShadowsDemo;

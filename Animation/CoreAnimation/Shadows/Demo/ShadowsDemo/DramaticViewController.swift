@@ -7,8 +7,6 @@
 
 import UIKit
 
-// https://www.hackingwithswift.com/articles/155/advanced-uiview-shadow-effects-using-shadowpath
-
 class DramaticViewController: BaseViewController {
 
     override func viewDidAppear(_ animated: Bool) {

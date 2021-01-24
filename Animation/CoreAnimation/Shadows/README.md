@@ -143,7 +143,7 @@ class PerformantViewController: UIViewController {
 
 ## Custom Shadows
 
-Drawing custom shadows comes down to drawing `UIBezier` curves and specifying their dimensions in Core Graphics. Here are some examples.
+Drawing custom shadows comes down to drawing `UIBezier` curves and specifying their dimensions in Core Graphics. Here are some examples I have taken from Paul Hudsons excellent write up [here](https://www.hackingwithswift.com/articles/155/advanced-uiview-shadow-effects-using-shadowpath).
 
 ### Bottom shadow
 
@@ -260,6 +260,169 @@ class FrontViewController: BaseViewController {
 Here is a picture visualizing how the geometry of this shadow was calculated.
 
 ![](images/front-explained.png)
+
+### Curved Shadow
+
+You can curve shadows using the `addCurve` method.
+
+![](images/curved.png)
+
+```swift
+import UIKit
+
+class CurvedViewController: BaseViewController {
+
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        title = "Dramatic Shadow"
+
+        let height = sv.bounds.height
+        let width = sv.bounds.width
+        
+        let shadowRadius: CGFloat = 5
+        sv.layer.shadowRadius = shadowRadius
+        sv.layer.shadowOffset = CGSize(width: 0, height: 10)
+        sv.layer.shadowOpacity = 0.5
+
+        // how strong to make the curling effect
+        let curveAmount: CGFloat = 20
+        let shadowPath = UIBezierPath()
+
+        // the top left and right edges match our view, indented by the shadow radius
+        shadowPath.move(to: CGPoint(x: shadowRadius, y: 0))
+        shadowPath.addLine(to: CGPoint(x: width - shadowRadius, y: 0))
+
+        // the bottom-right edge of our shadow should overshoot by the size of our curve
+        shadowPath.addLine(to: CGPoint(x: width - shadowRadius, y: height + curveAmount))
+
+        // the bottom-left edge also overshoots by the size of our curve, but is added with a curve back up towards the view
+        shadowPath.addCurve(to: CGPoint(x: shadowRadius, y: height + curveAmount),
+                            controlPoint1: CGPoint(x: width, y: height - shadowRadius),
+                            controlPoint2: CGPoint(x: 0, y: height - shadowRadius))
+        sv.layer.shadowPath = shadowPath.cgPath
+    }
+}
+```
+
+Like all shadow examples, the trick with understanding this one is the geometry.
+
+![](images/curved-explainedA.png)
+
+Here our shadow actually mimics the original view, and then extends down below it adding a curve.
+
+The curve at the bottom is a bit confusing.
+
+![](images/curved-explainedB2.png)
+
+What's going on here is we are adding a curve to that point in the lower left hand corder. We do this by specifiying the point we want to start at, and then add x2 control points which define the arc.
+
+### Dramatic Curve
+
+You can give shadows a dramatic effect like this by drawing a shadow that goes off screen and then setting its opacity to something less than 1 so it blends with the background.
+
+![](images/dramatic.png)
+
+```swift
+import UIKit
+
+class DramaticViewController: BaseViewController {
+
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        title = "Dramatic Shadow"
+
+        let height = sv.bounds.height
+        let width = sv.bounds.width
+        
+        sv.layer.shadowRadius = 0
+        sv.layer.shadowOffset = .zero
+        sv.layer.shadowOpacity = 0.2
+
+        // how far the bottom of the shadow should be offset
+        let shadowPath = UIBezierPath()
+        shadowPath.move(to: CGPoint(x: 0, y: height))
+        shadowPath.addLine(to: CGPoint(x: width, y: height))
+
+        // make the bottom of the shadow finish a long way away, and pushed by our X offset
+        shadowPath.addLine(to: CGPoint(x: width + 2000, y: 2000))
+        shadowPath.addLine(to: CGPoint(x: 2000, y: 2000))
+        sv.layer.shadowPath = shadowPath.cgPath
+
+        view.backgroundColor = .systemOrange
+    }
+}
+```
+
+![](images/dramatic-explained.png)
+
+## Dealing with clipped views
+
+Sometimes our views need to be clipped.
+
+```swift
+imageView.clipsToBounds = true
+```
+
+When we do this it also clips our subview layers - thus hiding any shadow effects.
+
+To fix this, set `masksToBounds = false` on your `layer`.
+
+```swift
+imageView.layer.masksToBounds = false
+```
+
+Doing this will let you subviews shine that and not include them in the clipping from the parent.
+
+![](images/clipped.png)
+
+You can see the shadow coming through at the bottom.
+
+```swift
+import UIKit
+
+class ClippedViewController: UIViewController {
+    
+    let imageView = UIImageView()
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.image = UIImage(named: "flowers")
+        
+        
+        view.addSubview(imageView)
+        
+        NSLayoutConstraint.activate([
+            imageView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            imageView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+        ])
+        
+        // Normally we could ...
+        // imageView.layer.shadowOpacity = 0.5
+        // imageView.layer.shadowOffset = CGSize(width: 5, height: 5)
+
+        // But when clipped..
+        imageView.clipsToBounds = true
+    }
+    
+    // We can fix by...
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        let shadowPath = UIBezierPath(rect: imageView.bounds)
+        imageView.layer.masksToBounds = false // adding this line here
+        imageView.layer.shadowColor = UIColor.black.cgColor
+        imageView.layer.shadowOffset = CGSize(width: 5, height: 5)
+        imageView.layer.shadowOpacity = 0.5
+        imageView.layer.shadowPath = shadowPath.cgPath
+    }
+}
+```
+
+### Download source
+
+Check the subdirectory of this repo for all the source.
 
 ### Links that help
 

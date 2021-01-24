@@ -24,6 +24,9 @@ class TableViewController: UITableViewController {
         TableItem("Performant Shadow", PerformantViewController()),
         TableItem("Bottom Shadow", BottomViewController()),
         TableItem("Front Shadow", FrontViewController()),
+        TableItem("Curved Shadow", CurvedViewController()),
+        TableItem("Dramatic Shadow", DramaticViewController()),
+        TableItem("Clipped Shadow", ClippedViewController()),
     ]
     
     let cellId = "cellId"
