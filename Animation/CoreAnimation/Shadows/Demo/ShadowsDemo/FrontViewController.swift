@@ -7,7 +7,7 @@
 
 import UIKit
 
-class FrontShadowViewController: BaseViewController {
+class FrontViewController: BaseViewController {
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)

@@ -17,6 +17,8 @@
 		71BD3BC825BDA1EE00A924EA /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BD3BC725BDA1EE00A924EA /* BaseViewController.swift */; };
 		71BD3BCB25BDA34E00A924EA /* FrontViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BD3BCA25BDA34E00A924EA /* FrontViewController.swift */; };
 		71BD3BCE25BDACED00A924EA /* DramaticViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BD3BCD25BDACED00A924EA /* DramaticViewController.swift */; };
+		71BD3BD625BDB33C00A924EA /* CurvedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BD3BD525BDB33C00A924EA /* CurvedViewController.swift */; };
+		71BD3BD925BDC6CE00A924EA /* ClippedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BD3BD825BDC6CE00A924EA /* ClippedViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +34,8 @@
 		71BD3BC725BDA1EE00A924EA /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		71BD3BCA25BDA34E00A924EA /* FrontViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrontViewController.swift; sourceTree = "<group>"; };
 		71BD3BCD25BDACED00A924EA /* DramaticViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DramaticViewController.swift; sourceTree = "<group>"; };
+		71BD3BD525BDB33C00A924EA /* CurvedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurvedViewController.swift; sourceTree = "<group>"; };
+		71BD3BD825BDC6CE00A924EA /* ClippedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClippedViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +77,8 @@
 				71BD3BC425BCA73000A924EA /* BottomViewController.swift */,
 				71BD3BCA25BDA34E00A924EA /* FrontViewController.swift */,
 				71BD3BCD25BDACED00A924EA /* DramaticViewController.swift */,
+				71BD3BD525BDB33C00A924EA /* CurvedViewController.swift */,
+				71BD3BD825BDC6CE00A924EA /* ClippedViewController.swift */,
 			);
 			path = ShadowsDemo;
 			sourceTree = "<group>";
@@ -159,10 +165,12 @@
 				71BD3BC525BCA73000A924EA /* BottomViewController.swift in Sources */,
 				71BD3BBF25BC9F9700A924EA /* SimpleViewController.swift in Sources */,
 				71BD3BA925BC937400A924EA /* TableViewController.swift in Sources */,
+				71BD3BD625BDB33C00A924EA /* CurvedViewController.swift in Sources */,
 				71BD3BCE25BDACED00A924EA /* DramaticViewController.swift in Sources */,
 				71BD3BC225BCA0A400A924EA /* PerformantViewController.swift in Sources */,
 				71BD3BCB25BDA34E00A924EA /* FrontViewController.swift in Sources */,
 				71BD3BA525BC937400A924EA /* AppDelegate.swift in Sources */,
+				71BD3BD925BDC6CE00A924EA /* ClippedViewController.swift in Sources */,
 				71BD3BC825BDA1EE00A924EA /* BaseViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

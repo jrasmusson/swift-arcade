@@ -17,13 +17,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.makeKeyAndVisible()
         window?.backgroundColor = .systemBackground
         
-//        let navigationController = UINavigationController(rootViewController: TableViewController())
-//        window?.rootViewController = navigationController
-//        window?.rootViewController = SimpleShadowViewController()
-//        window?.rootViewController = PerformantShadowViewController()
-//        window?.rootViewController = BottomShadowViewController()
-//        window?.rootViewController = FrontShadowViewController()
-        window?.rootViewController = DramaticViewController()
+        let navigationController = UINavigationController(rootViewController: TableViewController())
+        window?.rootViewController = navigationController
+//        window?.rootViewController = ClippedViewController()
         return true
     }
 

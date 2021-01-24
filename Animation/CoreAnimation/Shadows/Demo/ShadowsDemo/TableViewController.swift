@@ -21,8 +21,11 @@ class TableViewController: UITableViewController {
     
     let viewControllers = [
         TableItem("Simple Shadow", SimpleViewController()),
-
+        TableItem("Performant Shadow", PerformantViewController()),
+        TableItem("Bottom Shadow", BottomViewController()),
+        TableItem("Front Shadow", FrontViewController()),
     ]
+    
     let cellId = "cellId"
     
     override func viewDidLoad() {

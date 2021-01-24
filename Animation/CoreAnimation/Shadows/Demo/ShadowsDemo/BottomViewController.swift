@@ -23,6 +23,8 @@ class BottomViewController: BaseViewController {
                                  height: shadowSize)
 
         sv.layer.shadowPath = UIBezierPath(ovalIn: contactRect).cgPath
+        
+        
         sv.layer.shadowRadius = 5
         sv.layer.shadowOpacity = 0.4
     }
