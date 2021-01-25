@@ -4,8 +4,7 @@ Here are some ways you can add shadows to your views in iOS.
 
 ## How do shadows work?
 
-Shadows are added to `UIViews` via its `CALayer`.
-
+Shadows are added to views by setting properties in the view's `CALayer`.
 
 ```swift
 shadowView.layer.shadowOpacity = 0.5
@@ -16,6 +15,7 @@ You simply set the shadows opacity, specify an offset, and voila - shadows!
 
 ![](images/simple.png)
 
+**SimpleViewController.swift**
 
 ```swift
 import UIKit
@@ -54,6 +54,10 @@ Drawing shadows can be an expensive operation. To make the rendering of them mor
    2. Assigning them an explicit path.
 
 ```swift
+shadowView.layer.shadowOpacity = 0.5
+shadowView.layer.shouldRasterize = true
+shadowView.layer.shadowOffset = CGSize(width: 5, height: 5)
+    
 // for performance...
 shadowView.layer.rasterizationScale = UIScreen.main.scale
 shadowView.layer.shadowPath = UIBezierPath(rect: shadowView.bounds).cgPath
@@ -62,6 +66,8 @@ shadowView.layer.shadowPath = UIBezierPath(rect: shadowView.bounds).cgPath
 >Note: Paths often need view bounds, which can only be determined once a view has been rendered. For that reason you often need to to add the shadows to a view in `viewDidAppear` or in `layoutSubviews` of a custom view.
 
 ![](images/performant.png)
+
+**PerformantViewController.swift**
 
 ```swift
 import UIKit
@@ -151,14 +157,36 @@ Drawing custom shadows comes down to drawing `UIBezier` curves and specifying th
 
 We can add a shadow to the bottom of a view by defining a Bezier curve in the form of an oval and adding it to the views `layer` like this.
 
-```swift
-//
-//  ContactShadowViewController.swift
-//  ShadowsDemo
-//
-//  Created by jrasmusson on 2021-01-23.
-//
+**BaseViewController.swift** (for code reuse)
 
+```swift
+
+class BaseViewController: UIViewController {
+    
+    let sv = UIView() // shadowView
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        title = "Base Shadow"
+        
+        sv.backgroundColor = .systemGreen
+        sv.translatesAutoresizingMaskIntoConstraints = false
+
+        view.addSubview(sv)
+        
+        NSLayoutConstraint.activate([
+            sv.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            sv.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+            sv.widthAnchor.constraint(equalToConstant: 300),
+            sv.heightAnchor.constraint(equalToConstant: 200),
+        ])
+    }
+}
+```
+
+**BottomViewController.swift**
+
+```swift
 import UIKit
 
 class BottomViewController: BaseViewController {
@@ -196,34 +224,6 @@ Here we are defining a `CGRect`, which is going to define the dimensions of our 
 Once you understand how `CGRect` works, you can define any type of shadow you like. Here is one that faces forward.
 
 ![](images/front.png)
-
-**BaseViewController.swift** (used in following examples)
-
-```swift
-import UIKit
-
-class BaseViewController: UIViewController {
-    
-    let sv = UIView() // shadowView
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        title = "Base Shadow"
-        
-        sv.backgroundColor = .systemGreen
-        sv.translatesAutoresizingMaskIntoConstraints = false
-
-        view.addSubview(sv)
-        
-        NSLayoutConstraint.activate([
-            sv.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            sv.centerYAnchor.constraint(equalTo: view.centerYAnchor),
-            sv.widthAnchor.constraint(equalToConstant: 300),
-            sv.heightAnchor.constraint(equalToConstant: 200),
-        ])
-    }
-}
-```
 
 **FrontViewController.swift**
 
@@ -419,6 +419,22 @@ class ClippedViewController: UIViewController {
     }
 }
 ```
+
+### Why can't I see my shadows?
+
+When you add shadows to a view and you can't seem them it generally means one of two things.
+
+1. Your view hasn't been sized (so the UIBezier curve you are drawing has no `CGRect` and your shadow has a size of zero.
+2. Your view is clipped.
+
+For the first, don't add your shadow until your view is sized (see examples above on how to add shadow in `viewDidAppear` or `layoutSubviews`.
+
+For the second see the clipped view example above and set
+
+```swift
+imageView.layer.masksToBounds = false
+```
+
 
 ### Download source
 
