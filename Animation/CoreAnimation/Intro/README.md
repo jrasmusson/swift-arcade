@@ -160,4 +160,5 @@ let view = UIImageView(frame: CGRect(x: 1024/2 - 40/2, y: 1366/2 - 40/2, width: 
 
 - [Core Animation Apple Docs](https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/CoreAnimation_guide/CoreAnimationBasics/CoreAnimationBasics.html#//apple_ref/doc/uid/TP40004514-CH2-SW3)
 - [Good overview and intro to CA upon which these notes were based](https://www.objc.io/issues/12-animations/animations-explained/)
+- [Detailed notes](https://gist.github.com/JeOam/94e833bcefd738d805cc)
 
