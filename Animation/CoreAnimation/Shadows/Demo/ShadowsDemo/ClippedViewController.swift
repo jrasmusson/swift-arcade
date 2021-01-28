@@ -26,8 +26,8 @@ class ClippedViewController: UIViewController {
         ])
         
         // Normally we could ...
-        // imageView.layer.shadowOpacity = 0.5
-        // imageView.layer.shadowOffset = CGSize(width: 5, height: 5)
+         imageView.layer.shadowOpacity = 0.5
+         imageView.layer.shadowOffset = CGSize(width: 5, height: 5)
 
         // But when clipped..
         imageView.clipsToBounds = true

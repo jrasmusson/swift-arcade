@@ -9,26 +9,26 @@ import UIKit
 
 class SimpleViewController: UIViewController {
     
-    let shadowView = UIView()
+    let sv = UIView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Simple Shadow"
-        shadowView.backgroundColor = .systemBlue
+        sv.backgroundColor = .systemBlue
         
-        shadowView.translatesAutoresizingMaskIntoConstraints = false
+        sv.translatesAutoresizingMaskIntoConstraints = false
 
-        view.addSubview(shadowView)
+        view.addSubview(sv)
         
         NSLayoutConstraint.activate([
-            shadowView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            shadowView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
-            shadowView.widthAnchor.constraint(equalToConstant: 300),
-            shadowView.heightAnchor.constraint(equalToConstant: 200),
+            sv.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            sv.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+            sv.widthAnchor.constraint(equalToConstant: 300),
+            sv.heightAnchor.constraint(equalToConstant: 200),
         ])
 
-        shadowView.layer.shadowOpacity = 0.5
-        shadowView.layer.shadowOffset = CGSize(width: 5, height: 5)
+        sv.layer.shadowOpacity = 0.5
+        sv.layer.shadowOffset = CGSize(width: 5, height: 5)
     }
 }
 

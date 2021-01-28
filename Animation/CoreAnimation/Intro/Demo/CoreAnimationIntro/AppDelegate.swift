@@ -19,10 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
 //        let navigationController = UINavigationController(rootViewController: TableViewController())
 //        window?.rootViewController = navigationController
-//        window?.rootViewController = FlyViewController()
-//        window?.rootViewController = RotateViewController()
-        window?.rootViewController = ShadowViewController()
-//        window?.rootViewController = TestViewController()
+        window?.rootViewController = RotateViewController()
         return true
     }
 

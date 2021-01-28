@@ -20,8 +20,7 @@ class TableViewController: UITableViewController {
     }
     
     let viewControllers = [
-        TableItem("RoundedCorners", RoundedCornersViewController()),
-        TableItem("Shadows", ShadowViewController()),
+        TableItem("Slide", MoveViewController()),
     ]
     let cellId = "cellId"
     

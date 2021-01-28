@@ -14,10 +14,11 @@
 		716DA51625B35C7800F39C39 /* SlideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716DA51525B35C7800F39C39 /* SlideViewController.swift */; };
 		716DA51B25B35C7900F39C39 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 716DA51A25B35C7900F39C39 /* Assets.xcassets */; };
 		716DA51E25B35C7900F39C39 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 716DA51C25B35C7900F39C39 /* LaunchScreen.storyboard */; };
-		71BD3B8E25BC6F4E00A924EA /* RoundedCornersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BD3B8D25BC6F4E00A924EA /* RoundedCornersViewController.swift */; };
-		71BD3B9225BC722300A924EA /* ShadowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BD3B9125BC722300A924EA /* ShadowViewController.swift */; };
 		71BD3B9625BC89DE00A924EA /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BD3B9525BC89DE00A924EA /* TestViewController.swift */; };
-		71D82CAB25B7A200009B7D38 /* RotateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D82CAA25B7A200009B7D38 /* RotateViewController.swift */; };
+		71D82CAB25B7A200009B7D38 /* Rotate2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D82CAA25B7A200009B7D38 /* Rotate2ViewController.swift */; };
+		71DADA7E25C1BB8800FF382F /* MoveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71DADA7D25C1BB8800FF382F /* MoveViewController.swift */; };
+		71DADA8225C2E66B00FF382F /* ScaleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71DADA8125C2E66B00FF382F /* ScaleViewController.swift */; };
+		71DADA8625C2EE3100FF382F /* RotateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71DADA8525C2EE3100FF382F /* RotateViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,10 +31,11 @@
 		716DA51A25B35C7900F39C39 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		716DA51D25B35C7900F39C39 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		716DA51F25B35C7900F39C39 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		71BD3B8D25BC6F4E00A924EA /* RoundedCornersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCornersViewController.swift; sourceTree = "<group>"; };
-		71BD3B9125BC722300A924EA /* ShadowViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowViewController.swift; sourceTree = "<group>"; };
 		71BD3B9525BC89DE00A924EA /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
-		71D82CAA25B7A200009B7D38 /* RotateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RotateViewController.swift; sourceTree = "<group>"; };
+		71D82CAA25B7A200009B7D38 /* Rotate2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rotate2ViewController.swift; sourceTree = "<group>"; };
+		71DADA7D25C1BB8800FF382F /* MoveViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoveViewController.swift; sourceTree = "<group>"; };
+		71DADA8125C2E66B00FF382F /* ScaleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScaleViewController.swift; sourceTree = "<group>"; };
+		71DADA8525C2EE3100FF382F /* RotateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RotateViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,11 +71,12 @@
 				716DA52825B35CDC00F39C39 /* Files */,
 				716DA51125B35C7800F39C39 /* AppDelegate.swift */,
 				7120389E25B4E6940010803A /* TableViewController.swift */,
-				71BD3B8D25BC6F4E00A924EA /* RoundedCornersViewController.swift */,
-				71BD3B9125BC722300A924EA /* ShadowViewController.swift */,
+				71DADA7D25C1BB8800FF382F /* MoveViewController.swift */,
+				71DADA8125C2E66B00FF382F /* ScaleViewController.swift */,
+				71DADA8525C2EE3100FF382F /* RotateViewController.swift */,
 				716DA51525B35C7800F39C39 /* SlideViewController.swift */,
 				712038A125B4E8140010803A /* ShakeViewController.swift */,
-				71D82CAA25B7A200009B7D38 /* RotateViewController.swift */,
+				71D82CAA25B7A200009B7D38 /* Rotate2ViewController.swift */,
 				712038A425B4E8D30010803A /* FlyViewController.swift */,
 				71BD3B9525BC89DE00A924EA /* TestViewController.swift */,
 			);
@@ -159,15 +162,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				71BD3B8E25BC6F4E00A924EA /* RoundedCornersViewController.swift in Sources */,
+				71DADA8225C2E66B00FF382F /* ScaleViewController.swift in Sources */,
 				716DA51625B35C7800F39C39 /* SlideViewController.swift in Sources */,
-				71BD3B9225BC722300A924EA /* ShadowViewController.swift in Sources */,
-				71D82CAB25B7A200009B7D38 /* RotateViewController.swift in Sources */,
+				71DADA7E25C1BB8800FF382F /* MoveViewController.swift in Sources */,
+				71D82CAB25B7A200009B7D38 /* Rotate2ViewController.swift in Sources */,
 				712038A525B4E8D30010803A /* FlyViewController.swift in Sources */,
 				7120389F25B4E6940010803A /* TableViewController.swift in Sources */,
 				716DA51225B35C7800F39C39 /* AppDelegate.swift in Sources */,
 				71BD3B9625BC89DE00A924EA /* TestViewController.swift in Sources */,
 				712038A225B4E8140010803A /* ShakeViewController.swift in Sources */,
+				71DADA8625C2EE3100FF382F /* RotateViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

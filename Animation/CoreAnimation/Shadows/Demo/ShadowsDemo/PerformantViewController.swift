@@ -53,10 +53,10 @@ class PerformantViewController: UIViewController {
         super.viewDidAppear(animated)
         
         shadowView.layer.shadowOpacity = 0.5
-        shadowView.layer.shouldRasterize = true
         shadowView.layer.shadowOffset = CGSize(width: 5, height: 5)
         
         // for performance...
+        shadowView.layer.shouldRasterize = true
         shadowView.layer.rasterizationScale = UIScreen.main.scale
         shadowView.layer.shadowPath = UIBezierPath(rect: shadowView.bounds).cgPath
     }

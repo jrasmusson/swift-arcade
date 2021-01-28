@@ -80,18 +80,8 @@ extension SlideViewController {
         
         // update model to reflect final position of presentation layer
         barrelView.layer.position = CGPoint(x: 700, y: 330)
+        
+//        let view = UIImageView(frame: CGRect(x: 500, y: 300, width: 100, height: 60))
     }
 }
 
-// MARK: - Factories
-
-func makeButton(withText text: String) -> UIButton {
-    let button = UIButton()
-    button.translatesAutoresizingMaskIntoConstraints = false
-    button.setTitle(text, for: .normal)
-    button.titleLabel?.adjustsFontSizeToFitWidth = true
-    button.contentEdgeInsets = UIEdgeInsets(top: 8, left: 16, bottom: 8, right: 16)
-    button.backgroundColor = .systemBlue
-    button.layer.cornerRadius = 8
-    return button
-}

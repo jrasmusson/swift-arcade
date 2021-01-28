@@ -11,7 +11,7 @@ class BottomViewController: BaseViewController {
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        title = "Contact Shadow"
+        title = "Bottom Shadow"
 
         let shadowSize: CGFloat = 20
         let height = sv.bounds.height
@@ -23,8 +23,6 @@ class BottomViewController: BaseViewController {
                                  height: shadowSize)
 
         sv.layer.shadowPath = UIBezierPath(ovalIn: contactRect).cgPath
-        
-        
         sv.layer.shadowRadius = 5
         sv.layer.shadowOpacity = 0.4
     }

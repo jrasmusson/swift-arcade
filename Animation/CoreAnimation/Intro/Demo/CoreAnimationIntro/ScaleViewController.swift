@@ -1,5 +1,5 @@
 //
-//  RotateViewController.swift
+//  ScaleViewController.swift
 //  CoreAnimationIntro
 //
 //  Created by jrasmusson on 2021-01-28.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class RotateViewController: UIViewController {
+class ScaleViewController: UIViewController {
 
     let redView = UIView()
     let _width: CGFloat = 140
@@ -42,13 +42,13 @@ class RotateViewController: UIViewController {
     
     func animate() {
         let animation = CABasicAnimation()
-        animation.keyPath = "transform.rotation.z" // Note: z-axis
-        animation.fromValue = 0
-        animation.toValue = CGFloat.pi / 4
-        animation.duration = 1
+        animation.keyPath = "transform.scale"
+        animation.fromValue = 1
+        animation.toValue = 2
+        animation.duration = 0.4
         
         redView.layer.add(animation, forKey: "basic")
-        redView.layer.transform = CATransform3DMakeRotation(CGFloat.pi / 4, 0, 0, 1)
+        redView.layer.transform = CATransform3DMakeScale(2, 2, 1) // update
     }
 
     @objc func buttonTapped(_ sender: UIButton) {
