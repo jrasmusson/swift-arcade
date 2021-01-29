@@ -6,6 +6,18 @@ Core Animation (CA) is the underlying library UIKit and SwiftUI use to animate a
 
 The power of Core Animation is it’s speed. It works off the main run loop. It leverages the GPU hardware to animate things very quickly. Which is why it is able to animate and update your screen roughly 60 times per second.
 
+### You don’t need to be working down here all the time
+
+Now just to be clear. There are higher level APIs for doing animations in iOS. 
+
+![](images/13-higher.png)
+
+UIKit has a host of property animations, view controller transitions, and physics based animation libraries to help us animate views in UIKit.
+
+The reason we are spending time down here in the underlying library that powers all this is insight and understanding. Sometimes we can’t do the type of animation we want in UIKit, and it is only by dropping down into Core Animation directly that we can get the effect we want.
+
+But just as importantly is understanding. Regardless of whether you are working in UIKit or SwiftUI, all animations eventually get rendered through this framework. And by understanding how it works, it will make working with these higher level APIs easier.
+
 
 # How does it work?
 
@@ -494,6 +506,9 @@ Everything is centered and it all works out. This was the most confusing thing f
 ![](images/11-path.png)
 
 ![](images/12-bounds.png)
+
+
+
 
 ### Links that help
 
