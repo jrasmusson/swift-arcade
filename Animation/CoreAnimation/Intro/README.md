@@ -491,6 +491,10 @@ redView.frame = CGRect(x: view.bounds.midX - _width/2,
 
 Everything is centered and it all works out. This was the most confusing thing for me when first starting out. But once you understand the coordinate system, and how shapes relate to one another, it start making sense.
 
+![](images/11-path.png)
+
+![](images/12-bounds.png)
+
 ### Links that help
 
 - [Apple Core Animation Docs](https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/CoreAnimation_guide/CoreAnimationBasics/CoreAnimationBasics.html#//apple_ref/doc/uid/TP40004514-CH2-SW3)
