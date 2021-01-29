@@ -27,7 +27,7 @@ class RotateViewController: UIViewController {
         view.addSubview(button)
         
         NSLayoutConstraint.activate([
-            button.topAnchor.constraint(equalTo: view.topAnchor, constant: 600),
+            view.safeAreaLayoutGuide.bottomAnchor.constraint(equalToSystemSpacingBelow: button.bottomAnchor, multiplier: 2),
             button.centerXAnchor.constraint(equalTo: view.centerXAnchor),
         ])
     }

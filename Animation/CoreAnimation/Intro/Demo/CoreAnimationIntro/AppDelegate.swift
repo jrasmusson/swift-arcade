@@ -17,9 +17,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.makeKeyAndVisible()
         window?.backgroundColor = .systemBackground
         
-//        let navigationController = UINavigationController(rootViewController: TableViewController())
-//        window?.rootViewController = navigationController
-        window?.rootViewController = RotateViewController()
+        let navigationController = UINavigationController(rootViewController: TableViewController())
+        window?.rootViewController = navigationController
+//        window?.rootViewController = CirclingViewController()
         return true
     }
 

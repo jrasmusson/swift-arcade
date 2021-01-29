@@ -20,8 +20,13 @@ class TableViewController: UITableViewController {
     }
     
     let viewControllers = [
-        TableItem("Slide", MoveViewController()),
+        TableItem("Move", MoveViewController()),
+        TableItem("Scale", ScaleViewController()),
+        TableItem("Rotate", RotateViewController()),
+        TableItem("Shake", ShakeViewController()),
+        TableItem("Circling", CirclingViewController()),
     ]
+    
     let cellId = "cellId"
     
     override func viewDidLoad() {

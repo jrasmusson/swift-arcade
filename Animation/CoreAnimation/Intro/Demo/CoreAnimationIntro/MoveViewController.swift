@@ -7,16 +7,6 @@
 
 import UIKit
 
-/*
- This is how we can animate a view to a new position.
- We specify the inital position of the view. Then we animate the center of the view
- (it's position) to a new position using Core Animation.
- 
- Then because Core Animation tracks its animations in a separate layer, we need to
- updat the final position of the view to the final position of the view in
- the animation.
- */
-
 class MoveViewController: UIViewController {
 
     let redView = UIView(frame: CGRect(x: 20, y: 100, width: 140, height: 100))
@@ -34,7 +24,7 @@ class MoveViewController: UIViewController {
         view.addSubview(button)
         
         NSLayoutConstraint.activate([
-            button.topAnchor.constraint(equalTo: view.topAnchor, constant: 400),
+            view.safeAreaLayoutGuide.bottomAnchor.constraint(equalToSystemSpacingBelow: button.bottomAnchor, multiplier: 2),
             button.centerXAnchor.constraint(equalTo: view.centerXAnchor),
         ])
     }
