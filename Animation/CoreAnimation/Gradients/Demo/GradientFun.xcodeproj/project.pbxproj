@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		31835C1A25C5C7E1008010C3 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31835C1925C5C7E1008010C3 /* GradientView.swift */; };
-		31835C2025C5C8E3008010C3 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31835C1F25C5C8E3008010C3 /* Colors.swift */; };
 		710413C425C6E284004C3641 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 710413C325C6E284004C3641 /* TableViewController.swift */; };
 		710413C725C6E2D2004C3641 /* DirectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 710413C625C6E2D2004C3641 /* DirectionViewController.swift */; };
 		71D8A2B325C5B1F000A47FCD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D8A2B225C5B1F000A47FCD /* AppDelegate.swift */; };
@@ -17,11 +15,10 @@
 		71DE81F225C6EFC800F7C8FB /* ColorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71DE81F125C6EFC800F7C8FB /* ColorViewController.swift */; };
 		71DE81F525C6F34A00F7C8FB /* ExamplesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71DE81F425C6F34A00F7C8FB /* ExamplesViewController.swift */; };
 		71DE81F925C6F58C00F7C8FB /* UIColor+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71DE81F825C6F58C00F7C8FB /* UIColor+Ext.swift */; };
+		71DE81FF25C6FDDE00F7C8FB /* AnimationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71DE81FE25C6FDDE00F7C8FB /* AnimationViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		31835C1925C5C7E1008010C3 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
-		31835C1F25C5C8E3008010C3 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		710413C325C6E284004C3641 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		710413C625C6E2D2004C3641 /* DirectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectionViewController.swift; sourceTree = "<group>"; };
 		71D8A2AF25C5B1F000A47FCD /* GradientFun.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GradientFun.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -32,6 +29,7 @@
 		71DE81F125C6EFC800F7C8FB /* ColorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorViewController.swift; sourceTree = "<group>"; };
 		71DE81F425C6F34A00F7C8FB /* ExamplesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamplesViewController.swift; sourceTree = "<group>"; };
 		71DE81F825C6F58C00F7C8FB /* UIColor+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Ext.swift"; sourceTree = "<group>"; };
+		71DE81FE25C6FDDE00F7C8FB /* AnimationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +66,7 @@
 				710413C325C6E284004C3641 /* TableViewController.swift */,
 				710413C625C6E2D2004C3641 /* DirectionViewController.swift */,
 				71DE81F125C6EFC800F7C8FB /* ColorViewController.swift */,
+				71DE81FE25C6FDDE00F7C8FB /* AnimationViewController.swift */,
 				71DE81F425C6F34A00F7C8FB /* ExamplesViewController.swift */,
 				71DE81F825C6F58C00F7C8FB /* UIColor+Ext.swift */,
 			);
@@ -77,8 +76,6 @@
 		71D8A2C825C5B21A00A47FCD /* Files */ = {
 			isa = PBXGroup;
 			children = (
-				31835C1925C5C7E1008010C3 /* GradientView.swift */,
-				31835C1F25C5C8E3008010C3 /* Colors.swift */,
 				71D8A2B225C5B1F000A47FCD /* AppDelegate.swift */,
 				71D8A2BB25C5B1F100A47FCD /* Assets.xcassets */,
 				71D8A2BD25C5B1F100A47FCD /* LaunchScreen.storyboard */,
@@ -157,13 +154,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				71DE81F525C6F34A00F7C8FB /* ExamplesViewController.swift in Sources */,
-				31835C2025C5C8E3008010C3 /* Colors.swift in Sources */,
 				71D8A2B325C5B1F000A47FCD /* AppDelegate.swift in Sources */,
+				71DE81FF25C6FDDE00F7C8FB /* AnimationViewController.swift in Sources */,
 				710413C725C6E2D2004C3641 /* DirectionViewController.swift in Sources */,
 				71DE81F225C6EFC800F7C8FB /* ColorViewController.swift in Sources */,
 				71DE81F925C6F58C00F7C8FB /* UIColor+Ext.swift in Sources */,
 				710413C425C6E284004C3641 /* TableViewController.swift in Sources */,
-				31835C1A25C5C7E1008010C3 /* GradientView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

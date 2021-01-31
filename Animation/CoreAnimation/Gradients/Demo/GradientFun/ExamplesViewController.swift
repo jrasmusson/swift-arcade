@@ -87,7 +87,6 @@ class LinearGradientView: UIView {
             gradientLayer.frame = bounds
         }
     }
-    
 }
 
 class LinearGradientViewController: UIViewController {
@@ -125,7 +124,7 @@ class RadialCAGradientViewController: UIViewController {
 
 class RadialGradientLayer: CALayer {
     
-    @objc public var colors = [UIColor.red.cgColor, UIColor.blue.cgColor] {
+    @objc public var colors = [UIColor.systemRed.cgColor, UIColor.systemBlue.cgColor] {
         didSet {
             backgroundColor = colors.last
         }
