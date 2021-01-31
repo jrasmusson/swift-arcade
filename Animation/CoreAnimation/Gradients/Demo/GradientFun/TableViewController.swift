@@ -20,7 +20,9 @@ class TableViewController: UITableViewController {
     }
     
     let viewControllers = [
-        TableItem("Basics", BasicsViewController(transitionStyle: .scroll, navigationOrientation: .horizontal, options: nil)),
+        TableItem("Direction", DirectionViewController(transitionStyle: .scroll, navigationOrientation: .horizontal, options: nil)),
+        TableItem("Color", ColorViewController(transitionStyle: .scroll, navigationOrientation: .horizontal, options: nil)),
+        TableItem("Examples", ExamplesViewController(transitionStyle: .scroll, navigationOrientation: .horizontal, options: nil)),
     ]
     
     let cellId = "cellId"

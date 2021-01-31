@@ -29,36 +29,6 @@ class ViewController2: UIViewController {
 
 }
 
-open class LinearGradientView: UIView {
-    
-    let topColor: UIColor = UIColor(red: 0, green: 152 / 255.0, blue: 202 / 255.0, alpha: 1)
-    let bottomColor: UIColor = UIColor(red: 0, green: 106 / 255.0, blue: 152 / 255.0, alpha: 1)
-    let gradientLayer = CAGradientLayer()
-    
-    override public init(frame: CGRect) {
-        super.init(frame: frame)
-        commonInit()
-    }
-    
-    required public init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-        commonInit()
-    }
-    
-    private func commonInit() {
-        gradientLayer.colors = [topColor.cgColor, bottomColor.cgColor]
-        layer.addSublayer(gradientLayer)
-    }
-    
-    override open func layoutSubviews() {
-        super.layoutSubviews()
-        
-        if gradientLayer.frame != bounds {
-            gradientLayer.frame = bounds
-        }
-    }
-    
-}
 
 class RadialGradientLayer: CALayer {
     
