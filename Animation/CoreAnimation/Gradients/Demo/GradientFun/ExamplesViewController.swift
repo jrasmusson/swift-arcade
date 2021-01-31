@@ -18,10 +18,12 @@ class ExamplesViewController: UIPageViewController {
         dataSource = self
         
         let page1 = LinearGradientViewController()
-        let page2 = CustomColorViewController()
+        let page2 = RadialCAGradientViewController()
+        let page3 = RadialCGGradientViewController()
 
         pages.append(page1)
         pages.append(page2)
+        pages.append(page3)
         
         setViewControllers([pages[initialPage]], direction: .forward, animated: true, completion: nil)
     }
@@ -54,7 +56,7 @@ extension ExamplesViewController: UIPageViewControllerDataSource {
     }
 }
 
-// MARK: - Example ViewControllers and Views
+// MARK: - Linear
 
 class LinearGradientView: UIView {
     
@@ -96,3 +98,108 @@ class LinearGradientViewController: UIViewController {
     }
 }
 
+// MARK: - Radial using CAGradientLayer
+
+class RadialCAGradientViewController: UIViewController {
+
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+
+        let gradientLayer = CAGradientLayer()
+        gradientLayer.type = .radial
+        gradientLayer.colors = [
+            UIColor.systemOrange.cgColor,
+            UIColor.systemRed.cgColor
+        ]
+        gradientLayer.startPoint = CGPoint(x: 0.5, y: 0.5)
+        gradientLayer.endPoint = CGPoint(x: 1, y: 1)
+        
+        gradientLayer.frame = view.bounds
+        
+        view.layer.addSublayer(gradientLayer)
+    }
+}
+
+
+// MARK: - Radial using Core Graphics
+
+class RadialGradientLayer: CALayer {
+    
+    @objc public var colors = [UIColor.red.cgColor, UIColor.blue.cgColor] {
+        didSet {
+            backgroundColor = colors.last
+        }
+    }
+    
+    required override init() {
+        super.init()
+        needsDisplayOnBoundsChange = true
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+    }
+    
+    required override init(layer: Any) {
+        super.init(layer: layer)
+    }
+    
+    override func draw(in context: CGContext) {
+        context.saveGState()
+        
+        let center = CGPoint(x: bounds.width / 2, y: bounds.height / 2)
+        let endRadius = max(bounds.width, bounds.height) / 2
+        
+        var locations = [CGFloat]()
+        for index in 0...colors.count - 1 {
+            locations.append(CGFloat(index) / CGFloat(colors.count - 1))
+        }
+        
+        if let gradient = CGGradient(colorsSpace: nil, colors: colors as CFArray, locations: locations) {
+            context.drawRadialGradient(gradient, startCenter: center, startRadius: 0.0, endCenter: center, endRadius: endRadius, options: CGGradientDrawingOptions.drawsBeforeStartLocation)
+        }
+    }
+}
+
+public class RadialGradientView: UIView {
+    
+    let darkestColor: UIColor = .radialDarkestBlue
+    let darkerColor: UIColor = .radialDarkerBlue
+    let lighterColor: UIColor = .radialLighterBlue
+    let lightestColor: UIColor = .radialLightestBlue
+    
+    let gradientLayer = RadialGradientLayer()
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        commonInit()
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        commonInit()
+    }
+    
+    override public func layoutSubviews() {
+        super.layoutSubviews()
+        
+        if gradientLayer.frame != bounds {
+            gradientLayer.frame = bounds
+        }
+    }
+    
+    private func commonInit() {
+        backgroundColor = darkestColor
+        gradientLayer.colors = [lightestColor.cgColor, lighterColor.cgColor, darkerColor.cgColor, darkestColor.cgColor]
+        layer.addSublayer(gradientLayer)
+    }
+    
+}
+
+class RadialCGGradientViewController: UIViewController {
+
+    override func loadView() {
+        super.loadView()
+        view = RadialGradientView()
+    }
+}
