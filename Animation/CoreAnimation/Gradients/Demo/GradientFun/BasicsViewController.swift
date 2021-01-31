@@ -158,10 +158,3 @@ class CornerToCornerViewController: UIViewController {
         view.layer.addSublayer(gradientLayer)
     }
 }
-
-class ViewController3: UIViewController {
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        view.backgroundColor = .systemBlue
-    }
-}
