@@ -20,7 +20,7 @@ class TableViewController: UITableViewController {
     }
     
     let viewControllers = [
-        TableItem("Basics", BasicsViewController()),
+        TableItem("Basics", BasicsViewController(transitionStyle: .scroll, navigationOrientation: .horizontal, options: nil)),
     ]
     
     let cellId = "cellId"

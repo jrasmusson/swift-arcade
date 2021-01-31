@@ -31,9 +31,9 @@ extension BasicsViewController {
         pageControl.addTarget(self, action: #selector(pageControlTapped(_:)), for: .valueChanged)
 
         // create an array of viewController
-        let page1 = DefaultTopToBottomViewController1()
-        let page2 = ViewController2()
-        let page3 = ViewController3()
+        let page1 = DefaultTopToBottomViewController()
+        let page2 = LeftToRightViewController()
+        let page3 = CornerToCornerViewController()
 
         pages.append(page1)
         pages.append(page2)
@@ -117,15 +117,45 @@ extension BasicsViewController: UIPageViewControllerDelegate {
 
 // MARK: - ViewControllers
 
-class DefaultTopToBottomViewController1: UIViewController {
+class DefaultTopToBottomViewController: UIViewController {
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
 
-        let layer = CAGradientLayer()
-        layer.frame = view.bounds
-        layer.colors = [UIColor.red.cgColor, UIColor.blue.cgColor]
-        view.layer.addSublayer(layer)
+        let gradientLayer = CAGradientLayer()
+        gradientLayer.frame = view.bounds
+        gradientLayer.colors = [UIColor.red.cgColor, UIColor.blue.cgColor]
+        view.layer.addSublayer(gradientLayer)
+    }
+}
+
+class LeftToRightViewController: UIViewController {
+
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+
+        let gradientLayer = CAGradientLayer()
+        gradientLayer.frame = view.bounds
+        gradientLayer.colors = [UIColor.red.cgColor, UIColor.blue.cgColor]
+        gradientLayer.startPoint = CGPoint(x: 0.0, y: 0.5)
+        gradientLayer.endPoint = CGPoint(x: 1.0, y: 0.5)
+        
+        view.layer.addSublayer(gradientLayer)
+    }
+}
+
+class CornerToCornerViewController: UIViewController {
+
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+
+        let gradientLayer = CAGradientLayer()
+        gradientLayer.frame = view.bounds
+        gradientLayer.colors = [UIColor.red.cgColor, UIColor.blue.cgColor]
+        gradientLayer.startPoint = CGPoint(x: 0.0, y: 0.0)
+        gradientLayer.endPoint = CGPoint(x: 1.0, y: 1.0)
+        
+        view.layer.addSublayer(gradientLayer)
     }
 }
 
