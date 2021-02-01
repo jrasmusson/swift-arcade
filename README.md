@@ -5,8 +5,9 @@ Collection of demos from the [Swift Arcade YouTube channel.](https://www.youtube
 ## Animations 🍄
 
 - [Core Graphics Intro](Animation/CoreGraphicsIntro/README.md)
-- [Shadows](Animation/CoreAnimation/Shadows/README.md)
 - [Core Animation Intro](Animation/CoreAnimation/Intro/README.md)
+- [Gradients](Animation/CoreAnimation/Gradients/README.md)
+- [Shadows](Animation/CoreAnimation/Shadows/README.md)
 - [Login Form Field](Animation/Login/README.md)
 
 
