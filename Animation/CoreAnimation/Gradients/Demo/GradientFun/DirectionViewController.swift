@@ -26,6 +26,8 @@ class DirectionViewController: UIPageViewController {
         pages.append(page3)
         
         setViewControllers([pages[initialPage]], direction: .forward, animated: true, completion: nil)
+        
+        showAlert()
     }
 }
 
@@ -54,6 +56,16 @@ extension DirectionViewController: UIPageViewControllerDataSource {
             return pages.first              // wrap to first
         }
     }
+    
+    func showAlert() {
+        let alert = UIAlertController(title: "Swipe left & right",
+                                      message: "Swipe left & right to see more gradient examples.",
+                                      preferredStyle: .alert)
+        
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        
+        present(alert, animated: true, completion: nil)
+    }
 }
 
 // MARK: - ViewControllers
@@ -66,6 +78,9 @@ class DefaultTopToBottomViewController: UIViewController {
         let gradientLayer = CAGradientLayer()
         gradientLayer.frame = view.bounds
         gradientLayer.colors = [UIColor.red.cgColor, UIColor.blue.cgColor]
+        gradientLayer.startPoint = CGPoint(x: 0.0, y: 0.5)
+        gradientLayer.endPoint = CGPoint(x: 1.0, y: 0.5)
+
         view.layer.addSublayer(gradientLayer)
     }
 }
