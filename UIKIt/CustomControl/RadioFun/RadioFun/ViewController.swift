@@ -9,7 +9,7 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    let radioButton = RadioButton()
+    let radioButton = CreditCardControl()
     
     override func viewDidLoad() {
         super.viewDidLoad()

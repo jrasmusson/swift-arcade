@@ -7,86 +7,78 @@
 
 import UIKit
 
-public class RadioButton: UIControl {
-    @objc public let title = UILabel()
-    @objc public let icon = UIImageView()
-    @objc public let ccIcon = UIImageView()
+public class CreditCardControl: UIControl {
     
-    @objc public var offBGColor = UIColor.radioButtonOff
-    @objc public var onBGColor = UIColor.radioButtonOn
+    let stackView = UIStackView()
     
-    @objc public var onBorderColor = UIColor.radioButtonBorderOn.cgColor
-    @objc public var offBorderColor = UIColor.radioButtonBorderOff.cgColor
+    let title = UILabel()
+    let icon = UIImageView()
+    let ccIcon = UIImageView()
+    
+    var offBGColor = UIColor.radioButtonOff
+    var onBGColor = UIColor.radioButtonOn
+    
+    var onBorderColor = UIColor.radioButtonBorderOn.cgColor
+    var offBorderColor = UIColor.radioButtonBorderOff.cgColor
     
     let onImage = UIImage(named: "on")
     let offImage = UIImage(named: "off")
         
-    public init() {
-        super.init(frame: .zero)
-        commonInit()
-    }
-    
-    override public init(frame: CGRect) {
-        super.init(frame: frame)
-        commonInit()
-    }
-    
-    required public init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
-    private func commonInit() {
-        
-        layer.borderWidth = 1
-        layer.cornerRadius = 2
-        heightAnchor.constraint(equalToConstant: 52).setActiveBreakable()
-        isOn = false
-        contentHorizontalAlignment = .left
-        
-        let stackView = UIStackView()
-        StackViewStyle.tileRow.apply(to: stackView)
-        
-        stackView.addArrangedSubview(icon)
-        icon.setContentHuggingPriority(UILayoutPriority.defaultHigh, for: .horizontal)
-        
-        stackView.addArrangedSubview(ccIcon)
-        ccIcon.setContentHuggingPriority(UILayoutPriority.defaultHigh, for: .horizontal)
-        
-        stackView.addArrangedSubview(title)
-        title.textAlignment = .left
-        
-        addSubview(stackView)
-        stackView.isUserInteractionEnabled = false
-        
-        stackView.layoutMargins.left = 16
-        
-        stackView.constrainCollapsible(to: self)
-    }
-    
     @objc public var isOn = false {
         didSet {
             layer.borderColor = isOn ? onBorderColor : offBorderColor
             backgroundColor = isOn ? onBGColor : offBGColor
             title.textColor = isOn ? .shawPrimaryBlue : .shawAlmostBlack
             icon.image = isOn ? onImage : offImage
-            
         }
     }
-}
 
-public extension UIStackView {
-    @objc func constrainCollapsible(to view: UIView) {
-        topAnchor.constraint(equalTo: view.topAnchor).isActive = true
-        leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
-        rightAnchor.constraint(equalTo: view.rightAnchor).setActiveBreakable(priority: UILayoutPriority(rawValue: 999))
-        bottomAnchor.constraint(equalTo: view.bottomAnchor).setActiveBreakable()
+     init() {
+        super.init(frame: .zero)
+        style()
+        layout()
     }
     
-    @objc func constrainMarginsCollapsible(to view: UIView) {
-        layoutMarginsGuide.topAnchor.constraint(equalTo: view.layoutMarginsGuide.topAnchor).isActive = true
-        layoutMarginsGuide.leftAnchor.constraint(equalTo: view.layoutMarginsGuide.leftAnchor).isActive = true
-        layoutMarginsGuide.rightAnchor.constraint(equalTo: view.layoutMarginsGuide.rightAnchor).setActiveBreakable(priority: UILayoutPriority(rawValue: 999))
-        layoutMarginsGuide.bottomAnchor.constraint(equalTo: view.layoutMarginsGuide.bottomAnchor).setActiveBreakable()
+    required public init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    private func style() {
+        layer.borderWidth = 1
+        layer.cornerRadius = 2
+
+        title.textAlignment = .left
+        contentHorizontalAlignment = .left
+        
+        isOn = false
+        
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        stackView.alignment = .center
+        stackView.spacing = 8
+        stackView.isUserInteractionEnabled = false
+        stackView.layoutMargins.left = 16
+        stackView.layoutMargins.right = 16
+        stackView.isLayoutMarginsRelativeArrangement = true
+    }
+    
+    private func layout() {
+        stackView.addArrangedSubview(icon)
+        stackView.addArrangedSubview(ccIcon)
+        stackView.addArrangedSubview(title)
+        
+        addSubview(stackView)
+
+        icon.setContentHuggingPriority(UILayoutPriority.defaultHigh, for: .horizontal)
+        ccIcon.setContentHuggingPriority(UILayoutPriority.defaultHigh, for: .horizontal)
+
+        NSLayoutConstraint.activate([
+            stackView.topAnchor.constraint(equalTo: topAnchor),
+            stackView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            stackView.trailingAnchor.constraint(equalTo: trailingAnchor),
+            stackView.bottomAnchor.constraint(equalTo: bottomAnchor),
+            heightAnchor.constraint(equalToConstant: 52),
+        ])
+
     }
 }
 

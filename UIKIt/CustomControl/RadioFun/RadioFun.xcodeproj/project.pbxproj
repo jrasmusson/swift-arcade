@@ -13,7 +13,7 @@
 		71B46B5B25C8444000BB8DD6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71B46B5925C8444000BB8DD6 /* Main.storyboard */; };
 		71B46B5D25C8444100BB8DD6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 71B46B5C25C8444100BB8DD6 /* Assets.xcassets */; };
 		71B46B6025C8444100BB8DD6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71B46B5E25C8444100BB8DD6 /* LaunchScreen.storyboard */; };
-		71B46B6A25C8446300BB8DD6 /* RadioButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71B46B6925C8446300BB8DD6 /* RadioButton.swift */; };
+		71B46B6A25C8446300BB8DD6 /* CreditCardControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71B46B6925C8446300BB8DD6 /* CreditCardControl.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,7 +25,7 @@
 		71B46B5C25C8444100BB8DD6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		71B46B5F25C8444100BB8DD6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		71B46B6125C8444100BB8DD6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		71B46B6925C8446300BB8DD6 /* RadioButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioButton.swift; sourceTree = "<group>"; };
+		71B46B6925C8446300BB8DD6 /* CreditCardControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditCardControl.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,7 +60,7 @@
 			children = (
 				71B46B6825C8444C00BB8DD6 /* Files */,
 				71B46B5725C8444000BB8DD6 /* ViewController.swift */,
-				71B46B6925C8446300BB8DD6 /* RadioButton.swift */,
+				71B46B6925C8446300BB8DD6 /* CreditCardControl.swift */,
 			);
 			path = RadioFun;
 			sourceTree = "<group>";
@@ -151,7 +151,7 @@
 				71B46B5825C8444000BB8DD6 /* ViewController.swift in Sources */,
 				71B46B5425C8444000BB8DD6 /* AppDelegate.swift in Sources */,
 				71B46B5625C8444000BB8DD6 /* SceneDelegate.swift in Sources */,
-				71B46B6A25C8446300BB8DD6 /* RadioButton.swift in Sources */,
+				71B46B6A25C8446300BB8DD6 /* CreditCardControl.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -228,7 +228,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -283,7 +283,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
