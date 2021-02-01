@@ -27,8 +27,7 @@ class ViewController: UIViewController {
     
     @objc func buttonTapped(_ sender: UIButton) {
         radioButton.isOn = !radioButton.isOn
-        radioButton.title.text = "XXX-XXXX-XXXX"
-        radioButton.ccIcon.image = UIImage(named: "visa")
+        radioButton.title.text = "XXXX-XXXX-XXXX-XXXX"
     }
 }
 
