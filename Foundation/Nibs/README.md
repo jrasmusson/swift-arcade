@@ -294,7 +294,7 @@ import UIKit
     }
     
     func initNib() {
-        let bundle = Bundle(for: QuickPaymentOptionsComponent)
+        let bundle = Bundle(for: QuickPaymentOptionsComponent.self)
         bundle.loadNibNamed("QuickPaymentOptionsComponent", owner: self, options: nil)
         
         addSubview(contentView)
