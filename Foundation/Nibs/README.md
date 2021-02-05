@@ -2,8 +2,6 @@
 
 Nibs (.nib) are views Interface builder uses to design and layout views in Xcode. The name is a bit confusing because the 'N' stands for Next as in Steve Jobs old company that Apple bought, but there are represented in XCode today as .xib where the 'X' stands for XML which is how they are represented in Xcode today. 
 
-So where you here nib, your can think xib in Xcode for all intents and purposes.
-
 ## Loading Nib into View Controller
 
 Simplest thing you can do is create a nib and then associated it with a View Controller.
