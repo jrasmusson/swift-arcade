@@ -256,6 +256,88 @@ Loading Nib Files Programmatically
 - NSBundle supports loading of nib files
 - loadNibNamed:owner:options: instance method
 
+## Another way to load a nib in a View Controller
+
+### The nib
+
+- Create your nib
+- Create your backing view
+- Associated the view with the xib via its `File's Owner`
+
+![](images/12.png)
+
+- Make sure the class on the root is the default `UIView`
+
+![](images/13.png)
+
+Then add the xib’s view as a contentView outlet
+
+And lay it out like any view (going to the edges) in the backing view
+
+import UIKit
+ 
+@IBDesignable class AwesomeView: UIView {
+    
+    @IBOutlet var contentView: UIView!
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        initNib()
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        initNib()
+    }
+    
+    func initNib() {
+        let bundle = Bundle(for: AwesomeView.self)
+        bundle.loadNibNamed("AwesomeView", owner: self, options: nil)
+        
+        addSubview(contentView)
+ 
+        // auto layout
+        contentView.translatesAutoresizingMaskIntoConstraints = false
+        contentView.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
+        contentView.rightAnchor.constraint(equalTo: self.rightAnchor).isActive = true
+        contentView.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
+        contentView.leftAnchor.constraint(equalTo: self.leftAnchor).isActive = true
+ 
+        // autoresize mask
+        // contentView.frame = bounds
+        // contentView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
+        
+        backgroundColor = .systemRed
+    }
+    
+    override var intrinsicContentSize: CGSize {
+        return CGSize(width: 100, height: 100)
+    }
+}
+
+Nib is now ready to go.
+
+Hook up to ViewController
+Drag a UIView onto VC storyboard
+Set its constraints
+Associate UIView with xib via Custom Class
+
+
+
+Create outlet for xib into ViewController via control drag
+
+
+
+
+
+Run 
+
+Make sure nib is part of module.
+
+
+- [Stack Overflow - EXC_BAD_ACCESS on custom UIView with custom XIB](https://stackoverflow.com/questions/19355104/exc-bad-access-on-custom-uiview-with-custom-xib)
+
+
 
 ### Links that help
 * [Apple Docs Nib Files](https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/LoadingResources/CocoaNibs/CocoaNibs.html)
