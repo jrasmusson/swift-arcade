@@ -150,6 +150,89 @@ Now we have a nib within a nib loaded and laid out programmatically.
 
 ![](images/hh.png)
 
+## Another way to add a Nib programmatically
+
+### The Nib 
+
+- Create your nib
+- Create your backing view
+- Associate the view with the xib
+ - File’s Owner
+ - Custom Class
+
+Then add the xib’s view as a contentView outlet to the backing view. And lay it out like any view (going to the edges) in the backing view
+
+```swift
+import UIKit
+ 
+@IBDesignable class AwesomeView: UIView {
+    
+    @IBOutlet var contentView: UIView!
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        initNib()
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        initNib()
+    }
+    
+    func initNib() {
+        let bundle = Bundle(for: AwesomeView.self)
+        bundle.loadNibNamed("AwesomeView", owner: self, options: nil)
+        
+        addSubview(contentView)
+ 
+        // auto layout
+        contentView.translatesAutoresizingMaskIntoConstraints = false
+        contentView.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
+        contentView.rightAnchor.constraint(equalTo: self.rightAnchor).isActive = true
+        contentView.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
+        contentView.leftAnchor.constraint(equalTo: self.leftAnchor).isActive = true
+ 
+        // autoresize mask
+        // contentView.frame = bounds
+        // contentView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
+        
+        backgroundColor = .systemRed
+    }
+    
+    override var intrinsicContentSize: CGSize {
+        return CGSize(width: 100, height: 100)
+    }
+}
+``` 
+
+Nib is now ready to go.
+
+### The Parent Nib / ViewController
+
+To add the nib to the parent nib / view controller:
+
+- Drag a View onto VC storyboard
+- Set its constraints
+- Associate UIView with xib via Custom Class
+- Create outlet for xib into ViewController via control drag
+
+```swift
+import UIKit
+
+class ViewController: UIViewController {
+
+    @IBOutlet weak var awesomeView: AwesomeView!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // Do any additional setup after loading the view.
+    }
+}
+```
+
+Run 
+
+
 ## Apple Documentation notes
 
 Xibs
