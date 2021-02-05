@@ -330,6 +330,43 @@ To hook up your custom nib into a parent view controller:
 - Associate UIView with xib via Custom Class
 - Drag an outlet for xib into ViewController via control drag
 
+## TableViewCells
+
+There are some gotchas with `UITableViewCells` I don't completely understand. But the following works.
+
+**QuickPaymentCell.swift**
+
+```swift
+import UIKit
+
+class QuickPaymentCell: UITableViewCell {
+
+    @IBOutlet var titleLabel: UILabel!
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        setupStyle()
+    }
+
+    func setupStyle() {
+        titleLabel.textColor = .reBankGrey
+    }
+}
+```
+
+**ParentView/ViewController**
+
+```swift
+tableView.register(QuickPaymentCell.self) // Note: No cell resuseIdentifier used
+
+func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    let cell: QuickPaymentCell = tableView.dequeueResuableCell(for: indexPath)
+    cell.titleLabel.text = games[indexPath.row]
+    return cell
+}
+```
+
+This method is key to triggering `awakeFromNib` but is nice because it saves a tonne of code.
 
 ### Trouble Shooting
 
