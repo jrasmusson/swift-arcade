@@ -272,11 +272,14 @@ Loading Nib Files Programmatically
 
 Then add the xib’s view as a contentView outlet
 
+![](images/14.png)
+
 And lay it out like any view (going to the edges) in the backing view
 
+```swift
 import UIKit
  
-@IBDesignable class AwesomeView: UIView {
+@IBDesignable class QuickPaymentOptionsComponent: UIView {
     
     @IBOutlet var contentView: UIView!
     
@@ -291,8 +294,8 @@ import UIKit
     }
     
     func initNib() {
-        let bundle = Bundle(for: AwesomeView.self)
-        bundle.loadNibNamed("AwesomeView", owner: self, options: nil)
+        let bundle = Bundle(for: QuickPaymentOptionsComponent)
+        bundle.loadNibNamed("QuickPaymentOptionsComponent", owner: self, options: nil)
         
         addSubview(contentView)
  
@@ -314,30 +317,24 @@ import UIKit
         return CGSize(width: 100, height: 100)
     }
 }
+```
 
 Nib is now ready to go.
 
-Hook up to ViewController
-Drag a UIView onto VC storyboard
-Set its constraints
-Associate UIView with xib via Custom Class
+### Parent xib / View Controller
+
+To hook up your custom nib into a parent view controller:
+
+- Drag a `UIView` onto VC storyboard
+- Set its constraints
+- Associate UIView with xib via Custom Class
+- Drag an outlet for xib into ViewController via control drag
 
 
-
-Create outlet for xib into ViewController via control drag
-
-
-
-
-
-Run 
-
-Make sure nib is part of module.
-
+### Trouble Shooting
 
 - [Stack Overflow - EXC_BAD_ACCESS on custom UIView with custom XIB](https://stackoverflow.com/questions/19355104/exc-bad-access-on-custom-uiview-with-custom-xib)
-
-
+- [Custom xibs](https://cheesecakelabs.com/blog/building-custom-ui-controls-xcodes-interface-builder/)
 
 ### Links that help
 * [Apple Docs Nib Files](https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/LoadingResources/CocoaNibs/CocoaNibs.html)
