@@ -28,7 +28,7 @@ public class CreditCardControl: UIControl {
         didSet {
             layer.borderColor = isOn ? onBorderColor : offBorderColor
             backgroundColor = isOn ? onBGColor : offBGColor
-            title.textColor = isOn ? .shawPrimaryBlue : .shawAlmostBlack
+            title.textColor = isOn ? .primaryBlue : .almostBlack
             onOff.image = isOn ? onImage : offImage
         }
     }
@@ -100,11 +100,11 @@ public extension NSLayoutConstraint {
 
 public extension UIColor {
 
-    @objc class var shawAlmostBlack: UIColor {
+    @objc class var almostBlack: UIColor {
         return UIColor(white: 51.0 / 255.0, alpha: 1.0)
     }
 
-    @objc class var shawPrimaryBlue: UIColor {
+    @objc class var primaryBlue: UIColor {
         return UIColor(red: 0.0, green: 130.0 / 255.0, blue: 187.0 / 255.0, alpha: 1.0)
     }
 
