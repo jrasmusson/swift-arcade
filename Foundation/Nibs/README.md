@@ -2,8 +2,6 @@
 
 Nibs (.nib) are views Interface builder uses to design and layout views in Xcode. The name is a bit confusing because the 'N' stands for Next as in Steve Jobs old company that Apple bought, but there are represented in XCode today as .xib where the 'X' stands for XML which is how they are represented in Xcode today. 
 
-So where you here nib, your can think xib in Xcode for all intents and purposes.
-
 ## Loading Nib into View Controller
 
 Simplest thing you can do is create a nib and then associated it with a View Controller.
@@ -152,6 +150,89 @@ Now we have a nib within a nib loaded and laid out programmatically.
 
 ![](images/hh.png)
 
+## Another way to add a Nib programmatically
+
+### The Nib 
+
+- Create your nib
+- Create your backing view
+- Associate the view with the xib
+ - File’s Owner
+ - Custom Class
+
+Then add the xib’s view as a contentView outlet to the backing view. And lay it out like any view (going to the edges) in the backing view
+
+```swift
+import UIKit
+ 
+@IBDesignable class AwesomeView: UIView {
+    
+    @IBOutlet var contentView: UIView!
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        initNib()
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        initNib()
+    }
+    
+    func initNib() {
+        let bundle = Bundle(for: AwesomeView.self)
+        bundle.loadNibNamed("AwesomeView", owner: self, options: nil)
+        
+        addSubview(contentView)
+ 
+        // auto layout
+        contentView.translatesAutoresizingMaskIntoConstraints = false
+        contentView.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
+        contentView.rightAnchor.constraint(equalTo: self.rightAnchor).isActive = true
+        contentView.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
+        contentView.leftAnchor.constraint(equalTo: self.leftAnchor).isActive = true
+ 
+        // autoresize mask
+        // contentView.frame = bounds
+        // contentView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
+        
+        backgroundColor = .systemRed
+    }
+    
+    override var intrinsicContentSize: CGSize {
+        return CGSize(width: 100, height: 100)
+    }
+}
+``` 
+
+Nib is now ready to go.
+
+### The Parent Nib / ViewController
+
+To add the nib to the parent nib / view controller:
+
+- Drag a View onto VC storyboard
+- Set its constraints
+- Associate UIView with xib via Custom Class
+- Create outlet for xib into ViewController via control drag
+
+```swift
+import UIKit
+
+class ViewController: UIViewController {
+
+    @IBOutlet weak var awesomeView: AwesomeView!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // Do any additional setup after loading the view.
+    }
+}
+```
+
+Run 
+
+
 ## Apple Documentation notes
 
 Xibs
@@ -175,6 +256,122 @@ Loading Nib Files Programmatically
 - NSBundle supports loading of nib files
 - loadNibNamed:owner:options: instance method
 
+## Another way to load a nib in a View Controller
+
+### The nib
+
+- Create your nib
+- Create your backing view
+- Associated the view with the xib via its `File's Owner`
+
+![](images/12.png)
+
+- Make sure the class on the root is the default `UIView`
+
+![](images/13.png)
+
+Then add the xib’s view as a contentView outlet
+
+![](images/14.png)
+
+And lay it out like any view (going to the edges) in the backing view
+
+```swift
+import UIKit
+ 
+@IBDesignable class QuickPaymentOptionsComponent: UIView {
+    
+    @IBOutlet var contentView: UIView!
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        initNib()
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        initNib()
+    }
+    
+    func initNib() {
+        let bundle = Bundle(for: QuickPaymentOptionsComponent.self)
+        bundle.loadNibNamed("QuickPaymentOptionsComponent", owner: self, options: nil)
+        
+        addSubview(contentView)
+ 
+        // auto layout
+        contentView.translatesAutoresizingMaskIntoConstraints = false
+        contentView.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
+        contentView.rightAnchor.constraint(equalTo: self.rightAnchor).isActive = true
+        contentView.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
+        contentView.leftAnchor.constraint(equalTo: self.leftAnchor).isActive = true
+ 
+        // autoresize mask
+        // contentView.frame = bounds
+        // contentView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
+        
+        backgroundColor = .systemRed
+    }
+    
+    override var intrinsicContentSize: CGSize {
+        return CGSize(width: 100, height: 100)
+    }
+}
+```
+
+Nib is now ready to go.
+
+### Parent xib / View Controller
+
+To hook up your custom nib into a parent view controller:
+
+- Drag a `UIView` onto VC storyboard
+- Set its constraints
+- Associate UIView with xib via Custom Class
+- Drag an outlet for xib into ViewController via control drag
+
+## TableViewCells
+
+There are some gotchas with `UITableViewCells` I don't completely understand. But the following works.
+
+**QuickPaymentCell.swift**
+
+```swift
+import UIKit
+
+class QuickPaymentCell: UITableViewCell {
+
+    @IBOutlet var titleLabel: UILabel!
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        setupStyle()
+    }
+
+    func setupStyle() {
+        titleLabel.textColor = .reBankGrey
+    }
+}
+```
+
+**ParentView/ViewController**
+
+```swift
+tableView.register(QuickPaymentCell.self) // Note: No cell resuseIdentifier used
+
+func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    let cell: QuickPaymentCell = tableView.dequeueResuableCell(for: indexPath)
+    cell.titleLabel.text = games[indexPath.row]
+    return cell
+}
+```
+
+This method is key to triggering `awakeFromNib` but is nice because it saves a tonne of code.
+
+### Trouble Shooting
+
+- [Stack Overflow - EXC_BAD_ACCESS on custom UIView with custom XIB](https://stackoverflow.com/questions/19355104/exc-bad-access-on-custom-uiview-with-custom-xib)
+- [Custom xibs](https://cheesecakelabs.com/blog/building-custom-ui-controls-xcodes-interface-builder/)
 
 ### Links that help
 * [Apple Docs Nib Files](https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/LoadingResources/CocoaNibs/CocoaNibs.html)

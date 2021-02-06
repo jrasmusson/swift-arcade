@@ -12,7 +12,8 @@ public class CreditCardControl: UIControl {
     let stackView = UIStackView()
     
     let title = UILabel()
-    let onOff = UIImageView()
+//    let onOff = UIImageView()
+    let onOff = UISwitch()
     let ccIcon = UIImageView()
     
     var offBGColor = UIColor.radioButtonOff
@@ -54,6 +55,7 @@ public class CreditCardControl: UIControl {
         title.text = "YYYY-YYYY-YYYY-YYYY"
         ccIcon.image = UIImage(named: "visa")
 
+        onOff.isEnabled = true
         
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.alignment = .center
