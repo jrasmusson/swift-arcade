@@ -100,4 +100,4 @@ Collection of demos from the [Swift Arcade YouTube channel.](https://www.youtube
 
 ## Interview Prep
 
-- [Cheat sheet](InterviewPrep/)
+- [Cheat sheet](InterviewPrep/CheatSheet.md)
