@@ -113,6 +113,7 @@ extension CAGradientLayer {
         colorAnimation.isRemovedOnCompletion = false
         colorAnimation.fillMode = CAMediaTimingFillMode.forwards
         colorAnimation.timingFunction = CAMediaTimingFunction(name: name ?? .linear)
+        colorAnimation.repeatCount = Float.infinity
 
         add(colorAnimation, forKey: "colorsChangeAnimation")
     }
