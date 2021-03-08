@@ -62,7 +62,7 @@ class PaymentMethodTile: UIView {
 
 ![](images/22.png)
 
-With this method, the nib is hosting the view. Can now load in a view controller by dragging out a plain view, and assigning it’s customer class to the nib.
+With this method, the nib is hosting the view. Can now load in a view controller by dragging out a plain view, and assigning it’s custom class to the nib.
 
 ![](images/23.png)
 
