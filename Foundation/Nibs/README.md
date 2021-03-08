@@ -72,7 +72,52 @@ Add to view controller by dragging out a plain view, and assigning it’s custom
 
 ### Load view programmatically after
 
+- Create the nib.
+- Create the class.
+- Set the File's Owner
 
+![](images/20.png)
+
+- Then also set the type on the view in the nib to the custom class.
+
+![](images/30.png)
+
+- Then you can load that nib programmatically in any view controller like this.
+
+```swift
+import UIKit
+
+class ViewController: UIViewController {
+
+    lazy var tile: PaymentMethodTile! = { ViewController.makePaymentMethodTile() }()
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        view.addSubview(tile)
+        
+        NSLayoutConstraint.activate([
+            tile.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            tile.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+        ])
+    }
+
+    static func makePaymentMethodTile() -> PaymentMethodTile? {
+        let bundle = Bundle(for: PaymentMethodTile.self)
+        let tile = bundle.loadNibNamed("PaymentMethodTile", owner: nil, options: nil)?.first as! PaymentMethodTile
+
+        tile.translatesAutoresizingMaskIntoConstraints = false
+
+        return tile
+    }
+
+}
+```
+
+![](images/31.png)
 
 ## Making a Nib IBDesignable
 
