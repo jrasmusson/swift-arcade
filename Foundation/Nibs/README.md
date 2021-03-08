@@ -2,7 +2,7 @@
 
 Nibs (.nib) are views Interface builder uses to design and layout views in Xcode. The name is a bit confusing because the 'N' stands for Next as in Steve Jobs old company that Apple bought, but there are represented in XCode today as .xib where the 'X' stands for XML which is how they are represented in Xcode today. 
 
-## Loading Nib into View Controller
+## Nibs into a View Controller
 
 Simplest thing you can do is create a nib and then associated it with a View Controller.
 
@@ -17,6 +17,61 @@ Simplest thing you can do is create a nib and then associated it with a View Con
 ![](images/c.png)
 
 ![](images/d.png)
+
+## Nibs into a View
+
+Create a nib
+Create a class.
+Assign the nib's File Owner to the class.
+
+### Load view in the nib
+
+- Create a nib
+- Create a class.
+- Assign the nibs File Owner to the class.
+
+![](images/20.png)
+
+Control drag the nibs view into the class.
+
+![](images/21.png)
+
+
+Load the nib.
+Add the content view.
+
+```swift
+import Foundation
+import UIKit
+
+class PaymentMethodTile: UIView {
+        
+    @IBOutlet var contentView: UIView!
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        let bundle = Bundle.init(for: PaymentMethodTile.self)
+        bundle.loadNibNamed("PaymentMethodTile", owner: self, options: nil)
+        addSubview(contentView)
+    }
+    override var intrinsicContentSize: CGSize {
+        return CGSize(width: 200, height: 200)
+    }
+}
+```
+
+![](images/22.png)
+
+With this method, the view is hosting the view contained within the nib. No need to add another view. The nib already has one. What we are doing here is instantiating it into the class itself and hosting it there.
+
+Add to view controller by dragging out a plain view, and assigning it’s customer class to the nib.
+
+![](images/23.png)
+
+![](images/24.png)
+
+### Load view programmatically after
+
 
 
 ## Making a Nib IBDesignable
