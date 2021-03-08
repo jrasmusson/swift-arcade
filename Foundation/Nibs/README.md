@@ -36,9 +36,9 @@ Control drag the nibs view into the class.
 
 ![](images/21.png)
 
-
-Load the nib.
-Add the content view.
+- Load the nib.
+- Add the content view.
+- Note the owner is `self`.
 
 ```swift
 import Foundation
@@ -62,9 +62,7 @@ class PaymentMethodTile: UIView {
 
 ![](images/22.png)
 
-With this method, the view is hosting the view contained within the nib. No need to add another view. The nib already has one. What we are doing here is instantiating it into the class itself and hosting it there.
-
-Add to view controller by dragging out a plain view, and assigning it’s customer class to the nib.
+With this method, the nib is hosting the view. Can now load in a view controller by dragging out a plain view, and assigning it’s customer class to the nib.
 
 ![](images/23.png)
 
@@ -184,71 +182,6 @@ This will automatically detect that it is `@IBDesignable`, use it's intrinsic co
 ![](images/ee.png)
 
 ![](images/ff.png)
-
-
-## How to load a nib programmatically
-
-When you want to compose nibs into other nibs, you need to load them manually. Going through the same steps we went through before to create a `RedView`, let's create a `InnerView` and add it programmatically to the `RedView`.
-
-Create a `InnerView.xib` and hook it up to it's `InnerView.swift`.
-
-```swift
-import UIKit
-
-class InnerView: UIView {
-        
-    override func awakeFromNib() {
-        super.awakeFromNib()
-    }
-    
-    override var intrinsicContentSize: CGSize {
-        return CGSize(width: 200, height: 100)
-    }
-}
-```
-
-![](images/gg.png)
-
-Then modify `RedView.swift` to load the `InnerView.xib` manually and lay it out using Auto Layout.
-
-**RedView.swift**
-
-```swift
-import UIKit
-
-@IBDesignable
-class RedView: UIView {
-    
-    @IBInspectable var myColor: UIColor = .systemRed
-    
-    var innerView: InnerView!
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        backgroundColor = myColor
-        
-        innerView = Bundle(for: InnerView.self).loadNibNamed("\(InnerView.self)", owner: self)![0] as? InnerView
-        
-        translatesAutoresizingMaskIntoConstraints = false
-        innerView.translatesAutoresizingMaskIntoConstraints = false
-        
-        addSubview(innerView)
-        
-        NSLayoutConstraint.activate([
-            innerView.widthAnchor.constraint(equalTo: widthAnchor),
-            innerView.topAnchor.constraint(equalToSystemSpacingBelow: bottomAnchor, multiplier: 2),
-        ])
-    }
-    
-    override var intrinsicContentSize: CGSize {
-        return CGSize(width: 100, height: 100)
-    }
-}
-```
-
-Now we have a nib within a nib loaded and laid out programmatically.
-
-![](images/hh.png)
 
 
 ## TableViewCells
