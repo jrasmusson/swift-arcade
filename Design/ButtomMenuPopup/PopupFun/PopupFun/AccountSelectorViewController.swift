@@ -10,11 +10,12 @@ import UIKit
 class AccountSelectorViewController: UIViewController {
         
     let backgroundOverlayView = UIView()
+    let stackView = UIStackView()
     let headerView = AccountSelectorHeaderView()
-    let contentHeight: CGFloat
+    let topSpacerHeight: CGFloat
     
     init(height: CGFloat) {
-        self.contentHeight = height
+        self.topSpacerHeight = height
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -36,6 +37,9 @@ extension AccountSelectorViewController {
         backgroundOverlayView.backgroundColor = .black
         backgroundOverlayView.alpha = 0.3
         
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        stackView.axis = .vertical
+        
         headerView.translatesAutoresizingMaskIntoConstraints = false
     }
 
@@ -44,16 +48,20 @@ extension AccountSelectorViewController {
     }
     
     func layout() {
+        stackView.addArrangedSubview(headerView)
+        
         view.addSubview(backgroundOverlayView)
-        view.addSubview(headerView)
+        view.addSubview(stackView)
         
         NSLayoutConstraint.activate([
             backgroundOverlayView.topAnchor.constraint(equalTo: view.topAnchor),
             backgroundOverlayView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             backgroundOverlayView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             backgroundOverlayView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
-            headerView.topAnchor.constraint(equalTo: view.topAnchor, constant: contentHeight),
-            headerView.leadingAnchor.constraint(equalTo: view.leadingAnchor)
+            stackView.topAnchor.constraint(equalTo: view.topAnchor, constant: topSpacerHeight),
+            stackView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            stackView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            stackView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
         ])
     }
 }
