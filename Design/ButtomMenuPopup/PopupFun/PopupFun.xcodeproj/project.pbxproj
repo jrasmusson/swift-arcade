@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		713D29B125F9189100972548 /* AccountSelectorHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 713D29B025F9189100972548 /* AccountSelectorHeaderView.swift */; };
 		713D4A4825F82B44005C1238 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 713D4A4725F82B44005C1238 /* AppDelegate.swift */; };
 		713D4A4C25F82B44005C1238 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 713D4A4B25F82B44005C1238 /* ViewController.swift */; };
 		713D4A5125F82B45005C1238 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 713D4A5025F82B45005C1238 /* Assets.xcassets */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		713D29B025F9189100972548 /* AccountSelectorHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSelectorHeaderView.swift; sourceTree = "<group>"; };
 		713D4A4425F82B44005C1238 /* PopupFun.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PopupFun.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		713D4A4725F82B44005C1238 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		713D4A4B25F82B44005C1238 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -60,6 +62,7 @@
 				713D4A4B25F82B44005C1238 /* ViewController.swift */,
 				713D4A5F25F82ECE005C1238 /* AccountView.swift */,
 				713D4A6225F835B9005C1238 /* AccountSelectorViewController.swift */,
+				713D29B025F9189100972548 /* AccountSelectorHeaderView.swift */,
 			);
 			path = PopupFun;
 			sourceTree = "<group>";
@@ -144,6 +147,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				713D29B125F9189100972548 /* AccountSelectorHeaderView.swift in Sources */,
 				713D4A6025F82ECE005C1238 /* AccountView.swift in Sources */,
 				713D4A4C25F82B44005C1238 /* ViewController.swift in Sources */,
 				713D4A4825F82B44005C1238 /* AppDelegate.swift in Sources */,

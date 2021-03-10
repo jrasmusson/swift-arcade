@@ -9,7 +9,8 @@ import UIKit
 
 class AccountSelectorViewController: UIViewController {
         
-    let headerLabel = UILabel()
+    let backgroundOverlayView = UIView()
+    let headerView = AccountSelectorHeaderView()
     let contentHeight: CGFloat
     
     init(height: CGFloat) {
@@ -31,9 +32,11 @@ class AccountSelectorViewController: UIViewController {
 
 extension AccountSelectorViewController {
     func style() {
-//        view.backgroundColor = .systemOrange
-        headerLabel.translatesAutoresizingMaskIntoConstraints = false
-        headerLabel.text = "To Account"
+        backgroundOverlayView.translatesAutoresizingMaskIntoConstraints = false
+        backgroundOverlayView.backgroundColor = .black
+        backgroundOverlayView.alpha = 0.3
+        
+        headerView.translatesAutoresizingMaskIntoConstraints = false
     }
 
     func setup() {
@@ -41,11 +44,16 @@ extension AccountSelectorViewController {
     }
     
     func layout() {
-        view.addSubview(headerLabel)
+        view.addSubview(backgroundOverlayView)
+        view.addSubview(headerView)
         
         NSLayoutConstraint.activate([
-            headerLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: contentHeight),
-            headerLabel.leadingAnchor.constraint(equalToSystemSpacingAfter: view.leadingAnchor, multiplier: 2),
+            backgroundOverlayView.topAnchor.constraint(equalTo: view.topAnchor),
+            backgroundOverlayView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            backgroundOverlayView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            backgroundOverlayView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            headerView.topAnchor.constraint(equalTo: view.topAnchor, constant: contentHeight),
+            headerView.leadingAnchor.constraint(equalTo: view.leadingAnchor)
         ])
     }
 }
