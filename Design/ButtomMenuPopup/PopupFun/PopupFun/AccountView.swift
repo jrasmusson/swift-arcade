@@ -41,7 +41,6 @@ extension AccountView {
     
     func style() {
         translatesAutoresizingMaskIntoConstraints = false
-//        backgroundColor = .systemOrange
         
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.image = UIImage(systemName: "dollarsign.circle")
@@ -50,7 +49,6 @@ extension AccountView {
         titleLabel.text = "To"
         
         contentLabel.translatesAutoresizingMaskIntoConstraints = false
-        contentLabel.text = "XXX"
         
         dividerView.translatesAutoresizingMaskIntoConstraints = false
         dividerView.backgroundColor = .black

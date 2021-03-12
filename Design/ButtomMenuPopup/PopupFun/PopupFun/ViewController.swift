@@ -40,11 +40,23 @@ extension ViewController {
     }
 }
 
+// MARK: - AccountViewDelegate
+
 extension ViewController: AccountViewDelegate {
     func didTap(_ sender: AccountView) {
         let height = UIScreen.main.bounds.height * 0.5
         let vc = AccountSelectorViewController(height: height)
         vc.modalPresentationStyle = .overCurrentContext
+        vc.delegate = self
+        
         navigationController?.present(vc, animated: true, completion: nil)
+    }
+}
+
+// MARK: - AccountSelectorDelegate
+
+extension ViewController: AccountSelectorDelegate {
+    func didTap(_ account: String) {
+        accountView.contentLabel.text = account
     }
 }

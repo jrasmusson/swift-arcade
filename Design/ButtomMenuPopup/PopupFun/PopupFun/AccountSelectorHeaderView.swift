@@ -11,6 +11,7 @@ import UIKit
 class AccountSelectorHeaderView: UIView {
     
     let headerLabel = UILabel()
+    let dividerView = UIView()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -36,14 +37,21 @@ extension AccountSelectorHeaderView {
         
         headerLabel.translatesAutoresizingMaskIntoConstraints = false
         headerLabel.text = "To Account"
+        
+        dividerView.translatesAutoresizingMaskIntoConstraints = false
+        dividerView.backgroundColor = .systemGray
     }
     
     func layout() {
         addSubview(headerLabel)
+        addSubview(dividerView)
         
         NSLayoutConstraint.activate([
             headerLabel.centerYAnchor.constraint(equalTo: centerYAnchor),
             headerLabel.leadingAnchor.constraint(equalToSystemSpacingAfter: leadingAnchor, multiplier: 2),
+            dividerView.bottomAnchor.constraint(equalTo: bottomAnchor),
+            dividerView.widthAnchor.constraint(equalTo: widthAnchor),
+            dividerView.heightAnchor.constraint(equalToConstant: 1)
         ])
     }
 }
