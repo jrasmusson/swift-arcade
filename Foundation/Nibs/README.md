@@ -80,6 +80,10 @@ With this method, the nib is hosting the view. Can now load in a view controller
 
 ![](images/30.png)
 
+- If loading a nib programmatically, make sure you set the `IBOutlet` property to the view and not the file owner when control dragging outlets into the file. If you don't do this you will get keycode non-compliance errors.
+
+![](images/32.png)
+
 - Then you can load that nib programmatically in any view controller like this.
 
 ```swift
