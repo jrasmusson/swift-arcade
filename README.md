@@ -54,6 +54,7 @@ Collection of demos from the [Swift Arcade YouTube channel.](https://www.youtube
 - [Popup Menu 1](https://github.com/jrasmusson/swift-arcade/tree/master/Design/PopupMenu)
 - [Popup Menu 2](Design/ButtomMenuPopup/README.md)
 - [Onboarding](Design/SimpleOnboarding/README.md)
+- [Custom Badge](Design/CustomBadge/README.md)
 
 ## Foundation 🧱
 
