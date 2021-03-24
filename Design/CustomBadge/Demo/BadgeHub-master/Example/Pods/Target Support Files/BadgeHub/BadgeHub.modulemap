@@ -1,0 +1,6 @@
+framework module BadgeHub {
+  umbrella header "BadgeHub-umbrella.h"
+
+  export *
+  module * { export * }
+}

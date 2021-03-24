@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'BadgeHub_Example' do
+  pod 'BadgeHub', :path => '../'
+
+  target 'BadgeHub_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
