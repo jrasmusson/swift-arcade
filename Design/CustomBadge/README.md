@@ -49,8 +49,15 @@ It will look at the frame of the view you pass it, create a red circle and label
 The circle is placed in the upper-righthand-corner by taking the frame of the passed in view, and creating a new view for the circle
 
 ```swift
-        redCircle = BadgeView()
-        redCircle.backgroundColor = UIColor.red
+fileprivate class BadgeView: UIView {
+    
+    func setBackgroundColor(_ backgroundColor: UIColor?) {
+        super.backgroundColor = backgroundColor
+    }
+}
+
+redCircle = BadgeView()
+redCircle.backgroundColor = UIColor.red
 ```
 
 And then setting that view's frame up and to the right by calculating a new x y coordinate.
