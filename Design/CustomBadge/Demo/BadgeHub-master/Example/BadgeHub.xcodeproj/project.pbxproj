@@ -13,6 +13,7 @@
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
 		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
+		71340E2D260D33E3007E3E55 /* ViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71340E2C260D33E3007E3E55 /* ViewController2.swift */; };
 		D6302F7FF0D1A717F8D48CB2 /* Pods_BadgeHub_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3ACD982BC89AFECA3FDBF522 /* Pods_BadgeHub_Example.framework */; };
 		D718449DC4E84CD87DF085B1 /* Pods_BadgeHub_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2E79FE58B30BFE220846F82 /* Pods_BadgeHub_Tests.framework */; };
 /* End PBXBuildFile section */
@@ -42,6 +43,7 @@
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
 		6BA978FDD0134429CACE8071 /* Pods-BadgeHub_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BadgeHub_Example.debug.xcconfig"; path = "Target Support Files/Pods-BadgeHub_Example/Pods-BadgeHub_Example.debug.xcconfig"; sourceTree = "<group>"; };
+		71340E2C260D33E3007E3E55 /* ViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController2.swift; sourceTree = "<group>"; };
 		8C6093D0F2D2C1CC2CAC3CF8 /* BadgeHub.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = BadgeHub.podspec; path = ../BadgeHub.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		989B2D641A9A7D73E7AD6F13 /* Pods-BadgeHub_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BadgeHub_Tests.release.xcconfig"; path = "Target Support Files/Pods-BadgeHub_Tests/Pods-BadgeHub_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		B4B146157EB2EAC3AB61F5D9 /* Pods-BadgeHub_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BadgeHub_Example.release.xcconfig"; path = "Target Support Files/Pods-BadgeHub_Example/Pods-BadgeHub_Example.release.xcconfig"; sourceTree = "<group>"; };
@@ -69,14 +71,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		409E208C22A0EAC70015F372 /* BadgeHub */ = {
-			isa = PBXGroup;
-			children = (
-				409E208A22A0EA960015F372 /* BadgeHub.swift */,
-			);
-			name = BadgeHub;
-			sourceTree = "<group>";
-		};
 		607FACC71AFB9204008FA782 = {
 			isa = PBXGroup;
 			children = (
@@ -101,23 +95,13 @@
 		607FACD21AFB9204008FA782 /* Example for BadgeHub */ = {
 			isa = PBXGroup;
 			children = (
-				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
+				71340E2B260D33B7007E3E55 /* Files */,
 				607FACD71AFB9204008FA782 /* ViewController.swift */,
-				607FACDC1AFB9204008FA782 /* Images.xcassets */,
-				607FACDE1AFB9204008FA782 /* LaunchScreen.xib */,
-				607FACD31AFB9204008FA782 /* Supporting Files */,
-				409E208C22A0EAC70015F372 /* BadgeHub */,
+				409E208A22A0EA960015F372 /* BadgeHub.swift */,
+				71340E2C260D33E3007E3E55 /* ViewController2.swift */,
 			);
 			name = "Example for BadgeHub";
 			path = BadgeHub;
-			sourceTree = "<group>";
-		};
-		607FACD31AFB9204008FA782 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				607FACD41AFB9204008FA782 /* Info.plist */,
-			);
-			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		607FACE81AFB9204008FA782 /* Tests */ = {
@@ -145,6 +129,17 @@
 				300739EB25517DE0F7C10BBF /* LICENSE */,
 			);
 			name = "Podspec Metadata";
+			sourceTree = "<group>";
+		};
+		71340E2B260D33B7007E3E55 /* Files */ = {
+			isa = PBXGroup;
+			children = (
+				607FACD41AFB9204008FA782 /* Info.plist */,
+				607FACDE1AFB9204008FA782 /* LaunchScreen.xib */,
+				607FACDC1AFB9204008FA782 /* Images.xcassets */,
+				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
+			);
+			name = Files;
 			sourceTree = "<group>";
 		};
 		82F335FFE41F0BB45F417374 /* Pods */ = {
@@ -338,6 +333,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				607FACD81AFB9204008FA782 /* ViewController.swift in Sources */,
+				71340E2D260D33E3007E3E55 /* ViewController2.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
 				409E208B22A0EA960015F372 /* BadgeHub.swift in Sources */,
 			);

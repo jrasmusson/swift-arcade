@@ -19,6 +19,7 @@ public class BadgeHub: NSObject {
     
     private var curOrderMagnitude: Int = 0
     private var redCircle: BadgeView!
+    private var initialCenter = CGPoint.zero
     private var baseFrame = CGRect.zero
     private var initialFrame = CGRect.zero
     
@@ -27,6 +28,18 @@ public class BadgeHub: NSObject {
     private struct Constants {
         static let notificHubDefaultDiameter: CGFloat = 30
         static let countMagnitudeAdaptationRatio: CGFloat = 0.3
+        // Pop values
+        static let popStartRatio: CGFloat = 0.85
+        static let popOutRatio: CGFloat = 1.05
+        static let popInRatio: CGFloat = 0.95
+        // Blink values
+        static let blinkDuration: CGFloat = 0.1
+        static let blinkAlpha: CGFloat = 0.1
+        // Bump values
+        static let firstBumpDistance: CGFloat = 8.0
+        static let bumpTimeSeconds: CGFloat = 0.13
+        static let secondBumpDist: CGFloat = 4.0
+        static let bumpTimeSeconds2: CGFloat = 0.1
     }
 
     var count: Int = 0 {
@@ -132,4 +145,151 @@ public class BadgeHub: NSObject {
         countLabel?.frame = redCircle.frame
         curOrderMagnitude = orderOfMagnitude
     }
+    
+    func setAlpha(alpha: CGFloat) {
+        redCircle.alpha = alpha
+        countLabel?.alpha = alpha
+    }
+
+    /// Bump badge up or down.
+    /// - Parameter yVal: `Y` coordinate for bumps.
+    func bumpCenterY(yVal: CGFloat) {
+        var center: CGPoint = redCircle.center
+        center.y = initialCenter.y - yVal
+        redCircle.center = center
+        countLabel?.center = center
+    }
+
+    func increment() {
+        increment(by: 1)
+    }
+    
+    func increment(by amount: Int) {
+        count += amount
+    }
+
+    func decrement() {
+        decrement(by: 1)
+    }
+
+    func decrement(by amount: Int) {
+        if amount >= count {
+            count = 0
+            return
+        }
+        count -= amount
+        checkZero()
+    }
+
+    public func pop() {
+        let height = baseFrame.size.height
+        let width = baseFrame.size.width
+        let popStartHeight: Float = Float(height * Constants.popStartRatio)
+        let popStartWidth: Float = Float(width * Constants.popStartRatio)
+        let timeStart: Float = 0.05
+        let popOutHeight: Float = Float(height * Constants.popOutRatio)
+        let popOutWidth: Float = Float(width * Constants.popOutRatio)
+        let timeOut: Float = 0.2
+        let popInHeight: Float = Float(height * Constants.popInRatio)
+        let popInWidth: Float = Float(width * Constants.popInRatio)
+        let timeIn: Float = 0.05
+        let popEndHeight: Float = Float(height)
+        let popEndWidth: Float = Float(width)
+        let timeEnd: Float = 0.05
+        
+        let startSize = CABasicAnimation(keyPath: "cornerRadius")
+        startSize.duration = CFTimeInterval(timeStart)
+        startSize.beginTime = 0
+        startSize.fromValue = NSNumber(value: popEndHeight / 2)
+        startSize.toValue = NSNumber(value: popStartHeight / 2)
+        startSize.isRemovedOnCompletion = false
+        
+        let outSize = CABasicAnimation(keyPath: "cornerRadius")
+        outSize.duration = CFTimeInterval(timeOut)
+        outSize.beginTime = CFTimeInterval(timeStart)
+        outSize.fromValue = startSize.toValue
+        outSize.toValue = NSNumber(value: popOutHeight / 2)
+        outSize.isRemovedOnCompletion = false
+        
+        let inSize = CABasicAnimation(keyPath: "cornerRadius")
+        inSize.duration = CFTimeInterval(timeIn)
+        inSize.beginTime = CFTimeInterval(timeStart + timeOut)
+        inSize.fromValue = outSize.toValue
+        inSize.toValue = NSNumber(value: popInHeight / 2)
+        inSize.isRemovedOnCompletion = false
+        
+        let endSize = CABasicAnimation(keyPath: "cornerRadius")
+        endSize.duration = CFTimeInterval(timeEnd)
+        endSize.beginTime = CFTimeInterval(timeIn + timeOut + timeStart)
+        endSize.fromValue = inSize.toValue
+        endSize.toValue = NSNumber(value: popEndHeight / 2)
+        endSize.isRemovedOnCompletion = false
+        
+        let group = CAAnimationGroup()
+        group.duration = CFTimeInterval(timeStart + timeOut + timeIn + timeEnd)
+        group.animations = [startSize, outSize, inSize, endSize]
+        
+        redCircle.layer.add(group, forKey: nil)
+        
+        UIView.animate(withDuration: TimeInterval(timeStart), animations: {
+            var frame: CGRect = self.redCircle.frame
+            let center: CGPoint = self.redCircle.center
+            frame.size.height = CGFloat(popStartHeight)
+            frame.size.width = CGFloat(popStartWidth)
+            self.redCircle.frame = frame
+            self.redCircle.center = center
+        }) { complete in
+            UIView.animate(withDuration: TimeInterval(timeOut), animations: {
+                var frame: CGRect = self.redCircle.frame
+                let center: CGPoint = self.redCircle.center
+                frame.size.height = CGFloat(popOutHeight)
+                frame.size.width = CGFloat(popOutWidth)
+                self.redCircle.frame = frame
+                self.redCircle.center = center
+            }) { complete in
+                UIView.animate(withDuration: TimeInterval(timeIn), animations: {
+                    var frame: CGRect = self.redCircle.frame
+                    let center: CGPoint = self.redCircle.center
+                    frame.size.height = CGFloat(popInHeight)
+                    frame.size.width = CGFloat(popInWidth)
+                    self.redCircle.frame = frame
+                    self.redCircle.center = center
+                }) { complete in
+                    UIView.animate(withDuration: TimeInterval(timeEnd), animations: {
+                        var frame: CGRect = self.redCircle.frame
+                        let center: CGPoint = self.redCircle.center
+                        frame.size.height = CGFloat(popEndHeight)
+                        frame.size.width = CGFloat(popEndWidth)
+                        self.redCircle.frame = frame
+                        self.redCircle.center = center
+                    })
+                }
+            }
+        }
+    }
+    
+    /// Animation that jumps similar to macOS dock icons.
+    public func bump() {
+        if !initialCenter.equalTo(redCircle.center) {
+            // cancel previous animation
+        }
+        
+        bumpCenterY(yVal: 0)
+        UIView.animate(withDuration: TimeInterval(Constants.bumpTimeSeconds), animations: {
+            self.bumpCenterY(yVal: Constants.firstBumpDistance)
+        }) { complete in
+            UIView.animate(withDuration: TimeInterval(Constants.bumpTimeSeconds), animations: {
+                self.bumpCenterY(yVal: 0)
+            }) { complete in
+                UIView.animate(withDuration: TimeInterval(Constants.bumpTimeSeconds2), animations: {
+                    self.bumpCenterY(yVal: Constants.secondBumpDist)
+                }) { complete in
+                    UIView.animate(withDuration: TimeInterval(Constants.bumpTimeSeconds2), animations: {
+                        self.bumpCenterY(yVal: 0)
+                    })
+                }
+            }
+        }
+    }
 }
+
