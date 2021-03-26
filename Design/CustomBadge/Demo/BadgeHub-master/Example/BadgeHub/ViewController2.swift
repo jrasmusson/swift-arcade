@@ -2,76 +2,58 @@
 //  ViewController2.swift
 //  BadgeHub_Example
 //
-//  Created by jrasmusson on 2021-03-25.
+//  Created by jrasmusson on 2021-03-26.
 //  Copyright © 2021 CocoaPods. All rights reserved.
 //
 
 import UIKit
 
+protocol Badgeable {}
+
+extension UIView: Badgeable {
+    func addBadge() {
+        translatesAutoresizingMaskIntoConstraints = false
+        
+        let diameter: CGFloat = 30
+        let badge = UIButton()
+
+        badge.translatesAutoresizingMaskIntoConstraints = false
+        badge.contentEdgeInsets = UIEdgeInsets(top: 0, left: 4, bottom: 0, right: 4)
+        badge.layer.cornerRadius = diameter / 2
+        badge.setTitleColor(.white, for: .normal)
+        badge.backgroundColor = .systemBlue
+        badge.setTitle("4", for: .normal)
+
+        addSubview(badge)
+
+        NSLayoutConstraint.activate([
+            badge.heightAnchor.constraint(equalToConstant: diameter),
+            badge.widthAnchor.constraint(greaterThanOrEqualToConstant: diameter),
+            badge.leadingAnchor.constraint(equalTo: trailingAnchor, constant: -24),
+            badge.bottomAnchor.constraint(equalTo: topAnchor, constant: 16),
+        ])
+    }
+}
+
 class ViewController2: UIViewController {
     
-    private var hub: BadgeHub?
-    
-    private lazy var imageView: UIImageView = {
-        let iv = UIImageView()
-        iv.frame = CGRect(x: view.frame.size.width / 2 - 48,
-                          y: 80, width: 96, height: 96)
-        iv.image = UIImage(named: "github_color")
-        return iv
-    }()
-    
-    private lazy var decrementButton: UIButton = {
-        let button = UIButton(type: .system)
-        button.frame = CGRect(x: 16, y: 200, width: 130, height: 44)
-        button.setTitle("Decrement (-1)", for: .normal)
-        button.backgroundColor = .white
-        button.layer.cornerRadius = 8
-        button.setTitleColor(.black, for: .normal)
-        return button
-    }()
-    
-    private lazy var incrementButton: UIButton = {
-        let button = UIButton(type: .system)
-        button.frame = CGRect(x: UIScreen.main.bounds.width - 16 - 130,
-                              y: 200, width: 130, height: 44)
-        button.setTitle("Increment (+1)", for: .normal)
-        button.backgroundColor = .white
-        button.layer.cornerRadius = 8
-        button.setTitleColor(.black, for: .normal)
-        return button
-    }()
+    let imageView = UIImageView()
+    let diameter: CGFloat = 30
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupButtons()
-        setupImageView()
-    }
-    
-    private func setupButtons() {
-        view.addSubview(incrementButton)
-        view.addSubview(decrementButton)
-        incrementButton.addTarget(self,
-                                  action: #selector(self.testIncrement),
-                                  for: .touchUpInside)
-        decrementButton.addTarget(self,
-                                  action: #selector(self.testDecrement),
-                                  for: .touchUpInside)
-    }
-    
-    private func setupImageView() {
-        hub = BadgeHub(view: imageView)
-        hub?.moveCircleBy(x: -15, y: 15)
+        
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.image = UIImage(named: "github_color")
+        imageView.addBadge()
+        
         view.addSubview(imageView)
-    }
-    
-    @objc private func testIncrement() {
-        hub?.increment()
-        hub?.pop()
-//        hub?.bump()
-    }
-    
-    @objc private func testDecrement() {
-        hub?.decrement()
+        imageView.addBadge()
+        
+        NSLayoutConstraint.activate([
+            imageView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            imageView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+        ])
     }
 }
 

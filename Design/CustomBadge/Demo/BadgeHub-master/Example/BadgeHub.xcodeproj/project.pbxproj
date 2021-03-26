@@ -9,11 +9,13 @@
 /* Begin PBXBuildFile section */
 		409E208B22A0EA960015F372 /* BadgeHub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 409E208A22A0EA960015F372 /* BadgeHub.swift */; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
-		607FACD81AFB9204008FA782 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD71AFB9204008FA782 /* ViewController.swift */; };
+		607FACD81AFB9204008FA782 /* ViewController3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD71AFB9204008FA782 /* ViewController3.swift */; };
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
 		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
-		71340E2D260D33E3007E3E55 /* ViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71340E2C260D33E3007E3E55 /* ViewController2.swift */; };
+		71340E2D260D33E3007E3E55 /* ViewController4.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71340E2C260D33E3007E3E55 /* ViewController4.swift */; };
+		71D5169E260E7F1F00B01336 /* ViewController1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D5169D260E7F1F00B01336 /* ViewController1.swift */; };
+		71D516A8260E7F9100B01336 /* ViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D516A7260E7F9100B01336 /* ViewController2.swift */; };
 		D6302F7FF0D1A717F8D48CB2 /* Pods_BadgeHub_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3ACD982BC89AFECA3FDBF522 /* Pods_BadgeHub_Example.framework */; };
 		D718449DC4E84CD87DF085B1 /* Pods_BadgeHub_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2E79FE58B30BFE220846F82 /* Pods_BadgeHub_Tests.framework */; };
 /* End PBXBuildFile section */
@@ -36,14 +38,16 @@
 		607FACD01AFB9204008FA782 /* BadgeHub_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BadgeHub_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACD51AFB9204008FA782 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		607FACD71AFB9204008FA782 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		607FACD71AFB9204008FA782 /* ViewController3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController3.swift; sourceTree = "<group>"; };
 		607FACDC1AFB9204008FA782 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		607FACDF1AFB9204008FA782 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		607FACE51AFB9204008FA782 /* BadgeHub_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BadgeHub_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
 		6BA978FDD0134429CACE8071 /* Pods-BadgeHub_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BadgeHub_Example.debug.xcconfig"; path = "Target Support Files/Pods-BadgeHub_Example/Pods-BadgeHub_Example.debug.xcconfig"; sourceTree = "<group>"; };
-		71340E2C260D33E3007E3E55 /* ViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController2.swift; sourceTree = "<group>"; };
+		71340E2C260D33E3007E3E55 /* ViewController4.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController4.swift; sourceTree = "<group>"; };
+		71D5169D260E7F1F00B01336 /* ViewController1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController1.swift; sourceTree = "<group>"; };
+		71D516A7260E7F9100B01336 /* ViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController2.swift; sourceTree = "<group>"; };
 		8C6093D0F2D2C1CC2CAC3CF8 /* BadgeHub.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = BadgeHub.podspec; path = ../BadgeHub.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		989B2D641A9A7D73E7AD6F13 /* Pods-BadgeHub_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BadgeHub_Tests.release.xcconfig"; path = "Target Support Files/Pods-BadgeHub_Tests/Pods-BadgeHub_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		B4B146157EB2EAC3AB61F5D9 /* Pods-BadgeHub_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BadgeHub_Example.release.xcconfig"; path = "Target Support Files/Pods-BadgeHub_Example/Pods-BadgeHub_Example.release.xcconfig"; sourceTree = "<group>"; };
@@ -96,9 +100,12 @@
 			isa = PBXGroup;
 			children = (
 				71340E2B260D33B7007E3E55 /* Files */,
-				607FACD71AFB9204008FA782 /* ViewController.swift */,
+				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
+				71D5169D260E7F1F00B01336 /* ViewController1.swift */,
+				71D516A7260E7F9100B01336 /* ViewController2.swift */,
+				607FACD71AFB9204008FA782 /* ViewController3.swift */,
+				71340E2C260D33E3007E3E55 /* ViewController4.swift */,
 				409E208A22A0EA960015F372 /* BadgeHub.swift */,
-				71340E2C260D33E3007E3E55 /* ViewController2.swift */,
 			);
 			name = "Example for BadgeHub";
 			path = BadgeHub;
@@ -137,7 +144,6 @@
 				607FACD41AFB9204008FA782 /* Info.plist */,
 				607FACDE1AFB9204008FA782 /* LaunchScreen.xib */,
 				607FACDC1AFB9204008FA782 /* Images.xcassets */,
-				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
 			);
 			name = Files;
 			sourceTree = "<group>";
@@ -332,10 +338,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				607FACD81AFB9204008FA782 /* ViewController.swift in Sources */,
-				71340E2D260D33E3007E3E55 /* ViewController2.swift in Sources */,
+				607FACD81AFB9204008FA782 /* ViewController3.swift in Sources */,
+				71D5169E260E7F1F00B01336 /* ViewController1.swift in Sources */,
+				71340E2D260D33E3007E3E55 /* ViewController4.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
 				409E208B22A0EA960015F372 /* BadgeHub.swift in Sources */,
+				71D516A8260E7F9100B01336 /* ViewController2.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -417,7 +425,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -467,7 +475,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";

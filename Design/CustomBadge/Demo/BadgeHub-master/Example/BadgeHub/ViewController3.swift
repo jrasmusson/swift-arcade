@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController3: UIViewController {
     
     private var hub: BadgeHub?
     

@@ -1,10 +1,141 @@
 # Custom Badge
 
-This tutorial will show you how to create your own custom badge and display on any `UIView`. Example based on source code of [BadgeHub](https://github.com/jogendra/BadgeHub).
+This tutorial will show you how to create your own custom badge and display on any `UIView`. 
+
+## Simple Badge
+
+### Auto Layout with UIKit
+
+You can build a simple badge, using UIKit controls and Auto Layout just like this.
+
+![](images/a.png)
+
+**ViewController.swift**
+
+```swift
+import UIKit
+
+class ViewController1: UIViewController {
+
+    let label = UILabel()
+    let button = UIButton()
+    
+    let diameter: CGFloat = 30
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.layer.cornerRadius = diameter / 2
+        label.backgroundColor = .systemRed
+        label.textAlignment = .center
+        label.textColor = .white
+        label.clipsToBounds = true
+        label.text = "99" // Good for 2 digits
+        
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.contentEdgeInsets = UIEdgeInsets(top: 0, left: 4, bottom: 0, right: 4)
+        button.layer.cornerRadius = diameter / 2
+        button.setTitleColor(.white, for: .normal)
+        button.backgroundColor = .systemBlue
+        button.setTitle("4444", for: .normal)
+        
+        view.addSubview(label)
+        view.addSubview(button)
+        
+        NSLayoutConstraint.activate([
+            label.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            label.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+            label.heightAnchor.constraint(equalToConstant: diameter),
+            label.widthAnchor.constraint(greaterThanOrEqualToConstant: diameter),
+
+            button.topAnchor.constraint(equalToSystemSpacingBelow: label.bottomAnchor, multiplier: 2),
+            button.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            button.heightAnchor.constraint(equalToConstant: diameter),
+            button.widthAnchor.constraint(greaterThanOrEqualToConstant: diameter),
+        ])
+    }
+}
+```
+
+If you only need two digit numbers, `UILabel` with a rounded corner radius is all you might need. If you require three or more digits in your badge, try a `UIButton` with `UIEdgeInsets` as it enables you to add padding on the right and the left.
+
+### Adding a protocol to any UIView
+
+If you want to get a bit fancier, you can create a `protocol` on `UIView` and make so that any view can add a badge by going 
+
+```swift
+view.addSubview(imageView)
+imageView.addBadge()
+```
+
+![](images/b.png)
+
+**ViewController.swift**
+
+```swift
+import UIKit
+
+protocol Badgeable {}
+
+extension UIView: Badgeable {
+    func addBadge() {
+        translatesAutoresizingMaskIntoConstraints = false
+        
+        let diameter: CGFloat = 30
+        let badge = UIButton()
+
+        badge.translatesAutoresizingMaskIntoConstraints = false
+        badge.contentEdgeInsets = UIEdgeInsets(top: 0, left: 4, bottom: 0, right: 4)
+        badge.layer.cornerRadius = diameter / 2
+        badge.setTitleColor(.white, for: .normal)
+        badge.backgroundColor = .systemBlue
+        badge.setTitle("4", for: .normal)
+
+        addSubview(badge)
+
+        NSLayoutConstraint.activate([
+            badge.heightAnchor.constraint(equalToConstant: diameter),
+            badge.widthAnchor.constraint(greaterThanOrEqualToConstant: diameter),
+            badge.leadingAnchor.constraint(equalTo: trailingAnchor, constant: -24),
+            badge.bottomAnchor.constraint(equalTo: topAnchor, constant: 16),
+        ])
+    }
+}
+
+class ViewController2: UIViewController {
+    
+    let imageView = UIImageView()
+    let diameter: CGFloat = 30
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.image = UIImage(named: "github_color")
+        imageView.addBadge()
+        
+        view.addSubview(imageView)
+        imageView.addBadge()
+        
+        NSLayoutConstraint.activate([
+            imageView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            imageView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+        ])
+    }
+}
+```
+
+
+## Advanced Badge
+
+If you need animations, and you'd like to reach for something more sophisticated and lower level, you can also solve this problem using Core Graphics and Core Animation by working directly with a `UIViews` frame.
+
+Example based on source code of [BadgeHub](https://github.com/jogendra/BadgeHub).
+
 
 ![](images/1.png)
 
-## Usage
 
 **ViewController.swift**
 
@@ -505,7 +636,7 @@ Animations can be added to badges using Core Animation along with Core Graphics.
     }
 ```
 
-**ViewController2.swift**
+**ViewController.swift**
 
 ```swift
 import UIKit
