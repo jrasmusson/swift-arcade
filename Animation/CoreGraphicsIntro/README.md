@@ -139,7 +139,7 @@ There are a couple of gotchas the can trip people up when getting started. Let's
 
 First of the coordinate system. In iOS the CG coordinate system goes down and to the right.
 
-![](images/coordinate.png)
+![](images/coordinate2.png)
 
 This is important to understand because a lot of people think the origin will be in the middle of the circle or square that they draw. It isn't. It's in the upper-left and all drawing start at (0,0) from there.
 
