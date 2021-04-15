@@ -1001,6 +1001,340 @@ public class BadgeHub: NSObject {
 }
 ```
 
+## Simple Working Example
+
+Here is a simple working example of a custom bade view with some animations.
+
+![](images/demo-simple.gif)
+
+**BadgeView.swift**
+
+```swift
+import Foundation
+import UIKit
+
+protocol BadgeViewDelegate: AnyObject {
+    func didTapBadge(_ sender: BadgeView)
+}
+
+class BadgeView: UIView {
+
+    let button = UIButton()
+    let imageView = UIImageView()
+
+    weak var delegate: BadgeViewDelegate?
+
+    let diameter: CGFloat = 16 // 30
+
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+
+        style()
+        layout()
+        setup()
+    }
+
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+
+    override var intrinsicContentSize: CGSize {
+        return CGSize(width: 44, height: 30)
+    }
+}
+
+extension BadgeView {
+
+    func style() {
+        translatesAutoresizingMaskIntoConstraints = false
+
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.contentEdgeInsets = UIEdgeInsets(top: 0, left: 4, bottom: 0, right: 4)
+        button.layer.cornerRadius = diameter / 2
+        button.setTitleColor(.white, for: .normal)
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 13)
+        button.backgroundColor = .systemRed
+        button.setTitle("44", for: .normal)
+        button.isUserInteractionEnabled = true
+        button.addTarget(self, action: #selector(buttonTapped(_:)), for: .primaryActionTriggered)
+
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.image = UIImage(systemName: "bell.fill")
+    }
+
+    func layout() {
+        addSubview(imageView)
+        addSubview(button)
+
+        NSLayoutConstraint.activate([
+            button.heightAnchor.constraint(equalToConstant: diameter),
+            button.widthAnchor.constraint(greaterThanOrEqualToConstant: diameter),
+
+            imageView.heightAnchor.constraint(equalToConstant: 24),
+            imageView.widthAnchor.constraint(equalToConstant: 24),
+
+            imageView.centerXAnchor.constraint(equalTo: centerXAnchor),
+            imageView.centerYAnchor.constraint(equalTo: centerYAnchor),
+
+            button.topAnchor.constraint(equalTo: imageView.topAnchor, constant: -8),
+            button.trailingAnchor.constraint(equalTo: imageView.trailingAnchor, constant: 8),
+        ])
+    }
+
+    func setup() {
+        let singleTap = UITapGestureRecognizer(target: self, action: #selector(imageViewTapped(_: )))
+        imageView.addGestureRecognizer(singleTap)
+        imageView.isUserInteractionEnabled = true
+    }
+
+    @objc func imageViewTapped(_ recognizer: UITapGestureRecognizer) {
+        if(recognizer.state == UIGestureRecognizer.State.ended){
+            print("Image tapped")
+            delegate?.didTapBadge(self)
+        }
+    }
+}
+
+// MARK: - Actions
+
+extension BadgeView {
+
+    @objc func buttonTapped(_ sender: UIButton) {
+        print("Button tapped")
+        delegate?.didTapBadge(self)
+    }
+}
+```
+
+**ViewController.swift**
+
+```swift
+import UIKit
+
+class ViewController: UIViewController {
+
+    let stackView = UIStackView()
+    let badgeView = BadgeView()
+    let bumpButton = makeButton(title: "Bump")
+    let popButton = makeButton(title: "Pop")
+    let shakeButton = makeButton(title: "Shake")
+
+    // Animations
+    private var baseFrame = CGRect.zero
+    private var initialFrame = CGRect.zero
+
+    private var initialCenter = CGPoint(x: 22, y: 15)
+
+    private struct Constants {
+        static let notificHubDefaultDiameter: CGFloat = 30
+        static let countMagnitudeAdaptationRatio: CGFloat = 0.3
+        // Pop values
+        static let popStartRatio: CGFloat = 0.85
+        static let popOutRatio: CGFloat = 1.05
+        static let popInRatio: CGFloat = 0.95
+        // Blink values
+        static let blinkDuration: CGFloat = 0.1
+        static let blinkAlpha: CGFloat = 0.1
+        // Bump values
+        static let firstBumpDistance: CGFloat = 8.0
+        static let bumpTimeSeconds: CGFloat = 0.13
+        static let secondBumpDist: CGFloat = 4.0
+        static let bumpTimeSeconds2: CGFloat = 0.1
+    }
+
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        stackView.axis = .vertical
+
+        badgeView.translatesAutoresizingMaskIntoConstraints = false
+        badgeView.delegate = self
+
+        bumpButton.addTarget(self, action: #selector(bumpTapped), for: .primaryActionTriggered)
+        popButton.addTarget(self, action: #selector(popTapped), for: .primaryActionTriggered)
+        shakeButton.addTarget(self, action: #selector(shakeTapped), for: .primaryActionTriggered)
+
+        stackView.addArrangedSubview(badgeView)
+        stackView.addArrangedSubview(bumpButton)
+        stackView.addArrangedSubview(popButton)
+        stackView.addArrangedSubview(shakeButton)
+
+        view.addSubview(stackView)
+
+        NSLayoutConstraint.activate([
+            stackView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            badgeView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+        ])
+    }
+
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        baseFrame = badgeView.frame
+        initialFrame = badgeView.frame
+    }
+}
+
+// MARK: - Actions
+
+extension ViewController {
+    @objc func bumpTapped(_ sender: UIButton) {
+        bump()
+    }
+
+    @objc func popTapped(_ sender: UIButton) {
+        pop()
+    }
+
+    @objc func shakeTapped(_ sender: UIButton) {
+        shake()
+    }
+}
+
+extension ViewController: BadgeViewDelegate {
+    func didTapBadge(_ sender: BadgeView) {
+        print("ViewController tapped")
+    }
+}
+
+func makeButton(title: String) -> UIButton {
+    let button = UIButton()
+    button.translatesAutoresizingMaskIntoConstraints = false
+    button.setTitle(title, for: .normal)
+    button.setTitleColor(.systemBlue, for: .normal)
+
+    return button
+}
+
+// MARK: - Animations
+
+extension ViewController {
+    func bumpCenterY(yVal: CGFloat) {
+        var center: CGPoint = badgeView.center
+        center.y = initialCenter.y - yVal
+        badgeView.center = center
+    }
+
+    func bump() {
+        UIView.animate(withDuration: TimeInterval(Constants.bumpTimeSeconds), animations: {
+            self.bumpCenterY(yVal: Constants.firstBumpDistance)
+        }) { complete in
+            UIView.animate(withDuration: TimeInterval(Constants.bumpTimeSeconds), animations: {
+                self.bumpCenterY(yVal: 0)
+            }) { complete in
+                UIView.animate(withDuration: TimeInterval(Constants.bumpTimeSeconds2), animations: {
+                    self.bumpCenterY(yVal: Constants.secondBumpDist)
+                }) { complete in
+                    UIView.animate(withDuration: TimeInterval(Constants.bumpTimeSeconds2), animations: {
+                        self.bumpCenterY(yVal: 0)
+                    })
+                }
+            }
+        }
+    }
+
+    func pop() {
+        let height = baseFrame.size.height
+        let width = baseFrame.size.width
+        let popStartHeight: Float = Float(height * Constants.popStartRatio)
+        let popStartWidth: Float = Float(width * Constants.popStartRatio)
+        let timeStart: Float = 0.05
+        let popOutHeight: Float = Float(height * Constants.popOutRatio)
+        let popOutWidth: Float = Float(width * Constants.popOutRatio)
+        let timeOut: Float = 0.2
+        let popInHeight: Float = Float(height * Constants.popInRatio)
+        let popInWidth: Float = Float(width * Constants.popInRatio)
+        let timeIn: Float = 0.05
+        let popEndHeight: Float = Float(height)
+        let popEndWidth: Float = Float(width)
+        let timeEnd: Float = 0.05
+
+        let startSize = CABasicAnimation(keyPath: "cornerRadius")
+        startSize.duration = CFTimeInterval(timeStart)
+        startSize.beginTime = 0
+        startSize.fromValue = NSNumber(value: popEndHeight / 2)
+        startSize.toValue = NSNumber(value: popStartHeight / 2)
+        startSize.isRemovedOnCompletion = false
+
+        let outSize = CABasicAnimation(keyPath: "cornerRadius")
+        outSize.duration = CFTimeInterval(timeOut)
+        outSize.beginTime = CFTimeInterval(timeStart)
+        outSize.fromValue = startSize.toValue
+        outSize.toValue = NSNumber(value: popOutHeight / 2)
+        outSize.isRemovedOnCompletion = false
+
+        let inSize = CABasicAnimation(keyPath: "cornerRadius")
+        inSize.duration = CFTimeInterval(timeIn)
+        inSize.beginTime = CFTimeInterval(timeStart + timeOut)
+        inSize.fromValue = outSize.toValue
+        inSize.toValue = NSNumber(value: popInHeight / 2)
+        inSize.isRemovedOnCompletion = false
+
+        let endSize = CABasicAnimation(keyPath: "cornerRadius")
+        endSize.duration = CFTimeInterval(timeEnd)
+        endSize.beginTime = CFTimeInterval(timeIn + timeOut + timeStart)
+        endSize.fromValue = inSize.toValue
+        endSize.toValue = NSNumber(value: popEndHeight / 2)
+        endSize.isRemovedOnCompletion = false
+
+        let group = CAAnimationGroup()
+        group.duration = CFTimeInterval(timeStart + timeOut + timeIn + timeEnd)
+        group.animations = [startSize, outSize, inSize, endSize]
+
+        badgeView.layer.add(group, forKey: nil)
+
+        UIView.animate(withDuration: TimeInterval(timeStart), animations: {
+            var frame: CGRect = self.badgeView.frame
+            let center: CGPoint = self.badgeView.center
+            frame.size.height = CGFloat(popStartHeight)
+            frame.size.width = CGFloat(popStartWidth)
+            self.badgeView.frame = frame
+            self.badgeView.center = center
+        }) { complete in
+            UIView.animate(withDuration: TimeInterval(timeOut), animations: {
+                var frame: CGRect = self.badgeView.frame
+                let center: CGPoint = self.badgeView.center
+                frame.size.height = CGFloat(popOutHeight)
+                frame.size.width = CGFloat(popOutWidth)
+                self.badgeView.frame = frame
+                self.badgeView.center = center
+            }) { complete in
+                UIView.animate(withDuration: TimeInterval(timeIn), animations: {
+                    var frame: CGRect = self.badgeView.frame
+                    let center: CGPoint = self.badgeView.center
+                    frame.size.height = CGFloat(popInHeight)
+                    frame.size.width = CGFloat(popInWidth)
+                    self.badgeView.frame = frame
+                    self.badgeView.center = center
+                }) { complete in
+                    UIView.animate(withDuration: TimeInterval(timeEnd), animations: {
+                        var frame: CGRect = self.badgeView.frame
+                        let center: CGPoint = self.badgeView.center
+                        frame.size.height = CGFloat(popEndHeight)
+                        frame.size.width = CGFloat(popEndWidth)
+                        self.badgeView.frame = frame
+                        self.badgeView.center = center
+                    })
+                }
+            }
+        }
+    }
+
+    func shake() {
+        let dx = 4
+        let animation = CAKeyframeAnimation()
+        animation.keyPath = "position.x"
+        animation.values = [0, dx, -dx, dx, 0]
+        animation.keyTimes = [0, 0.16, 0.5, 0.83, 1]
+        animation.duration = 0.4
+
+        animation.isAdditive = true
+        badgeView.layer.add(animation, forKey: "shake")
+    }
+}
+```
+
 ### Links the help
 
 - [BadgeHub - source code for example](https://github.com/jogendra/BadgeHub)
