@@ -9,6 +9,7 @@ Simplest thing you can do is create a nib and then associated it with a View Con
 - Create the nib (same name as view controller).
 - Set it's File's Owner to the `ViewController`.
 - Point the File's Owner `view` to the nib view
+- Load the `ViewController` in the AppDelate like any other programatic view controller.
 
 ![](images/a.png)
 
