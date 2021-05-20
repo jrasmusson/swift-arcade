@@ -276,6 +276,15 @@ func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> U
 
 This method is key to triggering `awakeFromNib` but is nice because it saves a tonne of code.
 
+## Loading TableCell nib in a unit test
+
+Load it via the bundle like this - will load and setup all the outlets.
+
+```swift
+    let bundle = Bundle(for: ReceivedTableCell.self)
+    cell = bundle.loadNibNamed("ReceivedTableCell", owner: nil, options: nil)?.first as! ReceivedTableCell
+
+```
 ### Trouble Shooting
 
 - [Stack Overflow - EXC_BAD_ACCESS on custom UIView with custom XIB](https://stackoverflow.com/questions/19355104/exc-bad-access-on-custom-uiview-with-custom-xib)
