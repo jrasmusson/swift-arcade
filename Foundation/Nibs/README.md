@@ -306,6 +306,19 @@ override func awakeFromNib() {
 }
 ```
 
+## Other things to know
+
+How you size your nib in interface builder matters. If you give your nib a frame size of 113x115, that is how it is going to draw it on screen (regardless of auto layout).
+
+![](images/33.png)
+![](images/34.png)
+
+If you want your nib to appear the right size, you need to draw it to the size your want (i.e. 48x48).
+
+![](images/35.png)
+![](images/36.png)
+
+
 ### Trouble Shooting
 
 - [Stack Overflow - EXC_BAD_ACCESS on custom UIView with custom XIB](https://stackoverflow.com/questions/19355104/exc-bad-access-on-custom-uiview-with-custom-xib)
