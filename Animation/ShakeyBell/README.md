@@ -166,3 +166,16 @@ There are three things we can tweak on this animation:
 ![](images/angle.png)
 
 ![](images/offset.png)
+
+### Completion block
+
+Chain animations together via the `completion` block.
+
+```swift
+UIView.animateKeyframes(withDuration: duration, delay: 0, options: [],
+  animations: {
+	// animation 1    
+  }) { completed in
+	// animation 2
+}
+```
