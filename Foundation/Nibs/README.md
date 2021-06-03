@@ -285,6 +285,27 @@ Load it via the bundle like this - will load and setup all the outlets.
     cell = bundle.loadNibNamed("ReceivedTableCell", owner: nil, options: nil)?.first as! ReceivedTableCell
 
 ```
+
+## Different ways to load nibs
+
+Both these work. Not sure which one is better.
+
+```swift
+override func awakeFromNib() {
+    super.awakeFromNib()
+    let bundle = Bundle(for: BadgeLabel.self)
+    bundle.loadNibNamed(String(describing: BadgeLabel.self), owner: self, options: nil)
+    addSubview(contentView)
+}
+
+override func awakeFromNib() {
+    super.awakeFromNib()
+    let bundle = Bundle.init(for: BadgeLabel.self)
+    bundle.loadNibNamed("BadgeLabel", owner: self, options: nil)
+    addSubview(contentView)
+}
+```
+
 ### Trouble Shooting
 
 - [Stack Overflow - EXC_BAD_ACCESS on custom UIView with custom XIB](https://stackoverflow.com/questions/19355104/exc-bad-access-on-custom-uiview-with-custom-xib)
