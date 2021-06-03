@@ -596,6 +596,51 @@ class CirclingViewController: UIViewController {
 }
 ```
 
+## Ringing Bell
+
+![](images/belldemo.gif)
+
+```swift
+extension NotificationBadgeView {
+    @objc func imageViewTapped(_ recognizer: UITapGestureRecognizer) {
+        shake()
+    }
+
+    private func shake() {
+        let dur = 0.1667
+        UIView.animateKeyframes(withDuration: 1, delay: 0, options: [],
+          animations: {
+            UIView.addKeyframe(withRelativeStartTime: 0.0,
+                               relativeDuration: dur) {
+                self.imageView.transform = CGAffineTransform(rotationAngle: -.pi/8)
+            }
+            UIView.addKeyframe(withRelativeStartTime: dur,
+                               relativeDuration: dur) {
+                self.imageView.transform = CGAffineTransform(rotationAngle: +.pi/8)
+            }
+            UIView.addKeyframe(withRelativeStartTime: dur*2,
+                               relativeDuration: dur) {
+                self.imageView.transform = CGAffineTransform(rotationAngle: -.pi/8)
+            }
+            UIView.addKeyframe(withRelativeStartTime: dur*3,
+                               relativeDuration: dur) {
+                self.imageView.transform = CGAffineTransform(rotationAngle: +.pi/8)
+            }
+            UIView.addKeyframe(withRelativeStartTime: dur*4,
+                               relativeDuration: dur) {
+                self.imageView.transform = CGAffineTransform(rotationAngle: -.pi/8)
+            }
+            UIView.addKeyframe(withRelativeStartTime: dur*5,
+                               relativeDuration: dur) {
+                self.imageView.transform = CGAffineTransform.identity
+            }
+          },
+          completion: nil
+        )
+    }
+}
+```
+
 
 ### Links that help
 
