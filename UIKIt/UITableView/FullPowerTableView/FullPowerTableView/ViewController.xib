@@ -10,6 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ViewController" customModule="FullPowerTableView" customModuleProvider="target">
             <connections>
+                <outlet property="tableView" destination="qWr-EW-QBI" id="If4-Zg-JDU"/>
                 <outlet property="view" destination="iN0-l3-epB" id="gEe-AN-NQI"/>
             </connections>
         </placeholder>
