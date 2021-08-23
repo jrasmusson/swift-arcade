@@ -7,6 +7,23 @@
 
 import UIKit
 
+enum TransactionType: String {
+    case pending = "Pending"
+    case posted = "Posted"
+}
+
+struct Transaction {
+    let firstName: String
+    let lastName: String
+    let amount: String
+    let type: TransactionType
+}
+
+struct SectionType {
+    let title: String
+    let transactions: [Transaction]
+}
+
 class ViewController: UIViewController {
     
     let games = [
