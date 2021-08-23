@@ -58,23 +58,13 @@
 		7187EF1A26D2A9E000E998A3 /* FullPowerTableView */ = {
 			isa = PBXGroup;
 			children = (
+				71DAFEE426D3BF3A00306FF9 /* Files */,
 				71DAFEE326D3BDEC00306FF9 /* HeaderView */,
 				7187EF1B26D2A9E000E998A3 /* AppDelegate.swift */,
 				7187EF1F26D2A9E000E998A3 /* ViewController.swift */,
 				7187EF2F26D3056600E998A3 /* ViewController.xib */,
-				7187EF3226D3059B00E998A3 /* Files */,
 			);
 			path = FullPowerTableView;
-			sourceTree = "<group>";
-		};
-		7187EF3226D3059B00E998A3 /* Files */ = {
-			isa = PBXGroup;
-			children = (
-				7187EF2426D2A9E100E998A3 /* Assets.xcassets */,
-				7187EF2626D2A9E100E998A3 /* LaunchScreen.storyboard */,
-				7187EF2926D2A9E100E998A3 /* Info.plist */,
-			);
-			path = Files;
 			sourceTree = "<group>";
 		};
 		71DAFEE326D3BDEC00306FF9 /* HeaderView */ = {
@@ -84,6 +74,16 @@
 				71DAFEE126D3BB3B00306FF9 /* HeaderView.swift */,
 			);
 			path = HeaderView;
+			sourceTree = "<group>";
+		};
+		71DAFEE426D3BF3A00306FF9 /* Files */ = {
+			isa = PBXGroup;
+			children = (
+				7187EF2426D2A9E100E998A3 /* Assets.xcassets */,
+				7187EF2626D2A9E100E998A3 /* LaunchScreen.storyboard */,
+				7187EF2926D2A9E100E998A3 /* Info.plist */,
+			);
+			name = Files;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
