@@ -19,10 +19,10 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Ylc-S3-fy9">
-                    <rect key="frame" x="20" y="20" width="420" height="64"/>
+                    <rect key="frame" x="20" y="16" width="424" height="64"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" verticalHuggingPriority="249" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="PNZ-Am-qTK">
-                            <rect key="frame" x="0.0" y="0.0" width="348" height="64"/>
+                            <rect key="frame" x="0.0" y="0.0" width="352" height="64"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="History" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OhO-qw-LrE">
                                     <rect key="frame" x="0.0" y="0.0" width="95.5" height="37"/>
@@ -40,7 +40,7 @@
                             <color key="backgroundColor" systemColor="systemOrangeColor"/>
                         </stackView>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dollarsign.circle" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="hmd-dK-j5I">
-                            <rect key="frame" x="356" y="0.5" width="64" height="63"/>
+                            <rect key="frame" x="360" y="0.5" width="64" height="63"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="64" id="EGh-2Q-dZh"/>
                                 <constraint firstAttribute="width" constant="64" id="YG9-kQ-2SJ"/>
@@ -48,13 +48,23 @@
                         </imageView>
                     </subviews>
                 </stackView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LRd-pE-anv" userLabel="dividerView">
+                    <rect key="frame" x="16" y="103.5" width="444" height="0.5"/>
+                    <color key="backgroundColor" systemColor="systemGray3Color"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="0.5" id="XGm-Zh-7e7"/>
+                    </constraints>
+                </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
+                <constraint firstAttribute="bottom" secondItem="LRd-pE-anv" secondAttribute="bottom" id="SQe-7R-Ory"/>
+                <constraint firstItem="LRd-pE-anv" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="16" id="WTY-PJ-Oty"/>
+                <constraint firstAttribute="trailing" secondItem="LRd-pE-anv" secondAttribute="trailing" id="YSN-jx-qBQ"/>
                 <constraint firstItem="Ylc-S3-fy9" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="f3O-yY-Yqc"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="Ylc-S3-fy9" secondAttribute="trailing" constant="20" id="fcD-rj-KUh"/>
-                <constraint firstItem="Ylc-S3-fy9" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="20" id="qu1-5Y-xDq"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="Ylc-S3-fy9" secondAttribute="trailing" constant="16" id="fcD-rj-KUh"/>
+                <constraint firstItem="Ylc-S3-fy9" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="16" id="qu1-5Y-xDq"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <point key="canvasLocation" x="11.594202898550726" y="-125.89285714285714"/>
@@ -64,6 +74,9 @@
         <image name="dollarsign.circle" catalog="system" width="128" height="121"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray3Color">
+            <color red="0.7803921568627451" green="0.7803921568627451" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemOrangeColor">
             <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
