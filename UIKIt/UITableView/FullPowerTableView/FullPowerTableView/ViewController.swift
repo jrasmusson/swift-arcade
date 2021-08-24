@@ -55,6 +55,9 @@ extension ViewController {
 
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellId)
         tableView.tableFooterView = UIView() // hide empty rows
+        
+        /// New
+        tableView.registerHeaderFooter(SectionHeaderView.self)
     }
     
     private func setupTableViewHeader() {
@@ -117,13 +120,19 @@ extension ViewController: UITableViewDataSource {
         return vm.sections[section].transactions.count
     }
     
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        guard let vm = viewModel else { return nil }
-        return vm.sections[section].title
+//    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+//        guard let vm = viewModel else { return nil }
+//        return vm.sections[section].title
+//    }
+
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let headerView: SectionHeaderView = tableView.dequeueResuableHeaderFooter()
+        headerView.titleLabel.text = "Pending eller Post"
+        return headerView
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 40
+        return 70 // the same height constraint used in our `SectionHeaderView`
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
