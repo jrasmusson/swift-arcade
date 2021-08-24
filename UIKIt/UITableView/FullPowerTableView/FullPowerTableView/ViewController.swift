@@ -19,28 +19,27 @@ struct Transaction {
     let type: TransactionType
 }
 
-struct SectionType {
+struct TransactionSection {
     let title: String
     let transactions: [Transaction]
 }
 
+struct TransactionViewModel {
+    let sections: [TransactionSection]
+}
+
 class ViewController: UIViewController {
-    
-    let games = [
-        "Pacman",
-        "Space Invaders",
-        "Space Patrol",
-    ]
-    
+        
     @IBOutlet var tableView: UITableView!
-    
     let cellId = "cellId"
+    
+    var viewModel: TransactionViewModel?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
+        fetchData()
     }
-
 }
 
 // MARK: - Setup
@@ -75,6 +74,25 @@ extension ViewController {
     }
 }
 
+// MARK: - Networking
+extension ViewController {
+    private func fetchData() {
+        let tx1 = Transaction(firstName: "Kevin", lastName: "Flynn", amount: "$100", type: .pending)
+        let tx2 = Transaction(firstName: "Allan", lastName: "Bradley", amount: "$200", type: .pending)
+        let tx3 = Transaction(firstName: "Ed", lastName: "Dillinger", amount: "$300", type: .pending)
+
+        let tx4 = Transaction(firstName: "Sam", lastName: "Flynn", amount: "$100", type: .pending)
+        let tx5 = Transaction(firstName: "Quorra", lastName: "Iso", amount: "$200", type: .pending)
+        let tx6 = Transaction(firstName: "Castor", lastName: "Barkeep", amount: "$300", type: .pending)
+        let tx7 = Transaction(firstName: "CLU", lastName: "MCU", amount: "$400", type: .pending)
+        
+        let section1 = TransactionSection(title: "Pending transfers", transactions: [tx1, tx2, tx3])
+        let section2 = TransactionSection(title: "Posted transfers", transactions: [tx4, tx5, tx6, tx7])
+
+        viewModel = TransactionViewModel(sections: [section1, section2])
+    }
+}
+
 // MARK: - UITableViewDelegate
 extension ViewController: UITableViewDelegate {
 
@@ -83,19 +101,33 @@ extension ViewController: UITableViewDelegate {
 // MARK: - UITableViewDataSource
 extension ViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let vm = viewModel else { return UITableViewCell() }
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath)
-
-        cell.textLabel?.text = games[indexPath.row]
-        cell.accessoryType = UITableViewCell.AccessoryType.disclosureIndicator
-
+        let section = indexPath.section
+        
+        let text = vm.sections[section].transactions[indexPath.row].amount
+        cell.textLabel?.text = text
+        
         return cell
     }
-
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return games.count
+        guard let vm = viewModel else { return 0 }
+        return vm.sections[section].transactions.count
     }
-
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        guard let vm = viewModel else { return nil }
+        return vm.sections[section].title
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 40
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        guard let sections = viewModel?.sections else { return 0 }
+        return sections.count
     }
 }

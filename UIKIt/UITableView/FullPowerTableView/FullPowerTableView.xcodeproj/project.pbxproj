@@ -14,6 +14,7 @@
 		7187EF3026D3056600E998A3 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7187EF2F26D3056600E998A3 /* ViewController.xib */; };
 		71DAFEE026D3BB3000306FF9 /* HeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71DAFEDF26D3BB3000306FF9 /* HeaderView.xib */; };
 		71DAFEE226D3BB3B00306FF9 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71DAFEE126D3BB3B00306FF9 /* HeaderView.swift */; };
+		71DAFF0726D51CF600306FF9 /* SectionHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71DAFF0626D51CF600306FF9 /* SectionHeaderView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		7187EF2F26D3056600E998A3 /* ViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ViewController.xib; sourceTree = "<group>"; };
 		71DAFEDF26D3BB3000306FF9 /* HeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeaderView.xib; sourceTree = "<group>"; };
 		71DAFEE126D3BB3B00306FF9 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
+		71DAFF0626D51CF600306FF9 /* SectionHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SectionHeaderView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +60,7 @@
 		7187EF1A26D2A9E000E998A3 /* FullPowerTableView */ = {
 			isa = PBXGroup;
 			children = (
+				71DAFF0526D51CAC00306FF9 /* SectionHeader */,
 				71DAFEE426D3BF3A00306FF9 /* Files */,
 				71DAFEE326D3BDEC00306FF9 /* HeaderView */,
 				7187EF1B26D2A9E000E998A3 /* AppDelegate.swift */,
@@ -84,6 +87,14 @@
 				7187EF2926D2A9E100E998A3 /* Info.plist */,
 			);
 			name = Files;
+			sourceTree = "<group>";
+		};
+		71DAFF0526D51CAC00306FF9 /* SectionHeader */ = {
+			isa = PBXGroup;
+			children = (
+				71DAFF0626D51CF600306FF9 /* SectionHeaderView.xib */,
+			);
+			path = SectionHeader;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -146,6 +157,7 @@
 			files = (
 				7187EF2826D2A9E100E998A3 /* LaunchScreen.storyboard in Resources */,
 				7187EF3026D3056600E998A3 /* ViewController.xib in Resources */,
+				71DAFF0726D51CF600306FF9 /* SectionHeaderView.xib in Resources */,
 				7187EF2526D2A9E100E998A3 /* Assets.xcassets in Resources */,
 				71DAFEE026D3BB3000306FF9 /* HeaderView.xib in Resources */,
 			);
