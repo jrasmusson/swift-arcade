@@ -7,14 +7,8 @@
 
 import UIKit
 
-enum TransactionType: String {
-    case pending = "Pending"
-    case posted = "Posted"
-}
-
 struct Transaction {
     let amount: String
-    let type: TransactionType
 }
 
 class Section {
@@ -56,7 +50,7 @@ class SectionsViewController: UIViewController {
     
     @objc func addTapped(_ sender: UIBarButtonItem) {
         // Create new data row
-        let newTx1 = Transaction(amount: "$800", type: .posted)
+        let newTx1 = Transaction(amount: "$800")
         
         // Get its section
         let section2 = viewModel?.sections[1]
@@ -132,14 +126,14 @@ extension SectionsViewController: UITableViewDataSource {
 // MARK: - Networking
 extension SectionsViewController {
     private func fetchData() {
-        let tx1 = Transaction(amount: "$100", type: .pending)
-        let tx2 = Transaction(amount: "$200", type: .pending)
-        let tx3 = Transaction(amount: "$300", type: .pending)
+        let tx1 = Transaction(amount: "$100")
+        let tx2 = Transaction(amount: "$200")
+        let tx3 = Transaction(amount: "$300")
 
-        let tx4 = Transaction(amount: "$400", type: .posted)
-        let tx5 = Transaction(amount: "$500", type: .posted)
-        let tx6 = Transaction(amount: "$600", type: .posted)
-        let tx7 = Transaction(amount: "$700", type: .posted)
+        let tx4 = Transaction(amount: "$400")
+        let tx5 = Transaction(amount: "$500")
+        let tx6 = Transaction(amount: "$600")
+        let tx7 = Transaction(amount: "$700")
         
         let section1 = Section(title: "Pending transfers", transactions: [tx1, tx2, tx3])
         let section2 = Section(title: "Posted transfers", transactions: [tx4, tx5, tx6, tx7])
