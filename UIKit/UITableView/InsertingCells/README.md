@@ -1,10 +1,8 @@
 # Inserting Cells
 
-Hey there
-
 ## Insert Single
 
-![](images/single.gif)
+![single](images/single.gif)
 
 New cells can be animated in by:
 
@@ -92,7 +90,7 @@ extension ViewController {
 
 ## Insert Batch
 
-![](images/insertbatch.gif)
+![demo](images/insertbatch.gif)
 
 If you try inserting more than one row as using the technique above
 
