@@ -2,6 +2,8 @@
 
 ## Insert Single
 
+![](images/single.gif)
+
 New cells can be animated in by:
 
 - adding them to your data source
@@ -88,6 +90,8 @@ extension ViewController {
 
 ## Insert Batch
 
+![](images/insertbatch.gif)
+
 If you try inserting more than one row as using the technique above
 
 ```swift
@@ -113,6 +117,26 @@ contained in an existing section after the update (6) must be equal to the numbe
 rows contained in that section before the update (3), plus or minus the number of 
 rows inserted or deleted from that section (1 inserted, 0 deleted) and plus or minus 
 the number of rows moved into or out of that section (0 moved in, 0 moved out).'
+```
+
+What this is saying is you added `3` rows, but only inserted `1` new index.
+
+To fix you need to calculate an index for each new addition.
+
+```swift
+@objc func addTapped(_ sender: UIBarButtonItem) {
+    games.append("Tron")
+    games.append("Dig Dug")
+    games.append("Moon Patrol")
+
+    let indexPath3 = IndexPath(row: games.count - 3, section: 0)
+    let indexPath2 = IndexPath(row: games.count - 2, section: 0)
+    let indexPath1 = IndexPath(row: games.count - 1, section: 0)
+
+    tableView.beginUpdates()
+    tableView.insertRows(at: [indexPath1, indexPath2, indexPath3], with: .fade)
+    tableView.endUpdates()
+}
 ```
 
 ### Links that help

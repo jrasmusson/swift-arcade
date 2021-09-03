@@ -34,10 +34,12 @@ class ViewController: UIViewController {
         games.append("Dig Dug")
         games.append("Moon Patrol")
 
-        let indexPath = IndexPath(row: games.count - 1, section: 0)
+        let indexPath3 = IndexPath(row: games.count - 3, section: 0)
+        let indexPath2 = IndexPath(row: games.count - 2, section: 0)
+        let indexPath1 = IndexPath(row: games.count - 1, section: 0)
 
         tableView.beginUpdates()
-        tableView.insertRows(at: [indexPath], with: .fade)
+        tableView.insertRows(at: [indexPath1, indexPath2, indexPath3], with: .fade)
         tableView.endUpdates()
     }
 }
