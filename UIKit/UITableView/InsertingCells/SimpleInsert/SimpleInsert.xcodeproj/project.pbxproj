@@ -11,6 +11,7 @@
 		3105230626E2420E00196A4F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3105230526E2420E00196A4F /* ViewController.swift */; };
 		3105230B26E2421100196A4F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3105230A26E2421100196A4F /* Assets.xcassets */; };
 		3105230E26E2421200196A4F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3105230C26E2421200196A4F /* LaunchScreen.storyboard */; };
+		719B283026E261C4005512E4 /* SectionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719B282F26E261C4005512E4 /* SectionsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +21,7 @@
 		3105230A26E2421100196A4F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3105230D26E2421200196A4F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3105230F26E2421200196A4F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		719B282F26E261C4005512E4 /* SectionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,8 +54,9 @@
 		3105230026E2420E00196A4F /* SimpleInsert */ = {
 			isa = PBXGroup;
 			children = (
-				3105230526E2420E00196A4F /* ViewController.swift */,
 				3105231826E2427B00196A4F /* Files */,
+				3105230526E2420E00196A4F /* ViewController.swift */,
+				719B282F26E261C4005512E4 /* SectionsViewController.swift */,
 			);
 			path = SimpleInsert;
 			sourceTree = "<group>";
@@ -139,6 +142,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3105230626E2420E00196A4F /* ViewController.swift in Sources */,
+				719B283026E261C4005512E4 /* SectionsViewController.swift in Sources */,
 				3105230226E2420E00196A4F /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

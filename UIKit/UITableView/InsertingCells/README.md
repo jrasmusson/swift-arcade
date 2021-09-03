@@ -1,6 +1,6 @@
 # Inserting Cells
 
-## Insert Single
+## Single Row
 
 
 New cells can be animated in by:
@@ -50,7 +50,7 @@ class ViewController: UIViewController {
     }
 
     @objc func addTapped(_ sender: UIBarButtonItem) {
-        data("Tron")
+        data.append("Tron")
 
         let indexPath = IndexPath(row: games.count - 1, section: 0)
 
@@ -87,7 +87,7 @@ extension ViewController {
 }
 ```
 
-## Insert Batch
+## Multiple Rows Batch
 
 If you try inserting more than one row as using the technique above
 
@@ -208,6 +208,12 @@ extension ViewController {
     }
 }
 ```
+
+## Sections
+
+The same can be done with sections.
+
+
 ### Links that help
 
 - [Apple - Batch Insertion, Deletion, and Reloading of Rows and Sections](https://developer.apple.com/library/archive/documentation/UserExperience/Conceptual/TableView_iPhone/ManageInsertDeleteRow/ManageInsertDeleteRow.html#//apple_ref/doc/uid/TP40007451-CH10-SW9)

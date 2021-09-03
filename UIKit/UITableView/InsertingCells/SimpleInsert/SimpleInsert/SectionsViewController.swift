@@ -1,0 +1,130 @@
+//
+//  SectionsViewController.swift
+//  SimpleInsert
+//
+//  Created by jrasmusson on 2021-09-03.
+//
+
+import UIKit
+
+enum TransactionType: String {
+    case pending = "Pending"
+    case posted = "Posted"
+}
+
+struct Transaction {
+    let amount: String
+    let type: TransactionType
+}
+
+struct TransactionSection {
+    let title: String
+    let transactions: [Transaction]
+}
+
+struct TransactionViewModel {
+    let sections: [TransactionSection]
+}
+
+class SectionsViewController: UIViewController {
+    
+    var viewModel: TransactionViewModel?
+    var tableView = UITableView()
+    let cellId = "cellId"
+    
+    lazy var addBarButtonItem: UIBarButtonItem = {
+        let barButtonItem = UIBarButtonItem(title: "Add", style: .plain, target: self, action: #selector(addTapped))
+        barButtonItem.tintColor = UIColor.blue
+        return barButtonItem
+    }()
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        setupTableView()
+        setupNavigationBar()
+        fetchData()
+    }
+    
+    @objc func addTapped(_ sender: UIBarButtonItem) {
+//        data.append("Tron")
+//
+//        let indexPath = IndexPath(row: data.count - 1, section: 0)
+//
+//        tableView.beginUpdates()
+//        tableView.insertRows(at: [indexPath], with: .fade)
+//        tableView.endUpdates()
+    }
+}
+
+// MARK: - Setup
+extension SectionsViewController {
+    func setup() {
+        setupTableView()
+    }
+    
+    private func setupTableView() {
+        tableView.dataSource = self
+        tableView.tableFooterView = UIView()
+        view = tableView
+        
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellId)
+    }
+    
+    private func setupNavigationBar() {
+        title = "Games"
+        navigationItem.rightBarButtonItem = addBarButtonItem
+    }
+}
+
+// MARK: - UITableViewDataSource
+extension SectionsViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let vm = viewModel else { return UITableViewCell() }
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath)
+        let section = indexPath.section
+        
+        let text = vm.sections[section].transactions[indexPath.row].amount
+        cell.textLabel?.text = text
+        
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        guard let vm = viewModel else { return 0 }
+        return vm.sections[section].transactions.count
+    }
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        guard let vm = viewModel else { return nil }
+        return vm.sections[section].title
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 40
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        guard let sections = viewModel?.sections else { return 0 }
+        return sections.count
+    }
+}
+
+// MARK: - Networking
+extension SectionsViewController {
+    private func fetchData() {
+        let tx1 = Transaction(amount: "$100", type: .pending)
+        let tx2 = Transaction(amount: "$200", type: .pending)
+        let tx3 = Transaction(amount: "$300", type: .pending)
+
+        let tx4 = Transaction(amount: "$400", type: .posted)
+        let tx5 = Transaction(amount: "$500", type: .posted)
+        let tx6 = Transaction(amount: "$600", type: .posted)
+        let tx7 = Transaction(amount: "$700", type: .posted)
+        
+        let section1 = TransactionSection(title: "Pending transfers", transactions: [tx1, tx2, tx3])
+        let section2 = TransactionSection(title: "Posted transfers", transactions: [tx4, tx5, tx6, tx7])
+
+        viewModel = TransactionViewModel(sections: [section1, section2])
+    }
+}
