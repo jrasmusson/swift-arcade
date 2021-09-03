@@ -19,8 +19,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.backgroundColor = .systemBackground
 
 //        let navigationController = UINavigationController(rootViewController: ViewController())
-        let navigationController = UINavigationController(rootViewController: SectionsViewController())
-        
+//        let navigationController = UINavigationController(rootViewController: SectionsViewController())
+        let navigationController = UINavigationController(rootViewController: AppendViewController())
+
         window?.rootViewController = navigationController
         return true
     }
