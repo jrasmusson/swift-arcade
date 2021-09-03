@@ -17,13 +17,22 @@ struct Transaction {
     let type: TransactionType
 }
 
-struct TransactionSection {
+class Section {
     let title: String
-    let transactions: [Transaction]
+    var transactions: [Transaction]
+    
+    init(title: String, transactions: [Transaction]) {
+        self.title = title
+        self.transactions = transactions
+    }
 }
 
-struct TransactionViewModel {
-    let sections: [TransactionSection]
+class TransactionViewModel {
+    let sections: [Section]
+    
+    init(sections: [Section]) {
+        self.sections = sections
+    }
 }
 
 class SectionsViewController: UIViewController {
@@ -46,13 +55,23 @@ class SectionsViewController: UIViewController {
     }
     
     @objc func addTapped(_ sender: UIBarButtonItem) {
-//        data.append("Tron")
-//
-//        let indexPath = IndexPath(row: data.count - 1, section: 0)
-//
-//        tableView.beginUpdates()
-//        tableView.insertRows(at: [indexPath], with: .fade)
-//        tableView.endUpdates()
+        // Create new data row
+        let newTx1 = Transaction(amount: "$800", type: .posted)
+        
+        // Get its section
+        let section2 = viewModel?.sections[1]
+
+        // Append row to section
+        section2?.transactions.append(newTx1)
+        
+        // Calculate index path
+        let count = section2!.transactions.count
+        let indexPath = IndexPath(row: count - 1, section: 1)
+        
+        // Insert
+        tableView.beginUpdates()
+        tableView.insertRows(at: [indexPath], with: .fade)
+        tableView.endUpdates()
     }
 }
 
@@ -71,7 +90,7 @@ extension SectionsViewController {
     }
     
     private func setupNavigationBar() {
-        title = "Games"
+        title = "Transfers"
         navigationItem.rightBarButtonItem = addBarButtonItem
     }
 }
@@ -122,8 +141,8 @@ extension SectionsViewController {
         let tx6 = Transaction(amount: "$600", type: .posted)
         let tx7 = Transaction(amount: "$700", type: .posted)
         
-        let section1 = TransactionSection(title: "Pending transfers", transactions: [tx1, tx2, tx3])
-        let section2 = TransactionSection(title: "Posted transfers", transactions: [tx4, tx5, tx6, tx7])
+        let section1 = Section(title: "Pending transfers", transactions: [tx1, tx2, tx3])
+        let section2 = Section(title: "Posted transfers", transactions: [tx4, tx5, tx6, tx7])
 
         viewModel = TransactionViewModel(sections: [section1, section2])
     }
