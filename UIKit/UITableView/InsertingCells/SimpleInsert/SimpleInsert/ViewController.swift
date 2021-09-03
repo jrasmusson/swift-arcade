@@ -9,10 +9,10 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    var games = [
+    var data = [
         "Pacman",
-        "Space Invaders",
-        "Space Patrol",
+        "Frogger",
+        "Galaga",
     ]
 
     lazy var addBarButtonItem: UIBarButtonItem = {
@@ -30,17 +30,14 @@ class ViewController: UIViewController {
     }
 
     @objc func addTapped(_ sender: UIBarButtonItem) {
-        games.append("Tron")
-        games.append("Dig Dug")
-        games.append("Moon Patrol")
+        data.append("Tron")
+        data.append("Defender")
+        data.append("Joust")
 
-        let indexPath3 = IndexPath(row: games.count - 3, section: 0)
-        let indexPath2 = IndexPath(row: games.count - 2, section: 0)
-        let indexPath1 = IndexPath(row: games.count - 1, section: 0)
+        let indexPath1 = IndexPath(row: data.count - 1, section: 0) // Tron
+        let indexPath2 = IndexPath(row: data.count - 2, section: 0) // Defender
+        let indexPath3 = IndexPath(row: data.count - 3, section: 0) // Joust
 
-//        let indexPath3 = IndexPath(row: 0, section: 0)
-//        let indexPath2 = IndexPath(row: 1, section: 0)
-//        let indexPath1 = IndexPath(row: 2, section: 0)
 
         tableView.beginUpdates()
         tableView.insertRows(at: [indexPath1, indexPath2, indexPath3], with: .fade)
@@ -51,12 +48,12 @@ class ViewController: UIViewController {
 extension ViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell()
-        cell.textLabel?.text = games[indexPath.row]
+        cell.textLabel?.text = data[indexPath.row]
         return cell
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return games.count
+        return data.count
     }
 }
 
