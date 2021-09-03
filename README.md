@@ -90,7 +90,7 @@ Collection of demos from the [Swift Arcade YouTube channel.](https://www.youtube
 
 ### UITableView
 
-- [Inserting Cells](UIKit/UITableView/Inser)
+- [Inserting Cells](UIKit/UITableView/InsertingCells/README.md)
 - [Diffable Data Source](UIKit/UITableView/DiffableDataSource/README.md)
 - [Moveable Cells](UIKit/UITableView/MoveableCells/README.md)
 - [Swipeable Cells](UIKit/UITableView/SwipeableCells/README.md)
