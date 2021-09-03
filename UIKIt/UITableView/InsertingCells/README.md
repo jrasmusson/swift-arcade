@@ -1,8 +1,27 @@
 # Inserting Cells
 
-## Simple Insert
+## Insert Single
+
+New cells can be animated in by:
+
+- adding them to your data source
+- calculating the index path insertion point
+- wrapping them in `beging` and `endUpdates`.
 
 
+```swift
+@objc func addTapped(_ sender: UIBarButtonItem) {
+    games.append("Tron")
+
+    let indexPath = IndexPath(row: games.count - 1, section: 0)
+
+    tableView.beginUpdates()
+    tableView.insertRows(at: [indexPath], with: .fade)
+    tableView.endUpdates()
+}
+```
+
+### Example
 
 ```swift
 import UIKit
@@ -65,6 +84,30 @@ extension ViewController {
         navigationItem.rightBarButtonItem = addBarButtonItem
     }
 }
+```
+
+## Insert Batch
+
+If you try inserting more than one row as using the technique above
+
+```swift
+@objc func addTapped(_ sender: UIBarButtonItem) {
+    games.append("Tron")
+    games.append("Dig Dug")
+    games.append("Moon Patrol")
+
+    let indexPath = IndexPath(row: games.count - 1, section: 0)
+
+    tableView.beginUpdates()
+    tableView.insertRows(at: [indexPath], with: .fade)
+    tableView.endUpdates()
+}
+```
+
+You will get an error:
+
+```
+*** Terminating app due to uncaught exception 'NSInternalInconsistencyException', reason: 'Invalid update: invalid number of rows in section 0. The number of rows contained in an existing section after the update (6) must be equal to the number of rows contained in that section before the update (3), plus or minus the number of rows inserted or deleted from that section (1 inserted, 0 deleted) and plus or minus the number of rows moved into or out of that section (0 moved in, 0 moved out).'
 ```
 
 ### Links that help

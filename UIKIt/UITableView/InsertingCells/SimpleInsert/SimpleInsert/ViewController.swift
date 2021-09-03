@@ -31,6 +31,8 @@ class ViewController: UIViewController {
 
     @objc func addTapped(_ sender: UIBarButtonItem) {
         games.append("Tron")
+        games.append("Dig Dug")
+        games.append("Moon Patrol")
 
         let indexPath = IndexPath(row: games.count - 1, section: 0)
 
