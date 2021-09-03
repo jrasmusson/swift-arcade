@@ -38,6 +38,10 @@ class ViewController: UIViewController {
         let indexPath2 = IndexPath(row: games.count - 2, section: 0)
         let indexPath1 = IndexPath(row: games.count - 1, section: 0)
 
+//        let indexPath3 = IndexPath(row: 0, section: 0)
+//        let indexPath2 = IndexPath(row: 1, section: 0)
+//        let indexPath1 = IndexPath(row: 2, section: 0)
+
         tableView.beginUpdates()
         tableView.insertRows(at: [indexPath1, indexPath2, indexPath3], with: .fade)
         tableView.endUpdates()
