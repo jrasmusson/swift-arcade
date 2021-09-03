@@ -34,10 +34,10 @@ class ViewController: UIViewController {
         data.append("Defender")
         data.append("Joust")
 
-        let indexPath1 = IndexPath(row: data.count - 1, section: 0) // Tron
-        let indexPath2 = IndexPath(row: data.count - 2, section: 0) // Defender
-        let indexPath3 = IndexPath(row: data.count - 3, section: 0) // Joust
-
+        // Create corresponding indexes
+        let indexPath1 = IndexPath(row: data.count - 1, section: 0)
+        let indexPath2 = IndexPath(row: data.count - 2, section: 0)
+        let indexPath3 = IndexPath(row: data.count - 3, section: 0)
 
         tableView.beginUpdates()
         tableView.insertRows(at: [indexPath1, indexPath2, indexPath3], with: .fade)
@@ -54,6 +54,11 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return data.count
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let game = data[indexPath.row]
+        print("Game: \(game) indexPath: \(indexPath.row)")
     }
 }
 

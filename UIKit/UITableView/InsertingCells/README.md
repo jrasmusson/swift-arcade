@@ -6,7 +6,7 @@
 New cells can be animated in by:
 
 - adding them to your data source
-- calculating the index path of where you inserted them, and then 
+- calculating the index paths required
 - wrapping `insertRows` in begin and end updates
 
 
@@ -123,18 +123,21 @@ To fix you need to calculate an index for each new addition.
 ```swift
 @objc func addTapped(_ sender: UIBarButtonItem) {
     data.append("Tron")
-    data.append("Dig Dug")
-    data.append("Moon Patrol")
+    data.append("Defender")
+    data.append("Joust")
 
-    let indexPath3 = IndexPath(row: data.count - 3, section: 0)
-    let indexPath2 = IndexPath(row: data.count - 2, section: 0)
+    // Create corresponding indexes
     let indexPath1 = IndexPath(row: data.count - 1, section: 0)
+    let indexPath2 = IndexPath(row: data.count - 2, section: 0)
+    let indexPath3 = IndexPath(row: data.count - 3, section: 0)
 
     tableView.beginUpdates()
     tableView.insertRows(at: [indexPath1, indexPath2, indexPath3], with: .fade)
     tableView.endUpdates()
 }
 ```
+
+![](images/0.png)
 
 ### Example
 
