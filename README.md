@@ -90,6 +90,7 @@ Collection of demos from the [Swift Arcade YouTube channel.](https://www.youtube
 
 ### UITableView
 
+- [Header Footer Sections Nib](UIKit/UITableView/HeaderFooterNib/README.md)
 - [Inserting Cells](UIKit/UITableView/InsertingCells/README.md)
 - [Diffable Data Source](UIKit/UITableView/DiffableDataSource/README.md)
 - [Moveable Cells](UIKit/UITableView/MoveableCells/README.md)
