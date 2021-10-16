@@ -24,7 +24,6 @@ class ViewController: UIViewController {
         return ""
     }
     
-    let stackView = UIStackView()
     let label = UILabel()
     
     override func viewDidLoad() {
@@ -36,23 +35,17 @@ class ViewController: UIViewController {
 
 extension ViewController {
     func style() {
-        stackView.translatesAutoresizingMaskIntoConstraints = false
-        stackView.axis = .vertical
-        stackView.spacing = 20
-        
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = amountFormatted
         label.font = UIFont.preferredFont(forTextStyle: .title1)
     }
     
     func layout() {
-        stackView.addArrangedSubview(label)
-        
-        view.addSubview(stackView)
+        view.addSubview(label)
         
         NSLayoutConstraint.activate([
-            stackView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            stackView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+            label.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            label.centerYAnchor.constraint(equalTo: view.centerYAnchor),
         ])
     }
 }
