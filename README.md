@@ -65,7 +65,8 @@ Collection of demos from the [Swift Arcade YouTube channel.](https://www.youtube
 
 ## Swift 🎮
 
-- [Functions as Variables](/Swift/Funcs-as-Variables/README.md)
+- [Functions as Variables](Swift/Funcs-as-Variables/README.md)
+- [Currency Formatting](Swift/Currency-Formatting/README.md)
 
 ## UIKit 🏗
 
