@@ -168,6 +168,16 @@ extension ViewController {
 
 Yes you need to calculate the header size x2. Strange but this is how it works.
 
+Can try setting like this also.
+
+```swift
+func configureFooter() {
+    let screenWidth = UIScreen.main.bounds.width
+    let footer = MenuFooterView(frame: CGRect(x: 0, y: 0, width: screenWidth, height: 88))
+    tableView.tableFooterView = footer
+}
+```
+
 ![](images/2d.png)
 
 ### Trouble shooting
