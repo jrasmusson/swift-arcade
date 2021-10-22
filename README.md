@@ -86,8 +86,8 @@ Collection of demos from the [Swift Arcade YouTube channel.](https://www.youtube
 
 ### UIScrollView
 
-- [Understanding UIScrollView](https://github.com/jrasmusson/swift-arcade/blob/master/UIKIt/UIScrollView/UnderstandingUIScrollView/README.md)
-- [Custom ScrollableTabView](https://github.com/jrasmusson/swift-arcade/blob/master/UIKIt/UIScrollView/CustomScrollTabView/README.md)
+- [Understanding UIScrollView](UIKIt/UIScrollView/UnderstandingUIScrollView/README.md)
+- [Custom ScrollableTabView](UIKIt/UIScrollView/CustomScrollTabView/README.md)
 
 ### UITableView
 
