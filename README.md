@@ -72,22 +72,22 @@ Collection of demos from the [Swift Arcade YouTube channel.](https://www.youtube
 
 ### Misc
 
-- [UIPanGestureRecognizer](https://github.com/jrasmusson/swift-arcade/tree/master/UIKIt/UIPanGestureRecognizer)
+- [UIPanGestureRecognizer](https://github.com/jrasmusson/swift-arcade/tree/master/UIKit/UIPanGestureRecognizer)
 
 ### UICollectionView
 
-- [Flow Layout](https://github.com/jrasmusson/swift-arcade/blob/master/UIKIt/UICollectionView/FlowLayout/README.md)
-- [Compositional Layout](https://github.com/jrasmusson/swift-arcade/blob/master/UIKIt/UICollectionView/CompositionalLayout/README.md)
+- [Flow Layout](https://github.com/jrasmusson/swift-arcade/blob/master/UIKit/UICollectionView/FlowLayout/README.md)
+- [Compositional Layout](https://github.com/jrasmusson/swift-arcade/blob/master/UIKit/UICollectionView/CompositionalLayout/README.md)
 
 ### UINavigationController
 
-- [Navigation Patterns](UIKIt/UINavigationController/NavigationPatterns/Navigation-Patterns.md)
-- [Large Titles](UIKIt/UINavigationController/LargeTitles/README.md)
+- [Navigation Patterns](UIKit/UINavigationController/NavigationPatterns/Navigation-Patterns.md)
+- [Large Titles](UIKit/UINavigationController/LargeTitles/README.md)
 
 ### UIScrollView
 
-- [Understanding UIScrollView](UIKIt/UIScrollView/UnderstandingUIScrollView/README.md)
-- [Custom ScrollableTabView](UIKIt/UIScrollView/CustomScrollTabView/README.md)
+- [Understanding UIScrollView](UIKit/UIScrollView/UnderstandingUIScrollView/README.md)
+- [Custom ScrollableTabView](UIKit/UIScrollView/CustomScrollTabView/README.md)
 
 ### UITableView
 
@@ -101,7 +101,7 @@ Collection of demos from the [Swift Arcade YouTube channel.](https://www.youtube
 
 #### Large ViewController Strategies
 
-- [Model View Presenter (MVP)](https://github.com/jrasmusson/swift-arcade/blob/master/UIKIt/LargeViewController/MVP/README.md)
+- [Model View Presenter (MVP)](https://github.com/jrasmusson/swift-arcade/blob/master/UIKit/LargeViewController/MVP/README.md)
 
 ## Interview Prep
 
