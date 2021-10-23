@@ -121,8 +121,13 @@ class ViewController2: UIViewController {
         var dollars = dollarParts.first! // $100,000
         dollars.removeFirst() // 100,000
         
-        var cents = String(format: "%.2f", parts.1) // .01
-        cents.removeFirst() // 01
+        let centPart = parts.1
+        let cents: String
+        if centPart == 0 {
+            cents = "00"
+        } else {
+            cents = String(format: "%.0f", centPart * 100)
+        }
         
         return (dollars, cents)
     }
