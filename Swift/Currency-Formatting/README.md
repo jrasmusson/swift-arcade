@@ -188,7 +188,7 @@ extension ViewController2 {
 
 ### Links that help
 
-- [Swift Arcade Video - TODO](https://www.youtube.com/watch?v=XAnICKPjoTU)
+- [Swift Arcade Video](https://www.youtube.com/watch?v=03PpTLh3AdY&lc=Ugy_AIVQ1_Xgmwuib6F4AaABAg&ab_channel=SwiftArcade)
 - [Why Decimal](https://floating-point-gui.de/basic/)
 - [Stack Overflow](https://stackoverflow.com/questions/41558832/how-to-format-a-double-into-currency-swift-3)
 - [modf](https://www.techonthenet.com/c_language/standard_library_functions/math_h/modf.php)
