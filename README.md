@@ -4,6 +4,7 @@ Collection of demos from the [Swift Arcade YouTube channel.](https://www.youtube
 
 ## Animations 🍄
 
+- [Constraint Based](Animation/Constraint-Based/README.md)
 - [Core Graphics Intro](Animation/CoreGraphicsIntro/README.md)
 - [Core Animation Intro](Animation/CoreAnimation/Intro/README.md)
 - [Gradients](Animation/CoreAnimation/Gradients/README.md)
