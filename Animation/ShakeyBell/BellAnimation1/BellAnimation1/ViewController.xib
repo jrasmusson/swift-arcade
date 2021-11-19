@@ -1,14 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ViewController" customModule="BellAnimation1" customModuleProvider="target">
             <connections>
+                <outlet property="angleSlider" destination="N7N-M0-TRB" id="e5l-UK-ecC"/>
+                <outlet property="bellView" destination="iho-l3-SsZ" id="uBY-IT-co2"/>
+                <outlet property="durationSlider" destination="jPO-zz-3Kr" id="sSQ-R9-OmJ"/>
+                <outlet property="offsetSlider" destination="Ea5-Rl-Qs8" id="eUa-IA-1th"/>
                 <outlet property="view" destination="rek-Sq-i70" id="5R9-ay-qz1"/>
             </connections>
         </placeholder>
@@ -30,6 +35,9 @@
                         </view>
                         <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="jPO-zz-3Kr">
                             <rect key="frame" x="-2" y="148" width="132" height="31"/>
+                            <connections>
+                                <action selector="durationChanged:" destination="-1" eventType="valueChanged" id="eGu-73-wRN"/>
+                            </connections>
                         </slider>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Duration" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kZg-yg-hSh">
                             <rect key="frame" x="0.0" y="198" width="128" height="20.5"/>
@@ -40,6 +48,9 @@
                         </label>
                         <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="N7N-M0-TRB">
                             <rect key="frame" x="-2" y="238.5" width="132" height="31"/>
+                            <connections>
+                                <action selector="angleChanged:" destination="-1" eventType="valueChanged" id="FdY-EF-Cz6"/>
+                            </connections>
                         </slider>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Angle" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T3U-rj-KSy">
                             <rect key="frame" x="0.0" y="288.5" width="128" height="20.5"/>
@@ -50,6 +61,9 @@
                         </label>
                         <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="Ea5-Rl-Qs8">
                             <rect key="frame" x="-2" y="329" width="132" height="31"/>
+                            <connections>
+                                <action selector="offsetChanged:" destination="-1" eventType="valueChanged" id="oqn-8m-rx5"/>
+                            </connections>
                         </slider>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Offset" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kxy-Nq-Nuw">
                             <rect key="frame" x="0.0" y="379" width="128" height="20.5"/>
@@ -61,6 +75,9 @@
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DeA-k0-QrW">
                             <rect key="frame" x="0.0" y="419.5" width="128" height="30"/>
                             <state key="normal" title="Reset"/>
+                            <connections>
+                                <action selector="reset:" destination="-1" eventType="touchUpInside" id="2fB-g0-9JL"/>
+                            </connections>
                         </button>
                     </subviews>
                 </stackView>
