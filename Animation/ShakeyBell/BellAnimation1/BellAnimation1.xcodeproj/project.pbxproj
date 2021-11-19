@@ -14,11 +14,9 @@
 		31C25D8B265D9E3800DCBF13 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 31C25D89265D9E3800DCBF13 /* LaunchScreen.storyboard */; };
 		31C25D96265D9EDB00DCBF13 /* NotificationBadgeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 31C25D95265D9EDB00DCBF13 /* NotificationBadgeView.xib */; };
 		31C25D99265D9FB300DCBF13 /* NotificationBadgeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31C25D98265D9FB300DCBF13 /* NotificationBadgeView.swift */; };
-		7128D38E2668685900EEDD30 /* NotificationBadgeView2.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7128D38D2668685900EEDD30 /* NotificationBadgeView2.xib */; };
 		7128D39226686AA500EEDD30 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7128D39126686AA500EEDD30 /* ViewController.xib */; };
 		7128D39726686BD200EEDD30 /* ViewController2.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7128D39626686BD200EEDD30 /* ViewController2.xib */; };
 		7128D39A26686BE000EEDD30 /* ViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7128D39926686BE000EEDD30 /* ViewController2.swift */; };
-		7128D39D26686C9400EEDD30 /* NotificationBadgeView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7128D39C26686C9400EEDD30 /* NotificationBadgeView2.swift */; };
 		7128D3A12668722F00EEDD30 /* BadgeLabel.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7128D3A02668722F00EEDD30 /* BadgeLabel.xib */; };
 		7128D3A42668724700EEDD30 /* BadgeLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7128D3A32668724700EEDD30 /* BadgeLabel.swift */; };
 /* End PBXBuildFile section */
@@ -33,11 +31,9 @@
 		31C25D8C265D9E3800DCBF13 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		31C25D95265D9EDB00DCBF13 /* NotificationBadgeView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NotificationBadgeView.xib; sourceTree = "<group>"; };
 		31C25D98265D9FB300DCBF13 /* NotificationBadgeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationBadgeView.swift; sourceTree = "<group>"; };
-		7128D38D2668685900EEDD30 /* NotificationBadgeView2.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NotificationBadgeView2.xib; sourceTree = "<group>"; };
 		7128D39126686AA500EEDD30 /* ViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ViewController.xib; sourceTree = "<group>"; };
 		7128D39626686BD200EEDD30 /* ViewController2.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ViewController2.xib; sourceTree = "<group>"; };
 		7128D39926686BE000EEDD30 /* ViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController2.swift; sourceTree = "<group>"; };
-		7128D39C26686C9400EEDD30 /* NotificationBadgeView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationBadgeView2.swift; sourceTree = "<group>"; };
 		7128D3A02668722F00EEDD30 /* BadgeLabel.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BadgeLabel.xib; sourceTree = "<group>"; };
 		7128D3A32668724700EEDD30 /* BadgeLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeLabel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -77,8 +73,6 @@
 				7128D39126686AA500EEDD30 /* ViewController.xib */,
 				31C25D95265D9EDB00DCBF13 /* NotificationBadgeView.xib */,
 				31C25D98265D9FB300DCBF13 /* NotificationBadgeView.swift */,
-				7128D38D2668685900EEDD30 /* NotificationBadgeView2.xib */,
-				7128D39C26686C9400EEDD30 /* NotificationBadgeView2.swift */,
 				7128D39626686BD200EEDD30 /* ViewController2.xib */,
 				7128D39926686BE000EEDD30 /* ViewController2.swift */,
 				7128D3A02668722F00EEDD30 /* BadgeLabel.xib */,
@@ -156,7 +150,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7128D38E2668685900EEDD30 /* NotificationBadgeView2.xib in Resources */,
 				31C25D8B265D9E3800DCBF13 /* LaunchScreen.storyboard in Resources */,
 				31C25D88265D9E3800DCBF13 /* Assets.xcassets in Resources */,
 				7128D39726686BD200EEDD30 /* ViewController2.xib in Resources */,
@@ -178,7 +171,6 @@
 				31C25D7F265D9E3600DCBF13 /* AppDelegate.swift in Sources */,
 				31C25D81265D9E3600DCBF13 /* SceneDelegate.swift in Sources */,
 				7128D3A42668724700EEDD30 /* BadgeLabel.swift in Sources */,
-				7128D39D26686C9400EEDD30 /* NotificationBadgeView2.swift in Sources */,
 				31C25D99265D9FB300DCBF13 /* NotificationBadgeView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
