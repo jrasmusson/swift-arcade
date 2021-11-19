@@ -96,6 +96,7 @@ extension NotificationBadgeView {
     }
 }
 
+// https://www.hackingwithswift.com/example-code/calayer/how-to-change-a-views-anchor-point-without-moving-it
 extension UIView {
     func setAnchorPoint(_ point: CGPoint) {
         var newPoint = CGPoint(x: bounds.size.width * point.x, y: bounds.size.height * point.y)
