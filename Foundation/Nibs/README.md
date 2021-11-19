@@ -69,23 +69,42 @@ With this method, the nib is hosting the view. Can now load in a view controller
 
 ![](images/24.png)
 
-### Load view programmatically after
+## Nibs Programatically
 
 - Create the nib.
 - Create the class.
 - Set the File's Owner
+- Set the Custom Class on the View
+- Load in view controller programmatically
+
+Create the nib and the class.
 
 ![](images/20.png)
 
 - Then also set the type on the view in the nib to the custom class.
 
+When creating the class **don't use a contentView**. Instead load like this.
+
+```swift
+class PaymentMethodTile: UIView {
+
+    @IBOutlet var headerLabel: UILabel!
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+    }
+}
+```
+
+Set the `Custom Class` on the `View` in the nib too.
+
 ![](images/30.png)
 
-- If loading a nib programmatically, make sure you set the `IBOutlet` property to the view and not the file owner when control dragging outlets into the file. If you don't do this you will get keycode non-compliance errors.
+When dragging outlets out into your nib, make sure you set the `IBOutlet` property to the view and not the file owner when control dragging outlets into the file. If you don't do this you will get keycode non-compliance errors.
 
 ![](images/32.png)
 
-- Then you can load that nib programmatically in any view controller like this.
+Programmatically load in view controller like this.
 
 ```swift
 import UIKit
@@ -111,12 +130,10 @@ class ViewController: UIViewController {
     static func makePaymentMethodTile() -> PaymentMethodTile? {
         let bundle = Bundle(for: PaymentMethodTile.self)
         let tile = bundle.loadNibNamed("PaymentMethodTile", owner: nil, options: nil)?.first as! PaymentMethodTile
-
         tile.translatesAutoresizingMaskIntoConstraints = false
 
         return tile
     }
-
 }
 ```
 
