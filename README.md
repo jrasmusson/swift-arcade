@@ -10,7 +10,7 @@ Collection of demos from the [Swift Arcade YouTube channel.](https://www.youtube
 - [Gradients](Animation/CoreAnimation/Gradients/README.md)
 - [Shadows](Animation/CoreAnimation/Shadows/README.md)
 - [Login Form Field](Animation/Login/README.md)
-- [Shimmer Loading Effect](Animation/Shimmer/README.md)
+- [Skeleton Loader](Animation/Shimmer/README.md)
 - [Shakey Bell](Animation/ShakeyBell/README.md)
 
 ## Weathery 🌦

@@ -1,4 +1,4 @@
-# Shimmer Effect
+# Skeleton Loader
 
 How to add this effect to your iOS apps.
 
