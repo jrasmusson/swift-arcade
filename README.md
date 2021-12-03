@@ -98,6 +98,10 @@ Collection of demos from the [Swift Arcade YouTube channel.](https://www.youtube
 - [Moveable Cells](UIKit/UITableView/MoveableCells/README.md)
 - [Swipeable Cells](UIKit/UITableView/SwipeableCells/README.md)
 
+### UITextView
+
+- [Emoji Blocker](UIKit/UITextView/EmojiBlocker/README.md)
+
 ### UIViewController
 
 #### Large ViewController Strategies
