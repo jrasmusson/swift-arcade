@@ -42,19 +42,20 @@ Control drag the nibs view into the class.
 - Note the owner is `self`.
 
 ```swift
-import Foundation
 import UIKit
 
-class PaymentMethodTile: UIView {
-        
+class AccountSelectorComponent: UIView {
+
     @IBOutlet var contentView: UIView!
-    
+
     override func awakeFromNib() {
         super.awakeFromNib()
-        let bundle = Bundle.init(for: PaymentMethodTile.self)
-        bundle.loadNibNamed("PaymentMethodTile", owner: self, options: nil)
+        let bundle = Bundle(for: AccountSelectorComponent.self)
+        bundle.loadNibNamed(String(describing: AccountSelectorComponent.self), owner: self, options: nil)
         addSubview(contentView)
     }
+
+
     override var intrinsicContentSize: CGSize {
         return CGSize(width: 200, height: 200)
     }
