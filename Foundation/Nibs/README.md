@@ -50,7 +50,7 @@ class FooView: UIView {
 
     private func commonInit() {
         let bundle = Bundle(for: FooView.self)
-        bundle.loadNibNamed("FooView", owner: self, options: nil)
+        bundle.loadNibNamed(String(describing: FooView), owner: self, options: nil)
         addSubview(contentView)
 
         contentView.translatesAutoresizingMaskIntoConstraints = false
