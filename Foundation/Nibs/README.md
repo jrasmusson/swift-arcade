@@ -21,54 +21,76 @@ Simplest thing you can do is create a nib and then associated it with a View Con
 
 ## Nibs into a View
 
-Create a nib
-Create a class.
-Assign the nib's File Owner to the class.
-
 ### Load view in the nib
 
 - Create a nib
-- Create a class.
-- Assign the nibs File Owner to the class.
+- Create a class
+- Make nib free form
 
-![](images/20.png)
+![](images/40.png)
 
-Control drag the nibs view into the class.
-
-![](images/21.png)
-
-- Load the nib.
-- Add the content view.
-- Note the owner is `self`.
+- Add this code to the class
 
 ```swift
 import UIKit
 
-class AccountSelectorComponent: UIView {
+class FooView: UIView {
 
     @IBOutlet var contentView: UIView!
 
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        let bundle = Bundle(for: AccountSelectorComponent.self)
-        bundle.loadNibNamed(String(describing: AccountSelectorComponent.self), owner: self, options: nil)
-        addSubview(contentView)
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        commonInit()
     }
 
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        commonInit()
+    }
 
-    override var intrinsicContentSize: CGSize {
-        return CGSize(width: 200, height: 200)
+    private func commonInit() {
+        let bundle = Bundle(for: FooView.self)
+        bundle.loadNibNamed("FooView", owner: self, options: nil)
+        addSubview(contentView)
+
+        contentView.translatesAutoresizingMaskIntoConstraints = false
+        contentView.topAnchor.constraint(equalTo: topAnchor).isActive = true
+        contentView.rightAnchor.constraint(equalTo: rightAnchor).isActive = true
+        contentView.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
+        contentView.leftAnchor.constraint(equalTo: leftAnchor).isActive = true
     }
 }
 ```
 
-![](images/22.png)
+Set the nib `Fileowner` to the class.
+
+![](images/41.png)
+
+- Add the content view.
+
+![](images/42.png)
 
 With this method, the nib is hosting the view. Can now load in a view controller by dragging out a plain view, and assigning it’s custom class to the nib.
 
-![](images/23.png)
+![](images/43.png)
 
-![](images/24.png)
+![](images/44.png)
+
+Original nib with safe area and nonsafe area labels.
+
+![](images/45.png)
+
+### Discussion
+
+#### Pin the content view
+
+If you don't pin the inner `contentView` the nib won't work with auto layout. It will use its native nib size to show on screen. And you don't be able to lay it out nicely with others.
+
+#### Safe Area guide don't matter
+
+Notice how when it layed out the nib it smushed the safe and non-safe labels together. Just be mindful when doing layout whether you are pinning to a safe or non-safe area.
+
+It may not matter, but you will be confused if you are counting in certain behavior and may find it is not there
 
 ## Nibs Programatically
 
