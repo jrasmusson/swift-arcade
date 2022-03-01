@@ -233,6 +233,37 @@ This will automatically detect that it is `@IBDesignable`, use it's intrinsic co
 
 There are some gotchas with `UITableViewCells`. Using the following code you can more conveniently load nibs and access their reuse identifiers as follows.
 
+Create the nib as a `UITableViewCell`:
+
+![](images/47.png)
+
+Set its `FileOwner`:
+
+![](images/48.png)
+
+Set its `Classname`:
+
+![](images/49.png)
+
+Create the class:
+
+```swift
+import UIKit
+
+class CRAAccountSelectorCell: UITableViewCell {
+
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        setupStyle()
+    }
+
+    func setupStyle() {
+    }
+}
+```
+
+Import the following reuse helper:
+
 **ReusableView.swift**
 
 ```swift
@@ -280,33 +311,8 @@ extension UITableView {
 }
 ```
 
-Set `FileOwner`.
+Use it in a view controller like this:
 
-![](images/46.png)
-
-And then simple load a cell as follows.
-
-**QuickPaymentCell.swift**
-
-```swift
-import UIKit
-
-class QuickPaymentCell: UITableViewCell {
-
-    @IBOutlet var titleLabel: UILabel!
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        setupStyle()
-    }
-
-    func setupStyle() {
-        titleLabel.textColor = .reBankGrey
-    }
-}
-```
-
-**ParentView/ViewController**
 
 ```swift
 tableView.register(QuickPaymentCell.self) // Note: No cell resuseIdentifier used
@@ -317,8 +323,6 @@ func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> U
     return cell
 }
 ```
-
-This method is key to triggering `awakeFromNib` but is nice because it saves a tonne of code.
 
 ## Loading TableCell nib in a unit test
 
