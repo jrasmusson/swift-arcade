@@ -280,6 +280,10 @@ extension UITableView {
 }
 ```
 
+Set `FileOwner`.
+
+![](images/46.png)
+
 And then simple load a cell as follows.
 
 **QuickPaymentCell.swift**
