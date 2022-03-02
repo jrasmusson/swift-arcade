@@ -262,6 +262,10 @@ class CRAAccountSelectorCell: UITableViewCell {
 }
 ```
 
+Remember when dragging in outlets to set them to the `parent view` NOT the `File's Owner`:
+
+![](images/50.png)
+
 Import the following reuse helper:
 
 **ReusableView.swift**
