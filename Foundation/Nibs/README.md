@@ -26,6 +26,8 @@ Simplest thing you can do is create a nib and then associated it with a View Con
 - Create a nib
 - Create a class
 - Make nib free form
+- Drag outlets to view (not `File's Owner`).
+- Watch out for `SafeAreaLayoutGuide` when setting constraints
 
 ![](images/40.png)
 
