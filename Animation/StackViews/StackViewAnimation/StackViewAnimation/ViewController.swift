@@ -1,45 +1,62 @@
-# Stack View Animations
+//
+//  ViewController.swift
+//  StackViewAnimation
+//
+//  Created by jrasmusson on 2022-03-05.
+//
 
-Three things we can play with when animating controls within stack views are: 
+import UIKit
 
-1. Visibility
-2. Alpha
-3. Timing
+class ViewController: UIViewController {
 
-## Visibility
+    @IBOutlet var extraLabel1: UILabel!
+    @IBOutlet var extraLabel2: UILabel!
+    @IBOutlet var extraLabel3: UILabel!
+    @IBOutlet var extraLabel4: UILabel!
+    @IBOutlet var extraLabel5: UILabel!
 
-The simplest things you can do when it comes to stack views and animations is chnages an controls visibility.
+    @IBOutlet var showMoreLabel: UILabel!
 
-```swift
+    var showAll = false
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        setup()
+    }
+
+    private func setup() {
+        setupTapGesture()
+        setupHiddenElements()
+    }
+
+    private func setupTapGesture() {
+        let singleTap = UITapGestureRecognizer(target: self, action: #selector(showMoreTapped))
+        showMoreLabel.addGestureRecognizer(singleTap)
+    }
+
+    private func setupHiddenElements() {
+        _ = [extraLabel1, extraLabel2, extraLabel3, extraLabel4, extraLabel5].map { $0?.isHidden = true }
+    }
+
+    @objc func showMoreTapped() {
+        showAll = !showAll
+//        animateVisibility()
+//        animateVisibilityAndAlpha()
+        staggerAnimations()
+    }
+}
+
 // MARK: Animations
 extension ViewController {
 
     func animateVisibility() {
-        let duration = 0.4
+        let duration = 2.0
         let animatables = [extraLabel1, extraLabel2, extraLabel3, extraLabel4, extraLabel5]
 
         let animation = UIViewPropertyAnimator(duration: duration, curve: .easeInOut) { [self] in
             _ = animatables.map { $0?.isHidden = !showAll }
         }
         animation.startAnimation()
-    }
-}
-```
-
-![](images/visibility.gif)
-
-Here you can see how the stack view animates the visibility of the control in by collapsing the visible area while maintaining the label height.
-
-## Alpha
-
-A nicer effect can be acheived if you change the `alpha` of the controls first, and then animate their visibility after.
-
-```swift
-// MARK: Animations
-extension ViewController {
-
-    func animateVisibility() {
-       ...
     }
 
     func animateVisibilityAndAlpha() {
@@ -54,28 +71,6 @@ extension ViewController {
             _ = animatables.map { $0?.alpha = 1}
         }
         animation.startAnimation()
-    }
-}
-```
-
-![](images/alpha.gif)
-
-Not bad. An improvement. But we can do even better.
-
-## 🕹 Timing
-
-One really cool thing you can do with animations is stagger them. By separating the visibility and alpha animations, and playing with different durations, we can get some really nice effects like this:
-
-```swift
-// MARK: Animations
-extension ViewController {
-
-    func animateVisibility() {
-       ...
-    }
-
-    func animateVisibilityAndAlpha() {
-		...
     }
 
     func staggerAnimations() {
@@ -103,6 +98,3 @@ extension ViewController {
         firstAnimation.startAnimation()
     }
 }
-```
-
-![](images/stagger.gif)

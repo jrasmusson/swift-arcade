@@ -12,6 +12,7 @@ Collection of demos from the [Swift Arcade YouTube channel.](https://www.youtube
 - [Login Form Field](Animation/Login/README.md)
 - [Skeleton Loader](Animation/Shimmer/README.md)
 - [Shakey Bell](Animation/ShakeyBell/README.md)
+- [Stack Views](Animation/StackViews/README.md)
 
 ## Weathery 🌦
 
