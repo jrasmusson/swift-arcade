@@ -59,12 +59,20 @@
 				7198016C27D39C8700D701F5 /* AppDelegate.swift */,
 				7198016E27D39C8700D701F5 /* SceneDelegate.swift */,
 				7198017027D39C8700D701F5 /* ViewController.swift */,
+				71FC0BA327D4E39E006CCA61 /* New Group */,
 				7198017227D39C8700D701F5 /* Main.storyboard */,
 				7198017527D39C8800D701F5 /* Assets.xcassets */,
 				7198017727D39C8800D701F5 /* LaunchScreen.storyboard */,
 				7198017A27D39C8800D701F5 /* Info.plist */,
 			);
 			path = StackViewAnimation;
+			sourceTree = "<group>";
+		};
+		71FC0BA327D4E39E006CCA61 /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "New Group";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
