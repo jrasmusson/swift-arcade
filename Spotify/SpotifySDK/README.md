@@ -145,18 +145,121 @@ But in a nutshell we need to set the following our Developer App:
 
 And then set the following plist entries in our iOS application:
 
-- `LSApplicationQuriesSchemes`
 - `URL Types`
+- `LSApplicationQuriesSchemes`
 - `App Transport Security Settings`
 
 
 Let's start with the Developer app.
 
-### Configuration the developer App
+### Configure the developer App
 
 Open up the Spotify Developer app we created earlier and click `Edit Settings`.
 
 ![](images/18.png)
+
+#### Set the Redirect URI
+
+First thing we are going to configure is the `Redirect URI`. This is the URI Spotify is going to use to open your app. 
+
+You can pick anyting you want here. But really you should think of it as something unique for opening your app as if it had it's own protol (like `http://`.
+
+We'll use:
+
+- `hellospotify1://`
+
+Click `Add`. Enter `hellospotify1://`. And then hit `Save`.
+
+![](images/19.png)
+
+#### Set the Bundle ID
+
+Spotify wants to be able to uniquely identify your application. They do this through your `Bundle ID`.
+
+You can find your applications `Bundle ID` by clicking on:
+
+![](images/20.png)
+
+My `Bundle ID` is:
+
+- `com.rsc.HelloSpotify1`
+
+Your's will be something different. Whatever it is, copy it, head back over to the Spotify application, click `Edit Settings` again, and enter your `Bundle ID` in this field here:
+
+
+Then click `Add` and `Save` again.
+
+![](images/21.png)
+
+### Configure iOS application
+
+There are three app settings we need to configure in the `info.plist` of our iOS application:
+
+- `URL Types`
+- `LSApplicationQueriesSchemes`
+- `App Transport Security Settings`
+
+I found the easiet way to do this was to open up the sample app that comes with the Spotify SDK.
+
+![](images/22.png)
+
+Select the plist entry we want to copy.
+
+![](images/23.png)
+
+And the select the root node of our plist entry file and `Command + V`.
+
+![](images/24.png)
+
+If you repeat that process for:
+
+- `LSApplicationQueriesSchemes`
+- `App Transport Security Settings`
+
+You will eventually end up with a plist entry that looks like this:
+
+![](images/25.png)
+
+The `App Transport Security Settings` is a security setting Apple requires for apps that want to make HTTP connections.
+
+`LSApplicationQueriesSchemes` specifies the URL schemes the app is allowed to test for. In our case this will be Spotify. When we run our app, it is going to check to see whether Spofity is installed on your phone and this plist entry allows your app to do that.
+
+`URL Types` describes the URI protocol other apps can use to connect to and open our app up. Which is exactly what the Spotify app on your phone is going to do. When it is done authenticating, Spotify is going to call back and open your app. And this is the plist entry it is going to use to do it.
+
+The only problem is right now it is configured for the test app. Not ours.
+
+To make make the plist entry for `URL Types` right change:
+
+- `Item 0`
+ - from: `spotify-login-sdk-test-app` 
+ - to: `hellospotify1`
+
+ Likewise change the `URL identifier`:
+ 
+ - from: `com.spotify.sdk.SPTLoginSampleApp`
+ - to: `<your Bundle ID>`
+
+ For me this was `com.rsc.HelloSpotify1`.
+ 
+ These values from from the Application configuration we did earlier. So make sure they match.
+ 
+![](images/26.png)
+
+When all is said and done, your `Info.plist` file should look something like this:
+
+![](images/27.png)
+
+Next - let's build the app.
+
+## Building the App
+
+Spotify has an [Authorization Guide](https://developer.spotify.com/documentation/general/guides/authorization/code-flow/) that walks you through the various ways you can securely configure your Spotify app.
+
+What your app really needs is a `refreshToken`. And while we could setup a web server to serve us one, we are instead going to rely on the Spotify app on our phones to authenticate who we are, and let it fetch the `refreshToken` for us.
+
+U R HERE
+ 
+
 
 ### Links that help
 
