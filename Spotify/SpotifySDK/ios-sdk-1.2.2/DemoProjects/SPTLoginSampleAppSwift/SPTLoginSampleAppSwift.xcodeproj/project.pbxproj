@@ -1,0 +1,358 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		541345A220D2A80300FD05F7 /* SpotifyiOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 541345A120D2A80300FD05F7 /* SpotifyiOS.framework */; };
+		54AC7EE020081243008CD692 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54AC7EDF20081243008CD692 /* AppDelegate.swift */; };
+		54AC7EE220081243008CD692 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54AC7EE120081243008CD692 /* ViewController.swift */; };
+		54AC7EE720081243008CD692 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 54AC7EE620081243008CD692 /* Assets.xcassets */; };
+		54AC7EEA20081243008CD692 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 54AC7EE820081243008CD692 /* LaunchScreen.storyboard */; };
+		54BDA67A200E8A74005E72F1 /* ConnectButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54BDA679200E8A74005E72F1 /* ConnectButton.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		54A5565920C85550000CD9C0 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		5413459E20D1049200FD05F7 /* SPTLoginSampleAppSwift-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SPTLoginSampleAppSwift-Bridging-Header.h"; sourceTree = "<group>"; };
+		541345A120D2A80300FD05F7 /* SpotifyiOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SpotifyiOS.framework; path = ../../SpotifyiOS.framework; sourceTree = "<group>"; };
+		54AC7EDC20081243008CD692 /* SPTLoginSampleAppSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SPTLoginSampleAppSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		54AC7EDF20081243008CD692 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		54AC7EE120081243008CD692 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		54AC7EE620081243008CD692 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		54AC7EE920081243008CD692 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		54AC7EEB20081243008CD692 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		54BDA679200E8A74005E72F1 /* ConnectButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectButton.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		54AC7ED920081243008CD692 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				541345A220D2A80300FD05F7 /* SpotifyiOS.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		54073AB820C5D5300060E089 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				541345A120D2A80300FD05F7 /* SpotifyiOS.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		54AC7ED320081242008CD692 = {
+			isa = PBXGroup;
+			children = (
+				54AC7EDE20081243008CD692 /* SPTLoginSampleAppSwift */,
+				54AC7EDD20081243008CD692 /* Products */,
+				54073AB820C5D5300060E089 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		54AC7EDD20081243008CD692 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				54AC7EDC20081243008CD692 /* SPTLoginSampleAppSwift.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		54AC7EDE20081243008CD692 /* SPTLoginSampleAppSwift */ = {
+			isa = PBXGroup;
+			children = (
+				54AC7EDF20081243008CD692 /* AppDelegate.swift */,
+				54BDA679200E8A74005E72F1 /* ConnectButton.swift */,
+				54AC7EE120081243008CD692 /* ViewController.swift */,
+				54AC7EE620081243008CD692 /* Assets.xcassets */,
+				54AC7EE820081243008CD692 /* LaunchScreen.storyboard */,
+				54AC7EEB20081243008CD692 /* Info.plist */,
+				5413459E20D1049200FD05F7 /* SPTLoginSampleAppSwift-Bridging-Header.h */,
+			);
+			path = SPTLoginSampleAppSwift;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		54AC7EDB20081243008CD692 /* SPTLoginSampleAppSwift */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 54AC7EEE20081243008CD692 /* Build configuration list for PBXNativeTarget "SPTLoginSampleAppSwift" */;
+			buildPhases = (
+				54AC7ED820081243008CD692 /* Sources */,
+				54AC7ED920081243008CD692 /* Frameworks */,
+				54AC7EDA20081243008CD692 /* Resources */,
+				54A5565920C85550000CD9C0 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SPTLoginSampleAppSwift;
+			productName = SPTLoginSampleAppSwift;
+			productReference = 54AC7EDC20081243008CD692 /* SPTLoginSampleAppSwift.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		54AC7ED420081242008CD692 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0940;
+				LastUpgradeCheck = 0940;
+				ORGANIZATIONNAME = Spotify;
+				TargetAttributes = {
+					54AC7EDB20081243008CD692 = {
+						CreatedOnToolsVersion = 9.2;
+						LastSwiftMigration = 1020;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 54AC7ED720081242008CD692 /* Build configuration list for PBXProject "SPTLoginSampleAppSwift" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 54AC7ED320081242008CD692;
+			productRefGroup = 54AC7EDD20081243008CD692 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				54AC7EDB20081243008CD692 /* SPTLoginSampleAppSwift */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		54AC7EDA20081243008CD692 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				54AC7EEA20081243008CD692 /* LaunchScreen.storyboard in Resources */,
+				54AC7EE720081243008CD692 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		54AC7ED820081243008CD692 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				54BDA67A200E8A74005E72F1 /* ConnectButton.swift in Sources */,
+				54AC7EE220081243008CD692 /* ViewController.swift in Sources */,
+				54AC7EE020081243008CD692 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		54AC7EE820081243008CD692 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				54AC7EE920081243008CD692 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		54AC7EEC20081243008CD692 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = "../../**";
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = "-ObjC";
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OBJC_BRIDGING_HEADER = "SPTLoginSampleAppSwift/SPTLoginSampleAppSwift-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		54AC7EED20081243008CD692 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_SEARCH_PATHS = "../../**";
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "-ObjC";
+				SDKROOT = iphoneos;
+				SWIFT_OBJC_BRIDGING_HEADER = "SPTLoginSampleAppSwift/SPTLoginSampleAppSwift-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		54AC7EEF20081243008CD692 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2FNC3A47ZF;
+				INFOPLIST_FILE = SPTLoginSampleAppSwift/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.spotify.sdk.SPTLoginSampleApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		54AC7EF020081243008CD692 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2FNC3A47ZF;
+				INFOPLIST_FILE = SPTLoginSampleAppSwift/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.spotify.sdk.SPTLoginSampleApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		54AC7ED720081242008CD692 /* Build configuration list for PBXProject "SPTLoginSampleAppSwift" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				54AC7EEC20081243008CD692 /* Debug */,
+				54AC7EED20081243008CD692 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		54AC7EEE20081243008CD692 /* Build configuration list for PBXNativeTarget "SPTLoginSampleAppSwift" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				54AC7EEF20081243008CD692 /* Debug */,
+				54AC7EF020081243008CD692 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 54AC7ED420081242008CD692 /* Project object */;
+}

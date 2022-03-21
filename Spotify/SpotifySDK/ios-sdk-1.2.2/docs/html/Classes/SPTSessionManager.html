@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>SPTSessionManager Class Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">SpotifyiOS </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">Spotify</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+	<optgroup label="Properties">
+		
+		<option value="//api/name/alwaysShowAuthorizationDialog">alwaysShowAuthorizationDialog</option>
+		
+		<option value="//api/name/delegate">delegate</option>
+		
+		<option value="//api/name/session">session</option>
+		
+		<option value="//api/name/spotifyAppInstalled">spotifyAppInstalled</option>
+		
+	</optgroup>
+	
+
+	
+
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/application:openURL:options:">- application:openURL:options:</option>
+		
+		<option value="//api/name/initWithConfiguration:delegate:">- initWithConfiguration:delegate:</option>
+		
+		<option value="//api/name/initiateSessionWithScope:options:">- initiateSessionWithScope:options:</option>
+		
+		<option value="//api/name/initiateSessionWithScope:options:presentingViewController:">- initiateSessionWithScope:options:presentingViewController:</option>
+		
+		<option value="//api/name/renewSession">- renewSession</option>
+		
+	</optgroup>
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">SPTSessionManager Class Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Inherits from</th>
+	<td>NSObject</td>
+</tr><tr>
+	<th>Declared in</th>
+	<td>SPTSessionManager.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>This class manages a Spotify user <a href="#//api/name/session">session</a>, in the form of <a href="../Classes/SPTSession.html"><code>SPTSession</code></a>.</p>
+					</div>
+					
+					
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/session" title="session"></a>
+	<h3 class="method-title"><code><a href="#//api/name/session">&nbsp;&nbsp;session</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The <a href="../Classes/SPTSession.html"><code>SPTSession</code></a> for the <code>SPTSessionManager</code> to manage. If no user has been authenticated this will be nil</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nullable, nonatomic) SPTSession *session</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">SPTSessionManager.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/delegate" title="delegate"></a>
+	<h3 class="method-title"><code><a href="#//api/name/delegate">&nbsp;&nbsp;delegate</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The <a href="../Protocols/SPTSessionManagerDelegate.html"><code>SPTSessionManagerDelegate</code></a> to notify of initiating a <a href="#//api/name/session">session</a>, renewing a <a href="#//api/name/session">session</a>, and/or errors related to a <a href="#//api/name/session">session</a></p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nullable, nonatomic, weak) id&lt;SPTSessionManagerDelegate&gt; delegate</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">SPTSessionManager.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/spotifyAppInstalled" title="spotifyAppInstalled"></a>
+	<h3 class="method-title"><code><a href="#//api/name/spotifyAppInstalled">&nbsp;&nbsp;spotifyAppInstalled</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Determine if the Spotify app is installed.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly, getter=isSpotifyAppInstalled) BOOL spotifyAppInstalled</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Will be <code>YES</code> if the Spotify app is installed (and the URL scheme is whitelisted), otherwise is <code>NO</code>.
+Note: You must whitelist the &ldquo;spotify&rdquo; URL scheme in your info.plist LSApplicationQueriesSchemes or this will always be NO</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">SPTSessionManager.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/alwaysShowAuthorizationDialog" title="alwaysShowAuthorizationDialog"></a>
+	<h3 class="method-title"><code><a href="#//api/name/alwaysShowAuthorizationDialog">&nbsp;&nbsp;alwaysShowAuthorizationDialog</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Set this value to <code>YES</code> when debugging to have the Spotify app always show the authorization confirmation screen.
+You SHOULD NOT set this value to <code>YES</code> in production or your users will always have to confirm.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, assign) BOOL alwaysShowAuthorizationDialog</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">SPTSessionManager.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/initiateSessionWithScope:options:" title="initiateSessionWithScope:options:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initiateSessionWithScope:options:">&ndash;&nbsp;initiateSessionWithScope:options:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Initiate the authorization process on iOS 11 and later.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)initiateSessionWithScope:(SPTScope)<em>scope</em> options:(SPTAuthorizationOptions)<em>options</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>scope</code></th>
+						<td><p>The scope to request, e.g. <code>SPTPlaylistReadPrivateScope</code>|<code>SPTUserReadEmailScope</code> if you wish to request read access to private playlists, and read access to the user&rsquo;s email address.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>options</code></th>
+						<td><p>Options bitmask that informs authorization behavior.
+See <a href="../Protocols/SPTSessionManagerDelegate.html"><code>SPTSessionManagerDelegate</code></a> for messages regarding changes in <a href="#//api/name/session">session</a> state.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">SPTSessionManager.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/initiateSessionWithScope:options:presentingViewController:" title="initiateSessionWithScope:options:presentingViewController:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initiateSessionWithScope:options:presentingViewController:">&ndash;&nbsp;initiateSessionWithScope:options:presentingViewController:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Initiate the authorization process on iOS versions &lt; 11.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)initiateSessionWithScope:(SPTScope)<em>scope</em> options:(SPTAuthorizationOptions)<em>options</em> presentingViewController:(UIViewController *)<em>presentingViewController</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>scope</code></th>
+						<td><p>The scope to request, e.g. <code>SPTPlaylistReadPrivateScope</code>|<code>SPTUserReadEmailScope</code> if you wish to request read access to private playlists, and read access to the user&rsquo;s email address.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>options</code></th>
+						<td><p>Options bitmask that informs authorization behavior.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>presentingViewController</code></th>
+						<td><p>The <code>UIViewController</code> to present the login <code>SFSafariViewController</code> on
+See <a href="../Protocols/SPTSessionManagerDelegate.html"><code>SPTSessionManagerDelegate</code></a> for messages regarding changes in <a href="#//api/name/session">session</a> state.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">SPTSessionManager.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/renewSession" title="renewSession"></a>
+	<h3 class="method-title"><code><a href="#//api/name/renewSession">&ndash;&nbsp;renewSession</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Attempt to renew the access token, using the refresh token in the current <a href="../Classes/SPTSession.html"><code>SPTSession</code></a> which must be valid.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)renewSession</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">SPTSessionManager.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/initWithConfiguration:delegate:" title="initWithConfiguration:delegate:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithConfiguration:delegate:">&ndash;&nbsp;initWithConfiguration:delegate:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Create an <code>SPTSessionManager</code> with the provided configuration.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (instancetype)initWithConfiguration:(SPTConfiguration *)<em>configuration</em> delegate:(nullable id&lt;SPTSessionManagerDelegate&gt;)<em>delegate</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>configuration</code></th>
+						<td><p>An <a href="../Classes/SPTConfiguration.html"><code>SPTConfiguration</code></a> object.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>delegate</code></th>
+						<td><p>An optional <a href="#//api/name/delegate">delegate</a> conforming to <a href="../Protocols/SPTSessionManagerDelegate.html"><code>SPTSessionManagerDelegate</code></a>.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>An <code>SPTSessionManager</code> with the desired configuration.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">SPTSessionManager.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/application:openURL:options:" title="application:openURL:options:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/application:openURL:options:">&ndash;&nbsp;application:openURL:options:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Handle openURL callbacks from the <code>AppDelegate</code></p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)application:(UIApplication *)<em>application</em> openURL:(NSURL *)<em>URL</em> options:(NSDictionary&lt;UIApplicationOpenURLOptionsKey,id&gt; *)<em>options</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>application</code></th>
+						<td><p>The <code>UIApplication</code> passed into the matching <code>AppDelegate</code> method</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>URL</code></th>
+						<td><p>The URL to attempt to parse the access token from</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>options</code></th>
+						<td><p>The options passed in to the matching <code>AppDelegate</code> method</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>Returns <code>YES</code> if <code>SPTSessionManager</code> recognizes the URL and will attempt to parse an access token, otherwise returns <code>NO</code>.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">SPTSessionManager.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2019 Spotify. All rights reserved. Updated: 2019-04-11</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

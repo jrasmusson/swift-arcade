@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>SPTConfiguration Class Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">SpotifyiOS </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">Spotify</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+	<optgroup label="Properties">
+		
+		<option value="//api/name/clientID">clientID</option>
+		
+		<option value="//api/name/playURI">playURI</option>
+		
+		<option value="//api/name/redirectURL">redirectURL</option>
+		
+		<option value="//api/name/tokenRefreshURL">tokenRefreshURL</option>
+		
+		<option value="//api/name/tokenSwapURL">tokenSwapURL</option>
+		
+	</optgroup>
+	
+
+	
+	<optgroup label="Class Methods">
+		
+		<option value="//api/name/configurationWithClientID:redirectURL:">+ configurationWithClientID:redirectURL:</option>
+		
+	</optgroup>
+	
+
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/initWithClientID:redirectURL:">- initWithClientID:redirectURL:</option>
+		
+	</optgroup>
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">SPTConfiguration Class Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Inherits from</th>
+	<td>NSObject</td>
+</tr><tr>
+	<th>Conforms to</th>
+	<td>NSSecureCoding</td>
+</tr><tr>
+	<th>Declared in</th>
+	<td>SPTConfiguration.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>A configuration class, holding the credentials provided for your app on the Spotify Developer website.
+See <a href="https://developer.spotify.com/my-applications/">https://developer.spotify.com/my-applications/</a></p>
+					</div>
+					
+					
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						<h2 class="task-title">Other Methods</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/clientID" title="clientID"></a>
+	<h3 class="method-title"><code><a href="#//api/name/clientID">&nbsp;&nbsp;clientID</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Your app&rsquo;s Client ID from developer.spotify.com</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly, copy) NSString *clientID</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">SPTConfiguration.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/redirectURL" title="redirectURL"></a>
+	<h3 class="method-title"><code><a href="#//api/name/redirectURL">&nbsp;&nbsp;redirectURL</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Your redirect URL. This is how the Spotify app will open your application after user authorization.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly, copy) NSURL *redirectURL</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">SPTConfiguration.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/initWithClientID:redirectURL:" title="initWithClientID:redirectURL:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithClientID:redirectURL:">&ndash;&nbsp;initWithClientID:redirectURL:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Designated initializer for <code>SPTConfiguration</code></p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (instancetype)initWithClientID:(NSString *)<em>clientID</em> redirectURL:(NSURL *)<em>redirectURL</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>clientID</code></th>
+						<td><p>Your client ID obtained from developer.spotify.com</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>redirectURL</code></th>
+						<td><p>Your redirect URL for Spotify to open your app again after authorization</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>A newly initialized <code>SPTConfiguration</code></p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">SPTConfiguration.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/configurationWithClientID:redirectURL:" title="configurationWithClientID:redirectURL:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/configurationWithClientID:redirectURL:">+&nbsp;configurationWithClientID:redirectURL:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Convenience intializer for <code>SPTConfiguration</code></p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (instancetype)configurationWithClientID:(NSString *)<em>clientID</em> redirectURL:(NSURL *)<em>redirectURL</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>clientID</code></th>
+						<td><p>Your client ID obtained from developer.spotify.com</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>redirectURL</code></th>
+						<td><p>Your redirect URL for Spotify to open your app again after authorization</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>A newly initialized <code>SPTConfiguration</code></p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">SPTConfiguration.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+
+						
+						<h2 class="task-title">Other Methods</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/tokenSwapURL" title="tokenSwapURL"></a>
+	<h3 class="method-title"><code><a href="#//api/name/tokenSwapURL">&nbsp;&nbsp;tokenSwapURL</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The URL to use for attempting to swap an authorization code for an access token. You should only set this if your
+<a href="#//api/name/clientID">clientID</a> has a clientSecret and you have a backend service that holds the secret and can exchange the code and secret
+for an access token.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, nullable, copy) NSURL *tokenSwapURL</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">SPTConfiguration.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/tokenRefreshURL" title="tokenRefreshURL"></a>
+	<h3 class="method-title"><code><a href="#//api/name/tokenRefreshURL">&nbsp;&nbsp;tokenRefreshURL</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The URL to use for attempting to renew an access token with a refresh token. You should only set this if your
+<a href="#//api/name/clientID">clientID</a> has a clientSecret and you have a backend service that holds the secret and can use a refresh token
+to get a new access token.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, nullable, copy) NSURL *tokenRefreshURL</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">SPTConfiguration.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/playURI" title="playURI"></a>
+	<h3 class="method-title"><code><a href="#//api/name/playURI">&nbsp;&nbsp;playURI</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>If requesting the <code>SPTAppRemoteControlScope</code> you can provide an optional uri to begin playing after a successful
+authentication. To continue the user&rsquo;s last session set this to a blank string @&ldquo;&rdquo;. If this value is <code>nil</code> or <code>SPTAppRemoteControlScope</code>
+is not requested no audio will play.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, nullable, copy) NSString *playURI</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">SPTConfiguration.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2019 Spotify. All rights reserved. Updated: 2019-04-11</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

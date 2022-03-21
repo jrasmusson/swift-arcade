@@ -1,0 +1,1417 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>SPTAppRemotePlayerAPI Protocol Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">SpotifyiOS </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">Spotify</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+	<optgroup label="Properties">
+		
+		<option value="//api/name/delegate">delegate</option>
+		
+	</optgroup>
+	
+
+	
+
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/enqueueTrackUri:callback:">- enqueueTrackUri:callback:</option>
+		
+		<option value="//api/name/getAvailablePodcastPlaybackSpeeds:">- getAvailablePodcastPlaybackSpeeds:</option>
+		
+		<option value="//api/name/getCrossfadeState:">- getCrossfadeState:</option>
+		
+		<option value="//api/name/getCurrentPodcastPlaybackSpeed:">- getCurrentPodcastPlaybackSpeed:</option>
+		
+		<option value="//api/name/getPlayerState:">- getPlayerState:</option>
+		
+		<option value="//api/name/pause:">- pause:</option>
+		
+		<option value="//api/name/play:callback:">- play:callback:</option>
+		
+		<option value="//api/name/playItem:callback:">- playItem:callback:</option>
+		
+		<option value="//api/name/playItem:skipToTrackIndex:callback:">- playItem:skipToTrackIndex:callback:</option>
+		
+		<option value="//api/name/resume:">- resume:</option>
+		
+		<option value="//api/name/seekBackward15Seconds:">- seekBackward15Seconds:</option>
+		
+		<option value="//api/name/seekForward15Seconds:">- seekForward15Seconds:</option>
+		
+		<option value="//api/name/seekToPosition:callback:">- seekToPosition:callback:</option>
+		
+		<option value="//api/name/setPodcastPlaybackSpeed:callback:">- setPodcastPlaybackSpeed:callback:</option>
+		
+		<option value="//api/name/setRepeatMode:callback:">- setRepeatMode:callback:</option>
+		
+		<option value="//api/name/setShuffle:callback:">- setShuffle:callback:</option>
+		
+		<option value="//api/name/skipToNext:">- skipToNext:</option>
+		
+		<option value="//api/name/skipToPrevious:">- skipToPrevious:</option>
+		
+		<option value="//api/name/subscribeToPlayerState:">- subscribeToPlayerState:</option>
+		
+		<option value="//api/name/unsubscribeToPlayerState:">- unsubscribeToPlayerState:</option>
+		
+	</optgroup>
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">SPTAppRemotePlayerAPI Protocol Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Conforms to</th>
+	<td>NSObject</td>
+</tr><tr>
+	<th>Declared in</th>
+	<td>SPTAppRemotePlayerAPI.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>The <code>SPTAppRemotePlayerAPI</code> is used to interact with and control the Spotify player.</p>
+					</div>
+					
+					
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/delegate" title="delegate"></a>
+	<h3 class="method-title"><code><a href="#//api/name/delegate">&nbsp;&nbsp;delegate</a></code>
+<span class="task-item-suffix">required method</span></h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The delegate receiving player state updates</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, weak) id&lt;SPTAppRemotePlayerStateDelegate&gt; delegate</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">SPTAppRemotePlayerAPI.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/play:callback:" title="play:callback:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/play:callback:">&ndash;&nbsp;play:callback:</a></code>
+<span class="task-item-suffix">required method</span></h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Asks the Spotify player to play the entity with the given identifier.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)play:(NSString *)<em>entityIdentifier</em> callback:(nullable SPTAppRemoteCallback)<em>callback</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>entityIdentifier</code></th>
+						<td><p>The unique identifier of the entity to play.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>callback</code></th>
+						<td><p>On success <code>result</code> will be <code>YES</code>.
+On error <code>result</code> will be <code>nil</code> and <code>error</code> set</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<div class="note"><p><strong>Note:</strong> Implement <a href="../Protocols/SPTAppRemotePlayerStateDelegate.html"><code>SPTAppRemotePlayerStateDelegate</code></a> and set yourself as <a href="#//api/name/delegate">delegate</a> in order to be notified when the
+the track begins to play.</p></div>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">SPTAppRemotePlayerAPI.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/playItem:callback:" title="playItem:callback:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/playItem:callback:">&ndash;&nbsp;playItem:callback:</a></code>
+<span class="task-item-suffix">required method</span></h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Asks the Spotify player to play the provided content item.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)playItem:(id&lt;SPTAppRemoteContentItem&gt;)<em>contentItem</em> callback:(nullable SPTAppRemoteCallback)<em>callback</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>contentItem</code></th>
+						<td><p>The content item to play.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>callback</code></th>
+						<td><p>On success <code>result</code> will be <code>YES</code>.
+On error <code>result</code> will be <code>nil</code> and error set</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<div class="note"><p><strong>Note:</strong> Implement <a href="../Protocols/SPTAppRemotePlayerStateDelegate.html"><code>SPTAppRemotePlayerStateDelegate</code></a> and set yourself as <a href="#//api/name/delegate">delegate</a> in order to be notified when the
+the track begins to play.</p></div><div class="note"><p><strong>Note:</strong> The <code>playable</code> property of the <a href="../Protocols/SPTAppRemoteContentItem.html"><code>SPTAppRemoteContentItem</code></a> indicates whether or not a content item is
+playable.</p></div>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">SPTAppRemotePlayerAPI.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/playItem:skipToTrackIndex:callback:" title="playItem:skipToTrackIndex:callback:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/playItem:skipToTrackIndex:callback:">&ndash;&nbsp;playItem:skipToTrackIndex:callback:</a></code>
+<span class="task-item-suffix">required method</span></h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Asks the Spotify player to play the provided content item starting at the specified index.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)playItem:(id&lt;SPTAppRemoteContentItem&gt;)<em>contentItem</em> skipToTrackIndex:(NSInteger)<em>index</em> callback:(nullable SPTAppRemoteCallback)<em>callback</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>contentItem</code></th>
+						<td><p>The content item to play.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>index</code></th>
+						<td><p>The index of the track to skip to if applicable.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>callback</code></th>
+						<td><p>On success <code>result</code> will be <code>YES</code>.
+On error <code>result</code> will be <code>nil</code> and error set</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<div class="note"><p><strong>Note:</strong> Implement <a href="../Protocols/SPTAppRemotePlayerStateDelegate.html"><code>SPTAppRemotePlayerStateDelegate</code></a> and set yourself as <a href="#//api/name/delegate">delegate</a> in order to be notified when the
+the track begins to play.</p></div><div class="note"><p><strong>Note:</strong> The <code>playable</code> property of the <a href="../Protocols/SPTAppRemoteContentItem.html"><code>SPTAppRemoteContentItem</code></a> indicates whether or not a content item is
+playable.</p></div><div class="note"><p><strong>Note:</strong> Sending an <code>index</code> parameter that is out of bounds is undefined.</p></div>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">SPTAppRemotePlayerAPI.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/resume:" title="resume:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/resume:">&ndash;&nbsp;resume:</a></code>
+<span class="task-item-suffix">required method</span></h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Asks the Spotify player to resume playback.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)resume:(nullable SPTAppRemoteCallback)<em>callback</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>callback</code></th>
+						<td><p>On success <code>result</code> will be <code>YES</code>.
+On error <code>result</code> will be nil and error set</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<div class="note"><p><strong>Note:</strong> Implement <a href="../Protocols/SPTAppRemotePlayerStateDelegate.html"><code>SPTAppRemotePlayerStateDelegate</code></a> and set yourself as <a href="#//api/name/delegate">delegate</a> in order to be notified when the
+the playback resumes.</p></div>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">SPTAppRemotePlayerAPI.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/pause:" title="pause:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/pause:">&ndash;&nbsp;pause:</a></code>
+<span class="task-item-suffix">required method</span></h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Asks the Spotify player to pause playback.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)pause:(nullable SPTAppRemoteCallback)<em>callback</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>callback</code></th>
+						<td><p>On success <code>result</code> will be <code>YES</code>.
+On error <code>result</code> will be <code>nil</code> and error set</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<div class="note"><p><strong>Note:</strong> Implement <a href="../Protocols/SPTAppRemotePlayerStateDelegate.html"><code>SPTAppRemotePlayerStateDelegate</code></a> and set yourself as <a href="#//api/name/delegate">delegate</a> in order to be notified when the
+the playback pauses.</p></div>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">SPTAppRemotePlayerAPI.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/skipToNext:" title="skipToNext:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/skipToNext:">&ndash;&nbsp;skipToNext:</a></code>
+<span class="task-item-suffix">required method</span></h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Asks the Spotify player to skip to the next track.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)skipToNext:(nullable SPTAppRemoteCallback)<em>callback</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>callback</code></th>
+						<td><p>On success <code>result</code> will be <code>YES</code>.
+On error <code>result</code> will be <code>nil</code> and error set</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<div class="note"><p><strong>Note:</strong> Implement <a href="../Protocols/SPTAppRemotePlayerStateDelegate.html"><code>SPTAppRemotePlayerStateDelegate</code></a> and set yourself as <a href="#//api/name/delegate">delegate</a> in order to be notified when the
+the track changes.</p></div>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">SPTAppRemotePlayerAPI.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/skipToPrevious:" title="skipToPrevious:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/skipToPrevious:">&ndash;&nbsp;skipToPrevious:</a></code>
+<span class="task-item-suffix">required method</span></h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Asks the Spotify player to skip to the previous track.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)skipToPrevious:(nullable SPTAppRemoteCallback)<em>callback</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>callback</code></th>
+						<td><p>On success <code>result</code> will be <code>YES</code>.
+On error <code>result</code> will be <code>nil</code> and <code>error</code> set</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<div class="note"><p><strong>Note:</strong> Implement <a href="../Protocols/SPTAppRemotePlayerStateDelegate.html"><code>SPTAppRemotePlayerStateDelegate</code></a> and set yourself as <a href="#//api/name/delegate">delegate</a> in order to be notified when the
+the track changes.</p></div>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">SPTAppRemotePlayerAPI.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/seekToPosition:callback:" title="seekToPosition:callback:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/seekToPosition:callback:">&ndash;&nbsp;seekToPosition:callback:</a></code>
+<span class="task-item-suffix">required method</span></h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Asks the Spotify player to seek to the specified position.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)seekToPosition:(NSInteger)<em>position</em> callback:(nullable SPTAppRemoteCallback)<em>callback</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>position</code></th>
+						<td><p>The position to seek to in milliseconds.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>callback</code></th>
+						<td><p>On success <code>result</code> will be <code>YES</code>.
+On error <code>result</code> will be <code>nil</code> and <code>error</code> set</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">SPTAppRemotePlayerAPI.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/seekForward15Seconds:" title="seekForward15Seconds:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/seekForward15Seconds:">&ndash;&nbsp;seekForward15Seconds:</a></code>
+<span class="task-item-suffix">required method</span></h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Asks the Spotify player to seek forward 15 seconds.
+Note: You should only use this method if isEpisode = YES for the currently playing track</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)seekForward15Seconds:(nullable SPTAppRemoteCallback)<em>callback</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>callback</code></th>
+						<td><p>On success <code>result</code> will be <code>YES</code>.
+On error <code>result</code> will be <code>nil</code> and <code>error</code> set</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">SPTAppRemotePlayerAPI.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/seekBackward15Seconds:" title="seekBackward15Seconds:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/seekBackward15Seconds:">&ndash;&nbsp;seekBackward15Seconds:</a></code>
+<span class="task-item-suffix">required method</span></h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Asks the Spotify player to seek backward 15 seconds.
+Note: You should only use this method if isEpisode = YES for the currently playing track</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)seekBackward15Seconds:(nullable SPTAppRemoteCallback)<em>callback</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>callback</code></th>
+						<td><p>On success <code>result</code> will be <code>YES</code>.
+On error <code>result</code> will be <code>nil</code> and <code>error</code> set</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">SPTAppRemotePlayerAPI.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/setShuffle:callback:" title="setShuffle:callback:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/setShuffle:callback:">&ndash;&nbsp;setShuffle:callback:</a></code>
+<span class="task-item-suffix">required method</span></h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Asks the Spotify player to set shuffle mode.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)setShuffle:(BOOL)<em>shuffle</em> callback:(nullable SPTAppRemoteCallback)<em>callback</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>shuffle</code></th>
+						<td><p><code>YES</code> to enable shuffle, <code>NO</code> to disable.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>callback</code></th>
+						<td><p>On success <code>result</code> will be <code>YES</code>.
+On error <code>result</code> will be <code>nil</code> and <code>error</code> will be set.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">SPTAppRemotePlayerAPI.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/setRepeatMode:callback:" title="setRepeatMode:callback:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/setRepeatMode:callback:">&ndash;&nbsp;setRepeatMode:callback:</a></code>
+<span class="task-item-suffix">required method</span></h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Asks the Spotify player to set the repeat mode.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)setRepeatMode:(SPTAppRemotePlaybackOptionsRepeatMode)<em>repeatMode</em> callback:(nullable SPTAppRemoteCallback)<em>callback</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>repeatMode</code></th>
+						<td><p>The repeat mode to set.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>callback</code></th>
+						<td><p>On success <code>result</code> will be <code>YES</code>.
+On error <code>result</code> will be <code>nil</code> and <code>error</code> will be set.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">SPTAppRemotePlayerAPI.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/getPlayerState:" title="getPlayerState:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/getPlayerState:">&ndash;&nbsp;getPlayerState:</a></code>
+<span class="task-item-suffix">required method</span></h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Asks the Spotify player for the current player state.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)getPlayerState:(nullable SPTAppRemoteCallback)<em>callback</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>callback</code></th>
+						<td><p>On success <code>result</code> will be an instance of <code>id</code>SPTAppRemotePlayerState<code></code>
+On error <code>result</code> will be nil and error set</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">SPTAppRemotePlayerAPI.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/subscribeToPlayerState:" title="subscribeToPlayerState:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/subscribeToPlayerState:">&ndash;&nbsp;subscribeToPlayerState:</a></code>
+<span class="task-item-suffix">required method</span></h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Subscribes to player state changes from the Spotify app.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)subscribeToPlayerState:(nullable SPTAppRemoteCallback)<em>callback</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>callback</code></th>
+						<td><p>On success <code>result</code> will be an instance of <code>id</code>SPTAppRemotePlayerState<code></code>
+On error <code>result</code> will be nil and error set</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<div class="note"><p><strong>Note:</strong> Implement <a href="../Protocols/SPTAppRemotePlayerStateDelegate.html"><code>SPTAppRemotePlayerStateDelegate</code></a> and set yourself as <a href="#//api/name/delegate">delegate</a> in order to be notified when the
+the player state changes.</p></div>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">SPTAppRemotePlayerAPI.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/unsubscribeToPlayerState:" title="unsubscribeToPlayerState:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/unsubscribeToPlayerState:">&ndash;&nbsp;unsubscribeToPlayerState:</a></code>
+<span class="task-item-suffix">required method</span></h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Stops subscribing to player state changes from the Spotify app.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)unsubscribeToPlayerState:(nullable SPTAppRemoteCallback)<em>callback</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>callback</code></th>
+						<td><p>On success <code>result</code> will be <code>YES</code>
+On error <code>result</code> will be <code>nil</code> and error set</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">SPTAppRemotePlayerAPI.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/enqueueTrackUri:callback:" title="enqueueTrackUri:callback:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/enqueueTrackUri:callback:">&ndash;&nbsp;enqueueTrackUri:callback:</a></code>
+<span class="task-item-suffix">required method</span></h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Adds a track to the user&rsquo;s currently playing queue</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)enqueueTrackUri:(NSString *)<em>trackUri</em> callback:(nullable SPTAppRemoteCallback)<em>callback</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>trackUri</code></th>
+						<td><p>The track URI to add to the queue</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>callback</code></th>
+						<td><p>On success <code>result</code> will be <code>YES</code>
+On error <code>result</code> will be <code>nil</code> and error set</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">SPTAppRemotePlayerAPI.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/getAvailablePodcastPlaybackSpeeds:" title="getAvailablePodcastPlaybackSpeeds:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/getAvailablePodcastPlaybackSpeeds:">&ndash;&nbsp;getAvailablePodcastPlaybackSpeeds:</a></code>
+<span class="task-item-suffix">required method</span></h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Asks the Spotify player for available podcast playback speeds</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)getAvailablePodcastPlaybackSpeeds:(nullable SPTAppRemoteCallback)<em>callback</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>callback</code></th>
+						<td><p>On success <code>result</code> will be an <code>NSArray</code> of <a href="../Protocols/SPTAppRemotePodcastPlaybackSpeed.html"><code>SPTAppRemotePodcastPlaybackSpeed</code></a> objects
+On error <code>result</code> will be <code>nil</code> and <code>error</code> set</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">SPTAppRemotePlayerAPI.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/getCurrentPodcastPlaybackSpeed:" title="getCurrentPodcastPlaybackSpeed:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/getCurrentPodcastPlaybackSpeed:">&ndash;&nbsp;getCurrentPodcastPlaybackSpeed:</a></code>
+<span class="task-item-suffix">required method</span></h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Asks the Spotify player for the current podcast playback speed</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)getCurrentPodcastPlaybackSpeed:(nullable SPTAppRemoteCallback)<em>callback</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>callback</code></th>
+						<td><p>On success <code>result</code> will be a <a href="../Protocols/SPTAppRemotePodcastPlaybackSpeed.html"><code>SPTAppRemotePodcastPlaybackSpeed</code></a>
+On error <code>result</code> will be <code>nil</code> and <code>error</code> set</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<div class="note"><p><strong>Note:</strong> Podcast playback speed is seperate from other contents' playback speed. This value is only used for podcasts</p></div>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">SPTAppRemotePlayerAPI.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/setPodcastPlaybackSpeed:callback:" title="setPodcastPlaybackSpeed:callback:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/setPodcastPlaybackSpeed:callback:">&ndash;&nbsp;setPodcastPlaybackSpeed:callback:</a></code>
+<span class="task-item-suffix">required method</span></h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Set the current podcast playback speed</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)setPodcastPlaybackSpeed:(nonnull id&lt;SPTAppRemotePodcastPlaybackSpeed&gt;)<em>speed</em> callback:(nullable SPTAppRemoteCallback)<em>callback</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>speed</code></th>
+						<td><p>The <a href="../Protocols/SPTAppRemotePodcastPlaybackSpeed.html"><code>SPTAppRemotePodcastPlaybackSpeed</code></a> to set as the current podcast playback speed</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>callback</code></th>
+						<td><p>On success <code>result</code> will be <code>YES</code>.
+On error <code>result</code> will be <code>nil</code> and <code>error</code> set</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<div class="note"><p><strong>Note:</strong> This playback speed will only affect podcasts and not other types of media. If you set this
+when a podcast is not playing this will be the default value when a podcast does begin to play. For this reason
+you may get a successful callback when setting this even when a podcast is not playing and the current playback
+speed does not change.</p></div><div class="note"><p><strong>Note:</strong> You should use <a href="#//api/name/getAvailablePodcastPlaybackSpeeds:"><code>getAvailablePodcastPlaybackSpeeds:</code></a> to get a list of valid speeds to pass to this method</p></div>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">SPTAppRemotePlayerAPI.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/getCrossfadeState:" title="getCrossfadeState:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/getCrossfadeState:">&ndash;&nbsp;getCrossfadeState:</a></code>
+<span class="task-item-suffix">required method</span></h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Asks the Spotify player for the current crossfade state.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)getCrossfadeState:(nullable SPTAppRemoteCallback)<em>callback</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>callback</code></th>
+						<td><p>On success <code>result</code> will be an instance of <code>id</code>SPTAppRemoteCrossfadeState<code></code>
+On error <code>result</code> will be nil and error set</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">SPTAppRemotePlayerAPI.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2019 Spotify. All rights reserved. Updated: 2019-04-11</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

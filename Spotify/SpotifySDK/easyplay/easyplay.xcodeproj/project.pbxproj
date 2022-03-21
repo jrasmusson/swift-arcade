@@ -7,76 +7,93 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		71C3E4F427E77F4900CCF26B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C3E4F327E77F4900CCF26B /* AppDelegate.swift */; };
-		71C3E4F827E77F4900CCF26B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C3E4F727E77F4900CCF26B /* ViewController.swift */; };
-		71C3E4FD27E77F4A00CCF26B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 71C3E4FC27E77F4A00CCF26B /* Assets.xcassets */; };
-		71C3E50027E77F4A00CCF26B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71C3E4FE27E77F4A00CCF26B /* LaunchScreen.storyboard */; };
-		71C3E50827E7808C00CCF26B /* SpotifyiOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71C3E50727E7808C00CCF26B /* SpotifyiOS.framework */; };
+		717D7D6627E89CC50002A849 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 717D7D6527E89CC50002A849 /* AppDelegate.swift */; };
+		717D7D6827E89CC50002A849 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 717D7D6727E89CC50002A849 /* SceneDelegate.swift */; };
+		717D7D6A27E89CC50002A849 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 717D7D6927E89CC50002A849 /* ViewController.swift */; };
+		717D7D6D27E89CC50002A849 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 717D7D6B27E89CC50002A849 /* Main.storyboard */; };
+		717D7D6F27E89CC70002A849 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 717D7D6E27E89CC70002A849 /* Assets.xcassets */; };
+		717D7D7227E89CC70002A849 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 717D7D7027E89CC70002A849 /* LaunchScreen.storyboard */; };
+		717D7D7A27E89D090002A849 /* SpotifyiOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 717D7D7927E89D090002A849 /* SpotifyiOS.framework */; };
+		717D7D8027E89F3F0002A849 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 717D7D7F27E89F3F0002A849 /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		71C3E4F027E77F4900CCF26B /* easyplay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = easyplay.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		71C3E4F327E77F4900CCF26B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		71C3E4F727E77F4900CCF26B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		71C3E4FC27E77F4A00CCF26B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		71C3E4FF27E77F4A00CCF26B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		71C3E50127E77F4A00CCF26B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		71C3E50727E7808C00CCF26B /* SpotifyiOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SpotifyiOS.framework; sourceTree = "<group>"; };
-		71C3E50927E784B800CCF26B /* easyplay-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "easyplay-Bridging-Header.h"; sourceTree = "<group>"; };
+		717D7D6227E89CC50002A849 /* easyplay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = easyplay.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		717D7D6527E89CC50002A849 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		717D7D6727E89CC50002A849 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		717D7D6927E89CC50002A849 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		717D7D6C27E89CC50002A849 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		717D7D6E27E89CC70002A849 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		717D7D7127E89CC70002A849 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		717D7D7327E89CC70002A849 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		717D7D7927E89D090002A849 /* SpotifyiOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SpotifyiOS.framework; sourceTree = "<group>"; };
+		717D7D7C27E89E830002A849 /* easyplay-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "easyplay-Bridging-Header.h"; sourceTree = "<group>"; };
+		717D7D7F27E89F3F0002A849 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		71C3E4ED27E77F4900CCF26B /* Frameworks */ = {
+		717D7D5F27E89CC50002A849 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				71C3E50827E7808C00CCF26B /* SpotifyiOS.framework in Frameworks */,
+				717D7D7A27E89D090002A849 /* SpotifyiOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		71C3E4E727E77F4900CCF26B = {
+		717D7D5927E89CC50002A849 = {
 			isa = PBXGroup;
 			children = (
-				71C3E4F227E77F4900CCF26B /* easyplay */,
-				71C3E4F127E77F4900CCF26B /* Products */,
+				717D7D6427E89CC50002A849 /* easyplay */,
+				717D7D6327E89CC50002A849 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		71C3E4F127E77F4900CCF26B /* Products */ = {
+		717D7D6327E89CC50002A849 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				71C3E4F027E77F4900CCF26B /* easyplay.app */,
+				717D7D6227E89CC50002A849 /* easyplay.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		71C3E4F227E77F4900CCF26B /* easyplay */ = {
+		717D7D6427E89CC50002A849 /* easyplay */ = {
 			isa = PBXGroup;
 			children = (
-				71C3E4F327E77F4900CCF26B /* AppDelegate.swift */,
-				71C3E4F727E77F4900CCF26B /* ViewController.swift */,
-				71C3E4FC27E77F4A00CCF26B /* Assets.xcassets */,
-				71C3E4FE27E77F4A00CCF26B /* LaunchScreen.storyboard */,
-				71C3E50127E77F4A00CCF26B /* Info.plist */,
-				71C3E50727E7808C00CCF26B /* SpotifyiOS.framework */,
-				71C3E50927E784B800CCF26B /* easyplay-Bridging-Header.h */,
+				717D7D7F27E89F3F0002A849 /* Constants.swift */,
+				717D7D6927E89CC50002A849 /* ViewController.swift */,
+				717D7D6727E89CC50002A849 /* SceneDelegate.swift */,
+				717D7D7B27E89D110002A849 /* Files */,
+				717D7D7927E89D090002A849 /* SpotifyiOS.framework */,
+				717D7D7C27E89E830002A849 /* easyplay-Bridging-Header.h */,
 			);
 			path = easyplay;
+			sourceTree = "<group>";
+		};
+		717D7D7B27E89D110002A849 /* Files */ = {
+			isa = PBXGroup;
+			children = (
+				717D7D6527E89CC50002A849 /* AppDelegate.swift */,
+				717D7D6B27E89CC50002A849 /* Main.storyboard */,
+				717D7D6E27E89CC70002A849 /* Assets.xcassets */,
+				717D7D7027E89CC70002A849 /* LaunchScreen.storyboard */,
+				717D7D7327E89CC70002A849 /* Info.plist */,
+			);
+			name = Files;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		71C3E4EF27E77F4900CCF26B /* easyplay */ = {
+		717D7D6127E89CC50002A849 /* easyplay */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 71C3E50427E77F4A00CCF26B /* Build configuration list for PBXNativeTarget "easyplay" */;
+			buildConfigurationList = 717D7D7627E89CC70002A849 /* Build configuration list for PBXNativeTarget "easyplay" */;
 			buildPhases = (
-				71C3E4EC27E77F4900CCF26B /* Sources */,
-				71C3E4ED27E77F4900CCF26B /* Frameworks */,
-				71C3E4EE27E77F4900CCF26B /* Resources */,
+				717D7D5E27E89CC50002A849 /* Sources */,
+				717D7D5F27E89CC50002A849 /* Frameworks */,
+				717D7D6027E89CC50002A849 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -84,26 +101,26 @@
 			);
 			name = easyplay;
 			productName = easyplay;
-			productReference = 71C3E4F027E77F4900CCF26B /* easyplay.app */;
+			productReference = 717D7D6227E89CC50002A849 /* easyplay.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		71C3E4E827E77F4900CCF26B /* Project object */ = {
+		717D7D5A27E89CC50002A849 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1320;
 				LastUpgradeCheck = 1320;
 				TargetAttributes = {
-					71C3E4EF27E77F4900CCF26B = {
+					717D7D6127E89CC50002A849 = {
 						CreatedOnToolsVersion = 13.2.1;
 						LastSwiftMigration = 1320;
 					};
 				};
 			};
-			buildConfigurationList = 71C3E4EB27E77F4900CCF26B /* Build configuration list for PBXProject "easyplay" */;
+			buildConfigurationList = 717D7D5D27E89CC50002A849 /* Build configuration list for PBXProject "easyplay" */;
 			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -111,45 +128,56 @@
 				en,
 				Base,
 			);
-			mainGroup = 71C3E4E727E77F4900CCF26B;
-			productRefGroup = 71C3E4F127E77F4900CCF26B /* Products */;
+			mainGroup = 717D7D5927E89CC50002A849;
+			productRefGroup = 717D7D6327E89CC50002A849 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				71C3E4EF27E77F4900CCF26B /* easyplay */,
+				717D7D6127E89CC50002A849 /* easyplay */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		71C3E4EE27E77F4900CCF26B /* Resources */ = {
+		717D7D6027E89CC50002A849 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				71C3E50027E77F4A00CCF26B /* LaunchScreen.storyboard in Resources */,
-				71C3E4FD27E77F4A00CCF26B /* Assets.xcassets in Resources */,
+				717D7D7227E89CC70002A849 /* LaunchScreen.storyboard in Resources */,
+				717D7D6F27E89CC70002A849 /* Assets.xcassets in Resources */,
+				717D7D6D27E89CC50002A849 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		71C3E4EC27E77F4900CCF26B /* Sources */ = {
+		717D7D5E27E89CC50002A849 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				71C3E4F827E77F4900CCF26B /* ViewController.swift in Sources */,
-				71C3E4F427E77F4900CCF26B /* AppDelegate.swift in Sources */,
+				717D7D6A27E89CC50002A849 /* ViewController.swift in Sources */,
+				717D7D6627E89CC50002A849 /* AppDelegate.swift in Sources */,
+				717D7D6827E89CC50002A849 /* SceneDelegate.swift in Sources */,
+				717D7D8027E89F3F0002A849 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		71C3E4FE27E77F4A00CCF26B /* LaunchScreen.storyboard */ = {
+		717D7D6B27E89CC50002A849 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				71C3E4FF27E77F4A00CCF26B /* Base */,
+				717D7D6C27E89CC50002A849 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		717D7D7027E89CC70002A849 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				717D7D7127E89CC70002A849 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -157,7 +185,7 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		71C3E50227E77F4A00CCF26B /* Debug */ = {
+		717D7D7427E89CC70002A849 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -212,14 +240,13 @@
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				OTHER_LDFLAGS = "-ObjC";
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
-		71C3E50327E77F4A00CCF26B /* Release */ = {
+		717D7D7527E89CC70002A849 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -267,7 +294,6 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
-				OTHER_LDFLAGS = "-ObjC";
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
@@ -275,7 +301,7 @@
 			};
 			name = Release;
 		};
-		71C3E50527E77F4A00CCF26B /* Debug */ = {
+		717D7D7727E89CC70002A849 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -283,6 +309,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = SH289S78C5;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/easyplay",
@@ -291,6 +318,7 @@
 				INFOPLIST_FILE = easyplay/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -298,6 +326,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = com.rsc.easyplay;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -308,7 +337,7 @@
 			};
 			name = Debug;
 		};
-		71C3E50627E77F4A00CCF26B /* Release */ = {
+		717D7D7827E89CC70002A849 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -316,6 +345,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = SH289S78C5;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/easyplay",
@@ -324,6 +354,7 @@
 				INFOPLIST_FILE = easyplay/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -331,6 +362,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = com.rsc.easyplay;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -343,25 +375,25 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		71C3E4EB27E77F4900CCF26B /* Build configuration list for PBXProject "easyplay" */ = {
+		717D7D5D27E89CC50002A849 /* Build configuration list for PBXProject "easyplay" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				71C3E50227E77F4A00CCF26B /* Debug */,
-				71C3E50327E77F4A00CCF26B /* Release */,
+				717D7D7427E89CC70002A849 /* Debug */,
+				717D7D7527E89CC70002A849 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		71C3E50427E77F4A00CCF26B /* Build configuration list for PBXNativeTarget "easyplay" */ = {
+		717D7D7627E89CC70002A849 /* Build configuration list for PBXNativeTarget "easyplay" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				71C3E50527E77F4A00CCF26B /* Debug */,
-				71C3E50627E77F4A00CCF26B /* Release */,
+				717D7D7727E89CC70002A849 /* Debug */,
+				717D7D7827E89CC70002A849 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 71C3E4E827E77F4900CCF26B /* Project object */;
+	rootObject = 717D7D5A27E89CC50002A849 /* Project object */;
 }
