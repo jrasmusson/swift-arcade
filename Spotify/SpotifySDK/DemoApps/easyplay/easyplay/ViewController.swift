@@ -174,10 +174,8 @@ class ViewController: UIViewController {
         trackLabel.text = playerState.track.name
 
         if playerState.isPaused {
-//            pauseAndPlayButton.setImage(UIImage(named: "play"), for: .normal)
             pauseAndPlayButton.setImage(UIImage(systemName: "play"), for: .normal)
         } else {
-//            pauseAndPlayButton.setImage(UIImage(named: "pause"), for: .normal)
             pauseAndPlayButton.setImage(UIImage(systemName: "pause"), for: .normal)
         }
     }
@@ -190,7 +188,7 @@ class ViewController: UIViewController {
             imageView.isHidden = false
             trackLabel.isHidden = false
             pauseAndPlayButton.isHidden = false
-        } else { //show login
+        } else { // show login
             signOutButton.isHidden = true
             connectButton.isHidden = false
             connectLabel.isHidden = false
