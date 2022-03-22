@@ -17,6 +17,7 @@ import UIKit
 class ViewController: UIViewController {
 
     var codeVerifier: String = ""
+
     var responseTypeCode: String? {
         didSet {
             fetchSpotifyToken { (dictionary, error) in
@@ -38,6 +39,7 @@ class ViewController: UIViewController {
         appRemote.delegate = self
         return appRemote
     }()
+
     var accessToken = UserDefaults.standard.string(forKey: accessTokenKey) {
         didSet {
             let defaults = UserDefaults.standard
@@ -47,7 +49,7 @@ class ViewController: UIViewController {
 
     lazy var configuration: SPTConfiguration = {
         let configuration = SPTConfiguration(clientID: spotifyClientId, redirectURL: redirectUri)
-        // Set the playURI to a non-nil value so that Spotify plays music after authenticating and App Remote can connect
+        // Set the playURI to a non-nil value so that Spotify plays music after authenticating
         // otherwise another app switch will be required
         configuration.playURI = ""
         // Set these url's to your backend which contains the secret to exchange for an access token
@@ -61,6 +63,7 @@ class ViewController: UIViewController {
         let manager = SPTSessionManager(configuration: configuration, delegate: self)
         return manager
     }()
+
     private var lastPlayerState: SPTAppRemotePlayerState?
 
     // MARK: - Subviews
@@ -87,7 +90,7 @@ class ViewController: UIViewController {
         return button
     }()
 
-    private lazy var disconnectButton: UIButton = {
+    private lazy var signOutButton: UIButton = {
         let button = UIButton()
         button.backgroundColor = UIColor(red:(29.0 / 255.0), green:(185.0 / 255.0), blue:(84.0 / 255.0), alpha:1.0)
         button.translatesAutoresizingMaskIntoConstraints = false
@@ -96,13 +99,12 @@ class ViewController: UIViewController {
         button.setTitle("Sign out", for: .normal)
         button.titleLabel?.font = UIFont.systemFont(ofSize: 20, weight: .bold)
         button.sizeToFit()
-        button.addTarget(self, action: #selector(didTapDisconnect(_:)), for: .touchUpInside)
+        button.addTarget(self, action: #selector(didTapSignOut(_:)), for: .touchUpInside)
         return button
     }()
 
     private lazy var pauseAndPlayButton: UIButton = {
         let button = UIButton()
-        button.backgroundColor = .systemRed
         button.addTarget(self, action: #selector(didTapPauseOrPlay), for: .touchUpInside)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.sizeToFit()
@@ -123,7 +125,7 @@ class ViewController: UIViewController {
         return trackLabel
     }()
 
-    //MARK: App Life Cycle
+    // MARK: App Life Cycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -135,20 +137,20 @@ class ViewController: UIViewController {
         updateViewBasedOnConnected()
     }
 
-    //MARK: Methods
+    // MARK: Methods
     func setupViews() {
         view.backgroundColor = .systemOrange
         view.addSubview(connectLabel)
         view.addSubview(connectButton)
-        view.addSubview(disconnectButton)
+        view.addSubview(signOutButton)
         view.addSubview(imageView)
         view.addSubview(trackLabel)
         view.addSubview(pauseAndPlayButton)
         let constant: CGFloat = 16.0
         connectButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         connectButton.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
-        disconnectButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        disconnectButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -50).isActive = true
+        signOutButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        signOutButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -50).isActive = true
         connectLabel.centerXAnchor.constraint(equalTo: connectButton.centerXAnchor).isActive = true
         connectLabel.bottomAnchor.constraint(equalTo: connectButton.topAnchor, constant: -constant).isActive = true
         imageView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
@@ -170,23 +172,26 @@ class ViewController: UIViewController {
         }
         lastPlayerState = playerState
         trackLabel.text = playerState.track.name
+
         if playerState.isPaused {
-            pauseAndPlayButton.setImage(UIImage(named: "play"), for: .normal)
+//            pauseAndPlayButton.setImage(UIImage(named: "play"), for: .normal)
+            pauseAndPlayButton.setImage(UIImage(systemName: "play"), for: .normal)
         } else {
-            pauseAndPlayButton.setImage(UIImage(named: "pause"), for: .normal)
+//            pauseAndPlayButton.setImage(UIImage(named: "pause"), for: .normal)
+            pauseAndPlayButton.setImage(UIImage(systemName: "pause"), for: .normal)
         }
     }
 
     func updateViewBasedOnConnected() {
         if appRemote.isConnected == true {
             connectButton.isHidden = true
-            disconnectButton.isHidden = false
+            signOutButton.isHidden = false
             connectLabel.isHidden = true
             imageView.isHidden = false
             trackLabel.isHidden = false
             pauseAndPlayButton.isHidden = false
         } else { //show login
-            disconnectButton.isHidden = true
+            signOutButton.isHidden = true
             connectButton.isHidden = false
             connectLabel.isHidden = false
             imageView.isHidden = true
@@ -225,7 +230,7 @@ class ViewController: UIViewController {
         }
     }
 
-    @objc func didTapDisconnect(_ button: UIButton) {
+    @objc func didTapSignOut(_ button: UIButton) {
         if appRemote.isConnected == true {
             appRemote.disconnect()
         }
