@@ -25,7 +25,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let url = URLContexts.first?.url else { return }
         let parameters = rootViewController.appRemote.authorizationParameters(from: url)
         if let code = parameters?["code"] {
-            rootViewController.responseTypeCode = code
+            rootViewController.responseCode = code
         } else if let access_token = parameters?[SPTAppRemoteAccessTokenKey] {
             rootViewController.accessToken = access_token
         } else if let error_description = parameters?[SPTAppRemoteErrorDescriptionKey] {

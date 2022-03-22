@@ -18,9 +18,9 @@ class ViewController: UIViewController {
 
     var codeVerifier: String = ""
 
-    var responseTypeCode: String? {
+    var responseCode: String? {
         didSet {
-            fetchSpotifyToken { (dictionary, error) in
+            fetchAccessToken { (dictionary, error) in
                 if let error = error {
                     print("Fetching token request error \(error)")
                     return
@@ -33,6 +33,7 @@ class ViewController: UIViewController {
             }
         }
     }
+
     lazy var appRemote: SPTAppRemote = {
         let appRemote = SPTAppRemote(configuration: configuration, logLevel: .debug)
         appRemote.connectionParameters.accessToken = self.accessToken
@@ -236,13 +237,7 @@ class ViewController: UIViewController {
 
     @objc func didTapConnect(_ button: UIButton) {
         guard let sessionManager = sessionManager else { return }
-        if #available(iOS 11, *) {
-            // Use this on iOS 11 and above to take advantage of SFAuthenticationSession
-            sessionManager.initiateSession(with: scopes, options: .clientOnly)
-        } else {
-            // Use this on iOS versions < 11 to use SFSafariViewController
-            sessionManager.initiateSession(with: scopes, options: .clientOnly, presenting: self)
-        }
+        sessionManager.initiateSession(with: scopes, options: .clientOnly)
     }
 
     // MARK: - Private Helpers
@@ -259,7 +254,7 @@ class ViewController: UIViewController {
     // MARK: POST Request
 
     // Fetch Spotify access token. Use after getting responseTypeCode
-    func fetchSpotifyToken(completion: @escaping ([String: Any]?, Error?) -> Void) {
+    func fetchAccessToken(completion: @escaping ([String: Any]?, Error?) -> Void) {
         let url = URL(string: "https://accounts.spotify.com/api/token")!
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
@@ -272,7 +267,7 @@ class ViewController: UIViewController {
             requestBodyComponents.queryItems = [
                 URLQueryItem(name: "client_id", value: spotifyClientId),
                 URLQueryItem(name: "grant_type", value: "authorization_code"),
-                URLQueryItem(name: "code", value: responseTypeCode!),
+                URLQueryItem(name: "code", value: responseCode!),
                 URLQueryItem(name: "redirect_uri", value: redirectUri.absoluteString),
                 URLQueryItem(name: "code_verifier", value: codeVerifier),
                 URLQueryItem(name: "scope", value: scopeAsString),
