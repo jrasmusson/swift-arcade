@@ -2,19 +2,12 @@
 //  ViewController.swift
 //  easyplay
 //
-//  Created by jrasmusson on 2022-03-22.
-//
-
-//
-//  ViewController.swift
-//  easyplay
-//
 //  Created by jrasmusson on 2022-03-21.
 //
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController2: UIViewController {
 
     var codeVerifier: String = ""
     var responseTypeCode: String? {
@@ -102,7 +95,6 @@ class ViewController: UIViewController {
 
     private lazy var pauseAndPlayButton: UIButton = {
         let button = UIButton()
-        button.backgroundColor = .systemRed
         button.addTarget(self, action: #selector(didTapPauseOrPlay), for: .touchUpInside)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.sizeToFit()
@@ -137,7 +129,7 @@ class ViewController: UIViewController {
 
     //MARK: Methods
     func setupViews() {
-        view.backgroundColor = .systemOrange
+        view.backgroundColor = UIColor.white
         view.addSubview(connectLabel)
         view.addSubview(connectButton)
         view.addSubview(disconnectButton)
@@ -295,7 +287,7 @@ class ViewController: UIViewController {
 }
 
 // MARK: - SPTAppRemoteDelegate
-extension ViewController: SPTAppRemoteDelegate {
+extension ViewController2: SPTAppRemoteDelegate {
     func appRemoteDidEstablishConnection(_ appRemote: SPTAppRemote) {
         updateViewBasedOnConnected()
         appRemote.playerAPI?.delegate = self
@@ -319,7 +311,7 @@ extension ViewController: SPTAppRemoteDelegate {
 }
 
 // MARK: - SPTAppRemotePlayerAPIDelegate
-extension ViewController: SPTAppRemotePlayerStateDelegate {
+extension ViewController2: SPTAppRemotePlayerStateDelegate {
     func playerStateDidChange(_ playerState: SPTAppRemotePlayerState) {
         debugPrint("Spotify Track name: %@", playerState.track.name)
         update(playerState: playerState)
@@ -327,7 +319,7 @@ extension ViewController: SPTAppRemotePlayerStateDelegate {
 }
 
 // MARK: - SPTSessionManagerDelegate
-extension ViewController: SPTSessionManagerDelegate {
+extension ViewController2: SPTSessionManagerDelegate {
     func sessionManager(manager: SPTSessionManager, didFailWith error: Error) {
         if error.localizedDescription == "The operation couldn’t be completed. (com.spotify.sdk.login error 1.)" {
             print("AUTHENTICATE with WEBAPI")

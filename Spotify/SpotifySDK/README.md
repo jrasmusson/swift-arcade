@@ -255,11 +255,81 @@ Next - let's build the app.
 
 Spotify has an [Authorization Guide](https://developer.spotify.com/documentation/general/guides/authorization/code-flow/) that walks you through the various ways you can securely configure your Spotify app.
 
-What your app really needs is a `refreshToken`. And while we could setup a web server to serve us one, we are instead going to rely on the Spotify app on our phones to authenticate who we are, and let it fetch the `refreshToken` for us.
+What your app really needs is a `refreshToken`. And while we could setup a web server doing `OAuth` to serve us one, we are instead going to rely on the Spotify app on our phones to authenticate who we are, and let it fetch the `refreshToken` for us.
 
-U R HERE
- 
+### Create a Constants file
 
+First let do a little clean up. Create a 
+
+ and create a `Constants.swift` file to hold our app client ID and secret.
+
+Create a `New Group without Folder` called `Files`.
+
+![](images/28.png)
+
+And stick everything in there except `SceneDelegate` and `ViewController`.
+
+![](images/29.png)
+
+Then create a `Constants.swift` file:
+
+![](images/30.png)
+
+ an copy the following into there:
+
+**Constants**
+
+```swift
+import Foundation
+
+let accessTokenKey = "access-token-key"
+let redirectUri = URL(string:"hellospotify1://")!
+let spotifyClientId = "yourClientId"
+let spotifyClientSecretKey = "yourSecretKey"
+
+/*
+Scopes let you specify exactly what types of data your application wants to
+access, and the set of scopes you pass in your call determines what access
+permissions the user is asked to grant.
+For more information, see https://developer.spotify.com/web-api/using-scopes/.
+*/
+let scopes: SPTScope = [
+                            .userReadEmail, .userReadPrivate,
+                            .userReadPlaybackState, .userModifyPlaybackState, .userReadCurrentlyPlaying,
+                            .streaming, .appRemoteControl,
+                            .playlistReadCollaborative, .playlistModifyPublic, .playlistReadPrivate, .playlistModifyPrivate,
+                            .userLibraryModify, .userLibraryRead,
+                            .userTopRead, .userReadPlaybackState, .userReadCurrentlyPlaying,
+                            .userFollowRead, .userFollowModify,
+                        ]
+let stringScopes = [
+                        "user-read-email", "user-read-private",
+                        "user-read-playback-state", "user-modify-playback-state", "user-read-currently-playing",
+                        "streaming", "app-remote-control",
+                        "playlist-read-collaborative", "playlist-modify-public", "playlist-read-private", "playlist-modify-private",
+                        "user-library-modify", "user-library-read",
+                        "user-top-read", "user-read-playback-position", "user-read-recently-played",
+                        "user-follow-read", "user-follow-modify",
+                    ]
+```
+
+Replace the placeholder text in `yourClientId` and your `yourSecretKey` with the ones for your developer app which you can find on your app's web page here.
+
+![](images/31.png)
+
+Your constant values should now look something like this:
+
+```swift
+let accessTokenKey = "access-token-key"
+let redirectUri = URL(string:"hellospotify1://")!
+let spotifyClientId = "5198668b9cfb4947a03598940c9b3a1c"
+let spotifyClientSecretKey = "6e89d449935341d49cce90baf1faa0ad"
+```
+
+
+
+
+### Fetch refresh token in SceneDelegate
 
 ### Links that help
 

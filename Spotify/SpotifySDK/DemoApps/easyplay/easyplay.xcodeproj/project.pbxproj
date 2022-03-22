@@ -9,19 +9,20 @@
 /* Begin PBXBuildFile section */
 		717D7D6627E89CC50002A849 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 717D7D6527E89CC50002A849 /* AppDelegate.swift */; };
 		717D7D6827E89CC50002A849 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 717D7D6727E89CC50002A849 /* SceneDelegate.swift */; };
-		717D7D6A27E89CC50002A849 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 717D7D6927E89CC50002A849 /* ViewController.swift */; };
+		717D7D6A27E89CC50002A849 /* ViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 717D7D6927E89CC50002A849 /* ViewController2.swift */; };
 		717D7D6D27E89CC50002A849 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 717D7D6B27E89CC50002A849 /* Main.storyboard */; };
 		717D7D6F27E89CC70002A849 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 717D7D6E27E89CC70002A849 /* Assets.xcassets */; };
 		717D7D7227E89CC70002A849 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 717D7D7027E89CC70002A849 /* LaunchScreen.storyboard */; };
 		717D7D7A27E89D090002A849 /* SpotifyiOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 717D7D7927E89D090002A849 /* SpotifyiOS.framework */; };
 		717D7D8027E89F3F0002A849 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 717D7D7F27E89F3F0002A849 /* Constants.swift */; };
+		71B2AFA527E9F956000BD785 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71B2AFA427E9F956000BD785 /* ViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		717D7D6227E89CC50002A849 /* easyplay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = easyplay.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		717D7D6527E89CC50002A849 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		717D7D6727E89CC50002A849 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		717D7D6927E89CC50002A849 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		717D7D6927E89CC50002A849 /* ViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController2.swift; sourceTree = "<group>"; };
 		717D7D6C27E89CC50002A849 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		717D7D6E27E89CC70002A849 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		717D7D7127E89CC70002A849 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -29,6 +30,7 @@
 		717D7D7927E89D090002A849 /* SpotifyiOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SpotifyiOS.framework; sourceTree = "<group>"; };
 		717D7D7C27E89E830002A849 /* easyplay-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "easyplay-Bridging-Header.h"; sourceTree = "<group>"; };
 		717D7D7F27E89F3F0002A849 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		71B2AFA427E9F956000BD785 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,12 +64,11 @@
 		717D7D6427E89CC50002A849 /* easyplay */ = {
 			isa = PBXGroup;
 			children = (
-				717D7D7F27E89F3F0002A849 /* Constants.swift */,
-				717D7D6927E89CC50002A849 /* ViewController.swift */,
-				717D7D6727E89CC50002A849 /* SceneDelegate.swift */,
 				717D7D7B27E89D110002A849 /* Files */,
-				717D7D7927E89D090002A849 /* SpotifyiOS.framework */,
-				717D7D7C27E89E830002A849 /* easyplay-Bridging-Header.h */,
+				717D7D7F27E89F3F0002A849 /* Constants.swift */,
+				717D7D6927E89CC50002A849 /* ViewController2.swift */,
+				71B2AFA427E9F956000BD785 /* ViewController.swift */,
+				717D7D6727E89CC50002A849 /* SceneDelegate.swift */,
 			);
 			path = easyplay;
 			sourceTree = "<group>";
@@ -75,6 +76,8 @@
 		717D7D7B27E89D110002A849 /* Files */ = {
 			isa = PBXGroup;
 			children = (
+				717D7D7927E89D090002A849 /* SpotifyiOS.framework */,
+				717D7D7C27E89E830002A849 /* easyplay-Bridging-Header.h */,
 				717D7D6527E89CC50002A849 /* AppDelegate.swift */,
 				717D7D6B27E89CC50002A849 /* Main.storyboard */,
 				717D7D6E27E89CC70002A849 /* Assets.xcassets */,
@@ -156,7 +159,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				717D7D6A27E89CC50002A849 /* ViewController.swift in Sources */,
+				71B2AFA527E9F956000BD785 /* ViewController.swift in Sources */,
+				717D7D6A27E89CC50002A849 /* ViewController2.swift in Sources */,
 				717D7D6627E89CC50002A849 /* AppDelegate.swift in Sources */,
 				717D7D6827E89CC50002A849 /* SceneDelegate.swift in Sources */,
 				717D7D8027E89F3F0002A849 /* Constants.swift in Sources */,

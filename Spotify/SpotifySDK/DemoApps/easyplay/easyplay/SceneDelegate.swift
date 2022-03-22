@@ -20,7 +20,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window!.rootViewController = rootViewController
     }
 
-    //for spotify authorization and authentication flow
+    // For spotify authorization and authentication flow
     func scene(_ scene: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>) {
         guard let url = URLContexts.first?.url else { return }
         let parameters = rootViewController.appRemote.authorizationParameters(from: url)
