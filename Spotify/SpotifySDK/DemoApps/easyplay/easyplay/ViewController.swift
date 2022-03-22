@@ -2,13 +2,6 @@
 //  ViewController.swift
 //  easyplay
 //
-//  Created by jrasmusson on 2022-03-22.
-//
-
-//
-//  ViewController.swift
-//  easyplay
-//
 //  Created by jrasmusson on 2022-03-21.
 //
 
@@ -16,11 +9,10 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    var codeVerifier: String = ""
-
+    // MARK: - Spotify Authorization & Configuration
     var responseCode: String? {
         didSet {
-            fetchAccessToken { (dictionary, error) in
+            fetchSpotifyAccessToken { (dictionary, error) in
                 if let error = error {
                     print("Fetching token request error \(error)")
                     return
@@ -68,102 +60,23 @@ class ViewController: UIViewController {
     private var lastPlayerState: SPTAppRemotePlayerState?
 
     // MARK: - Subviews
-
-    private lazy var connectLabel: UILabel = {
-        let label = UILabel()
-        label.text = "Connect your Spotify account"
-        label.font = UIFont.systemFont(ofSize: 20, weight: .bold)
-        label.textColor = UIColor(red:(29.0 / 255.0), green:(185.0 / 255.0), blue:(84.0 / 255.0), alpha:1.0)
-        label.translatesAutoresizingMaskIntoConstraints = false
-        return label
-    }()
-
-    private lazy var connectButton: UIButton = {
-        let button = UIButton()
-        button.backgroundColor = UIColor(red:(29.0 / 255.0), green:(185.0 / 255.0), blue:(84.0 / 255.0), alpha:1.0)
-        button.translatesAutoresizingMaskIntoConstraints = false
-        button.contentEdgeInsets = UIEdgeInsets(top: 11.75, left: 32.0, bottom: 11.75, right: 32.0)
-        button.layer.cornerRadius = 20.0
-        button.setTitle("Continue with Spotify", for: .normal)
-        button.titleLabel?.font = UIFont.systemFont(ofSize: 20, weight: .bold)
-        button.sizeToFit()
-        button.addTarget(self, action: #selector(didTapConnect(_:)), for: .touchUpInside)
-        return button
-    }()
-
-    private lazy var signOutButton: UIButton = {
-        let button = UIButton()
-        button.backgroundColor = UIColor(red:(29.0 / 255.0), green:(185.0 / 255.0), blue:(84.0 / 255.0), alpha:1.0)
-        button.translatesAutoresizingMaskIntoConstraints = false
-        button.contentEdgeInsets = UIEdgeInsets(top: 11.75, left: 32.0, bottom: 11.75, right: 32.0)
-        button.layer.cornerRadius = 20.0
-        button.setTitle("Sign out", for: .normal)
-        button.titleLabel?.font = UIFont.systemFont(ofSize: 20, weight: .bold)
-        button.sizeToFit()
-        button.addTarget(self, action: #selector(didTapSignOut(_:)), for: .touchUpInside)
-        return button
-    }()
-
-    private lazy var pauseAndPlayButton: UIButton = {
-        let button = UIButton()
-        button.addTarget(self, action: #selector(didTapPauseOrPlay), for: .touchUpInside)
-        button.translatesAutoresizingMaskIntoConstraints = false
-        button.sizeToFit()
-        return button
-    }()
-    private lazy var imageView: UIImageView = {
-        let imageView = UIImageView()
-        imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.contentMode = .scaleAspectFit
-        return imageView
-    }()
-    private lazy var trackLabel: UILabel = {
-        let trackLabel = UILabel()
-        trackLabel.translatesAutoresizingMaskIntoConstraints = false
-        trackLabel.textColor = .black
-        trackLabel.font = UIFont.systemFont(ofSize: 18, weight: .medium)
-        trackLabel.textAlignment = .center
-        return trackLabel
-    }()
+    let stackView = UIStackView()
+    let connectLabel = UILabel()
+    let connectButton = UIButton(type: .system)
+    let imageView = UIImageView()
+    let trackLabel = UILabel()
+    let pauseAndPlayButton = UIButton(type: .system)
+    let signOutButton = UIButton(type: .system)
 
     // MARK: App Life Cycle
-
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupViews()
+        style()
+        layout()
     }
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        updateViewBasedOnConnected()
-    }
-
-    // MARK: Methods
-    func setupViews() {
-        view.backgroundColor = .systemOrange
-        view.addSubview(connectLabel)
-        view.addSubview(connectButton)
-        view.addSubview(signOutButton)
-        view.addSubview(imageView)
-        view.addSubview(trackLabel)
-        view.addSubview(pauseAndPlayButton)
-        let constant: CGFloat = 16.0
-        connectButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        connectButton.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
-        signOutButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        signOutButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -50).isActive = true
-        connectLabel.centerXAnchor.constraint(equalTo: connectButton.centerXAnchor).isActive = true
-        connectLabel.bottomAnchor.constraint(equalTo: connectButton.topAnchor, constant: -constant).isActive = true
-        imageView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        imageView.topAnchor.constraint(equalTo: view.topAnchor, constant: 64).isActive = true
-        imageView.bottomAnchor.constraint(equalTo: trackLabel.topAnchor, constant: -constant).isActive = true
-        trackLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        trackLabel.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: constant).isActive = true
-        trackLabel.bottomAnchor.constraint(equalTo: connectLabel.topAnchor, constant: -constant).isActive = true
-        pauseAndPlayButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        pauseAndPlayButton.topAnchor.constraint(equalTo: trackLabel.bottomAnchor, constant: constant).isActive = true
-        pauseAndPlayButton.widthAnchor.constraint(equalToConstant: 50).isActive = true
-        pauseAndPlayButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
         updateViewBasedOnConnected()
     }
 
@@ -181,46 +94,7 @@ class ViewController: UIViewController {
         }
     }
 
-    func updateViewBasedOnConnected() {
-        if appRemote.isConnected == true {
-            connectButton.isHidden = true
-            signOutButton.isHidden = false
-            connectLabel.isHidden = true
-            imageView.isHidden = false
-            trackLabel.isHidden = false
-            pauseAndPlayButton.isHidden = false
-        } else { // show login
-            signOutButton.isHidden = true
-            connectButton.isHidden = false
-            connectLabel.isHidden = false
-            imageView.isHidden = true
-            trackLabel.isHidden = true
-            pauseAndPlayButton.isHidden = true
-        }
-    }
-
-    func fetchArtwork(for track: SPTAppRemoteTrack) {
-        appRemote.imageAPI?.fetchImage(forItem: track, with: CGSize.zero, callback: { [weak self] (image, error) in
-            if let error = error {
-                print("Error fetching track image: " + error.localizedDescription)
-            } else if let image = image as? UIImage {
-                self?.imageView.image = image
-            }
-        })
-    }
-
-    func fetchPlayerState() {
-        appRemote.playerAPI?.getPlayerState({ [weak self] (playerState, error) in
-            if let error = error {
-                print("Error getting player state:" + error.localizedDescription)
-            } else if let playerState = playerState as? SPTAppRemotePlayerState {
-                self?.update(playerState: playerState)
-            }
-        })
-    }
-
     // MARK: - Actions
-
     @objc func didTapPauseOrPlay(_ button: UIButton) {
         if let lastPlayerState = lastPlayerState, lastPlayerState.isPaused {
             appRemote.playerAPI?.resume(nil)
@@ -241,7 +115,6 @@ class ViewController: UIViewController {
     }
 
     // MARK: - Private Helpers
-
     private func presentAlertController(title: String, message: String, buttonTitle: String) {
         DispatchQueue.main.async {
             let controller = UIAlertController(title: title, message: message, preferredStyle: .alert)
@@ -251,43 +124,74 @@ class ViewController: UIViewController {
         }
     }
 
-    // MARK: POST Request
+}
 
-    // Fetch Spotify access token. Use after getting responseTypeCode
-    func fetchAccessToken(completion: @escaping ([String: Any]?, Error?) -> Void) {
-        let url = URL(string: "https://accounts.spotify.com/api/token")!
-        var request = URLRequest(url: url)
-        request.httpMethod = "POST"
-        let spotifyAuthKey = "Basic \((spotifyClientId + ":" + spotifyClientSecretKey).data(using: .utf8)!.base64EncodedString())"
-        request.allHTTPHeaderFields = ["Authorization": spotifyAuthKey,
-                                       "Content-Type": "application/x-www-form-urlencoded"]
-        do {
-            var requestBodyComponents = URLComponents()
-            let scopeAsString = stringScopes.joined(separator: " ") //put array to string separated by whitespace
-            requestBodyComponents.queryItems = [
-                URLQueryItem(name: "client_id", value: spotifyClientId),
-                URLQueryItem(name: "grant_type", value: "authorization_code"),
-                URLQueryItem(name: "code", value: responseCode!),
-                URLQueryItem(name: "redirect_uri", value: redirectUri.absoluteString),
-                URLQueryItem(name: "code_verifier", value: codeVerifier),
-                URLQueryItem(name: "scope", value: scopeAsString),
-            ]
-            request.httpBody = requestBodyComponents.query?.data(using: .utf8)
-            let task = URLSession.shared.dataTask(with: request) { data, response, error in
-                guard let data = data,                            // is there data
-                    let response = response as? HTTPURLResponse,  // is there HTTP response
-                    (200 ..< 300) ~= response.statusCode,         // is statusCode 2XX
-                    error == nil else {                           // was there no error, otherwise ...
-                        print("Error fetching token \(error?.localizedDescription ?? "")")
-                        return completion(nil, error)
-                }
-                let responseObject = try? JSONSerialization.jsonObject(with: data) as? [String: Any]
-                print("Access Token Dictionary=", responseObject ?? "")
-                completion(responseObject, nil)
-            }
-            task.resume()
-        } catch {
-            print("Error JSON serialization \(error.localizedDescription)")
+// MARK: Style & Layout
+extension ViewController {
+    func style() {
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        stackView.axis = .vertical
+        stackView.spacing = 20
+        stackView.alignment = .center
+
+        connectLabel.translatesAutoresizingMaskIntoConstraints = false
+        connectLabel.text = "Connect your Spotify account"
+        connectLabel.font = UIFont.preferredFont(forTextStyle: .title3)
+        connectLabel.textColor = .systemGreen
+
+        connectButton.translatesAutoresizingMaskIntoConstraints = false
+        connectButton.configuration = .filled()
+        connectButton.setTitle("Continue with Spotify", for: [])
+        connectButton.titleLabel?.font = UIFont.preferredFont(forTextStyle: .title3)
+        connectButton.addTarget(self, action: #selector(didTapConnect), for: .primaryActionTriggered)
+
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.contentMode = .scaleAspectFit
+
+        trackLabel.translatesAutoresizingMaskIntoConstraints = false
+        trackLabel.font = UIFont.preferredFont(forTextStyle: .body)
+        trackLabel.textAlignment = .center
+
+        pauseAndPlayButton.translatesAutoresizingMaskIntoConstraints = false
+        pauseAndPlayButton.addTarget(self, action: #selector(didTapPauseOrPlay), for: .primaryActionTriggered)
+
+        signOutButton.translatesAutoresizingMaskIntoConstraints = false
+        signOutButton.setTitle("Sign out", for: .normal)
+        signOutButton.titleLabel?.font = UIFont.systemFont(ofSize: 20, weight: .bold)
+        signOutButton.addTarget(self, action: #selector(didTapSignOut(_:)), for: .touchUpInside)
+    }
+
+    func layout() {
+        stackView.addArrangedSubview(connectLabel)
+        stackView.addArrangedSubview(connectButton)
+        stackView.addArrangedSubview(imageView)
+        stackView.addArrangedSubview(trackLabel)
+        stackView.addArrangedSubview(pauseAndPlayButton)
+        stackView.addArrangedSubview(signOutButton)
+
+        view.addSubview(stackView)
+
+        NSLayoutConstraint.activate([
+            stackView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            stackView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+        ])
+    }
+
+    func updateViewBasedOnConnected() {
+        if appRemote.isConnected == true {
+            connectButton.isHidden = true
+            signOutButton.isHidden = false
+            connectLabel.isHidden = true
+            imageView.isHidden = false
+            trackLabel.isHidden = false
+            pauseAndPlayButton.isHidden = false
+        } else { // show login
+            signOutButton.isHidden = true
+            connectButton.isHidden = false
+            connectLabel.isHidden = false
+            imageView.isHidden = true
+            trackLabel.isHidden = true
+            pauseAndPlayButton.isHidden = true
         }
     }
 }
