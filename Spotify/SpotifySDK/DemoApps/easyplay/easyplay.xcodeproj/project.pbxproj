@@ -16,8 +16,6 @@
 		717D7D7A27E89D090002A849 /* SpotifyiOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 717D7D7927E89D090002A849 /* SpotifyiOS.framework */; };
 		717D7D8027E89F3F0002A849 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 717D7D7F27E89F3F0002A849 /* Constants.swift */; };
 		71B2AFA527E9F956000BD785 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71B2AFA427E9F956000BD785 /* ViewController.swift */; };
-		71B2AFA727EA070C000BD785 /* ViewController+Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71B2AFA627EA070C000BD785 /* ViewController+Networking.swift */; };
-		71B2AFA927EA0B39000BD785 /* FooViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71B2AFA827EA0B39000BD785 /* FooViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,8 +31,6 @@
 		717D7D7C27E89E830002A849 /* easyplay-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "easyplay-Bridging-Header.h"; sourceTree = "<group>"; };
 		717D7D7F27E89F3F0002A849 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		71B2AFA427E9F956000BD785 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		71B2AFA627EA070C000BD785 /* ViewController+Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+Networking.swift"; sourceTree = "<group>"; };
-		71B2AFA827EA0B39000BD785 /* FooViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FooViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,8 +68,6 @@
 				717D7D6727E89CC50002A849 /* SceneDelegate.swift */,
 				717D7D7F27E89F3F0002A849 /* Constants.swift */,
 				71B2AFA427E9F956000BD785 /* ViewController.swift */,
-				71B2AFA627EA070C000BD785 /* ViewController+Networking.swift */,
-				71B2AFA827EA0B39000BD785 /* FooViewController.swift */,
 			);
 			path = easyplay;
 			sourceTree = "<group>";
@@ -165,12 +159,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				71B2AFA927EA0B39000BD785 /* FooViewController.swift in Sources */,
 				71B2AFA527E9F956000BD785 /* ViewController.swift in Sources */,
 				717D7D6A27E89CC50002A849 /* ViewController2.swift in Sources */,
 				717D7D6627E89CC50002A849 /* AppDelegate.swift in Sources */,
 				717D7D6827E89CC50002A849 /* SceneDelegate.swift in Sources */,
-				71B2AFA727EA070C000BD785 /* ViewController+Networking.swift in Sources */,
 				717D7D8027E89F3F0002A849 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
