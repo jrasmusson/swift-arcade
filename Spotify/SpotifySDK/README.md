@@ -722,12 +722,41 @@ With the remote connection established, the view controller can then register it
 
 Once it `fetchesPlayerState` it can update the artwork, set the play/pause button, and show what is currently playing.
 
-And that's basically it 🎉.
-
-
 ## Running on a physical device
 
-U R HERE
+Now we are ready to test things out. For that we needa physical device.
+
+Plug your iPhone into your laptop via an extension cable.
+
+Select your phone from the simulators. And hit run.
+
+![](images/35.png)
+
+First thing you'll see is a warning tell you that app couldn't be launched because it hasn't yet been trusted by the user.
+
+![](images/36.png)
+
+Your phone will also display a similar warning with instructions on how to fix in settings.
+
+Click OK to dismiss this warning in Xcode.
+
+Then head over to your phone and (at the time of this writing) go to:
+
+`Settings > General > VPN & Device Management`
+
+Click Trust on your `Developer App`.
+
+![](images/37.png)
+
+Then click on your account.
+
+![](images/38.png)
+
+Run the app again from Xcode, and your app should now load and be running.
+
+![](images/demo.gif)
+
+That's it 🎉.
 
 ### Links that help
 
