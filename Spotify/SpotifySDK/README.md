@@ -159,9 +159,8 @@ But in a nutshell we need to set the following our Developer App:
 And then set the following plist entries in our iOS application:
 
 - `URL Types`
-- `LSApplicationQuriesSchemes`
+- `LSApplicationQueriesSchemes `
 - `App Transport Security Settings`
-
 
 Let's start with the Developer app.
 
