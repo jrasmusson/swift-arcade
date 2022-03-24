@@ -21,7 +21,13 @@ At a high-level that looks like this:
 
 ![](images/0.png)
 
-Our app is going to have a Spotify library in it that will handle 
+Our app is going to have a Spotify library that will talk to the Spotify backend (and check that you have a valid developer app). As well as talk to the Spotify app already installed on your iPhone, and ensure you are authorized and handle login.
+
+When the app starts up, the Spotify library is going to call Spotify and secure an access token. This token is what let's your app talk to Spotify and get information about what you are currently playing.
+
+Once the access token is secured, your app can make queries. It can get the current player state, pause/play, and do a host of others things to basically remote control what's going on in Spotify and then reflect that in your app.
+
+So that's how it works at a high-level. Let's start by building the app.
 
 ## Register a Developer App
 
@@ -80,9 +86,9 @@ The Spotify SDK should now appear as a library in your app.
 
 ## Configure iOS app to work with Spotify
 
-Here are the following steps we need to perform to enable our Spotify iOS app to authenticate and work with Spotify
+Here's what we need to do in order to get the Spotify library to work with our app:
 
-- Add ObjC flag
+- Add `-ObjC` flag
 - Create bridge header
 - Setup info.plist
 
@@ -704,7 +710,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
 To make sense of this code we just copied and pasted, let's walk through the Spotify authorization process.
 
-![](images/32.png)
+![](images/32a.png)
 
 When the user taps the `Continue with Spotify` button the view controller instantiates a `SPTSessionManager` and passes it the configuration information it needs to connect to your app:
 
@@ -739,7 +745,21 @@ Select your phone from the simulators. And hit run.
 
 ![](images/35.png)
 
-First thing you'll see is a warning tell you that app couldn't be launched because it hasn't yet been trusted by the user.
+First thing you'll see is Xcode telling you you need to select a development team for your app.
+
+![](images/35-a.png)
+
+Click `Project`, `Signing & Capabilities` and then 
+
+![](images/35-b.png)
+
+That will then generate a signing certificate for your app and make this error message go away.
+
+![](images/35-c.png)
+
+Try running the app again.
+
+Second thing you'll see is a warning tell you that app couldn't be launched because it hasn't yet been trusted by the user.
 
 ![](images/36.png)
 
@@ -759,7 +779,21 @@ Then click on your account.
 
 ![](images/38.png)
 
-Run the app again from Xcode, and your app should now load and be running.
+Run the app again from Xcode and you should see the following flow of screens:
+
+First it will ask you for permission to open up your Spotify app:
+
+![](images/39.png)
+
+Then it will ask for app permission to use your Spotify account:
+
+![](images/40.png)
+
+Then after it authorizes you it will redirect back to your app, updating the view displaying whatever you were currently playing.
+
+![](images/41.png)
+
+Here it is in action.
 
 ![](images/demo.gif)
 
