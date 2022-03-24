@@ -7,6 +7,7 @@ Pre-requistes:
 - Spotify account
 - Spotify running on physical iOS device
 
+
 ## Overview
 
 To build a simple app that integrates with Spotify we need to:
@@ -15,6 +16,12 @@ To build a simple app that integrates with Spotify we need to:
 - Create a simple app
 - Configure to work with Spotify
 - Run on physical device
+
+At a high-level that looks like this:
+
+![](images/0.png)
+
+Our app is going to have a Spotify library in it that will handle 
 
 ## Register a Developer App
 

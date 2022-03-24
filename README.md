@@ -26,6 +26,7 @@ Collection of demos from the [Swift Arcade YouTube channel.](https://www.youtube
 
 - [Spotify Playlist](Spotify/SpotifyPlaylist/README.md)
 - [Spotify Album](Spotify/SpotifyAlbum/README.md)
+- [Spotify SDK](Spotify/SpotifySDK/README.md)
 
 ## Communication Patterns 🔈
 
