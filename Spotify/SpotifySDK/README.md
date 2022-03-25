@@ -410,7 +410,7 @@ class ViewController: UIViewController {
     let connectButton = UIButton(type: .system)
     let imageView = UIImageView()
     let trackLabel = UILabel()
-    let pauseAndPlayButton = UIButton(type: .system)
+    let playPauseButton = UIButton(type: .system)
     let signOutButton = UIButton(type: .system)
 
     // MARK: App Life Cycle
@@ -432,10 +432,11 @@ class ViewController: UIViewController {
         lastPlayerState = playerState
         trackLabel.text = playerState.track.name
 
+        let configuration = UIImage.SymbolConfiguration(pointSize: 50, weight: .bold, scale: .large)
         if playerState.isPaused {
-            pauseAndPlayButton.setImage(UIImage(systemName: "play"), for: .normal)
+            playPauseButton.setImage(UIImage(systemName: "play.circle.fill", withConfiguration: configuration), for: .normal)
         } else {
-            pauseAndPlayButton.setImage(UIImage(systemName: "pause"), for: .normal)
+            playPauseButton.setImage(UIImage(systemName: "pause.circle.fill", withConfiguration: configuration), for: .normal)
         }
     }
 
@@ -496,8 +497,8 @@ extension ViewController {
         trackLabel.font = UIFont.preferredFont(forTextStyle: .body)
         trackLabel.textAlignment = .center
 
-        pauseAndPlayButton.translatesAutoresizingMaskIntoConstraints = false
-        pauseAndPlayButton.addTarget(self, action: #selector(didTapPauseOrPlay), for: .primaryActionTriggered)
+        playPauseButton.translatesAutoresizingMaskIntoConstraints = false
+        playPauseButton.addTarget(self, action: #selector(didTapPauseOrPlay), for: .primaryActionTriggered)
 
         signOutButton.translatesAutoresizingMaskIntoConstraints = false
         signOutButton.setTitle("Sign out", for: .normal)
@@ -506,11 +507,12 @@ extension ViewController {
     }
 
     func layout() {
+
         stackView.addArrangedSubview(connectLabel)
         stackView.addArrangedSubview(connectButton)
         stackView.addArrangedSubview(imageView)
         stackView.addArrangedSubview(trackLabel)
-        stackView.addArrangedSubview(pauseAndPlayButton)
+        stackView.addArrangedSubview(playPauseButton)
         stackView.addArrangedSubview(signOutButton)
 
         view.addSubview(stackView)
@@ -528,14 +530,15 @@ extension ViewController {
             connectLabel.isHidden = true
             imageView.isHidden = false
             trackLabel.isHidden = false
-            pauseAndPlayButton.isHidden = false
-        } else { // show login
+            playPauseButton.isHidden = false
+        }
+        else { // show login
             signOutButton.isHidden = true
             connectButton.isHidden = false
             connectLabel.isHidden = false
             imageView.isHidden = true
             trackLabel.isHidden = true
-            pauseAndPlayButton.isHidden = true
+            playPauseButton.isHidden = true
         }
     }
 }
