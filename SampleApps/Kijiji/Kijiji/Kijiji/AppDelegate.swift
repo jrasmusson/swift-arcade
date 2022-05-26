@@ -17,7 +17,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.makeKeyAndVisible()
         window?.backgroundColor = .systemBackground
-        window?.rootViewController = ViewController()
+
+        let homeVC = HomeViewController()
+        let myVC = MyKijijiViewController()
+        let postVC = PostViewController()
+        let favVC = FavoritesViewController()
+        let messageVC = MessagesViewController()
+
+        let homeNC = UINavigationController(rootViewController: homeVC)
+        let myNC = UINavigationController(rootViewController: myVC)
+        let postNC = UINavigationController(rootViewController: postVC)
+        let favNC = UINavigationController(rootViewController: favVC)
+        let messageNC = UINavigationController(rootViewController: messageVC)
+
+        let tabBarController = UITabBarController()
+//        tabBarController.viewControllers = [homeNC, myNC, postNC, favNC, messageNC]
+        tabBarController.viewControllers = [ViewController()]
+
+        window?.rootViewController = tabBarController
 
         return true
     }

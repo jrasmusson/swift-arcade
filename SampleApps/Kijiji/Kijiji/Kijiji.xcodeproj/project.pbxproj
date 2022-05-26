@@ -11,6 +11,12 @@
 		714A1182283FB85F0097D86A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 714A1181283FB85F0097D86A /* ViewController.swift */; };
 		714A1187283FB8610097D86A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 714A1186283FB8610097D86A /* Assets.xcassets */; };
 		714A118A283FB8610097D86A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 714A1188283FB8610097D86A /* LaunchScreen.storyboard */; };
+		714A1193283FBB610097D86A /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 714A1192283FBB610097D86A /* HomeViewController.swift */; };
+		714A1195283FBB870097D86A /* MyKijijiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 714A1194283FBB870097D86A /* MyKijijiViewController.swift */; };
+		714A1197283FBB9B0097D86A /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 714A1196283FBB9B0097D86A /* PostViewController.swift */; };
+		714A1199283FBBA90097D86A /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 714A1198283FBBA90097D86A /* FavoritesViewController.swift */; };
+		714A119B283FBBB70097D86A /* MessagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 714A119A283FBBB70097D86A /* MessagesViewController.swift */; };
+		714A119D283FBF4F0097D86A /* UIViewController+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 714A119C283FBF4F0097D86A /* UIViewController+Ext.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +26,12 @@
 		714A1186283FB8610097D86A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		714A1189283FB8610097D86A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		714A118B283FB8610097D86A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		714A1192283FBB610097D86A /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		714A1194283FBB870097D86A /* MyKijijiViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyKijijiViewController.swift; sourceTree = "<group>"; };
+		714A1196283FBB9B0097D86A /* PostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
+		714A1198283FBBA90097D86A /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
+		714A119A283FBBB70097D86A /* MessagesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesViewController.swift; sourceTree = "<group>"; };
+		714A119C283FBF4F0097D86A /* UIViewController+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Ext.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,13 +64,27 @@
 		714A117C283FB85F0097D86A /* Kijiji */ = {
 			isa = PBXGroup;
 			children = (
+				714A1191283FBB2D0097D86A /* Files */,
 				714A117D283FB85F0097D86A /* AppDelegate.swift */,
 				714A1181283FB85F0097D86A /* ViewController.swift */,
+				714A1192283FBB610097D86A /* HomeViewController.swift */,
+				714A1194283FBB870097D86A /* MyKijijiViewController.swift */,
+				714A1196283FBB9B0097D86A /* PostViewController.swift */,
+				714A1198283FBBA90097D86A /* FavoritesViewController.swift */,
+				714A119A283FBBB70097D86A /* MessagesViewController.swift */,
+			);
+			path = Kijiji;
+			sourceTree = "<group>";
+		};
+		714A1191283FBB2D0097D86A /* Files */ = {
+			isa = PBXGroup;
+			children = (
 				714A1186283FB8610097D86A /* Assets.xcassets */,
 				714A1188283FB8610097D86A /* LaunchScreen.storyboard */,
 				714A118B283FB8610097D86A /* Info.plist */,
+				714A119C283FBF4F0097D86A /* UIViewController+Ext.swift */,
 			);
-			path = Kijiji;
+			name = Files;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -133,6 +159,12 @@
 			files = (
 				714A1182283FB85F0097D86A /* ViewController.swift in Sources */,
 				714A117E283FB85F0097D86A /* AppDelegate.swift in Sources */,
+				714A1195283FBB870097D86A /* MyKijijiViewController.swift in Sources */,
+				714A1193283FBB610097D86A /* HomeViewController.swift in Sources */,
+				714A1199283FBBA90097D86A /* FavoritesViewController.swift in Sources */,
+				714A1197283FBB9B0097D86A /* PostViewController.swift in Sources */,
+				714A119D283FBF4F0097D86A /* UIViewController+Ext.swift in Sources */,
+				714A119B283FBBB70097D86A /* MessagesViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
