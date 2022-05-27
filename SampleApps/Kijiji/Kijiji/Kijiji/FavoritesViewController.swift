@@ -12,6 +12,7 @@ class FavoritesViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemMint
+        setTabBarimage(imageName: "heart", title: "Favourites", tag: 3)
     }
 
 }

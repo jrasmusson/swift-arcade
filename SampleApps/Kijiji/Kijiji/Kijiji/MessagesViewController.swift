@@ -12,6 +12,7 @@ class MessagesViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemOrange
+        setTabBarimage(imageName: "message", title: "Messages", tag: 4)
     }
 
 }

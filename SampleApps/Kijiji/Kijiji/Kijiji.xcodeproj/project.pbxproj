@@ -72,6 +72,7 @@
 				714A1196283FBB9B0097D86A /* PostViewController.swift */,
 				714A1198283FBBA90097D86A /* FavoritesViewController.swift */,
 				714A119A283FBBB70097D86A /* MessagesViewController.swift */,
+				714A119C283FBF4F0097D86A /* UIViewController+Ext.swift */,
 			);
 			path = Kijiji;
 			sourceTree = "<group>";
@@ -82,7 +83,6 @@
 				714A1186283FB8610097D86A /* Assets.xcassets */,
 				714A1188283FB8610097D86A /* LaunchScreen.storyboard */,
 				714A118B283FB8610097D86A /* Info.plist */,
-				714A119C283FBF4F0097D86A /* UIViewController+Ext.swift */,
 			);
 			name = Files;
 			sourceTree = "<group>";

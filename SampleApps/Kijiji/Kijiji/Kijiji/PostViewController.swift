@@ -12,6 +12,7 @@ class PostViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemCyan
+        setTabBarimage(imageName: "camera", title: "Post", tag: 2)
     }
 
 }
