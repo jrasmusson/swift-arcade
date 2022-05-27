@@ -60,9 +60,9 @@
 			children = (
 				714A1191283FBB2D0097D86A /* Files */,
 				714A117D283FB85F0097D86A /* AppDelegate.swift */,
+				7165C29D28410B6700A00CF3 /* MainViewController.swift */,
 				714A1192283FBB610097D86A /* HomeViewController.swift */,
 				714A1194283FBB870097D86A /* MyKijijiViewController.swift */,
-				7165C29D28410B6700A00CF3 /* MainViewController.swift */,
 				7165C29F28410C3B00A00CF3 /* ViewController+Ext.swift */,
 			);
 			path = Kijiji;
