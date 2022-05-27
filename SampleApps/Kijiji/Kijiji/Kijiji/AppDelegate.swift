@@ -20,12 +20,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         let homeVC = HomeViewController()
         let myVC = MyKijijiViewController()
-        let postVC = PostViewController()
-        let favVC = FavoritesViewController()
-        let messageVC = MessagesViewController()
 
-        homeVC.setTabBarimage(imageName: "house", title: "Home", tag: 0)
-        myVC.setTabBarimage(imageName: "person", title: "My Kijiji", tag: 1)
+        homeVC.setTabBarItem(imageName: "house", title: "Home")
+        myVC.setTabBarItem(imageName: "person", title: "My Kijiji")
 
         let tabBarController = UITabBarController()
 
@@ -37,6 +34,4 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         return true
     }
-
 }
-
