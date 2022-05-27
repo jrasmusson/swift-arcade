@@ -12,7 +12,6 @@ class MyKijijiViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemRed
-//        setTabBarimage(imageName: "person", title: "My Kijiji", tag: 1)
     }
 
 }
