@@ -11,6 +11,7 @@ import UIKit
 class SearchBarView: UIView {
 
     let stackView = UIStackView()
+    let imageView = UIImageView()
     let textField = UITextField()
 
     override init(frame: CGRect) {
@@ -25,7 +26,7 @@ class SearchBarView: UIView {
     }
 
     override var intrinsicContentSize: CGSize {
-        return CGSize(width: UIView.noIntrinsicMetric, height: 50)
+        return CGSize(width: UIView.noIntrinsicMetric, height: 40)
     }
 }
 
@@ -33,19 +34,30 @@ extension SearchBarView {
 
     func style() {
         translatesAutoresizingMaskIntoConstraints = false
-        backgroundColor = .systemGreen
+        backgroundColor = .systemBackground
+        layer.borderWidth = 1
+        layer.borderColor = UIColor.secondarySystemFill.cgColor
 
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.axis = .horizontal
-        stackView.backgroundColor = .systemMint
+        stackView.spacing = 8
+        stackView.backgroundColor = .systemBackground
+
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        let image = UIImage(systemName: "magnifyingglass")
+        imageView.image = image
 
         textField.translatesAutoresizingMaskIntoConstraints = false
-        textField.backgroundColor = .systemRed
-        textField.borderStyle = .roundedRect
         textField.placeholder = "Search for anything..."
+
+        layer.cornerRadius = 5
+        clipsToBounds = true
     }
 
     func layout() {
+        imageView.setContentHuggingPriority(.defaultHigh, for: .horizontal)
+
+        stackView.addArrangedSubview(imageView)
         stackView.addArrangedSubview(textField)
 
         addSubview(stackView)

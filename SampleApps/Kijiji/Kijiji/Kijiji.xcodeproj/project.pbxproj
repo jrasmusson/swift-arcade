@@ -13,8 +13,9 @@
 		714A1193283FBB610097D86A /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 714A1192283FBB610097D86A /* HomeViewController.swift */; };
 		714A1195283FBB870097D86A /* MyKijijiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 714A1194283FBB870097D86A /* MyKijijiViewController.swift */; };
 		7165C29E28410B6700A00CF3 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7165C29D28410B6700A00CF3 /* MainViewController.swift */; };
-		7165C2A028410C3B00A00CF3 /* ViewController+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7165C29F28410C3B00A00CF3 /* ViewController+Ext.swift */; };
+		7165C2A028410C3B00A00CF3 /* UIViewController+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7165C29F28410C3B00A00CF3 /* UIViewController+Ext.swift */; };
 		7165C2A328424DBD00A00CF3 /* SearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7165C2A228424DBD00A00CF3 /* SearchBarView.swift */; };
+		7165C2A6284256DD00A00CF3 /* UITextField+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7165C2A5284256DD00A00CF3 /* UITextField+Ext.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,8 +27,9 @@
 		714A1192283FBB610097D86A /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		714A1194283FBB870097D86A /* MyKijijiViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyKijijiViewController.swift; sourceTree = "<group>"; };
 		7165C29D28410B6700A00CF3 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
-		7165C29F28410C3B00A00CF3 /* ViewController+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+Ext.swift"; sourceTree = "<group>"; };
+		7165C29F28410C3B00A00CF3 /* UIViewController+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Ext.swift"; sourceTree = "<group>"; };
 		7165C2A228424DBD00A00CF3 /* SearchBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarView.swift; sourceTree = "<group>"; };
+		7165C2A5284256DD00A00CF3 /* UITextField+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Ext.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,12 +62,12 @@
 		714A117C283FB85F0097D86A /* Kijiji */ = {
 			isa = PBXGroup;
 			children = (
-				714A1191283FBB2D0097D86A /* Files */,
 				714A117D283FB85F0097D86A /* AppDelegate.swift */,
 				7165C29D28410B6700A00CF3 /* MainViewController.swift */,
 				7165C2A128424D0300A00CF3 /* Home */,
 				714A1194283FBB870097D86A /* MyKijijiViewController.swift */,
-				7165C29F28410C3B00A00CF3 /* ViewController+Ext.swift */,
+				7165C2A4284256C000A00CF3 /* Utils */,
+				714A1191283FBB2D0097D86A /* Files */,
 			);
 			path = Kijiji;
 			sourceTree = "<group>";
@@ -87,6 +89,15 @@
 				7165C2A228424DBD00A00CF3 /* SearchBarView.swift */,
 			);
 			path = Home;
+			sourceTree = "<group>";
+		};
+		7165C2A4284256C000A00CF3 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				7165C29F28410C3B00A00CF3 /* UIViewController+Ext.swift */,
+				7165C2A5284256DD00A00CF3 /* UITextField+Ext.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -162,9 +173,10 @@
 				714A117E283FB85F0097D86A /* AppDelegate.swift in Sources */,
 				714A1195283FBB870097D86A /* MyKijijiViewController.swift in Sources */,
 				714A1193283FBB610097D86A /* HomeViewController.swift in Sources */,
+				7165C2A6284256DD00A00CF3 /* UITextField+Ext.swift in Sources */,
 				7165C29E28410B6700A00CF3 /* MainViewController.swift in Sources */,
 				7165C2A328424DBD00A00CF3 /* SearchBarView.swift in Sources */,
-				7165C2A028410C3B00A00CF3 /* ViewController+Ext.swift in Sources */,
+				7165C2A028410C3B00A00CF3 /* UIViewController+Ext.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

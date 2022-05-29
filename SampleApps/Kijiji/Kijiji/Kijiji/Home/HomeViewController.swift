@@ -29,8 +29,8 @@ extension HomeViewController {
 
         NSLayoutConstraint.activate([
             searchBarView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
-            searchBarView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            searchBarView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            searchBarView.leadingAnchor.constraint(equalToSystemSpacingAfter: view.leadingAnchor, multiplier: 1),
+            view.trailingAnchor.constraint(equalToSystemSpacingAfter: searchBarView.trailingAnchor, multiplier: 1)
         ])
     }
 }
