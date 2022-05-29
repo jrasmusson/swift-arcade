@@ -7,7 +7,7 @@
 
 import UIKit
 
-let appColor: UIColor = .systemGreen
+let appColor: UIColor = .systemIndigo
 
 extension UIViewController {
     func setStatusBar() {
@@ -22,5 +22,12 @@ extension UIViewController {
         let configuration = UIImage.SymbolConfiguration(scale: .large)
         let image = UIImage(systemName: imageName, withConfiguration: configuration)
         tabBarItem = UITabBarItem(title: title, image: image, tag: 0)
+    }
+}
+
+extension UIImageView {
+    func addImageWith(systemName: String, tintColor: UIColor) {
+        let image = UIImage(systemName: systemName)!.withTintColor(tintColor, renderingMode: .alwaysOriginal)
+        self.image = image
     }
 }

@@ -68,6 +68,30 @@ class MainViewController: UITabBarController {
 }
 ```
 
+**UIKit+Ext**
+
+```swift
+import UIKit
+
+let appColor: UIColor = .systemIndigo
+
+extension UIViewController {
+    func setStatusBar() {
+        let navBarAppearance = UINavigationBarAppearance()
+        navBarAppearance.configureWithTransparentBackground() // to hide Navigation Bar Line also
+        navBarAppearance.backgroundColor = appColor
+        UINavigationBar.appearance().standardAppearance = navBarAppearance
+        UINavigationBar.appearance().scrollEdgeAppearance = navBarAppearance
+    }
+
+    func setTabBarItem(imageName: String, title: String) {
+        let configuration = UIImage.SymbolConfiguration(scale: .large)
+        let image = UIImage(systemName: imageName, withConfiguration: configuration)
+        tabBarItem = UITabBarItem(title: title, image: image, tag: 0)
+    }
+}
+```
+
 ## SearchBar
 
 ![](images/1.png)
@@ -144,6 +168,17 @@ extension SearchBarView {
             stackView.leadingAnchor.constraint(equalToSystemSpacingAfter: leadingAnchor, multiplier: 1),
             trailingAnchor.constraint(equalToSystemSpacingAfter: stackView.trailingAnchor, multiplier: 1)
         ])
+    }
+}
+```
+
+**UIKit+Ext**
+
+```swift
+extension UIImageView {
+    func addImageWith(systemName: String, tintColor: UIColor) {
+        let image = UIImage(systemName: systemName)!.withTintColor(tintColor, renderingMode: .alwaysOriginal)
+        self.image = image
     }
 }
 ```

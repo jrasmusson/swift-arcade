@@ -13,9 +13,11 @@
 		714A1193283FBB610097D86A /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 714A1192283FBB610097D86A /* HomeViewController.swift */; };
 		714A1195283FBB870097D86A /* MyKijijiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 714A1194283FBB870097D86A /* MyKijijiViewController.swift */; };
 		7165C29E28410B6700A00CF3 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7165C29D28410B6700A00CF3 /* MainViewController.swift */; };
-		7165C2A028410C3B00A00CF3 /* UIViewController+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7165C29F28410C3B00A00CF3 /* UIViewController+Ext.swift */; };
+		7165C2A028410C3B00A00CF3 /* UIKit+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7165C29F28410C3B00A00CF3 /* UIKit+Ext.swift */; };
 		7165C2A328424DBD00A00CF3 /* SearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7165C2A228424DBD00A00CF3 /* SearchBarView.swift */; };
 		7165C2A82843A33300A00CF3 /* CategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7165C2A72843A33300A00CF3 /* CategoryView.swift */; };
+		7165C2AA2843A78C00A00CF3 /* CategoryItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7165C2A92843A78C00A00CF3 /* CategoryItemView.swift */; };
+		7165C2AC2843A85100A00CF3 /* PreviewExtentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7165C2AB2843A85100A00CF3 /* PreviewExtentions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,9 +29,11 @@
 		714A1192283FBB610097D86A /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		714A1194283FBB870097D86A /* MyKijijiViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyKijijiViewController.swift; sourceTree = "<group>"; };
 		7165C29D28410B6700A00CF3 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
-		7165C29F28410C3B00A00CF3 /* UIViewController+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Ext.swift"; sourceTree = "<group>"; };
+		7165C29F28410C3B00A00CF3 /* UIKit+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIKit+Ext.swift"; sourceTree = "<group>"; };
 		7165C2A228424DBD00A00CF3 /* SearchBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarView.swift; sourceTree = "<group>"; };
 		7165C2A72843A33300A00CF3 /* CategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryView.swift; sourceTree = "<group>"; };
+		7165C2A92843A78C00A00CF3 /* CategoryItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryItemView.swift; sourceTree = "<group>"; };
+		7165C2AB2843A85100A00CF3 /* PreviewExtentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewExtentions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +92,7 @@
 				714A1192283FBB610097D86A /* HomeViewController.swift */,
 				7165C2A228424DBD00A00CF3 /* SearchBarView.swift */,
 				7165C2A72843A33300A00CF3 /* CategoryView.swift */,
+				7165C2A92843A78C00A00CF3 /* CategoryItemView.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -95,7 +100,8 @@
 		7165C2A4284256C000A00CF3 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				7165C29F28410C3B00A00CF3 /* UIViewController+Ext.swift */,
+				7165C29F28410C3B00A00CF3 /* UIKit+Ext.swift */,
+				7165C2AB2843A85100A00CF3 /* PreviewExtentions.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -171,12 +177,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				714A117E283FB85F0097D86A /* AppDelegate.swift in Sources */,
+				7165C2AA2843A78C00A00CF3 /* CategoryItemView.swift in Sources */,
 				714A1195283FBB870097D86A /* MyKijijiViewController.swift in Sources */,
 				714A1193283FBB610097D86A /* HomeViewController.swift in Sources */,
 				7165C29E28410B6700A00CF3 /* MainViewController.swift in Sources */,
+				7165C2AC2843A85100A00CF3 /* PreviewExtentions.swift in Sources */,
 				7165C2A328424DBD00A00CF3 /* SearchBarView.swift in Sources */,
 				7165C2A82843A33300A00CF3 /* CategoryView.swift in Sources */,
-				7165C2A028410C3B00A00CF3 /* UIViewController+Ext.swift in Sources */,
+				7165C2A028410C3B00A00CF3 /* UIKit+Ext.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
