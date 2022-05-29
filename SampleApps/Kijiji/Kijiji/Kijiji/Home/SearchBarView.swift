@@ -44,7 +44,7 @@ extension SearchBarView {
         stackView.backgroundColor = .systemBackground
 
         imageView.translatesAutoresizingMaskIntoConstraints = false
-        let image = UIImage(systemName: "magnifyingglass")
+        let image = UIImage(systemName: "magnifyingglass")!.withTintColor(.tertiaryLabel, renderingMode: .alwaysOriginal)
         imageView.image = image
 
         textField.translatesAutoresizingMaskIntoConstraints = false

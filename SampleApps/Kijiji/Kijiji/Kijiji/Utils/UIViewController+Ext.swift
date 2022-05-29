@@ -7,7 +7,7 @@
 
 import UIKit
 
-let appColor: UIColor = .systemTeal
+let appColor: UIColor = .systemGreen
 
 extension UIViewController {
     func setStatusBar() {

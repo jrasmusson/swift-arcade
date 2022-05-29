@@ -25,12 +25,12 @@ extension HomeViewController {
     }
 
     func layout() {
-        view.addSubview(searchBarView)
-
-        NSLayoutConstraint.activate([
-            searchBarView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
-            searchBarView.leadingAnchor.constraint(equalToSystemSpacingAfter: view.leadingAnchor, multiplier: 1),
-            view.trailingAnchor.constraint(equalToSystemSpacingAfter: searchBarView.trailingAnchor, multiplier: 1)
-        ])
+//        view.addSubview(searchBarView)
+//
+//        NSLayoutConstraint.activate([
+//            searchBarView.topAnchor.constraint(equalToSystemSpacingBelow: view.safeAreaLayoutGuide.topAnchor, multiplier: 1),
+//            searchBarView.leadingAnchor.constraint(equalToSystemSpacingAfter: view.leadingAnchor, multiplier: 1),
+//            view.trailingAnchor.constraint(equalToSystemSpacingAfter: searchBarView.trailingAnchor, multiplier: 1)
+//        ])
     }
 }
