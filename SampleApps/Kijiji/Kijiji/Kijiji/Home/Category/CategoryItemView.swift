@@ -9,11 +9,8 @@ import UIKit
 import SwiftUI
 
 enum Constants {
-    static let itemWidth: CGFloat = 200
-    static let itemRatio: CGFloat = 0.6
-    static let imageWidth: CGFloat = 200
-    static let imageRatio: CGFloat = 0.6
-    static let circleWidth: CGFloat = 180
+    static let itemWidth: CGFloat = 100
+    static let itemRatio: CGFloat = 1.0
 }
 
 class CategoryItemView: UIView {
@@ -45,7 +42,7 @@ extension CategoryItemView {
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.axis = .vertical
         stackView.spacing = 4
-        stackView.backgroundColor = .orange
+//        stackView.backgroundColor = .orange
 
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.addImageWith(systemName: "dollarsign.circle", tintColor: appColor)
