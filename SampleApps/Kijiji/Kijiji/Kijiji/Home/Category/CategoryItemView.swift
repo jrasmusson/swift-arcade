@@ -13,6 +13,9 @@ class CategoryItemView: UIView {
     let stackView = UIStackView()
     let imageView = UIImageView()
 
+    let width: CGFloat = 200
+    let imageRatio: CGFloat = 0.6
+
     override init(frame: CGRect) {
         super.init(frame: frame)
 
@@ -25,7 +28,7 @@ class CategoryItemView: UIView {
     }
 
     override var intrinsicContentSize: CGSize {
-        return CGSize(width: 200, height: 200)
+        return CGSize(width: width, height: width)
     }
 }
 
@@ -36,15 +39,27 @@ extension CategoryItemView {
         backgroundColor = .systemRed
 
         stackView.translatesAutoresizingMaskIntoConstraints = false
+        stackView.axis = .vertical
+        stackView.spacing = 4
 
         imageView.translatesAutoresizingMaskIntoConstraints = false
-//        imageView.ima ge = UI
-        // U R HERE
-
+        imageView.addImageWith(systemName: "dollarsign.circle", tintColor: appColor)
     }
 
     func layout() {
+        stackView.addArrangedSubview(imageView)
 
+        addSubview(stackView)
+
+        NSLayoutConstraint.activate([
+            stackView.centerXAnchor.constraint(equalTo: centerXAnchor),
+            stackView.centerYAnchor.constraint(equalTo: centerYAnchor),
+        ])
+
+        NSLayoutConstraint.activate([
+            imageView.widthAnchor.constraint(equalToConstant: width * imageRatio),
+            imageView.heightAnchor.constraint(equalToConstant: width * imageRatio)
+        ])
     }
 }
 
