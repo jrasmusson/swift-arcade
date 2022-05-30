@@ -47,14 +47,10 @@ extension HomeViewController {
     }
 }
 
-@available(iOS 13.0, *)
 struct HomeViewController_Preview: PreviewProvider {
-  static var previews: some View {
-    ForEach(deviceNames, id: \.self) { deviceName in
-      UIViewControllerPreview {
-          HomeViewController()
-      }.previewDevice(PreviewDevice(rawValue: deviceName))
-        .previewDisplayName(deviceName)
+    static var previews: some View {
+        UIViewControllerPreview {
+            HomeViewController()
+        }
     }
-  }
 }

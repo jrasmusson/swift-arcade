@@ -184,3 +184,322 @@ extension UIImageView {
 ```
 
 ## CategoryView
+
+Started using SwiftUI previews for quicker iterations on design:
+
+**Preview+Ext**
+
+```swift
+//
+//  PreviewExtentions.swift
+//  Kijiji
+//
+//  Created by jrasmusson on 2022-05-29.
+//
+
+import UIKit
+import SwiftUI
+
+struct UIViewControllerPreview<ViewController: UIViewController>: UIViewControllerRepresentable {
+    let viewController: ViewController
+
+    init(_ builder: @escaping () -> ViewController) {
+        viewController = builder()
+    }
+
+    // MARK: - UIViewControllerRepresentable
+    func makeUIViewController(context: Context) -> ViewController {
+        viewController
+    }
+
+    func updateUIViewController(_ uiViewController: ViewController, context: UIViewControllerRepresentableContext<UIViewControllerPreview<ViewController>>) {
+        return
+    }
+}
+
+@available(iOS 13, *)
+public struct UIViewPreview<View: UIView>: UIViewRepresentable {
+    public let view: View
+
+    public init(_ builder: @escaping () -> View) {
+        view = builder()
+    }
+
+    // MARK: - UIViewRepresentable
+    public func makeUIView(context: Context) -> UIView {
+        return view
+    }
+
+    public func updateUIView(_ view: UIView, context: Context) {
+        view.setContentHuggingPriority(.defaultHigh, for: .horizontal)
+        view.setContentHuggingPriority(.defaultHigh, for: .vertical)
+    }
+}
+
+let deviceNames: [String] = [
+    "iPhone SE",
+    "iPhone 11 Pro Max",
+    "iPad Pro (11-inch)"
+]
+
+//struct ViewController_Preview: PreviewProvider {
+//  static var previews: some View {
+//    ForEach(deviceNames, id: \.self) { deviceName in
+//      UIViewControllerPreview {
+//        ViewController()
+//      }.previewDevice(PreviewDevice(rawValue: deviceName))
+//        .previewDisplayName(deviceName)
+//    }
+//  }
+//}
+
+//import SwiftUI
+//
+//struct SimpleView_Preview: PreviewProvider {
+//  static var previews: some View {
+//    UIViewPreview {
+//      let button = SimpleView()
+//      return button
+//    }.previewLayout(.sizeThatFits)
+//     .padding(10)
+//  }
+//}
+```
+
+Stack views always want to stretch. Layed this out manually:
+
+![](images/3.png)
+
+**CategoryItemView**
+
+```swift
+//
+//  CategoryItemView.swift
+//  Kijiji
+//
+//  Created by jrasmusson on 2022-05-29.
+//
+
+import UIKit
+import SwiftUI
+
+class CategoryItemView: UIView {
+
+    let imageView = UIImageView()
+    let label = UILabel()
+
+    let imageName: String
+    let text: String
+
+    let width: CGFloat = 40
+
+    init(imageName: String, text: String) {
+        self.imageName = imageName
+        self.text = text
+
+        super.init(frame: .zero)
+
+        style()
+        layout()
+    }
+
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+
+    override var intrinsicContentSize: CGSize {
+        return CGSize(width: width * 2, height: 60)
+    }
+}
+
+extension CategoryItemView {
+
+    func style() {
+        translatesAutoresizingMaskIntoConstraints = false
+
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.addImageWith(systemName: imageName, tintColor: appColor)
+
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.textAlignment = .center
+        label.font = UIFont.preferredFont(forTextStyle: .caption2).bold()
+        label.adjustsFontForContentSizeCategory = true
+        label.textColor = appColor
+        label.text = text
+    }
+
+    func layout() {
+        addSubview(imageView)
+        addSubview(label)
+
+        // imageView
+        NSLayoutConstraint.activate([
+            imageView.topAnchor.constraint(equalTo: topAnchor),
+            imageView.centerXAnchor.constraint(equalTo: centerXAnchor),
+            imageView.widthAnchor.constraint(equalToConstant: width),
+            imageView.heightAnchor.constraint(equalToConstant: width)
+        ])
+
+        // label
+        NSLayoutConstraint.activate([
+            label.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 4),
+            label.centerXAnchor.constraint(equalTo: centerXAnchor),
+            label.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 4),
+            trailingAnchor.constraint(equalTo: label.trailingAnchor, constant: 4)
+        ])
+    }
+}
+
+struct CategoryItemView_Preview: PreviewProvider {
+  static var previews: some View {
+    UIViewPreview {
+      let view = CategoryItemView(imageName: "dollarsign.circle", text: "Buy & Sell")
+      return view
+    }.previewLayout(.sizeThatFits)
+     .padding(10)
+  }
+}
+```
+
+![](images/4.png)
+
+**CategoryView**
+
+```swift
+//
+//  CategoryView.swift
+//  Kijiji
+//
+//  Created by jrasmusson on 2022-05-29.
+//
+
+import UIKit
+import SwiftUI
+
+class CategoryView: UIView {
+
+    let stackView = UIStackView()
+    let categories = [
+        CategoryItemView(imageName: "dollarsign.circle", text: "Buy & Sell"),
+        CategoryItemView(imageName: "car", text: "Autos"),
+        CategoryItemView(imageName: "house", text: "Real Estate"),
+        CategoryItemView(imageName: "briefcase", text: "Jobs"),
+    ]
+
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+
+        style()
+        layout()
+    }
+
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+
+    override var intrinsicContentSize: CGSize {
+        return CGSize(width: UIView.noIntrinsicMetric, height: 80)
+    }
+}
+
+extension CategoryView {
+
+    func style() {
+        translatesAutoresizingMaskIntoConstraints = false
+
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        stackView.axis = .horizontal
+        stackView.spacing = 4
+        stackView.distribution = .fillEqually
+        stackView.alignment = .center
+
+        categories.forEach { $0.translatesAutoresizingMaskIntoConstraints = false }
+    }
+
+    func layout() {
+        addSubview(stackView)
+
+        categories.forEach { stackView.addArrangedSubview($0) }
+
+        NSLayoutConstraint.activate([
+            stackView.topAnchor.constraint(equalTo: topAnchor),
+            stackView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            stackView.trailingAnchor.constraint(equalTo: trailingAnchor),
+            stackView.bottomAnchor.constraint(equalTo: bottomAnchor)
+        ])
+    }
+}
+
+struct CategorView_Preview: PreviewProvider {
+  static var previews: some View {
+    UIViewPreview {
+      let view = CategoryView()
+      return view
+    }.previewLayout(.sizeThatFits)
+     .padding(10)
+  }
+}
+```
+
+![](images/5.png)
+
+**HomeViewController**
+
+```swift
+//
+//  HomeViewController.swift
+//  Kijiji
+//
+//  Created by jrasmusson on 2022-05-26.
+//
+
+import UIKit
+import SwiftUI
+
+class HomeViewController: UIViewController {
+
+    let searchBarView = SearchBarView()
+    let categoryView = CategoryView()
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        style()
+        layout()
+    }
+}
+
+extension HomeViewController {
+
+    func style() {
+        searchBarView.translatesAutoresizingMaskIntoConstraints = false
+        categoryView.translatesAutoresizingMaskIntoConstraints = false
+    }
+
+    func layout() {
+        view.addSubview(searchBarView)
+        view.addSubview(categoryView)
+
+        // SearchBar
+        NSLayoutConstraint.activate([
+            searchBarView.topAnchor.constraint(equalToSystemSpacingBelow: view.safeAreaLayoutGuide.topAnchor, multiplier: 1),
+            searchBarView.leadingAnchor.constraint(equalToSystemSpacingAfter: view.leadingAnchor, multiplier: 1),
+            view.trailingAnchor.constraint(equalToSystemSpacingAfter: searchBarView.trailingAnchor, multiplier: 1)
+        ])
+
+        // CategoryView
+        NSLayoutConstraint.activate([
+            categoryView.topAnchor.constraint(equalToSystemSpacingBelow: searchBarView.bottomAnchor, multiplier: 1),
+            categoryView.leadingAnchor.constraint(equalToSystemSpacingAfter: view.leadingAnchor, multiplier: 1),
+            view.trailingAnchor.constraint(equalToSystemSpacingAfter: categoryView.trailingAnchor, multiplier: 1)
+        ])
+    }
+}
+
+struct HomeViewController_Preview: PreviewProvider {
+    static var previews: some View {
+        UIViewControllerPreview {
+            HomeViewController()
+        }
+    }
+}
+```
