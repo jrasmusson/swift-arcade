@@ -23,10 +23,7 @@ class HomeViewController: UIViewController {
 extension HomeViewController {
 
     func style() {
-        view.backgroundColor = .secondarySystemFill
-
         searchBarView.translatesAutoresizingMaskIntoConstraints = false
-
         categoryView.translatesAutoresizingMaskIntoConstraints = false
     }
 

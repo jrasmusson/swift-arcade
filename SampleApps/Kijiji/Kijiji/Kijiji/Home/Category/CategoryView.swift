@@ -38,7 +38,6 @@ extension CategoryView {
 
     func style() {
         translatesAutoresizingMaskIntoConstraints = false
-        backgroundColor = .systemOrange
 
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.axis = .horizontal
