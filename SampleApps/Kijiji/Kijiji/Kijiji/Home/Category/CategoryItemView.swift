@@ -17,7 +17,7 @@ class CategoryItemView: UIView {
     let imageName: String
     let text: String
 
-    let width: CGFloat = 100
+    let width: CGFloat = 40
 
     init(imageName: String, text: String) {
         self.imageName = imageName
@@ -52,7 +52,7 @@ extension CategoryItemView {
 
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .center
-        label.font = UIFont.preferredFont(forTextStyle: .subheadline).bold()
+        label.font = UIFont.preferredFont(forTextStyle: .caption2).bold()
         label.adjustsFontForContentSizeCategory = true
         label.textColor = appColor
         label.text = text
@@ -66,7 +66,9 @@ extension CategoryItemView {
 
         NSLayoutConstraint.activate([
             stackView.centerXAnchor.constraint(equalTo: centerXAnchor),
-            stackView.centerYAnchor.constraint(equalTo: centerYAnchor),
+//            stackView.centerYAnchor.constraint(equalTo: centerYAnchor),
+            stackView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            stackView.trailingAnchor.constraint(equalTo: trailingAnchor),
         ])
 
         NSLayoutConstraint.activate([
