@@ -8,40 +8,6 @@
 import UIKit
 import SwiftUI
 
-class CategoryCircle: UIView {
-
-    let width: CGFloat = 200
-    let scaleRatio: CGFloat = 0.6
-
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-    }
-
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-
-    override func draw(_ rect: CGRect) {
-
-        guard let context = UIGraphicsGetCurrentContext() else { return }
-
-        let rectangle1 = CGRect(x: 0, y: 0, width: width, height: width)
-
-        context.setFillColor(UIColor.systemBackground.cgColor)
-        context.addRect(rectangle1)
-        context.drawPath(using: .fillStroke)
-        context.fill(rectangle1)
-
-        let rectangle2 = CGRect(x: 0, y: 0, width: width, height: width).insetBy(dx: 10, dy: 10)
-
-        context.setFillColor(UIColor.systemGray4.cgColor)
-        context.setStrokeColor(UIColor.systemGray4.cgColor)
-        context.setLineWidth(10)
-        context.addEllipse(in: rectangle2)
-        context.drawPath(using: .fillStroke)
-    }
-}
-
 class CategoryImageView: UIView {
 
     let contentView = UIView()
@@ -60,7 +26,7 @@ class CategoryImageView: UIView {
     }
 
     override var intrinsicContentSize: CGSize {
-        return CGSize(width: Constants.width, height: Constants.width)
+        return CGSize(width: Constants.imageWidth, height: Constants.imageWidth)
     }
 }
 
@@ -93,15 +59,15 @@ extension CategoryImageView {
             imageView.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
             imageView.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
 
-            imageView.widthAnchor.constraint(equalToConstant: Constants.width * Constants.ratio),
-            imageView.heightAnchor.constraint(equalToConstant: Constants.width * Constants.ratio)
+            imageView.widthAnchor.constraint(equalToConstant: Constants.imageWidth * Constants.imageRatio),
+            imageView.heightAnchor.constraint(equalToConstant: Constants.imageWidth * Constants.imageRatio)
         ])
 
         NSLayoutConstraint.activate([
             circleView.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
             circleView.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
-            circleView.widthAnchor.constraint(equalToConstant: Constants.width),
-            circleView.heightAnchor.constraint(equalToConstant: Constants.width),
+            circleView.widthAnchor.constraint(equalToConstant: Constants.imageWidth),
+            circleView.heightAnchor.constraint(equalToConstant: Constants.imageWidth),
         ])
     }
 }

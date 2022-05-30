@@ -20,6 +20,7 @@
 		7165C2AC2843A85100A00CF3 /* PreviewExtentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7165C2AB2843A85100A00CF3 /* PreviewExtentions.swift */; };
 		7165C2B02844F18900A00CF3 /* CategoryImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7165C2AF2844F18900A00CF3 /* CategoryImageView.swift */; };
 		7165C2B22844F85200A00CF3 /* UIFont+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7165C2B12844F85200A00CF3 /* UIFont+Ext.swift */; };
+		7165C2B42844FDB100A00CF3 /* CategoryCircle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7165C2B32844FDB100A00CF3 /* CategoryCircle.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		7165C2AB2843A85100A00CF3 /* PreviewExtentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewExtentions.swift; sourceTree = "<group>"; };
 		7165C2AF2844F18900A00CF3 /* CategoryImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryImageView.swift; sourceTree = "<group>"; };
 		7165C2B12844F85200A00CF3 /* UIFont+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Ext.swift"; sourceTree = "<group>"; };
+		7165C2B32844FDB100A00CF3 /* CategoryCircle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCircle.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +118,7 @@
 				7165C2A72843A33300A00CF3 /* CategoryView.swift */,
 				7165C2A92843A78C00A00CF3 /* CategoryItemView.swift */,
 				7165C2AF2844F18900A00CF3 /* CategoryImageView.swift */,
+				7165C2B32844FDB100A00CF3 /* CategoryCircle.swift */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -197,6 +200,7 @@
 				714A1193283FBB610097D86A /* HomeViewController.swift in Sources */,
 				7165C29E28410B6700A00CF3 /* MainViewController.swift in Sources */,
 				7165C2AC2843A85100A00CF3 /* PreviewExtentions.swift in Sources */,
+				7165C2B42844FDB100A00CF3 /* CategoryCircle.swift in Sources */,
 				7165C2B02844F18900A00CF3 /* CategoryImageView.swift in Sources */,
 				7165C2A328424DBD00A00CF3 /* SearchBarView.swift in Sources */,
 				7165C2A82843A33300A00CF3 /* CategoryView.swift in Sources */,

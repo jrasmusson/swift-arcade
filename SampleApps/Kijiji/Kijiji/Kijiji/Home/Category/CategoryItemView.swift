@@ -9,8 +9,11 @@ import UIKit
 import SwiftUI
 
 enum Constants {
-    static let width: CGFloat = 200
-    static let ratio: CGFloat = 0.6
+    static let itemWidth: CGFloat = 200
+    static let itemRatio: CGFloat = 0.6
+    static let imageWidth: CGFloat = 200
+    static let imageRatio: CGFloat = 0.6
+    static let circleWidth: CGFloat = 180
 }
 
 class CategoryItemView: UIView {
@@ -30,7 +33,7 @@ class CategoryItemView: UIView {
     }
 
     override var intrinsicContentSize: CGSize {
-        return CGSize(width: Constants.width, height: Constants.width)
+        return CGSize(width: Constants.itemWidth, height: Constants.itemWidth)
     }
 }
 
@@ -66,8 +69,8 @@ extension CategoryItemView {
         ])
 
         NSLayoutConstraint.activate([
-            categortyImageView.widthAnchor.constraint(equalToConstant: Constants.width * Constants.ratio),
-            categortyImageView.heightAnchor.constraint(equalToConstant: Constants.width * Constants.ratio)
+            categortyImageView.widthAnchor.constraint(equalToConstant: Constants.itemWidth * Constants.itemRatio),
+            categortyImageView.heightAnchor.constraint(equalToConstant: Constants.itemWidth * Constants.itemRatio)
         ])
     }
 }
