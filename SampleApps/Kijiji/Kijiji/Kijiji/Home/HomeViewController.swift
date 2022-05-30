@@ -25,9 +25,6 @@ class HomeViewController: UIViewController {
         style()
         layout()
 
-        // CollectionView
-        navigationItem.title = "Two-Column Grid"
-        configureHierarchy()
         configureDataSource()
     }
 }
@@ -37,11 +34,19 @@ extension HomeViewController {
     func style() {
         searchBarView.translatesAutoresizingMaskIntoConstraints = false
         categoryView.translatesAutoresizingMaskIntoConstraints = false
+
+        collectionView = UICollectionView(frame: .zero,
+                                          collectionViewLayout: createLayout())
+        collectionView.translatesAutoresizingMaskIntoConstraints = false
+        collectionView.backgroundColor = .systemBackground
+        collectionView.register(TextCell.self,
+                                forCellWithReuseIdentifier: TextCell.reuseIdentifier)
     }
 
     func layout() {
         view.addSubview(searchBarView)
         view.addSubview(categoryView)
+        view.addSubview(collectionView)
 
         // SearchBar
         NSLayoutConstraint.activate([
@@ -55,6 +60,14 @@ extension HomeViewController {
             categoryView.topAnchor.constraint(equalToSystemSpacingBelow: searchBarView.bottomAnchor, multiplier: 1),
             categoryView.leadingAnchor.constraint(equalToSystemSpacingAfter: view.leadingAnchor, multiplier: 1),
             view.trailingAnchor.constraint(equalToSystemSpacingAfter: categoryView.trailingAnchor, multiplier: 1)
+        ])
+
+        // CollectionView
+        NSLayoutConstraint.activate([
+            collectionView.topAnchor.constraint(equalTo: categoryView.bottomAnchor),
+            collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            view.trailingAnchor.constraint(equalTo: collectionView.trailingAnchor),
+            collectionView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
         ])
     }
 }
@@ -94,22 +107,6 @@ extension HomeViewController {
 
         let layout = UICollectionViewCompositionalLayout(section: section)
         return layout
-    }
-
-    func configureHierarchy() {
-        collectionView = UICollectionView(frame: .zero, collectionViewLayout: createLayout())
-        collectionView.translatesAutoresizingMaskIntoConstraints = false
-
-        collectionView.backgroundColor = .systemBackground
-        collectionView.register(TextCell.self, forCellWithReuseIdentifier: TextCell.reuseIdentifier)
-        view.addSubview(collectionView)
-
-        NSLayoutConstraint.activate([
-            collectionView.topAnchor.constraint(equalTo: categoryView.bottomAnchor),
-            collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            view.trailingAnchor.constraint(equalTo: collectionView.trailingAnchor),
-            collectionView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
-        ])
     }
 
     func configureDataSource() {
