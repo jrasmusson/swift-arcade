@@ -19,7 +19,7 @@ enum Constants {
 class CategoryItemView: UIView {
 
     let stackView = UIStackView()
-    let categortyImageView = CategoryImageView()
+    let imageView = UIImageView()
     let label = UILabel()
 
     override init(frame: CGRect) {
@@ -47,7 +47,8 @@ extension CategoryItemView {
         stackView.spacing = 4
         stackView.backgroundColor = .orange
 
-        categortyImageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.addImageWith(systemName: "dollarsign.circle", tintColor: appColor)
 
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .center
@@ -58,7 +59,7 @@ extension CategoryItemView {
     }
 
     func layout() {
-        stackView.addArrangedSubview(categortyImageView)
+        stackView.addArrangedSubview(imageView)
         stackView.addArrangedSubview(label)
 
         addSubview(stackView)
@@ -69,8 +70,8 @@ extension CategoryItemView {
         ])
 
         NSLayoutConstraint.activate([
-            categortyImageView.widthAnchor.constraint(equalToConstant: Constants.itemWidth * Constants.itemRatio),
-            categortyImageView.heightAnchor.constraint(equalToConstant: Constants.itemWidth * Constants.itemRatio)
+            imageView.widthAnchor.constraint(equalToConstant: Constants.itemWidth * Constants.itemRatio),
+            imageView.heightAnchor.constraint(equalToConstant: Constants.itemWidth * Constants.itemRatio)
         ])
     }
 }
