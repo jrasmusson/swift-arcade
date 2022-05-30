@@ -8,17 +8,19 @@
 import UIKit
 import SwiftUI
 
+enum Constants {
+    static let width: CGFloat = 200
+    static let ratio: CGFloat = 0.6
+}
+
 class CategoryItemView: UIView {
 
     let stackView = UIStackView()
-    let imageView = UIImageView()
-
-    let width: CGFloat = 200
-    let imageRatio: CGFloat = 0.6
+    let categortyImageView = CategoryImageView()
+    let label = UILabel()
 
     override init(frame: CGRect) {
         super.init(frame: frame)
-
         style()
         layout()
     }
@@ -28,7 +30,7 @@ class CategoryItemView: UIView {
     }
 
     override var intrinsicContentSize: CGSize {
-        return CGSize(width: width, height: width)
+        return CGSize(width: Constants.width, height: Constants.width)
     }
 }
 
@@ -36,18 +38,25 @@ extension CategoryItemView {
 
     func style() {
         translatesAutoresizingMaskIntoConstraints = false
-//        backgroundColor = .systemRed
 
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.axis = .vertical
         stackView.spacing = 4
+        stackView.backgroundColor = .orange
 
-        imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.addImageWith(systemName: "dollarsign.circle", tintColor: appColor)
+        categortyImageView.translatesAutoresizingMaskIntoConstraints = false
+
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.textAlignment = .center
+        label.font = UIFont.preferredFont(forTextStyle: .subheadline).bold()
+        label.adjustsFontForContentSizeCategory = true
+        label.textColor = appColor
+        label.text = "Buy & Sell"
     }
 
     func layout() {
-        stackView.addArrangedSubview(imageView)
+        stackView.addArrangedSubview(categortyImageView)
+        stackView.addArrangedSubview(label)
 
         addSubview(stackView)
 
@@ -57,8 +66,8 @@ extension CategoryItemView {
         ])
 
         NSLayoutConstraint.activate([
-            imageView.widthAnchor.constraint(equalToConstant: width * imageRatio),
-            imageView.heightAnchor.constraint(equalToConstant: width * imageRatio)
+            categortyImageView.widthAnchor.constraint(equalToConstant: Constants.width * Constants.ratio),
+            categortyImageView.heightAnchor.constraint(equalToConstant: Constants.width * Constants.ratio)
         ])
     }
 }

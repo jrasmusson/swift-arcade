@@ -48,9 +48,6 @@ class CategoryImageView: UIView {
     let imageView = UIImageView()
     let circleView = CategoryCircle()
 
-    let width: CGFloat = 200
-    let imageRatio: CGFloat = 0.8
-
     override init(frame: CGRect) {
         super.init(frame: frame)
 
@@ -63,7 +60,7 @@ class CategoryImageView: UIView {
     }
 
     override var intrinsicContentSize: CGSize {
-        return CGSize(width: width, height: width)
+        return CGSize(width: Constants.width, height: Constants.width)
     }
 }
 
@@ -96,15 +93,15 @@ extension CategoryImageView {
             imageView.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
             imageView.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
 
-            imageView.widthAnchor.constraint(equalToConstant: width * imageRatio),
-            imageView.heightAnchor.constraint(equalToConstant: width * imageRatio)
+            imageView.widthAnchor.constraint(equalToConstant: Constants.width * Constants.ratio),
+            imageView.heightAnchor.constraint(equalToConstant: Constants.width * Constants.ratio)
         ])
 
         NSLayoutConstraint.activate([
             circleView.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
             circleView.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
-            circleView.widthAnchor.constraint(equalToConstant: width),
-            circleView.heightAnchor.constraint(equalToConstant: width),
+            circleView.widthAnchor.constraint(equalToConstant: Constants.width),
+            circleView.heightAnchor.constraint(equalToConstant: Constants.width),
         ])
     }
 }
