@@ -6,8 +6,6 @@
 //
 
 import UIKit
-
-#if canImport(SwiftUI) && DEBUG
 import SwiftUI
 
 struct UIViewControllerPreview<ViewController: UIViewController>: UIViewControllerRepresentable {
@@ -46,11 +44,6 @@ public struct UIViewPreview<View: UIView>: UIViewRepresentable {
     }
 }
 
-#endif
-
-#if canImport(SwiftUI) && DEBUG
-import SwiftUI
-
 let deviceNames: [String] = [
     "iPhone SE",
     "iPhone 11 Pro Max",
@@ -68,9 +61,7 @@ let deviceNames: [String] = [
 //    }
 //  }
 //}
-#endif
 
-#if canImport(SwiftUI) && DEBUG
 //import SwiftUI
 //
 //@available(iOS 13.0, *)
@@ -83,4 +74,3 @@ let deviceNames: [String] = [
 //     .padding(10)
 //  }
 //}
-#endif

@@ -182,3 +182,5 @@ extension UIImageView {
     }
 }
 ```
+
+## CategoryView
