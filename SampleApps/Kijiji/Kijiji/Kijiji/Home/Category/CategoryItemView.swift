@@ -10,7 +10,6 @@ import SwiftUI
 
 class CategoryItemView: UIView {
 
-    let stackView = UIStackView()
     let imageView = UIImageView()
     let label = UILabel()
 
@@ -34,7 +33,7 @@ class CategoryItemView: UIView {
     }
 
     override var intrinsicContentSize: CGSize {
-        return CGSize(width: width, height: width)
+        return CGSize(width: width * 2, height: 60)
     }
 }
 
@@ -42,10 +41,6 @@ extension CategoryItemView {
 
     func style() {
         translatesAutoresizingMaskIntoConstraints = false
-
-        stackView.translatesAutoresizingMaskIntoConstraints = false
-        stackView.axis = .vertical
-        stackView.spacing = 4
 
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.addImageWith(systemName: imageName, tintColor: appColor)
@@ -59,19 +54,23 @@ extension CategoryItemView {
     }
 
     func layout() {
-        stackView.addArrangedSubview(imageView)
-        stackView.addArrangedSubview(label)
+        addSubview(imageView)
+        addSubview(label)
 
-        addSubview(stackView)
-
+        // imageView
         NSLayoutConstraint.activate([
-            stackView.centerXAnchor.constraint(equalTo: centerXAnchor),
-            stackView.leadingAnchor.constraint(equalTo: leadingAnchor),
-        ])
-
-        NSLayoutConstraint.activate([
+            imageView.topAnchor.constraint(equalTo: topAnchor),
+            imageView.centerXAnchor.constraint(equalTo: centerXAnchor),
             imageView.widthAnchor.constraint(equalToConstant: width),
             imageView.heightAnchor.constraint(equalToConstant: width)
+        ])
+
+        // label
+        NSLayoutConstraint.activate([
+            label.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 4),
+            label.centerXAnchor.constraint(equalTo: centerXAnchor),
+            label.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 4),
+            trailingAnchor.constraint(equalTo: label.trailingAnchor, constant: 4)
         ])
     }
 }

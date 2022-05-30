@@ -13,10 +13,9 @@ class CategoryView: UIView {
     let stackView = UIStackView()
     let categories = [
         CategoryItemView(imageName: "dollarsign.circle", text: "Buy & Sell"),
-//        CategoryItemView(imageName: "car", text: "Autos"),
-//        CategoryItemView(imageName: "house", text: "Real Estate"),
-//        CategoryItemView(imageName: "briefcase", text: "Jobs"),
-//        CategoryItemView(imageName: "person.3.sequence", text: "Categories"),
+        CategoryItemView(imageName: "car", text: "Autos"),
+        CategoryItemView(imageName: "house", text: "Real Estate"),
+        CategoryItemView(imageName: "briefcase", text: "Jobs"),
     ]
 
     override init(frame: CGRect) {
@@ -31,7 +30,7 @@ class CategoryView: UIView {
     }
 
     override var intrinsicContentSize: CGSize {
-        return CGSize(width: UIView.noIntrinsicMetric, height: 100)
+        return CGSize(width: UIView.noIntrinsicMetric, height: 80)
     }
 }
 
