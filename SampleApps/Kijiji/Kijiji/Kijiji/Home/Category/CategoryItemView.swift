@@ -8,19 +8,23 @@
 import UIKit
 import SwiftUI
 
-enum Constants {
-    static let itemWidth: CGFloat = 100
-    static let itemRatio: CGFloat = 1.0
-}
-
 class CategoryItemView: UIView {
 
     let stackView = UIStackView()
     let imageView = UIImageView()
     let label = UILabel()
 
-    override init(frame: CGRect) {
-        super.init(frame: frame)
+    let imageName: String
+    let text: String
+
+    let width: CGFloat = 100
+
+    init(imageName: String, text: String) {
+        self.imageName = imageName
+        self.text = text
+
+        super.init(frame: .zero)
+
         style()
         layout()
     }
@@ -30,7 +34,7 @@ class CategoryItemView: UIView {
     }
 
     override var intrinsicContentSize: CGSize {
-        return CGSize(width: Constants.itemWidth, height: Constants.itemWidth)
+        return CGSize(width: width, height: width)
     }
 }
 
@@ -42,17 +46,16 @@ extension CategoryItemView {
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.axis = .vertical
         stackView.spacing = 4
-//        stackView.backgroundColor = .orange
 
         imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.addImageWith(systemName: "dollarsign.circle", tintColor: appColor)
+        imageView.addImageWith(systemName: imageName, tintColor: appColor)
 
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .center
         label.font = UIFont.preferredFont(forTextStyle: .subheadline).bold()
         label.adjustsFontForContentSizeCategory = true
         label.textColor = appColor
-        label.text = "Buy & Sell"
+        label.text = text
     }
 
     func layout() {
@@ -67,8 +70,8 @@ extension CategoryItemView {
         ])
 
         NSLayoutConstraint.activate([
-            imageView.widthAnchor.constraint(equalToConstant: Constants.itemWidth * Constants.itemRatio),
-            imageView.heightAnchor.constraint(equalToConstant: Constants.itemWidth * Constants.itemRatio)
+            imageView.widthAnchor.constraint(equalToConstant: width),
+            imageView.heightAnchor.constraint(equalToConstant: width)
         ])
     }
 }
@@ -77,7 +80,7 @@ extension CategoryItemView {
 struct CategoryItemView_Preview: PreviewProvider {
   static var previews: some View {
     UIViewPreview {
-      let view = CategoryItemView()
+      let view = CategoryItemView(imageName: "dollarsign.circle", text: "Buy & Sell")
       return view
     }.previewLayout(.sizeThatFits)
      .padding(10)
