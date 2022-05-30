@@ -36,7 +36,7 @@ extension CategoryItemView {
 
     func style() {
         translatesAutoresizingMaskIntoConstraints = false
-        backgroundColor = .systemRed
+//        backgroundColor = .systemRed
 
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.axis = .vertical
