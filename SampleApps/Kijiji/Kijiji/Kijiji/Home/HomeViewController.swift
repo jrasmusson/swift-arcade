@@ -10,22 +10,18 @@ import SwiftUI
 
 class HomeViewController: UIViewController {
 
-    let searchBarView = SearchBarView()
-    let categoryView = CategoryView()
-
     enum Section {
         case main
     }
 
-    var dataSource: UICollectionViewDiffableDataSource<Section, Int>! = nil
+    let searchBarView = SearchBarView()
+    let categoryView = CategoryView()
     var collectionView: UICollectionView! = nil
 
     override func viewDidLoad() {
         super.viewDidLoad()
         style()
         layout()
-
-        configureDataSource()
     }
 }
 
@@ -35,12 +31,12 @@ extension HomeViewController {
         searchBarView.translatesAutoresizingMaskIntoConstraints = false
         categoryView.translatesAutoresizingMaskIntoConstraints = false
 
-        collectionView = UICollectionView(frame: .zero,
-                                          collectionViewLayout: createLayout())
+        collectionView = UICollectionView(frame: .zero, collectionViewLayout: createLayout())
         collectionView.translatesAutoresizingMaskIntoConstraints = false
+        collectionView.dataSource = self
+        collectionView.delegate = self
         collectionView.backgroundColor = .systemBackground
-        collectionView.register(TextCell.self,
-                                forCellWithReuseIdentifier: TextCell.reuseIdentifier)
+        collectionView.register(TextCell.self, forCellWithReuseIdentifier: TextCell.reuseIdentifier)
     }
 
     func layout() {
@@ -108,35 +104,35 @@ extension HomeViewController {
         let layout = UICollectionViewCompositionalLayout(section: section)
         return layout
     }
+}
 
-    func configureDataSource() {
-        dataSource = UICollectionViewDiffableDataSource<Section, Int>(collectionView: collectionView) {
-            (collectionView: UICollectionView, indexPath: IndexPath, identifier: Int) -> UICollectionViewCell? in
+extension HomeViewController: UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 20
+    }
 
-            // Get a cell of the desired kind.
-            guard let cell = collectionView.dequeueReusableCell(
-                withReuseIdentifier: TextCell.reuseIdentifier,
-                for: indexPath) as? TextCell else { fatalError("Cannot create new cell") }
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCell(
+            withReuseIdentifier: TextCell.reuseIdentifier,
+            for: indexPath) as? TextCell else { fatalError("Could not create new cell") }
 
-            // Populate the cell with our item description.
-            cell.label.text = "\(identifier)"
-            cell.contentView.backgroundColor = .systemBlue
-            cell.layer.borderColor = UIColor.black.cgColor
-            cell.layer.borderWidth = 1
-            cell.label.textAlignment = .center
-            cell.label.font = UIFont.preferredFont(forTextStyle: .title1)
+        cell.label.text = "\(indexPath.row)"
+        cell.contentView.backgroundColor = .systemBlue
+        cell.layer.borderColor = UIColor.black.cgColor
+        cell.layer.borderWidth = 1
+        cell.label.textAlignment = .center
+        cell.label.font = UIFont.preferredFont(forTextStyle: .title1)
 
-            // Return the cell.
-            return cell
-        }
-
-        // initial data
-        var snapshot = NSDiffableDataSourceSnapshot<Section, Int>()
-        snapshot.appendSections([.main])
-        snapshot.appendItems(Array(0..<20))
-        dataSource.apply(snapshot, animatingDifferences: false)
+        return cell
     }
 }
+
+extension HomeViewController: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        print(indexPath.row)
+    }
+}
+
 
 class TextCell: UICollectionViewCell {
     let label = UILabel()
@@ -149,7 +145,6 @@ class TextCell: UICollectionViewCell {
     required init?(coder: NSCoder) {
         fatalError("not implemnted")
     }
-
 }
 
 extension TextCell {
@@ -164,6 +159,6 @@ extension TextCell {
             label.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -inset),
             label.topAnchor.constraint(equalTo: contentView.topAnchor, constant: inset),
             label.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -inset)
-            ])
+        ])
     }
 }
