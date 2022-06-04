@@ -28,12 +28,12 @@ class HomeViewController: UIViewController {
     let searchBarHeight = 40.0
     let categoryHeight = 80.0
 
-    // no snap
-    let categoryHeightNoSnap = 40.0 + 8.0
+    // snap height
+    let categoryAdjustmentNoSnap = 40.0 + 8.0
+    let categoryAdjustmentWithSnap = 0.0
 
-
-    // with snap
-    let categoryHeightWithSnap = 0.0
+    let collectionAdjustmentNoSnap = 40.0 + 8.0 + 80 + 8
+    let collectionAdjustmentWithSnap = 40.0 + 8.0
 
     var categoryTopConstraint: NSLayoutConstraint?
     var collectionTopConstraint: NSLayoutConstraint?
@@ -67,7 +67,8 @@ extension HomeViewController {
         ])
 
         // CategoryView
-        categoryTopConstraint = categoryView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: categoryHeightNoSnap)
+        categoryTopConstraint = categoryView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor,
+                                                                  constant: categoryAdjustmentNoSnap)
 
         NSLayoutConstraint.activate([
             categoryTopConstraint!,
@@ -76,8 +77,8 @@ extension HomeViewController {
         ])
 
         // CollectionView
-        let collectionHeightAdjustment = categoryHeightNoSnap + categoryHeight
-        collectionTopConstraint = collectionView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: collectionHeightAdjustment)
+        collectionTopConstraint = collectionView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor,
+                                                                      constant: collectionAdjustmentNoSnap)
 
         NSLayoutConstraint.activate([
             collectionTopConstraint!,
@@ -99,13 +100,11 @@ extension HomeViewController: UICollectionViewDelegate {
         let y = scrollView.contentOffset.y
         print(y)
 
-        // if > 30 snap up
-        // if < -30 snap down
-
         let shouldSnap = y > 30
 
         UIViewPropertyAnimator.runningPropertyAnimator(withDuration: 0.3, delay: 0, options: [], animations: {
-            self.categoryTopConstraint?.constant = shouldSnap ? -self.categoryHeightWithSnap : self.categoryHeightNoSnap
+            self.categoryTopConstraint?.constant = shouldSnap ? self.categoryAdjustmentWithSnap : self.categoryAdjustmentNoSnap
+            self.collectionTopConstraint?.constant = shouldSnap ? self.collectionAdjustmentWithSnap : self.collectionAdjustmentNoSnap
             self.view.layoutIfNeeded()
         })
     }
