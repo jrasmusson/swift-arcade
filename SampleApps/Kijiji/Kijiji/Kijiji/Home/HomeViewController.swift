@@ -14,21 +14,29 @@ class HomeViewController: UIViewController {
         case main
     }
 
-    let searchBarHeight = 40.0
-    let categoryHeight = 80.0
-
     let searchBarView = SearchBarView()
     let categoryView = CategoryView()
     var collectionView: UICollectionView! = nil
-
-    var categoryTopConstraint: NSLayoutConstraint?
-    var collectionTopConstraint: NSLayoutConstraint?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         style()
         layout()
     }
+
+    // heights
+    let searchBarHeight = 40.0
+    let categoryHeight = 80.0
+
+    // no snap
+    let categoryHeightNoSnap = 40.0 + 8.0
+
+
+    // with snap
+    let categoryHeightWithSnap = 0.0
+
+    var categoryTopConstraint: NSLayoutConstraint?
+    var collectionTopConstraint: NSLayoutConstraint?
 }
 
 // MARK: - Style and Layout
@@ -59,18 +67,20 @@ extension HomeViewController {
         ])
 
         // CategoryView
+        categoryTopConstraint = categoryView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: categoryHeightNoSnap)
 
-        categoryTopConstraint = categoryView.topAnchor.constraint(equalTo: searchBarView.bottomAnchor, constant: 8)
         NSLayoutConstraint.activate([
             categoryTopConstraint!,
-//            categoryView.topAnchor.constraint(equalToSystemSpacingBelow: searchBarView.bottomAnchor, multiplier: 1),
             categoryView.leadingAnchor.constraint(equalToSystemSpacingAfter: view.leadingAnchor, multiplier: 1),
             view.trailingAnchor.constraint(equalToSystemSpacingAfter: categoryView.trailingAnchor, multiplier: 1)
         ])
 
         // CollectionView
+        let collectionHeightAdjustment = categoryHeightNoSnap + categoryHeight
+        collectionTopConstraint = collectionView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: collectionHeightAdjustment)
+
         NSLayoutConstraint.activate([
-            collectionView.topAnchor.constraint(equalTo: categoryView.bottomAnchor),
+            collectionTopConstraint!,
             collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             view.trailingAnchor.constraint(equalTo: collectionView.trailingAnchor),
             collectionView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
@@ -93,11 +103,9 @@ extension HomeViewController: UICollectionViewDelegate {
         // if < -30 snap down
 
         let shouldSnap = y > 30
-        let categoryHeight = categoryView.frame.height
-        let searchHeight = searchBarView.frame.height
 
         UIViewPropertyAnimator.runningPropertyAnimator(withDuration: 0.3, delay: 0, options: [], animations: {
-            self.categoryTopConstraint?.constant = shouldSnap ? -categoryHeight : 0
+            self.categoryTopConstraint?.constant = shouldSnap ? -self.categoryHeightWithSnap : self.categoryHeightNoSnap
             self.view.layoutIfNeeded()
         })
     }
@@ -128,7 +136,7 @@ extension HomeViewController {
 // MARK: - UICollectionViewDataSource
 extension HomeViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 20
+        return 40
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
