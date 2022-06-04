@@ -28,7 +28,7 @@ class HomeViewController: UIViewController {
     let searchBarHeight = 40.0
     let categoryHeight = 80.0
 
-    // snap height
+    // snap heights
     let categoryAdjustmentNoSnap = 40.0 + 8.0
     let categoryAdjustmentWithSnap = 0.0
 
@@ -100,11 +100,11 @@ extension HomeViewController: UICollectionViewDelegate {
         let y = scrollView.contentOffset.y
         print(y)
 
-        let swipingDown = y <= 0
-        let shouldSnap = y > 30
+        let swipingUp = y > 0
+        let shouldSnap = y > 20
 
         UIViewPropertyAnimator.runningPropertyAnimator(withDuration: 0.3, delay: 0, options: [], animations: {
-            self.categoryView.alpha = swipingDown ? 1.0 : 0.0
+            self.categoryView.alpha = swipingUp ? 0.0 : 1.0
 
             self.categoryTopConstraint?.constant = shouldSnap ? self.categoryAdjustmentWithSnap : self.categoryAdjustmentNoSnap
             self.collectionTopConstraint?.constant = shouldSnap ? self.collectionAdjustmentWithSnap : self.collectionAdjustmentNoSnap
