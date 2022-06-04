@@ -149,7 +149,6 @@ extension HomeViewController: UIScrollViewDelegate {
             self.view.layoutIfNeeded()
         })
     }
-    
 }
 
 // MARK: HomeHeaderViewDelegate

@@ -14,9 +14,15 @@ class HomeViewController: UIViewController {
         case main
     }
 
+    let searchBarHeight = 40.0
+    let categoryHeight = 80.0
+
     let searchBarView = SearchBarView()
     let categoryView = CategoryView()
     var collectionView: UICollectionView! = nil
+
+    var categoryTopConstraint: NSLayoutConstraint?
+    var collectionTopConstraint: NSLayoutConstraint?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,6 +31,7 @@ class HomeViewController: UIViewController {
     }
 }
 
+// MARK: - Style and Layout
 extension HomeViewController {
 
     func style() {
@@ -52,8 +59,11 @@ extension HomeViewController {
         ])
 
         // CategoryView
+
+        categoryTopConstraint = categoryView.topAnchor.constraint(equalTo: searchBarView.bottomAnchor, constant: 8)
         NSLayoutConstraint.activate([
-            categoryView.topAnchor.constraint(equalToSystemSpacingBelow: searchBarView.bottomAnchor, multiplier: 1),
+            categoryTopConstraint!,
+//            categoryView.topAnchor.constraint(equalToSystemSpacingBelow: searchBarView.bottomAnchor, multiplier: 1),
             categoryView.leadingAnchor.constraint(equalToSystemSpacingAfter: view.leadingAnchor, multiplier: 1),
             view.trailingAnchor.constraint(equalToSystemSpacingAfter: categoryView.trailingAnchor, multiplier: 1)
         ])
@@ -68,27 +78,37 @@ extension HomeViewController {
     }
 }
 
-struct HomeViewController_Preview: PreviewProvider {
-    static var previews: some View {
-        UIViewControllerPreview {
-            HomeViewController()
-        }
+// MARK: - UICollectionViewDelegate
+extension HomeViewController: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        print(indexPath.row)
+    }
+
+    // Snap to position
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let y = scrollView.contentOffset.y
+        print(y)
+
+        // if > 30 snap up
+        // if < -30 snap down
+
+        let shouldSnap = y > 30
+        let categoryHeight = categoryView.frame.height
+        let searchHeight = searchBarView.frame.height
+
+        UIViewPropertyAnimator.runningPropertyAnimator(withDuration: 0.3, delay: 0, options: [], animations: {
+            self.categoryTopConstraint?.constant = shouldSnap ? -categoryHeight : 0
+            self.view.layoutIfNeeded()
+        })
     }
 }
 
 // MARK: - CollectionView
-
 extension HomeViewController {
     func createLayout() -> UICollectionViewLayout {
         let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0),
                                              heightDimension: .fractionalHeight(1.0))
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
-
-        //
-        // Here we are saying make me two columns. Horizontal count: 2.
-        // Even though the itemSize say - make me 1:1, the group layout overrides that and makes
-        // it stretch to something longer. So group overrides item.
-
         let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0),
                                               heightDimension: .absolute(44))
         let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitem: item, count: 2)
@@ -98,7 +118,6 @@ extension HomeViewController {
         let section = NSCollectionLayoutSection(group: group)
         section.interGroupSpacing = spacing
 
-        // Another way to add spacing. This is done for the section.
         section.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 10, bottom: 0, trailing: 10)
 
         let layout = UICollectionViewCompositionalLayout(section: section)
@@ -106,6 +125,7 @@ extension HomeViewController {
     }
 }
 
+// MARK: - UICollectionViewDataSource
 extension HomeViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 20
@@ -127,18 +147,7 @@ extension HomeViewController: UICollectionViewDataSource {
     }
 }
 
-extension HomeViewController: UICollectionViewDelegate {
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print(indexPath.row)
-    }
-
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        let y = scrollView.contentOffset.y
-        print(y)
-    }
-}
-
-
+// MARK: - Cell
 class TextCell: UICollectionViewCell {
     let label = UILabel()
     static let reuseIdentifier = "text-cell-reuse-identifier"
@@ -165,5 +174,13 @@ extension TextCell {
             label.topAnchor.constraint(equalTo: contentView.topAnchor, constant: inset),
             label.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -inset)
         ])
+    }
+}
+
+struct HomeViewController_Preview: PreviewProvider {
+    static var previews: some View {
+        UIViewControllerPreview {
+            HomeViewController()
+        }
     }
 }
