@@ -32,7 +32,7 @@ class HomeViewController: UIViewController {
     let categoryAdjustmentNoSnap = 40.0 + 8.0
     let categoryAdjustmentWithSnap = 0.0
 
-    let collectionAdjustmentNoSnap = 40.0 + 8.0 + 80 + 8
+    let collectionAdjustmentNoSnap = 40.0 + 8.0 + 80
     let collectionAdjustmentWithSnap = 40.0 + 8.0
 
     var categoryTopConstraint: NSLayoutConstraint?
@@ -100,9 +100,12 @@ extension HomeViewController: UICollectionViewDelegate {
         let y = scrollView.contentOffset.y
         print(y)
 
+        let swipingDown = y <= 0
         let shouldSnap = y > 30
 
         UIViewPropertyAnimator.runningPropertyAnimator(withDuration: 0.3, delay: 0, options: [], animations: {
+            self.categoryView.alpha = swipingDown ? 1.0 : 0.0
+
             self.categoryTopConstraint?.constant = shouldSnap ? self.categoryAdjustmentWithSnap : self.categoryAdjustmentNoSnap
             self.collectionTopConstraint?.constant = shouldSnap ? self.collectionAdjustmentWithSnap : self.collectionAdjustmentNoSnap
             self.view.layoutIfNeeded()
