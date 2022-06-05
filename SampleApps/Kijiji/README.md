@@ -920,3 +920,13 @@ struct HomeViewController_Preview: PreviewProvider {
     }
 }
 ```
+
+## Data
+
+### Hard code
+
+### JSON file
+
+### Network
+
+### Toggle

@@ -12,6 +12,7 @@
 		714A118A283FB8610097D86A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 714A1188283FB8610097D86A /* LaunchScreen.storyboard */; };
 		714A1193283FBB610097D86A /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 714A1192283FBB610097D86A /* HomeViewController.swift */; };
 		714A1195283FBB870097D86A /* MyKijijiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 714A1194283FBB870097D86A /* MyKijijiViewController.swift */; };
+		71607A8E284CD1D8003E45A5 /* HomeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71607A8D284CD1D8003E45A5 /* HomeCell.swift */; };
 		7165C29E28410B6700A00CF3 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7165C29D28410B6700A00CF3 /* MainViewController.swift */; };
 		7165C2A028410C3B00A00CF3 /* UIKit+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7165C29F28410C3B00A00CF3 /* UIKit+Ext.swift */; };
 		7165C2A328424DBD00A00CF3 /* SearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7165C2A228424DBD00A00CF3 /* SearchBarView.swift */; };
@@ -29,6 +30,7 @@
 		714A118B283FB8610097D86A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		714A1192283FBB610097D86A /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		714A1194283FBB870097D86A /* MyKijijiViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyKijijiViewController.swift; sourceTree = "<group>"; };
+		71607A8D284CD1D8003E45A5 /* HomeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCell.swift; sourceTree = "<group>"; };
 		7165C29D28410B6700A00CF3 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		7165C29F28410C3B00A00CF3 /* UIKit+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIKit+Ext.swift"; sourceTree = "<group>"; };
 		7165C2A228424DBD00A00CF3 /* SearchBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarView.swift; sourceTree = "<group>"; };
@@ -93,6 +95,7 @@
 			children = (
 				714A1192283FBB610097D86A /* HomeViewController.swift */,
 				7165C2A228424DBD00A00CF3 /* SearchBarView.swift */,
+				71607A8D284CD1D8003E45A5 /* HomeCell.swift */,
 				7165C2AE2844EB4400A00CF3 /* Category */,
 			);
 			path = Home;
@@ -190,6 +193,7 @@
 				714A117E283FB85F0097D86A /* AppDelegate.swift in Sources */,
 				7165C2AA2843A78C00A00CF3 /* CategoryItemView.swift in Sources */,
 				7165C2B22844F85200A00CF3 /* UIFont+Ext.swift in Sources */,
+				71607A8E284CD1D8003E45A5 /* HomeCell.swift in Sources */,
 				714A1195283FBB870097D86A /* MyKijijiViewController.swift in Sources */,
 				714A1193283FBB610097D86A /* HomeViewController.swift in Sources */,
 				7165C29E28410B6700A00CF3 /* MainViewController.swift in Sources */,

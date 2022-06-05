@@ -51,7 +51,7 @@ extension HomeViewController {
         collectionView.dataSource = self
         collectionView.delegate = self
         collectionView.backgroundColor = .systemBackground
-        collectionView.register(TextCell.self, forCellWithReuseIdentifier: TextCell.reuseIdentifier)
+        collectionView.register(HomeCell.self, forCellWithReuseIdentifier: HomeCell.reuseIdentifier)
     }
 
     func layout() {
@@ -143,8 +143,8 @@ extension HomeViewController: UICollectionViewDataSource {
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(
-            withReuseIdentifier: TextCell.reuseIdentifier,
-            for: indexPath) as? TextCell else { fatalError("Could not create new cell") }
+            withReuseIdentifier: HomeCell.reuseIdentifier,
+            for: indexPath) as? HomeCell else { fatalError("Could not create new cell") }
 
         cell.label.text = "\(indexPath.row)"
         cell.contentView.backgroundColor = .systemBlue
@@ -154,36 +154,6 @@ extension HomeViewController: UICollectionViewDataSource {
         cell.label.font = UIFont.preferredFont(forTextStyle: .title1)
 
         return cell
-    }
-}
-
-// MARK: - Cell
-class TextCell: UICollectionViewCell {
-    let label = UILabel()
-    static let reuseIdentifier = "text-cell-reuse-identifier"
-
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        configure()
-    }
-    required init?(coder: NSCoder) {
-        fatalError("not implemnted")
-    }
-}
-
-extension TextCell {
-    func configure() {
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.adjustsFontForContentSizeCategory = true
-        contentView.addSubview(label)
-        label.font = UIFont.preferredFont(forTextStyle: .caption1)
-        let inset = CGFloat(10)
-        NSLayoutConstraint.activate([
-            label.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: inset),
-            label.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -inset),
-            label.topAnchor.constraint(equalTo: contentView.topAnchor, constant: inset),
-            label.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -inset)
-        ])
     }
 }
 
