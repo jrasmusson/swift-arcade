@@ -18,6 +18,7 @@ class HomeViewController: UIViewController {
     let categoryView = CategoryView()
     var collectionView: UICollectionView! = nil
 
+//    var items: [HomeItem]? = loadData("homeItemData.json")
     var items: [HomeItem]?
 
     static let height = 200.0
@@ -47,8 +48,7 @@ class HomeViewController: UIViewController {
 // MARK: - Fetch Data
 extension HomeViewController {
     func fetchData() {
-        let homeItem = HomeItem(description: "Mens golf clubs", price: "$500")
-        items = Array(repeating: homeItem, count: 20)
+        items = loadData("homeItemData.json")
     }
 }
 

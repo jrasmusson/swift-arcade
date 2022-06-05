@@ -928,7 +928,7 @@ struct HomeViewController_Preview: PreviewProvider {
 **HomeItem**
 
 ```swift
-struct HomeItem {
+struct HomeItem: Codable {
     let description: String
     let price : String
 }
@@ -1092,10 +1092,74 @@ extension HomeViewController: UICollectionViewDataSource {
 }
 ```
 
-### Load data from JSON file
+### Load data via JSON file
 
+A nice way to build apps is to completely decouple the UI from the network.
 
+Let's start by loading our data from a JSON file, and then working in the actual networking after.
 
-### Network
+We can load our fake JSON like this:
+
+**Data/homeIteData.json**
+
+```
+[
+    {
+        "description":"Mens golf clubs",
+        "price":"1000",
+    },
+    {
+        "description":"Mens golf clubs",
+        "price":"1000",
+    },
+    {
+        "description":"Mens golf clubs",
+        "price":"1000",
+    },
+]
+```
+
+![](images/9.png)
+
+**DataUtils**
+
+```
+func loadData<T: Decodable>(_ filename: String) -> T {
+    let data: Data
+
+    guard let file = Bundle.main.url(forResource: filename, withExtension: nil)
+    else {
+        fatalError("Couldn't find \(filename) in main bundle.")
+    }
+
+    do {
+        data = try Data(contentsOf: file)
+    } catch {
+        fatalError("Couldn't load \(filename) from main bundle:\n\(error)")
+    }
+
+    do {
+        let decoder = JSONDecoder()
+        return try decoder.decode(T.self, from: data)
+    } catch {
+        fatalError("Couldn't parse \(filename) as \(T.self):\n\(error)")
+    }
+}
+```
+
+**HomeViewController**
+
+```swift
+// MARK: - Fetch Data
+extension HomeViewController {
+    func fetchData() {
+        items = loadData("homeItemData.json")
+    }
+}
+```
+
+![](images/10.png)
+
+### Networking
 
 ### Toggle

@@ -1,6 +1,14 @@
-{
-    "type": "MultiPolygon",
-    "coordinates": [
-        
-    ]
-}
+[
+    {
+        "description":"Mens golf clubs",
+        "price":"1000",
+    },
+    {
+        "description":"Mens golf clubs",
+        "price":"1000",
+    },
+    {
+        "description":"Mens golf clubs",
+        "price":"1000",
+    },
+]

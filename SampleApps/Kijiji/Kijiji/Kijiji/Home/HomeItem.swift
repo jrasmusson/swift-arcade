@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct HomeItem {
+struct HomeItem: Codable {
     let description: String
     let price : String
 }
