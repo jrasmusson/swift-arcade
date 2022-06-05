@@ -41,12 +41,17 @@ extension HomeItemCell {
 
         priceLabel.translatesAutoresizingMaskIntoConstraints = false
         priceLabel.font = UIFont.preferredFont(forTextStyle: .body)
+
+        favoriteImageView.translatesAutoresizingMaskIntoConstraints = false
+        favoriteImageView.image = UIImage(systemName: "heart")
+        favoriteImageView.tintColor = appColor
     }
 
     func layout() {
         contentView.addSubview(imageView)
         contentView.addSubview(descriptionLabel)
         contentView.addSubview(priceLabel)
+        contentView.addSubview(favoriteImageView)
 
         let inset = 4.0
 
@@ -69,6 +74,16 @@ extension HomeItemCell {
             priceLabel.topAnchor.constraint(equalTo: descriptionLabel.bottomAnchor, constant: inset),
             priceLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: inset),
             priceLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -inset)
+        ])
+
+        // favoriteImageView
+        NSLayoutConstraint.activate([
+            favoriteImageView.heightAnchor.constraint(equalToConstant: 20),
+            favoriteImageView.widthAnchor.constraint(equalToConstant: 20),
+            favoriteImageView.topAnchor.constraint(equalTo: descriptionLabel.bottomAnchor, constant: inset),
+            favoriteImageView.leadingAnchor.constraint(equalTo: priceLabel.trailingAnchor, constant: inset),
+            favoriteImageView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -inset),
+            favoriteImageView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -inset)
         ])
     }
 }
