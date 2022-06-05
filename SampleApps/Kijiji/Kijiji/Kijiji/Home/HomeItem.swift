@@ -9,5 +9,5 @@ import Foundation
 
 struct HomeItem {
     let description: String
-    let price : Int
+    let price : String
 }

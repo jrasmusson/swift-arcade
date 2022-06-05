@@ -39,11 +39,14 @@ extension HomeItemCell {
         descriptionLabel.translatesAutoresizingMaskIntoConstraints = false
         descriptionLabel.font = UIFont.preferredFont(forTextStyle: .subheadline)
 
+        priceLabel.translatesAutoresizingMaskIntoConstraints = false
+        priceLabel.font = UIFont.preferredFont(forTextStyle: .body)
     }
 
     func layout() {
         contentView.addSubview(imageView)
         contentView.addSubview(descriptionLabel)
+        contentView.addSubview(priceLabel)
 
         let inset = 4.0
 
@@ -54,12 +57,18 @@ extension HomeItemCell {
             imageView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -inset),
         ])
 
-        // imageView
+        // descriptionLabel
         NSLayoutConstraint.activate([
             descriptionLabel.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: inset),
             descriptionLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: inset),
             descriptionLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -inset),
-            descriptionLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -inset)
+        ])
+
+        // priceLabel
+        NSLayoutConstraint.activate([
+            priceLabel.topAnchor.constraint(equalTo: descriptionLabel.bottomAnchor, constant: inset),
+            priceLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: inset),
+            priceLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -inset)
         ])
     }
 }
@@ -68,5 +77,6 @@ extension HomeItemCell {
 extension HomeItemCell {
     func configure(item: HomeItem) {
         descriptionLabel.text = item.description
+        priceLabel.text = item.price
     }
 }

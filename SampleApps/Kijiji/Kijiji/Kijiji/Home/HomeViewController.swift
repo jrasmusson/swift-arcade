@@ -146,7 +146,7 @@ extension HomeViewController: UICollectionViewDataSource {
         guard let cell = collectionView.dequeueReusableCell(
             withReuseIdentifier: HomeItemCell.reuseIdentifier,
             for: indexPath) as? HomeItemCell else { fatalError("Could not create new cell") }
-        cell.configure(item: HomeItem(description: "Mens golf clubs", price: 500))
+        cell.configure(item: HomeItem(description: "Mens golf clubs", price: "$500"))
         return cell
     }
 }
