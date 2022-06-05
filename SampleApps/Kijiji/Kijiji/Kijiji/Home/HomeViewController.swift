@@ -18,6 +18,8 @@ class HomeViewController: UIViewController {
     let categoryView = CategoryView()
     var collectionView: UICollectionView! = nil
 
+    static let height = 200.0
+
     override func viewDidLoad() {
         super.viewDidLoad()
         style()
@@ -51,7 +53,7 @@ extension HomeViewController {
         collectionView.dataSource = self
         collectionView.delegate = self
         collectionView.backgroundColor = .tertiarySystemFill
-        collectionView.register(HomeCell.self, forCellWithReuseIdentifier: HomeCell.reuseIdentifier)
+        collectionView.register(HomeItemCell.self, forCellWithReuseIdentifier: HomeItemCell.reuseIdentifier)
     }
 
     func layout() {
@@ -98,7 +100,6 @@ extension HomeViewController: UICollectionViewDelegate {
     // Snap to position
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let y = scrollView.contentOffset.y
-        print(y)
 
         let swipingUp = y > 0
         let shouldSnap = y > 20
@@ -120,7 +121,7 @@ extension HomeViewController {
                                              heightDimension: .fractionalHeight(1.0))
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
         let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0),
-                                              heightDimension: .absolute(160))
+                                               heightDimension: .absolute(HomeViewController.height))
         let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitem: item, count: 2)
         let spacing = CGFloat(10)
         group.interItemSpacing = .fixed(spacing)
@@ -143,8 +144,9 @@ extension HomeViewController: UICollectionViewDataSource {
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(
-            withReuseIdentifier: HomeCell.reuseIdentifier,
-            for: indexPath) as? HomeCell else { fatalError("Could not create new cell") }
+            withReuseIdentifier: HomeItemCell.reuseIdentifier,
+            for: indexPath) as? HomeItemCell else { fatalError("Could not create new cell") }
+        cell.configure(item: HomeItem(description: "Mens golf clubs", price: 500))
         return cell
     }
 }

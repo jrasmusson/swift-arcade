@@ -7,7 +7,7 @@
 
 import UIKit
 
-class HomeCell: UICollectionViewCell {
+class HomeItemCell: UICollectionViewCell {
     let imageView = UIView()
     let descriptionLabel = UILabel()
     let priceLabel = UILabel()
@@ -26,28 +26,47 @@ class HomeCell: UICollectionViewCell {
     }
 
     override var intrinsicContentSize: CGSize {
-        return CGSize(width: UIView.noIntrinsicMetric, height: 160)
+        return CGSize(width: UIView.noIntrinsicMetric, height: HomeViewController.height)
     }
 }
 
 // MARK: - Layout Style
-extension HomeCell {
+extension HomeItemCell {
     func style() {
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.backgroundColor = appColor
+
+        descriptionLabel.translatesAutoresizingMaskIntoConstraints = false
+        descriptionLabel.font = UIFont.preferredFont(forTextStyle: .subheadline)
 
     }
 
     func layout() {
         contentView.addSubview(imageView)
+        contentView.addSubview(descriptionLabel)
 
         let inset = 4.0
 
+        // imageView
         NSLayoutConstraint.activate([
             imageView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: inset),
             imageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: inset),
             imageView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -inset),
-            imageView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -inset)
         ])
+
+        // imageView
+        NSLayoutConstraint.activate([
+            descriptionLabel.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: inset),
+            descriptionLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: inset),
+            descriptionLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -inset),
+            descriptionLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -inset)
+        ])
+    }
+}
+
+// MARK: - Configure
+extension HomeItemCell {
+    func configure(item: HomeItem) {
+        descriptionLabel.text = item.description
     }
 }
