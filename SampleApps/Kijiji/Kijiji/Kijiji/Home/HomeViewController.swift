@@ -50,7 +50,7 @@ extension HomeViewController {
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         collectionView.dataSource = self
         collectionView.delegate = self
-        collectionView.backgroundColor = .systemOrange
+        collectionView.backgroundColor = .tertiarySystemFill
         collectionView.register(HomeCell.self, forCellWithReuseIdentifier: HomeCell.reuseIdentifier)
     }
 
