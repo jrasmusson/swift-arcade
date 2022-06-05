@@ -33,6 +33,7 @@
 		714A1194283FBB870097D86A /* MyKijijiViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyKijijiViewController.swift; sourceTree = "<group>"; };
 		71607A8D284CD1D8003E45A5 /* HomeItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeItemCell.swift; sourceTree = "<group>"; };
 		71607A8F284CDA62003E45A5 /* HomeItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeItem.swift; sourceTree = "<group>"; };
+		71607A93284CE275003E45A5 /* HomeItemData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = HomeItemData.json; sourceTree = "<group>"; };
 		7165C29D28410B6700A00CF3 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		7165C29F28410C3B00A00CF3 /* UIKit+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIKit+Ext.swift"; sourceTree = "<group>"; };
 		7165C2A228424DBD00A00CF3 /* SearchBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarView.swift; sourceTree = "<group>"; };
@@ -75,8 +76,9 @@
 				714A117D283FB85F0097D86A /* AppDelegate.swift */,
 				7165C29D28410B6700A00CF3 /* MainViewController.swift */,
 				7165C2A128424D0300A00CF3 /* Home */,
-				714A1194283FBB870097D86A /* MyKijijiViewController.swift */,
+				71607A91284CE23B003E45A5 /* MyKijiji */,
 				7165C2A4284256C000A00CF3 /* Utils */,
+				71607A92284CE250003E45A5 /* Data */,
 				714A1191283FBB2D0097D86A /* Files */,
 			);
 			path = Kijiji;
@@ -90,6 +92,22 @@
 				714A118B283FB8610097D86A /* Info.plist */,
 			);
 			name = Files;
+			sourceTree = "<group>";
+		};
+		71607A91284CE23B003E45A5 /* MyKijiji */ = {
+			isa = PBXGroup;
+			children = (
+				714A1194283FBB870097D86A /* MyKijijiViewController.swift */,
+			);
+			path = MyKijiji;
+			sourceTree = "<group>";
+		};
+		71607A92284CE250003E45A5 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				71607A93284CE275003E45A5 /* HomeItemData.json */,
+			);
+			path = Data;
 			sourceTree = "<group>";
 		};
 		7165C2A128424D0300A00CF3 /* Home */ = {

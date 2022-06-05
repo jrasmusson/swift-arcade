@@ -18,12 +18,15 @@ class HomeViewController: UIViewController {
     let categoryView = CategoryView()
     var collectionView: UICollectionView! = nil
 
+    var items: [HomeItem]?
+
     static let height = 200.0
 
     override func viewDidLoad() {
         super.viewDidLoad()
         style()
         layout()
+        fetchData()
     }
 
     // heights
@@ -39,6 +42,14 @@ class HomeViewController: UIViewController {
 
     var categoryTopConstraint: NSLayoutConstraint?
     var collectionTopConstraint: NSLayoutConstraint?
+}
+
+// MARK: - Fetch Data
+extension HomeViewController {
+    func fetchData() {
+        let homeItem = HomeItem(description: "Mens golf clubs", price: "$500")
+        items = Array(repeating: homeItem, count: 20)
+    }
 }
 
 // MARK: - Style and Layout
@@ -139,14 +150,17 @@ extension HomeViewController {
 // MARK: - UICollectionViewDataSource
 extension HomeViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 20
+        return items?.count ?? 0
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(
             withReuseIdentifier: HomeItemCell.reuseIdentifier,
             for: indexPath) as? HomeItemCell else { fatalError("Could not create new cell") }
-        cell.configure(item: HomeItem(description: "Mens golf clubs", price: "$500"))
+
+        let item = items?[indexPath.row] ?? HomeItem(description: "---", price: "---") // skeleton
+        cell.configure(item: item)
+
         return cell
     }
 }
