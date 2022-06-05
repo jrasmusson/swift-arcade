@@ -50,7 +50,7 @@ extension HomeViewController {
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         collectionView.dataSource = self
         collectionView.delegate = self
-        collectionView.backgroundColor = .systemBackground
+        collectionView.backgroundColor = .systemOrange
         collectionView.register(HomeCell.self, forCellWithReuseIdentifier: HomeCell.reuseIdentifier)
     }
 
@@ -120,7 +120,7 @@ extension HomeViewController {
                                              heightDimension: .fractionalHeight(1.0))
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
         let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0),
-                                              heightDimension: .absolute(44))
+                                              heightDimension: .absolute(160))
         let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitem: item, count: 2)
         let spacing = CGFloat(10)
         group.interItemSpacing = .fixed(spacing)
@@ -128,7 +128,7 @@ extension HomeViewController {
         let section = NSCollectionLayoutSection(group: group)
         section.interGroupSpacing = spacing
 
-        section.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 10, bottom: 0, trailing: 10)
+        section.contentInsets = NSDirectionalEdgeInsets(top: 16, leading: 8, bottom: 0, trailing: 8)
 
         let layout = UICollectionViewCompositionalLayout(section: section)
         return layout
@@ -138,21 +138,13 @@ extension HomeViewController {
 // MARK: - UICollectionViewDataSource
 extension HomeViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 40
+        return 20
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(
             withReuseIdentifier: HomeCell.reuseIdentifier,
             for: indexPath) as? HomeCell else { fatalError("Could not create new cell") }
-
-        cell.label.text = "\(indexPath.row)"
-        cell.contentView.backgroundColor = .systemBlue
-        cell.layer.borderColor = UIColor.black.cgColor
-        cell.layer.borderWidth = 1
-        cell.label.textAlignment = .center
-        cell.label.font = UIFont.preferredFont(forTextStyle: .title1)
-
         return cell
     }
 }

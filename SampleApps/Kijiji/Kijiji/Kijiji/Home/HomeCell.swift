@@ -8,7 +8,11 @@
 import UIKit
 
 class HomeCell: UICollectionViewCell {
-    let label = UILabel()
+    let imageView = UIView()
+    let descriptionLabel = UILabel()
+    let priceLabel = UILabel()
+    let favoriteImageView = UIImageView()
+
     static let reuseIdentifier = "home-cell-reuse-identifier"
 
     override init(frame: CGRect) {
@@ -20,24 +24,30 @@ class HomeCell: UICollectionViewCell {
     required init?(coder: NSCoder) {
         fatalError("not implemnted")
     }
+
+    override var intrinsicContentSize: CGSize {
+        return CGSize(width: UIView.noIntrinsicMetric, height: 160)
+    }
 }
 
 // MARK: - Layout Style
 extension HomeCell {
     func style() {
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.adjustsFontForContentSizeCategory = true
-        label.font = UIFont.preferredFont(forTextStyle: .caption1)
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.backgroundColor = appColor
+
     }
 
     func layout() {
-        contentView.addSubview(label)
-        let inset = CGFloat(10)
+        contentView.addSubview(imageView)
+
+        let inset = 4.0
+
         NSLayoutConstraint.activate([
-            label.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: inset),
-            label.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -inset),
-            label.topAnchor.constraint(equalTo: contentView.topAnchor, constant: inset),
-            label.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -inset)
+            imageView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: inset),
+            imageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: inset),
+            imageView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -inset),
+            imageView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -inset)
         ])
     }
 }
