@@ -48,22 +48,13 @@ class HomeViewController: UIViewController {
 // MARK: - Fetch Data
 extension HomeViewController {
     func fetchData() {
-        var isLocal = false
-        if ProcessInfo.processInfo.environment["isLocal"] == "YES" {
-            isLocal = true
-        }
-
-        if isLocal {
-            self.items = loadData("homeItemData.json")
-        } else {
-            self.manager.fetchItems(forUserId: "1") { result in
-                switch result {
-                case .success(let items):
-                    self.items = items
-                    self.collectionView.reloadData()
-                case .failure(let error):
-                    print("foo - Error: \(error)")
-                }
+        manager.fetchItems(forUserId: "1") { result in
+            switch result {
+            case .success(let items):
+                self.items = items
+                self.collectionView.reloadData()
+            case .failure(let error):
+                print("foo - Error: \(error)")
             }
         }
     }
