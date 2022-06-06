@@ -340,6 +340,40 @@ Load it via the bundle like this - will load and setup all the outlets.
 
 ```
 
+## HeaderFooterViews
+
+Create a regular view.
+
+![](images/51.png)
+
+Create a class.
+
+```swift
+import UIKit
+
+class TransactionsSectionSearchFooterView: UITableViewHeaderFooterView {
+
+}
+```
+
+Don't set `File's Owner`.
+
+Set `Custom Class`:
+
+![](images/52.png)
+
+Register with `tableView`:
+
+```swift
+tableView.registerHeaderFooter(TransactionsSectionSearchFooterView.self)
+```
+
+Dequeue and use as before with helper methods:
+
+```swift
+let footerView: TransactionsSectionSearchFooterView = tableView.dequeueResuableHeaderFooter()
+```
+
 ## Different ways to load nibs
 
 Both these work. Not sure which one is better.
