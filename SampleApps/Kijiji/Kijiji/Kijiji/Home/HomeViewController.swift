@@ -18,8 +18,8 @@ class HomeViewController: UIViewController {
     let categoryView = CategoryView()
     var collectionView: UICollectionView! = nil
 
-//    var items: [HomeItem]? = loadData("homeItemData.json")
     var items: [HomeItem]?
+    var manager: HomeManageable = HomeManager()
 
     static let height = 200.0
 
@@ -48,7 +48,16 @@ class HomeViewController: UIViewController {
 // MARK: - Fetch Data
 extension HomeViewController {
     func fetchData() {
-        items = loadData("homeItemData.json")
+//        items = loadData("homeItemData.json")
+        manager.fetchItems(forUserId: "1") { result in
+            switch result {
+            case .success(let items):
+                self.items = items
+                self.collectionView.reloadData()
+            case .failure(let error):
+                print("foo - Error: \(error)")
+            }
+        }
     }
 }
 
