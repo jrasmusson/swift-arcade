@@ -1225,4 +1225,25 @@ extension HomeViewController {
 }
 ```
 
+![](images/11.png)
+
 ### Toggle
+
+Let's toggle between local and network two different ways:
+
+#### Flag
+
+Edit scheme:
+
+![](images/12.png)
+
+Add an environment variable:
+
+![](images/13.png)
+
+Use like this:
+
+
+
+#### Properties file
+
