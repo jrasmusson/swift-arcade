@@ -1288,6 +1288,3 @@ class HomeManager: HomeManageable {
 ```
 
 
-
-#### Properties file
-
