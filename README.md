@@ -113,10 +113,3 @@ Collection of demos from the [Swift Arcade YouTube channel.](https://www.youtube
 ## Interview Prep
 
 - [Cheat sheet](InterviewPrep/CheatSheet.md)
-
-## WWDC
-
-### 2022
-
-- [Explore navigation design for iOS](WWDC/2022/Navigation/README.md)
-- [Swift UI Cookbook Navigation](WWDC/2022/SwiftUICookbookNavigation/README.md)
