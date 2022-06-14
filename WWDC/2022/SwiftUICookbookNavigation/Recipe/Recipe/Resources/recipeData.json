@@ -1,0 +1,11 @@
+{
+    "id": 1,
+    "name": "Apple Pie",
+    "ingredients": [
+        "3/4 cup white suguar",
+        "2 tablespoons all-purpose flour"
+    ],
+    "relatedRecipes": [
+        "Baklava"
+    ]
+}

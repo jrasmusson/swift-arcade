@@ -1,0 +1,57 @@
+[
+    {
+        "name": "Desserts",
+        "recipies": [
+            {
+                "id": 1,
+                "name": "Apple Pie",
+                "ingredients": [
+                    "3/4 cup white suguar",
+                    "2 tablespoons all-purpose flour"
+                ],
+                "relatedRecipes": [
+                    "Pancake"
+                ]
+            },
+            {
+                "id": 2,
+                "name": "Chocolate cookies",
+                "ingredients": [
+                    "1/2 cup chocolate chips",
+                    "2 tablespoons all-purpose flour"
+                ],
+                "relatedRecipes": [
+                    "Pancake"
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Pancake",
+        "recipies": [
+            {
+                "id": 3,
+                "name": "American",
+                "ingredients": [
+                    "3/4 whole wheat",
+                    "2 tablespoons all-purpose flour"
+                ],
+                "relatedRecipes": [
+                    "Apple Pie"
+                ]
+            },
+            {
+                "id": 4,
+                "name": "Cheese cake",
+                "ingredients": [
+                    "1/2 cup sour creme",
+                    "2 tablespoons all-purpose flour"
+                ],
+                "relatedRecipes": [
+                    "Apple Pie"
+                ]
+            }
+        ]
+    }
+
+]
