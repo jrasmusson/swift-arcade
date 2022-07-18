@@ -739,7 +739,7 @@ Once it `fetchesPlayerState` it can update the artwork, set the play/pause butto
 
 ## Running on a physical device
 
-Now we are ready to test things out. For that we needa physical device.
+Now we are ready to test things out. For that we need a physical device.
 
 Plug your iPhone into your laptop via an extension cable.
 
