@@ -864,6 +864,49 @@ Should then see:
 
 ![](images/43.png)
 
+### Hosting ViewController
+
+To get going quickly simply host the UIKit ViewController we created earlier:
+
+- Add a `Constants.swift` file as before.
+- Add the `ViewControler` file as before
+
+Create a new `Spotify` struct to host:
+
+**Spotify**
+
+```swift
+import UIKit
+import SwiftUI
+
+struct Spotify: UIViewControllerRepresentable {
+    typealias UIViewControllerType = UIViewController
+
+    func makeUIViewController(context: Context) -> UIViewController {
+        let vc = ViewController()
+        return vc
+    }
+
+    func updateUIViewController(_ uiViewController: UIViewController, context: Context) {}
+}
+```
+
+Then embed in SwiftUI view:
+
+**ContentView**
+
+```swift
+struct ContentView: View {
+    var body: some View {
+        VStack {
+            Spotify()
+        }
+    }
+}
+```
+
+![](images/44.png)
+
 
 ### Links that help
 
