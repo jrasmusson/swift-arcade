@@ -151,7 +151,7 @@ Bridge is now setup and complete.
 
 This is perhaps the most confusing part of the SDK configuration. What we are going to do here is flip back and forth between our Spotify Developer App, and our iOS client, adding entries one at a time, so you can see what's going on.
 
-But in a nutshell we need to set the following our Developer App:
+But in a nutshell we need to set the following in our Developer App:
 
 - `Bundle ID`
 - `Redirect URI`
