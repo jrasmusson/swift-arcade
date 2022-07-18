@@ -801,6 +801,70 @@ Here it is in action.
 
 That's it 🎉.
 
+## SwiftUI
+
+Same instructions apply for SwiftUI app. Only part more trickey is `info.plist`. 
+
+### info.plist
+
+Make a change to any `info.plist` entry file:
+
+- Application Scene Manifest > Enable Multiple Winders > No
+
+![](images/42.png)
+
+This will create a `info.plist` file in your project.
+
+Right click on it, go `Show in finder`, and manually add the following entries:
+
+**info.plist**
+
+```
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>UIApplicationSceneManifest</key>
+	<dict>
+		<key>UIApplicationSupportsMultipleScenes</key>
+		<false/>
+	</dict>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>easyplay1</string>
+			</array>
+			<key>CFBundleURLName</key>
+			<string>com.rsc.easyplay1</string>
+		</dict>
+	</array>
+	<key>LSApplicationQueriesSchemes</key>
+	<array>
+		<string>spotify</string>
+	</array>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+	</dict>
+</dict>
+</plist>
+```
+
+Be sure to change:
+
+- `easyplay1`
+- `com.rsc.easyplay1` 
+
+to appropriate entries for your app. Note - some of the entry names have changed/update. That's OK.
+
+Should then see:
+
+![](images/43.png)
+
+
 ### Links that help
 
 - [QuickStart](https://developer.spotify.com/documentation/ios/quick-start/)
