@@ -59,10 +59,7 @@
 			isa = PBXGroup;
 			children = (
 				715433F428858D8F00F256A8 /* Files */,
-				715433F328858B0F00F256A8 /* Info.plist */,
-				715433F128858AC200F256A8 /* SpotifyiOS.framework */,
 				715433E228858A6D00F256A8 /* ContentView.swift */,
-				715433EE28858AA000F256A8 /* easyplay1-Bridging-Header.h */,
 				715433F528858E1A00F256A8 /* Constants.swift */,
 			);
 			path = easyplay1;
@@ -79,6 +76,9 @@
 		715433F428858D8F00F256A8 /* Files */ = {
 			isa = PBXGroup;
 			children = (
+				715433F328858B0F00F256A8 /* Info.plist */,
+				715433EE28858AA000F256A8 /* easyplay1-Bridging-Header.h */,
+				715433F128858AC200F256A8 /* SpotifyiOS.framework */,
 				715433E028858A6D00F256A8 /* easyplay1App.swift */,
 				715433E428858A6E00F256A8 /* Assets.xcassets */,
 				715433E628858A6E00F256A8 /* Preview Content */,
