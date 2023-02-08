@@ -105,6 +105,21 @@ extension ViewController: UIPickerViewDelegate, UIPickerViewDataSource {
 }
 ```
 
+The key thing to notice here is that when you create your localized string:
+
+```swift
+let localized = NSLocalizedString("overdue", comment: "xxx")
+let formatted = String(format: localized, days[row])
+```
+
+The `key` is `overdue` and that returns the entire sentences from the dictionary:
+
+- `0` = `Your account is overdue`
+- `1` = `Account %d day overdue`
+- `other` = `Account %d days overdue`
+
+So the whole sentence gets retured from the dict. Not just the word `day` or `days`.
+
 **Localizable.stringsdict**
 
 ```swift
