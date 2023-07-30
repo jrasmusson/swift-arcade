@@ -12,7 +12,7 @@ lazy var label: UILabel = {
     return label
 }()
 
-func makeText() -> c {
+func makeText() -> NSMutableAttributedString {
     let paragraphStyle = NSMutableParagraphStyle()
     paragraphStyle.firstLineHeadIndent = 24
     paragraphStyle.headIndent = 8
